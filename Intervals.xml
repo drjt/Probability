@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="IntervalEstimation" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Estimating Data using Intervals</title>
+
+<section>	
+	<title>Chebyshev</title>
+
+	<p>An interval centered on the mean in which at least a certain proportion
+	of the actual data must lie.
+	</p>
+
+	<theorem>
+	<title>Chebyshev's Theorem</title>
+	<statement>
+	Given a random variable X with given mean μ and standard deviation σ, for k>1 at least
+	2
+	1 1
+	k − of the observations lie within k standard deviations from the mean.
+	</statement>
+	</theorem>
+</section>
+
+
+<section>
+<title>Measures of Spread</title>
+
+
+<p>Measures of spread:
+• Average Deviation from the Mean – always zero for any distribution
+• Average Absolute Deviation from the Mean – difficult to deal with algebra when absolute values are used
+• Average Squared Deviation from the Mean – always non-negative and good with algebra and calculus 
+</p>
+
+<definition><title>Variance</title>
+<statement>The variance is a measure of spread found by using the average squared deviation from the mean
+σ2
+ = ( ) )(
+2
+1
+k
+n
+k
+k ∑ xfx =
+− μ
+if this value exists and is also denoted by Var(X). The positive square root of the variance is called the standard deviation
+and is denoted by σ. </statement>
+</definition>
+
+</section>
+</chapter>

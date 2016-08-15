@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="ProbabilityGeneralities" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Probability and Probability Functions</title>
+
+<introduction>
+	<p>This chapter is a definitions of probability, consequences, and probability functions.</p>
+</introduction>
+
+
+<section xml:id="RelativeFrequency">
+<title>Relative Frequency</title>
+<p>Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
+<p>People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p>
+<subsection>
+	<p>When attempting to precisely measure this uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
+	<ul>
+		<li>S = Universal Set or Sample Space Experiment or Outcome Space. 
+		This is the collection of all possible outcomes.</li>
+		<li>Random Experiment. A random experiment is a repeatable activity which has more than one
+		possible outcome all of which can be specified in advance but can not be known in advance with certainty.</li>
+		<li>Trial. Performing a Random Experiment one time and measuring the result.</li> 
+		<li>A = Event. A collection of outcomes.  Generally denoted by an upper case letter such as A, B, C, etc.</li>
+		<li>Success/Failure. When recording the result of a trial, a success for event A occurs when the outcome
+		lies in A. If not, then the trial was a failure. There is no qualitative meaning to this term.</li>
+		<li>Mutually Exclusive Events. Two events which share no common outcomes. Also known as disjoint events.</li>
+		<li>|A| = Frequency. In a sequence of n events, the frequency is the number of trials which resulted in 
+		a success for event A.</li>
+		<li>|A| / n = Relative Frequency. A proportion of successes to total number of trials.</li>
+		<li>Histogram. A bar chart representation of data where area corresponds to the value being described.</li>
+	</ul>
+<p>To investigate these terms and to motivate our discussion of probability, consider flipping coins using the
+interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists
+of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads
+and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads
+or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying
+number of trials selected by you as you move the slider bar. Results are displayed using a histogram.</p>
+<p>
+Question 1: What do you notice as the number of flips increases?
+</p>
+<p>
+Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
+that to happen?
+</p>
+<sage>
+<input>
+coin = ["Heads", "Tails"]
+@interact
+def _(num_rolls = slider([5..5000],label="Number of Flips")):
+	rolls = [choice(coin) for roll in range(num_rolls)]
+	show(rolls)   
+	freq = [0,0]
+	for outcome in rolls:
+		if (outcome=='Tails'):
+			freq[0] = freq[0]+1
+		else:
+			freq[1] = freq[1]+1
+	print("\nThe frequency of tails = "+ str(freq[0]))+" and heads = "+ str(freq[1])+"."
+	rel = [freq[0]/num_rolls,freq[1]/num_rolls]
+	print("\nThe relative frequencies for Tails and Heads:"+str(rel))
+	show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
+</input>
+</sage>
+	<p>Notice that as the number of flips increases, the relative frequency of Heads (and Tails)
+	stabilized around 0.5. This makes sense intuitively since there are two options for each 
+	individual flip and 1/2 of those options are Heads while the other 1/2 is Tails.</p>
+	<p>
+	Let's try again
+	by doing a random experiment consisting of rolling a single die one time. Note that the sample space 
+	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
+</p>
+
+  <exercise>
+                <title>Answer is a number or a function.</title>
+
+                <webwork xml:id="number-or-function">
+
+                    <setup>
+                        <var name="$a" category="integer">
+                            <static>5</static>
+                        </var>
+                        <var name="$b" category="integer">
+                            <static>8</static>
+                        </var>
+                        <var name="$answer1" category="integer">
+                            <static>5</static>
+                        </var>
+                        <var name="$answer2" category="formula">
+                            <static>{5x^8+8}{x}</static>
+                        </var>
+
+                        <pg-code>
+                            $a = non_zero_random(-9,9,1);
+                            do { $b = random(2,9,1); } until ( $b != $a );
+                            $answer1 = Compute("$a");
+                            $answer2 = Compute("($a x^($b) + $b)/x")->reduce();
+                        </pg-code>
+                    </setup>
+
+                    <statement>
+                        <ol label="a">
+                            <li>
+                                <p>Suppose the correct answer is <m><var name="$answer1"/></m>.</p>
+                                <ul label="square">
+                                    <li>
+                                        <p><answer var="$answer1" width="15"/></p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>Suppose the correct answer is <m>\displaystyle <var name="$answer2"/></m>.</p>
+                                <ul label="square">
+                                    <li>
+                                        <p><answer var="$answer2" width="15"/></p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                    </statement>
+
+                    <solution>
+                        <p>Solution explanation goes here.</p>
+                    </solution>
+                </webwork>
+            </exercise>
+
+<exercise>
+<webwork>
+    <title>Integer Addition</title>
+
+    <setup>
+        <var name="$a">
+            <static>9</static>
+        </var>
+        <var name="$b">
+            <static>8</static>
+        </var>
+        <var name="$c" category="integer">
+            <static>17</static>
+        </var>
+
+        <pg-code>
+            $a = Compute(random(1, 9, 1)); 
+            $b = Compute(random(1, 9, 1)); 
+            $c = $a + $b;
+        </pg-code>
+    </setup>
+
+    <statement>
+        <p>Compute <m><var name="$a" />+<var name="$b" /></m>.</p>
+        <p>The sum is <var name="$c" width="2" />.</p>
+    </statement>
+
+    <solution>
+        <p><m><var name="$a" />+<var name="$b" />=<var name="$c" /></m>.</p>
+    </solution>
+</webwork>
+</exercise>
+
+<exercise>
+<webwork source="Library/PCC/BasicAlgebra/Exponents/exponentsMultiplication0.pg" />
+</exercise>
+
+<exercise>
+<introduction>
+Let's see if you understand the relationship between frequency and relative frequency.
+</introduction>
+<webwork source="local/relative_frequency1.pg" />
+<conclusion>
+So, these are simple calculations.
+</conclusion>
+</exercise>
+
+<p>
+Question 1: What do you notice as the number of rolls increases?
+</p>
+<p>
+Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
+</p>
+<sage>
+<input>
+@interact
+def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [4,6,8,12,20]):
+	die = list((1..Number_of_Sides))
+	rolls = [choice(die) for roll in range(num_rolls)]
+	show(rolls)   
+
+	freq = [rolls.count(outcome) for outcome in set(die)]  # count the numbers for each outcome
+	print 'The frequencies of each outcome is '+str(freq)
+
+	print 'The relative frequencies of each outcome:'
+	rel_freq = [freq[outcome-1]/num_rolls for outcome in set(die)]  # make frequencies relative
+	print rel_freq
+	fs = []
+	for f in rel_freq:
+		fs.append(f.n(digits=4))
+	print fs
+	show(bar_chart(freq,axes=False,ymin=0)) 
+</input>
+</sage>
+	<p>Notice in this instance that there are a larger number of options (for example 6 on a regular
+	die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die)
+	as the number of rolls increased.</p>
+	<p>In general, this suggests a rule: if there are n outcomes and each one has the same
+	chance of occurring on a given trial then on average on a large number of trials the relative
+	frequency of that outcome is 1/n.</p>
+	In general, if a number of outcomes are "equally likely" then this is a good model for measuring
+	the proportion of outcomes that would be expected to have any given outcome. However, it is not
+	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:
+<sage>
+<title>Rolling Two Dice and Measuring their Sum</title>
+<input>
+@interact
+def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
+    die = list((1..num_sides))
+    dice = list((2..num_sides*2))
+    rolls = [(choice(die),choice(die)) for roll in range(num_rolls)]
+    sums = [sum(rolls[roll]) for roll in range(num_rolls)]
+    show(rolls)   
+
+    freq = [sums.count(outcome) for outcome in set(dice)]  # count the numbers for each outcome
+    print 'The frequencies of each outcome is '+str(freq)
+    
+    print 'The relative frequencies of each outcome:'
+    rel_freq = [freq[outcome-2]/num_rolls for outcome in set(dice)]  # make frequencies relative
+    print rel_freq        
+    show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
+    print "Relative Frequence of ",dice[0]," is about ",rel_freq[0].n(digits=4)
+    print "Relative Frequence of ",dice[num_sides-1]," is about ",rel_freq[num_sides-1].n(digits=4)
+
+</input>
+</sage>
+	<p>Notice, not only are the answers not the same but they are not even close. To understand why this 
+	is different from the examples before, consider the possible outcomes from each pair of die. Since we
+	are measuring the sum of the dice then (for a pair of standard 6-sided dice) the possible sums are from 
+	2 to 12. However, there is only one way to get a 2--namely from a (1,1) pair--while there are 6 ways to get
+	a 7--namely from the pairs (1,6), (2,5), (3,4), (4,3), (5,2), and (6,1). So it might make some sense
+	that the likelihood of getting a 7 is 6 times larger than that of getting a 2. Check to see if that
+	is the case with your experiment above.</p>
+</subsection>
+</section>
+
+<section>
+<title>Definition of Probability</title>
+<subsection xml:id="ProbabilityDefns">
+	<title>Motivating the Definition</title>
+	<p>Using the ideas from our examples above, let's consider how we might formally define a way
+	to measure the expectation from similar experiments.  Before doing so, we need a little notation:</p>
+	<definition>
+	<statement>The Cardinality of the set A is the number of elements in A. This will be denoted |A| (similar
+	to the idea of frequency of an outcome noted earlier.) If a set has
+	a infinite number of elements, then we will say it's cardinality is also infinite and 
+	write |A| = <m>\infty</m></statement>
+	</definition>
+	
+	<p>
+	To model the behavior above, consider how we might create a definition for our expectation
+	of a given outcome by following the ideas uncovered above. To do so, first consider a desired collection
+	of outcomes A. If each outcome in A is equally likely then we might follow the concept behind relative 
+	frequency and consider a measure of expectation be |A|/|S|. Indeed, on a standard 
+	6-sided die, the expectation of the outcome A={2} from the collection S = {1,2,3,4,5,6} should be
+	|A|/|S| = 1/6.</p>
+	<p>From the example where we take the sum of two die, the outcome A={4,5} from the
+	collection S = {2,3,4,...,12} would be</p>
+	<md>
+		<mrow>|A| = | {(1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1)}| = 7</mrow>
+		<mrow>|S| = | {(1,1),...,(1,6),(2,1),...,(2,6),...,(6,1),...,(6,6)}| = 36</mrow>
+	</md>
+	<p>and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
+	with the sum of the two outcomes from your experiment above.</p>
+				
+	<p>We are ready to now formally give a name to the theoretical measure of expectation for
+	outcomes from an experiment. Taking our cue from the ideas related to equally likely outcomes, we 
+	make our definition have the following basic properties:</p>
+	<ol>
+		<li>Relative frequency cannot be negative, since cardinality cannot be negative</li>
+		<li>Relative frequencies for disjoint events should sum to one</li>
+		<li>Relative frequencies for collections of disjoint outcomes should equal the sum of the
+	individual relative frequencies</li>
+	</ol>
+</subsection>
+<subsection>
+	<title>Probability</title>
+	<p>Based upon these we give the following:</p>
+	<definition xml:id="DefnProb">
+		<statement>The probability P(A) of a given outcome A is a set function which satisfies:
+		<ol>
+			<li>(Nonnegativity) P(A) <m>\ge 0</m></li>
+			<li>(Totality) P(S) = 1</li>
+			<li>(Subadditivity) If A <m>\cap</m> B = <m>\emptyset</m>, then P(A <m>\cup</m> B) = P(A) + P(B).  
+			In general, if {<m>A_k</m>} are pairwise disjoint then <m>P( \cup_k A_k) = \sum_k P(A_k)</m>.</li>
+		</ol>
+		</statement>
+	</definition>
+</subsection>
+	
+<subsection xml:id="BasicProbabilityTheorems">
+	<title>Basic Probability Theorems</title>
+	<p>Based upon this definition we can immediately establish a number of results.</p>
+	<theorem xml:id="ProbabilityComplemnts"><title>Probability of Complements</title>
+		<statement> For any event A, <m>P(A) + P(A^c) = 1</m>
+		</statement>
+		<proof>
+			<p>Let A be any event and note that <m>A \cap A^c = \emptyset</m>.  But <m>A \cup A^c = S</m>.
+			So, by subadditivity <m>1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)</m> as desired.</p>
+		</proof>
+	</theorem>
+	<theorem xml:id="ProbabilityEmptySet">
+		<statement><m>P(\emptyset) = 0</m>
+		</statement>
+		<proof>
+			<p>Note that <m>\emptyset^c = S</m>. So, by the theorem above, 
+			<m>1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)</m>.
+			Cancelling the 1 on both sides gives <m>P(\emptyset) = 0</m>. </p>
+		</proof>
+	</theorem>
+	<theorem xml:id="ProbabilityContainment">
+		<statement>For events A and B with <m> A \subset B, P(A) \le P(B)</m>.
+		</statement>
+		<proof>
+			<p>Assume sets A and B satisfy <m> A \subset B</m>. Then, notice that
+			<m>A \cap (B-A) = \emptyset</m> and  <m>B = A \cup (B-A)</m>. Therefore, by 
+			subadditivity and nonnegativity</p>
+			<md>
+				<mrow>0 \le P(B-A)</mrow>
+				<mrow>P(A) \le P(A) + P(B-A) </mrow>
+				<mrow>P(A) \le P(B)</mrow>
+			</md>
+		</proof>
+	</theorem>
+	<theorem xml:id="ProbabilityLessThanOne">
+		<statement>For any event A, <m>P(A) \le 1</m> 
+		</statement>
+		<proof>
+			<p>Notice <m>A \subset S</m>. By the theorem above <m> P(A) \le P(S) = 1</m></p>
+		</proof>
+	</theorem>
+	<theorem xml:id="ProbabilityTwoUnions">
+		<statement>For any sets A and B, <m>P(A \cup B) = P(A) + P(B) - P(A \cap B)</m>
+		</statement>
+		<proof>
+			<p>Notice that we can write <m>A \cup B</m> as the disjoint union</p>
+			<md>
+				<mrow>A \cup B = (A-B) \cup (A \cap B) \cup (B-A).</mrow>
+			</md> 
+			<p>We can also write disjointly</p>
+			<md>
+				<mrow>A = (A-B) \cup (A \cap B)</mrow>
+				<mrow>B = (A \cap B) \cup (B-A)</mrow>
+			</md>
+			<p>Hence, </p>
+			<md>
+				<mrow>P(A) &amp; + P(B) - P(A \cap B) </mrow>
+				<mrow>&amp; = [P(A-B) + P(A \cap B)] + [P(A \cap B) + P(B-A)] - P(A \cap B)</mrow>
+				<mrow>&amp; = P(A-B) + P(A \cap B) + P(B-A)</mrow>
+				<mrow>&amp; = P(A \cup B)</mrow>
+			</md>
+		</proof>
+	</theorem>
+	<p>This result can be extended to more that two sets using a property known as inclusion-exclusion. The
+	following two theorems illustrate this property and are presented without proof.
+	</p>
+	<corollary xml:id="ProbabilityThreeUnions">
+		<statement>
+			For any sets A, B and C, 
+			<md>
+				<mrow>P(A \cup B \cup C) &amp; = P(A) + P(B) + P(C)</mrow> 
+			   	<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(B \cap C) </mrow>
+			   	<mrow>&amp; + P(A \cap B \cap C)</mrow>
+			</md>
+		</statement>
+	</corollary>
+	<corollary xml:id="ProbabilityFourUnions">
+		<statement>
+			For any sets A, B, C and D, 
+			<md>
+				<mrow>P(A \cup B \cup C \cup D) &amp; = P(A) + P(B) + P(C) + P(D)</mrow>
+			  	<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(A \cap D)  - P(B \cap C) - P(B \cap D) - P(C \cap D)</mrow>
+			  	<mrow>&amp; + P(A \cap B \cap C) + P(A \cap B \cap D) + P(A \cap C \cap D) + P(B \cap C \cap D)</mrow>
+			  	<mrow>&amp; - P(A \cap B \cap C \cap D)</mrow>
+			</md>
+		</statement>
+	</corollary>
+</subsection>
+</section>
+
+<section>
+<title>Conditional Probability</title>
+<subsection>
+	<title>Motivating Examples</title>
+	<example>
+	<p>Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption,
+	the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose
+	that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves
+	you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the 
+	probability changed for the second trial dependent on the outcome of the first trial.</p>
+	</example>
+	<example>
+	<p>Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. 
+	When extracting one card randomly, the probability
+	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and set
+	aside.  Now, 
+	prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the 
+	second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second
+	draw. To compute this probability correctly, one need to formulate the question so that subadditivity can 
+	be utilized.</p>
+	<p>
+	To do this, consider 
+	P(Heart on 2nd draw) 
+	= P( [Heart on 1st draw <m>\cap</m> Heart on 2nd draw] <m>\cup</m> [Not Heart on 1st draw <m>\cap</m> Heart on 2nd draw] )
+	= P(Heart on 1st draw <m>\cap</m> Heart on 2nd draw ) + P(Not Heart on 1st draw <m>\cap</m> Heart on 2nd draw )
+	= | Heart on 1st draw <m>\cap</m> Heart on 2nd draw | / | Number of ways to get two cards |
+	+ | Not Heart on 1st draw <m>\cap</m> Heart on 2nd draw / | Number of ways to get two cards |
+	= (13 12) / (52 51) + (39 13) / (52 51) = 12 / (4 51) + (3 13) / ( 4 51) =  
+
+	</p>
+	</example>
+</subsection>
+<subsection>
+<title>Conditional Probability</title>
+	<subsection>
+	<title>Definition</title>
+		<definition>
+		<title>Conditional Probability</title>
+			<statement>P(B | A) = P(A <m>\cap</m> B) / P(A)</statement>
+		</definition>
+		<theorem>
+		<statement>Conditional Probability satisfies all of the requirements of regular probability.</statement>
+		</theorem>
+	</subsection>
+	<subsection>	
+	<title>Bayes</title>
+		<theorem>
+		<title>Bayes Theorem</title>
+		<statement>
+		Stub
+		</statement>
+		</theorem>
+	</subsection>
+</subsection>
+
+</section>
+
+<section>
+<title>Independence</title>
+	<definition>
+	<title>Independent Events</title>
+	<statement>Events A and B are independent provided <m>P(A \cap B) = P(A) P(B)</m>
+	</statement>
+	</definition>
+</section>
+
+<section><title>Random Variables</title>
+	<p>For a given set of events, we might have difficulty doing mathematics since the outcomes
+	are not numerical. In order to accomodate our desire to convert to numerical measures we want
+	to assign numerical values to all outcomes. The process of doing this creates what is known as a random
+	variable.
+	</p>
+
+	<definition>
+	<title>Random Variable</title>
+		<statement>Given a random experiment with sample space S, a function X mapping each 
+		element of S to a unique real number is called a random variable. 
+		For each element s from the sample space S, denote this function by
+		X(s) = x
+		and call the range of X the space of X: R={ x : X(s)=x, for some s in S} 
+		</statement>
+	</definition>
+
+	<p>We will make various restrictions on the range of the random variable to fit different 
+	generalized problems. Then, we will be able to work on a problem (which may be 
+	inherently non-numerical) by using the random variable in subsequent calculations.
+	</p>
+	<example>
+	<p>When dealing with only two outcomes, one might use S = { success, failure}.
+	Choose X(success)=1, X(failure)=0. Then, R={0,1}.</p>
+	</example>
+	<example>
+	<p>When gambling with a pair of dice, one might use
+	S=ordered pairs of all possible rolls = {(a,b): a=die 1 outcome, b=die 2 outcome}.
+	Choose X( (a,b) ) = a+b. Then, R={2, 3, 4, 5, ..., 12}.</p>
+	</example>
+	<example>
+	<p>When rolling dice in a board game (like RISK), one might use
+	S={(a,b): a=die 1 outcome, b=die 2 outcome}
+	Choose X( (a,b) ) = max{a,b}. Then, R={1, 2, 3, 4, 5, 6}
+	</p>
+	</example>
+
+	<definition>
+		<statement>
+		R contains a countable number of points if either R is finite or there 
+		is a one to one correspondence between R and the positive integers. 
+		Such a set will be called discrete. We will see that often the set R is not countable. 
+		If R consists of an interval of points (or a union of intervals), 
+		then we call X a continuous random variable. 
+		</statement>
+	</definition>
+
+</section>
+
+
+<section xml:id="ProbabilityFunctions"><title>Probability Functions</title>
+<p>In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From
+this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so 
+to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition 
+which takes s to a numerical value x which is then plugged into f to get the same final values.</p>
+
+	<definition><title>Probability Mass Function</title>
+		<statement>Given a discrete random variable X on a space R, a probability mass function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
+		<md>
+			<mrow>&amp; \forall x \in R , f(x) \gt 0</mrow>
+			<mrow>&amp; \sum_{x \in R} f(x) = 1</mrow>
+			<mrow>&amp; A \subset R \Rightarrow P(X \in A) = \sum_{x \in A}f(x)</mrow>
+		</md>
+		</statement>
+	</definition>
+	
+	<definition><title>Probability Density Function</title>
+		<statement>Given a continuous random variable X on a space R, a probability density function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
+			<md>
+				<mrow>&amp; \forall x \in R , f(x) \gt 0</mrow>
+				<mrow>&amp; \int_{R} f(x) = 1</mrow>
+				<mrow>&amp; A \subset R \Rightarrow P(X \in A) = \int_{A} f(x) dx</mrow>
+			</md>
+		</statement>
+	</definition>
+	
+	<definition><title>Distribution Function</title>
+		<statement>Given a random variable X on a space R, a probability distribution function on X is given by a function 
+				   <m>F:\mathbb{R} \rightarrow \mathbb{R}</m> such that <m>\displaystyle F(x)=P(X \le x)</m>
+		</statement>
+	</definition>	
+	
+	<subsection>
+	<title>Properties of the Distribution Function</title>
+		
+		<theorem xml:id="theorem-Fmin">
+			<statement><m>F(x)=0, \forall x \le \inf(R)</m></statement>
+			<proof>TBA</proof>
+		</theorem>
+		
+		<theorem xml:id="theorem-Fmax">
+			<statement><m>F(x)=1, \forall x \ge \sup(R)</m></statement>
+			<proof>TBA</proof>
+		</theorem>
+		
+		<theorem>
+			<statement xml:id="theorem-F-non-decreasing">F is non-decreasing</statement>
+			<proof>
+				<p>Case 1: R discrete</p>
+				<md>
+					<mrow>\forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2</mrow>
+					<mrow>F(x_2) &amp; = \sum_{x \le x_2} f(x) </mrow>
+					<mrow>&amp; = \sum_{x \le x_1} f(x) + \sum_{x_1 \lt x \le x_2} f(x)</mrow>
+					<mrow>&amp; \ge \sum_{x \le x_1} f(x) = F(x_1)</mrow>
+				</md>
+				<p>Case 2: R continuous</p>
+				<md>
+					<mrow>\forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2</mrow>
+					<mrow>F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx </mrow>
+					<mrow> &amp; = \int_{-\infty}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx</mrow>
+					<mrow> &amp; \ge \int_{-\infty}^{x_1} f(x) dx</mrow>
+					<mrow> &amp; = F(x_1)</mrow>
+				</md>
+			</proof>
+		</theorem>
+		
+		<theorem xml:id="theorem-Fvsf-discrete">
+			<title>Using Discrete Distribution Function to compute probabilities</title>
+			<statement>for <m>x \in R, f(x) = F(x) - F(x-1)</m></statement>
+		</theorem>
+		
+		<theorem xml:id="theorem-Fvsf-continuyous">
+			<title>Using Continuous Distribution function to compute probabilities</title>
+			<statement>for <m>a \lt b, (a,b) \in R, P(a \lt X \lt b) = F(b) - F(a)</m></statement>
+		</theorem>
+		
+		<corollary xml:id="corollary-ProbPointZero-continuous">
+			<statement>For continuous distributions, P(X = a) = 0</statement>
+		</corollary>
+		
+	</subsection>
+	
+	<subsection>
+		<title>Standard Units</title>
+			<p>Any distribution variable can be converted to “standard units” using the linear translation 
+			<m>\displaystyle z = \frac{x-\mu}{\sigma}</m>. In doing so, then values of z will always represent the number of
+			standard deviations x is from the mean and will provide “dimensionless” comparisons.</p>
+	</subsection>    
+
+</section>
+
+
+
+</chapter>

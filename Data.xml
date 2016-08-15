@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="RepresentingData" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Representing Data</title>
+
+<section>	
+	<title>Measurement Scales</title>
+
+	<ul>
+		<li>Nominal - Mutually Exclusive and Exhaustive categories for which the numerical value has only identification
+		significance. Ex: Male = 1, Female = -1</li>
+		<li>Ordinal - Discrete values ranked from lowest to highest or vice versa. Ex: Class grades for GPA.</li>
+		<li>Interval - Ordinal data where distance between data values is of significance. Ex: Heights and Weights.</li>
+		<li>Ratio - Interval data where ratios of observations have meaning. Ex: Percentile rankings</li>
+	</ul>
+</section>
+
+	
+<section>
+<title>Techniques for Representing Data</title>
+<ul>
+	<li>Tabular Methods - 
+	based on the entire population yielding a global picture
+		<ul>
+			<li>frequency distributions</li>
+			<li>relative frequency distributions</li>
+			<li>cummulative frequency distributions</li>
+			<li>Stem-and-Leaf Displays</li>
+			<li>Box-and-Whisker Diagrams</li>
+		</ul>
+	</li>
+	<li>Summary Methods
+		<ul>
+			<li>Measures of the center
+				<ol>
+				 <li>Mean</li>
+				 <li>Median</li>
+				 <li>Mode</li>
+				</ol>
+			</li>
+			<li>Measures of spread
+				<ol>
+				 <li>Range</li>
+				 <li>Variance and Standard Deviation</li>
+				 <li>Quantiles</li>
+				 </ol>
+			</li>
+			<li>Measures of Skewness 
+			- indicates the level of symmetry of the data
+				<ol>
+				 <li>Pearson Coefficient</li>
+				 <li>Standard Skewness</li>
+				 <li>Bowley's Measure</li>
+				</ol>
+			</li>
+			<li>Measures of Kurtosis 
+			- indicates flatness or roundedness of the peak of the data
+				<ol>
+				 <li>Standard Kurtosis</li>
+				 <li>Coefficient of Kurtosis</li>
+				</ol>
+			</li>
+			<li>Measures of Association for Bivariate Data 
+			- indicates the likeliness of functional correlation of the data.
+				<ol>
+				 <li>Pearson Correlation Coefficient</li>
+				 <li>Spearman Rank Correlation Cooeficient</li>
+				 <li>Quantile-Quantile Plots</li>
+				</ol>
+			</li>
+			<li>Detection of Outliers 
+			- indicates whether abnormally large or small data distorts other 
+			techniques
+				<ol>
+				 <li>Z-scores</li>
+				 <li>Trimming</li>
+				 <li>Winsorizing</li>
+				</ol>
+			</li>
+			<li>Tests for Normality 
+			- indictes if the data is bell-shaped
+				<ol>
+				 <li>Standard Percentages relative to standard deviations from the mean</li>
+				 <li>Chi-square</li>
+				 <li>Kolmogorov-Smirnov</li>
+				 <li>Lilliefors</li>
+				 <li>Shapiro-Wilk</li>
+				</ol>
+			</li>
+			<li>Tests for Randomness 
+			- indicates whether the data has a non-systematic pattern
+				<ol>
+				 <li>Runs Test</li>
+				 <li>Mean-Square Successive Differences</li> 
+				</ol>
+			</li>	
+		</ul>
+	</li>
+
+</ul>
+<p>Remark: Many of these measures above are relative and some are absolute.</p>
+	
+</section>
+
+
+
+<section>
+<title>Measures of the Middle</title>
+
+<p>
+Defn: Suppose X is a discrete random variable with range R = {x1, x2, ..., xn} and pmf f(x). In general:
+The arithmetic mean is a measure of the middle
+μ = x1f(x1) + ... + xnf(xn) = ∑ .
+=
+n
+k
+kk xfx
+1
+)(
+The mean is often called the centroid in the sense that if the xk were locations of objects of weight f(xk), then the centroid
+would be the point where this system of n masses would balance. 
+</p>
+
+<p>
+Other Means:
+• Geometric Mean = (x1 x2 … xn)
+1/n
+• Harmonic Mean =
+∑=
+n
+k
+k
+</p>
+
+<theorem>
+<title>Relationships between various means</title>
+	<statement>Harmonic Mean <m>\le</m> Geometric Mean <m>\le</m> Arithmetic Mean. </statement>
+</theorem>
+
+</section>
+
+
+<section>
+<title>Measures of Spread</title>
+
+
+<p>Measures of spread:
+• Average Deviation from the Mean – always zero for any distribution
+• Average Absolute Deviation from the Mean – difficult to deal with algebra when absolute values are used
+• Average Squared Deviation from the Mean – always non-negative and good with algebra and calculus 
+</p>
+
+<definition><title>Variance</title>
+<statement>The variance is a measure of spread found by using the average squared deviation from the mean
+σ2
+ = ( ) )(
+2
+1
+k
+n
+k
+k ∑ xfx =
+− μ
+if this value exists and is also denoted by Var(X). The positive square root of the variance is called the standard deviation
+and is denoted by σ. </statement>
+</definition>
+
+</section>
+</chapter>

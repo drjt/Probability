@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="BinomNegBinom" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<title>Binomial, Geometric, and Negative Binomial Distributions</title>
+
+<introduction>
+	<p>Distributions relating number of successes to number of trials with one 
+	of these variable and the other fixed.</p>
+</introduction>
+
+<section xml:id="BinomialDistribution">
+ 	<title>Binomial Distribution</title>	
+	<p>Consider the situation where one can observe a sequence  of n
+	independent trials with the likelihood of a 
+	success on each individual trial stays constant from trial to trial.
+	Call this likelihood the probably of "success" and 
+	denote its value by 
+	<m>p</m> where <m> 0 \lt p \lt 1 </m>.  
+	If we let the variable <m>X</m> measure the number of successes 
+	obtained when doing a fixed number of trials n, then the resulting
+	distribution of probabilities is called a Binomial Distribution.</p>
+	<subsection>
+		<title>Derivation of Binomial Probability Function</title>
+		<p> Since successive trials are independent, then the probability of X successes occurring within n 
+		trials is given by 
+		<m>P(X=x) = \binom{n}{x}P(SS...SFF...F) = \binom{n}{x}p^x(1-p)^{n-x}</m></p>
+	</subsection> 
+	<subsection>
+		<title>Binomial Distribution mean</title>
+		<md>
+			<mrow> \mu = E[X] &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow>
+			<mrow> &amp; = \sum_{x=1}^{n} {x \frac{n(n-1)!}{x(x-1)!(n-x)!} p^x (1-p)^{n-x}}</mrow>
+			<mrow> &amp; = np \sum_{x=1}^{n} {\frac{(n-1)!}{(x-1)!((n-1)-(x-1))!} p^{x-1} (1-p)^{(n-1)-(x-1)}}</mrow>
+		</md>
+		<p>Using the change of variables <m>k=x-1</m> and <m>m = n-1</m> yields a binomial series</p>
+		<md>
+			<mrow> &amp; = np \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}}</mrow>
+			<mrow> &amp; = np (p + (1-p))^m = np</mrow>
+		</md>
+	</subsection>
+	<subsection>
+		<title>Binomial Distribution variance</title>
+<md>
+<mrow> \sigma^2 = E[X(X-1)] + \mu - \mu^2 &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow>
+<mrow> &amp; = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2</mrow>
+<mrow> &amp; = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow>
+</md>
+
+		<p>Using the change of variables <m>k=x-2</m> and <m>m = n-2</m> yields a binomial series</p>
+		<md>
+			<mrow> &amp; = n(n-1)p^2  \sum{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2</mrow>
+			<mrow> &amp; = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)</mrow>
+		</md>
+	</subsection>
+</section>
+
+
+
+<section xml:id="GeometricDistribution">
+	<title>Geometric and Negative Binomial Distribution</title>
+	<p>Consider the situation where one can observe a sequence  of independent
+	trials where the likelihood of a success on each individual trial
+	stays constant from trial to trial. Call this likelihood the probably of
+	"success" and denote its value by <m>p</m> 
+	where <m> 0 \lt p \lt 1 </m>.  
+	If we let the variable <m>X</m> measure the number of trials needed in order
+	to obtain the first success, 
+	then the resulting distribution of probabilities is called a 
+	Geometric Distribution.</p>
+		
+	<subsection>
+		<title>Derivation of Geometric Probability Function</title>
+			<p> Since successive trials are independent, then the probability 
+			of the first success occurring on the mth trial presumes that
+			the previous m-1 trials were all failures.  Therefore the 
+			desired probability is given by </p>
+			<me>f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p</me>
+	</subsection> 
+	
+	<subsection><title>Properties of the Geometric Distribution</title>
+		<title>Geometric Distribution sums to 1</title>
+		<md>
+			<mrow>\SUM {k=1} {\infty} {f(x)} = \sum_{k=1}^{\infty} {(1-p)^{k-1} p} = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1</mrow>
+		</md>
+	</subsection>
+	
+	<subsection>
+		<title>Derivation of Geometric Mean</title>
+			<p> </p>
+			<md>
+				<mrow>\mu &amp; = E[X] = \sum_{k=0}^{\infty} {k(1-p)^{k-1}p}</mrow>
+				<mrow> &amp; = p \sum_{k=1}^{\infty} {k(1-p)^{k-1}}</mrow>
+				<mrow> &amp; = p \frac{1}{(1-(1-p))^2}</mrow>
+				<mrow> &amp; = p \frac{1}{p^2} = \frac{1}{p}</mrow>
+			</md>
+	</subsection> 
+	
+	<subsection>
+		<title>Derivation of Geometric Variance</title>
+			<p> </p>
+			<md>
+				<mrow>\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
+				<mrow> &amp; = \su _{k=0}^{\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 </mrow>
+				<mrow> &amp; = (1-p)p \sum_{k=2}^{\infty} {k(k-1)(1-p)^{k-2}} + \frac{1}{p} - \frac{1}{p^2}</mrow>
+				<mrow> &amp; = (1-p)p \frac{2}{(1-(1-p))^3} + \frac{1}{p} - \frac{1}{p^2}</mrow>
+				<mrow> &amp; = \frac{1-p}{p^2}</mrow>
+			</md>
+	</subsection> 
+	
+	<subsection>
+		<title>Derivation of Geometric Distribution Function</title>
+		<p> Consider the accumulated probabilities over a range of values...</p>
+		<md>
+			<mrow> P(X \le a) &amp; = 1 - P(X \gt a)</mrow>
+			<mrow> &amp; = 1- \sum_{k={a+1}}^{\infty} {(1-p)^{k-1}p}</mrow>
+			<mrow> &amp; = 1- p \frac{(1-p)^{a}}{1-(1-p)}</mrow>
+			<mrow> &amp; = 1- (1-p)^{a}</mrow>
+		</md>
+	</subsection> 
+</section>
+
+<section>
+	<title>Negative Binomial</title>	
+	<p>Consider the situation where one can observe a sequence  of independent
+	trials where the likelihood of a success on each individual trial
+	stays constant from trial to trial. Call this likelihood the probably of
+	"success" and denote its value by <m>p</m> 
+	where <m> 0 \lt p \lt 1 </m>.  
+	If we let the variable <m>X</m> measure the number of trials needed in order
+	to obtain the rth success, <m>r \ge 1</m> 
+	then the resulting distribution of probabilities is called a 
+	Geometric Distribution.</p>
+	<p>Note that r=1 gives the Geometric Distribution.</p>
+	<subsection><title>Negative Binomial Series</title>
+		<theorem xml:id="theorem-NegBinomSeries">
+		<statement> 
+			<m>\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}</m> 
+		</statement>
+		</theorem>
+		<proof>					
+			<p>First, convert the problem to a slightly different form:</p>		
+			<m> \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
+						 = \frac{1}{b^n} \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
+			</m>
+
+			<p>So, let's replace <m>\frac{a}{b} = x</m> and ignore for a while the term factored out. Then, we only need to show </p>
+			<md>
+				<mrow>\sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k} = \left ( \frac{1}{1+x} \right )^n </mrow>
+			</md>
+			<p>However</p>
+			<md>
+				<mrow> \left ( \frac{1}{1+x} \right )^n &amp; = \left ( \frac{1}{1 - (-x)} \right )^n </mrow>
+				<mrow> &amp; = \left ( \sum_{k=0}^{\infty} {(-1)^k x^k} \right )^n</mrow>
+			</md>
+			
+			<p>This infinite sum raised to a power can be expanded by distributing terms in the standard way. 
+			In doing so, the various powers of x multiplied together
+			will create a series in powers of x involving <m>x^0, x^1, x^2, ...</m>.  
+			To detemine the final coefficients notice that the number of time <m>m^k</m> will 
+			appear in this product depends upon the number of ways one can write k as a sum of nonnegative integers.</p>
+			<p>For example, the coefficient of <m>x^3</m> will come from the n ways of multiplying the coefficients 
+			<m>x^3, x^0, ..., x^0</m> and <m>x^2, x^1, x^0, ..., x^0</m>
+			 and <m>x^1, x^1, x^1, x^0,..., x^0</m>. This is equivalent to finding the number of ways to write the 
+			 number k as a sum of nonnegative integers. The possible set of
+			 nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  
+			 For example, if k = 3 then *||** means 
+			 <m>x^1 x^0 x^2 = x^3</m>. Similarly for k = 5 and |**|*|**| implies <m> x^0 x^2 x^1 x^2 x^0 = x^5</m>. 
+			 The number of ways to interchange the identical *'s among the
+			 idential |'s is <m>\binom{n+k-1}{k}</m>. </p>
+			 <p>Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x 
+			 will require an odd number of odd powers. So, the 
+			 coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,</p>
+			<md>	
+				<mrow> \left ( \frac{1}{1+x} \right )^n = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k}</mrow>
+			</md>	
+			<p>Similarly,</p>
+			<m> \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}</m>
+
+		</proof>	
+	</subsection>	
+			
+	<subsection>
+		<title>Negative Binomial Distribution Formulas</title>
+		<p>Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success 
+		on each individual trial <m>p</m> where 
+		<m> 0 \lt p \lt 1 </m>.  For a positive integer r, let the variable <m>X</m> measure the number of 
+		trials needed in order to obtain the rth success.
+		Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
+
+			<p> Since successive trials are independent, then the probability of the rth success occurring on the 
+			mth trial presumes that in 
+			the previous m-1 trials were r-1 successes and m-r failures.  Therefore the desired probability is given by 
+			<md><mrow>P(X=m) = \binom{m - 1}{r-1}(1-p)^{m-r}p^r</mrow></md>
+			</p>
+
+			<title>Negative Binomial Distribution Sums to 1</title>
+			<m>\SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}p^r} &amp; = p^r \SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}}</m>
+			<p>and by using <m>k = m-r</m></p>
+			<md>
+				<mrow> &amp; = p^r \sum_{k=0}^{\infty} {\binom{r + k - 1}{k}(1-p)^k}</mrow>
+				<mrow> &amp; = p^r \frac{1}{(1-(1-p))^r}</mrow>
+				<mrow> &amp; = 1</mrow>
+			</md>
+
+	</subsection>
+</section>
+
+</chapter>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+
+    <xi:include href="./bookinfo.xml" /> 
+    
+	<book xml:id="Intro_Probability_And_Statistics">
+    	<title>Introduction to Mathematical Probability and Statistics</title>
+    	<subtitle>A Calculus-based Approach</subtitle>
+  	
+	  	<xi:include href="./frontmatter.xml" /> 
+
+  		<xi:include href="./PowerSeriesReview.xml" /> 
+  		<xi:include href="./Data.xml" /> 
+  		   
+  		<xi:include href="./Combinatorics.xml" />    
+  		   
+  		<xi:include href="./ProbabiltyGeneralities.xml" /> 
+  		<xi:include href="./Binomial.xml" /> 
+  		<xi:include href="./Intervals.xml" /> 
+
+	</book>
+
+</mathbook>

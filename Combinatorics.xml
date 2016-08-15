@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="Combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Counting and Combinatorics</title>
+
+<section>	
+	<title>Introduction</title>
+<p>Discussion on the usefulness of having ways to count the number
+of elements in a set without having to explicitly listing all elements.</p>
+<p>Consider counting the number of ways one can arrange Peter, Paul, and Mary with the order important.  Listing the possibilities:
+<ul>
+	<li>Peter, Paul, Mary</li>
+	<li>Peter, Mary, Paul</li>
+	<li>Paul, Peter, Mary</li>
+	<li>Paul, Mary, Peter</li>
+	<li>Mary, Peter, Paul</li>
+	<li>Mary, Paul, Peter</li>
+</ul>
+So, it is easy to see that these are all of the possible outcomes and that the total number of such outcomes is 6. What happens however if we add Simone to the list?
+<ul>
+	<li>Simone, Peter, Paul, Mary</li>
+	<li>Simone, Peter, Mary, Paul</li>
+	<li>Simone, Paul, Peter, Mary</li>
+	<li>Simone, Paul, Mary, Peter</li>
+	<li>Simone, Mary, Peter, Paul</li>
+	<li>Simone, Mary, Paul, Peter</li>
+
+	<li>Peter, Simone, Paul, Mary</li>
+	<li>Peter, Simone, Mary, Paul</li>
+	<li>Paul, Simone, Peter, Mary</li>
+	<li>Paul, Simone, Mary, Peter</li>
+	<li>Mary, Simone, Peter, Paul</li>
+	<li>Mary, Simone, Paul, Peter</li>
+
+	<li>Peter, Paul, Simone, Mary</li>
+	<li>Peter, Mary, Simone, Paul</li>
+	<li>Paul, Peter, Simone, Mary</li>
+	<li>Paul, Mary, Simone, Peter</li>
+	<li>Mary, Peter, Simone, Paul</li>
+	<li>Mary, Paul, Simone, Peter</li>
+
+	<li>Peter, Paul, Mary, Simone</li>
+	<li>Peter, Mary, Paul, Simone</li>
+	<li>Paul, Peter, Mary, Simone</li>
+	<li>Paul, Mary, Peter, Simone</li>
+	<li>Mary, Peter, Paul, Simone</li>
+	<li>Mary, Paul, Peter, Simone</li>
+</ul>
+Notice how the list quickly grows when just adding one more choice. This illustrates how keeping track of the number of items in a set can quickly get impossible to keep up with and to count unless we can approach this problem using a more mathematical approach.
+</p>
+	<definition>
+	<title>Cardinality</title>
+		<statement>Given a set of elements A, the number of elements in the 
+		set is known as the sets cardinality and is denoted |A|. If the set has 
+		an infinite number of elements then we set |A| = <m>\infty</m>.
+		</statement>
+	</definition>
+	
+	<p>In order to "count without counting" we establish the following 
+	foundational principle.</p>
+	
+	<theorem>
+		<title>Multiplication Principle</title>
+		<statement>Given two successive events A and B, the number of ways 
+		to perform A and then B is |A||B|.
+		</statement>
+		<proof>
+			<p>If either of the events has infinite cardinality, then it is 
+			clear
+			that the number of ways to perform A and then B will also be 
+			infinite. So, assume that both |A| and |B| are finite.
+			In order to count the successive events, enumerate the elements in
+			each set
+			<md>
+				<mrow>A = \left \{ a_1, a_2, a_3, ... , a_{|A|} \right \}</mrow> 	
+				and
+				<mrow>B = \left \{  b_1, b_2, b_3, ... , b_{|B|} \right \}</mrow>
+			</md>
+			and consider the function f(k,j) = (k-1)|B| + j. This function is 
+			one-to-one and onto from the set 
+			<md>
+				<mrow>\left \{ (k,j): 1 \le k \le |A|, 1 \le j \le |B| \right \} </mrow>
+			</md> 
+			onto 
+			<md>
+				<mrow>\left \{ s : 1 \le s \le |A| |B| \right \}.</mrow>
+			</md> 
+			Since this
+			second set has |A| |B| elements then the conclusion follows. 
+			coordinates.</p>
+		</proof>
+	</theorem>
+	<definition>
+	<title>Factorial</title>
+		<statement>
+		<p>For any natural number n, 
+		<md>
+			<mrow>n! = n(n-1)(n-2) ... 3 \cdot 2 \cdot 1</mrow>
+		</md>
+		</p>
+		</statement>
+	</definition>
+</section>
+
+<section>
+<title>Permutations</title>
+<p>When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.</p>
+	<theorem>
+	<title>Permutations of n objects</title>
+	<statement>The number of ways to arrange n distinct items is n!</statement>
+		<proof>
+			<p>Notice that if n=1, then there is only 1 item to arrange and 
+			that there is only one possible arrangment.</p>
+			<p>
+			By induction, assume that any set with n elements has n! arrangments 
+			and assume that 
+			<md>
+			<mrow>|A| = \left \{ a_1, a_2, ... , a_n, a_{n+1} \right \}.</mrow>
+			</md>
+			Notice that there are n+1 ways to choose 1 element from A and that in doing so leaves a set with n elements. Combining the induction hypothesis with the multiplication principle this gives (n+1)n! = (n+1)! possible outcomes.
+			</p>
+		</proof>
+	</theorem>
+
+	<theorem>
+	<title>Permutations of n objects selecting r</title>
+		<statement>
+			<p>
+			The number of ways to arrange r items from a set of n distinct items 
+			is <m> P_r^n = \frac{n!}{(n-r)!} </m>
+			</p>
+		</statement>
+		<proof>
+			<p>
+			Apply the multiplication principle r times noting that there are 
+			n choices for the first selection, n-1 choices for the second
+			selection, and with n-r+1 choices for the rth selection. This gives
+			<md>
+				<mrow>P_r^n &amp; = n(n-1) ... (n-r+1)</mrow>
+				<mrow>&amp; = n(n-1) ... (n-r+1)\frac{(n-r)!}{(n-r)!}</mrow>
+				<mrow>&amp; = \frac{n(n-1) ... (n-r+1)(n-r)!}{(n-r)!}</mrow>
+				<mrow>&amp; = \frac{n!}{(n-r)!}</mrow>
+			</md>
+			</p>
+		</proof>
+	</theorem>
+	
+	<theorem>
+	<title>Permutations when Not all items are distinguishable and without replacement: (Multinomial Coefficients)</title>
+	<statement>
+If n items belong to s categories, n1 in first, n2 in second, ... , ns in the last, the number of ways to pick all is
+!	
+	</statement>
+	</theorem>
+	
+</section>
+
+<section>
+<title>Combinations</title>
+<p>When counting various outcomes sometimes the order of things does not matter.
+In this case we count each different set of outcomes a combination. </p>
+	<theorem>
+	<title>Combinations of n objects selecting r</title>
+		<statement>
+			<p>
+			The number of ways to arrange r items from a set of n distinct items 
+			is <m> C_r^n = \frac{n!}{r!(n-r)!} </m>
+			</p>
+		</statement>
+		<proof>
+			<p>
+			Consider creating a permutation of r objects from a set of size n
+			by first picking an unordered subset of size r and then counting 
+			the number of ways to order that subset. Using our notation and the
+			multiplication principle,
+			<md>
+				<mrow>P_r^n = C_r^n \cdot r!</mrow>
+			</md>
+			Solving give the result.
+			</p>
+		</proof>
+	</theorem>
+	
+	<definition>
+	<title>Binomial Coefficients</title>
+		<statement>
+		<p>
+		The value <m>C_r^n</m> is known as the binomial coefficient. It is
+		denoted by <m>{n \choose r}</m> and is read "n choose k".
+		</p>
+		</statement>
+	</definition>
+	
+
+	<theorem>
+	<title>Combinations when distinguishable and with replacement</title>
+	<statement>
+	= Number of ways to get unordered samples of size r from n objects. 
+	</statement>
+	</theorem>
+	
+	<p>Lots of interesting facts about the binomial coefficients.</p>
+
+
+</section>
+</chapter>
