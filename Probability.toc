@@ -1,0 +1,38 @@
+\contentsline {section}{\numberline {1}Geometric and Negative Binomial Series}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Geometric Series}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Alternate Forms for the Geometric Series}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Probability Functions}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Properties of the Distribution Function}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Standard Units}{5}{subsection.2.2}
+\contentsline {section}{\numberline {3}Geometric and Negative Binomial Distribution}{5}{section.3}
+\contentsline {subsection}{\numberline {3.1}Derivation of Geometric Probability Function}{5}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Properties of the Geometric DistributionGeometric Distribution sums to 1}{5}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Derivation of Geometric Mean}{6}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Derivation of Geometric Variance}{6}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Derivation of Geometric Distribution Function}{6}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Negative Binomial Series}{6}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Negative Binomial Distribution}{7}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Derivation of Negative Binomial Probability Function}{7}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.9}Negative Binomial Distribution Sums to 1}{8}{subsection.3.9}
+\contentsline {section}{\numberline {4}Binomial}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Binomial Series}{9}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}}{9}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Trinomial Series}{9}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Binomial Distribution}{9}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Derivation of Binomial Probability Function}{9}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Binomial Distribution mean}{9}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Binomial Distribution variance}{10}{subsection.4.8}
+\contentsline {section}{\numberline {5}Poisson}{10}{section.5}
+\contentsline {subsection}{\numberline {5.1}Derivation of Poisson Formulas}{10}{subsection.5.1}
+\contentsline {section}{\numberline {6}Exponential and Gamma Distributions}{12}{section.6}
+\contentsline {subsection}{\numberline {6.1}Exponential Distribution Derivation}{12}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Verification of exponential probability function}{12}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Mean of the exponential distribution}{13}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Alternate form for the exponential distribution}{13}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Variance of the exponential distribution}{13}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Gamma Distribution Derivation}{13}{subsection.6.6}
+\contentsline {section}{\numberline {7}The Normal Distribution}{13}{section.7}
+\contentsline {subsection}{\numberline {7.1}Derivation of properties of the Normal Distribution}{14}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Standard Units and the Standard Normal Curve}{14}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Total Area under normal curve}{14}{subsection.7.3}

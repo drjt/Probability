@@ -1,0 +1,25 @@
+<!--*                                    *-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2016-03-23T16:02:31-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
+<p>Once again by using \(x = \sigma z + \mu\) yields (using integration by parts on the final integral)</p>\begin{align*}
+Var(X) &amp; = E[X^2] - \mu^2 \\
+ &amp; = 
+	   \int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2\pi}} x^2 \cdot e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2} dx - \mu^2\\
+ &amp; = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}(\sigma z + \mu)^2 e^{-z^2 / 2} dz - \mu^2\\
+ &amp; = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \sigma^2 z^2 e^{-z^2 / 2} dz
+		+ \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} 2\sigma z \cdot \mu e^{-z^2 / 2} dz
+		+ \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \mu^2 e^{-z^2 / 2} dz - \mu^2\\
+ &amp; = \sigma^2 \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} z^2 e^{-z^2 / 2} dz
+		+ 2\sigma \mu \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} z e^{-z^2 / 2} dz
+		+ \mu^2 \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-z^2 / 2} dz - \mu^2\\
+ &amp; = \sigma^2 \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} z \cdot z e^{-z^2 / 2} dz + 2\sigma \mu \cdot 0 + \mu^2 -\mu^2\\
+ &amp; = \sigma^2 \left [ -z e^{-z^2/2} \Big |_{-\infty}^{\infty} 
+		- \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} -e^{-z^2 / 2} dz \right ] + 0\\
+ &amp; = \sigma^2 \left [ (0-0) - (-1) \right ]\\
+ &amp; = \sigma^2
+\end{align*}<p>Therefore, the provided parameter \(\sigma\) is indeed the standard deviation of the 
+   					distribution and it’s square is the variance.</p></article><div class="context-link" style="text-align:right;"><a href="NormalDistribution.html#proof-12">(in-context)</a></div>

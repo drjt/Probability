@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Overall element for a Mathbook XML document; mandatory, always-->
+<mathbook>
+
+    <!--
+    "docinfo" is like metadata, it mostly migrates
+    various places, or gets used multiple times  -->
+    <docinfo>
+        <!-- There can be several authors here -->
+        <author>
+            <personname>John Travis</personname>
+            <department>Department of Mathematics</department>
+            <!-- Use "break" tag anywhere for forced line break -->
+            <institution>Mississippi College<br />Clinton, MS, USA</institution>
+            <email>travis@mc.edu</email>
+        </author>
+        <!-- Could set date manually or use the "today" element 
+        <date><today /></date>  -->
+        <!--
+        TeX/LaTeX macros can be written in the usual way.
+        Whitespace and line breaks are irrelevant here.
+        -->
+        <macros>
+        \newcommand{\definiteintegral}[4]{\int_{#1}^{#2}\,#3\,d#4}
+        \newcommand{\indefiniteintegral}[2]{\int#1\,d#2}
+        \newcommand{\SUM}[3]{\sum_{#1}^{#2} #3  }
+        </macros>
+        <latex-image-preamble>
+        \usepackage{pgfplots}
+        \pgfplotsset{axis x line = middle,
+                     axis y line = middle}
+        \usepackage{tikz}
+        \usetikzlibrary{backgrounds}
+        \usetikzlibrary{arrows,matrix}
+        </latex-image-preamble>
+    </docinfo>
+
+    <!--
+    The article element is top-level for anything short of a book.
+    There is a book element, which is not demonstrated here.
+    The "filebase" attribute is used for the filename of the
+    HTML output, s part of a chunking scheme that is not complete.
+  -->
+	<article xml:id="Probability">
+        <title>Probability</title>
+
+<!--        <abstract>
+            <p>
+             These notes deal with the derivation of formulas needed for solving problems related to probability.</p>
+        </abstract>
+-->	
+        <section xml:id="GeometricSeries">
+            <title>Geometric and Negative Binomial Series</title>
+            <p>
+              Knowledge of the use of power series is very important when dealing with both probabilities and with financial mathematics.  
+              In particular, the geometric series is very useful. </p>   
+            <md>
+				<mrow>S = \SUM {k=0} {\infty} {x^k} = \frac{1}{1-x}</mrow>
+			</md> provided x is small is of utmost importance  
+			<p>as is its extension know as the negative binomial series <m>( n \in \mathbb{N} )</m>.</p>
+			<md>
+				<mrow>NB = \SUM {k=0} {\infty} (-1)^k \binom{-n + k - 1}{k} {x^k b^{-n-k}} = \frac{1}{(x+b)^n}</mrow>
+			</md>
+			<p>In this section, we review this series, develop its properties, and explore some of its extensions.</p>
+			
+			<subsection>
+				<title>Geometric Series</title>
+				<theorem xml:id="theorem-GeomSeries">
+				<statement> <m> S = \SUM {k=0} {\infty} {x^k} = \frac{1}{1-x}</m> </statement>
+				<proof>					
+					<p>Consider the partial sum</p>		
+					<md>
+						<mrow> S_n = \SUM {k=0} {n} {x^k} = 1 + x + x^2 + ... + x^n </mrow>
+						<mrow> (1-x)S_n = S_n - x S_n = 1 + x + x^2 + ... + x^n - (x + x^2 + ... + x^n + x^{n+1}) = 1 - x^{n+1} </mrow>
+						<mrow> \Rightarrow S_n = \frac{1-x^{n+1}}{1-x} </mrow>
+					</md>
+					<p>and so as <m> n \rightarrow \infty </m>,</p>
+					<md>
+						<mrow> S_n \rightarrow S = \frac{1}{1-x} </mrow>
+					</md>	
+				</proof>		
+				</theorem>
+				
+				<sage>
+					<input>
+var('x,n,k')
+f = 1/(1-x)
+@interact
+def _(n = slider(2,20,1,2)):
+	Sn = sum(x^k,k,0,n)
+	pretty_print(html('$S_n(x) = %s$'%str(latex(Sn))))
+	G = plot(f,x,-1,0.9,color='black')
+	G += plot(Sn,x,-1,0.9,color='blue')
+	G += plot(abs(f-Sn),x,-1,0.9,color='red')
+	G.show(title="Partial Sums (blue) vs Infinite Series (black) and Error (red)",figsize=(5,4))
+					</input>
+				</sage>
+			</subsection>
+			<subsection>
+				<title>Alternate Forms for the Geometric Series</title>
+				<theorem>
+					<title>Generalized Geometric Series</title>
+					<statement>For <m>k \in \mathbb{N}, \SUM {k=M} {\infty} {x^k} = \frac{x^M}{1-x}</m></statement>
+					<proof>
+					<md>
+						<mrow>\SUM {k=M} {\infty} {x^k} &amp; = x^M \SUM {k=0} {\infty} {x^k}</mrow>
+						<mrow> &amp; = x^M \frac{1}{1-x}</mrow>
+						<mrow> &amp; = \frac{x^M}{1-x}</mrow>
+					</md>
+					</proof>
+				</theorem>
+				<example>
+					<title>Integrating and Differentiating to get new Power Series</title>
+						<p>The geometric power series is a nice function which is relatively easily differentiated and integrated. In doing so, one can obtain
+						    new power series which might also be very useful in their own right.  Here we develop a few which are of special interest.</p>
+						<p>Let <m>f(x) = \sum_{k=0}^\infty x^k = \frac{1}{1-x}</m>.  Then,</p>
+						<md>
+							<mrow> f'(x) = \SUM {k=1} {\infty} {kx^{k-1}} = \frac{1}{(1-x)^2}</mrow>
+							<mrow> f''(x) = \SUM {k=2} {\infty} {k(k-1)x^{k-1}} = \frac{2}{(1-x)^3}</mrow>
+							<mrow> f^{(n)}(x) = \SUM {k=n} {\infty} {k(k-1)...(k-n+1)x^{k-n}} = \frac{n!}{(1-x)^{n+1}}</mrow>
+							<mrow> \int f(x) dx = \SUM {k=0} {\infty} {\frac{x^{k+1}}{k+1}} = -ln(1-x)</mrow>			
+						</md>
+				</example>
+				<example>
+					<title>Playing with the base</title>
+					<md>
+						<mrow>\SUM {k=0} {\infty} {a^k x^k} &amp; = \SUM {k=0} {\infty} {(ax)^k}</mrow>
+						<mrow> &amp; = \frac{1}{1-ax}, |x| \lt \frac{1}{a}</mrow>
+					</md>
+					<p>or perhaps</p>
+					<md>
+						<mrow>\SUM {k=0} {\infty} {(x-b)^k} = \frac{1}{1-(x-b)}, |x-b| \lt 1</mrow>
+					</md>					
+				</example>
+				<example>
+					<title>Application: Converting repeating decimals to fractional form</title>
+						<p>Consider this example:</p>
+						<md>
+							<mrow>2.48484848... &amp; = 2 + 0.48 + 0.0048 + 0.000048 + ...</mrow>
+							<mrow> &amp;  = 2 + 0.48(1 + 0.01 + 0.0001 + ... ) = 2 + 0.48 \sum_{k=0}^\infty (0.01)^k</mrow>
+						</md>
+						<p>Therefore, applying the Geometric Series</p>
+						<md>
+							<mrow> 2.48484848... &amp; = 2 + 0.48 \frac{1}{1-0.01} </mrow>
+							<mrow> &amp; = 2 + 0.48 \frac{100}{99} = 2 + \frac{48}{99} </mrow>
+						</md>  
+				</example>
+				<example>
+					<title>Playing around with repeating decimals</title>
+					<p>Certainly most students would agree that <m> 0.333333... = \frac{1}{3} </m>. So, what about <m>0.999999...</m>?  
+					Simply follow the pattern above</p>
+					<md>
+						<mrow>0.999999... &amp; = 0.9 + 0.09 + 0.009 + 0.0009 + ... = 0.9(1 + 0.1 + 0.1^2 + 0.1^3 + ...</mrow>
+						<mrow> &amp; = 0.9 \frac{1}{1-0.1} = 0.9 \frac{1}{0.9} = 1 </mrow>
+					</md>
+				</example>
+			</subsection>
+		</section>
+	
+	
+	
+		<section xml:id="ProbabilityGeneralities"><title>Probability Functions</title>
+		<p>In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From
+		this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so 
+		to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition 
+		which takes s to a numerical value x which is then plugged into f to get the same final values.</p>
+
+		<definition><title>Probability Mass Function</title>
+			<statement>Given a discrete random variable X on a space R, a probability mass function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
+			<md>
+				<mrow>&amp; \forall x \in R , f(x) \gt 0</mrow>
+				<mrow>&amp; \sum_{x \in R} f(x) = 1</mrow>
+				<mrow>&amp; A \subset R \Rightarrow P(X \in A) = \sum_{x \in A}f(x)</mrow>
+			</md>
+			</statement>
+		</definition>
+		
+		<definition><title>Probability Density Function</title>
+			<statement>Given a continuous random variable X on a space R, a probability density function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
+				<md>
+					<mrow>&amp; \forall x \in R , f(x) \gt 0</mrow>
+					<mrow>&amp; \int_{R} f(x) = 1</mrow>
+					<mrow>&amp; A \subset R \Rightarrow P(X \in A) = \int_{A} f(x) dx</mrow>
+				</md>
+			</statement>
+		</definition>
+		
+		<definition><title>Distribution Function</title>
+			<statement>Given a random variable X on a space R, a probability distribution function on X is given by a function 
+			           <m>F:\mathbb{R} \rightarrow \mathbb{R}</m> such that <m>\displaystyle F(x)=P(X \le x)</m>
+			</statement>
+		</definition>	
+		
+		<subsection>
+		<title>Properties of the Distribution Function</title>
+            
+			<theorem xml:id="theorem-Fmin">
+				<statement><m>F(x)=0, \forall x \le \inf(R)</m></statement>
+				<proof>TBA</proof>
+			</theorem>
+			
+			<theorem xml:id="theorem-Fmax">
+				<statement><m>F(x)=1, \forall x \ge \sup(R)</m></statement>
+				<proof>TBA</proof>
+			</theorem>
+			
+			<theorem>
+				<statement xml:id="theorem-F-non-decreasing">F is non-decreasing</statement>
+				<proof>
+					<p>Case 1: R discrete</p>
+					<md>
+						<mrow>\forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2</mrow>
+						<mrow>F(x_2) &amp; = \sum_{x \le x_2} f(x) </mrow>
+						<mrow>&amp; = \sum_{x \le x_1} f(x) + \sum_{x_1 \lt x \le x_2} f(x)</mrow>
+						<mrow>&amp; \ge \sum_{x \le x_1} f(x) = F(x_1)</mrow>
+					</md>
+					<p>Case 2: R continuous</p>
+					<md>
+						<mrow>\forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2</mrow>
+						<mrow>F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx </mrow>
+						<mrow> &amp; = \int_{-\infty}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx</mrow>
+						<mrow> &amp; \ge \int_{-\infty}^{x_1} f(x) dx</mrow>
+						<mrow> &amp; = F(x_1)</mrow>
+					</md>
+				</proof>
+			</theorem>
+			
+			<theorem xml:id="theorem-Fvsf-discrete">
+				<title>Using Discrete Distribution Function to compute probabilities</title>
+				<statement>for <m>x \in R, f(x) = F(x) - F(x-1)</m></statement>
+			</theorem>
+			
+			<theorem xml:id="theorem-Fvsf-continuyous">
+				<title>Using Continuous Distribution function to compute probabilities</title>
+				<statement>for <m>a \lt b, (a,b) \in R, P(a \lt X \lt b) = F(b) - F(a)</m></statement>
+			</theorem>
+			
+			<corollary xml:id="corollary-ProbPointZero-continuous">
+				<statement>For continuous distributions, P(X = a) = 0</statement>
+			</corollary>
+			
+		</subsection>
+		
+		<subsection>
+			<title>Standard Units</title>
+				<p>Any distribution variable can be converted to “standard units” using the linear translation 
+				<m>\displaystyle z = \frac{x-\mu}{\sigma}</m>. In doing so, then values of z will always represent the number of
+				standard deviations x is from the mean and will provide “dimensionless” comparisons.</p>
+		</subsection>
+	
+     </section>
+         
+         
+         
+    <section xml:id="GeometricDistribution">
+    	<title>Geometric and Negative Binomial Distribution</title>
+		<p>Consider the situation where one can observe a sequence  of independent trials where the likelihood of a success on each individual trial
+		stays constant from trial to trial. Call this likelihood the probably of "success" and denote its value by <m>p</m> 
+		where <m> 0 \lt p \lt 1 </m>.  
+		If we let the variable <m>X</m> measure the number of trials needed in order to obtain the first success, 
+		then the resulting distribution of probabilities is called a Geometric Distribution.</p>
+			
+		<subsection>
+			<title>Derivation of Geometric Probability Function</title>
+				<p> Since successive trials are independent, then the probability of the first success occurring on the mth trial presumes that
+				the previous m-1 trials were all failures.  Therefore the desired probability is given by </p>
+				<me>f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p</me>
+		</subsection> 
+		
+		<subsection><title>Properties of the Geometric Distribution</title>
+			<title>Geometric Distribution sums to 1</title>
+			<md>
+				<mrow>\SUM {k=1} {\infty} {f(x)} = \SUM {k=1} {\infty} {(1-p)^{k-1} p} = p \SUM {j=0} {\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1</mrow>
+			</md>
+		</subsection>
+		
+		<subsection>
+			<title>Derivation of Geometric Mean</title>
+				<p> </p>
+				<md>
+					<mrow>\mu &amp; = E[X] = \SUM {k=0} {\infty} {k(1-p)^{k-1}p}</mrow>
+					<mrow> &amp; = p \SUM {k=1} {\infty} {k(1-p)^{k-1}}</mrow>
+					<mrow> &amp; = p \frac{1}{(1-(1-p))^2}</mrow>
+					<mrow> &amp; = p \frac{1}{p^2} = \frac{1}{p}</mrow>
+				</md>
+		</subsection> 
+		
+		<subsection>
+			<title>Derivation of Geometric Variance</title>
+				<p> </p>
+				<md>
+					<mrow>\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
+					<mrow> &amp; = \SUM {k=0} {\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 </mrow>
+					<mrow> &amp; = (1-p)p \SUM {k=2} {\infty} {k(k-1)(1-p)^{k-2}} + \frac{1}{p} - \frac{1}{p^2}</mrow>
+					<mrow> &amp; = (1-p)p \frac{2}{(1-(1-p))^3} + \frac{1}{p} - \frac{1}{p^2}</mrow>
+					<mrow> &amp; = \frac{1-p}{p^2}</mrow>
+				</md>
+		</subsection> 
+		
+		<subsection>
+			<title>Derivation of Geometric Distribution Function</title>
+			<p> Consider the accumulated probabilities over a range of values...</p>
+			<md>
+				<mrow> P(X \le a) &amp; = 1 - P(X \gt a)</mrow>
+				<mrow> &amp; = 1- \SUM {k={a+1}} {\infty} {(1-p)^{k-1}p}</mrow>
+				<mrow> &amp; = 1- p \frac{(1-p)^{a}}{1-(1-p)}</mrow>
+				<mrow> &amp; = 1- (1-p)^{a}</mrow>
+			</md>
+		</subsection> 
+		
+		<subsection><title>Negative Binomial Series</title>
+			<theorem xml:id="theorem-NegBinomSeries">
+			<statement> 
+				<m>\displaystyle \frac{1}{(a+b)^n} = \SUM {k=0} {\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}</m> 
+			</statement>
+			</theorem>
+			<proof>					
+				<p>First, convert the problem to a slightly different form:</p>		
+				<m> \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
+							 = \frac{1}{b^n} \SUM {k=0} {\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
+				</m>
+
+				<p>So, let's replace <m>\frac{a}{b} = x</m> and ignore for a while the term factored out. Then, we only need to show </p>
+				<md>
+					<mrow>\SUM {k=0} {\infty} {(-1)^k \binom{n + k - 1}{k} x^k} = \left ( \frac{1}{1+x} \right )^n </mrow>
+				</md>
+				<p>However</p>
+				<md>
+					<mrow> \left ( \frac{1}{1+x} \right )^n &amp; = \left ( \frac{1}{1 - (-x)} \right )^n </mrow>
+					<mrow> &amp; = \left ( \SUM {k=0} {\infty} {(-1)^k x^k} \right )^n</mrow>
+				</md>
+				
+				<p>This infinite sum raised to a power can be expanded by distributing terms in the standard way. 
+				In doing so, the various powers of x multiplied together
+				will create a series in powers of x involving <m>x^0, x^1, x^2, ...</m>.  
+				To detemine the final coefficients notice that the number of time <m>m^k</m> will 
+				appear in this product depends upon the number of ways one can write k as a sum of nonnegative integers.</p>
+				<p>For example, the coefficient of <m>x^3</m> will come from the n ways of multiplying the coefficients 
+				<m>x^3, x^0, ..., x^0</m> and <m>x^2, x^1, x^0, ..., x^0</m>
+				 and <m>x^1, x^1, x^1, x^0,..., x^0</m>. This is equivalent to finding the number of ways to write the 
+				 number k as a sum of nonnegative integers. The possible set of
+				 nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  
+				 For example, if k = 3 then *||** means 
+				 <m>x^1 x^0 x^2 = x^3</m>. Similarly for k = 5 and |**|*|**| implies <m> x^0 x^2 x^1 x^2 x^0 = x^5</m>. 
+				 The number of ways to interchange the identical *'s among the
+				 idential |'s is <m>\binom{n+k-1}{k}</m>. </p>
+				 <p>Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x 
+				 will require an odd number of odd powers. So, the 
+				 coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,</p>
+				<md>	
+					<mrow> \left ( \frac{1}{1+x} \right )^n = \SUM {k=0} {\infty} {(-1)^k \binom{n + k - 1}{k} x^k}</mrow>
+				</md>	
+				<p>Similarly,</p>
+				<m> \left ( \frac{1}{1-x} \right )^n = \left ( \SUM {k=0} {\infty} {x^k} \right )^n = \SUM {k=0} {\infty} {\binom{n + k - 1}{k} x^k}</m>
+
+			</proof>	
+		</subsection>	
+				
+		<subsection>
+			<title>Negative Binomial Distribution</title>
+			<p>Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success 
+			on each individual trial <m>p</m> where 
+			<m> 0 \lt p \lt 1 </m>.  For a positive integer r, let the variable <m>X</m> measure the number of 
+			trials needed in order to obtain the rth success.
+			Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
+			<subsection>
+			<title>Derivation of Negative Binomial Probability Function</title>
+				<p> Since successive trials are independent, then the probability of the rth success occurring on the 
+				mth trial presumes that in 
+				the previous m-1 trials were r-1 successes and m-r failures.  Therefore the desired probability is given by 
+				<md><mrow>P(X=m) = \binom{m - 1}{r-1}(1-p)^{m-r}p^r</mrow></md>
+				</p>
+			</subsection> 
+	
+			<subsection>
+				<title>Negative Binomial Distribution Sums to 1</title>
+				<m>\SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}p^r} &amp; = p^r \SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}}</m>
+				<p>and by using <m>k = m-r</m></p>
+				<md>
+					<mrow> &amp; = p^r \SUM {k=0} {\infty} {\binom{r + k - 1}{k}(1-p)^k}</mrow>
+					<mrow> &amp; = p^r \frac{1}{(1-(1-p))^r}</mrow>
+					<mrow> &amp; = 1</mrow>
+				</md>
+			</subsection>
+		</subsection>
+	</section>
+        
+        
+        
+		<section xml:id="BinomialDistribution">
+        	<title>Binomial</title>
+            <p>
+              The binomial series is also foundational. It is technically not a series since the sum if finite 
+              but we won’t bother with that for now.  
+              It is given by </p>   
+            <md>
+				<mrow>B = \SUM {k=0} {n} {\binom{n}{k} a^k b^{n-k}}</mrow>
+			</md> provided n is a natural number.  
+
+			<subsection>
+				<theorem xml:id="theorem-Binomial">
+					<title>Binomial Theorem</title>
+					<statement>For <m> n \in \mathbb{N} </m>,  
+						<m>\displaystyle {(a+b)^n = \SUM {k=0} {n} {\binom{n}{k} a^k b^{n-k}}}</m></statement>
+					<proof><p>By induction:</p>
+						<p>Basic Step: n = 1 is trivial</p>
+						<p>Inductive Step:  Assume the statement is true as given for some <m>n \ge 1</m>.  
+							Show <m>(a+b)^{n+1} = \SUM {k=0} {n+1} {\binom{n+1}{k} a^k b^{n+1-k}}</m></p>
+
+<md>
+	<mrow>(a+b)^{n+1} &amp; = (a+b)(a+b)^n</mrow>
+	<mrow> &amp; = (a+b)\SUM {k=0} {n} {\binom{n}{k} a^k b^{n-k}}</mrow>
+	<mrow> &amp; = \sum_{k=0}^n \binom{n}{k} a^{k+1} b^{n-k} + \sum_{k=0}^n \binom{n}{k} a^k b^{n-k+1}</mrow>
+	<mrow> &amp; = \sum_{k=0}^{n-1} \binom{n}{k} a^{k+1} b^{n-k} + a^{n+1} + b^{n+1} + \sum_{k=1}^n \binom{n}{k} a^k b^{n-k+1}</mrow>
+	<p>and by using <m>j = k+1</m> yields</p>
+	<mrow> &amp; = \sum_{j=1}^n \binom{n}{j-1} a^j b^{n-(j-1)} + a^{n+1} + b^{n+1} + \sum_{k=1}^n \binom{n}{k} a^k b^{n+1-k}</mrow>
+	<mrow> &amp; = b^{n+1} + \sum_{k=1}^n \left [ \binom{n}{k-1} + \binom{n}{k} \right ] a^k b^{n+1-k} + a^{n+1}</mrow>
+	<mrow> &amp; = b^{n+1} + \sum_{k=1}^n \binom{n+1}{k} a^k b^{n+1-k} + a^{n+1}</mrow>
+	<mrow> &amp; = \sum_{k=0}^{n+1} \binom{n+1 }{k} a^k b^{n+1-k}</mrow>
+</md>
+	
+					</proof>
+				</theorem>
+			</subsection>
+			<subsection>
+				<title>Binomial Series</title>
+				<p>Consider <m>B(a,b) = \SUM {k=0} {n} {\binom{n}{k} a^k b^{n-k}}</m>.  
+				This finite sum is known as the Binomial Series.</p>
+				<subsection>
+					<p>Show that <m>B(a,b) = (a+b)^n</m></p>
+					<p>Show that <m>B(1,1) = 2^n</m></p>
+					<p>Show that <m>B(-1,1) = 0</m></p>
+					<p>Show that <m>B(p,1-p) = 1</m></p>
+					<p>Easily, <m>B(x,1) = \SUM {k=0} {n} {\binom{n}{k} a^k}</m></p>
+				</subsection>
+			</subsection>
+			<subsection>
+				<title>Trinomial Series</title>
+				<md>
+					<mrow>(a+b+c)^n = \SUM {k_1+k_2+k_3=n} {} {\binom{n}{k_1,k_2,k_3} a^{k_1} b^{k_2} c^{k_3}} </mrow>
+				</md>
+				<p>where <m>\binom{n}{k_1,k_2,k_3} = \frac{n!}{k_1!k_2!k_3!}</m>. This can be generalized to any number 
+				of terms to give what
+				is know as a multinomial series.</p>
+			</subsection>
+			<subsection>
+				<title>Binomial Distribution</title>
+				<p>Consider the situation where one can observe a sequence  of independent trials where the likelihood of a 
+				success on each 
+				individual trial stays constant from trial to trial. Call this likelihood the probably of "success" and 
+				denote its value by 
+				<m>p</m> where <m> 0 \lt p \lt 1 </m>.  If we let the variable <m>X</m> measure the number of successes 
+				obtained when doing 
+				a fixed number of trials n, then the resulting distribution of probabilities is called a Binomial Distribution.</p>
+				<subsection>
+					<title>Derivation of Binomial Probability Function</title>
+					<p> Since successive trials are independent, then the probability of X successes occurring within n 
+					trials is given by 
+					<m>P(X=x) = \binom{n}{x}P(SS...SFF...F) = \binom{n}{x}p^x(1-p)^{n-x}</m></p>
+				</subsection> 
+				<subsection>
+					<title>Binomial Distribution mean</title>
+					<md>
+						<mrow> \mu = E[X] &amp; = \SUM {x=0} {n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow>
+						<mrow> &amp; = \SUM {x=1} {n} {x \frac{n(n-1)!}{x(x-1)!(n-x)!} p^x (1-p)^{n-x}}</mrow>
+						<mrow> &amp; = np \SUM {x=1} {n} {\frac{(n-1)!}{(x-1)!((n-1)-(x-1))!} p^{x-1} (1-p)^{(n-1)-(x-1)}}</mrow>
+					</md>
+					<p>Using the change of variables <m>k=x-1</m> and <m>m = n-1</m> yields a binomial series</p>
+					<md>
+						<mrow> &amp; = np \SUM {k=0} {m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}}</mrow>
+						<mrow> &amp; = np (p + (1-p))^m = np</mrow>
+					</md>
+				</subsection>
+				<subsection>
+					<title>Binomial Distribution variance</title>
+<md>
+	<mrow> \sigma^2 = E[X(X-1)] + \mu - \mu^2 &amp; = \SUM {x=0} {n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow>
+	<mrow> &amp; = \SUM {x=2} {n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2</mrow>
+	<mrow> &amp; = n(n-1)p^2 \SUM {x=2} {n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow>
+</md>
+
+					<p>Using the change of variables <m>k=x-2</m> and <m>m = n-2</m> yields a binomial series</p>
+					<md>
+						<mrow> &amp; = n(n-1)p^2  \SUM {k=0} {m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2</mrow>
+						<mrow> &amp; = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)</mrow>
+					</md>
+				</subsection>
+			</subsection>
+		</section>
+		
+		<section xml:id="PoissonDistribution">
+			<title>Poisson</title>		
+			<subsection>
+				<title>Derivation of Poisson Formulas</title>
+				<p>Consider the situation when you might want to look at the number of successes which could happen 
+				over a given interval of time, say [0,T].  The number of these possible successes a discrete value 
+				from the set {0, 1, 2, 3, ...} even though the world over which these successes may occur is continuous. 
+				Let’s also assume that successive successes are independent of each
+				other, that the likelihood of one success in an interval of time is proportional to the length of the 
+				interval, and that the likelihood of more than one success in a sufficiently small interval is 
+				essentially zero.  If so, then the resulting distribution of probabilities
+				is called a Poisson Distribution.</p>
+				<p>For a Poisson Distribution, let’s determine the probability of exactly m successes in [0,T]. 
+				(Notice, this is similar to the relationship
+				between Binomial and Negative Binomial where Negative Binomial measures the number of successes 
+				in a fixed number of trials whereas Poisson
+				measures the number of successes in a fixed interval.</p>
+				
+				<p>Toward this goal, let’s take the interval [0,T] and break it up into n equally-sized subintervals, 
+				each of width <m>\delta = T/n</m>.  If
+				n is sufficiently large then the width of any of these intervals should be very small and so should 
+				contain at most one success according
+				to the assumptions above.  If so, then counting the number of successes in [0,T] would be similar to 
+				counting the number of successes in
+				the n “fixed” trials... i.e., a binomial problem with p = <m>\frac{\lambda T}{n}</m> (i.e. proportional 
+				to the size of the intervals.) 
+				So, we can approximate the answer to the Poisson question by approximating with a Binomial
+				solution. As n approaches infinity, this discrete approximation of chopping the interval up into discrete 
+				pieces becomes a continous 
+				interval and therefore the Poisson problem. </p>
+
+<md>
+<mrow> P(X=m) &amp; = \lim_{n \rightarrow \infty} \binom{n}{m} \left ( \frac{\lambda T}{n} \right )^m \left (1-\frac{\lambda T}{n} \right )^{n-m} </mrow>
+<mrow> &amp; = \lim _{n \rightarrow \infty} \frac{n!}{m!(n-m)!}(\frac{\lambda T}{n})^m (1-\frac{\lambda T}{n})^{n-m} </mrow>
+<mrow> &amp; = \frac{(\lambda T)^m}{m!} \lim _{n \rightarrow \infty} \frac{n(n-1)...(n-m+1)}{n^m} (1-\frac{\lambda T}{n})^n (1-\frac{\lambda T}{n})^{-m} </mrow>
+<mrow> &amp; = \frac{(\lambda T)^m}{m!} 1 \cdot \lim _{n \rightarrow \infty} (1-\frac{\lambda T}{n})^n \cdot 1</mrow>
+<mrow> &amp; = \frac{(\lambda T)^m}{m!} \cdot \lim _{n \rightarrow \infty} {e^{n \cdot \ln{(1-\frac{\lambda T}{n})}}} </mrow>
+<mrow> &amp; = \frac{(\lambda T)^m}{m!} \cdot \lim _{n \rightarrow \infty} {e^{ \ln{(1-\frac{\lambda T}{n})} / \frac{1}{n}}} </mrow>
+<mrow> &amp; = \frac{(\lambda T)^m}{m!} \cdot 
+	  \lim _{n \rightarrow \infty} {e^{ \frac{ \frac{\lambda T}{n^2}}{(1-\frac{\lambda T}{n}) } / \frac{-1}{n^2} }} </mrow>
+<mrow> &amp; = \frac{(-\lambda T)^m}{m!} \cdot e^{-\lambda T}</mrow>
+</md>
+
+				<theorem>
+					<title>Verifying the Poisson Distribution</title>
+					<statement>For a Poisson variable, the function above sums to one.</statement>
+					<proof>
+						<md>
+							<mrow> \SUM {m=0} {\infty} {\frac{(\lambda T)^m}{m!} \cdot e^{-\lambda T}} &amp; = e^{-\lambda T} \SUM {m=0} {\infty} {\frac{(\lambda T)^m}{m!} }</mrow>
+							<mrow> &amp; = e^{-\lambda T} e^{\lambda T}</mrow>
+							<mrow> &amp; = 1</mrow>
+							
+						</md>
+					</proof>
+				</theorem>
+				<theorem>
+					<title>The Mean of the Poisson Distribution</title>
+					<statement>For a Poisson variable, <m>\mu = \lambda T</m></statement>
+					<proof>
+
+<md>
+<mrow> \mu =  E[m] = &amp; = \SUM {m=0} {\infty} {m \cdot \frac{(\lambda T)^m}{m!} \cdot e^{-\lambda T}}</mrow>
+<mrow>  &amp; = e^{-\lambda T} \SUM {m=1} {\infty} {\frac{(\lambda T)^m}{(m-1)!} }</mrow>
+<mrow>  &amp; = e^{-\lambda T} \cdot \lambda T \SUM {m=1} {\infty} {\frac{(\lambda T)^{m-1}}{(m-1)!} }</mrow>
+<mrow>  &amp; = e^{-\lambda T} \cdot \lambda T \SUM {k=0} {\infty} {\frac{(\lambda T)^k}{k!} }</mrow>
+<mrow>  &amp; = e^{-\lambda T} \cdot \lambda T e^{\lambda T}</mrow>
+<mrow> &amp; = \lambda T </mrow>							
+</md>
+
+					</proof>
+				</theorem>
+				<corollary>
+					<title>Alternate form for Poisson Probability Function</title>
+					<statement>Given the mean <m>\mu</m> number of successes in the interval [0,T], 
+					  <m>\displaystyle P(X=m) = \frac{\mu^m e^{-\mu}}{m!}</m> </statement>
+
+				</corollary>
+
+				<theorem>
+					<title>The Variance of the Poisson Distribution</title>
+					<statement>For a Poisson variable, <m>\sigma^2 = \mu</m></statement>
+					<proof>
+
+<md>
+<mrow> \sigma^2 =  E[m(m-1)] + \mu - \mu^2 &amp; = \SUM {m=0} {\infty} {m(m-1) \cdot \frac{\mu^m}{m!} \cdot e^{-\mu}} + \mu - \mu^2</mrow>
+<mrow>  &amp; = e^{-\mu} \SUM {m=2} {\infty} {\frac{\mu^m}{(m-2)!} } + \mu - \mu^2</mrow>
+<mrow>  &amp; = e^{-\mu} \cdot \mu^2 \SUM {m=2} {\infty} {\frac{\mu^{m-2}}{(m-2)!} } + \mu - \mu^2</mrow>
+<mrow>  &amp; = e^{-\mu} \cdot \mu^2 \SUM {k=0} {\infty} {\frac{\mu^k}{k!} } + \mu - \mu^2</mrow>
+<mrow>  &amp; = e^{-\mu} \cdot \mu^2 e^{\mu} + \mu - \mu^2</mrow>
+<mrow> &amp; = \mu^2 + \mu - \mu^2 </mrow>							
+<mrow> &amp; = \mu </mrow>							
+</md>
+
+					</proof>
+				</theorem>
+			</subsection>
+		</section>
+		
+		<section xml:id="ExponentialDistribution">
+			<title>Exponential and Gamma Distributions</title>
+			<p>Consider the situation where you want to measure the time until a desired number of successes. 
+			That is, the counterpart to the 
+			Poisson Distribution above. This would be a continous distribution since the variable is time. 
+			If you measure the time till the
+			1st success then the resulting distribution is called the “exponential distribution” and if you 
+			measure till the kth success, k>1, 
+			then the resulting distribution is called the “gamma distribution”.</p>
+			<subsection>
+				<title>Exponential Distribution Derivation</title>
+				<p>Let X measure the time till the first success. 
+				Then P(first success occurs in the interval [0,x]) = F(x) = 1 - P(no successes in the interval [0,x]), 
+				which is a Poisson question
+				using the interval [0,x].  Since we know for Poisson that the mean number of successes in [0,T] is 
+				<m>\lambda T</m> then the
+				mean in this case is <m> \lambda x </m>.  Applying the known formulas...</p>
+				<md>
+					<mrow>F(x) &amp; = 1 - P(no successes) </mrow>
+					<mrow> &amp; = 1 - (\lambda x)^0 e^{-\lambda x}/0!</mrow>
+					<mrow> &amp; = 1 - e^{-\lambda x}</mrow>
+				</md>
+				<p>and so we get the probability function</p>
+				<m> \displaystyle f(x) = F’(x) = \lambda e^{-\lambda x}</m>
+				<subsection>
+					<title>Verification of exponential probability function</title>
+					<p>Presuming <m>\lambda > 0</m>,</p>
+					<md>
+						<mrow>\int_0^{\infty} \lambda e^{-\lambda x} dx = -e^{-\lambda x} \Bigr|_0^{\infty} = -0 + 1 = 1</mrow>
+					</md>
+				</subsection>
+				<subsection>
+					<title>Mean of the exponential distribution</title>
+					<md>
+						<mrow>\mu = E[x] &amp; = \int_0^{\infty} x \cdot \lambda e^{-\lambda x} dx</mrow>
+						<mrow>&amp; = -x \cdot e^{-\lambda x} \Bigr|_0^{\infty} + \int_0^{\infty} e^{-\lambda x} dx</mrow>
+						<mrow>&amp; = 0 + \frac{e^{-\lambda x}}{\lambda} \Bigr|_0^{\infty} </mrow>
+						<mrow>&amp; = \frac{1}{\lambda}</mrow>
+					</md>
+				</subsection>
+				<subsection>
+					<title>Alternate form for the exponential distribution</title>
+						<p>Given the mean time until the first success <m>\mu</m>,</p>
+						<md>
+							<mrow>f(x) = \frac{e^{\frac{-x}{\mu}}}{\mu}</mrow>
+						</md>
+				</subsection>
+				<subsection>
+					<title>Variance of the exponential distribution</title>
+					<md>
+						<mrow>\sigma^2 &amp; = E[X^2] - \mu^2</mrow>
+						<mrow>&amp; = \int_0^{\infty} x^2 \frac{e^{\frac{-x}{\mu}}}{\mu} dx - \mu^2</mrow>
+						<mrow>&amp; = -(2 \mu^3 + 2 \mu^2 x + \mu x^2) e^{\frac{-x}{\mu}}/ \mu \Bigr|_0^{\infty} - \mu^2</mrow>
+						<mrow>&amp; = 2 \mu^2  - \mu^2</mrow>
+						<mrow>&amp; = \mu^2</mrow>
+					</md>
+				</subsection>
+			</subsection>
+			<subsection>
+				<title>Gamma Distribution Derivation</title>
+			</subsection>
+			
+        </section>
+        
+        
+        <section xml:id="NormalDistribution">
+        	<title>The Normal Distribution</title>
+        	<p>A “bell curve” is often utilized when analyzing data. The reasons for doing so can be justified 
+        	mathematically. For the purposes
+        	of these notes, we will just presume that a given problem presumes the need for such a probability 
+        	distribution and use it. In general,
+        	given two parameters <m>\mu</m> and <m>\sigma</m>, the density function for the bell curve is given by</p>
+        	<md><mrow>f(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2}</mrow></md>
+        	<p>The resulting probability distribution is called the “Normal Distribution”.</p>
+        
+        	<subsection>
+        		<title>Derivation of properties of the Normal Distribution</title>
+        		<subsection>
+        			<title>Standard Units and the Standard Normal Curve</title>
+        			<p>Converting to standard units using <m>z = \frac{x-\mu}{\sigma}</m> gives the standard normal 
+        			distribution density function</p>
+        			<md><mrow>\Phi(z) = \frac{1}{\sqrt{2\pi}}e^{-z^2 / 2}</mrow></md>.
+        			<p>In particular, when integrating this always given the simplification</p>
+        				<md><mrow>\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2\pi}}e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2} dx
+        						= \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}e^{-z^2 / 2} dz</mrow></md>
+        			
+        		</subsection>
+        		<subsection>
+        			<title>Total Area under normal curve</title>
+        			<p>By converting to standard units, it is sufficient to show that</p>
+        				<md><mrow>I = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}e^{-z^2 / 2} dz = 1</mrow></md>
+        			<p>Toward that end, consider <m>I^2</m> with a couple of changes in the variable of integration 
+        			(not related to the x above)</p>
+
+<md>
+<mrow>I^2 &amp; = \left [ \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}e^{-x^2 / 2} dx \right ]
+			\left [ \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}e^{-y^2 / 2} dy \right ]</mrow>
+<mrow> &amp; = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{1}{2\pi}e^{-x^2 / 2}e^{-y^2 / 2} dx dy</mrow>
+<mrow> &amp; = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{1}{2\pi}e^{-(x^2+y^2)/ 2} dx dy</mrow>
+<mrow> &amp; = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{1}{2\pi}e^{-(x^2+y^2)/ 2} dx dy</mrow>
+<mrow> &amp; = \int_{0}^{2\pi} \int_{0}^{\infty} \frac{1}{2\pi}e^{-r^2/ 2} r dr d\theta</mrow>
+<mrow> &amp; = \frac{1}{2\pi} \int_{0}^{2\pi} -e^{-r^2/ 2} \Big |_0^{\infty} d\theta</mrow>
+<mrow> &amp; = \frac{1}{2\pi} \int_{0}^{2\pi} 1 d\theta</mrow>
+<mrow> &amp; = \frac{1}{2\pi} \cdot 2\pi = 1</mrow>
+</md>
+
+        		</subsection>
+        		<theorem>
+        			<title>Mean of the Normal Distribution</title>
+        			<statement>The mean of the normal distribution is the provided value of the parameter <m>\mu</m></statement>
+        			<proof>
+        			<p>Using <m>z = \frac{x-\mu}{\sigma}</m> gives <m>x = \sigma z + \mu</m> resulting in</p>
+
+<md>
+<mrow>E[X] &amp; = \int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2\pi}} x \cdot e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2} dx</mrow>
+<mrow> &amp; = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}(\sigma z + \mu) e^{-z^2 / 2} dz </mrow>
+<mrow> &amp; = \sigma \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} z e^{-z^2 / 2} dz 
+	 + \mu \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-z^2 / 2} dz </mrow>
+<mrow> &amp; = \sigma \cdot -e^{-z^2/2} \Big |_{-\infty}^{\infty} + \mu \cdot 1</mrow>
+<mrow> &amp; = 0 + \mu</mrow>
+</md>
+
+   					<p>Therefore, the provided parameter <m>\mu</m> is indeed the mean of the distribution.</p>
+   					</proof>
+
+        		</theorem>
+        		<theorem>
+        			<title>Variance of the Normal Distribution</title>
+        			<statement>The variance of the normal distribution is the provided value of the parameter <m>\sigma^2</m></statement>
+        			<proof>
+        			<p>Once again by using <m>x = \sigma z + \mu</m> yields (using integration by parts on the final integral)</p>
+
+<md>
+<mrow>Var(X) &amp; = E[X^2] - \mu^2 </mrow>
+<mrow> &amp; = 
+	   \int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2\pi}} x^2 \cdot e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2} dx - \mu^2</mrow>
+<mrow> &amp; = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}(\sigma z + \mu)^2 e^{-z^2 / 2} dz - \mu^2</mrow>
+<mrow> &amp; = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \sigma^2 z^2 e^{-z^2 / 2} dz
+		+ \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} 2\sigma z \cdot \mu e^{-z^2 / 2} dz
+		+ \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \mu^2 e^{-z^2 / 2} dz - \mu^2</mrow>
+<mrow> &amp; = \sigma^2 \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} z^2 e^{-z^2 / 2} dz
+		+ 2\sigma \mu \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} z e^{-z^2 / 2} dz
+		+ \mu^2 \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} e^{-z^2 / 2} dz - \mu^2</mrow>
+<mrow> &amp; = \sigma^2 \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} z \cdot z e^{-z^2 / 2} dz + 2\sigma \mu \cdot 0 + \mu^2 -\mu^2</mrow>
+<mrow> &amp; = \sigma^2 \left [ -z e^{-z^2/2} \Big |_{-\infty}^{\infty} 
+		- \int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} -e^{-z^2 / 2} dz \right ] + 0</mrow>
+<mrow> &amp; = \sigma^2 \left [ (0-0) - (-1) \right ]</mrow>
+<mrow> &amp; = \sigma^2</mrow>
+</md>
+   					
+   					<p>Therefore, the provided parameter <m>\sigma</m> is indeed the standard deviation of the 
+   					distribution and it’s square is the variance.</p>
+   					</proof>
+        		</theorem>
+        		<theorem>
+        			<title>Maximum of the Normal Distribution</title>
+        			<statement>The maximum of the normal curve occurs at the mean.</statement>
+        			<proof>
+        			
+<md>
+<mrow>f(x) &amp; = \frac{1}{\sigma \sqrt{2\pi}}e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2}</mrow>
+<mrow>\Rightarrow f’(x) &amp; 
+  = \frac{1}{\sigma \sqrt{2\pi}}e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2} \cdot -\frac{x-\mu}{\sigma} \cdot \frac{1}{\sigma}</mrow>
+</md>
+        			
+        			<p>Setting this first derivative equal to zero to determine the critical values yields 
+        			<m>\displaystyle x = \mu</m> as the 
+        			only critical value.  Easily, it can be seen that this yields a maximum (see second derivative below) 
+        			and therefore the normal 
+        			curve obtains a maximum at the mean and has maximum value <m>\frac{1}{\sigma \sqrt{2\pi}}</m>.</p>
+        			</proof>
+        		</theorem>
+        		<theorem>
+        			<title>Points of Inflection of the Normal Distribution</title>
+        			<statement>The normal curve has points of inflection when <m>\displaystyle x = \mu + \sigma</m> 
+        			and <m>\displaystyle x = \mu - \sigma</m>.</statement>
+        			<proof>
+        			
+<md>
+<mrow>f’(x) &amp; = \frac{-1}{\sigma^3 \sqrt{2\pi}}e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2} \cdot (x-\mu)</mrow>
+<mrow>\Rightarrow f’’(x) &amp; 
+= \frac{-1}{\sigma^3 \sqrt{2\pi}}e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2} \cdot \left [(x-\mu) \cdot (\frac{x-\mu}{\sigma}) \cdot (\frac{1}{\sigma}) - 1\right ] </mrow>
+<mrow> &amp; = \frac{-1}{\sigma^3 \sqrt{2\pi}} e^{- \left ( \frac{x-\mu}{\sigma}\right )^2 / 2} \cdot \left [  (\frac{x-\mu}{\sigma})^2 - 1 \right ] </mrow>
+</md>
+        			
+        			<p>Setting this second derivative equal to zero to determine the locations of possible points of inflection yields 
+        			    <m>\displaystyle (\frac{x-\mu}{\sigma})^2 = 1</m> or <m>\displaystyle \Big | \frac{x-\mu}{\sigma} \Big | = 1</m>
+        			    or finally 
+        			    <m>\displaystyle x = \mu + \sigma</m> and <m>\displaystyle x = \mu - \sigma</m>.</p>
+        			</proof>
+        		</theorem>
+        	</subsection>
+        </section>
+
+    </article>
+
+</mathbook>

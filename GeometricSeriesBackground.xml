@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+
+<chapter xml:id="PowerSeriesOverview" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Overview of Features</title>
+
+<introduction>
+	<p>This chapter is a review of several items needed from Calculus.</p>
+</introduction>
+
+<section xml:id="GeometricSeries">
+	<title>Geometric Series</title>
+	
+
+		
+		<sage>
+			<input>
+var('x,n,k')
+f = 1/(1-x)
+@interact
+def _(n = slider(2,20,1,2)):
+Sn = sum(x^k,k,0,n)
+pretty_print(html('$S_n(x) = %s$'%str(latex(Sn))))
+G = plot(f,x,-1,0.9,color='black')
+G += plot(Sn,x,-1,0.9,color='blue')
+G += plot(abs(f-Sn),x,-1,0.9,color='red')
+G.show(title="Partial Sums (blue) vs Infinite Series (black) and Error (red)",figsize=(5,4))
+			</input>
+		</sage>
+	</subsection>
+	<subsection>
+		<title>Alternate Forms for the Geometric Series</title>
+		<theorem>
+			<title>Generalized Geometric Series</title>
+			<statement>For <m>k \in \mathbb{N}, \sum_{k=M}^{\infty} {x^k} = \frac{x^M}{1-x}</m></statement>
+			<proof>
+			<md>
+				<mrow>\sum_{k=M}^{\infty} {x^k} &amp; = x^M \sum_{k=0}^{\infty} {x^k}</mrow>
+				<mrow> &amp; = x^M \frac{1}{1-x}</mrow>
+				<mrow> &amp; = \frac{x^M}{1-x}</mrow>
+			</md>
+			</proof>
+		</theorem>
+		<example>
+			<title>Integrating and Differentiating to get new Power Series</title>
+				<p>The geometric power series is a nice function which is relatively easily 
+				differentiated and integrated. In doing so, one can obtain
+				new power series which might also be very useful in their own right.  
+				Here we develop a few which are of special interest.</p>
+				<p>Let <m>f(x) = \sum_{k=0}^\infty x^k = \frac{1}{1-x}</m>.  Then,</p>
+				<md>
+					<mrow> f'(x) = \sum_{k=1}^{\infty} {kx^{k-1}} = \frac{1}{(1-x)^2}</mrow>
+					<mrow> f''(x) = \sum{k=2}^{\infty} {k(k-1)x^{k-1}} = \frac{2}{(1-x)^3}</mrow>
+					<mrow> f^{(n)}(x) = \sum_{k=n}^{\infty} {k(k-1)...(k-n+1)x^{k-n}} = 
+						  \frac{n!}{(1-x)^{n+1}}</mrow>
+					<mrow> \int f(x) dx = \sum_{k=0}^{\infty} {\frac{x^{k+1}}{k+1}} = -ln(1-x)</mrow>			
+				</md>
+		</example>
+		<example>
+			<title>Playing with the base</title>
+			<md>
+				<mrow>\sum_{k=0}^{\infty} {a^k x^k} &amp; = \sum_{k=0}^{\infty} {(ax)^k}</mrow>
+				<mrow> &amp; = \frac{1}{1-ax}, |x| \lt \frac{1}{a}</mrow>
+			</md>
+			<p>or perhaps</p>
+			<md>
+				<mrow>\sum_{k=0}^{\infty} {(x-b)^k} = \frac{1}{1-(x-b)}, |x-b| \lt 1</mrow>
+			</md>					
+		</example>
+		<example>
+			<title>Application: Converting repeating decimals to fractional form</title>
+				<p>Consider this example:</p>
+				<md>
+					<mrow>2.48484848... &amp; = 2 + 0.48 + 0.0048 + 0.000048 + ...</mrow>
+					<mrow> &amp;  = 2 + 0.48(1 + 0.01 + 0.0001 + ... ) = 2 + 0.48 \sum_{k=0}^\infty (0.01)^k</mrow>
+				</md>
+				<p>Therefore, applying the Geometric Series</p>
+				<md>
+					<mrow> 2.48484848... &amp; = 2 + 0.48 \frac{1}{1-0.01} </mrow>
+					<mrow> &amp; = 2 + 0.48 \frac{100}{99} = 2 + \frac{48}{99} </mrow>
+				</md>  
+		</example>
+		<example>
+			<title>Playing around with repeating decimals</title>
+			<p>Certainly most students would agree that <m> 0.333333... = \frac{1}{3} </m>. 
+			So, what about <m>0.999999...</m>?  
+			Simply follow the pattern above</p>
+			<md>
+				<mrow>0.999999... &amp; = 0.9 + 0.09 + 0.009 + 0.0009 + ... = 0.9(1 + 0.1 + 0.1^2 + 0.1^3 + ...</mrow>
+				<mrow> &amp; = 0.9 \frac{1}{1-0.1} = 0.9 \frac{1}{0.9} = 1 </mrow>
+			</md>
+		</example>
+	</subsection>
+</section>
+<section xml:id="NegativeBinomialSeries">
+</section>
+	
+	
+
+
+</chapter>

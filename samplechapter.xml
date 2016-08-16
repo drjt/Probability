@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<mathbook>
+
+    <chapter xml:id="sampleTEST">
+        <title>Integrating <webwork /> into Textbooks</title>
+        <subtitle>Sample Exercises</subtitle>
+
+        <section>
+            <title>Arithmetic</title>
+
+            <p>Some questions with quantitative answers.</p>
+
+
+        </section>
+
+    </chapter>
+</mathbook>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2016-08-16T16:20:32-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AATA Permutations</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://math.mc.edu/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script type="text/javascript" src="https://math.mc.edu/webwork2_files/js/vendor/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading">
+<span class="title">Introduction to Mathematical Probability and Statistics</span><span class="subtitle">A Calculus-based Approach</span>
+</h1>
+<p class="byline">John Travis</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="section-8.html">Previous</a><a class="up-button button toolbar-item" href="Combinatorics.html">Up</a><a class="next-button button toolbar-item" href="section-10.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-8.html">Previous</a><a class="up-button button toolbar-item" href="Combinatorics.html">Up</a><a class="next-button button toolbar-item" href="section-10.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="biography-1.html">Author Biography</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="PowerSeriesReview.html"><span class="codenumber">1</span><span class="title">Review of Calculus</span></a></h2>
+<ul>
+<li><a href="section-1.html">Geometric Series</a></li>
+<li><a href="section-2.html">Binomial Sums</a></li>
+<li><a href="section-3.html">Negative Binomial Series</a></li>
+</ul>
+<h2 class="link"><a href="RepresentingData.html"><span class="codenumber">2</span><span class="title">Representing Data</span></a></h2>
+<ul>
+<li><a href="section-4.html">Measurement Scales</a></li>
+<li><a href="section-5.html">Techniques for Representing Data</a></li>
+<li><a href="section-6.html">Measures of the Middle</a></li>
+<li><a href="section-7.html">Measures of Spread</a></li>
+</ul>
+<h2 class="link active"><a href="Combinatorics.html"><span class="codenumber">3</span><span class="title">Counting and Combinatorics</span></a></h2>
+<ul>
+<li><a href="section-8.html">Introduction</a></li>
+<li><a href="section-9.html" class="active">Permutations</a></li>
+<li><a href="section-10.html">Combinations</a></li>
+</ul>
+<h2 class="link"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability and Probability Functions</span></a></h2>
+<ul>
+<li><a href="RelativeFrequency.html">Relative Frequency</a></li>
+<li><a href="section-12.html">Definition of Probability</a></li>
+<li><a href="section-13.html">Conditional Probability</a></li>
+<li><a href="section-14.html">Independence</a></li>
+<li><a href="section-15.html">Random Variables</a></li>
+<li><a href="ProbabilityFunctions.html">Probability Functions</a></li>
+</ul>
+<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">5</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
+<ul>
+<li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
+<li><a href="GeometricDistribution.html">Geometric and Negative Binomial Distribution</a></li>
+<li><a href="section-19.html">Negative Binomial</a></li>
+</ul>
+<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">6</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<ul>
+<li><a href="section-20.html">Chebyshev</a></li>
+<li><a href="section-21.html">Measures of Spread</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-9"><header title="Section 3.2 Permutations"><h1 class="heading hide-type" alt="Section 3.2 Permutations">
+<span class="type">Section</span><span class="codenumber">3.2</span><span class="title">Permutations</span>
+</h1></header><p id="p-46">When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.</p>
+<article class="theorem-like" id="theorem-7"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.2.1</span><span class="title">Permutations of n objects</span>
+</h5>The number of ways to arrange n distinct items is n!</article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-5" id="proof-5"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-5" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-47">Notice that if n=1, then there is only 1 item to arrange and 
+			that there is only one possible arrangment.</p>
+<p id="p-48">
+			By induction, assume that any set with n elements has n! arrangments 
+			and assume that 
+			\begin{gather*}
+|A| = \left \{ a_1, a_2, ... , a_n, a_{n+1} \right \}.
+\end{gather*}
+			Notice that there are n+1 ways to choose 1 element from A and that in doing so leaves a set with n elements. Combining the induction hypothesis with the multiplication principle this gives (n+1)n! = (n+1)! possible outcomes.
+			</p></article></span>
+</div>
+<article class="theorem-like" id="theorem-8"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.2.2</span><span class="title">Permutations of n objects selecting r</span>
+</h5>
+<p id="p-49">
+			The number of ways to arrange r items from a set of n distinct items 
+			is \( P_r^n = \frac{n!}{(n-r)!} \)
+			</p></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-6" id="proof-6"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-6" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-50">
+			Apply the multiplication principle r times noting that there are 
+			n choices for the first selection, n-1 choices for the second
+			selection, and with n-r+1 choices for the rth selection. This gives
+			\begin{align*}
+P_r^n &amp; = n(n-1) ... (n-r+1)\\
+&amp; = n(n-1) ... (n-r+1)\frac{(n-r)!}{(n-r)!}\\
+&amp; = \frac{n(n-1) ... (n-r+1)(n-r)!}{(n-r)!}\\
+&amp; = \frac{n!}{(n-r)!}
+\end{align*}
+			</p></article></span>
+</div>
+<article class="theorem-like" id="theorem-9"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.2.3</span><span class="title">Permutations when Not all items are distinguishable and without replacement: (Multinomial Coefficients)</span>
+</h5>
+If n items belong to s categories, n1 in first, n2 in second, ... , ns in the last, the number of ways to pick all is
+!	
+	</article></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,879 @@
+%**************************************%
+%* Generated from MathBook XML source *%
+%*    on 2016-08-09T16:01:20-04:00    *%
+%*                                    *%
+%*   http://mathbook.pugetsound.edu   *%
+%*                                    *%
+%**************************************%
+\documentclass[10pt,]{book}
+%% Load geometry package to allow page margin adjustments
+\usepackage{geometry}
+\geometry{letterpaper,total={5.0in,9.0in}}
+%% Custom Preamble Entries, early (use latex.preamble.early)
+%% Inline math delimiters, \(, \), need to be robust
+%% 2016-01-31:  latexrelease.sty  supersedes  fixltx2e.sty
+%% If  latexrelease.sty  exists, bugfix is in kernel
+%% If not, bugfix is in  fixltx2e.sty
+%% See:  https://tug.org/TUGboat/tb36-3/tb114ltnews22.pdf
+%% and read "Fewer fragile commands" in distribution's  latexchanges.pdf
+\IfFileExists{latexrelease.sty}{}{\usepackage{fixltx2e}}
+%% Page Layout Adjustments (latex.geometry)
+%% This LaTeX file may be compiled with pdflatex or xelatex
+%% The following provides engine-specific capabilities
+%% Generally, xelatex will do better languages other than US English
+%% You can pick from the conditional if you will only ever use one engine
+\usepackage{ifthen}
+\usepackage{ifxetex}
+\ifthenelse{\boolean{xetex}}{%
+%% begin: xelatex-specific configuration
+%% fontspec package will make Latin Modern (lmodern) the default font
+\usepackage{xltxtra}
+\usepackage{fontspec}
+%% end: xelatex-specific configuration
+}{%
+%% begin: pdflatex-specific configuration
+%% translate common Unicode to their LaTeX equivalents
+%% Also, fontenc with T1 makes CM-Super the default font
+%% (\input{ix-utf8enc.dfu} from the "inputenx" package is possible addition (broken?)
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%% end: pdflatex-specific configuration
+}
+%% Monospace font: Inconsolata (zi4)
+%% Sponsored by TUG: http://levien.com/type/myfonts/inconsolata.html
+%% See package documentation for excellent instructions
+%% One caveat, seem to need full file name to locate OTF files
+%% Loads the "upquote" package as needed, so we don't have to
+%% Upright quotes might come from the  textcomp  package, which we also use
+%% We employ the shapely \ell to match Google Font version
+%% pdflatex: "varqu" option produces best upright quotes
+%% xelatex: add StylisticSet 1 for shapely \ell
+%% xelatex: add StylisticSet 2 for plain zero
+%% xelatex: we add StylisticSet 3 for upright quotes
+%% 
+\ifthenelse{\boolean{xetex}}{%
+%% begin: xelatex-specific monospace font
+\usepackage{zi4}
+\setmonofont[BoldFont=Inconsolatazi4-Bold.otf,StylisticSet={1,3}]{Inconsolatazi4-Regular.otf}
+%% end: xelatex-specific monospace font
+}{%
+%% begin: pdflatex-specific monospace font
+\usepackage[varqu]{zi4}
+%% end: pdflatex-specific monospace font
+}
+%% Symbols, align environment, bracket-matrix
+\usepackage{amsmath}
+\usepackage{amssymb}
+%% allow more columns to a matrix
+%% can make this even bigger by overriding with  latex.preamble.late  processing option
+\setcounter{MaxMatrixCols}{30}
+%% Semantic Macros
+%% To preserve meaning in a LaTeX file
+%% Only defined here if required in this document
+%% Subdivision Numbering, Chapters, Sections, Subsections, etc
+%% Subdivision numbers may be turned off at some level ("depth")
+%% A section *always* has depth 1, contrary to us counting from the document root
+%% The latex default is 3.  If a larger number is present here, then
+%% removing this command may make some cross-references ambiguous
+%% The precursor variable $numbering-maxlevel is checked for consistency in the common XSL file
+\setcounter{secnumdepth}{3}
+%% Environments with amsthm package
+%% Theorem-like environments in "plain" style, with or without proof
+\usepackage{amsthm}
+\theoremstyle{plain}
+%% Numbering for Theorems, Conjectures, Examples, Figures, etc
+%% Controlled by  numbering.theorems.level  processing parameter
+%% Always need a theorem environment to set base numbering scheme
+%% even if document has no theorems (but has other environments)
+\newtheorem{theorem}{Theorem}[section]
+%% Only variants actually used in document appear here
+%% Style is like a theorem, and for statements without proofs
+%% Numbering: all theorem-like numbered consecutively
+%% i.e. Corollary 4.3 follows Theorem 4.2
+\newtheorem{corollary}[theorem]{Corollary}
+%% Definition-like environments, normal text
+%% Numbering is in sync with theorems, etc
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+%% Example-like environments, normal text
+%% Numbering is in sync with theorems, etc
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+%% Localize LaTeX supplied names (possibly none)
+\renewcommand*{\proofname}{Proof}
+\renewcommand*{\chaptername}{Chapter}
+%% Equation Numbering
+%% Controlled by  numbering.equations.level  processing parameter
+\numberwithin{equation}{section}
+%% Raster graphics inclusion, wrapped figures in paragraphs
+\usepackage{graphicx}
+%% Colors for Sage boxes, author tools (red hilites), red/green edits
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+%% Program listing support, for inline code, Sage code
+\usepackage{listings}
+%% We define the listings font style to be the default "ttfamily"
+%% To fix hyphens/dashes rendered in PDF as fancy minus signs by listing
+%% http://tex.stackexchange.com/questions/33185/listings-package-changes-hyphens-to-minus-signs
+\makeatletter
+\lst@CCPutMacro\lst@ProcessOther {"2D}{\lst@ttfamily{-{}}{-{}}}
+\@empty\z@\@empty
+\makeatother
+%% End of generic listing adjustments
+%% Sage's blue is 50%, we go way lighter (blue!05 would work)
+\definecolor{sageblue}{rgb}{0.95,0.95,1}
+%% Sage input, listings package: Python syntax, boxed, colored, line breaking
+%% Indent from left margin, flush at right margin
+\lstdefinestyle{sageinput}{language=Python,breaklines=true,breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,frame=single,backgroundcolor=\color{sageblue},xleftmargin=4ex}
+%% Sage output, similar, but not boxed, not colored
+\lstdefinestyle{sageoutput}{language=Python,breaklines=true,breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,xleftmargin=4ex}
+%% More flexible list management, esp. for references and exercises
+%% But also for specifying labels (i.e. custom order) on nested lists
+\usepackage{enumitem}
+%% hyperref driver does not need to be specified
+\usepackage{hyperref}
+%% configure hyperref's  \url  to match listings' inline verbatim
+\renewcommand\UrlFont{\small\ttfamily}
+%% Hyperlinking active in PDFs, all links solid and blue
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\hypersetup{pdftitle={Introduction to Mathematical Probability and Statistics}}
+%% If you manually remove hyperref, leave in this next command
+\providecommand\phantomsection{}
+%% Graphics Preamble Entries
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows,matrix}
+\usetikzlibrary{snakes}
+%% If tikz has been loaded, replace ampersand with \amp macro
+%% extpfeil package for certain extensible arrows,
+%% as also provided by MathJax extension of the same name
+%% NB: this package loads mtools, which loads calc, which redefines
+%%     \setlength, so it can be removed if it seems to be in the 
+%%     way and your math does not use:
+%%     
+%%     \xtwoheadrightarrow, \xtwoheadleftarrow, \xmapsto, \xlongequal, \xtofrom
+%%     
+%%     we have had to be extra careful with variable thickness
+%%     lines in tables, and so also load this package late
+\usepackage{extpfeil}
+%% Custom Preamble Entries, late (use latex.preamble.late)
+%% Begin: Author-provided macros
+%% (From  docinfo/macros  element)
+%% Plus three from MBX for XML characters
+\newcommand{\identity}{\mathrm{id}}
+\newcommand{\notdivide}{{\not{\mid}}}
+\newcommand{\notsubset}{\not\subset}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\gf}{\operatorname{GF}}
+\newcommand{\inn}{\operatorname{Inn}}
+\newcommand{\aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\cis}{\operatorname{cis}}
+\newcommand{\chr}{\operatorname{char}}
+\newcommand{\Null}{\operatorname{Null}}
+\newcommand{\lt}{ < }
+\newcommand{\gt}{ > }
+\newcommand{\amp}{ & }
+%% End: Author-provided macros
+%% Title page information for book
+\title{Introduction to Mathematical Probability and Statistics\\
+{\large A Calculus-based Approach}}
+\author{John Travis\\
+Department of Mathematics\\
+Mississippi College\\
+\href{mailto:travis@mc.edu}{\nolinkurl{travis@mc.edu}}
+}
+\date{August 9, 2016}
+\begin{document}
+\frontmatter
+%% begin: half-title
+\thispagestyle{empty}
+{\centering
+\vspace*{0.28\textheight}
+{\Huge Introduction to Mathematical Probability and Statistics}\\[2\baselineskip]
+{\LARGE A Calculus-based Approach}\\
+}
+\clearpage
+%% end:   half-title
+%% begin: adcard
+\thispagestyle{empty}
+\null%
+\clearpage
+%% end:   adcard
+%% begin: title page
+%% Inspired by Peter Wilson's "titleDB" in "titlepages" CTAN package
+\thispagestyle{empty}
+{\centering
+\vspace*{0.14\textheight}
+{\Huge Introduction to Mathematical Probability and Statistics}\\[\baselineskip]
+{\LARGE A Calculus-based Approach}\\[3\baselineskip]
+{\Large John Travis}\\[0.5\baselineskip]
+{\Large Mississippi College}\\[3\baselineskip]
+{\Large }\\[0.5\baselineskip]
+{\normalsize }\\[3\baselineskip]
+{\Large August 9, 2016}\\}
+\clearpage
+%% end:   title page
+%% begin: copyright-page
+\thispagestyle{empty}
+\noindent
+John Travis grew up in Mississippi and had his graduate work at the University of Tennessee and Mississippi State University. As a numerical analyst, since 1988 he has been a professor of mathematics at his undergraduate alma mater Mississippi College where he currently serves as Professor and Chair of Mathematics.%
+\par
+You can find him playing racquetball or guitar but not generally at the same time. He is also an active supporter and organizer for the opensouce online homework system WeBWorK.%
+\par
+\vspace*{\stretch{2}}
+\noindent\textcopyright\ 2016\textendash{}today\quad{}John Travis\\[0.5\baselineskip]
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license is included in the appendix entitled ``GNU Free Documentation License.''\par
+\vspace*{\stretch{1}}
+\null\clearpage
+%% end:   copyright-page
+%% begin: preface
+\chapter*{Preface}\label{preface-1}
+\addcontentsline{toc}{chapter}{Preface}
+This text is intended for a one-semester calculus-based undergraduate course in probability and statistics .%
+\par
+There are additional exercises or computer projects at the ends of many of the chapters. The computer projects usually require a knowledge of programming. All of these exercises and projects are more substantial in nature and allow the exploration of new results and theory.%
+\par
+Sage (\href{http://sagemath.org}{sagemath.org}) is a free, open source, software system for advanced mathematics, which is ideal for assisting with a study of abstract algebra. Sage can be used either on your own computer, a local server, or on SageMathCloud (\href{https://cloud.sagemath.com}{https://cloud.sagemath.com}). %
+\par\hfill\begin{tabular}{l@{}}
+John Travis\\
+Clinton, Mississippi  2015
+\end{tabular}\\\par
+%% end:   preface
+%% begin: table of contents
+\setcounter{tocdepth}{1}
+\renewcommand*\contentsname{Contents}
+\tableofcontents
+%% end:   table of contents
+\mainmatter
+\typeout{************************************************}
+\typeout{Chapter 1 Overview of Features}
+\typeout{************************************************}
+\chapter[Overview of Features]{Overview of Features}\label{PowerSeriesOverview}
+\typeout{************************************************}
+\typeout{Introduction  }
+\typeout{************************************************}
+This chapter is a review of several items needed from Calculus.%
+\typeout{************************************************}
+\typeout{Section 1.1 Geometric Series}
+\typeout{************************************************}
+\section[Geometric Series]{Geometric Series}\label{GeometricSeries}
+
+	  Knowledge of the use of power series is very important when dealing with both probabilities 
+	  and with financial mathematics.  
+	  In particular, the geometric series is very useful. %
+\begin{gather*}
+S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}
+\end{gather*}\par
+as is its extension know as the negative binomial series \(( n \in \mathbb{N} )\).%
+\begin{gather*}
+NB = \sum_{k=0}^{\infty} (-1)^k \binom{-n + k - 1}{k} {x^k b^{-n-k}} = \frac{1}{(x+b)^n}
+\end{gather*}\par
+In this section, we review this series, develop its properties, and explore some of its extensions.%
+\typeout{************************************************}
+\typeout{Subsection 1.1.1 Geometric Series}
+\typeout{************************************************}
+\subsection[Geometric Series]{Geometric Series}\label{subsection-1}
+\begin{theorem}[]\label{theorem-GeomSeries}
+\( S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}\)\end{theorem}
+\begin{proof}\hypertarget{proof-1}{}
+Consider the partial sum%
+\begin{gather*}
+ S_n = \sum_{k=0}^{n} {x^k} = 1 + x + x^2 + ... + x^n \\
+ (1-x)S_n = S_n - x S_n = 1 + x + x^2 + ... + x^n - (x + x^2 + ... + x^n + x^{n+1}) = 1 - x^{n+1} \\
+ \Rightarrow S_n = \frac{1-x^{n+1}}{1-x} 
+\end{gather*}\par
+and so as \( n \rightarrow \infty \),%
+\begin{gather*}
+ S_n \rightarrow S = \frac{1}{1-x} 
+\end{gather*}\end{proof}
+\begin{lstlisting}[style=sageinput]
+var('x,n,k')
+f = 1/(1-x)
+@interact
+def _(n = slider(2,20,1,2)):
+Sn = sum(x^k,k,0,n)
+pretty_print(html('$S_n(x) = %s$'%str(latex(Sn))))
+G = plot(f,x,-1,0.9,color='black')
+G += plot(Sn,x,-1,0.9,color='blue')
+G += plot(abs(f-Sn),x,-1,0.9,color='red')
+G.show(title="Partial Sums (blue) vs Infinite Series (black) and Error (red)",figsize=(5,4))
+\end{lstlisting}
+\typeout{************************************************}
+\typeout{Subsection 1.1.2 Alternate Forms for the Geometric Series}
+\typeout{************************************************}
+\subsection[Alternate Forms for the Geometric Series]{Alternate Forms for the Geometric Series}\label{subsection-2}
+\begin{theorem}[Generalized Geometric Series]\label{theorem-2}
+For \(k \in \mathbb{N}, \sum_{k=M}^{\infty} {x^k} = \frac{x^M}{1-x}\)\end{theorem}
+\begin{proof}\hypertarget{proof-2}{}
+\begin{align*}
+\sum_{k=M}^{\infty} {x^k} & = x^M \sum_{k=0}^{\infty} {x^k}\\
+ & = x^M \frac{1}{1-x}\\
+ & = \frac{x^M}{1-x}
+\end{align*}\end{proof}
+\begin{example}[Integrating and Differentiating to get new Power Series]\label{example-1}
+The geometric power series is a nice function which is relatively easily 
+				differentiated and integrated. In doing so, one can obtain
+				new power series which might also be very useful in their own right.  
+				Here we develop a few which are of special interest.%
+\par
+Let \(f(x) = \sum_{k=0}^\infty x^k = \frac{1}{1-x}\).  Then,%
+\begin{gather*}
+ f'(x) = \sum_{k=1}^{\infty} {kx^{k-1}} = \frac{1}{(1-x)^2}\\
+ f''(x) = \sum{k=2}^{\infty} {k(k-1)x^{k-1}} = \frac{2}{(1-x)^3}\\
+ f^{(n)}(x) = \sum_{k=n}^{\infty} {k(k-1)...(k-n+1)x^{k-n}} = 
+						  \frac{n!}{(1-x)^{n+1}}\\
+ \int f(x) dx = \sum_{k=0}^{\infty} {\frac{x^{k+1}}{k+1}} = -ln(1-x)
+\end{gather*}\end{example}
+\begin{example}[Playing with the base]\label{example-2}
+\begin{align*}
+\sum_{k=0}^{\infty} {a^k x^k} & = \sum_{k=0}^{\infty} {(ax)^k}\\
+ & = \frac{1}{1-ax}, |x| \lt \frac{1}{a}
+\end{align*}or perhaps%
+\begin{gather*}
+\sum_{k=0}^{\infty} {(x-b)^k} = \frac{1}{1-(x-b)}, |x-b| \lt 1
+\end{gather*}\end{example}
+\begin{example}[Application: Converting repeating decimals to fractional form]\label{example-3}
+Consider this example:%
+\begin{align*}
+2.48484848... & = 2 + 0.48 + 0.0048 + 0.000048 + ...\\
+ &  = 2 + 0.48(1 + 0.01 + 0.0001 + ... ) = 2 + 0.48 \sum_{k=0}^\infty (0.01)^k
+\end{align*}\par
+Therefore, applying the Geometric Series%
+\begin{align*}
+ 2.48484848... & = 2 + 0.48 \frac{1}{1-0.01} \\
+ & = 2 + 0.48 \frac{100}{99} = 2 + \frac{48}{99} 
+\end{align*}\end{example}
+\begin{example}[Playing around with repeating decimals]\label{example-4}
+Certainly most students would agree that \( 0.333333... = \frac{1}{3} \). 
+			So, what about \(0.999999...\)?  
+			Simply follow the pattern above%
+\begin{align*}
+0.999999... & = 0.9 + 0.09 + 0.009 + 0.0009 + ... = 0.9(1 + 0.1 + 0.1^2 + 0.1^3 + ...\\
+ & = 0.9 \frac{1}{1-0.1} = 0.9 \frac{1}{0.9} = 1 
+\end{align*}\end{example}
+\typeout{************************************************}
+\typeout{Section 1.2 }
+\typeout{************************************************}
+\section[]{}\label{NegativeBinomialSeries}
+\typeout{************************************************}
+\typeout{Section 1.3 Binomial Sums}
+\typeout{************************************************}
+\section[Binomial Sums]{Binomial Sums}\label{section-3}
+
+  The binomial series is also foundational. It is technically not a series since the sum if finite 
+  but we won’t bother with that for now.  
+  It is given by %
+\begin{gather*}
+B = \SUM {k=0} {n} {\binom{n}{k} a^k b^{n-k}}
+\end{gather*}\typeout{************************************************}
+\typeout{Subsection 1.3.1 }
+\typeout{************************************************}
+\subsection[]{}\label{subsection-3}
+\begin{theorem}[Binomial Theorem]\label{theorem-Binomial}
+For \( n \in \mathbb{N} \),  
+				\(\displaystyle {(a+b)^n = \SUM {k=0} {n} {\binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+\begin{proof}\hypertarget{proof-3}{}
+By induction:%
+\par
+Basic Step: n = 1 is trivial%
+\par
+Inductive Step:  Assume the statement is true as given for some \(n \ge 1\).  
+					Show \((a+b)^{n+1} = \SUM {k=0} {n+1} {\binom{n+1}{k} a^k b^{n+1-k}}\)%
+\begin{align*}
+(a+b)^{n+1} & = (a+b)(a+b)^n\\
+ & = (a+b)\SUM {k=0} {n} {\binom{n}{k} a^k b^{n-k}}\\
+ & = \sum_{k=0}^n \binom{n}{k} a^{k+1} b^{n-k} + \sum_{k=0}^n \binom{n}{k} a^k b^{n-k+1}\\
+ & = \sum_{k=0}^{n-1} \binom{n}{k} a^{k+1} b^{n-k} + a^{n+1} + b^{n+1} + \sum_{k=1}^n \binom{n}{k} a^k b^{n-k+1}\\
+ & = \sum_{j=1}^n \binom{n}{j-1} a^j b^{n-(j-1)} + a^{n+1} + b^{n+1} + \sum_{k=1}^n \binom{n}{k} a^k b^{n+1-k}\\
+ & = b^{n+1} + \sum_{k=1}^n \left [ \binom{n}{k-1} + \binom{n}{k} \right ] a^k b^{n+1-k} + a^{n+1}\\
+ & = b^{n+1} + \sum_{k=1}^n \binom{n+1}{k} a^k b^{n+1-k} + a^{n+1}\\
+ & = \sum_{k=0}^{n+1} \binom{n+1 }{k} a^k b^{n+1-k}
+\end{align*}\end{proof}
+\typeout{************************************************}
+\typeout{Subsection 1.3.2 Binomial Series}
+\typeout{************************************************}
+\subsection[Binomial Series]{Binomial Series}\label{subsection-4}
+Consider \(B(a,b) = \SUM {k=0} {n} {\binom{n}{k} a^k b^{n-k}}\).  
+		This finite sum is known as the Binomial Series.%
+\typeout{************************************************}
+\typeout{Subsection 1.3.2.1 }
+\typeout{************************************************}
+\subsubsection[]{}\label{subsection-5}
+Show that \(B(a,b) = (a+b)^n\)%
+\par
+Show that \(B(1,1) = 2^n\)%
+\par
+Show that \(B(-1,1) = 0\)%
+\par
+Show that \(B(p,1-p) = 1\)%
+\par
+Easily, \(B(x,1) = \SUM {k=0} {n} {\binom{n}{k} a^k}\)%
+\typeout{************************************************}
+\typeout{Subsection 1.3.3 Trinomial Series}
+\typeout{************************************************}
+\subsection[Trinomial Series]{Trinomial Series}\label{subsection-6}
+\begin{gather*}
+(a+b+c)^n = \SUM {k_1+k_2+k_3=n} {} {\binom{n}{k_1,k_2,k_3} a^{k_1} b^{k_2} c^{k_3}} 
+\end{gather*}where \(\binom{n}{k_1,k_2,k_3} = \frac{n!}{k_1!k_2!k_3!}\). This can be generalized to any number 
+		of terms to give what
+		is know as a multinomial series.%
+\typeout{************************************************}
+\typeout{Chapter 2 Probability and Probability Functions}
+\typeout{************************************************}
+\chapter[Probability and Probability Functions]{Probability and Probability Functions}\label{ProbabilityGeneralities}
+\typeout{************************************************}
+\typeout{Introduction  }
+\typeout{************************************************}
+This chapter is a definitions of probability, consequences, and probability functions.%
+\typeout{************************************************}
+\typeout{Section 2.1 Relative Frequency Motivation}
+\typeout{************************************************}
+\section[Relative Frequency Motivation]{Relative Frequency Motivation}\label{RelativeFrequency}
+Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.%
+\typeout{************************************************}
+\typeout{Subsection 2.1.1 }
+\typeout{************************************************}
+\subsection[]{}\label{subsection-7}
+When attempting to precisely measure this uncertainty a few experiments are in order. When doing statistical experiments, a few terms might be useful to learn:%
+\par
+
+	Experiment
+	Trial
+	Success/Failure
+	Frequency
+	Relative Frequency
+	Histogram
+	%
+\begin{lstlisting}[style=sageinput]
+coin = ["Heads", "Tails"]
+@interact
+def _(num_rolls = slider([5..5000],label="Number of Flips")):
+	rolls = [choice(coin) for roll in range(num_rolls)]
+	show(rolls)   
+	freq = [0,0]
+	for outcome in rolls:
+		if (outcome=='Tails'):
+			freq[0] = freq[0]+1
+		else:
+			freq[1] = freq[1]+1
+	print("\nThe frequency of tails = "+ str(freq[0]))+" and heads = "+ str(freq[1])+"."
+	rel = [freq[0]/num_rolls,freq[1]/num_rolls]
+	print("\nThe relative frequencies for Tails and Heads:"+str(rel))
+	show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
+\end{lstlisting}
+\par
+Notice that as the number of flips increases, the relative frequency of Heads (and Tails)
+	stabilized around 0.5. This makes sense intuitively since there are two options for each 
+	individual flip and 1/2 of those options are Heads while the other 1/2 is Tails. Let's try again
+	by rolling a single die:%
+\begin{lstlisting}[style=sageinput]
+@interact
+def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
+	die = list((1..num_sides))
+	rolls = [choice(die) for roll in range(num_rolls)]
+	show(rolls)   
+
+	freq = [rolls.count(outcome) for outcome in set(die)]  # count the numbers for each outcome
+	print 'The frequencies of each outcome is '+str(freq)
+
+	print 'The relative frequencies of each outcome:'
+	rel_freq = [freq[outcome-1]/num_rolls for outcome in set(die)]  # make frequencies relative
+	print rel_freq
+	fs = []
+	for f in rel_freq:
+		fs.append(f.n(digits=4))
+	print fs
+	show(bar_chart(freq,axes=False,ymin=0))
+\end{lstlisting}
+\par
+Notice in this instance that there are a larger number of options (for example 6 on a regular
+	die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die)
+	as the number of rolls increased.%
+\par
+In general, this suggests a rule: if there are n outcomes and each one has the same
+	chance of occurring on a given trial then on average on a large number of trials the relative
+	frequency of that outcome is 1/n.%
+\begin{lstlisting}[style=sageinput]
+@interact
+def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
+    die = list((1..num_sides))
+    dice = list((2..num_sides*2))
+    rolls = [(choice(die),choice(die)) for roll in range(num_rolls)]
+    sums = [sum(rolls[roll]) for roll in range(num_rolls)]
+    show(rolls)   
+
+    freq = [sums.count(outcome) for outcome in set(dice)]  # count the numbers for each outcome
+    print 'The frequencies of each outcome is '+str(freq)
+    
+    print 'The relative frequencies of each outcome:'
+    rel_freq = [freq[outcome-2]/num_rolls for outcome in set(dice)]  # make frequencies relative
+    print rel_freq        
+    show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
+    print "Relative Frequence of ",dice[0]," is about ",rel_freq[0].n(digits=4)
+    print "Relative Frequence of ",dice[num_sides-1]," is about ",rel_freq[num_sides-1].n(digits=4)
+\end{lstlisting}
+\par
+Notice, not only are the answers not the same but they are not even close. To understand why this 
+	is different from the examples before, consider the possible outcomes from each pair of die. Since we
+	are measuring the sum of the dice then (for a pair of standard 6-sided dice) the possible sums are from 
+	2 to 12. However, there is only one way to get a 2--namely from a (1,1) pair--while there are 6 ways to get
+	a 7--namely from the pairs (1,6), (2,5), (3,4), (4,3), (5,2), and (6,1). So it might make some sense
+	that the likelihood of getting a 7 is 6 times larger than that of getting a 2. Check to see if that
+	is the case with your experiment above.%
+\typeout{************************************************}
+\typeout{Section 2.1.1 Probability DefinitionsEqually Likely Outcomes}
+\typeout{************************************************}
+\subsection[Probability DefinitionsEqually Likely Outcomes]{Probability DefinitionsEqually Likely Outcomes}\label{ProbabilityDefns}
+Using the ideas from our examples above, let's consider how we might formally define a way
+	to measure the expectation from similar experiments.  Before doing so, we need a little notation:%
+\begin{definition}[]\label{definition-1}
+The Cardinality of the set A is the number of elements in A. This will be denoted |A|. If a set has
+	a infinite number of elements, then we will say it's cardinality is also infinite and 
+	write |A| = \(\infty\)\end{definition}
+\par
+To model the behavior above, consider how we might create a definition for our expectation
+	of a given outcome by following the ideas uncovered above. To do so, first consider a desired collection
+	of outcomes in the A and the complete set of outcomes in the set S. Then, if each outcome in A is
+	equally likely then we would like to have the measure of expectation be |A|/|S|. Indeed, on a standard 
+	6-sided die, the expectation of the outcome A={2} from the collection S = {1,2,3,4,5,6} should be
+	|A|/|S| = 1/6.  From the example where we take the sum of two die, the outcome A={4,5} from the
+	collection S = {2,3,4,...,12} would be%
+\begin{gather*}
+|A| = | {(1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1)}| = 7\\
+|S| = | {(1,1),...,(1,6),(2,1),...,(2,6),...,(6,1),...,(6,6)}| = 36
+\end{gather*}\par
+and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
+	with the sum of the two outcomes from your experiment above.%
+\par
+We are ready to now formally give a name to the theoretical measure of expectation for
+	outcomes from an experiment. Taking our cue from the ideas related to equally likely outcomes, we 
+	make our definition have the following basic properties:%
+\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-1}{}Relative frequency cannot be negative, since cardinality cannot be negative\item\hypertarget{li-2}{}Relative frequencies should sum to one\item\hypertarget{li-3}{}Relative frequencies for collections of different outcomes should equal the sum of the
+	individual relative frequencies\end{enumerate}
+\par
+Based upon these we give the following%
+\begin{definition}[]\label{DefnProb}
+The probability P(A) of a given outcome A satisfies the following:
+		\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-4}{}(Nonnegativity) P(A) \(\ge 0\)\item\hypertarget{li-5}{}(Totality) P(S) = 1\item\hypertarget{li-6}{}(Subadditivity) If A \(\cap\) B = \(\emptyset\), then P(A \(\cup\) B) = P(A) + P(B)\end{enumerate}
+\end{definition}
+\par
+The subadditivity property can be extended to cover any number of mutually exclusive sets.%
+\typeout{************************************************}
+\typeout{Subsection 2.1.2 }
+\typeout{************************************************}
+\subsection[]{}\label{BasicProbabilityTheorems}
+Based upon this definition we can immediately establish a number of results.%
+\begin{theorem}[Probability of Complements]\label{ProbabilityComplemnts}
+ For the event A, \(P(A) + P(A^c) = 1\)\end{theorem}
+\begin{proof}\hypertarget{proof-4}{}
+Let A be any event and note that \(A \cap A^c = \emptyset\).  But \(A \cup A^c = S\).
+			So, by subadditivity \(1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)\) as desired.%
+\end{proof}
+\begin{theorem}[]\label{ProbabilityEmptySet}
+\(P(\emptyset) = 0\)\end{theorem}
+\begin{proof}\hypertarget{proof-5}{}
+Note that \(\emptyset \cap S = \emptyset\). So, by subadditivity, 
+			\(1 = P(S) = P(S \cup \emptyset) = P(S) + P(\emptyset) = 1 + P(\emptyset)\).
+			Cancelling the 1 on both sides gives \(P(\emptyset) = 0\). %
+\end{proof}
+\begin{theorem}[]\label{ProbabilityContainment}
+For events A and B with \( A \subset B, P(A) \le P(B)\).
+		\end{theorem}
+\begin{proof}\hypertarget{proof-6}{}
+Assume sets A and B satisfy \( A \subset B\). Then, notice that
+			\(A \cap (B-A) = \emptyset\) and  \(B = A \cup (B-A)\). Therefore, by 
+			subadditivity and nonnegativity%
+\begin{gather*}
+0 \le P(B-A)\\
+P(A) \le P(A) + P(B-A) \\
+P(A) \le P(B)
+\end{gather*}\end{proof}
+\begin{theorem}[]\label{ProbabilityLessThanOne}
+For any event A, \(P(A) \le 1\)\end{theorem}
+\begin{proof}\hypertarget{proof-7}{}
+Notice \(A \subset S\). By the theorem above then \( P(A) \le P(S) = 1\)%
+\end{proof}
+\begin{theorem}[]\label{ProbabilityTwoUnions}
+For any sets A and B, \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)\end{theorem}
+\begin{proof}\hypertarget{proof-8}{}
+Notice that we can write \(A \cup B\) as the disjoint union
+			\(A \cup B = (A-B) \cup (A \cap B) \cup (B-A)\). We can also write disjointly
+			\(A = (A-B) \cup (A \cap B)\) and \(B = (A \cap B) \cup (B-A)\)
+			Hence, %
+\begin{align*}
+P(A) & + P(B) - P(A \cap B) \\
+& = [P(A-B) + P(A \cap B)] + [P(A \cap B) + P(B-A)] - P(A \cap B)\\
+& = P(A-B) + P(A \cap B) + P(B-A)\\
+& = P(A \cup B)
+\end{align*}\end{proof}
+\typeout{************************************************}
+\typeout{Section 2.2 Random Variables}
+\typeout{************************************************}
+\section[Random Variables]{Random Variables}\label{section-6}
+For a given set of events, we might have difficulty doing mathematics since the outcomes
+are not numerical. In order to accomodate our desire to convert to numerical measures we want
+to assign numerical values to all outcomes. The process of doing this creates what is known as a random
+variable.
+%
+\typeout{************************************************}
+\typeout{Section 2.3 Probability Functions}
+\typeout{************************************************}
+\section[Probability Functions]{Probability Functions}\label{ProbabilityFunctions}
+In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From
+this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so 
+to obtain (for discrete values) P(sample space value s)\( = f(X(s))\).  That is, the probability of a given outcome s is equal to the composition 
+which takes s to a numerical value x which is then plugged into f to get the same final values.%
+\begin{definition}[Probability Mass Function]\label{definition-3}
+Given a discrete random variable X on a space R, a probability mass function on X is given by a function \(f:R \rightarrow \mathbb{R}\) such that:
+		\begin{align*}
+& \forall x \in R , f(x) \gt 0\\
+& \sum_{x \in R} f(x) = 1\\
+& A \subset R \Rightarrow P(X \in A) = \sum_{x \in A}f(x)
+\end{align*}\end{definition}
+\begin{definition}[Probability Density Function]\label{definition-4}
+Given a continuous random variable X on a space R, a probability density function on X is given by a function \(f:R \rightarrow \mathbb{R}\) such that:
+			\begin{align*}
+& \forall x \in R , f(x) \gt 0\\
+& \int_{R} f(x) = 1\\
+& A \subset R \Rightarrow P(X \in A) = \int_{A} f(x) dx
+\end{align*}\end{definition}
+\begin{definition}[Distribution Function]\label{definition-5}
+Given a random variable X on a space R, a probability distribution function on X is given by a function 
+				   \(F:\mathbb{R} \rightarrow \mathbb{R}\) such that \(\displaystyle F(x)=P(X \le x)\)\end{definition}
+\typeout{************************************************}
+\typeout{Subsection 2.3.1 Properties of the Distribution Function}
+\typeout{************************************************}
+\subsection[Properties of the Distribution Function]{Properties of the Distribution Function}\label{subsection-9}
+\begin{theorem}[]\label{theorem-Fmin}
+\(F(x)=0, \forall x \le \inf(R)\)\end{theorem}
+\begin{proof}\hypertarget{proof-9}{}
+\end{proof}
+\begin{theorem}[]\label{theorem-Fmax}
+\(F(x)=1, \forall x \ge \sup(R)\)\end{theorem}
+\begin{proof}\hypertarget{proof-10}{}
+\end{proof}
+\begin{theorem}[]\label{theorem-11}
+F is non-decreasing\end{theorem}
+\begin{proof}\hypertarget{proof-11}{}
+Case 1: R discrete%
+\begin{align*}
+\forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2\\
+F(x_2) & = \sum_{x \le x_2} f(x) \\
+& = \sum_{x \le x_1} f(x) + \sum_{x_1 \lt x \le x_2} f(x)\\
+& \ge \sum_{x \le x_1} f(x) = F(x_1)
+\end{align*}\par
+Case 2: R continuous%
+\begin{align*}
+\forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2\\
+F(x_2) & = \int_{-\infty}^{x_2} f(x) dx \\
+ & = \int_{-\infty}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx\\
+ & \ge \int_{-\infty}^{x_1} f(x) dx\\
+ & = F(x_1)
+\end{align*}\end{proof}
+\begin{theorem}[Using Discrete Distribution Function to compute probabilities]\label{theorem-Fvsf-discrete}
+for \(x \in R, f(x) = F(x) - F(x-1)\)\end{theorem}
+\begin{theorem}[Using Continuous Distribution function to compute probabilities]\label{theorem-Fvsf-continuyous}
+for \(a \lt b, (a,b) \in R, P(a \lt X \lt b) = F(b) - F(a)\)\end{theorem}
+\begin{corollary}[]\label{corollary-ProbPointZero-continuous}
+For continuous distributions, P(X = a) = 0\end{corollary}
+\typeout{************************************************}
+\typeout{Subsection 2.3.2 Standard Units}
+\typeout{************************************************}
+\subsection[Standard Units]{Standard Units}\label{subsection-10}
+Any distribution variable can be converted to “standard units” using the linear translation 
+			\(\displaystyle z = \frac{x-\mu}{\sigma}\). In doing so, then values of z will always represent the number of
+			standard deviations x is from the mean and will provide “dimensionless” comparisons.%
+\typeout{************************************************}
+\typeout{Chapter 3 Binomial Distribution, Geometric, and Negative Binomial}
+\typeout{************************************************}
+\chapter[Binomial Distribution, Geometric, and Negative Binomial]{Binomial Distribution, Geometric, and Negative Binomial}\label{BinomialDistribution}
+\typeout{************************************************}
+\typeout{Introduction  }
+\typeout{************************************************}
+This chapter creates the Binomial Distribution.%
+\typeout{************************************************}
+\typeout{Section 3.1 }
+\typeout{************************************************}
+\section[]{}\label{section-8}
+\typeout{************************************************}
+\typeout{Subsection 3.1.1 Binomial Distribution}
+\typeout{************************************************}
+\subsection[Binomial Distribution]{Binomial Distribution}\label{subsection-11}
+Consider the situation where one can observe a sequence  of
+		independent trials where the likelihood of a 
+		success on each individual trial stays constant from trial to trial.
+		Call this likelihood the probably of "success" and 
+		denote its value by 
+		\(p\) where \( 0 \lt p \lt 1 \).  
+		If we let the variable \(X\) measure the number of successes 
+		obtained when doing a fixed number of trials n, then the resulting
+		distribution of probabilities is called a Binomial Distribution.%
+\typeout{************************************************}
+\typeout{Subsection 3.1.1.1 Derivation of Binomial Probability Function}
+\typeout{************************************************}
+\subsubsection[Derivation of Binomial Probability Function]{Derivation of Binomial Probability Function}\label{subsection-12}
+ Since successive trials are independent, then the probability of X successes occurring within n 
+			trials is given by 
+			\(P(X=x) = \binom{n}{x}P(SS...SFF...F) = \binom{n}{x}p^x(1-p)^{n-x}\)%
+\typeout{************************************************}
+\typeout{Subsection 3.1.1.2 Binomial Distribution mean}
+\typeout{************************************************}
+\subsubsection[Binomial Distribution mean]{Binomial Distribution mean}\label{subsection-13}
+\begin{align*}
+ \mu = E[X] & = \SUM {x=0} {n} {x \binom{n}{x} p^x (1-p)^{n-x}}\\
+ & = \SUM {x=1} {n} {x \frac{n(n-1)!}{x(x-1)!(n-x)!} p^x (1-p)^{n-x}}\\
+ & = np \SUM {x=1} {n} {\frac{(n-1)!}{(x-1)!((n-1)-(x-1))!} p^{x-1} (1-p)^{(n-1)-(x-1)}}
+\end{align*}Using the change of variables \(k=x-1\) and \(m = n-1\) yields a binomial series%
+\begin{align*}
+ & = np \SUM {k=0} {m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}}\\
+ & = np (p + (1-p))^m = np
+\end{align*}\typeout{************************************************}
+\typeout{Subsection 3.1.1.3 Binomial Distribution variance}
+\typeout{************************************************}
+\subsubsection[Binomial Distribution variance]{Binomial Distribution variance}\label{subsection-14}
+\begin{align*}
+ \sigma^2 = E[X(X-1)] + \mu - \mu^2 & = \SUM {x=0} {n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2\\
+ & = \SUM {x=2} {n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2\\
+ & = n(n-1)p^2 \SUM {x=2} {n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2
+\end{align*}Using the change of variables \(k=x-2\) and \(m = n-2\) yields a binomial series%
+\begin{align*}
+ & = n(n-1)p^2  \SUM {k=0} {m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2\\
+ & = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)
+\end{align*}\typeout{************************************************}
+\typeout{Chapter 4 Geometric, Negative Binomial}
+\typeout{************************************************}
+\chapter[Geometric, Negative Binomial]{Geometric, Negative Binomial}\label{DesiredSuccessDistributions}
+\typeout{************************************************}
+\typeout{Introduction  }
+\typeout{************************************************}
+This chapter deals with the distributions which measure a variable value until a desired success occurs.%
+\typeout{************************************************}
+\typeout{Section 4.1 Geometric and Negative Binomial Distribution}
+\typeout{************************************************}
+\section[Geometric and Negative Binomial Distribution]{Geometric and Negative Binomial Distribution}\label{GeometricDistribution}
+Consider the situation where one can observe a sequence  of independent trials where the likelihood of a success on each individual trial
+		stays constant from trial to trial. Call this likelihood the probably of "success" and denote its value by \(p\) 
+		where \( 0 \lt p \lt 1 \).  
+		If we let the variable \(X\) measure the number of trials needed in order to obtain the first success, 
+		then the resulting distribution of probabilities is called a Geometric Distribution.%
+\typeout{************************************************}
+\typeout{Subsection 4.1.1 Derivation of Geometric Probability Function}
+\typeout{************************************************}
+\subsection[Derivation of Geometric Probability Function]{Derivation of Geometric Probability Function}\label{subsection-15}
+ Since successive trials are independent, then the probability of the first success occurring on the mth trial presumes that
+				the previous m-1 trials were all failures.  Therefore the desired probability is given by %
+\begin{equation*}f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p\end{equation*}\typeout{************************************************}
+\typeout{Subsection 4.1.2 Properties of the Geometric DistributionGeometric Distribution sums to 1}
+\typeout{************************************************}
+\subsection[Properties of the Geometric DistributionGeometric Distribution sums to 1]{Properties of the Geometric DistributionGeometric Distribution sums to 1}\label{subsection-16}
+\begin{gather*}
+\SUM {k=1} {\infty} {f(x)} = \SUM {k=1} {\infty} {(1-p)^{k-1} p} = p \SUM {j=0} {\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1
+\end{gather*}\typeout{************************************************}
+\typeout{Subsection 4.1.3 Derivation of Geometric Mean}
+\typeout{************************************************}
+\subsection[Derivation of Geometric Mean]{Derivation of Geometric Mean}\label{subsection-17}
+ %
+\begin{align*}
+\mu & = E[X] = \SUM {k=0} {\infty} {k(1-p)^{k-1}p}\\
+ & = p \SUM {k=1} {\infty} {k(1-p)^{k-1}}\\
+ & = p \frac{1}{(1-(1-p))^2}\\
+ & = p \frac{1}{p^2} = \frac{1}{p}
+\end{align*}\typeout{************************************************}
+\typeout{Subsection 4.1.4 Derivation of Geometric Variance}
+\typeout{************************************************}
+\subsection[Derivation of Geometric Variance]{Derivation of Geometric Variance}\label{subsection-18}
+ %
+\begin{align*}
+\sigma^2 & = E[X(X-1)] + \mu - \mu^2 \\
+ & = \SUM {k=0} {\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 \\
+ & = (1-p)p \SUM {k=2} {\infty} {k(k-1)(1-p)^{k-2}} + \frac{1}{p} - \frac{1}{p^2}\\
+ & = (1-p)p \frac{2}{(1-(1-p))^3} + \frac{1}{p} - \frac{1}{p^2}\\
+ & = \frac{1-p}{p^2}
+\end{align*}\typeout{************************************************}
+\typeout{Subsection 4.1.5 Derivation of Geometric Distribution Function}
+\typeout{************************************************}
+\subsection[Derivation of Geometric Distribution Function]{Derivation of Geometric Distribution Function}\label{subsection-19}
+ Consider the accumulated probabilities over a range of values...%
+\begin{align*}
+ P(X \le a) & = 1 - P(X \gt a)\\
+ & = 1- \SUM {k={a+1}} {\infty} {(1-p)^{k-1}p}\\
+ & = 1- p \frac{(1-p)^{a}}{1-(1-p)}\\
+ & = 1- (1-p)^{a}
+\end{align*}\typeout{************************************************}
+\typeout{Subsection 4.1.6 Negative Binomial Series}
+\typeout{************************************************}
+\subsection[Negative Binomial Series]{Negative Binomial Series}\label{subsection-20}
+\begin{theorem}[]\label{theorem-NegBinomSeries}
+\(\displaystyle \frac{1}{(a+b)^n} = \SUM {k=0} {\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}\)\end{theorem}
+\begin{proof}\hypertarget{proof-12}{}
+First, convert the problem to a slightly different form:%
+\( \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
+							 = \frac{1}{b^n} \SUM {k=0} {\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
+				\)\par
+So, let's replace \(\frac{a}{b} = x\) and ignore for a while the term factored out. Then, we only need to show %
+\begin{gather*}
+\SUM {k=0} {\infty} {(-1)^k \binom{n + k - 1}{k} x^k} = \left ( \frac{1}{1+x} \right )^n 
+\end{gather*}\par
+However%
+\begin{align*}
+ \left ( \frac{1}{1+x} \right )^n & = \left ( \frac{1}{1 - (-x)} \right )^n \\
+ & = \left ( \SUM {k=0} {\infty} {(-1)^k x^k} \right )^n
+\end{align*}\par
+This infinite sum raised to a power can be expanded by distributing terms in the standard way. 
+				In doing so, the various powers of x multiplied together
+				will create a series in powers of x involving \(x^0, x^1, x^2, ...\).  
+				To detemine the final coefficients notice that the number of time \(m^k\) will 
+				appear in this product depends upon the number of ways one can write k as a sum of nonnegative integers.%
+\par
+For example, the coefficient of \(x^3\) will come from the n ways of multiplying the coefficients 
+				\(x^3, x^0, ..., x^0\) and \(x^2, x^1, x^0, ..., x^0\)
+				 and \(x^1, x^1, x^1, x^0,..., x^0\). This is equivalent to finding the number of ways to write the 
+				 number k as a sum of nonnegative integers. The possible set of
+				 nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  
+				 For example, if k = 3 then *||** means 
+				 \(x^1 x^0 x^2 = x^3\). Similarly for k = 5 and |**|*|**| implies \( x^0 x^2 x^1 x^2 x^0 = x^5\). 
+				 The number of ways to interchange the identical *'s among the
+				 idential |'s is \(\binom{n+k-1}{k}\). %
+\par
+Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x 
+				 will require an odd number of odd powers. So, the 
+				 coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,%
+\begin{gather*}
+ \left ( \frac{1}{1+x} \right )^n = \SUM {k=0} {\infty} {(-1)^k \binom{n + k - 1}{k} x^k}
+\end{gather*}\par
+Similarly,%
+\( \left ( \frac{1}{1-x} \right )^n = \left ( \SUM {k=0} {\infty} {x^k} \right )^n = \SUM {k=0} {\infty} {\binom{n + k - 1}{k} x^k}\)\end{proof}
+\typeout{************************************************}
+\typeout{Subsection 4.1.7 Negative Binomial Distribution}
+\typeout{************************************************}
+\subsection[Negative Binomial Distribution]{Negative Binomial Distribution}\label{subsection-21}
+Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success 
+			on each individual trial \(p\) where 
+			\( 0 \lt p \lt 1 \).  For a positive integer r, let the variable \(X\) measure the number of 
+			trials needed in order to obtain the rth success.
+			Then the resulting distribution of probabilities is called a Negative Binomial Distribution.%
+\typeout{************************************************}
+\typeout{Subsection 4.1.7.1 Derivation of Negative Binomial Probability Function}
+\typeout{************************************************}
+\subsubsection[Derivation of Negative Binomial Probability Function]{Derivation of Negative Binomial Probability Function}\label{subsection-22}
+ Since successive trials are independent, then the probability of the rth success occurring on the 
+				mth trial presumes that in 
+				the previous m-1 trials were r-1 successes and m-r failures.  Therefore the desired probability is given by 
+				\begin{gather*}
+P(X=m) = \binom{m - 1}{r-1}(1-p)^{m-r}p^r
+\end{gather*}
+				%
+\typeout{************************************************}
+\typeout{Subsection 4.1.7.2 Negative Binomial Distribution Sums to 1}
+\typeout{************************************************}
+\subsubsection[Negative Binomial Distribution Sums to 1]{Negative Binomial Distribution Sums to 1}\label{subsection-23}
+\(\SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}p^r} & = p^r \SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}}\)and by using \(k = m-r\)%
+\begin{align*}
+ & = p^r \SUM {k=0} {\infty} {\binom{r + k - 1}{k}(1-p)^k}\\
+ & = p^r \frac{1}{(1-(1-p))^r}\\
+ & = 1
+\end{align*}\end{document}

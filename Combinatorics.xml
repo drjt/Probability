@@ -97,6 +97,21 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			coordinates.</p>
 		</proof>
 	</theorem>
+	
+	<example>
+		<p>Consider your ipad's security. To unlock the screen you need to enter your four digit pass code. How easy is it to guess this pass code?</p>
+		<p>Using the standard 10 digit keypad, we first have two questions to consider?
+		<ol>
+			<li>Does the order in which the digits are entered matter?</li>
+			<li>Can you reuse a digit more than once?</li>
+		</ol>
+		For the ipad, the order does matter and you cannot reuse digits. In this case, the number of possible codes can be determined by considering each digit as a separate event with four such events in succession providing the right code. By successively applying the multiplication principle, you find that the number of possible codes is the number of remaining available digits at each step.  Namely, <m>10 \times 9 \times 8 \times 7 = 5040.</m>
+		</p>
+		<p>
+		Note that if you were allowed to reuse the digits then the number of possible outcomes would be more since all 10 digits would be available for each event.  Namely, <m>10 \times 10 \times 10 \times 10 = 10000.</m>
+		</p>
+	</example>
+	
 	<definition>
 	<title>Factorial</title>
 		<statement>
@@ -167,7 +182,7 @@ If n items belong to s categories, n1 in first, n2 in second, ... , ns in the la
 <p>When counting various outcomes sometimes the order of things does not matter.
 In this case we count each different set of outcomes a combination. </p>
 	<theorem>
-	<title>Combinations of n objects selecting r</title>
+	<title>Combinations of n distinct objects selecting r without replacement</title>
 		<statement>
 			<p>
 			The number of ways to arrange r items from a set of n distinct items 
@@ -187,7 +202,42 @@ In this case we count each different set of outcomes a combination. </p>
 			</p>
 		</proof>
 	</theorem>
-	
+
+	<theorem>
+	<title>Combinations of n distinct objects selecting r with replacement</title>
+		<statement>
+			<p>
+			The number of ways to arrange r items from a set of n distinct items 
+			is <m> C_r^{n+r-1} = \frac{n+r-1!}{r!(n-1)!} </m>
+			</p>
+		</statement>
+		<proof>
+			<p>
+			blah
+			</p>
+		</proof>
+	</theorem>
+
+	<example>
+		<p>Revisiting your ipad's security, what happens if the order in which the digits are entered does not matter? If so, then you would be picking a combination of 4 digits without replacement from a group of 10 digits. Namely, 
+		<md>
+			<mrow>\frac{10!}{4!6!} &amp; = \frac{10 \times 9 \times 8 \times 7 \times 6!}{4 \times 3 \times 2 \times 1 \times 6!}</mrow>
+			<mrow>&amp; = \frac{10 \times 9 \times 8 \times 7}{4 \times 3 \times 2 \times 1}</mrow>
+			<mrow>&amp; = \frac{5040}{24}</mrow>
+			<mrow>&amp; = 210.</mrow>
+		</md>
+		Notice that the total number of options is much smaller when order does not matter.
+		</p>
+		<p>
+		Note that if you were allowed to reuse the digits then the number of possible outcomes would be
+		<md>
+			<mrow>\frac{13!}{3!10!} &amp; = \frac{13 \times 12 \times 11}{3 \times 2 \times 1} </mrow>
+			<mrow> &amp; = 286</mrow>
+		</md>
+		which once again is more since numbers are allowed to repeat.
+		</p>
+	</example>
+		
 	<definition>
 	<title>Binomial Coefficients</title>
 		<statement>

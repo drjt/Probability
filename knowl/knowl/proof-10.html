@@ -1,0 +1,15 @@
+<!--*                                    *-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2016-03-23T16:02:31-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>\begin{align*}
+ \sigma^2 =  E[m(m-1)] + \mu - \mu^2 &amp; = \SUM {m=0} {\infty} {m(m-1) \cdot \frac{\mu^m}{m!} \cdot e^{-\mu}} + \mu - \mu^2\\
+  &amp; = e^{-\mu} \SUM {m=2} {\infty} {\frac{\mu^m}{(m-2)!} } + \mu - \mu^2\\
+  &amp; = e^{-\mu} \cdot \mu^2 \SUM {m=2} {\infty} {\frac{\mu^{m-2}}{(m-2)!} } + \mu - \mu^2\\
+  &amp; = e^{-\mu} \cdot \mu^2 \SUM {k=0} {\infty} {\frac{\mu^k}{k!} } + \mu - \mu^2\\
+  &amp; = e^{-\mu} \cdot \mu^2 e^{\mu} + \mu - \mu^2\\
+ &amp; = \mu^2 + \mu - \mu^2 \\
+ &amp; = \mu 
+\end{align*}</article><div class="context-link" style="text-align:right;"><a href="PoissonDistribution.html#proof-10">(in-context)</a></div>

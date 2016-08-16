@@ -1,0 +1,14 @@
+<!--*                                    *-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2016-03-23T16:02:31-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>\begin{align*}
+ \mu =  E[m] = &amp; = \SUM {m=0} {\infty} {m \cdot \frac{(\lambda T)^m}{m!} \cdot e^{-\lambda T}}\\
+  &amp; = e^{-\lambda T} \SUM {m=1} {\infty} {\frac{(\lambda T)^m}{(m-1)!} }\\
+  &amp; = e^{-\lambda T} \cdot \lambda T \SUM {m=1} {\infty} {\frac{(\lambda T)^{m-1}}{(m-1)!} }\\
+  &amp; = e^{-\lambda T} \cdot \lambda T \SUM {k=0} {\infty} {\frac{(\lambda T)^k}{k!} }\\
+  &amp; = e^{-\lambda T} \cdot \lambda T e^{\lambda T}\\
+ &amp; = \lambda T 
+\end{align*}</article><div class="context-link" style="text-align:right;"><a href="PoissonDistribution.html#proof-9">(in-context)</a></div>

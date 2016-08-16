@@ -81,6 +81,7 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
                 <title>Answer is a number or a function.</title>
 
                 <webwork xml:id="number-or-function">
+                <!-- Copied example problem and has no relevance to the text :)  -->
 
                     <setup>
                         <var name="$a" category="integer">
@@ -110,7 +111,7 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
                                 <p>Suppose the correct answer is <m><var name="$answer1"/></m>.</p>
                                 <ul label="square">
                                     <li>
-                                        <p><answer var="$answer1" width="15"/></p>
+                                        <p><var name="$answer1" width="15"/></p>
                                     </li>
                                 </ul>
                             </li>
@@ -118,7 +119,7 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
                                 <p>Suppose the correct answer is <m>\displaystyle <var name="$answer2"/></m>.</p>
                                 <ul label="square">
                                     <li>
-                                        <p><answer var="$answer2" width="15"/></p>
+                                        <p><var name="$answer2" width="15"/></p>
                                     </li>
                                 </ul>
                             </li>
