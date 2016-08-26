@@ -1,11 +1,14 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-26T14:14:15-05:00    *-->
+<!--*    on 2016-08-26T15:52:27-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <p><h5 class="heading"><span class="type">Paragraph</span></h5>
-	Consider \(f(x) = x^2/3\) over R = [-1,2] with value function given by \(u(x) = e^x - 1\). Then, the expected value for u(x) is given by
-	\begin{equation*}E = \int_{-1}^2 (e^x-1) \cdot x^2/3 = -1/9 \cdot (e + 15) \cdot e^{-1} + 2/3 \cdot e^2 - 8/9 \approx 3.3129\end{equation*}
-	</p><span class="incontext"><a href="section-18.html#p-156">in-context</a></span>
+	Consider \(f(x) = x^2/c\) for some positive real number c and presume R = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make f(x) a probability density function, we must have
+	\begin{equation*}\int_{x \in R} f(x) = 1.\end{equation*}
+	In this instance you get
+	\begin{equation*}1 = \int_{-1}^2 x^2/c = x^3/(3c) |_{-1}^2 = \frac{8}{3c} - \frac{-1}{3c} = \frac{3}{c}\end{equation*}
+	Therefore, f(x) is a probability density function over R provided   = 3.
+	</p><span class="incontext"><a href="ProbabilityFunctions.html#p-156">in-context</a></span>

@@ -1,28 +1,36 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-26T14:14:15-05:00    *-->
+<!--*    on 2016-08-26T15:52:27-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
-<p><h5 class="heading"><span class="type">Paragraph</span></h5>So, going back to Pascal's wager, let X = 0 represent disbelief when God doesn't exist and X = 1 represent disbelief when God does exist, X = 2 represent belief when God does exist, and X = 3 represent belief when God does not exist. Let p be the likelihood that God exists. Then you can compute the expected value of disbelief and the expect value of belief by first creating a value function. Below, for argument sake we are somewhat randomly assign a value of one million to disbelief if God doesn't exist. The conclusions are the same if you choose any other finite number...
-	\begin{gather*}
-u(0) = 1,000,000, f(0) = 1-p\\
-u(1) = -\infty, f(1) = p\\
-u(2) = \infty, f(2) = p\\
-u(3) = 0, f(3) = 1-p
-\end{gather*}
-	Then, 
-	\begin{align*}
-E[disbelief] &amp; = u(0)f(0) + u(1)f(1)\\
-&amp; = 1000000 \times (1-p) - \infty \times p\\
-&amp; = -\infty
-\end{align*}
-	if p&gt;0. On the other hand, 
-	\begin{align*}
-E[belief] &amp; = u(2)f(2) + u(3)f(3)\\
-&amp; = \infty \times p + 0 \times (1-p)\\
-&amp; = \infty
-\end{align*}
-	if p&gt;0. So Pascal's conclusion is that if there is even the slightest chance that God exists then belief is the smart and scientific choice.
-	</p><span class="incontext"><a href="section-18.html#p-157">in-context</a></span>
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>Using \(f(x) = x/10\) over R = {1,2,3,4} again, note that F(x) will only change at these four domain values. We get
+	
+	<figure class="figure-like" id="table-4"><table>
+<tr>
+<td class="r m b2 r0 l0 t0">X</td>
+<td class="r m b2 r0 l0 t0">F(x)</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">\(x \lt 1\)</td>
+<td class="r m b0 r0 l0 t0">0</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">\(1 \le x \lt 2\)</td>
+<td class="r m b0 r0 l0 t0">1/10</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">\(2 \le x \lt 3\)</td>
+<td class="r m b0 r0 l0 t0">3/10</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">\(3 \le x \lt 4\)</td>
+<td class="r m b0 r0 l0 t0">6/10</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">\(4 \le x \)</td>
+<td class="r m b0 r0 l0 t0">1</td>
+</tr>
+</table></figure>
+	</p><span class="incontext"><a href="ProbabilityFunctions.html#p-157">in-context</a></span>

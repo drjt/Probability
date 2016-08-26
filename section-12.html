@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-24T15:40:17-05:00    *-->
+<!--*    on 2016-08-26T15:52:26-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AATA Definition of Probability</title>
+<title>AATA Combinations</title>
 <meta name="Keywords" content="Authored in MathBook XML">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -37,8 +37,7 @@ MathJax.Hub.Config({
         scale: 88,
     },
 });
-    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://math.mc.edu/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
-<script type="text/javascript" src="https://math.mc.edu/webwork2_files/js/vendor/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
@@ -61,12 +60,12 @@ MathJax.Hub.Config({
 <nav id="primary-navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="previous-button toolbar-item button" href="RelativeFrequency.html">Previous</a><a class="up-button button toolbar-item" href="ProbabilityGeneralities.html">Up</a><a class="next-button button toolbar-item" href="section-13.html">Next</a>
+<a class="previous-button toolbar-item button" href="section-11.html">Previous</a><a class="up-button button toolbar-item" href="Combinatorics.html">Up</a><a class="next-button button toolbar-item" href="ProbabilityGeneralities.html">Next</a>
 </div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="RelativeFrequency.html">Previous</a><a class="up-button button toolbar-item" href="ProbabilityGeneralities.html">Up</a><a class="next-button button toolbar-item" href="section-13.html">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-11.html">Previous</a><a class="up-button button toolbar-item" href="Combinatorics.html">Up</a><a class="next-button button toolbar-item" href="ProbabilityGeneralities.html">Next</a>
 </div>
 </div></nav></header><div class="page">
 <aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
@@ -86,161 +85,115 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="section-4.html">Measurement Scales</a></li>
 <li><a href="section-5.html">Techniques for Representing Data</a></li>
-<li><a href="section-6.html">Measures of the Middle</a></li>
-<li><a href="section-7.html">Measures of Spread</a></li>
+<li><a href="section-6.html">Measures of Position</a></li>
+<li><a href="section-7.html">Measures of the Middle</a></li>
+<li><a href="section-8.html">Measures of Spread</a></li>
+<li><a href="section-9.html">Graphical Representation of Data</a></li>
 </ul>
-<h2 class="link"><a href="Combinatorics.html"><span class="codenumber">3</span><span class="title">Counting and Combinatorics</span></a></h2>
+<h2 class="link active"><a href="Combinatorics.html"><span class="codenumber">3</span><span class="title">Counting and Combinatorics</span></a></h2>
 <ul>
-<li><a href="section-8.html">Introduction</a></li>
-<li><a href="section-9.html">Permutations</a></li>
-<li><a href="section-10.html">Combinations</a></li>
+<li><a href="section-10.html">Introduction</a></li>
+<li><a href="section-11.html">Permutations</a></li>
+<li><a href="section-12.html" class="active">Combinations</a></li>
 </ul>
-<h2 class="link active"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability and Probability Functions</span></a></h2>
+<h2 class="link"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability and Probability Functions</span></a></h2>
 <ul>
 <li><a href="RelativeFrequency.html">Relative Frequency</a></li>
-<li><a href="section-12.html" class="active">Definition of Probability</a></li>
-<li><a href="section-13.html">Conditional Probability</a></li>
-<li><a href="section-14.html">Independence</a></li>
-<li><a href="section-15.html">Random Variables</a></li>
+<li><a href="section-14.html">Definition of Probability</a></li>
+<li><a href="section-15.html">Conditional Probability</a></li>
+<li><a href="section-16.html">Independence</a></li>
+<li><a href="section-17.html">Random Variables</a></li>
 <li><a href="ProbabilityFunctions.html">Probability Functions</a></li>
-<li><a href="section-17.html">Expected Value</a></li>
+<li><a href="section-19.html">Expected Value</a></li>
 </ul>
 <h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">5</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
 <ul>
 <li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
 <li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
-<li><a href="section-20.html">Negative Binomial</a></li>
+<li><a href="section-22.html">Negative Binomial</a></li>
 </ul>
 <h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">6</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
 <ul>
-<li><a href="section-21.html">Poisson Distribution</a></li>
-<li><a href="section-22.html">Exponential Distribution</a></li>
-<li><a href="section-23.html">Gamma Distribution</a></li>
+<li><a href="section-23.html">Poisson Distribution</a></li>
+<li><a href="section-24.html">Exponential Distribution</a></li>
+<li><a href="section-25.html">Gamma Distribution</a></li>
 </ul>
 <h2 class="link"><a href="Normal.html"><span class="codenumber">7</span><span class="title">Normal Distributions</span></a></h2>
 <ul>
-<li><a href="section-24.html">Properties of the Normal Distribution</a></li>
-<li><a href="section-25.html">Theorems</a></li>
-<li><a href="section-26.html">Chi-Square Distribution</a></li>
-<li><a href="section-27.html">Central Limit Theorem</a></li>
+<li><a href="section-26.html">Properties of the Normal Distribution</a></li>
+<li><a href="section-27.html">Theorems</a></li>
+<li><a href="section-28.html">Chi-Square Distribution</a></li>
+<li><a href="section-29.html">Central Limit Theorem</a></li>
 </ul>
 <h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">8</span><span class="title">Estimating Data using Intervals</span></a></h2>
 <ul>
-<li><a href="section-28.html">Chebyshev</a></li>
-<li><a href="section-29.html">Measures of Spread</a></li>
+<li><a href="section-30.html">Chebyshev</a></li>
+<li><a href="section-31.html">Measures of Spread</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-12"><header title="Section 4.2 Definition of Probability"><h1 class="heading hide-type" alt="Section 4.2 Definition of Probability">
-<span class="type">Section</span><span class="codenumber">4.2</span><span class="title">Definition of Probability</span>
-</h1></header><section class="subsection" id="ProbabilityDefns"><header title="Subsection 4.2.1 Motivating the Definition"><h1 class="heading hide-type" alt="Subsection 4.2.1 Motivating the Definition">
-<span class="type">Subsection</span><span class="codenumber">4.2.1</span><span class="title">Motivating the Definition</span>
-</h1></header><p id="p-102">Using the ideas from our examples above, let's consider how we might formally define a way
-	to measure the expectation from similar experiments.  Before doing so, we need a little notation:</p>
-<article class="definition-like" id="definition-5"><h5 class="heading">
-<span class="type">Definition</span><span class="codenumber">4.2.1</span>
-</h5>The Cardinality of the set A is the number of elements in A. This will be denoted |A| (similar
-	to the idea of frequency of an outcome noted earlier.) If a set has
-	a infinite number of elements, then we will say it's cardinality is also infinite and 
-	write |A| = \(\infty\)</article><p id="p-103">
-	To model the behavior above, consider how we might create a definition for our expectation
-	of a given outcome by following the ideas uncovered above. To do so, first consider a desired collection
-	of outcomes A. If each outcome in A is equally likely then we might follow the concept behind relative 
-	frequency and consider a measure of expectation be |A|/|S|. Indeed, on a standard 
-	6-sided die, the expectation of the outcome A={2} from the collection S = {1,2,3,4,5,6} should be
-	|A|/|S| = 1/6.</p>
-<p id="p-104">From the example where we take the sum of two die, the outcome A={4,5} from the
-	collection S = {2,3,4,...,12} would be</p>\begin{gather*}
-|A| = | {(1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1)}| = 7\\
-|S| = | {(1,1),...,(1,6),(2,1),...,(2,6),...,(6,1),...,(6,6)}| = 36
-\end{gather*}<p id="p-105">and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
-	with the sum of the two outcomes from your experiment above.</p>
-<p id="p-106">We are ready to now formally give a name to the theoretical measure of expectation for
-	outcomes from an experiment. Taking our cue from the ideas related to equally likely outcomes, we 
-	make our definition have the following basic properties:</p>
-<ol style="list-style-type: decimal;">
-<li id="li-98">Relative frequency cannot be negative, since cardinality cannot be negative</li>
-<li id="li-99">Relative frequencies for disjoint events should sum to one</li>
-<li id="li-100">Relative frequencies for collections of disjoint outcomes should equal the sum of the
-	individual relative frequencies</li>
-</ol></section><section class="subsection" id="subsection-9"><header title="Subsection 4.2.2 Probability"><h1 class="heading hide-type" alt="Subsection 4.2.2 Probability">
-<span class="type">Subsection</span><span class="codenumber">4.2.2</span><span class="title">Probability</span>
-</h1></header><p id="p-107">Based upon these we give the following:</p>
-<article class="definition-like" id="DefnProb"><h5 class="heading">
-<span class="type">Definition</span><span class="codenumber">4.2.2</span>
-</h5>The probability P(A) of a given outcome A is a set function which satisfies:
-		<ol style="list-style-type: decimal;">
-<li id="li-101">(Nonnegativity) P(A) \(\ge 0\)</li>
-<li id="li-102">(Totality) P(S) = 1</li>
-<li id="li-103">(Subadditivity) If A \(\cap\) B = \(\emptyset\), then P(A \(\cup\) B) = P(A) + P(B).  
-			In general, if {\(A_k\)} are pairwise disjoint then \(P( \cup_k A_k) = \sum_k P(A_k)\).</li>
-</ol></article></section><section class="subsection" id="BasicProbabilityTheorems"><header title="Subsection 4.2.3 Basic Probability Theorems"><h1 class="heading hide-type" alt="Subsection 4.2.3 Basic Probability Theorems">
-<span class="type">Subsection</span><span class="codenumber">4.2.3</span><span class="title">Basic Probability Theorems</span>
-</h1></header><p id="p-108">Based upon this definition we can immediately establish a number of results.</p>
-<article class="theorem-like" id="ProbabilityComplemnts"><h5 class="heading">
-<span class="type">Theorem</span><span class="codenumber">4.2.3</span><span class="title">Probability of Complements</span>
-</h5> For any event A, \(P(A) + P(A^c) = 1\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-9" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-109">Let A be any event and note that \(A \cap A^c = \emptyset\).  But \(A \cup A^c = S\).
-			So, by subadditivity \(1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)\) as desired.</p></article></span>
-</div>
-<article class="theorem-like" id="ProbabilityEmptySet"><h5 class="heading">
-<span class="type">Theorem</span><span class="codenumber">4.2.4</span>
-</h5>\(P(\emptyset) = 0\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-10" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-110">Note that \(\emptyset^c = S\). So, by the theorem above, 
-			\(1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)\).
-			Cancelling the 1 on both sides gives \(P(\emptyset) = 0\). </p></article></span>
-</div>
-<article class="theorem-like" id="ProbabilityContainment"><h5 class="heading">
-<span class="type">Theorem</span><span class="codenumber">4.2.5</span>
-</h5>For events A and B with \( A \subset B, P(A) \le P(B)\).
-		</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-11" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-111">Assume sets A and B satisfy \( A \subset B\). Then, notice that
-			\(A \cap (B-A) = \emptyset\) and  \(B = A \cup (B-A)\). Therefore, by 
-			subadditivity and nonnegativity</p>\begin{gather*}
-0 \le P(B-A)\\
-P(A) \le P(A) + P(B-A) \\
-P(A) \le P(B)
-\end{gather*}</article></span>
-</div>
-<article class="theorem-like" id="ProbabilityLessThanOne"><h5 class="heading">
-<span class="type">Theorem</span><span class="codenumber">4.2.6</span>
-</h5>For any event A, \(P(A) \le 1\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-12" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-112">Notice \(A \subset S\). By the theorem above \( P(A) \le P(S) = 1\)</p></article></span>
-</div>
-<article class="theorem-like" id="ProbabilityTwoUnions"><h5 class="heading">
-<span class="type">Theorem</span><span class="codenumber">4.2.7</span>
-</h5>For any sets A and B, \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-113">Notice that we can write \(A \cup B\) as the disjoint union</p>\begin{gather*}
-A \cup B = (A-B) \cup (A \cap B) \cup (B-A).
-\end{gather*}<p id="p-114">We can also write disjointly</p>\begin{gather*}
-A = (A-B) \cup (A \cap B)\\
-B = (A \cap B) \cup (B-A)
-\end{gather*}<p id="p-115">Hence, </p>\begin{align*}
-P(A) &amp; + P(B) - P(A \cap B) \\
-&amp; = [P(A-B) + P(A \cap B)] + [P(A \cap B) + P(B-A)] - P(A \cap B)\\
-&amp; = P(A-B) + P(A \cap B) + P(B-A)\\
-&amp; = P(A \cup B)
-\end{align*}</article></span>
-</div>
-<p id="p-116">This result can be extended to more that two sets using a property known as inclusion-exclusion. The
-	following two theorems illustrate this property and are presented without proof.
-	</p>
-<article class="theorem-like" id="ProbabilityThreeUnions"><h5 class="heading">
-<span class="type">Corollary</span><span class="codenumber">4.2.8</span>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-12"><header title="Section 3.3 Combinations"><h1 class="heading hide-type" alt="Section 3.3 Combinations">
+<span class="type">Section</span><span class="codenumber">3.3</span><span class="title">Combinations</span>
+</h1></header><p id="p-107">When counting various outcomes sometimes the order of things does not matter.
+In this case we count each different set of outcomes a combination. </p>
+<article class="theorem-like" id="theorem-12"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.3.1</span><span class="title">Combinations of n distinct objects selecting r without replacement</span>
 </h5>
-			For any sets A, B and C, 
-			\begin{align*}
-P(A \cup B \cup C) &amp; = P(A) + P(B) + P(C)\\
-&amp; - P(A \cap B) - P(A \cap C) - P(B \cap C) \\
-&amp; + P(A \cap B \cap C)
-\end{align*}</article><article class="theorem-like" id="ProbabilityFourUnions"><h5 class="heading">
-<span class="type">Corollary</span><span class="codenumber">4.2.9</span>
+<p id="p-108">
+			The number of ways to arrange r items from a set of n distinct items 
+			is \( C_r^n = \frac{n!}{r!(n-r)!} \)
+			</p></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-8" id="proof-8"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-8" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-109">
+			Consider creating a permutation of r objects from a set of size n
+			by first picking an unordered subset of size r and then counting 
+			the number of ways to order that subset. Using our notation and the
+			multiplication principle,
+			\begin{gather*}
+P_r^n = C_r^n \cdot r!
+\end{gather*}
+			Solving give the result.
+			</p></article></span>
+</div>
+<article class="theorem-like" id="theorem-13"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.3.2</span><span class="title">Combinations of n distinct objects selecting r with replacement</span>
 </h5>
-			For any sets A, B, C and D, 
-			\begin{align*}
-P(A \cup B \cup C \cup D) &amp; = P(A) + P(B) + P(C) + P(D)\\
-&amp; - P(A \cap B) - P(A \cap C) - P(A \cap D)  - P(B \cap C) - P(B \cap D) - P(C \cap D)\\
-&amp; + P(A \cap B \cap C) + P(A \cap B \cap D) + P(A \cap C \cap D) + P(B \cap C \cap D)\\
-&amp; - P(A \cap B \cap C \cap D)
-\end{align*}</article></section></section></div></main>
+<p id="p-110">
+			The number of ways to arrange r items from a set of n distinct items 
+			is \( C_r^{n+r-1} = \frac{n+r-1!}{r!(n-1)!} \)
+			</p></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-9" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-111">
+			blah
+			</p></article></span>
+</div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-11" id="example-11"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">3.3.3</span>
+</h5></article></a></div>
+<div id="hk-example-11" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-112">Revisiting your ipad's security, what happens if the order in which the digits are entered does not matter? If so, then you would be picking a combination of 4 digits without replacement from a group of 10 digits. Namely, 
+		\begin{align*}
+\frac{10!}{4!6!} &amp; = \frac{10 \times 9 \times 8 \times 7 \times 6!}{4 \times 3 \times 2 \times 1 \times 6!}\\
+&amp; = \frac{10 \times 9 \times 8 \times 7}{4 \times 3 \times 2 \times 1}\\
+&amp; = \frac{5040}{24}\\
+&amp; = 210.
+\end{align*}
+		Notice that the total number of options is much smaller when order does not matter.
+		</p>
+<p id="p-113">
+		Note that if you were allowed to reuse the digits then the number of possible outcomes would be
+		\begin{align*}
+\frac{13!}{3!10!} &amp; = \frac{13 \times 12 \times 11}{3 \times 2 \times 1} \\
+ &amp; = 286
+\end{align*}
+		which once again is more since numbers are allowed to repeat.
+		</p></article></div>
+<article class="definition-like" id="definition-16"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">3.3.4</span><span class="title">Binomial Coefficients</span>
+</h5>
+<p id="p-114">
+		The value \(C_r^n\) is known as the binomial coefficient. It is
+		denoted by \({n \choose r}\) and is read "n choose k".
+		</p></article><article class="theorem-like" id="theorem-14"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.3.5</span><span class="title">Combinations when distinguishable and with replacement</span>
+</h5>
+	= Number of ways to get unordered samples of size r from n objects. 
+	</article><p id="p-115">Lots of interesting facts about the binomial coefficients.</p></section></div></main>
 </div>
 </body>
 </html>

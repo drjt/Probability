@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-26T14:14:14-05:00    *-->
+<!--*    on 2016-08-26T14:33:58-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -133,27 +133,27 @@ MathJax.Hub.Config({
 <span class="type">Section</span><span class="codenumber">4.2</span><span class="title">Definition of Probability</span>
 </h1></header><section class="subsection" id="ProbabilityDefns"><header title="Subsection 4.2.1 Motivating the Definition"><h1 class="heading hide-type" alt="Subsection 4.2.1 Motivating the Definition">
 <span class="type">Subsection</span><span class="codenumber">4.2.1</span><span class="title">Motivating the Definition</span>
-</h1></header><p id="p-121">Using the ideas from our examples above, let's consider how we might formally define a way
+</h1></header><p id="p-123">Using the ideas from our examples above, let's consider how we might formally define a way
 	to measure the expectation from similar experiments.  Before doing so, we need a little notation:</p>
 <article class="definition-like" id="definition-17"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">4.2.1</span>
 </h5>The Cardinality of the set A is the number of elements in A. This will be denoted |A| (similar
 	to the idea of frequency of an outcome noted earlier.) If a set has
 	a infinite number of elements, then we will say it's cardinality is also infinite and 
-	write |A| = \(\infty\)</article><p id="p-122">
+	write |A| = \(\infty\)</article><p id="p-124">
 	To model the behavior above, consider how we might create a definition for our expectation
 	of a given outcome by following the ideas uncovered above. To do so, first consider a desired collection
 	of outcomes A. If each outcome in A is equally likely then we might follow the concept behind relative 
 	frequency and consider a measure of expectation be |A|/|S|. Indeed, on a standard 
 	6-sided die, the expectation of the outcome A={2} from the collection S = {1,2,3,4,5,6} should be
 	|A|/|S| = 1/6.</p>
-<p id="p-123">From the example where we take the sum of two die, the outcome A={4,5} from the
+<p id="p-125">From the example where we take the sum of two die, the outcome A={4,5} from the
 	collection S = {2,3,4,...,12} would be</p>\begin{gather*}
 |A| = | {(1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1)}| = 7\\
 |S| = | {(1,1),...,(1,6),(2,1),...,(2,6),...,(6,1),...,(6,6)}| = 36
-\end{gather*}<p id="p-124">and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
+\end{gather*}<p id="p-126">and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
 	with the sum of the two outcomes from your experiment above.</p>
-<p id="p-125">We are ready to now formally give a name to the theoretical measure of expectation for
+<p id="p-127">We are ready to now formally give a name to the theoretical measure of expectation for
 	outcomes from an experiment. Taking our cue from the ideas related to equally likely outcomes, we 
 	make our definition have the following basic properties:</p>
 <ol style="list-style-type: decimal;">
@@ -163,7 +163,7 @@ MathJax.Hub.Config({
 	individual relative frequencies</li>
 </ol></section><section class="subsection" id="subsection-9"><header title="Subsection 4.2.2 Probability"><h1 class="heading hide-type" alt="Subsection 4.2.2 Probability">
 <span class="type">Subsection</span><span class="codenumber">4.2.2</span><span class="title">Probability</span>
-</h1></header><p id="p-126">Based upon these we give the following:</p>
+</h1></header><p id="p-128">Based upon these we give the following:</p>
 <article class="definition-like" id="DefnProb"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">4.2.2</span>
 </h5>The probability P(A) of a given outcome A is a set function which satisfies:
@@ -174,17 +174,17 @@ MathJax.Hub.Config({
 			In general, if {\(A_k\)} are pairwise disjoint then \(P( \cup_k A_k) = \sum_k P(A_k)\).</li>
 </ol></article></section><section class="subsection" id="BasicProbabilityTheorems"><header title="Subsection 4.2.3 Basic Probability Theorems"><h1 class="heading hide-type" alt="Subsection 4.2.3 Basic Probability Theorems">
 <span class="type">Subsection</span><span class="codenumber">4.2.3</span><span class="title">Basic Probability Theorems</span>
-</h1></header><p id="p-127">Based upon this definition we can immediately establish a number of results.</p>
+</h1></header><p id="p-129">Based upon this definition we can immediately establish a number of results.</p>
 <article class="theorem-like" id="ProbabilityComplemnts"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.2.3</span><span class="title">Probability of Complements</span>
 </h5> For any event A, \(P(A) + P(A^c) = 1\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-10" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-128">Let A be any event and note that \(A \cap A^c = \emptyset\).  But \(A \cup A^c = S\).
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-10" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-130">Let A be any event and note that \(A \cap A^c = \emptyset\).  But \(A \cup A^c = S\).
 			So, by subadditivity \(1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)\) as desired.</p></article></span>
 </div>
 <article class="theorem-like" id="ProbabilityEmptySet"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.2.4</span>
 </h5>\(P(\emptyset) = 0\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-11" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-129">Note that \(\emptyset^c = S\). So, by the theorem above, 
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-11" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-131">Note that \(\emptyset^c = S\). So, by the theorem above, 
 			\(1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)\).
 			Cancelling the 1 on both sides gives \(P(\emptyset) = 0\). </p></article></span>
 </div>
@@ -192,7 +192,7 @@ MathJax.Hub.Config({
 <span class="type">Theorem</span><span class="codenumber">4.2.5</span>
 </h5>For events A and B with \( A \subset B, P(A) \le P(B)\).
 		</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-12" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-130">Assume sets A and B satisfy \( A \subset B\). Then, notice that
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-12" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-132">Assume sets A and B satisfy \( A \subset B\). Then, notice that
 			\(A \cap (B-A) = \emptyset\) and  \(B = A \cup (B-A)\). Therefore, by 
 			subadditivity and nonnegativity</p>\begin{gather*}
 0 \le P(B-A)\\
@@ -203,24 +203,24 @@ P(A) \le P(B)
 <article class="theorem-like" id="ProbabilityLessThanOne"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.2.6</span>
 </h5>For any event A, \(P(A) \le 1\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-131">Notice \(A \subset S\). By the theorem above \( P(A) \le P(S) = 1\)</p></article></span>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-133">Notice \(A \subset S\). By the theorem above \( P(A) \le P(S) = 1\)</p></article></span>
 </div>
 <article class="theorem-like" id="ProbabilityTwoUnions"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.2.7</span>
 </h5>For any sets A and B, \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-14" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-132">Notice that we can write \(A \cup B\) as the disjoint union</p>\begin{gather*}
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-14" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-134">Notice that we can write \(A \cup B\) as the disjoint union</p>\begin{gather*}
 A \cup B = (A-B) \cup (A \cap B) \cup (B-A).
-\end{gather*}<p id="p-133">We can also write disjointly</p>\begin{gather*}
+\end{gather*}<p id="p-135">We can also write disjointly</p>\begin{gather*}
 A = (A-B) \cup (A \cap B)\\
 B = (A \cap B) \cup (B-A)
-\end{gather*}<p id="p-134">Hence, </p>\begin{align*}
+\end{gather*}<p id="p-136">Hence, </p>\begin{align*}
 P(A) &amp; + P(B) - P(A \cap B) \\
 &amp; = [P(A-B) + P(A \cap B)] + [P(A \cap B) + P(B-A)] - P(A \cap B)\\
 &amp; = P(A-B) + P(A \cap B) + P(B-A)\\
 &amp; = P(A \cup B)
 \end{align*}</article></span>
 </div>
-<p id="p-135">This result can be extended to more that two sets using a property known as inclusion-exclusion. The
+<p id="p-137">This result can be extended to more that two sets using a property known as inclusion-exclusion. The
 	following two theorems illustrate this property and are presented without proof.
 	</p>
 <article class="theorem-like" id="ProbabilityThreeUnions"><h5 class="heading">

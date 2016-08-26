@@ -138,13 +138,13 @@
 
 	<definition><title>Quartiles:</title> 
 	<p>Given a sorted data set, the first, second, and third quartiles are the values of 
-	<m>P^{0.25}, P^{0.5}</m> and <m>P^{0.75}</m>.
+	<m>Q_1 = P^{0.25}, Q_2 = P^{0.5}</m> and <m>Q_3 = P^{0.75}</m>.
 	</p>
 	</definition>
 
 	<definition><title>Deciles:</title>
 	<p>Given a sorted data set, the first, second, ..., ninth deciles are the value of 
-	<m>P^{0.1}, P^{0.2}, ... , P^{0.9}</m>
+	<m>D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}</m>
 	</p>
 	</definition>
 
@@ -302,7 +302,10 @@ Mean utilizes all of the data values so each term is important. Utilizes them al
       </tabular>
       </table>
 
-<p>Notice that these are already in order so you can presume <m>y_1 = 0.6</m> million is the minimum and <m>y_{50} = 38.3</m> million is the maximum.
+<p>Notice that these are already in order so you can presume <m>y_1 = 0.6</m> million is the minimum and <m>y_{50} = 38.3</m> million is the maximum. Therefore, the midrange is given by
+<me>
+\frac{0.6+38.3}{2} = \frac{38.9}{2} = 19.45 million.
+</me>
 </p>
 <p>
 The mean of this data takes a bit of arithmetic but gives
@@ -312,6 +315,9 @@ million residents.
 <p>
 Since the number of states is even, the median is found by averaging the 25th and 26th order statistics. In this case, 
 <me>\frac{y_{25}+y_{26}}{2}=\frac{4.4+4.6}{2} \approx 4.5 </me> million residents.
+</p>
+<p>
+The midrange is
 </p>
 
 </example>
@@ -329,7 +335,7 @@ Easy to compute. Ignores the spread of all the data in between.
 </p>
 </definition>
 
-<definition><title>Interquartile Range:</title>
+<definition><title>Interquartile Range (IQR):</title>
 <p><m>P^{0.75} - P^{0.25}</m>. 
 </p>
 </definition>
@@ -382,6 +388,7 @@ Consider the data set {}</p>
 
 <example><title>Numerical Example of these Quantitative Measures</title>
 <p>The US Census Bureau reported the following state populations (in millions) for 2013:</p>
+
 <table halign="left">
       <tabular halign="right">
       
@@ -446,6 +453,20 @@ Consider the data set {}</p>
 million residents.
 </p>
 <p>
+For IQR, we first must determine the quartiles. The median (found earlier) already is the second quartile so we have <m>Q_2 = 4.5</m> million. For the other two, the formula for computing percentiles gives you the 25th percentiile
+<md>
+	<mrow>(n+1)p = 51(1/4) = 12.75</mrow>
+	<mrow>Q_1 = P^{0.25} = 0.25 \times 1.9 + 0.75 \times 2.1 = 2.05</mrow>
+</md>
+and the 75th percentile
+<md>
+	<mrow>(n+1)p = 51(3/4) = 38.25</mrow>
+	<mrow>Q_3 = P^{0.75} = 0.75 \times 7 + 0.25 \times 8.3 = 7.325.</mrow>
+</md>
+Hence, the IQR = 7.325 - 2.05 = 5.275 million residents.
+</p>
+
+<p>
 From the computation before, the mean of this data is about 6.33
 million residents. So, to determine the variance you may find it easier to compute using the theorem above. 
 <md>
@@ -461,7 +482,104 @@ and so you get a sample variance of
 and a sample standard deviation of
 <me>s \approx \sqrt{49.71} = 7.05</me> million residents.
 </p>
+
 </example>
 
 </section>
+
+<section><title>Graphical Representation of Data</title>
+<p>Data sets can range from small to very large. Visual representations of these data sets often allow you to see trends and reveal a lot about the distribution of the data values.</p>
+
+<p>
+Also, probability mass functions for discrete variables can be graphed as a set of points but sometimes these points do not convey size very well. A visual representation of these functions needs to be addressed.
+</p>
+	<subsection><title>Histograms</title>
+		<p>Frequency Histograms - height matters</p>
+		<p>Consider the data set given by
+		
+<table halign="left">
+      <tabular halign="right">
+      
+<row><cell bottom="medium">k</cell><cell bottom="medium"><m>x_k</m></cell></row>      
+<row><cell>1</cell><cell>8</cell></row>		
+<row><cell>2</cell><cell>12</cell></row>		
+<row><cell>3</cell><cell>6</cell></row>		
+<row><cell>4</cell><cell>3</cell></row>		
+<row><cell>5</cell><cell>1</cell></row>		
+<row><cell>6</cell><cell>2</cell></row>		
+
+      
+      </tabular>
+</table>
+	
+A frequency histogram representing this data can be given by
+
+<image source="images/frequencyhistogram.png" />
+		
+<!--
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pgfplots}
+
+\title{Histogram}
+\author{travis }
+\date{August 2016}
+
+\begin{document}
+
+\pgfplotsset{
+  compat=newest,
+  xlabel near ticks,
+  ylabel near ticks
+}
+
+\begin{document}
+  \begin{tikzpicture}[font=\small]
+    \begin{axis}[
+      ybar,
+      bar width=20pt,
+      xlabel={X},
+      ylabel={Frequency},
+      ymin=0,
+      ytick=\empty,
+      xtick=data,
+      axis x line=bottom,
+      axis y line=left,
+      enlarge x limits=0.2,
+      symbolic x coords={1,2,3,4,5,6},
+      xticklabel style={anchor=base,yshift=-\baselineskip},
+      nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+    ]
+      \addplot[fill=white] coordinates {
+        (1,8)
+        (2,12)
+        (3,6)
+        (4,3)
+        (5,1)
+        (6,2)
+      };
+    \end{axis}
+  \end{tikzpicture}
+\end{document}
+-->		
+		We can also do this in Sage so add a Sage interact here.
+		</p>
+		<p>Relative Frequency Histograms - area matters.  Add a Sage interact here as well.</p>
+		<p>Cummulative distributions - running totals. Demonstrate using a Sage interact.</p>
+		<p>Stem-and-Leaf Plot - Histogram with data. Using the state population data above, consider organizing the data but using a "two-pass sort" where you first roughly break data up into groups based upon ranges which relate to their first digit(s). In this case, let's break up into groups according to populations corresponding to 0-4 million, 5-9 million, 10-14 million, 15-19, million, 20-24 million, 25-29 million, 30-35 million, and 35-39 million. We can represent these classes by using the stems 0L, 0H, 1L, 1H, 2L, 2H, 3L, and 3H where the L and H represent the one's digits L in {0, 1, 2, 3, 4} and H in {5, 6, 7, 8, 9}.  Once we group the data into these smaller groups then we can write the remaining portion of the number horizontally as leaves (in this case with one decimal place for all values.) This gives a step-and-leaf plot. If we additionally sort the data in the leaves then this gives you an ordered stem-and-leaf plot. For the state population data, the ordered stem-and-leaf plot is given by
+		
+
+		
+<image source="images/stemandleaf.png" />
+
+Notice how it is easy to now see that most state populations are relatively small and that there are relatively few states with larger population. Also, notice that you can use this plot to relatively easily identify minimum, maximum, and other order statistics.		
+		
+		</p>
+		<p>Box and Whisker Diagram - visual order statistics. This graphical display identifies the "5-number-summary" associated with the minimum, quartiles, and the maximum. That is, <m>y_1, Q_1, Q_2, Q_3, y_n</m>.  These values separate the data roughly into quarters. To distinguish these quarters connect <m>y_1</m> and <m>Q_1</m> with a straight line (a whisker) and do the same with <m>Q_3</m> and <m>y_n</m>. Use a box to connect <m>Q_1</m> with <m>Q_2</m> and the same to connect <m>Q_2</m> with <m>Q_3</m>. Then the boxed areas also identify the IQR.    
+		</p>
+		
+	</subsection>
+</section>
+
 </chapter>
