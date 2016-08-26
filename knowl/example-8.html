@@ -1,28 +1,21 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-16T16:20:33-05:00    *-->
+<!--*    on 2016-08-26T14:14:15-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="example-like"><h5 class="heading">
-<span class="type">Example</span><span class="codenumber">4.3.2</span>
+<span class="type">Example</span><span class="codenumber">3.1.4</span><span class="title">iPad security code</span>
 </h5>
-<p>Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. 
-	When extracting one card randomly, the probability
-	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and set
-	aside.  Now, 
-	prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the 
-	second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second
-	draw. To compute this probability correctly, one need to formulate the question so that subadditivity can 
-	be utilized.</p>
+<p>Consider your ipad's security. To unlock the screen you need to enter your four digit pass code. How easy is it to guess this pass code?</p>
+<p>Using the standard 10 digit keypad, we first have two questions to consider?
+		<ol style="list-style-type: decimal;">
+<li id="li-74">Does the order in which the digits are entered matter?</li>
+<li id="li-75">Can you reuse a digit more than once?</li>
+</ol>
+		For the ipad, the order does matter and you cannot reuse digits. In this case, the number of possible codes can be determined by considering each digit as a separate event with four such events in succession providing the right code. By successively applying the multiplication principle, you find that the number of possible codes is the number of remaining available digits at each step.  Namely, \(10 \times 9 \times 8 \times 7 = 5040.\)
+		</p>
 <p>
-	To do this, consider 
-	P(Heart on 2nd draw) 
-	= P( [Heart on 1st draw \(\cap\) Heart on 2nd draw] \(\cup\) [Not Heart on 1st draw \(\cap\) Heart on 2nd draw] )
-	= P(Heart on 1st draw \(\cap\) Heart on 2nd draw ) + P(Not Heart on 1st draw \(\cap\) Heart on 2nd draw )
-	= | Heart on 1st draw \(\cap\) Heart on 2nd draw | / | Number of ways to get two cards |
-	+ | Not Heart on 1st draw \(\cap\) Heart on 2nd draw / | Number of ways to get two cards |
-	= (13 12) / (52 51) + (39 13) / (52 51) = 12 / (4 51) + (3 13) / ( 4 51) =  
-
-	</p></article><span class="incontext"><a href="section-13.html#example-8">in-context</a></span>
+		Note that if you were allowed to reuse the digits then the number of possible outcomes would be more since all 10 digits would be available for each event.  Namely, \(10 \times 10 \times 10 \times 10 = 10000.\)
+		</p></article><span class="incontext"><a href="section-9.html#example-8">in-context</a></span>

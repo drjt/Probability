@@ -1,14 +1,27 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-16T16:20:33-05:00    *-->
+<!--*    on 2016-08-26T14:14:15-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="example-like"><h5 class="heading">
-<span class="type">Example</span><span class="codenumber">4.5.4</span>
+<span class="type">Example</span><span class="codenumber">3.3.3</span>
 </h5>
-<p>When rolling dice in a board game (like RISK), one might use
-	S={(a,b): a=die 1 outcome, b=die 2 outcome}
-	Choose X( (a,b) ) = max{a,b}. Then, R={1, 2, 3, 4, 5, 6}
-	</p></article><span class="incontext"><a href="section-15.html#example-11">in-context</a></span>
+<p>Revisiting your ipad's security, what happens if the order in which the digits are entered does not matter? If so, then you would be picking a combination of 4 digits without replacement from a group of 10 digits. Namely, 
+		\begin{align*}
+\frac{10!}{4!6!} &amp; = \frac{10 \times 9 \times 8 \times 7 \times 6!}{4 \times 3 \times 2 \times 1 \times 6!}\\
+&amp; = \frac{10 \times 9 \times 8 \times 7}{4 \times 3 \times 2 \times 1}\\
+&amp; = \frac{5040}{24}\\
+&amp; = 210.
+\end{align*}
+		Notice that the total number of options is much smaller when order does not matter.
+		</p>
+<p>
+		Note that if you were allowed to reuse the digits then the number of possible outcomes would be
+		\begin{align*}
+\frac{13!}{3!10!} &amp; = \frac{13 \times 12 \times 11}{3 \times 2 \times 1} \\
+ &amp; = 286
+\end{align*}
+		which once again is more since numbers are allowed to repeat.
+		</p></article><span class="incontext"><a href="section-11.html#example-11">in-context</a></span>

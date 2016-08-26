@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-16T16:20:32-05:00    *-->
+<!--*    on 2016-08-26T14:14:14-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AATA Measures of Spread</title>
+<title>AATA Measures of the Middle</title>
 <meta name="Keywords" content="Authored in MathBook XML">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -37,8 +37,7 @@ MathJax.Hub.Config({
         scale: 88,
     },
 });
-    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://math.mc.edu/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
-<script type="text/javascript" src="https://math.mc.edu/webwork2_files/js/vendor/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
@@ -61,12 +60,12 @@ MathJax.Hub.Config({
 <nav id="primary-navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="previous-button toolbar-item button" href="section-6.html">Previous</a><a class="up-button button toolbar-item" href="RepresentingData.html">Up</a><a class="next-button button toolbar-item" href="Combinatorics.html">Next</a>
+<a class="previous-button toolbar-item button" href="section-6.html">Previous</a><a class="up-button button toolbar-item" href="RepresentingData.html">Up</a><a class="next-button button toolbar-item" href="section-8.html">Next</a>
 </div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-6.html">Previous</a><a class="up-button button toolbar-item" href="RepresentingData.html">Up</a><a class="next-button button toolbar-item" href="Combinatorics.html">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-6.html">Previous</a><a class="up-button button toolbar-item" href="RepresentingData.html">Up</a><a class="next-button button toolbar-item" href="section-8.html">Next</a>
 </div>
 </div></nav></header><div class="page">
 <aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
@@ -86,56 +85,331 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="section-4.html">Measurement Scales</a></li>
 <li><a href="section-5.html">Techniques for Representing Data</a></li>
-<li><a href="section-6.html">Measures of the Middle</a></li>
-<li><a href="section-7.html" class="active">Measures of Spread</a></li>
+<li><a href="section-6.html">Measures of Position</a></li>
+<li><a href="section-7.html" class="active">Measures of the Middle</a></li>
+<li><a href="section-8.html">Measures of Spread</a></li>
 </ul>
 <h2 class="link"><a href="Combinatorics.html"><span class="codenumber">3</span><span class="title">Counting and Combinatorics</span></a></h2>
 <ul>
-<li><a href="section-8.html">Introduction</a></li>
-<li><a href="section-9.html">Permutations</a></li>
-<li><a href="section-10.html">Combinations</a></li>
+<li><a href="section-9.html">Introduction</a></li>
+<li><a href="section-10.html">Permutations</a></li>
+<li><a href="section-11.html">Combinations</a></li>
 </ul>
 <h2 class="link"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability and Probability Functions</span></a></h2>
 <ul>
 <li><a href="RelativeFrequency.html">Relative Frequency</a></li>
-<li><a href="section-12.html">Definition of Probability</a></li>
-<li><a href="section-13.html">Conditional Probability</a></li>
-<li><a href="section-14.html">Independence</a></li>
-<li><a href="section-15.html">Random Variables</a></li>
+<li><a href="section-13.html">Definition of Probability</a></li>
+<li><a href="section-14.html">Conditional Probability</a></li>
+<li><a href="section-15.html">Independence</a></li>
+<li><a href="section-16.html">Random Variables</a></li>
 <li><a href="ProbabilityFunctions.html">Probability Functions</a></li>
+<li><a href="section-18.html">Expected Value</a></li>
 </ul>
 <h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">5</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
 <ul>
 <li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
-<li><a href="GeometricDistribution.html">Geometric and Negative Binomial Distribution</a></li>
-<li><a href="section-19.html">Negative Binomial</a></li>
+<li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
+<li><a href="section-21.html">Negative Binomial</a></li>
 </ul>
-<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">6</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">6</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
 <ul>
-<li><a href="section-20.html">Chebyshev</a></li>
-<li><a href="section-21.html">Measures of Spread</a></li>
+<li><a href="section-22.html">Poisson Distribution</a></li>
+<li><a href="section-23.html">Exponential Distribution</a></li>
+<li><a href="section-24.html">Gamma Distribution</a></li>
+</ul>
+<h2 class="link"><a href="Normal.html"><span class="codenumber">7</span><span class="title">Normal Distributions</span></a></h2>
+<ul>
+<li><a href="section-25.html">Properties of the Normal Distribution</a></li>
+<li><a href="section-26.html">Theorems</a></li>
+<li><a href="section-27.html">Chi-Square Distribution</a></li>
+<li><a href="section-28.html">Central Limit Theorem</a></li>
+</ul>
+<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">8</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<ul>
+<li><a href="section-29.html">Chebyshev</a></li>
+<li><a href="section-30.html">Measures of Spread</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-7"><header title="Section 2.4 Measures of Spread"><h1 class="heading hide-type" alt="Section 2.4 Measures of Spread">
-<span class="type">Section</span><span class="codenumber">2.4</span><span class="title">Measures of Spread</span>
-</h1></header><p id="p-37">Measures of spread:
-• Average Deviation from the Mean – always zero for any distribution
-• Average Absolute Deviation from the Mean – difficult to deal with algebra when absolute values are used
-• Average Squared Deviation from the Mean – always non-negative and good with algebra and calculus 
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-7"><header title="Section 2.4 Measures of the Middle"><h1 class="heading hide-type" alt="Section 2.4 Measures of the Middle">
+<span class="type">Section</span><span class="codenumber">2.4</span><span class="title">Measures of the Middle</span>
+</h1></header><article class="definition-like" id="definition-6"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">2.4.1</span><span class="title">Arithmetic Mean</span>
+</h5>
+<p id="p-44">Suppose X is a discrete random variable with range 
+	\(R = {x_1, x_2, ..., x_n}\). 
+	The arithmetic mean is given by
+		\begin{equation*}
+		AM = \frac{x_1 + ... + x_n}{n} = \frac{\sum_{k=1}^n x_k}{n}.
+		\end{equation*}
+	If this data comes from sample data then we call it a sample mean and denote this value by \(\overline{x}\). If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by \(\mu\).</p></article><p id="p-45">
+	The mean is often called the centroid in the sense that if the x values were locations of objects of equal weight, then the centroid
+	would be the point where this system of n masses would balance. 
+	</p>
+<p id="p-46">
+	The values can all be provided with varying weights if desired and the result is called the weighted arithmetic mean and is given by
+		\begin{equation*}
+		\frac{m_1 x_1 + ... + m_n x_n}{m_1 + ... + m_n} = \frac{\sum_{k=1}^n m_k x_k}{\sum_{k=1}^n m_k}.
+		\end{equation*}
+	</p>
+<p id="p-47">
+Other Means:
 </p>
-<article class="definition-like" id="definition-1"><h5 class="heading">
-<span class="type">Definition</span><span class="codenumber">2.4.1</span><span class="title">Variance</span>
-</h5>The variance is a measure of spread found by using the average squared deviation from the mean
-σ2
- = ( ) )(
-2
-1
-k
-n
-k
-k ∑ xfx =
-− μ
-if this value exists and is also denoted by Var(X). The positive square root of the variance is called the standard deviation
-and is denoted by σ. </article></section></div></main>
+<article class="definition-like" id="definition-7"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">2.4.2</span><span class="title">Geometric Mean</span>
+</h5>
+<p id="p-48">
+	\begin{equation*}GM = (x_1 x_2 ... x_n)^{1/n}\end{equation*}
+</p></article><article class="definition-like" id="definition-8"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">2.4.3</span><span class="title">Harmonic Mean</span>
+</h5>
+<p id="p-49">
+	\begin{equation*}HM = \frac{1}{n} \sum_{k=1}^n \frac{1}{x_k}\end{equation*}
+</p></article><article class="theorem-like" id="theorem-5"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">2.4.4</span><span class="title">Relative sizes of Means</span>
+</h5>\(HM \le GM \le AM\). </article><article class="theorem-like" id="theorem-6"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">2.4.5</span><span class="title">Mean Formula</span>
+</h5>\(AM×HM=GM^2\)</article><article class="definition-like" id="definition-9"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">2.4.6</span><span class="title">Median:</span>
+</h5>
+<p id="p-50">A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.</p></article><p id="p-51">
+For data sets with an odd number of values, this is the "middle" data value if one were to successively cross off pairs from the two ends of the sorted date. For data sets with an even number of values, this is a average of the two data values left after crossing off these pairs.  Using the order statistics, the median equals
+\begin{equation*}y_{\frac{n+1}{2}}\end{equation*}
+if n is odd and
+\begin{equation*}\frac{y_\frac{n}{2} + y_{\frac{n}{2}+1}}{2}\end{equation*}
+if n is even.
+</p>
+<article class="definition-like" id="definition-10"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">2.4.7</span><span class="title">Midrange:</span>
+</h5>
+<p id="p-52">A mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
+\begin{equation*}\frac{y_1+y_n}{2}\end{equation*}
+</p></article><p id="p-53">
+
+Mean utilizes all of the data values so each term is important. Utilizes them all even if some of the data values might suffer from collection errors.  Median ignores outliers (which might be a result of collection errors) but does not account for the relative differences between terms. Midrange is very easy to compute but ignores the relative differences for all terms but the two extremes.
+</p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-6" id="example-6"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">2.4.8</span><span class="title">Numerical Example of these Quantitative Measures</span>
+</h5></article></a></div>
+<div id="hk-example-6" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-54">The US Census Bureau reported the following state populations (in millions) for 2013:</p>
+<figure class="figure-like" id="table-1"><table>
+<tr>
+<td class="r m b2 r0 l0 t0">State</td>
+<td class="r m b2 r0 l0 t0">Population</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Wyoming</td>
+<td class="r m b0 r0 l0 t0">0.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Vermont</td>
+<td class="r m b0 r0 l0 t0">0.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">District of Columbia</td>
+<td class="r m b0 r0 l0 t0">0.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">North Dakota</td>
+<td class="r m b0 r0 l0 t0">0.7</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Alaska</td>
+<td class="r m b0 r0 l0 t0">0.7</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">South Dakota</td>
+<td class="r m b0 r0 l0 t0">0.8</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Delaware</td>
+<td class="r m b0 r0 l0 t0">0.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Montana</td>
+<td class="r m b0 r0 l0 t0">1</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Rhode Island</td>
+<td class="r m b0 r0 l0 t0">1.1</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">New Hampshire</td>
+<td class="r m b0 r0 l0 t0">1.3</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Maine</td>
+<td class="r m b0 r0 l0 t0">1.3</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Hawaii</td>
+<td class="r m b0 r0 l0 t0">1.4</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Idaho</td>
+<td class="r m b0 r0 l0 t0">1.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">West Virginia</td>
+<td class="r m b0 r0 l0 t0">1.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Nebraska</td>
+<td class="r m b0 r0 l0 t0">1.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">New Mexico</td>
+<td class="r m b0 r0 l0 t0">2.1</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Nevada</td>
+<td class="r m b0 r0 l0 t0">2.8</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Kansas</td>
+<td class="r m b0 r0 l0 t0">2.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Utah</td>
+<td class="r m b0 r0 l0 t0">2.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Arkansas</td>
+<td class="r m b0 r0 l0 t0">3</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Mississippi</td>
+<td class="r m b0 r0 l0 t0">3</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Iowa</td>
+<td class="r m b0 r0 l0 t0">3.1</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Connecticut</td>
+<td class="r m b0 r0 l0 t0">3.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Oklahoma</td>
+<td class="r m b0 r0 l0 t0">3.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Oregon</td>
+<td class="r m b0 r0 l0 t0">3.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Kentucky</td>
+<td class="r m b0 r0 l0 t0">4.4</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Louisiana</td>
+<td class="r m b0 r0 l0 t0">4.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">South Carolina</td>
+<td class="r m b0 r0 l0 t0">4.8</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Alabama</td>
+<td class="r m b0 r0 l0 t0">4.8</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Colorado</td>
+<td class="r m b0 r0 l0 t0">5.3</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Minnesota</td>
+<td class="r m b0 r0 l0 t0">5.4</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Wisconsin</td>
+<td class="r m b0 r0 l0 t0">5.7</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Maryland</td>
+<td class="r m b0 r0 l0 t0">5.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Missouri</td>
+<td class="r m b0 r0 l0 t0">6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Tennessee</td>
+<td class="r m b0 r0 l0 t0">6.5</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Indiana</td>
+<td class="r m b0 r0 l0 t0">6.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Arizona</td>
+<td class="r m b0 r0 l0 t0">6.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Massachusetts</td>
+<td class="r m b0 r0 l0 t0">6.7</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Washington</td>
+<td class="r m b0 r0 l0 t0">7</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Virginia</td>
+<td class="r m b0 r0 l0 t0">8.3</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">New Jersey</td>
+<td class="r m b0 r0 l0 t0">8.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">North Carolina</td>
+<td class="r m b0 r0 l0 t0">9.8</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Michigan</td>
+<td class="r m b0 r0 l0 t0">9.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Georgia</td>
+<td class="r m b0 r0 l0 t0">10</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Ohio</td>
+<td class="r m b0 r0 l0 t0">11.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Pennsylvania</td>
+<td class="r m b0 r0 l0 t0">12.8</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Illinois</td>
+<td class="r m b0 r0 l0 t0">12.9</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Florida</td>
+<td class="r m b0 r0 l0 t0">19.6</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">New York</td>
+<td class="r m b0 r0 l0 t0">19.7</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">Texas</td>
+<td class="r m b0 r0 l0 t0">26.4</td>
+</tr>
+<tr>
+<td class="r m b0 r0 l0 t0">California</td>
+<td class="r m b0 r0 l0 t0">38.3</td>
+</tr>
+</table></figure><p id="p-55">Notice that these are already in order so you can presume \(y_1 = 0.6\) million is the minimum and \(y_{50} = 38.3\) million is the maximum.
+</p>
+<p id="p-56">
+The mean of this data takes a bit of arithmetic but gives
+\begin{equation*}\frac{\sum_{k=1}^{50} y_k }{50} = \frac{316.1}{50} \approx 6.33\end{equation*}
+million residents.
+</p>
+<p id="p-57">
+Since the number of states is even, the median is found by averaging the 25th and 26th order statistics. In this case, 
+\begin{equation*}\frac{y_{25}+y_{26}}{2}=\frac{4.4+4.6}{2} \approx 4.5 \end{equation*} million residents.
+</p></article></div></section></div></main>
 </div>
 </body>
 </html>

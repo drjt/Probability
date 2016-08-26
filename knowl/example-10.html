@@ -1,13 +1,50 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-16T16:20:33-05:00    *-->
+<!--*    on 2016-08-26T14:14:15-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="example-like"><h5 class="heading">
-<span class="type">Example</span><span class="codenumber">4.5.3</span>
+<span class="type">Example</span><span class="codenumber">3.1.6</span><span class="title">National Treasure</span>
 </h5>
-<p>When gambling with a pair of dice, one might use
-	S=ordered pairs of all possible rolls = {(a,b): a=die 1 outcome, b=die 2 outcome}.
-	Choose X( (a,b) ) = a+b. Then, R={2, 3, 4, 5, ..., 12}.</p></article><span class="incontext"><a href="section-15.html#example-10">in-context</a></span>
+<p>In the 2004 movie "National Treasure" Ben and Riley are attempting 
+		to guess Abagail's password to enter the room with the Declaration. 
+		They are able
+		to determine the passphrase to get into the vault room by doing a scan
+		that detects the buttons pushed (not due to chocolate but just due to 
+		the natural oils on fingers). They notice that the buttons pushed 
+		include the characters AEFGLORVY.</p>
+<p>Assuming these characters are used only once each, how many possible
+		passphrases are possible?</p>
+<p>
+		In this case, the order of the characters matters but all of the 
+		characters are distinct. Since we have 9 characters provided, the we can
+		consider each character as an event with the first event as a choice
+		from the 9, the second event as a choice from the remaining 8, etc. This
+		gives \(9 \times 8 \ times ... \times 1 = 362880\) possible 
+		passphrases.
+		</p>
+<p>Assuming that some of the characters could be used more than once, 
+		how many passphrases need to be considered if the total length
+		of passphrase can be at most 12 characters?</p>
+<p>Notice, in this case you don't know which characters might be reused and so the number of possible outcomes will be much larger. What is the answer?</p>
+<p>You can break this problem down into distinct cases:
+		<ul style="list-style-type: disc;">
+<li id="li-76">Using 9 characters
+			<p id="p-87">This is the answer computed above.</p>
+</li>
+<li id="li-77">Using 10 characters
+			<p id="p-88">In this case, 1 character can be used twice. To determine the number of possibilities, let's first pick which character can be doubled. There are 9 options for picking that character.  Next, if we consider the two instances of that letter as distinct values then we can just count the number of ways to arrange unique 10 characters which is 10! However, swapping the two characters (which are actually identical) would not give a new passphrase. Since these are counted twice, let's divide these out to give 10!/2.</p>
+</li>
+<li id="li-78">Using 11 characters
+				<p id="p-89">In this situation we have two unique options:
+				<ul style="list-style-type: circle;"><li id="li-79">One character is used three times and the others just once.
+					<p id="p-90">Continuing as in the previous case, 11!/3!.</p>Two characters are used twice and the others just once.</li></ul>
+				</p>
+</li>
+<li id="li-81">Using 12 characters</li>
+</ul>
+			</p>
+<p>With this large collection of possible outcomes, how are the movie
+		characters able to determine the correct "VALLEYFORGE" passphrase?</p></article><span class="incontext"><a href="section-9.html#example-10">in-context</a></span>

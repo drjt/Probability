@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-16T16:20:32-05:00    *-->
+<!--*    on 2016-08-17T13:30:21-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -61,12 +61,12 @@ MathJax.Hub.Config({
 <nav id="primary-navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="previous-button toolbar-item button" href="GeometricDistribution.html">Previous</a><a class="up-button button toolbar-item" href="BinomNegBinom.html">Up</a><a class="next-button button toolbar-item" href="IntervalEstimation.html">Next</a>
+<a class="previous-button toolbar-item button" href="GeometricDistribution.html">Previous</a><a class="up-button button toolbar-item" href="BinomNegBinom.html">Up</a><a class="next-button button toolbar-item" href="PoissonExponential.html">Next</a>
 </div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="GeometricDistribution.html">Previous</a><a class="up-button button toolbar-item" href="BinomNegBinom.html">Up</a><a class="next-button button toolbar-item" href="IntervalEstimation.html">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="GeometricDistribution.html">Previous</a><a class="up-button button toolbar-item" href="BinomNegBinom.html">Up</a><a class="next-button button toolbar-item" href="PoissonExponential.html">Next</a>
 </div>
 </div></nav></header><div class="page">
 <aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
@@ -110,14 +110,20 @@ MathJax.Hub.Config({
 <li><a href="GeometricDistribution.html">Geometric and Negative Binomial Distribution</a></li>
 <li><a href="section-19.html" class="active">Negative Binomial</a></li>
 </ul>
-<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">6</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">6</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
 <ul>
-<li><a href="section-20.html">Chebyshev</a></li>
-<li><a href="section-21.html">Measures of Spread</a></li>
+<li><a href="section-20.html">Poisson Distribution</a></li>
+<li><a href="section-21.html">Exponential Distribution</a></li>
+<li><a href="section-22.html">Gamma Distribution</a></li>
+</ul>
+<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">7</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<ul>
+<li><a href="section-23.html">Chebyshev</a></li>
+<li><a href="section-24.html">Measures of Spread</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-19"><header title="Section 5.3 Negative Binomial"><h1 class="heading hide-type" alt="Section 5.3 Negative Binomial">
 <span class="type">Section</span><span class="codenumber">5.3</span><span class="title">Negative Binomial</span>
-</h1></header><p id="p-119">Consider the situation where one can observe a sequence  of independent
+</h1></header><p id="p-132">Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
 	stays constant from trial to trial. Call this likelihood the probably of
 	"success" and denote its value by \(p\) 
@@ -126,24 +132,24 @@ MathJax.Hub.Config({
 	to obtain the rth success, \(r \ge 1\) 
 	then the resulting distribution of probabilities is called a 
 	Geometric Distribution.</p>
-<p id="p-120">Note that r=1 gives the Geometric Distribution.</p>
+<p id="p-133">Note that r=1 gives the Geometric Distribution.</p>
 <section class="subsection" id="subsection-25"><header title="Subsection 5.3.1 Negative Binomial Series"><h1 class="heading hide-type" alt="Subsection 5.3.1 Negative Binomial Series">
 <span class="type">Subsection</span><span class="codenumber">5.3.1</span><span class="title">Negative Binomial Series</span>
 </h1></header><article class="theorem-like" id="theorem-NegBinomSeries"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">5.3.1</span>
-</h5>\(\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}\)</article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-17" id="proof-17"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-17" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-121">First, convert the problem to a slightly different form:</p>\( \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
+</h5>\(\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}\)</article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-17" id="proof-17"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-17" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-134">First, convert the problem to a slightly different form:</p>\( \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
 						 = \frac{1}{b^n} \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
-			\)<p id="p-122">So, let's replace \(\frac{a}{b} = x\) and ignore for a while the term factored out. Then, we only need to show </p>\begin{gather*}
+			\)<p id="p-135">So, let's replace \(\frac{a}{b} = x\) and ignore for a while the term factored out. Then, we only need to show </p>\begin{gather*}
 \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k} = \left ( \frac{1}{1+x} \right )^n 
-\end{gather*}<p id="p-123">However</p>\begin{align*}
+\end{gather*}<p id="p-136">However</p>\begin{align*}
  \left ( \frac{1}{1+x} \right )^n &amp; = \left ( \frac{1}{1 - (-x)} \right )^n \\
  &amp; = \left ( \sum_{k=0}^{\infty} {(-1)^k x^k} \right )^n
-\end{align*}<p id="p-124">This infinite sum raised to a power can be expanded by distributing terms in the standard way. 
+\end{align*}<p id="p-137">This infinite sum raised to a power can be expanded by distributing terms in the standard way. 
 			In doing so, the various powers of x multiplied together
 			will create a series in powers of x involving \(x^0, x^1, x^2, ...\).  
 			To detemine the final coefficients notice that the number of time \(m^k\) will 
 			appear in this product depends upon the number of ways one can write k as a sum of nonnegative integers.</p>
-<p id="p-125">For example, the coefficient of \(x^3\) will come from the n ways of multiplying the coefficients 
+<p id="p-138">For example, the coefficient of \(x^3\) will come from the n ways of multiplying the coefficients 
 			\(x^3, x^0, ..., x^0\) and \(x^2, x^1, x^0, ..., x^0\)
 			 and \(x^1, x^1, x^1, x^0,..., x^0\). This is equivalent to finding the number of ways to write the 
 			 number k as a sum of nonnegative integers. The possible set of
@@ -152,24 +158,24 @@ MathJax.Hub.Config({
 			 \(x^1 x^0 x^2 = x^3\). Similarly for k = 5 and |**|*|**| implies \( x^0 x^2 x^1 x^2 x^0 = x^5\). 
 			 The number of ways to interchange the identical *'s among the
 			 idential |'s is \(\binom{n+k-1}{k}\). </p>
-<p id="p-126">Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x 
+<p id="p-139">Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x 
 			 will require an odd number of odd powers. So, the 
 			 coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,</p>\begin{gather*}
  \left ( \frac{1}{1+x} \right )^n = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k}
-\end{gather*}<p id="p-127">Similarly,</p>\( \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}\)</article></span></section><section class="subsection" id="subsection-26"><header title="Subsection 5.3.2 Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1"><h1 class="heading hide-type" alt="Subsection 5.3.2 Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1">
+\end{gather*}<p id="p-140">Similarly,</p>\( \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}\)</article></span></section><section class="subsection" id="subsection-26"><header title="Subsection 5.3.2 Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1"><h1 class="heading hide-type" alt="Subsection 5.3.2 Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1">
 <span class="type">Subsection</span><span class="codenumber">5.3.2</span><span class="title">Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1</span>
-</h1></header><p id="p-128">Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success 
+</h1></header><p id="p-141">Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success 
 		on each individual trial \(p\) where 
 		\( 0 \lt p \lt 1 \).  For a positive integer r, let the variable \(X\) measure the number of 
 		trials needed in order to obtain the rth success.
 		Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
-<p id="p-129"> Since successive trials are independent, then the probability of the rth success occurring on the 
+<p id="p-142"> Since successive trials are independent, then the probability of the rth success occurring on the 
 			mth trial presumes that in 
 			the previous m-1 trials were r-1 successes and m-r failures.  Therefore the desired probability is given by 
 			\begin{gather*}
 P(X=m) = \binom{m - 1}{r-1}(1-p)^{m-r}p^r
 \end{gather*}
-			</p>\(\SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}p^r} &amp; = p^r \SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}}\)<p id="p-130">and by using \(k = m-r\)</p>\begin{align*}
+			</p>\(\SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}p^r} &amp; = p^r \SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}}\)<p id="p-143">and by using \(k = m-r\)</p>\begin{align*}
  &amp; = p^r \sum_{k=0}^{\infty} {\binom{r + k - 1}{k}(1-p)^k}\\
  &amp; = p^r \frac{1}{(1-(1-p))^r}\\
  &amp; = 1

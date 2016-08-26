@@ -1,14 +1,13 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-15T12:14:58-05:00    *-->
+<!--*    on 2016-08-26T14:14:15-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 \begin{align*}
-\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 \\
- &amp; = \SUM {k=0} {\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 \\
- &amp; = (1-p)p \SUM {k=2} {\infty} {k(k-1)(1-p)^{k-2}} + \frac{1}{p} - \frac{1}{p^2}\\
- &amp; = (1-p)p \frac{2}{(1-(1-p))^3} + \frac{1}{p} - \frac{1}{p^2}\\
- &amp; = \frac{1-p}{p^2}
+ P(X \le a) &amp; = 1 - P(X \gt a)\\
+ &amp; = 1- \sum_{k={a+1}}^{\infty} {(1-p)^{k-1}p}\\
+ &amp; = 1- p \frac{(1-p)^{a}}{1-(1-p)}\\
+ &amp; = 1- (1-p)^{a}
 \end{align*}<span class="incontext"><a href="GeometricDistribution.html#md-48">in-context</a></span>

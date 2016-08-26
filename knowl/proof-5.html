@@ -1,18 +1,30 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-16T16:20:33-05:00    *-->
+<!--*    on 2016-08-26T14:14:15-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
-<p>Notice that if n=1, then there is only 1 item to arrange and 
-			that there is only one possible arrangment.</p>
-<p>
-			By induction, assume that any set with n elements has n! arrangments 
-			and assume that 
+<p>If either of the events has infinite cardinality, then it is 
+			clear
+			that the number of ways to perform A and then B will also be 
+			infinite. So, assume that both |A| and |B| are finite.
+			In order to count the successive events, enumerate the elements in
+			each set
 			\begin{gather*}
-|A| = \left \{ a_1, a_2, ... , a_n, a_{n+1} \right \}.
+A = \left \{ a_1, a_2, a_3, ... , a_{|A|} \right \}\\
+B = \left \{  b_1, b_2, b_3, ... , b_{|B|} \right \}
 \end{gather*}
-			Notice that there are n+1 ways to choose 1 element from A and that in doing so leaves a set with n elements. Combining the induction hypothesis with the multiplication principle this gives (n+1)n! = (n+1)! possible outcomes.
-			</p></article><span class="incontext"><a href="section-9.html#proof-5">in-context</a></span>
+			and consider the function f(k,j) = (k-1)|B| + j. This function is 
+			one-to-one and onto from the set 
+			\begin{gather*}
+\left \{ (k,j): 1 \le k \le |A|, 1 \le j \le |B| \right \} 
+\end{gather*} 
+			onto 
+			\begin{gather*}
+\left \{ s : 1 \le s \le |A| |B| \right \}.
+\end{gather*} 
+			Since this
+			second set has |A| |B| elements then the conclusion follows. 
+			coordinates.</p></article><span class="incontext"><a href="section-9.html#proof-5">in-context</a></span>

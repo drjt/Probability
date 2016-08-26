@@ -77,99 +77,9 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
 </p>
 
-  <exercise>
-                <title>Answer is a number or a function.</title>
+<p></p>
 
-                <webwork xml:id="number-or-function">
-                <!-- Copied example problem and has no relevance to the text :)  -->
-
-                    <setup>
-                        <var name="$a" category="integer">
-                            <static>5</static>
-                        </var>
-                        <var name="$b" category="integer">
-                            <static>8</static>
-                        </var>
-                        <var name="$answer1" category="integer">
-                            <static>5</static>
-                        </var>
-                        <var name="$answer2" category="formula">
-                            <static>{5x^8+8}{x}</static>
-                        </var>
-
-                        <pg-code>
-                            $a = non_zero_random(-9,9,1);
-                            do { $b = random(2,9,1); } until ( $b != $a );
-                            $answer1 = Compute("$a");
-                            $answer2 = Compute("($a x^($b) + $b)/x")->reduce();
-                        </pg-code>
-                    </setup>
-
-                    <statement>
-                        <ol label="a">
-                            <li>
-                                <p>Suppose the correct answer is <m><var name="$answer1"/></m>.</p>
-                                <ul label="square">
-                                    <li>
-                                        <p><var name="$answer1" width="15"/></p>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <p>Suppose the correct answer is <m>\displaystyle <var name="$answer2"/></m>.</p>
-                                <ul label="square">
-                                    <li>
-                                        <p><var name="$answer2" width="15"/></p>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ol>
-
-                    </statement>
-
-                    <solution>
-                        <p>Solution explanation goes here.</p>
-                    </solution>
-                </webwork>
-            </exercise>
-
-<exercise>
-<webwork>
-    <title>Integer Addition</title>
-
-    <setup>
-        <var name="$a">
-            <static>9</static>
-        </var>
-        <var name="$b">
-            <static>8</static>
-        </var>
-        <var name="$c" category="integer">
-            <static>17</static>
-        </var>
-
-        <pg-code>
-            $a = Compute(random(1, 9, 1)); 
-            $b = Compute(random(1, 9, 1)); 
-            $c = $a + $b;
-        </pg-code>
-    </setup>
-
-    <statement>
-        <p>Compute <m><var name="$a" />+<var name="$b" /></m>.</p>
-        <p>The sum is <var name="$c" width="2" />.</p>
-    </statement>
-
-    <solution>
-        <p><m><var name="$a" />+<var name="$b" />=<var name="$c" /></m>.</p>
-    </solution>
-</webwork>
-</exercise>
-
-<exercise>
-<webwork source="Library/PCC/BasicAlgebra/Exponents/exponentsMultiplication0.pg" />
-</exercise>
-
+<!--
 <exercise>
 <introduction>
 Let's see if you understand the relationship between frequency and relative frequency.
@@ -179,6 +89,7 @@ Let's see if you understand the relationship between frequency and relative freq
 So, these are simple calculations.
 </conclusion>
 </exercise>
+-->
 
 <p>
 Question 1: What do you notice as the number of rolls increases?
@@ -398,6 +309,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 <subsection>
 	<title>Motivating Examples</title>
 	<example>
+	<title>Changing Sample Space - Balls</title>
 	<p>Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption,
 	the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose
 	that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves
@@ -405,6 +317,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	probability changed for the second trial dependent on the outcome of the first trial.</p>
 	</example>
 	<example>
+	<title>Changing Sample Space - Cards</title>
 	<p>Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. 
 	When extracting one card randomly, the probability
 	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and set
@@ -481,15 +394,18 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	inherently non-numerical) by using the random variable in subsequent calculations.
 	</p>
 	<example>
+	<title>Success vs Failure</title>
 	<p>When dealing with only two outcomes, one might use S = { success, failure}.
 	Choose X(success)=1, X(failure)=0. Then, R={0,1}.</p>
 	</example>
 	<example>
+	<title>Standard Dice Pairs</title>
 	<p>When gambling with a pair of dice, one might use
 	S=ordered pairs of all possible rolls = {(a,b): a=die 1 outcome, b=die 2 outcome}.
 	Choose X( (a,b) ) = a+b. Then, R={2, 3, 4, 5, ..., 12}.</p>
 	</example>
 	<example>
+	<title>Other Dice Options</title>
 	<p>When rolling dice in a board game (like RISK), one might use
 	S={(a,b): a=die 1 outcome, b=die 2 outcome}
 	Choose X( (a,b) ) = max{a,b}. Then, R={1, 2, 3, 4, 5, 6}
@@ -505,6 +421,39 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 		then we call X a continuous random variable. 
 		</statement>
 	</definition>
+
+
+<image>
+<latex-image-code>
+
+<![CDATA[
+
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+\begin{tikzpicture}[node distance=2cm]
+
+<TikZ code>
+\node (S) [startstop] {Sample Space};
+\node (R) [process, right of=S, xshift=4cm] {Space of X};
+\node (Real) [startstop, below of=R] {Real Numbers};
+\draw [arrow] (S) -- node [yshift=0.3cm] {X} (R);
+\draw [arrow] (R) -- node [xshift=0.3cm] {f} (Real);
+\draw [arrow] (S) -- node [yshift=-0.3cm] {P} (Real);
+
+\end{tikzpicture}
+
+]]>
+</latex-image-code>	
+</image>
+
+<image source="images/randomvariable.png" />
 
 </section>
 
@@ -535,11 +484,69 @@ which takes s to a numerical value x which is then plugged into f to get the sam
 		</statement>
 	</definition>
 	
+	<example>
+	<title>Discrete Probability Function</title>
+	<p>
+	Consider <m>f(x) = x/10</m> over R = {1,2,3,4}.  Then, f(x) is obviously positive for each of the values in R and certainly <m>\sum_{x \in R} f(x) = f(1) + f(2) + f(3) + f(4) = 1/10 + 2/10 + 3/10 + 4/10 = 1</m>. Therefore, f(x) is a probability mass function over the space R.
+	</p>
+	</example>
+
+	<example>
+	<title>Continuous Probability Function</title>
+	<p>
+	Consider <m>f(x) = x^2/c</m> for some positive real number c and presume R = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make f(x) a probability density function, we must have
+	<me>\int_{x \in R} f(x) = 1.</me>
+	In this instance you get
+	<me>1 = \int_{-1}^2 x^2/c = x^3/(3c) |_{-1}^2 = \frac{8}{3c} - \frac{-1}{3c} = \frac{3}{c}</me>
+	Therefore, f(x) is a probability density function over R provided   = 3.
+	</p>
+	</example>
+	
 	<definition><title>Distribution Function</title>
 		<statement>Given a random variable X on a space R, a probability distribution function on X is given by a function 
 				   <m>F:\mathbb{R} \rightarrow \mathbb{R}</m> such that <m>\displaystyle F(x)=P(X \le x)</m>
 		</statement>
-	</definition>	
+	</definition>
+	
+	<example>
+	<title>Discrete Distribution Function</title>
+	<p>Using <m>f(x) = x/10</m> over R = {1,2,3,4} again, note that F(x) will only change at these four domain values. We get
+	
+	<table halign="left">
+      	<tabular halign="right">
+      
+<row><cell bottom="medium">X</cell><cell bottom="medium">F(x)</cell></row>      
+<row><cell><m>x \lt 1</m></cell><cell>0</cell></row>
+<row><cell><m>1 \le x \lt 2</m></cell><cell>1/10</cell></row>
+<row><cell><m>2 \le x \lt 3</m></cell><cell>3/10</cell></row>
+<row><cell><m>3 \le x \lt 4</m></cell><cell>6/10</cell></row>
+<row><cell><m>4 \le x </m></cell><cell>1</cell></row>
+		</tabular>
+	</table>
+	</p>
+	</example>
+	
+	<example>
+	<title>Continuous Distribution Function</title>
+	<p>
+	Consider <m>f(x) = x^2/3</m> over R = [-1,2].  Then, for <m>-1 \le x \le 2</m>,
+	<me>F(x) = \int_{-1}^x u^2/3 du = x^3/9 + 1/9.</me>
+	Notice, F(-1) = 0 since nothing has yet been accumulated over values smaller than -1 and F(2)=1 since by that time everything has been accumulated. In summary:
+	
+	<table halign="left">
+      	<tabular halign="right">
+      
+<row><cell bottom="medium">X</cell><cell bottom="medium">F(x)</cell></row>      
+<row><cell><m>x \lt -1</m></cell><cell>0</cell></row>
+<row><cell><m>-1 \le x \lt 2</m></cell><cell><m>x^3/9 + 1/9</m></cell></row>
+<row><cell><m>2 \le x</m></cell><cell>1</cell></row>
+	
+		</tabular>
+	</table>
+	
+	
+	</p>
+	</example>
 	
 	<subsection>
 	<title>Properties of the Distribution Function</title>
@@ -597,6 +604,59 @@ which takes s to a numerical value x which is then plugged into f to get the sam
 			<m>\displaystyle z = \frac{x-\mu}{\sigma}</m>. In doing so, then values of z will always represent the number of
 			standard deviations x is from the mean and will provide “dimensionless” comparisons.</p>
 	</subsection>    
+</section>
+
+
+<section>
+	<title>Expected Value</title>
+	<p>Blaise Pascal was a 	17th century mathematician and philosopher who was accomplished in many areas but may likely be best known to you for his creation of what is now known as Pascal's Triangle. As part of his philosophical pursuits, he proposed what is known as "Pascal's wager". It suggests two  mutually exclusive outcomes: that God exists or that he does not. His argument is that a rational person should live as though God exists and seek to believe in God. If God does not actually exist, such a person will have only a finite loss (some pleasures, luxury, etc.), whereas they stand to receive infinite gains as represented by eternity in Heaven and avoid an infinite losses of eternity in Hell. This type of reasoning is part of what is known as "decision theory".
+	</p>
+	<p>You may not confront such dire payouts when making your daily decisions but we need a formal method for making these determinations precise. The procedure for doing so is what we call expected value.
+	</p>
+	<definition><title>Expected Value</title>
+	<p>Given a random variable X over space R, corresponding probability function f(x) and "value function" u(x), the expected value of u(x) is given by
+	<me>E = E[u(X)] = \sum_{x \in R} u(x) f(x)</me>
+	provided X is discrete, or
+	<me>E = E[u(X)] = \int_R u(x)f(x) dx</me>
+	provided X is continuous.
+	</p>
+	</definition>
+	
+	<example><title>Discrete Expected Value</title>
+	<p>Consider <m>f(x) = x/10</m> over R = {1,2,3,4} where the payout is 10 euros if x=1, 5 euros if x=2, 2 euros if x=3 and -7 euros if x = 4.  Then your value function would be u(1)=10, u(2) = 5, u(3)=2, and u(4) = -7. Computing the expect payout gives
+	<me>E = 10 \times 1/10 + 5 \times 2/10 + 2 \times 3/10 - 7 \times 4/10 = -2/10</me>
+	Therefore, the expected payout is actually negative due to a relatively large negative payout associated with the largest likelihood outcome and the larger positive payout only associated with the least likely outcome.
+	</p>
+	</example>
+	
+	<example><title>Continuous Expected Value</title>
+	<p>
+	Consider <m>f(x) = x^2/3</m> over R = [-1,2] with value function given by <m>u(x) = e^x - 1</m>. Then, the expected value for u(x) is given by
+	<me>E = \int_{-1}^2 (e^x-1) \cdot x^2/3 = -1/9 \cdot (e + 15) \cdot e^{-1} + 2/3 \cdot e^2 - 8/9 \approx 3.3129</me>
+	</p>
+	</example>
+	
+	<p>So, going back to Pascal's wager, let X = 0 represent disbelief when God doesn't exist and X = 1 represent disbelief when God does exist, X = 2 represent belief when God does exist, and X = 3 represent belief when God does not exist. Let p be the likelihood that God exists. Then you can compute the expected value of disbelief and the expect value of belief by first creating a value function. Below, for argument sake we are somewhat randomly assign a value of one million to disbelief if God doesn't exist. The conclusions are the same if you choose any other finite number...
+	<md>
+		<mrow>u(0) = 1,000,000, f(0) = 1-p</mrow>
+		<mrow>u(1) = -\infty, f(1) = p</mrow>
+		<mrow>u(2) = \infty, f(2) = p</mrow>
+		<mrow>u(3) = 0, f(3) = 1-p</mrow>
+	</md>
+	Then, 
+	<md>
+		<mrow>E[disbelief] &amp; = u(0)f(0) + u(1)f(1)</mrow>
+		<mrow>&amp; = 1000000 \times (1-p) - \infty \times p</mrow>
+		<mrow>&amp; = -\infty</mrow>
+	</md>
+	if p>0. On the other hand, 
+	<md>
+		<mrow>E[belief] &amp; = u(2)f(2) + u(3)f(3)</mrow>
+		<mrow>&amp; = \infty \times p + 0 \times (1-p)</mrow>
+		<mrow>&amp; = \infty</mrow>
+	</md>
+	if p>0. So Pascal's conclusion is that if there is even the slightest chance that God exists then belief is the smart and scientific choice.
+	</p>
 
 </section>
 

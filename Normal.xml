@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="Normal" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Normal Distributions</title>
+
+<section>	
+	<title>Properties of the Normal Distribution</title>
+	<Introduction>
+	<p>You have seen that most distributions become "bell shaped" as certain parameters are allowed to increase. The question might arise regarding whether this always must happen or is it just a happy coincidence. The amazing answer is that if you interpret the question in the correct way then this is always true.</p>
+	</Introduction>
+	<definition>
+	<title>The Normal Distribution</title>
+	<statement>Given two parameters <m>\mu</m> and <m>\sigma</m> a random variable X with density function
+	<me>
+	f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
+	</me>	
+	</statement>
+	</definition>
+	
+	<theorem>
+	<statement>
+	If <m>\mu =0</m> and <m>\sigma=1</m>, then we say X has a standard normal distribution and often use Z as the variable name. In this case, the density function reduces to
+	<me>
+	f(x) = \frac{1}{\sqrt{2 \pi}} e^{ z^2 / 2}
+	</me>
+	</statement>
+	<proof>
+	<p>Convert to "standard units" using the conversion <m>z = \frac{x-\mu}{\sigma} = \frac{x-0}{1} = x</m>.</p>
+	</proof>
+	</theorem>
+
+</section>
+
+<section>	
+	<title>Theorems</title>
+
+	
+</section>
+
+
+<section>	
+	<title>Chi-Square Distribution</title>
+
+	
+</section>
+
+<section>	
+	<title>Central Limit Theorem</title>
+
+	<subsection>
+	<p>
+	Theorem
+	</p>
+	</subsection>
+	
+	<subsection>
+	<p>
+	Approximating distributions
+	Limiting distributions
+	</p>
+	</subsection>
+</section>
+
+
+</chapter>

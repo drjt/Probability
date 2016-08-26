@@ -65,7 +65,7 @@
 
 
 <section xml:id="GeometricDistribution">
-	<title>Geometric and Negative Binomial Distribution</title>
+	<title>Geometric Distribution</title>
 	<p>Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
 	stays constant from trial to trial. Call this likelihood the probably of

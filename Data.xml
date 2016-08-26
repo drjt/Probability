@@ -109,40 +109,212 @@
 	
 </section>
 
+<section>
+<title>Measures of Position</title>
+	<p>Given a collection of data, sorting the data may provide several useful descriptors. These include:
+	</p>
+	<definition>
+	<title>Order Statistic:</title>
+	<p>Given the given data set <m>x_1, x_2, ... , x_n</m>, after sorting the data label the sorted data as <m>y_1, y_2, ..., y_n</m> where  
+	<me> y_1 \le y_2 \le ... \le y_n.</me> 
+	Then, the kth order statistic is given by <m>y_k</m>. </p>
+	</definition>
+	
+	<definition><title>Minimum/Maximum:</title>  
+	<p>The smallest and largest values in the data set. Using the notation above, minimum = <m>y_1</m> and the maximum = <m>y_n</m></p>
+	</definition>
 
+	<definition><title>Percentiles:</title>
+	<p>A percentile is a numerical value <m>P^p</m> at which approximately 100p% of the given data is smaller.</p>
+	</definition> 
+	
+	<p>
+	To motivate your understanding of percentiles, consider the following data set: {2,5,8,10}. The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
+	</p>
+
+	<p>To compute the percentile value exactly consider a percentage in the form 100p, for <m>0 \lt p \lt 1</m>, and the order statistics <m>y_1, y_2, ..., y_n</m>. Then, the 100pth percentile is given by <me>P^{p} = (1-r)y_m + ry_{m+1}</me>
+	where m is the integer part of (n+1)p, namely <m>m = \left\lfloor (n+1)p \right\rfloor
+	</m> and <m>r = (n+1)p - m</m>, the fractional part of (n+1)p.  This determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be of equal numbers and will then be the common value.</p>
+
+	<definition><title>Quartiles:</title> 
+	<p>Given a sorted data set, the first, second, and third quartiles are the values of 
+	<m>P^{0.25}, P^{0.5}</m> and <m>P^{0.75}</m>.
+	</p>
+	</definition>
+
+	<definition><title>Deciles:</title>
+	<p>Given a sorted data set, the first, second, ..., ninth deciles are the value of 
+	<m>P^{0.1}, P^{0.2}, ... , P^{0.9}</m>
+	</p>
+	</definition>
+
+	<example>
+	<title>Basic Percentiles</title>
+		<p>Using the data set {2,5,8,10} with n=4 values, the 25th percentile is computed by considering 
+		<m>(n+1)p = (4+1)0.25 = 5/4 = 1.25</m>.  
+		So, m = 1 and r = 0.25. Therefore 
+		<m>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</m> 
+		as noted above. You can see that 3 also lies in this same range and has the same percentages above and below. However, it would be a slightly larger percentile value. Indeed, going backward:
+		<md>
+			<mrow>3 = (1-r) \times 2 + r \times 5</mrow>
+			<mrow>\Rightarrow r = \frac{1}{3}</mrow>
+			<mrow>\Rightarrow (n+1)p = 1 + \frac{1}{3} = \frac{4}{3}</mrow>
+			<mrow>\Rightarrow p = \frac{4}{15} \approx 0.267</mrow>
+		</md>
+		and so 3 would actually be at approximately the 26.7th percentile.
+		</p>
+	</example>
+
+
+</section>
 
 <section>
 <title>Measures of the Middle</title>
 
-<p>
-Defn: Suppose X is a discrete random variable with range R = {x1, x2, ..., xn} and pmf f(x). In general:
-The arithmetic mean is a measure of the middle
-μ = x1f(x1) + ... + xnf(xn) = ∑ .
-=
-n
-k
-kk xfx
-1
-)(
-The mean is often called the centroid in the sense that if the xk were locations of objects of weight f(xk), then the centroid
-would be the point where this system of n masses would balance. 
-</p>
+	<definition><title>Arithmetic Mean</title>
+	<p>Suppose X is a discrete random variable with range 
+	<m>R = {x_1, x_2, ..., x_n}</m>. 
+	The arithmetic mean is given by
+		<me>
+		AM = \frac{x_1 + ... + x_n}{n} = \frac{\sum_{k=1}^n x_k}{n}.
+		</me>
+	If this data comes from sample data then we call it a sample mean and denote this value by <m>\overline{x}</m>. If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by <m>\mu</m>.</p>
+	</definition>
+	
+	<p>
+	The mean is often called the centroid in the sense that if the x values were locations of objects of equal weight, then the centroid
+	would be the point where this system of n masses would balance. 
+	</p>
+	<p>
+	The values can all be provided with varying weights if desired and the result is called the weighted arithmetic mean and is given by
+		<me>
+		\frac{m_1 x_1 + ... + m_n x_n}{m_1 + ... + m_n} = \frac{\sum_{k=1}^n m_k x_k}{\sum_{k=1}^n m_k}.
+		</me>
+	</p>
 
 <p>
 Other Means:
-• Geometric Mean = (x1 x2 … xn)
-1/n
-• Harmonic Mean =
-∑=
-n
-k
-k
 </p>
 
+<definition><title>Geometric Mean</title>
+<p>
+	<me>GM = (x_1 x_2 ... x_n)^{1/n}</me>
+</p>
+</definition>
+
+<definition><title>Harmonic Mean</title>
+<p>
+	<me>HM = \frac{1}{n} \sum_{k=1}^n \frac{1}{x_k}</me>
+</p>
+</definition>
+
 <theorem>
-<title>Relationships between various means</title>
-	<statement>Harmonic Mean <m>\le</m> Geometric Mean <m>\le</m> Arithmetic Mean. </statement>
+<title>Relative sizes of Means</title>
+	<statement> <m>HM \le GM \le AM</m>. </statement>
 </theorem>
+
+<theorem>
+<title>Mean Formula</title>
+	<statement><m>AM×HM=GM^2</m></statement>
+</theorem>
+
+<definition><title>Median:</title>
+<p>A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.</p>
+</definition>
+
+<p>
+For data sets with an odd number of values, this is the "middle" data value if one were to successively cross off pairs from the two ends of the sorted date. For data sets with an even number of values, this is a average of the two data values left after crossing off these pairs.  Using the order statistics, the median equals
+<me>y_{\frac{n+1}{2}}</me>
+if n is odd and
+<me>\frac{y_\frac{n}{2} + y_{\frac{n}{2}+1}}{2}</me>
+if n is even.
+</p>
+
+<definition><title>Midrange:</title>
+<p>A mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
+<me>\frac{y_1+y_n}{2}</me>
+</p>
+</definition>
+
+<p>
+<title>Advantages and Disadvantages of Measures of the Middle</title>
+Mean utilizes all of the data values so each term is important. Utilizes them all even if some of the data values might suffer from collection errors.  Median ignores outliers (which might be a result of collection errors) but does not account for the relative differences between terms. Midrange is very easy to compute but ignores the relative differences for all terms but the two extremes.
+</p>
+
+<example><title>Numerical Example of these Quantitative Measures</title>
+<p>The US Census Bureau reported the following state populations (in millions) for 2013:</p>
+<table halign="left">
+      <tabular halign="right">
+      
+<row><cell bottom="medium">State</cell><cell bottom="medium">Population</cell></row>      
+<row><cell>Wyoming</cell><cell>0.6</cell></row>
+<row><cell>Vermont</cell><cell>0.6</cell></row>
+<row><cell>District of Columbia</cell><cell>0.6</cell></row>
+<row><cell>North Dakota</cell><cell>0.7</cell></row>
+<row><cell>Alaska</cell><cell>0.7</cell></row>
+<row><cell>South Dakota</cell><cell>0.8</cell></row>
+<row><cell>Delaware</cell><cell>0.9</cell></row>
+<row><cell>Montana</cell><cell>1</cell></row>
+<row><cell>Rhode Island</cell><cell>1.1</cell></row>
+<row><cell>New Hampshire</cell><cell>1.3</cell></row>
+<row><cell>Maine</cell><cell>1.3</cell></row>
+<row><cell>Hawaii</cell><cell>1.4</cell></row>
+<row><cell>Idaho</cell><cell>1.6</cell></row>
+<row><cell>West Virginia</cell><cell>1.9</cell></row>
+<row><cell>Nebraska</cell><cell>1.9</cell></row>
+<row><cell>New Mexico</cell><cell>2.1</cell></row>
+<row><cell>Nevada</cell><cell>2.8</cell></row>
+<row><cell>Kansas</cell><cell>2.9</cell></row>
+<row><cell>Utah</cell><cell>2.9</cell></row>
+<row><cell>Arkansas</cell><cell>3</cell></row>
+<row><cell>Mississippi</cell><cell>3</cell></row>
+<row><cell>Iowa</cell><cell>3.1</cell></row>
+<row><cell>Connecticut</cell><cell>3.6</cell></row>
+<row><cell>Oklahoma</cell><cell>3.9</cell></row>
+<row><cell>Oregon</cell><cell>3.9</cell></row>
+<row><cell>Kentucky</cell><cell>4.4</cell></row>
+<row><cell>Louisiana</cell><cell>4.6</cell></row>
+<row><cell>South Carolina</cell><cell>4.8</cell></row>
+<row><cell>Alabama</cell><cell>4.8</cell></row>
+<row><cell>Colorado</cell><cell>5.3</cell></row>
+<row><cell>Minnesota</cell><cell>5.4</cell></row>
+<row><cell>Wisconsin</cell><cell>5.7</cell></row>
+<row><cell>Maryland</cell><cell>5.9</cell></row>
+<row><cell>Missouri</cell><cell>6</cell></row>
+<row><cell>Tennessee</cell><cell>6.5</cell></row>
+<row><cell>Indiana</cell><cell>6.6</cell></row>
+<row><cell>Arizona</cell><cell>6.6</cell></row>
+<row><cell>Massachusetts</cell><cell>6.7</cell></row>
+<row><cell>Washington</cell><cell>7</cell></row>
+<row><cell>Virginia</cell><cell>8.3</cell></row>
+<row><cell>New Jersey</cell><cell>8.9</cell></row>
+<row><cell>North Carolina</cell><cell>9.8</cell></row>
+<row><cell>Michigan</cell><cell>9.9</cell></row>
+<row><cell>Georgia</cell><cell>10</cell></row>
+<row><cell>Ohio</cell><cell>11.6</cell></row>
+<row><cell>Pennsylvania</cell><cell>12.8</cell></row>
+<row><cell>Illinois</cell><cell>12.9</cell></row>
+<row><cell>Florida</cell><cell>19.6</cell></row>
+<row><cell>New York</cell><cell>19.7</cell></row>
+<row><cell>Texas</cell><cell>26.4</cell></row>
+<row><cell>California</cell><cell>38.3</cell></row>      
+      
+      </tabular>
+      </table>
+
+<p>Notice that these are already in order so you can presume <m>y_1 = 0.6</m> million is the minimum and <m>y_{50} = 38.3</m> million is the maximum.
+</p>
+<p>
+The mean of this data takes a bit of arithmetic but gives
+<me>\frac{\sum_{k=1}^{50} y_k }{50} = \frac{316.1}{50} \approx 6.33</me>
+million residents.
+</p>
+<p>
+Since the number of states is even, the median is found by averaging the 25th and 26th order statistics. In this case, 
+<me>\frac{y_{25}+y_{26}}{2}=\frac{4.4+4.6}{2} \approx 4.5 </me> million residents.
+</p>
+
+</example>
 
 </section>
 
@@ -151,26 +323,145 @@ k
 <title>Measures of Spread</title>
 
 
-<p>Measures of spread:
-• Average Deviation from the Mean – always zero for any distribution
-• Average Absolute Deviation from the Mean – difficult to deal with algebra when absolute values are used
-• Average Squared Deviation from the Mean – always non-negative and good with algebra and calculus 
+<definition><title>Range:</title>
+<p>Using the order statistics, <me>y_n - y_1.</me>  
+Easy to compute. Ignores the spread of all the data in between.
+</p>
+</definition>
+
+<definition><title>Interquartile Range:</title>
+<p><m>P^{0.75} - P^{0.25}</m>. 
+</p>
+</definition>
+
+<p>
+Average Deviation from the Mean:  Given a data set <m>x_1, x_2, ... , x_n</m> with mean <m>\mu</m> each term deviates from the mean by the value <m>x_k - \mu</m>. So, averaging these gives
+<me> \frac{\sum_{k=1}^n (x_k-\mu)}{n} = \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \mu}{n} = \mu - \mu = 0</me>
+which is always zero for any provided set of data. This cancellation makes this measure not useful. To avoid cancellation, perhaps removing negatives would help.
+</p>
+<p>Average Absolute Deviation from the Mean:  
+<me> \frac{\sum_{k=1}^n \left | x_k-\mu \right |}{n} </me>
+which, although nicely stated, is difficult to deal with algebraically since the absolute values do not simplify well algebraically. To avoid this algebraic roadblock, we can look for another way to nearly accomplish the same goal by squaring and then square rooting. 
+</p>
+<p>Average Squared Deviation from the Mean:
+<me> \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
+which will always be non-negative but can be easily expanded using algebra. Since this is a mouthful, this measure is generally called the variance. 
+</p>
+<p>
+Using the average squared deviation from the mean, differences have been squared. Thus all values added are non-negative but very small ones have been made even smaller and larger ones have possibly been made much larger. To undo this scaling issue, one must take a square root to get things back into the right ball park. 
 </p>
 
-<definition><title>Variance</title>
-<statement>The variance is a measure of spread found by using the average squared deviation from the mean
-σ2
- = ( ) )(
-2
-1
-k
-n
-k
-k ∑ xfx =
-− μ
-if this value exists and is also denoted by Var(X). The positive square root of the variance is called the standard deviation
-and is denoted by σ. </statement>
+<definition><title>Variance and Standard Deviation</title>
+<p>The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>\sigma^2</m>. Therefore
+<me> \sigma^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
+</p>
+<p>The standard deviation is the square root of the variance. If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by <m>\sigma</m>. Therefore
+<me> \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.</me>
+</p>
+<p>
+If data comes from a sample of the population then we call it a sample variance and denote this value by v. Since sample data tends to reflect certain "biases" then we increase this value slightly by <m>\frac{n}{n-1}</m> to give the sample variance
+<me>s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n-1}.</me>
+and the sample standard deviation similarly as the square root of the sample variance.
+</p>
 </definition>
+
+<theorem><title>Alternate Forms for Variance</title>
+<statement>
+<md>
+<mrow>\sigma^2 &amp; = \left ( \frac{\sum_{k=1}^n x_k^2 }{n} \right ) - \mu^2 </mrow>
+<mrow>&amp; = \left [ \frac{\sum_{k=1}^n x_k(x_k - 1)}{n} \right ] + \mu - \mu^2</mrow>
+</md>
+</statement>
+<proof>
+TBA
+</proof>
+</theorem>
+
+<p>The Population of the individual USA states according to the 2013 Census 
+Consider the data set {}</p>
+
+<example><title>Numerical Example of these Quantitative Measures</title>
+<p>The US Census Bureau reported the following state populations (in millions) for 2013:</p>
+<table halign="left">
+      <tabular halign="right">
+      
+<row><cell bottom="medium">State</cell><cell bottom="medium">Population</cell></row>      
+<row><cell>Wyoming</cell><cell>0.6</cell></row>
+<row><cell>Vermont</cell><cell>0.6</cell></row>
+<row><cell>District of Columbia</cell><cell>0.6</cell></row>
+<row><cell>North Dakota</cell><cell>0.7</cell></row>
+<row><cell>Alaska</cell><cell>0.7</cell></row>
+<row><cell>South Dakota</cell><cell>0.8</cell></row>
+<row><cell>Delaware</cell><cell>0.9</cell></row>
+<row><cell>Montana</cell><cell>1</cell></row>
+<row><cell>Rhode Island</cell><cell>1.1</cell></row>
+<row><cell>New Hampshire</cell><cell>1.3</cell></row>
+<row><cell>Maine</cell><cell>1.3</cell></row>
+<row><cell>Hawaii</cell><cell>1.4</cell></row>
+<row><cell>Idaho</cell><cell>1.6</cell></row>
+<row><cell>West Virginia</cell><cell>1.9</cell></row>
+<row><cell>Nebraska</cell><cell>1.9</cell></row>
+<row><cell>New Mexico</cell><cell>2.1</cell></row>
+<row><cell>Nevada</cell><cell>2.8</cell></row>
+<row><cell>Kansas</cell><cell>2.9</cell></row>
+<row><cell>Utah</cell><cell>2.9</cell></row>
+<row><cell>Arkansas</cell><cell>3</cell></row>
+<row><cell>Mississippi</cell><cell>3</cell></row>
+<row><cell>Iowa</cell><cell>3.1</cell></row>
+<row><cell>Connecticut</cell><cell>3.6</cell></row>
+<row><cell>Oklahoma</cell><cell>3.9</cell></row>
+<row><cell>Oregon</cell><cell>3.9</cell></row>
+<row><cell>Kentucky</cell><cell>4.4</cell></row>
+<row><cell>Louisiana</cell><cell>4.6</cell></row>
+<row><cell>South Carolina</cell><cell>4.8</cell></row>
+<row><cell>Alabama</cell><cell>4.8</cell></row>
+<row><cell>Colorado</cell><cell>5.3</cell></row>
+<row><cell>Minnesota</cell><cell>5.4</cell></row>
+<row><cell>Wisconsin</cell><cell>5.7</cell></row>
+<row><cell>Maryland</cell><cell>5.9</cell></row>
+<row><cell>Missouri</cell><cell>6</cell></row>
+<row><cell>Tennessee</cell><cell>6.5</cell></row>
+<row><cell>Indiana</cell><cell>6.6</cell></row>
+<row><cell>Arizona</cell><cell>6.6</cell></row>
+<row><cell>Massachusetts</cell><cell>6.7</cell></row>
+<row><cell>Washington</cell><cell>7</cell></row>
+<row><cell>Virginia</cell><cell>8.3</cell></row>
+<row><cell>New Jersey</cell><cell>8.9</cell></row>
+<row><cell>North Carolina</cell><cell>9.8</cell></row>
+<row><cell>Michigan</cell><cell>9.9</cell></row>
+<row><cell>Georgia</cell><cell>10</cell></row>
+<row><cell>Ohio</cell><cell>11.6</cell></row>
+<row><cell>Pennsylvania</cell><cell>12.8</cell></row>
+<row><cell>Illinois</cell><cell>12.9</cell></row>
+<row><cell>Florida</cell><cell>19.6</cell></row>
+<row><cell>New York</cell><cell>19.7</cell></row>
+<row><cell>Texas</cell><cell>26.4</cell></row>
+<row><cell>California</cell><cell>38.3</cell></row>      
+      
+      </tabular>
+      </table>
+
+<p>Again, you should note that these are already in order so the range is quickly found to be 
+<me>y_n - y_1 = 38.3 - 0.6 = 37.7</me> 
+million residents.
+</p>
+<p>
+From the computation before, the mean of this data is about 6.33
+million residents. So, to determine the variance you may find it easier to compute using the theorem above. 
+<md>
+<mrow> v &amp; = \left ( \frac{\sum_{k=1}^n y_k^2 }{n} \right ) - \mu^2
+</mrow>
+<mrow> &amp; \approx \frac{4434.37}{50} - (6.33)^2
+</mrow>
+<mrow> &amp; = 48.72
+</mrow>
+</md>
+and so you get a sample variance of
+<me> s^2 \approx \frac{50}{49} \cdot 48.72 = 49.71</me>
+and a sample standard deviation of
+<me>s \approx \sqrt{49.71} = 7.05</me> million residents.
+</p>
+</example>
 
 </section>
 </chapter>
