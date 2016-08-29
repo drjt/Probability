@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-26T15:52:27-05:00    *-->
+<!--*    on 2016-08-29T15:05:13-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -132,18 +132,18 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="ProbabilityFunctions"><header title="Section 4.6 Probability Functions"><h1 class="heading hide-type" alt="Section 4.6 Probability Functions">
 <span class="type">Section</span><span class="codenumber">4.6</span><span class="title">Probability Functions</span><a href="ProbabilityFunctions.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-154">In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From
+</h1></header><p id="p-168">In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From
 this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so 
 to obtain (for discrete values) P(sample space value s)\( = f(X(s))\).  That is, the probability of a given outcome s is equal to the composition 
 which takes s to a numerical value x which is then plugged into f to get the same final values.</p>
-<article class="definition-like" id="definition-23"><h5 class="heading">
+<article class="definition-like" id="definition-24"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">4.6.1</span><span class="title">Probability Mass Function</span>
 </h5>Given a discrete random variable X on a space R, a probability mass function on X is given by a function \(f:R \rightarrow \mathbb{R}\) such that:
 		\begin{align*}
 &amp; \forall x \in R , f(x) \gt 0\\
 &amp; \sum_{x \in R} f(x) = 1\\
 &amp; A \subset R \Rightarrow P(X \in A) = \sum_{x \in A}f(x)
-\end{align*}</article><article class="definition-like" id="definition-24"><h5 class="heading">
+\end{align*}</article><article class="definition-like" id="definition-25"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">4.6.2</span><span class="title">Probability Density Function</span>
 </h5>Given a continuous random variable X on a space R, a probability density function on X is given by a function \(f:R \rightarrow \mathbb{R}\) such that:
 			\begin{align*}
@@ -153,26 +153,26 @@ which takes s to a numerical value x which is then plugged into f to get the sam
 \end{align*}</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-17" id="example-17"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="codenumber">4.6.3</span><span class="title">Discrete Probability Function</span>
 </h5></article></a></div>
-<div id="hk-example-17" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-155">
+<div id="hk-example-17" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-169">
 	Consider \(f(x) = x/10\) over R = {1,2,3,4}.  Then, f(x) is obviously positive for each of the values in R and certainly \(\sum_{x \in R} f(x) = f(1) + f(2) + f(3) + f(4) = 1/10 + 2/10 + 3/10 + 4/10 = 1\). Therefore, f(x) is a probability mass function over the space R.
 	</p></article></div>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-18" id="example-18"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="codenumber">4.6.4</span><span class="title">Continuous Probability Function</span>
 </h5></article></a></div>
-<div id="hk-example-18" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-156">
+<div id="hk-example-18" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-170">
 	Consider \(f(x) = x^2/c\) for some positive real number c and presume R = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make f(x) a probability density function, we must have
 	\begin{equation*}\int_{x \in R} f(x) = 1.\end{equation*}
 	In this instance you get
 	\begin{equation*}1 = \int_{-1}^2 x^2/c = x^3/(3c) |_{-1}^2 = \frac{8}{3c} - \frac{-1}{3c} = \frac{3}{c}\end{equation*}
 	Therefore, f(x) is a probability density function over R provided   = 3.
 	</p></article></div>
-<article class="definition-like" id="definition-25"><h5 class="heading">
+<article class="definition-like" id="definition-26"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">4.6.5</span><span class="title">Distribution Function</span>
 </h5>Given a random variable X on a space R, a probability distribution function on X is given by a function 
 				   \(F:\mathbb{R} \rightarrow \mathbb{R}\) such that \(\displaystyle F(x)=P(X \le x)\)</article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-19" id="example-19"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="codenumber">4.6.6</span><span class="title">Discrete Distribution Function</span>
 </h5></article></a></div>
-<div id="hk-example-19" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-157">Using \(f(x) = x/10\) over R = {1,2,3,4} again, note that F(x) will only change at these four domain values. We get
+<div id="hk-example-19" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-171">Using \(f(x) = x/10\) over R = {1,2,3,4} again, note that F(x) will only change at these four domain values. We get
 	
 	<figure class="figure-like" id="table-4"><table>
 <tr>
@@ -204,7 +204,7 @@ which takes s to a numerical value x which is then plugged into f to get the sam
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-20" id="example-20"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="codenumber">4.6.7</span><span class="title">Continuous Distribution Function</span>
 </h5></article></a></div>
-<div id="hk-example-20" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-158">
+<div id="hk-example-20" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-172">
 	Consider \(f(x) = x^2/3\) over R = [-1,2].  Then, for \(-1 \le x \le 2\),
 	\begin{equation*}F(x) = \int_{-1}^x u^2/3 du = x^3/9 + 1/9.\end{equation*}
 	Notice, F(-1) = 0 since nothing has yet been accumulated over values smaller than -1 and F(2)=1 since by that time everything has been accumulated. In summary:
@@ -245,12 +245,12 @@ which takes s to a numerical value x which is then plugged into f to get the sam
 <article class="theorem-like" id="theorem-24"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.6.10</span>
 </h5>F is non-decreasing</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-17" id="proof-17"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-17" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-159">Case 1: R discrete</p>\begin{align*}
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-17" id="proof-17"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-17" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-173">Case 1: R discrete</p>\begin{align*}
 \forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2\\
 F(x_2) &amp; = \sum_{x \le x_2} f(x) \\
 &amp; = \sum_{x \le x_1} f(x) + \sum_{x_1 \lt x \le x_2} f(x)\\
 &amp; \ge \sum_{x \le x_1} f(x) = F(x_1)
-\end{align*}<p id="p-160">Case 2: R continuous</p>\begin{align*}
+\end{align*}<p id="p-174">Case 2: R continuous</p>\begin{align*}
 \forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2\\
 F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx \\
  &amp; = \int_{-\infty}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx\\
@@ -266,7 +266,7 @@ F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx \\
 <span class="type">Corollary</span><span class="codenumber">4.6.13</span>
 </h5>For continuous distributions, P(X = a) = 0</article></section><section class="subsection" id="subsection-17"><header title="Subsection 4.6.2 Standard Units"><h1 class="heading hide-type" alt="Subsection 4.6.2 Standard Units">
 <span class="type">Subsection</span><span class="codenumber">4.6.2</span><span class="title">Standard Units</span>
-</h1></header><p id="p-161">Any distribution variable can be converted to “standard units” using the linear translation 
+</h1></header><p id="p-175">Any distribution variable can be converted to “standard units” using the linear translation 
 			\(\displaystyle z = \frac{x-\mu}{\sigma}\). In doing so, then values of z will always represent the number of
 			standard deviations x is from the mean and will provide “dimensionless” comparisons.</p></section></section></div></main>
 </div>

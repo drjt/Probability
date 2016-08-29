@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-26T15:52:27-05:00    *-->
+<!--*    on 2016-08-29T15:05:13-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -132,7 +132,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="GeometricDistribution"><header title="Section 5.2 Geometric Distribution"><h1 class="heading hide-type" alt="Section 5.2 Geometric Distribution">
 <span class="type">Section</span><span class="codenumber">5.2</span><span class="title">Geometric Distribution</span><a href="GeometricDistribution.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-173">Consider the situation where one can observe a sequence  of independent
+</h1></header><p id="p-187">Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
 	stays constant from trial to trial. Call this likelihood the probably of
 	"success" and denote its value by \(p\) 
@@ -143,7 +143,7 @@ MathJax.Hub.Config({
 	Geometric Distribution.</p>
 <section class="subsection" id="subsection-21"><header title="Subsection 5.2.1 Derivation of Geometric Probability Function"><h1 class="heading hide-type" alt="Subsection 5.2.1 Derivation of Geometric Probability Function">
 <span class="type">Subsection</span><span class="codenumber">5.2.1</span><span class="title">Derivation of Geometric Probability Function</span>
-</h1></header><p id="p-174"> Since successive trials are independent, then the probability 
+</h1></header><p id="p-188"> Since successive trials are independent, then the probability 
 			of the first success occurring on the mth trial presumes that
 			the previous m-1 trials were all failures.  Therefore the 
 			desired probability is given by </p>\begin{equation*}f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p\end{equation*}</section><section class="subsection" id="subsection-22"><header title="Subsection 5.2.2 Properties of the Geometric DistributionGeometric Distribution sums to 1"><h1 class="heading hide-type" alt="Subsection 5.2.2 Properties of the Geometric DistributionGeometric Distribution sums to 1">
@@ -152,14 +152,14 @@ MathJax.Hub.Config({
 \SUM {k=1} {\infty} {f(x)} = \sum_{k=1}^{\infty} {(1-p)^{k-1} p} = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1
 \end{gather*}</section><section class="subsection" id="subsection-23"><header title="Subsection 5.2.3 Derivation of Geometric Mean"><h1 class="heading hide-type" alt="Subsection 5.2.3 Derivation of Geometric Mean">
 <span class="type">Subsection</span><span class="codenumber">5.2.3</span><span class="title">Derivation of Geometric Mean</span>
-</h1></header><p id="p-175"> </p>\begin{align*}
+</h1></header><p id="p-189"> </p>\begin{align*}
 \mu &amp; = E[X] = \sum_{k=0}^{\infty} {k(1-p)^{k-1}p}\\
  &amp; = p \sum_{k=1}^{\infty} {k(1-p)^{k-1}}\\
  &amp; = p \frac{1}{(1-(1-p))^2}\\
  &amp; = p \frac{1}{p^2} = \frac{1}{p}
 \end{align*}</section><section class="subsection" id="subsection-24"><header title="Subsection 5.2.4 Derivation of Geometric Variance"><h1 class="heading hide-type" alt="Subsection 5.2.4 Derivation of Geometric Variance">
 <span class="type">Subsection</span><span class="codenumber">5.2.4</span><span class="title">Derivation of Geometric Variance</span>
-</h1></header><p id="p-176"> </p>\begin{align*}
+</h1></header><p id="p-190"> </p>\begin{align*}
 \sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 \\
  &amp; = \su _{k=0}^{\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 \\
  &amp; = (1-p)p \sum_{k=2}^{\infty} {k(k-1)(1-p)^{k-2}} + \frac{1}{p} - \frac{1}{p^2}\\
@@ -167,7 +167,7 @@ MathJax.Hub.Config({
  &amp; = \frac{1-p}{p^2}
 \end{align*}</section><section class="subsection" id="subsection-25"><header title="Subsection 5.2.5 Derivation of Geometric Distribution Function"><h1 class="heading hide-type" alt="Subsection 5.2.5 Derivation of Geometric Distribution Function">
 <span class="type">Subsection</span><span class="codenumber">5.2.5</span><span class="title">Derivation of Geometric Distribution Function</span>
-</h1></header><p id="p-177"> Consider the accumulated probabilities over a range of values...</p>\begin{align*}
+</h1></header><p id="p-191"> Consider the accumulated probabilities over a range of values...</p>\begin{align*}
  P(X \le a) &amp; = 1 - P(X \gt a)\\
  &amp; = 1- \sum_{k={a+1}}^{\infty} {(1-p)^{k-1}p}\\
  &amp; = 1- p \frac{(1-p)^{a}}{1-(1-p)}\\

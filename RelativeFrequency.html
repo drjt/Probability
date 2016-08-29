@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-26T15:52:27-05:00    *-->
+<!--*    on 2016-08-29T15:05:12-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -140,11 +140,11 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="RelativeFrequency"><header title="Section 4.1 Relative Frequency"><h1 class="heading hide-type" alt="Section 4.1 Relative Frequency">
 <span class="type">Section</span><span class="codenumber">4.1</span><span class="title">Relative Frequency</span><a href="RelativeFrequency.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-117">Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
-<p id="p-118">People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p>
+</h1></header><p id="p-131">Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
+<p id="p-132">People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p>
 <section class="subsection" id="subsection-8"><header title="Subsection 4.1.1 "><h1 class="heading hide-type" alt="Subsection 4.1.1 ">
 <span class="type">Subsection</span><span class="codenumber">4.1.1</span><span class="title"></span>
-</h1></header><p id="p-119">When attempting to precisely measure this uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
+</h1></header><p id="p-133">When attempting to precisely measure this uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
 <ul style="list-style-type: disc;">
 <li id="li-85">S = Universal Set or Sample Space Experiment or Outcome Space. 
 		This is the collection of all possible outcomes.</li>
@@ -160,16 +160,16 @@ MathJax.Hub.Config({
 <li id="li-92">|A| / n = Relative Frequency. A proportion of successes to total number of trials.</li>
 <li id="li-93">Histogram. A bar chart representation of data where area corresponds to the value being described.</li>
 </ul>
-<p id="p-120">To investigate these terms and to motivate our discussion of probability, consider flipping coins using the
+<p id="p-134">To investigate these terms and to motivate our discussion of probability, consider flipping coins using the
 interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists
 of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads
 and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads
 or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying
 number of trials selected by you as you move the slider bar. Results are displayed using a histogram.</p>
-<p id="p-121">
+<p id="p-135">
 Question 1: What do you notice as the number of flips increases?
 </p>
-<p id="p-122">
+<p id="p-136">
 Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
 that to happen?
 </p>
@@ -189,19 +189,19 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	print("\nThe relative frequencies for Tails and Heads:"+str(rel))
 	show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
 </script></div>
-<p id="p-123">Notice that as the number of flips increases, the relative frequency of Heads (and Tails)
+<p id="p-137">Notice that as the number of flips increases, the relative frequency of Heads (and Tails)
 	stabilized around 0.5. This makes sense intuitively since there are two options for each 
 	individual flip and 1/2 of those options are Heads while the other 1/2 is Tails.</p>
-<p id="p-124">
+<p id="p-138">
 	Let's try again
 	by doing a random experiment consisting of rolling a single die one time. Note that the sample space 
 	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
 </p>
-<p id="p-125"></p>
-<p id="p-126">
+<p id="p-139"></p>
+<p id="p-140">
 Question 1: What do you notice as the number of rolls increases?
 </p>
-<p id="p-127">
+<p id="p-141">
 Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
 </p>
 <div class="sagecell-sage"><script type="text/x-sage">@interact
@@ -222,10 +222,10 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [
 	print fs
 	show(bar_chart(freq,axes=False,ymin=0))
 </script></div>
-<p id="p-128">Notice in this instance that there are a larger number of options (for example 6 on a regular
+<p id="p-142">Notice in this instance that there are a larger number of options (for example 6 on a regular
 	die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die)
 	as the number of rolls increased.</p>
-<p id="p-129">In general, this suggests a rule: if there are n outcomes and each one has the same
+<p id="p-143">In general, this suggests a rule: if there are n outcomes and each one has the same
 	chance of occurring on a given trial then on average on a large number of trials the relative
 	frequency of that outcome is 1/n.</p>
 	In general, if a number of outcomes are "equally likely" then this is a good model for measuring
@@ -249,7 +249,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
     print "Relative Frequence of ",dice[0]," is about ",rel_freq[0].n(digits=4)
     print "Relative Frequence of ",dice[num_sides-1]," is about ",rel_freq[num_sides-1].n(digits=4)
 </script></div>
-<p id="p-130">Notice, not only are the answers not the same but they are not even close. To understand why this 
+<p id="p-144">Notice, not only are the answers not the same but they are not even close. To understand why this 
 	is different from the examples before, consider the possible outcomes from each pair of die. Since we
 	are measuring the sum of the dice then (for a pair of standard 6-sided dice) the possible sums are from 
 	2 to 12. However, there is only one way to get a 2--namely from a (1,1) pair--while there are 6 ways to get

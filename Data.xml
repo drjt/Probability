@@ -120,9 +120,17 @@
 	Then, the kth order statistic is given by <m>y_k</m>. </p>
 	</definition>
 	
+	<p>
+	For example, the age at inauguration for presidents from 1981-2016 gives the data <m>x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47</m> (Reagan, Bush, Clinton, Bush, Obama). For this data, the order statistics are denoted <m>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69</m>.
+	</p>
+	
 	<definition><title>Minimum/Maximum:</title>  
 	<p>The smallest and largest values in the data set. Using the notation above, minimum = <m>y_1</m> and the maximum = <m>y_n</m></p>
 	</definition>
+	
+	<p>
+	Using the Presidential ages above, minimum = <m>y_1 = 46</m> and maximum = <m>y_5 = 69</m>.
+	</p>
 
 	<definition><title>Percentiles:</title>
 	<p>A percentile is a numerical value <m>P^p</m> at which approximately 100p% of the given data is smaller.</p>
@@ -133,8 +141,39 @@
 	</p>
 
 	<p>To compute the percentile value exactly consider a percentage in the form 100p, for <m>0 \lt p \lt 1</m>, and the order statistics <m>y_1, y_2, ..., y_n</m>. Then, the 100pth percentile is given by <me>P^{p} = (1-r)y_m + ry_{m+1}</me>
-	where m is the integer part of (n+1)p, namely <m>m = \left\lfloor (n+1)p \right\rfloor
-	</m> and <m>r = (n+1)p - m</m>, the fractional part of (n+1)p.  This determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be of equal numbers and will then be the common value.</p>
+	where m is the integer part of (n+1)p, namely <me>m = \left\lfloor (n+1)p \right\rfloor
+	</me> 
+	and 
+	<me>r = (n+1)p - m,</me>
+	the fractional part of (n+1)p.  This determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be of equal numbers and will then be the common value.</p>
+
+
+	<example>
+	<title>Basic Percentiles</title>
+		<p>Using the data set {2,5,8,10} with n=4 values, the 25th percentile is computed by considering 
+		<me>(n+1)p = (4+1)0.25 = 5/4 = 1.25</me>.  
+		So, m = 1 and r = 0.25. Therefore 
+		<me>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</me> 
+		as noted above. 
+		</p>
+		<p>
+		Similarly, the 75th percentile is given by
+		<me>(n+1)p = (4+1)0.75 = 15/4 = 3.75</me>.  
+		So, m = 3 and r = 0.75. Therefore 
+		<me>P^{0.75} = 0.25 \times 8 + 0.75 \times 10 = 9.5</me> 
+		
+		It is interesting to note that 3 also lies between 2 and 5 as does 2.75 and has the same percentages above (75 percent) and below (25 percent). However, it should designate a slightly larger percentile location. Indeed, going backward:
+		<md>
+			<mrow>3 = (1-r) \times 2 + r \times 5</mrow>
+			<mrow>\Rightarrow r = \frac{1}{3}</mrow>
+			<mrow>\Rightarrow (n+1)p = 1 + \frac{1}{3} = \frac{4}{3}</mrow>
+			<mrow>\Rightarrow p = \frac{4}{15} \approx 0.267</mrow>
+		</md>
+		and so 3 would actually be at approximately the 26.7th percentile.
+		</p>
+	</example>
+
+
 
 	<definition><title>Quartiles:</title> 
 	<p>Given a sorted data set, the first, second, and third quartiles are the values of 
@@ -147,23 +186,19 @@
 	<m>D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}</m>
 	</p>
 	</definition>
+	
+	<p>
+	For the Presidential data, <m>Q_1 = 2.75, Q_2 = 6.5,</m> and <m>Q_3 = 9.5</m>.
+	</p>
 
-	<example>
-	<title>Basic Percentiles</title>
-		<p>Using the data set {2,5,8,10} with n=4 values, the 25th percentile is computed by considering 
-		<m>(n+1)p = (4+1)0.25 = 5/4 = 1.25</m>.  
-		So, m = 1 and r = 0.25. Therefore 
-		<m>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</m> 
-		as noted above. You can see that 3 also lies in this same range and has the same percentages above and below. However, it would be a slightly larger percentile value. Indeed, going backward:
-		<md>
-			<mrow>3 = (1-r) \times 2 + r \times 5</mrow>
-			<mrow>\Rightarrow r = \frac{1}{3}</mrow>
-			<mrow>\Rightarrow (n+1)p = 1 + \frac{1}{3} = \frac{4}{3}</mrow>
-			<mrow>\Rightarrow p = \frac{4}{15} \approx 0.267</mrow>
-		</md>
-		and so 3 would actually be at approximately the 26.7th percentile.
-		</p>
-	</example>
+	<definition><title>5-number summary</title>
+	<p>Given a set of data, the 5-number summary is a vector of the order statistics given by <m>\lt</m> minimum, <m>Q_1</m>, <m>Q_2</m>, <m>Q_3</m>, maximum <m>\gt</m>. 
+	</p>
+	</definition>
+	
+	<p>Returning to our previous example, the five number summary would be
+	<m>\lt 2, 2.75, 6.5, 9.5, 10 \gt</m>
+	</p>
 
 
 </section>
@@ -180,6 +215,11 @@
 		</me>
 	If this data comes from sample data then we call it a sample mean and denote this value by <m>\overline{x}</m>. If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by <m>\mu</m>.</p>
 	</definition>
+	
+	<p>
+	To illustrate, consider the previous data set: {2,5,8,10}. The arithmetic mean is given by
+	<me>\frac{2+5+8+10}{4} = \frac{25}{4} = 6.25.</me>
+	</p>
 	
 	<p>
 	The mean is often called the centroid in the sense that if the x values were locations of objects of equal weight, then the centroid
@@ -202,11 +242,25 @@ Other Means:
 </p>
 </definition>
 
+	<p>
+	Again, consider {2,5,8,10}. The geometric mean is given by
+	<me>(2 \times 5 \times 8 \times 10)^{1/4} = 800^{1/4} \approx = 5.318</me>
+	</p>
+
+
 <definition><title>Harmonic Mean</title>
 <p>
-	<me>HM = \frac{1}{n} \sum_{k=1}^n \frac{1}{x_k}</me>
+	<me>\frac{1}{HM} = \frac{1}{n} \sum_{k=1}^n \frac{1}{x_k}</me>
 </p>
+where HM is the reciprocal of this expression.
 </definition>
+
+	<p>
+	Once again, consider {2,5,8,10}. The harmonic mean is given by first computing
+	<me>\frac{1}{4} (\frac{1}{2} + \frac{1}{5} + \frac{1}{8} + \frac{1}{10}) = 800^{1/4} \approx = 0.23125</me>
+	and so HM = <m>\frac{1}{0.23125} \ approx 4.32</m>
+	</p>
+
 
 <theorem>
 <title>Relative sizes of Means</title>
@@ -230,11 +284,16 @@ if n is odd and
 if n is even.
 </p>
 
+<p>From the Presidential data, note that you are considering an odd number of data values and so the median is given by 54. </p>
+
+
 <definition><title>Midrange:</title>
 <p>A mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
 <me>\frac{y_1+y_n}{2}</me>
 </p>
 </definition>
+
+<p>From the Presidential data, the maximum is 69 and the minimum is 46 so the midrange is 57.5, the average of these two. </p>
 
 <p>
 <title>Advantages and Disadvantages of Measures of the Middle</title>
@@ -335,24 +394,33 @@ Easy to compute. Ignores the spread of all the data in between.
 </p>
 </definition>
 
+<p>From the Presidential data, the maximum is 69 and the minimum is 46 so the range is 23, the difference of these two. </p>
+
 <definition><title>Interquartile Range (IQR):</title>
 <p><m>P^{0.75} - P^{0.25}</m>. 
 </p>
 </definition>
 
 <p>
+For the data set {2, 5, 8, 10}, you have found that <m>Q_1 = 2.75</m> and <m>Q_3 = 9.5</m>. Therefore, <me>IQR = 9.5 - 2.75 = 6.75.</me>
+</p>
+
+<p>
 Average Deviation from the Mean:  Given a data set <m>x_1, x_2, ... , x_n</m> with mean <m>\mu</m> each term deviates from the mean by the value <m>x_k - \mu</m>. So, averaging these gives
 <me> \frac{\sum_{k=1}^n (x_k-\mu)}{n} = \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \mu}{n} = \mu - \mu = 0</me>
 which is always zero for any provided set of data. This cancellation makes this measure not useful. To avoid cancellation, perhaps removing negatives would help.
 </p>
+
 <p>Average Absolute Deviation from the Mean:  
 <me> \frac{\sum_{k=1}^n \left | x_k-\mu \right |}{n} </me>
 which, although nicely stated, is difficult to deal with algebraically since the absolute values do not simplify well algebraically. To avoid this algebraic roadblock, we can look for another way to nearly accomplish the same goal by squaring and then square rooting. 
 </p>
+
 <p>Average Squared Deviation from the Mean:
 <me> \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
 which will always be non-negative but can be easily expanded using algebra. Since this is a mouthful, this measure is generally called the variance. 
 </p>
+
 <p>
 Using the average squared deviation from the mean, differences have been squared. Thus all values added are non-negative but very small ones have been made even smaller and larger ones have possibly been made much larger. To undo this scaling issue, one must take a square root to get things back into the right ball park. 
 </p>
@@ -364,6 +432,18 @@ Using the average squared deviation from the mean, differences have been squared
 <p>The standard deviation is the square root of the variance. If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by <m>\sigma</m>. Therefore
 <me> \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.</me>
 </p>
+
+<p>From the data {2,5,8,10}, you have found that the mean is 6.25. Computing the variance then involves accumulating and averaging the squared differences of each data value and this mean. Then
+<md>
+	<mrow>&amp; \frac{1}{4} \left ( (2-6.25)^2 + (5-6.25)^2 + (8-6.25)^2 + (10-6.25)^2 \right ) </mrow>
+	<mrow>&amp; = \frac{18.0625 + 1.5625 + 3.0625 + 14.0625}{4} </mrow>
+	<mrow>&amp; = \frac{36.75}{4}</mrow>
+	<mrow>&amp; = 9.1875.</mrow>
+	Therefore, the standard deviation for this data set is given by
+	<me>\sqrt{9.1875} \approx 3.031.</me>
+</md>
+ </p>
+
 <p>
 If data comes from a sample of the population then we call it a sample variance and denote this value by v. Since sample data tends to reflect certain "biases" then we increase this value slightly by <m>\frac{n}{n-1}</m> to give the sample variance
 <me>s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n-1}.</me>

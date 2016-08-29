@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-26T15:52:26-05:00    *-->
+<!--*    on 2016-08-29T15:05:12-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -132,65 +132,80 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-7"><header title="Section 2.4 Measures of the Middle"><h1 class="heading hide-type" alt="Section 2.4 Measures of the Middle">
 <span class="type">Section</span><span class="codenumber">2.4</span><span class="title">Measures of the Middle</span>
-</h1></header><article class="definition-like" id="definition-6"><h5 class="heading">
+</h1></header><article class="definition-like" id="definition-7"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.4.1</span><span class="title">Arithmetic Mean</span>
 </h5>
-<p id="p-44">Suppose X is a discrete random variable with range 
+<p id="p-50">Suppose X is a discrete random variable with range 
 	\(R = {x_1, x_2, ..., x_n}\). 
 	The arithmetic mean is given by
 		\begin{equation*}
 		AM = \frac{x_1 + ... + x_n}{n} = \frac{\sum_{k=1}^n x_k}{n}.
 		\end{equation*}
-	If this data comes from sample data then we call it a sample mean and denote this value by \(\overline{x}\). If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by \(\mu\).</p></article><p id="p-45">
+	If this data comes from sample data then we call it a sample mean and denote this value by \(\overline{x}\). If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by \(\mu\).</p></article><p id="p-51">
+	To illustrate, consider the previous data set: {2,5,8,10}. The arithmetic mean is given by
+	\begin{equation*}\frac{2+5+8+10}{4} = \frac{25}{4} = 6.25.\end{equation*}
+	</p>
+<p id="p-52">
 	The mean is often called the centroid in the sense that if the x values were locations of objects of equal weight, then the centroid
 	would be the point where this system of n masses would balance. 
 	</p>
-<p id="p-46">
+<p id="p-53">
 	The values can all be provided with varying weights if desired and the result is called the weighted arithmetic mean and is given by
 		\begin{equation*}
 		\frac{m_1 x_1 + ... + m_n x_n}{m_1 + ... + m_n} = \frac{\sum_{k=1}^n m_k x_k}{\sum_{k=1}^n m_k}.
 		\end{equation*}
 	</p>
-<p id="p-47">
+<p id="p-54">
 Other Means:
 </p>
-<article class="definition-like" id="definition-7"><h5 class="heading">
+<article class="definition-like" id="definition-8"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.4.2</span><span class="title">Geometric Mean</span>
 </h5>
-<p id="p-48">
+<p id="p-55">
 	\begin{equation*}GM = (x_1 x_2 ... x_n)^{1/n}\end{equation*}
-</p></article><article class="definition-like" id="definition-8"><h5 class="heading">
+</p></article><p id="p-56">
+	Again, consider {2,5,8,10}. The geometric mean is given by
+	\begin{equation*}(2 \times 5 \times 8 \times 10)^{1/4} = 800^{1/4} \approx = 5.318\end{equation*}
+	</p>
+<article class="definition-like" id="definition-9"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.4.3</span><span class="title">Harmonic Mean</span>
 </h5>
-<p id="p-49">
-	\begin{equation*}HM = \frac{1}{n} \sum_{k=1}^n \frac{1}{x_k}\end{equation*}
-</p></article><article class="theorem-like" id="theorem-5"><h5 class="heading">
+<p id="p-57">
+	\begin{equation*}\frac{1}{HM} = \frac{1}{n} \sum_{k=1}^n \frac{1}{x_k}\end{equation*}
+</p></article><p id="p-58">
+	Once again, consider {2,5,8,10}. The harmonic mean is given by first computing
+	\begin{equation*}\frac{1}{4} (\frac{1}{2} + \frac{1}{5} + \frac{1}{8} + \frac{1}{10}) = 800^{1/4} \approx = 0.23125\end{equation*}
+	and so HM = \(\frac{1}{0.23125} \ approx 4.32\)
+	</p>
+<article class="theorem-like" id="theorem-5"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">2.4.4</span><span class="title">Relative sizes of Means</span>
 </h5>\(HM \le GM \le AM\). </article><article class="theorem-like" id="theorem-6"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">2.4.5</span><span class="title">Mean Formula</span>
-</h5>\(AM×HM=GM^2\)</article><article class="definition-like" id="definition-9"><h5 class="heading">
+</h5>\(AM×HM=GM^2\)</article><article class="definition-like" id="definition-10"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.4.6</span><span class="title">Median:</span>
 </h5>
-<p id="p-50">A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.</p></article><p id="p-51">
+<p id="p-59">A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.</p></article><p id="p-60">
 For data sets with an odd number of values, this is the "middle" data value if one were to successively cross off pairs from the two ends of the sorted date. For data sets with an even number of values, this is a average of the two data values left after crossing off these pairs.  Using the order statistics, the median equals
 \begin{equation*}y_{\frac{n+1}{2}}\end{equation*}
 if n is odd and
 \begin{equation*}\frac{y_\frac{n}{2} + y_{\frac{n}{2}+1}}{2}\end{equation*}
 if n is even.
 </p>
-<article class="definition-like" id="definition-10"><h5 class="heading">
+<p id="p-61">From the Presidential data, note that you are considering an odd number of data values and so the median is given by 54. </p>
+<article class="definition-like" id="definition-11"><h5 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.4.7</span><span class="title">Midrange:</span>
 </h5>
-<p id="p-52">A mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
+<p id="p-62">A mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
 \begin{equation*}\frac{y_1+y_n}{2}\end{equation*}
-</p></article><p id="p-53">
+</p></article><p id="p-63">From the Presidential data, the maximum is 69 and the minimum is 46 so the midrange is 57.5, the average of these two. </p>
+<p id="p-64">
 
 Mean utilizes all of the data values so each term is important. Utilizes them all even if some of the data values might suffer from collection errors.  Median ignores outliers (which might be a result of collection errors) but does not account for the relative differences between terms. Midrange is very easy to compute but ignores the relative differences for all terms but the two extremes.
 </p>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-6" id="example-6"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="codenumber">2.4.8</span><span class="title">Numerical Example of these Quantitative Measures</span>
 </h5></article></a></div>
-<div id="hk-example-6" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-54">The US Census Bureau reported the following state populations (in millions) for 2013:</p>
+<div id="hk-example-6" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-65">The US Census Bureau reported the following state populations (in millions) for 2013:</p>
 <figure class="figure-like" id="table-1"><table>
 <tr>
 <td class="r m b2 r0 l0 t0">State</td>
@@ -400,21 +415,21 @@ Mean utilizes all of the data values so each term is important. Utilizes them al
 <td class="r m b0 r0 l0 t0">California</td>
 <td class="r m b0 r0 l0 t0">38.3</td>
 </tr>
-</table></figure><p id="p-55">Notice that these are already in order so you can presume \(y_1 = 0.6\) million is the minimum and \(y_{50} = 38.3\) million is the maximum. Therefore, the midrange is given by
+</table></figure><p id="p-66">Notice that these are already in order so you can presume \(y_1 = 0.6\) million is the minimum and \(y_{50} = 38.3\) million is the maximum. Therefore, the midrange is given by
 \begin{equation*}
 \frac{0.6+38.3}{2} = \frac{38.9}{2} = 19.45 million.
 \end{equation*}
 </p>
-<p id="p-56">
+<p id="p-67">
 The mean of this data takes a bit of arithmetic but gives
 \begin{equation*}\frac{\sum_{k=1}^{50} y_k }{50} = \frac{316.1}{50} \approx 6.33\end{equation*}
 million residents.
 </p>
-<p id="p-57">
+<p id="p-68">
 Since the number of states is even, the median is found by averaging the 25th and 26th order statistics. In this case, 
 \begin{equation*}\frac{y_{25}+y_{26}}{2}=\frac{4.4+4.6}{2} \approx 4.5 \end{equation*} million residents.
 </p>
-<p id="p-58">
+<p id="p-69">
 The midrange is
 </p></article></div></section></div></main>
 </div>
