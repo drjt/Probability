@@ -79,7 +79,7 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 
 <p></p>
 
-<!--
+
 <exercise>
 <introduction>
 Let's see if you understand the relationship between frequency and relative frequency.
@@ -89,7 +89,6 @@ Let's see if you understand the relationship between frequency and relative freq
 So, these are simple calculations.
 </conclusion>
 </exercise>
--->
 
 <p>
 Question 1: What do you notice as the number of rolls increases?

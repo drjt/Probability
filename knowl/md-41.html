@@ -1,13 +1,14 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-29T15:05:13-05:00    *-->
+<!--*    on 2016-08-30T14:30:51-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
-\begin{gather*}
-u(0) = 1,000,000, f(0) = 1-p\\
-u(1) = -\infty, f(1) = p\\
-u(2) = \infty, f(2) = p\\
-u(3) = 0, f(3) = 1-p
-\end{gather*}<span class="incontext"><a href="section-19.html#md-41">in-context</a></span>
+\begin{align*}
+\forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2\\
+F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx \\
+ &amp; = \int_{-\infty}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx\\
+ &amp; \ge \int_{-\infty}^{x_1} f(x) dx\\
+ &amp; = F(x_1)
+\end{align*}<span class="incontext"><a href="ProbabilityFunctions.html#md-41">in-context</a></span>

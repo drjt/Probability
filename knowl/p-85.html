@@ -1,20 +1,23 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-29T15:05:13-05:00    *-->
+<!--*    on 2016-08-30T14:30:51-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <p><h5 class="heading"><span class="type">Paragraph</span></h5>
-For IQR, we first must determine the quartiles. The median (found earlier) already is the second quartile so we have \(Q_2 = 4.5\) million. For the other two, the formula for computing percentiles gives you the 25th percentiile
-\begin{gather*}
-(n+1)p = 51(1/4) = 12.75\\
-Q_1 = P^{0.25} = 0.25 \times 1.9 + 0.75 \times 2.1 = 2.05
-\end{gather*}
-and the 75th percentile
-\begin{gather*}
-(n+1)p = 51(3/4) = 38.25\\
-Q_3 = P^{0.75} = 0.75 \times 7 + 0.25 \times 8.3 = 7.325.
-\end{gather*}
-Hence, the IQR = 7.325 - 2.05 = 5.275 million residents.
+From the computation before, the mean of this data is about 6.33
+million residents. So, to determine the variance you may find it easier to compute using the theorem above. 
+\begin{align*}
+ v &amp; = \left ( \frac{\sum_{k=1}^n y_k^2 }{n} \right ) - \mu^2
+\\
+ &amp; \approx \frac{4434.37}{50} - (6.33)^2
+\\
+ &amp; = 48.72
+
+\end{align*}
+and so you get a sample variance of
+\begin{equation*} s^2 \approx \frac{50}{49} \cdot 48.72 = 49.71\end{equation*}
+and a sample standard deviation of
+\begin{equation*}s \approx \sqrt{49.71} = 7.05\end{equation*} million residents.
 </p><span class="incontext"><a href="section-8.html#p-85">in-context</a></span>

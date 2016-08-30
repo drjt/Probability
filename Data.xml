@@ -188,7 +188,8 @@
 	</definition>
 	
 	<p>
-	For the Presidential data, <m>Q_1 = 2.75, Q_2 = 6.5,</m> and <m>Q_3 = 9.5</m>.
+	For your data set {2,5,8,10}, 
+	<m>Q_1 = 2.75, Q_2 = 6.5,</m> and <m>Q_3 = 9.5</m>.
 	</p>
 
 	<definition><title>5-number summary</title>
@@ -375,9 +376,6 @@ million residents.
 Since the number of states is even, the median is found by averaging the 25th and 26th order statistics. In this case, 
 <me>\frac{y_{25}+y_{26}}{2}=\frac{4.4+4.6}{2} \approx 4.5 </me> million residents.
 </p>
-<p>
-The midrange is
-</p>
 
 </example>
 
@@ -427,7 +425,7 @@ Using the average squared deviation from the mean, differences have been squared
 
 <definition><title>Variance and Standard Deviation</title>
 <p>The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>\sigma^2</m>. Therefore
-<me> \sigma^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
+	<me> \sigma^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
 </p>
 <p>The standard deviation is the square root of the variance. If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by <m>\sigma</m>. Therefore
 <me> \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.</me>
@@ -446,7 +444,7 @@ Using the average squared deviation from the mean, differences have been squared
 
 <p>
 If data comes from a sample of the population then we call it a sample variance and denote this value by v. Since sample data tends to reflect certain "biases" then we increase this value slightly by <m>\frac{n}{n-1}</m> to give the sample variance
-<me>s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n-1}.</me>
+<me>s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n-1}.</me>
 and the sample standard deviation similarly as the square root of the sample variance.
 </p>
 </definition>
@@ -462,6 +460,7 @@ and the sample standard deviation similarly as the square root of the sample var
 TBA
 </proof>
 </theorem>
+
 
 <p>The Population of the individual USA states according to the 2013 Census 
 Consider the data set {}</p>
@@ -564,6 +563,77 @@ and a sample standard deviation of
 </p>
 
 </example>
+
+</section>
+
+<section><title>Grouped Data</title>
+<p>As you considered the measures of the center and spread before, each data point was considered individually. Often, data may however be grouped into categories and perhaps expressed as a frequency distribution. In this case, rather than considering <m>x_k</m> to be the kth data value can take advantage of the grouping to perhaps save a bit on arithmetic.</p>
+<p>Indeed, let's assume that data is grouped into m categories <m>x_1, x_2, ..., x_m</m> with corresponding frequencies <m>f_1, f_2, ..., f_m</m>. Then, for example, when computing the mean rather than adding <m>x_1</m> with itself <m>f_1</m> times just compute <m>x_1 \times f_1</m> for the first category and continuing through the remaining categories. This gives the following grouped data formula for the mean
+		<me>
+		\mu = \frac{x_1 f_1 + ... + x_m f_m}{f_1 + ... + f_m} = \frac{\sum_{k=1}^m x_k f_k}{\sum_{k=1}^m f_k}.
+		</me>
+and the following grouped data formula for the variance
+		<me> 
+		\sigma^2 = \frac{\sum_{k=1}^m ( x_k-\mu )^2 f_k}{\sum_{k=1}^m f_k} = \frac{\sum_{k=1}^m x_k^2 f_k}{\sum_{k=1}^m f_k} - \mu^2
+		</me>
+
+</p>
+
+
+<p>
+Consider the following data set
+</p>
+<p>{3,
+1,
+2,
+2,
+3,
+1,
+3,
+4,
+5,
+5,
+1,
+4,
+5,
+1,
+2,
+4,
+5,
+3,
+2,
+5,
+2,
+1,
+2,
+2,
+5}</p>
+<p>
+Collecting this data into a frequency distribution gives
+<table halign="left">
+      <tabular halign="right">
+      
+		<row><cell bottom="medium">x</cell><cell bottom="medium">frequency</cell></row>      
+		<row><cell>1</cell><cell>5</cell></row>
+		<row><cell>2</cell><cell>7</cell></row>
+		<row><cell>3</cell><cell>4</cell></row>
+		<row><cell>4</cell><cell>3</cell></row>
+		<row><cell>5</cell><cell>6</cell></row>
+	</tabular>
+</table>
+Therefore, 
+	<me>
+	\overline{x} = \frac{1 \times 5 + 2 \times 7 + 3 \times 4 + 4 \times 3 + 5 \times 6}{5+7+4+3+6} = \frac{5 + 14 + 12 + 12 + 30}{25} = \frac{43}{25}
+	</me>
+and 
+	<md>
+		<mrow>v &amp; = \frac{1^2 \times 5 + 2^2 \times 7 + 3^2 \times 4 + 4^2 \times 3 + 5^2 \times 6}{5+7+4+3+6} - \left ( \frac{43}{25} \right )^2 </mrow>
+		<mrow> &amp; = \frac{5 + 28 + 36 + 48 + 150}{25} - \left ( \frac{43}{25} \right )^2 </mrow>
+		<mrow> &amp; = \frac{4826}{625}</mrow>
+		<mrow> &amp; \approx 7.7216</mrow>
+	</md>
+and so <m>s^2 = \frac{25}{24} \frac{4826}{625} \approx 8.043</m>. 
+</p>
 
 </section>
 
