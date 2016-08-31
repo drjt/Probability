@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-26T14:33:58-05:00    *-->
+<!--*    on 2016-08-31T17:11:42-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AATA Negative Binomial</title>
+<title>AATA Expected Value</title>
 <meta name="Keywords" content="Authored in MathBook XML">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -37,7 +37,8 @@ MathJax.Hub.Config({
         scale: 88,
     },
 });
-    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://math.mc.edu/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script type="text/javascript" src="https://math.mc.edu/webwork2_files/js/vendor/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
@@ -60,12 +61,12 @@ MathJax.Hub.Config({
 <nav id="primary-navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="previous-button toolbar-item button" href="GeometricDistribution.html">Previous</a><a class="up-button button toolbar-item" href="BinomNegBinom.html">Up</a><a class="next-button button toolbar-item" href="PoissonExponential.html">Next</a>
+<a class="previous-button toolbar-item button" href="ProbabilityFunctions.html">Previous</a><a class="up-button button toolbar-item" href="ProbabilityGeneralities.html">Up</a><a class="next-button button toolbar-item" href="BinomNegBinom.html">Next</a>
 </div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="GeometricDistribution.html">Previous</a><a class="up-button button toolbar-item" href="BinomNegBinom.html">Up</a><a class="next-button button toolbar-item" href="PoissonExponential.html">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ProbabilityFunctions.html">Previous</a><a class="up-button button toolbar-item" href="ProbabilityGeneralities.html">Up</a><a class="next-button button toolbar-item" href="BinomNegBinom.html">Next</a>
 </div>
 </div></nav></header><div class="page">
 <aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
@@ -88,106 +89,99 @@ MathJax.Hub.Config({
 <li><a href="section-6.html">Measures of Position</a></li>
 <li><a href="section-7.html">Measures of the Middle</a></li>
 <li><a href="section-8.html">Measures of Spread</a></li>
+<li><a href="section-9.html">Grouped Data</a></li>
+<li><a href="section-10.html">Other Point Measures</a></li>
+<li><a href="section-11.html">Graphical Representation of Data</a></li>
 </ul>
 <h2 class="link"><a href="Combinatorics.html"><span class="codenumber">3</span><span class="title">Counting and Combinatorics</span></a></h2>
 <ul>
-<li><a href="section-9.html">Introduction</a></li>
-<li><a href="section-10.html">Permutations</a></li>
-<li><a href="section-11.html">Combinations</a></li>
+<li><a href="section-12.html">Introduction</a></li>
+<li><a href="section-13.html">Permutations</a></li>
+<li><a href="section-14.html">Combinations</a></li>
 </ul>
-<h2 class="link"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability and Probability Functions</span></a></h2>
+<h2 class="link active"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability and Probability Functions</span></a></h2>
 <ul>
 <li><a href="RelativeFrequency.html">Relative Frequency</a></li>
-<li><a href="section-13.html">Definition of Probability</a></li>
-<li><a href="section-14.html">Conditional Probability</a></li>
-<li><a href="section-15.html">Independence</a></li>
-<li><a href="section-16.html">Random Variables</a></li>
+<li><a href="section-16.html">Definition of Probability</a></li>
+<li><a href="section-17.html">Conditional Probability</a></li>
+<li><a href="section-18.html">Independence</a></li>
+<li><a href="section-19.html">Random Variables</a></li>
 <li><a href="ProbabilityFunctions.html">Probability Functions</a></li>
-<li><a href="section-18.html">Expected Value</a></li>
+<li><a href="section-21.html" class="active">Expected Value</a></li>
 </ul>
-<h2 class="link active"><a href="BinomNegBinom.html"><span class="codenumber">5</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
+<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">5</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
 <ul>
 <li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
 <li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
-<li><a href="section-21.html" class="active">Negative Binomial</a></li>
+<li><a href="section-24.html">Negative Binomial</a></li>
 </ul>
 <h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">6</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
 <ul>
-<li><a href="section-22.html">Poisson Distribution</a></li>
-<li><a href="section-23.html">Exponential Distribution</a></li>
-<li><a href="section-24.html">Gamma Distribution</a></li>
+<li><a href="section-25.html">Poisson Distribution</a></li>
+<li><a href="section-26.html">Exponential Distribution</a></li>
+<li><a href="section-27.html">Gamma Distribution</a></li>
 </ul>
 <h2 class="link"><a href="Normal.html"><span class="codenumber">7</span><span class="title">Normal Distributions</span></a></h2>
 <ul>
-<li><a href="section-25.html">Properties of the Normal Distribution</a></li>
-<li><a href="section-26.html">Theorems</a></li>
-<li><a href="section-27.html">Chi-Square Distribution</a></li>
-<li><a href="section-28.html">Central Limit Theorem</a></li>
+<li><a href="section-28.html">Properties of the Normal Distribution</a></li>
+<li><a href="section-29.html">Theorems</a></li>
+<li><a href="section-30.html">Chi-Square Distribution</a></li>
+<li><a href="section-31.html">Central Limit Theorem</a></li>
 </ul>
 <h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">8</span><span class="title">Estimating Data using Intervals</span></a></h2>
 <ul>
-<li><a href="section-29.html">Chebyshev</a></li>
-<li><a href="section-30.html">Measures of Spread</a></li>
+<li><a href="section-32.html">Chebyshev</a></li>
+<li><a href="section-33.html">Measures of Spread</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-21"><header title="Section 5.3 Negative Binomial"><h1 class="heading hide-type" alt="Section 5.3 Negative Binomial">
-<span class="type">Section</span><span class="codenumber">5.3</span><span class="title">Negative Binomial</span>
-</h1></header><p id="p-170">Consider the situation where one can observe a sequence  of independent
-	trials where the likelihood of a success on each individual trial
-	stays constant from trial to trial. Call this likelihood the probably of
-	"success" and denote its value by \(p\) 
-	where \( 0 \lt p \lt 1 \).  
-	If we let the variable \(X\) measure the number of trials needed in order
-	to obtain the rth success, \(r \ge 1\) 
-	then the resulting distribution of probabilities is called a 
-	Geometric Distribution.</p>
-<p id="p-171">Note that r=1 gives the Geometric Distribution.</p>
-<section class="subsection" id="subsection-25"><header title="Subsection 5.3.1 Negative Binomial Series"><h1 class="heading hide-type" alt="Subsection 5.3.1 Negative Binomial Series">
-<span class="type">Subsection</span><span class="codenumber">5.3.1</span><span class="title">Negative Binomial Series</span>
-</h1></header><article class="theorem-like" id="theorem-NegBinomSeries"><h5 class="heading">
-<span class="type">Theorem</span><span class="codenumber">5.3.1</span>
-</h5>\(\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}\)</article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-18" id="proof-18"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-18" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-172">First, convert the problem to a slightly different form:</p>\( \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
-						 = \frac{1}{b^n} \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
-			\)<p id="p-173">So, let's replace \(\frac{a}{b} = x\) and ignore for a while the term factored out. Then, we only need to show </p>\begin{gather*}
-\sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k} = \left ( \frac{1}{1+x} \right )^n 
-\end{gather*}<p id="p-174">However</p>\begin{align*}
- \left ( \frac{1}{1+x} \right )^n &amp; = \left ( \frac{1}{1 - (-x)} \right )^n \\
- &amp; = \left ( \sum_{k=0}^{\infty} {(-1)^k x^k} \right )^n
-\end{align*}<p id="p-175">This infinite sum raised to a power can be expanded by distributing terms in the standard way. 
-			In doing so, the various powers of x multiplied together
-			will create a series in powers of x involving \(x^0, x^1, x^2, ...\).  
-			To detemine the final coefficients notice that the number of time \(m^k\) will 
-			appear in this product depends upon the number of ways one can write k as a sum of nonnegative integers.</p>
-<p id="p-176">For example, the coefficient of \(x^3\) will come from the n ways of multiplying the coefficients 
-			\(x^3, x^0, ..., x^0\) and \(x^2, x^1, x^0, ..., x^0\)
-			 and \(x^1, x^1, x^1, x^0,..., x^0\). This is equivalent to finding the number of ways to write the 
-			 number k as a sum of nonnegative integers. The possible set of
-			 nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  
-			 For example, if k = 3 then *||** means 
-			 \(x^1 x^0 x^2 = x^3\). Similarly for k = 5 and |**|*|**| implies \( x^0 x^2 x^1 x^2 x^0 = x^5\). 
-			 The number of ways to interchange the identical *'s among the
-			 idential |'s is \(\binom{n+k-1}{k}\). </p>
-<p id="p-177">Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x 
-			 will require an odd number of odd powers. So, the 
-			 coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,</p>\begin{gather*}
- \left ( \frac{1}{1+x} \right )^n = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k}
-\end{gather*}<p id="p-178">Similarly,</p>\( \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}\)</article></span></section><section class="subsection" id="subsection-26"><header title="Subsection 5.3.2 Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1"><h1 class="heading hide-type" alt="Subsection 5.3.2 Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1">
-<span class="type">Subsection</span><span class="codenumber">5.3.2</span><span class="title">Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1</span>
-</h1></header><p id="p-179">Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success 
-		on each individual trial \(p\) where 
-		\( 0 \lt p \lt 1 \).  For a positive integer r, let the variable \(X\) measure the number of 
-		trials needed in order to obtain the rth success.
-		Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
-<p id="p-180"> Since successive trials are independent, then the probability of the rth success occurring on the 
-			mth trial presumes that in 
-			the previous m-1 trials were r-1 successes and m-r failures.  Therefore the desired probability is given by 
-			\begin{gather*}
-P(X=m) = \binom{m - 1}{r-1}(1-p)^{m-r}p^r
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-21"><header title="Section 4.7 Expected Value"><h1 class="heading hide-type" alt="Section 4.7 Expected Value">
+<span class="type">Section</span><span class="codenumber">4.7</span><span class="title">Expected Value</span>
+</h1></header><p id="p-189">Blaise Pascal was a 	17th century mathematician and philosopher who was accomplished in many areas but may likely be best known to you for his creation of what is now known as Pascal's Triangle. As part of his philosophical pursuits, he proposed what is known as "Pascal's wager". It suggests two  mutually exclusive outcomes: that God exists or that he does not. His argument is that a rational person should live as though God exists and seek to believe in God. If God does not actually exist, such a person will have only a finite loss (some pleasures, luxury, etc.), whereas they stand to receive infinite gains as represented by eternity in Heaven and avoid an infinite losses of eternity in Hell. This type of reasoning is part of what is known as "decision theory".
+	</p>
+<p id="p-190">You may not confront such dire payouts when making your daily decisions but we need a formal method for making these determinations precise. The procedure for doing so is what we call expected value.
+	</p>
+<article class="definition-like" id="definition-29"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">4.7.1</span><span class="title">Expected Value</span>
+</h5>
+<p id="p-191">Given a random variable X over space R, corresponding probability function f(x) and "value function" u(x), the expected value of u(x) is given by
+	\begin{equation*}E = E[u(X)] = \sum_{x \in R} u(x) f(x)\end{equation*}
+	provided X is discrete, or
+	\begin{equation*}E = E[u(X)] = \int_R u(x)f(x) dx\end{equation*}
+	provided X is continuous.
+	</p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-21" id="example-21"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">4.7.2</span><span class="title">Discrete Expected Value</span>
+</h5></article></a></div>
+<div id="hk-example-21" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-192">Consider \(f(x) = x/10\) over R = {1,2,3,4} where the payout is 10 euros if x=1, 5 euros if x=2, 2 euros if x=3 and -7 euros if x = 4.  Then your value function would be u(1)=10, u(2) = 5, u(3)=2, and u(4) = -7. Computing the expect payout gives
+	\begin{equation*}E = 10 \times 1/10 + 5 \times 2/10 + 2 \times 3/10 - 7 \times 4/10 = -2/10\end{equation*}
+	Therefore, the expected payout is actually negative due to a relatively large negative payout associated with the largest likelihood outcome and the larger positive payout only associated with the least likely outcome.
+	</p></article></div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-22" id="example-22"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">4.7.3</span><span class="title">Continuous Expected Value</span>
+</h5></article></a></div>
+<div id="hk-example-22" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-193">
+	Consider \(f(x) = x^2/3\) over R = [-1,2] with value function given by \(u(x) = e^x - 1\). Then, the expected value for u(x) is given by
+	\begin{equation*}E = \int_{-1}^2 (e^x-1) \cdot x^2/3 = -1/9 \cdot (e + 15) \cdot e^{-1} + 2/3 \cdot e^2 - 8/9 \approx 3.3129\end{equation*}
+	</p></article></div>
+<p id="p-194">So, going back to Pascal's wager, let X = 0 represent disbelief when God doesn't exist and X = 1 represent disbelief when God does exist, X = 2 represent belief when God does exist, and X = 3 represent belief when God does not exist. Let p be the likelihood that God exists. Then you can compute the expected value of disbelief and the expect value of belief by first creating a value function. Below, for argument sake we are somewhat randomly assign a value of one million to disbelief if God doesn't exist. The conclusions are the same if you choose any other finite number...
+	\begin{gather*}
+u(0) = 1,000,000, f(0) = 1-p\\
+u(1) = -\infty, f(1) = p\\
+u(2) = \infty, f(2) = p\\
+u(3) = 0, f(3) = 1-p
 \end{gather*}
-			</p>\(\SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}p^r} &amp; = p^r \SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}}\)<p id="p-181">and by using \(k = m-r\)</p>\begin{align*}
- &amp; = p^r \sum_{k=0}^{\infty} {\binom{r + k - 1}{k}(1-p)^k}\\
- &amp; = p^r \frac{1}{(1-(1-p))^r}\\
- &amp; = 1
-\end{align*}</section></section></div></main>
+	Then, 
+	\begin{align*}
+E[disbelief] &amp; = u(0)f(0) + u(1)f(1)\\
+&amp; = 1000000 \times (1-p) - \infty \times p\\
+&amp; = -\infty
+\end{align*}
+	if p&gt;0. On the other hand, 
+	\begin{align*}
+E[belief] &amp; = u(2)f(2) + u(3)f(3)\\
+&amp; = \infty \times p + 0 \times (1-p)\\
+&amp; = \infty
+\end{align*}
+	if p&gt;0. So Pascal's conclusion is that if there is even the slightest chance that God exists then belief is the smart and scientific choice.
+	</p></section></div></main>
 </div>
 </body>
 </html>

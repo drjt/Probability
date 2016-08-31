@@ -459,6 +459,65 @@ which takes s to a numerical value x which is then plugged into f to get the sam
 	Consider <m>f(x) = x/10</m> over R = {1,2,3,4}.  Then, f(x) is obviously positive for each of the values in R and certainly <m>\sum_{x \in R} f(x) = f(1) + f(2) + f(3) + f(4) = 1/10 + 2/10 + 3/10 + 4/10 = 1</m>. Therefore, f(x) is a probability mass function over the space R.
 	</p>
 	</example>
+	
+<sage><title>Sampling Discrete Probability Function</title>
+	<input>
+# Combining all of the above into one interactive cell
+@interact
+def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets):"), 
+       Probs = input_box([1/20,1/20,1/20,3/20,1/20,4/20,4/20,1/20,1/20,3/20],label="Enter corresponding f(x) (in brackets):"),
+       n_samples=slider(100,10000,100,100,label="Number of times to sample from this distribution:")):
+    n = len(D)
+    R = range(n)
+    one_huh = sum(Probs)
+    pretty_print('\n\nJust to be certain, we should check to make certain the probabilities sum to 1\n')
+    pretty_print(html('<center>$\sum_{x\epsilon R} f(x) = %s$</center>'%str(one_huh)))
+    
+    G = Graphics()
+    if len(D)==len(Probs):
+        f = zip(D,Probs)
+        meanf = 0
+        variancef = 0
+        for k in R:
+            meanf += D[k]*Probs[k]
+            variancef += D[k]^2*Probs[k]
+            G += line([(D[k],0),(D[k],Probs[k])],color='green')
+        variancef = variancef - meanf^2
+        sd = sqrt(variancef)
+        G += points(f,color='blue',size=50)
+        G += point((meanf,0),color='yellow',size=60,zorder=3)
+        G += line([(meanf-sd,0),(meanf+sd,0)],color='red',thickness=5)
+    
+        g = DiscreteProbabilitySpace(D,Probs)
+        pretty_print('     mean = %s'%str(meanf))
+        pretty_print(' variance = %s'%str(variancef))
+    
+        #  perhaps to add mean and variance for pmf here
+    else:
+        print 'Domain D and Probabilities Probs must be lists of the same size'
+    
+    #  Now, let's sample from the distribution given above and see how a random sampling matches up
+
+    counts = [0] * len(Probs)
+    X = GeneralDiscreteDistribution(Probs)
+    sample = []
+
+    for _ in range(n_samples):
+        elem = X.get_random_element()
+        sample.append(D[elem])
+        counts[elem] += 1
+    Empirical = [1.0*x/n_samples for x in counts] # random
+    
+    samplemean = mean(sample)
+    samplevariance = variance(sample)
+    sampdev = sqrt(samplevariance)
+    
+    E = points(zip(D,Empirical),color='orange',size=40)
+    E += point((samplemean,0.005),color='brown',size=60,zorder=3)
+    E += line([(samplemean-sampdev,0.005),(samplemean+sampdev,0.005)],color='orange',thickness=5)    
+    (G+E).show(ymin=0,figsize=(8,5))	
+	</input>
+</sage>
 
 	<example>
 	<title>Continuous Probability Function</title>

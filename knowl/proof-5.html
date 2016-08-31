@@ -1,30 +1,28 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-30T14:30:51-05:00    *-->
+<!--*    on 2016-08-31T17:11:43-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
-<p>If either of the events has infinite cardinality, then it is 
-			clear
-			that the number of ways to perform A and then B will also be 
-			infinite. So, assume that both |A| and |B| are finite.
-			In order to count the successive events, enumerate the elements in
-			each set
-			\begin{gather*}
-A = \left \{ a_1, a_2, a_3, ... , a_{|A|} \right \}\\
-B = \left \{  b_1, b_2, b_3, ... , b_{|B|} \right \}
-\end{gather*}
-			and consider the function f(k,j) = (k-1)|B| + j. This function is 
-			one-to-one and onto from the set 
-			\begin{gather*}
-\left \{ (k,j): 1 \le k \le |A|, 1 \le j \le |B| \right \} 
-\end{gather*} 
-			onto 
-			\begin{gather*}
-\left \{ s : 1 \le s \le |A| |B| \right \}.
-\end{gather*} 
-			Since this
-			second set has |A| |B| elements then the conclusion follows. 
-			coordinates.</p></article><span class="incontext"><a href="section-11.html#proof-5">in-context</a></span>
+<p>
+For skewness, expand the cubic and break up the sum. Factoring out constants (such as \(\overline{x}\)) gives
+\begin{align*}
+&amp; \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}\\
+&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x} \frac{\sum_{k=1}^n x_k^2 }{n} + 3 \overline{x}^2 \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \overline{x}^3}{n}\\
+&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}(v + \overline{x}^2) + 3 \overline{x}^3 - \overline{x}^3\\
+&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}v - \overline{x}^3
+\end{align*}
+and divide by the cube of the standard deviation to finish. Note that the first expansion in the derivation above can be used quickly if the data is collected in a table and powers easily computed.
+</p>
+<p>
+For kurtosis, similarly expand the quartic and break up the sum as before. Note that you can extract the value of the cubic term by solving for that term in the skewness formula above. Then,
+\begin{align*}
+&amp; \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}\\
+&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \frac{\sum_{k=1}^n x_k^2}{n} - 4 \overline{x}^3 \frac{\sum_{k=1}^n x_k}{n} + \frac{\sum_{k=1}^n \overline{x}^4}{n}\\
+&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 (v+\overline{x}^2) - 4 \overline{x}^4 + \overline{x}^4\\
+&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v - 3 \overline{x}^4 
+\end{align*}
+and then divide by the fourth power of the standard deviation.  Note again that the first expansion in the derivation above might also be a useful shortcut.
+</p></article><span class="incontext"><a href="section-10.html#proof-5">in-context</a></span>

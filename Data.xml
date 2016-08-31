@@ -637,6 +637,70 @@ and so <m>s^2 = \frac{25}{24} \frac{4826}{625} \approx 8.043</m>.
 
 </section>
 
+<section><title>Other Point Measures</title>
+
+<p>Beyond measures of the middle and of spread includes a way you can determine if data is heaped up to one side or the other of the mean. One such measure is the skewness...
+</p>
+
+<definition><title>Skewness</title>
+<p>The Skewness of <m>x_1, x_2, ..., x_n</m> is given by
+<me> \frac{1}{\sigma^3} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}.</me>
+</p>
+</definition>
+
+<p>
+A positive skewness indicates that the positive <m>(x_k - \overline{x})^3</m> terms overwhelm the negative terms. Therefore, this indicates data which is strung out to the right. Likewise, a negative skewness indicates data which is strung out to the left.
+</p>
+
+<p>
+In addition to skewness, data might tend to be clustered around the mean and often in a "bell-shaped" manner. The kurtosis can be used o measure how closely data resembles a bell-shaped collection.
+</p>
+
+<definition><title>Kurtosis</title>
+<p>The Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
+<me> \frac{1}{\sigma^4} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}.</me>
+</p>
+</definition>
+
+<p>
+A kurtosis of 3 indicates that the data is perfectly bell shaped (a "normal" distribution) whereas data further away from 3 indicates data that is less bell shaped.
+</p>
+
+<theorem><title>Alternate Formulas for Skewness and Kurtosis</title>
+<statement>
+Skewness = 
+<me>\frac{1}{s^3} 
+\left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 v \overline{x} - \overline{x}^3 \right ]</me>
+and Kurtosis =
+<me>\frac{1}{s^4} 
+\left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v - 3 \overline{x}^4  \right ]</me>
+<proof>
+<p>
+For skewness, expand the cubic and break up the sum. Factoring out constants (such as <m>\overline{x}</m>) gives
+<md>
+	<mrow>&amp; \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x} \frac{\sum_{k=1}^n x_k^2 }{n} + 3 \overline{x}^2 \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \overline{x}^3}{n}</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}(v + \overline{x}^2) + 3 \overline{x}^3 - \overline{x}^3</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}v - \overline{x}^3</mrow>
+</md>
+and divide by the cube of the standard deviation to finish. Note that the first expansion in the derivation above can be used quickly if the data is collected in a table and powers easily computed.
+</p>
+<p>
+For kurtosis, similarly expand the quartic and break up the sum as before. Note that you can extract the value of the cubic term by solving for that term in the skewness formula above. Then,
+<md>
+	<mrow>&amp; \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \frac{\sum_{k=1}^n x_k^2}{n} - 4 \overline{x}^3 \frac{\sum_{k=1}^n x_k}{n} + \frac{\sum_{k=1}^n \overline{x}^4}{n}</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 (v+\overline{x}^2) - 4 \overline{x}^4 + \overline{x}^4</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v - 3 \overline{x}^4 </mrow>
+</md>
+and then divide by the fourth power of the standard deviation.  Note again that the first expansion in the derivation above might also be a useful shortcut.
+</p>
+</proof>
+</statement>
+</theorem>
+
+</section>
+
 <section><title>Graphical Representation of Data</title>
 <p>Data sets can range from small to very large. Visual representations of these data sets often allow you to see trends and reveal a lot about the distribution of the data values.</p>
 
@@ -713,7 +777,25 @@ A frequency histogram representing this data can be given by
   \end{tikzpicture}
 \end{document}
 -->		
-		We can also do this in Sage so add a Sage interact here.
+</p>
+
+<p>Experiment with creating your own histogram by inputting your data into the interactive cell below.
+<sage>
+<input>
+#  This function is used to convert an input string into separate entries
+def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+
+@interact
+def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated by commas")):
+    freq = g(freq)
+    freq = [int(k) for k in freq]
+    m = min(freq)
+    M = max(freq)
+    bn = M-m+1
+    histogram( freq, range=[m-1/2,M+1/2], bins = bn, align="mid", linewidth=2, edgecolor="blue", color="yellow").show()
+</input>
+</sage>
+
 		</p>
 		<p>Relative Frequency Histograms - area matters.  Add a Sage interact here as well.</p>
 		<p>Cummulative distributions - running totals. Demonstrate using a Sage interact.</p>
