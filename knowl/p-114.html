@@ -1,14 +1,29 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-08-31T17:11:43-05:00    *-->
+<!--*    on 2016-09-01T10:55:16-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
-<p><h5 class="heading"><span class="type">Paragraph</span></h5>Using the standard 10 digit keypad, we first have two questions to consider?
-		<ol style="list-style-type: decimal;">
-<li id="li-74">Does the order in which the digits are entered matter?</li>
-<li id="li-75">Can you reuse a digit more than once?</li>
-</ol>
-		For the ipad, the order does matter and you cannot reuse digits. In this case, the number of possible codes can be determined by considering each digit as a separate event with four such events in succession providing the right code. By successively applying the multiplication principle, you find that the number of possible codes is the number of remaining available digits at each step.  Namely, \(10 \times 9 \times 8 \times 7 = 5040.\)
-		</p><span class="incontext"><a href="section-12.html#p-114">in-context</a></span>
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>If either of the events has infinite cardinality, then it is 
+			clear
+			that the number of ways to perform A and then B will also be 
+			infinite. So, assume that both |A| and |B| are finite.
+			In order to count the successive events, enumerate the elements in
+			each set
+			\begin{gather*}
+A = \left \{ a_1, a_2, a_3, ... , a_{|A|} \right \}\\
+B = \left \{  b_1, b_2, b_3, ... , b_{|B|} \right \}
+\end{gather*}
+			and consider the function f(k,j) = (k-1)|B| + j. This function is 
+			one-to-one and onto from the set 
+			\begin{gather*}
+\left \{ (k,j): 1 \le k \le |A|, 1 \le j \le |B| \right \} 
+\end{gather*} 
+			onto 
+			\begin{gather*}
+\left \{ s : 1 \le s \le |A| |B| \right \}.
+\end{gather*} 
+			Since this
+			second set has |A| |B| elements then the conclusion follows. 
+			coordinates.</p><span class="incontext"><a href="section-13.html#p-114">in-context</a></span>
