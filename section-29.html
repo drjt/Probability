@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-01T10:55:15-05:00    *-->
+<!--*    on 2016-09-02T15:01:06-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AATA Gamma Distribution</title>
+<title>AATA Negative Binomial</title>
 <meta name="Keywords" content="Authored in MathBook XML">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -37,8 +37,7 @@ MathJax.Hub.Config({
         scale: 88,
     },
 });
-    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://math.mc.edu/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
-<script type="text/javascript" src="https://math.mc.edu/webwork2_files/js/vendor/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
@@ -61,12 +60,12 @@ MathJax.Hub.Config({
 <nav id="primary-navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
-<a class="previous-button toolbar-item button" href="section-28.html">Previous</a><a class="up-button button toolbar-item" href="PoissonExponential.html">Up</a><a class="next-button button toolbar-item" href="Normal.html">Next</a>
+<a class="previous-button toolbar-item button" href="GeometricDistribution.html">Previous</a><a class="up-button button toolbar-item" href="BinomNegBinom.html">Up</a><a class="next-button button toolbar-item" href="PoissonExponential.html">Next</a>
 </div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-28.html">Previous</a><a class="up-button button toolbar-item" href="PoissonExponential.html">Up</a><a class="next-button button toolbar-item" href="Normal.html">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="GeometricDistribution.html">Previous</a><a class="up-button button toolbar-item" href="BinomNegBinom.html">Up</a><a class="next-button button toolbar-item" href="PoissonExponential.html">Next</a>
 </div>
 </div></nav></header><div class="page">
 <aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
@@ -106,38 +105,98 @@ MathJax.Hub.Config({
 <li><a href="RelativeFrequency.html">Relative Frequency</a></li>
 <li><a href="section-18.html">Definition of Probability</a></li>
 <li><a href="section-19.html">Conditional Probability</a></li>
-<li><a href="section-20.html">Independence</a></li>
-<li><a href="section-21.html">Random Variables</a></li>
+<li><a href="section-20.html">Bayes Theorem</a></li>
+<li><a href="section-21.html">Independence</a></li>
+<li><a href="section-22.html">Random Variables</a></li>
 <li><a href="ProbabilityFunctions.html">Probability Functions</a></li>
-<li><a href="section-23.html">Expected Value</a></li>
+<li><a href="section-24.html">Properties of the Distribution Function</a></li>
+<li><a href="section-25.html">Standard Units</a></li>
+<li><a href="section-26.html">Expected Value</a></li>
 </ul>
-<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">5</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
+<h2 class="link active"><a href="BinomNegBinom.html"><span class="codenumber">5</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
 <ul>
 <li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
 <li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
-<li><a href="section-26.html">Negative Binomial</a></li>
+<li><a href="section-29.html" class="active">Negative Binomial</a></li>
 </ul>
-<h2 class="link active"><a href="PoissonExponential.html"><span class="codenumber">6</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
+<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">6</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
 <ul>
-<li><a href="section-27.html">Poisson Distribution</a></li>
-<li><a href="section-28.html">Exponential Distribution</a></li>
-<li><a href="section-29.html" class="active">Gamma Distribution</a></li>
+<li><a href="section-30.html">Poisson Distribution</a></li>
+<li><a href="section-31.html">Exponential Distribution</a></li>
+<li><a href="section-32.html">Gamma Distribution</a></li>
 </ul>
 <h2 class="link"><a href="Normal.html"><span class="codenumber">7</span><span class="title">Normal Distributions</span></a></h2>
 <ul>
-<li><a href="section-30.html">Properties of the Normal Distribution</a></li>
-<li><a href="section-31.html">Theorems</a></li>
-<li><a href="section-32.html">Chi-Square Distribution</a></li>
-<li><a href="section-33.html">Central Limit Theorem</a></li>
+<li><a href="section-33.html">Properties of the Normal Distribution</a></li>
+<li><a href="section-34.html">Theorems</a></li>
+<li><a href="section-35.html">Chi-Square Distribution</a></li>
+<li><a href="section-36.html">Central Limit Theorem</a></li>
 </ul>
 <h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">8</span><span class="title">Estimating Data using Intervals</span></a></h2>
 <ul>
-<li><a href="section-34.html">Chebyshev</a></li>
-<li><a href="section-35.html">Measures of Spread</a></li>
+<li><a href="section-37.html">Point Estimates</a></li>
+<li><a href="section-38.html">Chebyshev</a></li>
+<li><a href="section-39.html">Measures of Spread</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-29"><header title="Section 6.3 Gamma Distribution"><h1 class="heading hide-type" alt="Section 6.3 Gamma Distribution">
-<span class="type">Section</span><span class="codenumber">6.3</span><span class="title">Gamma Distribution</span>
-</h1></header></section></div></main>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-29"><header title="Section 5.3 Negative Binomial"><h1 class="heading hide-type" alt="Section 5.3 Negative Binomial">
+<span class="type">Section</span><span class="codenumber">5.3</span><span class="title">Negative Binomial</span>
+</h1></header><p id="p-228">Consider the situation where one can observe a sequence  of independent
+	trials where the likelihood of a success on each individual trial
+	stays constant from trial to trial. Call this likelihood the probably of
+	"success" and denote its value by \(p\) 
+	where \( 0 \lt p \lt 1 \).  
+	If we let the variable \(X\) measure the number of trials needed in order
+	to obtain the rth success, \(r \ge 1\) 
+	then the resulting distribution of probabilities is called a 
+	Geometric Distribution.</p>
+<p id="p-229">Note that r=1 gives the Geometric Distribution.</p>
+<section class="subsection" id="subsection-21"><header title="Subsection 5.3.1 Negative Binomial Series"><h1 class="heading hide-type" alt="Subsection 5.3.1 Negative Binomial Series">
+<span class="type">Subsection</span><span class="codenumber">5.3.1</span><span class="title">Negative Binomial Series</span>
+</h1></header><article class="theorem-like" id="theorem-NegBinomSeries"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.3.1</span>
+</h5>\(\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}\)</article><span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-23" id="proof-23"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-23" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-230">First, convert the problem to a slightly different form:</p>\( \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
+						 = \frac{1}{b^n} \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
+			\)<p id="p-231">So, let's replace \(\frac{a}{b} = x\) and ignore for a while the term factored out. Then, we only need to show </p>\begin{gather*}
+\sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k} = \left ( \frac{1}{1+x} \right )^n 
+\end{gather*}<p id="p-232">However</p>\begin{align*}
+ \left ( \frac{1}{1+x} \right )^n &amp; = \left ( \frac{1}{1 - (-x)} \right )^n \\
+ &amp; = \left ( \sum_{k=0}^{\infty} {(-1)^k x^k} \right )^n
+\end{align*}<p id="p-233">This infinite sum raised to a power can be expanded by distributing terms in the standard way. 
+			In doing so, the various powers of x multiplied together
+			will create a series in powers of x involving \(x^0, x^1, x^2, ...\).  
+			To detemine the final coefficients notice that the number of time \(m^k\) will 
+			appear in this product depends upon the number of ways one can write k as a sum of nonnegative integers.</p>
+<p id="p-234">For example, the coefficient of \(x^3\) will come from the n ways of multiplying the coefficients 
+			\(x^3, x^0, ..., x^0\) and \(x^2, x^1, x^0, ..., x^0\)
+			 and \(x^1, x^1, x^1, x^0,..., x^0\). This is equivalent to finding the number of ways to write the 
+			 number k as a sum of nonnegative integers. The possible set of
+			 nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  
+			 For example, if k = 3 then *||** means 
+			 \(x^1 x^0 x^2 = x^3\). Similarly for k = 5 and |**|*|**| implies \( x^0 x^2 x^1 x^2 x^0 = x^5\). 
+			 The number of ways to interchange the identical *'s among the
+			 idential |'s is \(\binom{n+k-1}{k}\). </p>
+<p id="p-235">Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x 
+			 will require an odd number of odd powers. So, the 
+			 coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,</p>\begin{gather*}
+ \left ( \frac{1}{1+x} \right )^n = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k}
+\end{gather*}<p id="p-236">Similarly,</p>\( \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}\)</article></span></section><section class="subsection" id="subsection-22"><header title="Subsection 5.3.2 Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1"><h1 class="heading hide-type" alt="Subsection 5.3.2 Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1">
+<span class="type">Subsection</span><span class="codenumber">5.3.2</span><span class="title">Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1</span>
+</h1></header><p id="p-237">Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success 
+		on each individual trial \(p\) where 
+		\( 0 \lt p \lt 1 \).  For a positive integer r, let the variable \(X\) measure the number of 
+		trials needed in order to obtain the rth success.
+		Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
+<p id="p-238"> Since successive trials are independent, then the probability of the rth success occurring on the 
+			mth trial presumes that in 
+			the previous m-1 trials were r-1 successes and m-r failures.  Therefore the desired probability is given by 
+			\begin{gather*}
+P(X=m) = \binom{m - 1}{r-1}(1-p)^{m-r}p^r
+\end{gather*}
+			</p>\(\SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}p^r} &amp; = p^r \SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}}\)<p id="p-239">and by using \(k = m-r\)</p>\begin{align*}
+ &amp; = p^r \sum_{k=0}^{\infty} {\binom{r + k - 1}{k}(1-p)^k}\\
+ &amp; = p^r \frac{1}{(1-(1-p))^r}\\
+ &amp; = 1
+\end{align*}</section></section></div></main>
 </div>
 </body>
 </html>

@@ -1,36 +1,14 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-01T10:55:16-05:00    *-->
+<!--*    on 2016-09-02T15:01:06-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="example-like"><h5 class="heading">
-<span class="type">Example</span><span class="codenumber">4.6.7</span><span class="title">Continuous Distribution Function</span>
+<span class="type">Example</span><span class="codenumber">4.10.3</span><span class="title">Continuous Expected Value</span>
 </h5>
 <p>
-	Consider \(f(x) = x^2/3\) over R = [-1,2].  Then, for \(-1 \le x \le 2\),
-	\begin{equation*}F(x) = \int_{-1}^x u^2/3 du = x^3/9 + 1/9.\end{equation*}
-	Notice, F(-1) = 0 since nothing has yet been accumulated over values smaller than -1 and F(2)=1 since by that time everything has been accumulated. In summary:
-	
-	<figure class="figure-like" id="table-6"><table>
-<tr>
-<td class="r m b2 r0 l0 t0">X</td>
-<td class="r m b2 r0 l0 t0">F(x)</td>
-</tr>
-<tr>
-<td class="r m b0 r0 l0 t0">\(x \lt -1\)</td>
-<td class="r m b0 r0 l0 t0">0</td>
-</tr>
-<tr>
-<td class="r m b0 r0 l0 t0">\(-1 \le x \lt 2\)</td>
-<td class="r m b0 r0 l0 t0">\(x^3/9 + 1/9\)</td>
-</tr>
-<tr>
-<td class="r m b0 r0 l0 t0">\(2 \le x\)</td>
-<td class="r m b0 r0 l0 t0">1</td>
-</tr>
-</table></figure>
-	
-	
-	</p></article><span class="incontext"><a href="ProbabilityFunctions.html#example-20">in-context</a></span>
+	Consider \(f(x) = x^2/3\) over R = [-1,2] with value function given by \(u(x) = e^x - 1\). Then, the expected value for u(x) is given by
+	\begin{equation*}E = \int_{-1}^2 (e^x-1) \cdot x^2/3 = -1/9 \cdot (e + 15) \cdot e^{-1} + 2/3 \cdot e^2 - 8/9 \approx 3.3129\end{equation*}
+	</p></article><span class="incontext"><a href="section-26.html#example-20">in-context</a></span>

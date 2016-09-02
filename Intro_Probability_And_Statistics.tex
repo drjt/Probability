@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2016-08-25T15:01:43-05:00    *%
+%*    on 2016-09-01T15:21:19-05:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -124,6 +124,60 @@
 %% Equation Numbering
 %% Controlled by  numbering.equations.level  processing parameter
 \numberwithin{equation}{section}
+%% For improved tables
+\usepackage{array}
+%% Some extra height on each row is desirable, especially with horizontal rules
+%% Increment determined experimentally
+\setlength{\extrarowheight}{0.2ex}
+%% Define variable thickness horizontal rules, full and partial
+%% Thicknesses are 0.03, 0.05, 0.08 in the  booktabs  package
+\makeatletter
+\newcommand{\hrulethin}  {\noalign{\hrule height 0.04em}}
+\newcommand{\hrulemedium}{\noalign{\hrule height 0.07em}}
+\newcommand{\hrulethick} {\noalign{\hrule height 0.11em}}
+%% We preserve a copy of the \setlength package before other
+%% packages (extpfeil) get a chance to load packages that redefine it
+\let\oldsetlength\setlength
+\newlength{\Oldarrayrulewidth}
+\newcommand{\crulethin}[1]%
+{\noalign{\global\oldsetlength{\Oldarrayrulewidth}{\arrayrulewidth}}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{0.04em}}\cline{#1}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{\Oldarrayrulewidth}}}%
+\newcommand{\crulemedium}[1]%
+{\noalign{\global\oldsetlength{\Oldarrayrulewidth}{\arrayrulewidth}}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{0.07em}}\cline{#1}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{\Oldarrayrulewidth}}}
+\newcommand{\crulethick}[1]%
+{\noalign{\global\oldsetlength{\Oldarrayrulewidth}{\arrayrulewidth}}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{0.11em}}\cline{#1}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{\Oldarrayrulewidth}}}
+%% Single letter column specifiers defined via array package
+\newcolumntype{A}{!{\vrule width 0.04em}}
+\newcolumntype{B}{!{\vrule width 0.07em}}
+\newcolumntype{C}{!{\vrule width 0.11em}}
+\makeatother
+%% Figures, Tables, Listings, Floats
+%% The [H]ere option of the float package fixes floats in-place,
+%% in deference to web usage, where floats are totally irrelevant
+%% We re/define the figure, table and listing environments, if used
+%%   1) New mbxfigure and/or mbxtable environments are defined with float package
+%%   2) Standard LaTeX environments redefined to use new environments
+%%   3) Standard LaTeX environments redefined to step theorem counter
+%%   4) Counter for new environments is set to the theorem counter before caption
+%% You can remove all this figure/table setup, to restore standard LaTeX behavior
+%% HOWEVER, numbering of figures/tables AND theorems/examples/remarks, etc
+%% WILL ALL de-synchronize with the numbering in the HTML version
+%% You can remove the [H] argument of the \newfloat command, to allow flotation and 
+%% preserve numbering, BUT the numbering may then appear "out-of-order"
+\usepackage{float}
+\usepackage[bf]{caption} % http://tex.stackexchange.com/questions/95631/defining-a-new-type-of-floating-environment 
+\usepackage{newfloat}
+% Table environment setup so that it no longer floats
+\SetupFloatingEnvironment{table}{fileext=lot,placement={H},within=section,name=Table}
+% tables have the same number as theorems: http://tex.stackexchange.com/questions/16195/how-to-make-equations-figures-and-theorems-use-the-same-numbering-scheme 
+\makeatletter
+\let\c@table\c@theorem
+\makeatother
 %% Raster graphics inclusion, wrapped figures in paragraphs
 %% \resizebox sometimes used for images in side-by-side layout
 \usepackage{graphicx}
@@ -172,9 +226,6 @@
 \usetikzlibrary{arrows,matrix}
 \usetikzlibrary{snakes}
 %% If tikz has been loaded, replace ampersand with \amp macro
-\ifdefined\tikzset
-    \tikzset{ampersand replacement = \amp}
-\fi
 %% extpfeil package for certain extensible arrows,
 %% as also provided by MathJax extension of the same name
 %% NB: this package loads mtools, which loads calc, which redefines
@@ -203,7 +254,7 @@ Department of Mathematics\\
 Mississippi College\\
 \href{mailto:travis@mc.edu}{\nolinkurl{travis@mc.edu}}
 }
-\date{August 25, 2016}
+\date{September 1, 2016}
 \begin{document}
 \frontmatter
 %% begin: half-title
@@ -231,7 +282,7 @@ Mississippi College\\
 {\Large Mississippi College}\\[3\baselineskip]
 {\Large }\\[0.5\baselineskip]
 {\normalsize }\\[3\baselineskip]
-{\Large August 25, 2016}\\}
+{\Large September 1, 2016}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -252,9 +303,10 @@ Permission is granted to copy, distribute and/or modify this document under the 
 \addcontentsline{toc}{chapter}{Preface}
 This text is intended for a one-semester calculus-based undergraduate course in probability and statistics .%
 \par
-There are additional exercises or computer projects at the ends of many of the chapters. The computer projects usually require a knowledge of programming. All of these exercises and projects are more substantial in nature and allow the exploration of new results and theory.%
+A collection of WeBWorK online homework problems are available to correlate with the material in this text. Copies of these sets of problems are available by contacting the author.%
 \par
-WeBWorK (\href{http://webwork.maa.org}{webwork.maa.org}) is an open-source online homework system for math and science courses. WeBWorK is supported by the MAA and the NSF and comes with a Open Problem Library (OPL) of over 35,000 homework problems. Problems in the OPL target most lower division undergraduate math courses and some advanced courses. Supported courses include college algebra, discrete mathematics, probability and statistics, single and multivariable calculus, differential equations, linear algebra and complex analysis.%
+        
+        WeBWorK (\href{http://webwork.maa.org}{webwork.maa.org}) is an open-source online homework system for math and science courses. WeBWorK is supported by the MAA and the NSF and comes with a Open Problem Library (OPL) of over 35,000 homework problems. Problems in the OPL target most lower division undergraduate math courses and some advanced courses. Supported courses include college algebra, discrete mathematics, probability and statistics, single and multivariable calculus, differential equations, linear algebra and complex analysis.%
 \par
 Sage (\href{http://sagemath.org}{sagemath.org}) is a free, open source, software system for advanced mathematics, which is ideal for assisting with a study of abstract algebra. Sage can be used either on your own computer, a local server, or on SageMathCloud (\href{https://cloud.sagemath.com}{https://cloud.sagemath.com}). %
 \par\hfill\begin{tabular}{l@{}}
@@ -560,26 +612,51 @@ Remark: Many of these measures above are relative and some are absolute.%
 \section[Measures of Position]{Measures of Position}\label{section-6}
 Given a collection of data, sorting the data may provide several useful descriptors. These include:
 	%
-\par
-Minimum and Maximum:  Easily determine the smallest and largest values in the data set. These are the minimum and maximum respectively.%
-\par
-Order Statistic: Given the given data set \(x_1, x_2, ... , x_n\), sort the set and call the new data set \(y_1, y_2, ..., y_n\) where now we have \( y_1 \le y_2 \le ... \le y_n\). Then the kth order statistic is given by \(y_k\). Therefore, the minimum = \(y_1\) and the maximum = \(y_n\)%
-\par
-Percentiles. A percentile is a numerical value for which approximately a given percentage of the given data lies below that value.%
+\begin{definition}[Order Statistic:]\label{definition-1}
+Given the given data set \(x_1, x_2, ... , x_n\), after sorting the data label the sorted data as \(y_1, y_2, ..., y_n\) where  
+	\begin{equation*} y_1 \le y_2 \le ... \le y_n.\end{equation*} 
+	Then, the kth order statistic is given by \(y_k\). %
+\end{definition}
 \par
 
-	Consider the following data set: {2,5,8,10}. The 50th percentile should be a numerical value where approximately 50% of the data lies below. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. Exactly 50%. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
+	For example, the age at inauguration for presidents from 1981-2016 gives the data \(x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47\) (Reagan, Bush, Clinton, Bush, Obama). For this data, the order statistics are denoted \(y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69\).
+	%
+\begin{definition}[Minimum/Maximum:]\label{definition-2}
+The smallest and largest values in the data set. Using the notation above, minimum = \(y_1\) and the maximum = \(y_n\)%
+\end{definition}
+\par
+
+	Using the Presidential ages above, minimum = \(y_1 = 46\) and maximum = \(y_5 = 69\).
+	%
+\begin{definition}[Percentiles:]\label{definition-3}
+A percentile is a numerical value \(P^p\) at which approximately 100p% of the given data is smaller.%
+\end{definition}
+\par
+
+	To motivate your understanding of percentiles, consider the following data set: {2,5,8,10}. The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
 	%
 \par
-To compute the percentile value exactly, given a percentage in the form 100p, for \(0 \lt p \lt 1\), from a data set sort into the order statistics \(y_1, y_2, ..., y_n\). Then the 100pth percentile is given by \begin{equation*}P^{p} = (1-r)y_m + ry_{m+1}\end{equation*}
-	where m is the integer part of \(m = \left\lfloor (n+1)p \right\rfloor
-	\), the integer part of (n+1)p and \(r = (n+1)p - m\), the fractional part of (n+1)p.  This computes a weighted average between \(y_m\) and \(y_{m+1}\) which is unique for each given p so that in the case where each of the data values are all distinct that the desired percentages are most closely met.%
+To compute the percentile value exactly consider a percentage in the form 100p, for \(0 \lt p \lt 1\), and the order statistics \(y_1, y_2, ..., y_n\). Then, the 100pth percentile is given by \begin{equation*}P^{p} = (1-r)y_m + ry_{m+1}\end{equation*}
+	where m is the integer part of (n+1)p, namely \begin{equation*}m = \left\lfloor (n+1)p \right\rfloor
+	\end{equation*} 
+	and 
+	\begin{equation*}r = (n+1)p - m,\end{equation*}
+	the fractional part of (n+1)p.  This determines a weighted average between \(y_m\) and \(y_{m+1}\) which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be of equal numbers and will then be the common value.%
 \begin{example}[Basic Percentiles]\label{example-5}
 Using the data set {2,5,8,10} with n=4 values, the 25th percentile is computed by considering 
-		\((n+1)p = (4+1)0.25 = 5/4 = 1.25\).  
+		\begin{equation*}(n+1)p = (4+1)0.25 = 5/4 = 1.25\end{equation*}.  
 		So, m = 1 and r = 0.25. Therefore 
-		\(P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75\) 
-		as noted above. You can see that 3 also lies in this same range and has the same percentages above and below. However, it would be a slightly larger percentile value. Indeed, going backward:
+		\begin{equation*}P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75\end{equation*} 
+		as noted above. 
+		%
+\par
+
+		Similarly, the 75th percentile is given by
+		\begin{equation*}(n+1)p = (4+1)0.75 = 15/4 = 3.75\end{equation*}.  
+		So, m = 3 and r = 0.75. Therefore 
+		\begin{equation*}P^{0.75} = 0.25 \times 8 + 0.75 \times 10 = 9.5\end{equation*} 
+		
+		It is interesting to note that 3 also lies between 2 and 5 as does 2.75 and has the same percentages above (75 percent) and below (25 percent). However, it should designate a slightly larger percentile location. Indeed, going backward:
 		\begin{gather*}
 3 = (1-r) \times 2 + r \times 5\\
 \Rightarrow r = \frac{1}{3}\\
@@ -589,83 +666,209 @@ Using the data set {2,5,8,10} with n=4 values, the 25th percentile is computed b
 		and so 3 would actually be at approximately the 26.7th percentile.
 		%
 \end{example}
-\par
-Quartiles: Given a sorted data set, the first, second, and third quartiles are the values of 
-	\(P^{0.25}, P^{0.5}\) and \(P^{0.75}\).
+\begin{definition}[Quartiles:]\label{definition-4}
+Given a sorted data set, the first, second, and third quartiles are the values of 
+	\(Q_1 = P^{0.25}, Q_2 = P^{0.5}\) and \(Q_3 = P^{0.75}\).
 	%
+\end{definition}
+\begin{definition}[Deciles:]\label{definition-5}
+Given a sorted data set, the first, second, ..., ninth deciles are the value of 
+	\(D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}\)
+	%
+\end{definition}
 \par
 
-	Deciles: Given a sorted data set, the first, second, ..., ninth deciles are the value of 
-	\(P^{0.1}, P^{0.2}, ... , P^{0.9}\)
+	For your data set {2,5,8,10}, 
+	\(Q_1 = 2.75, Q_2 = 6.5,\) and \(Q_3 = 9.5\).
+	%
+\begin{definition}[5-number summary]\label{definition-6}
+Given a set of data, the 5-number summary is a vector of the order statistics given by \(\lt\) minimum, \(Q_1\), \(Q_2\), \(Q_3\), maximum \(\gt\). 
+	%
+\end{definition}
+\par
+Returning to our previous example, the five number summary would be
+	\(\lt 2, 2.75, 6.5, 9.5, 10 \gt\)
 	%
 \typeout{************************************************}
 \typeout{Section 2.4 Measures of the Middle}
 \typeout{************************************************}
 \section[Measures of the Middle]{Measures of the Middle}\label{section-7}
+\begin{definition}[Arithmetic Mean]\label{definition-7}
+Suppose X is a discrete random variable with range 
+	\(R = {x_1, x_2, ..., x_n}\). 
+	The arithmetic mean is given by
+		\begin{equation*}
+		AM = \frac{x_1 + ... + x_n}{n} = \frac{\sum_{k=1}^n x_k}{n}.
+		\end{equation*}
+	If this data comes from sample data then we call it a sample mean and denote this value by \(\overline{x}\). If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by \(\mu\).%
+\end{definition}
 
-Defn: Suppose X is a discrete random variable with range \(R = {x_1, x_2, ..., x_n}\). The arithmetic mean is given by
-\begin{equation*}
-AM = \frac{x_1 + ... + x_n}{n} = \frac{\sum_{k=1}^n x_k}{n}.
-\end{equation*}
-If this data comes from sample data then we call it a sample mean and denote this value by \(\overline{x}\). If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by \(\mu\).%
+	To illustrate, consider the previous data set: {2,5,8,10}. The arithmetic mean is given by
+	\begin{equation*}\frac{2+5+8+10}{4} = \frac{25}{4} = 6.25.\end{equation*}
+	%
 \par
 
-The mean is often called the centroid in the sense that if the x values were locations of objects of equal weight, then the centroid
-would be the point where this system of n masses would balance. 
-%
+	The mean is often called the centroid in the sense that if the x values were locations of objects of equal weight, then the centroid
+	would be the point where this system of n masses would balance. 
+	%
 \par
 
-The values can all be provided with varying weights if desired and the result is called the weighted arithmetic mean and is given by
-\begin{equation*}
-\frac{m_1 x_1 + ... + m_n x_n}{m_1 + ... + m_n} = \frac{\sum_{k=1}^n m_k x_k}{\sum_{k=1}^n m_k}.
-\end{equation*}
-%
+	The values can all be provided with varying weights if desired and the result is called the weighted arithmetic mean and is given by
+		\begin{equation*}
+		\frac{m_1 x_1 + ... + m_n x_n}{m_1 + ... + m_n} = \frac{\sum_{k=1}^n m_k x_k}{\sum_{k=1}^n m_k}.
+		\end{equation*}
+	%
 \par
 
 Other Means:
 %
+\begin{definition}[Geometric Mean]\label{definition-8}
+
+	\begin{equation*}GM = (x_1 x_2 ... x_n)^{1/n}\end{equation*}
+%
+\end{definition}
 \par
 
-Geometric Mean
-\begin{equation*}GM = (x_1 x_2 ... x_n)^{1/n}\end{equation*}
+	Again, consider {2,5,8,10}. The geometric mean is given by
+	\begin{equation*}(2 \times 5 \times 8 \times 10)^{1/4} = 800^{1/4} \approx = 5.318\end{equation*}
+	%
+\begin{definition}[Harmonic Mean]\label{definition-9}
+
+	\begin{equation*}\frac{1}{HM} = \frac{1}{n} \sum_{k=1}^n \frac{1}{x_k}\end{equation*}
 %
+\end{definition}
 \par
 
-Harmonic Mean
-\begin{equation*}HM = \frac{1}{n} \sum_{k=1}^n \frac{1}{x_k}\end{equation*}
-%
+	Once again, consider {2,5,8,10}. The harmonic mean is given by first computing
+	\begin{equation*}\frac{1}{4} (\frac{1}{2} + \frac{1}{5} + \frac{1}{8} + \frac{1}{10}) = 800^{1/4} \approx = 0.23125\end{equation*}
+	and so HM = \(\frac{1}{0.23125} \ approx 4.32\)
+	%
 \begin{theorem}[Relative sizes of Means]\label{theorem-5}
 \(HM \le GM \le AM\). \end{theorem}
 \begin{theorem}[Mean Formula]\label{theorem-6}
 \(AM×HM=GM^2\)\end{theorem}
+\begin{definition}[Median:]\label{definition-10}
+A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.%
+\end{definition}
 \par
-Median. A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above. For data sets with an odd number of values, this is the "middle" data value if one were to successively cross off pairs from the two ends of the sorted date. For data sets with an even number of values, this is a average of the two data values left after crossing off these pairs.  Using the order statistics, the median equals
+
+For data sets with an odd number of values, this is the "middle" data value if one were to successively cross off pairs from the two ends of the sorted date. For data sets with an even number of values, this is a average of the two data values left after crossing off these pairs.  Using the order statistics, the median equals
 \begin{equation*}y_{\frac{n+1}{2}}\end{equation*}
 if n is odd and
 \begin{equation*}\frac{y_\frac{n}{2} + y_{\frac{n}{2}+1}}{2}\end{equation*}
 if n is even.
 %
 \par
-Midrange. A mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
+From the Presidential data, note that you are considering an odd number of data values and so the median is given by 54. %
+\begin{definition}[Midrange:]\label{definition-11}
+A mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
 \begin{equation*}\frac{y_1+y_n}{2}\end{equation*}
 %
+\end{definition}
+\par
+From the Presidential data, the maximum is 69 and the minimum is 46 so the midrange is 57.5, the average of these two. %
 \par
 
 
 Mean utilizes all of the data values so each term is important. Utilizes them all even if some of the data values might suffer from collection errors.  Median ignores outliers (which might be a result of collection errors) but does not account for the relative differences between terms. Midrange is very easy to compute but ignores the relative differences for all terms but the two extremes.
 %
+\begin{example}[Numerical Example of these Quantitative Measures]\label{example-6}
+The US Census Bureau reported the following state populations (in millions) for 2013:
+\href{Data/USA_States_Populations_2014.xlsx}{Spreadsheet}
+%
+\leavevmode%
+\begin{table}
+\centering
+\begin{tabular}{rr}
+State&Population\tabularnewline\hrulemedium
+Wyoming&0.6\tabularnewline[0pt]
+Vermont&0.6\tabularnewline[0pt]
+District of Columbia&0.6\tabularnewline[0pt]
+North Dakota&0.7\tabularnewline[0pt]
+Alaska&0.7\tabularnewline[0pt]
+South Dakota&0.8\tabularnewline[0pt]
+Delaware&0.9\tabularnewline[0pt]
+Montana&1\tabularnewline[0pt]
+Rhode Island&1.1\tabularnewline[0pt]
+New Hampshire&1.3\tabularnewline[0pt]
+Maine&1.3\tabularnewline[0pt]
+Hawaii&1.4\tabularnewline[0pt]
+Idaho&1.6\tabularnewline[0pt]
+West Virginia&1.9\tabularnewline[0pt]
+Nebraska&1.9\tabularnewline[0pt]
+New Mexico&2.1\tabularnewline[0pt]
+Nevada&2.8\tabularnewline[0pt]
+Kansas&2.9\tabularnewline[0pt]
+Utah&2.9\tabularnewline[0pt]
+Arkansas&3\tabularnewline[0pt]
+Mississippi&3\tabularnewline[0pt]
+Iowa&3.1\tabularnewline[0pt]
+Connecticut&3.6\tabularnewline[0pt]
+Oklahoma&3.9\tabularnewline[0pt]
+Oregon&3.9\tabularnewline[0pt]
+Kentucky&4.4\tabularnewline[0pt]
+Louisiana&4.6\tabularnewline[0pt]
+South Carolina&4.8\tabularnewline[0pt]
+Alabama&4.8\tabularnewline[0pt]
+Colorado&5.3\tabularnewline[0pt]
+Minnesota&5.4\tabularnewline[0pt]
+Wisconsin&5.7\tabularnewline[0pt]
+Maryland&5.9\tabularnewline[0pt]
+Missouri&6\tabularnewline[0pt]
+Tennessee&6.5\tabularnewline[0pt]
+Indiana&6.6\tabularnewline[0pt]
+Arizona&6.6\tabularnewline[0pt]
+Massachusetts&6.7\tabularnewline[0pt]
+Washington&7\tabularnewline[0pt]
+Virginia&8.3\tabularnewline[0pt]
+New Jersey&8.9\tabularnewline[0pt]
+North Carolina&9.8\tabularnewline[0pt]
+Michigan&9.9\tabularnewline[0pt]
+Georgia&10\tabularnewline[0pt]
+Ohio&11.6\tabularnewline[0pt]
+Pennsylvania&12.8\tabularnewline[0pt]
+Illinois&12.9\tabularnewline[0pt]
+Florida&19.6\tabularnewline[0pt]
+New York&19.7\tabularnewline[0pt]
+Texas&26.4\tabularnewline[0pt]
+California&38.3
+\end{tabular}
+\end{table}
+\par
+Notice that these are already in order so you can presume \(y_1 = 0.6\) million is the minimum and \(y_{50} = 38.3\) million is the maximum. Therefore, the midrange is given by
+\begin{equation*}
+\frac{0.6+38.3}{2} = \frac{38.9}{2} = 19.45 million.
+\end{equation*}
+%
+\par
+
+The mean of this data takes a bit of arithmetic but gives
+\begin{equation*}\frac{\sum_{k=1}^{50} y_k }{50} = \frac{316.1}{50} \approx 6.33\end{equation*}
+million residents.
+%
+\par
+
+Since the number of states is even, the median is found by averaging the 25th and 26th order statistics. In this case, 
+\begin{equation*}\frac{y_{25}+y_{26}}{2}=\frac{4.4+4.6}{2} \approx 4.5 \end{equation*} million residents.
+%
+\end{example}
 \typeout{************************************************}
 \typeout{Section 2.5 Measures of Spread}
 \typeout{************************************************}
 \section[Measures of Spread]{Measures of Spread}\label{section-8}
-Range. Using the order statistics, \begin{equation*}y_n - y_1.\end{equation*}  
+\begin{definition}[Range:]\label{definition-12}
+Using the order statistics, \begin{equation*}y_n - y_1.\end{equation*}  
 Easy to compute. Ignores the spread of all the data in between.
 %
-\par
-Interquartile Range. \(P^{0.75} - P^{0.25}\). 
+\end{definition}
+From the Presidential data, the maximum is 69 and the minimum is 46 so the range is 23, the difference of these two. %
+\begin{definition}[Interquartile Range (IQR):]\label{definition-13}
+\(P^{0.75} - P^{0.25}\). 
 %
+\end{definition}
 \par
 
+For the data set {2, 5, 8, 10}, you have found that \(Q_1 = 2.75\) and \(Q_3 = 9.5\). Therefore, \begin{equation*}IQR = 9.5 - 2.75 = 6.75.\end{equation*}
 %
 \par
 
@@ -681,13 +884,36 @@ which, although nicely stated, is difficult to deal with algebraically since the
 \par
 Average Squared Deviation from the Mean:
 \begin{equation*} \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} \end{equation*}
-which will always be non-negative but can be easily expanded using algebra. Since this is a mouthful, this measure is generally called the variance. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by \(\sigma^2\)
+which will always be non-negative but can be easily expanded using algebra. Since this is a mouthful, this measure is generally called the variance. 
 %
 \par
-Standard Deviation: Using the variance, differences have been squared. Thus all values added are non-negative but very small ones have been made even smaller and larger ones have possibly been made much larger. To undo this scaling issue, one must take a square root to get things back into the right ball park. Doing so gives a measure of spread called the standard deviation
-\begin{equation*} \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.\end{equation*}
-If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by \(\sigma\)
+
+Using the average squared deviation from the mean, differences have been squared. Thus all values added are non-negative but very small ones have been made even smaller and larger ones have possibly been made much larger. To undo this scaling issue, one must take a square root to get things back into the right ball park. 
 %
+\begin{definition}[Variance and Standard Deviation]\label{definition-14}
+The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by \(\sigma^2\). Therefore
+	\begin{equation*} \sigma^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} \end{equation*}
+%
+\par
+The standard deviation is the square root of the variance. If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by \(\sigma\). Therefore
+\begin{equation*} \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.\end{equation*}
+%
+\par
+From the data {2,5,8,10}, you have found that the mean is 6.25. Computing the variance then involves accumulating and averaging the squared differences of each data value and this mean. Then
+\begin{align*}
+& \frac{1}{4} \left ( (2-6.25)^2 + (5-6.25)^2 + (8-6.25)^2 + (10-6.25)^2 \right ) \\
+& = \frac{18.0625 + 1.5625 + 3.0625 + 14.0625}{4} \\
+& = \frac{36.75}{4}\\
+& = 9.1875.
+\end{align*}
+ %
+\par
+
+If data comes from a sample of the population then we call it a sample variance and denote this value by v. Since sample data tends to reflect certain "biases" then we increase this value slightly by \(\frac{n}{n-1}\) to give the sample variance
+\begin{equation*}s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n-1}.\end{equation*}
+and the sample standard deviation similarly as the square root of the sample variance.
+%
+\end{definition}
 \begin{theorem}[Alternate Forms for Variance]\label{theorem-7}
 \begin{align*}
 \sigma^2 & = \left ( \frac{\sum_{k=1}^n x_k^2 }{n} \right ) - \mu^2 \\
@@ -696,9 +922,348 @@ If this data comes from the entire universe of possibilities then we call it a p
 \begin{proof}\hypertarget{proof-4}{}
 \end{proof}
 \par
+The Population of the individual USA states according to the 2013 Census 
+Consider the data set {}%
+\begin{example}[Numerical Example of these Quantitative Measures]\label{example-7}
+The US Census Bureau reported the following state populations (in millions) for 2013:%
+\leavevmode%
+\begin{table}
+\centering
+\begin{tabular}{rr}
+State&Population\tabularnewline\hrulemedium
+Wyoming&0.6\tabularnewline[0pt]
+Vermont&0.6\tabularnewline[0pt]
+District of Columbia&0.6\tabularnewline[0pt]
+North Dakota&0.7\tabularnewline[0pt]
+Alaska&0.7\tabularnewline[0pt]
+South Dakota&0.8\tabularnewline[0pt]
+Delaware&0.9\tabularnewline[0pt]
+Montana&1\tabularnewline[0pt]
+Rhode Island&1.1\tabularnewline[0pt]
+New Hampshire&1.3\tabularnewline[0pt]
+Maine&1.3\tabularnewline[0pt]
+Hawaii&1.4\tabularnewline[0pt]
+Idaho&1.6\tabularnewline[0pt]
+West Virginia&1.9\tabularnewline[0pt]
+Nebraska&1.9\tabularnewline[0pt]
+New Mexico&2.1\tabularnewline[0pt]
+Nevada&2.8\tabularnewline[0pt]
+Kansas&2.9\tabularnewline[0pt]
+Utah&2.9\tabularnewline[0pt]
+Arkansas&3\tabularnewline[0pt]
+Mississippi&3\tabularnewline[0pt]
+Iowa&3.1\tabularnewline[0pt]
+Connecticut&3.6\tabularnewline[0pt]
+Oklahoma&3.9\tabularnewline[0pt]
+Oregon&3.9\tabularnewline[0pt]
+Kentucky&4.4\tabularnewline[0pt]
+Louisiana&4.6\tabularnewline[0pt]
+South Carolina&4.8\tabularnewline[0pt]
+Alabama&4.8\tabularnewline[0pt]
+Colorado&5.3\tabularnewline[0pt]
+Minnesota&5.4\tabularnewline[0pt]
+Wisconsin&5.7\tabularnewline[0pt]
+Maryland&5.9\tabularnewline[0pt]
+Missouri&6\tabularnewline[0pt]
+Tennessee&6.5\tabularnewline[0pt]
+Indiana&6.6\tabularnewline[0pt]
+Arizona&6.6\tabularnewline[0pt]
+Massachusetts&6.7\tabularnewline[0pt]
+Washington&7\tabularnewline[0pt]
+Virginia&8.3\tabularnewline[0pt]
+New Jersey&8.9\tabularnewline[0pt]
+North Carolina&9.8\tabularnewline[0pt]
+Michigan&9.9\tabularnewline[0pt]
+Georgia&10\tabularnewline[0pt]
+Ohio&11.6\tabularnewline[0pt]
+Pennsylvania&12.8\tabularnewline[0pt]
+Illinois&12.9\tabularnewline[0pt]
+Florida&19.6\tabularnewline[0pt]
+New York&19.7\tabularnewline[0pt]
+Texas&26.4\tabularnewline[0pt]
+California&38.3
+\end{tabular}
+\end{table}
+\par
+Again, you should note that these are already in order so the range is quickly found to be 
+\begin{equation*}y_n - y_1 = 38.3 - 0.6 = 37.7\end{equation*} 
+million residents.
+%
+\par
 
+For IQR, we first must determine the quartiles. The median (found earlier) already is the second quartile so we have \(Q_2 = 4.5\) million. For the other two, the formula for computing percentiles gives you the 25th percentiile
+\begin{gather*}
+(n+1)p = 51(1/4) = 12.75\\
+Q_1 = P^{0.25} = 0.25 \times 1.9 + 0.75 \times 2.1 = 2.05
+\end{gather*}
+and the 75th percentile
+\begin{gather*}
+(n+1)p = 51(3/4) = 38.25\\
+Q_3 = P^{0.75} = 0.75 \times 7 + 0.25 \times 8.3 = 7.325.
+\end{gather*}
+Hence, the IQR = 7.325 - 2.05 = 5.275 million residents.
+%
+\par
+
+From the computation before, the mean of this data is about 6.33
+million residents. So, to determine the variance you may find it easier to compute using the theorem above. 
+\begin{align*}
+ v & = \left ( \frac{\sum_{k=1}^n y_k^2 }{n} \right ) - \mu^2
+\\
+ & \approx \frac{4434.37}{50} - (6.33)^2
+\\
+ & = 48.72
+
+\end{align*}
+and so you get a sample variance of
+\begin{equation*} s^2 \approx \frac{50}{49} \cdot 48.72 = 49.71\end{equation*}
+and a sample standard deviation of
+\begin{equation*}s \approx \sqrt{49.71} = 7.05\end{equation*} million residents.
+%
+\end{example}
+\typeout{************************************************}
+\typeout{Section 2.6 Grouped Data}
+\typeout{************************************************}
+\section[Grouped Data]{Grouped Data}\label{section-9}
+As you considered the measures of the center and spread before, each data point was considered individually. Often, data may however be grouped into categories and perhaps expressed as a frequency distribution. In this case, rather than considering \(x_k\) to be the kth data value can take advantage of the grouping to perhaps save a bit on arithmetic.%
+\par
+Indeed, let's assume that data is grouped into m categories \(x_1, x_2, ..., x_m\) with corresponding frequencies \(f_1, f_2, ..., f_m\). Then, for example, when computing the mean rather than adding \(x_1\) with itself \(f_1\) times just compute \(x_1 \times f_1\) for the first category and continuing through the remaining categories. This gives the following grouped data formula for the mean
+		\begin{equation*}
+		\mu = \frac{x_1 f_1 + ... + x_m f_m}{f_1 + ... + f_m} = \frac{\sum_{k=1}^m x_k f_k}{\sum_{k=1}^m f_k}.
+		\end{equation*}
+and the following grouped data formula for the variance
+		\begin{equation*} 
+		\sigma^2 = \frac{\sum_{k=1}^m ( x_k-\mu )^2 f_k}{\sum_{k=1}^m f_k} = \frac{\sum_{k=1}^m x_k^2 f_k}{\sum_{k=1}^m f_k} - \mu^2
+		\end{equation*}
 
 %
+\par
+
+Consider the following data set
+%
+\par
+{3,
+1,
+2,
+2,
+3,
+1,
+3,
+4,
+5,
+5,
+1,
+4,
+5,
+1,
+2,
+4,
+5,
+3,
+2,
+5,
+2,
+1,
+2,
+2,
+5}%
+\par
+
+Collecting this data into a frequency distribution gives
+\leavevmode%
+\begin{table}
+\centering
+\begin{tabular}{rr}
+x&frequency\tabularnewline\hrulemedium
+1&5\tabularnewline[0pt]
+2&7\tabularnewline[0pt]
+3&4\tabularnewline[0pt]
+4&3\tabularnewline[0pt]
+5&6
+\end{tabular}
+\end{table}
+
+Therefore, 
+	\begin{equation*}
+	\overline{x} = \frac{1 \times 5 + 2 \times 7 + 3 \times 4 + 4 \times 3 + 5 \times 6}{5+7+4+3+6} = \frac{5 + 14 + 12 + 12 + 30}{25} = \frac{43}{25}
+	\end{equation*}
+and 
+	\begin{align*}
+v & = \frac{1^2 \times 5 + 2^2 \times 7 + 3^2 \times 4 + 4^2 \times 3 + 5^2 \times 6}{5+7+4+3+6} - \left ( \frac{43}{25} \right )^2 \\
+ & = \frac{5 + 28 + 36 + 48 + 150}{25} - \left ( \frac{43}{25} \right )^2 \\
+ & = \frac{4826}{625}\\
+ & \approx 7.7216
+\end{align*}
+and so \(s^2 = \frac{25}{24} \frac{4826}{625} \approx 8.043\). 
+%
+\typeout{************************************************}
+\typeout{Section 2.7 Other Point Measures}
+\typeout{************************************************}
+\section[Other Point Measures]{Other Point Measures}\label{section-10}
+Beyond measures of the middle and of spread includes a way you can determine if data is heaped up to one side or the other of the mean. One such measure is the skewness...
+%
+\begin{definition}[Skewness]\label{definition-15}
+The Skewness of \(x_1, x_2, ..., x_n\) is given by
+\begin{equation*} \frac{1}{\sigma^3} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}.\end{equation*}
+%
+\end{definition}
+\par
+
+A positive skewness indicates that the positive \((x_k - \overline{x})^3\) terms overwhelm the negative terms. Therefore, this indicates data which is strung out to the right. Likewise, a negative skewness indicates data which is strung out to the left.
+%
+\par
+
+In addition to skewness, data might tend to be clustered around the mean and often in a "bell-shaped" manner. The kurtosis can be used o measure how closely data resembles a bell-shaped collection.
+%
+\begin{definition}[Kurtosis]\label{definition-16}
+The Kurtosis of \(x_1, x_2, ..., x_n\) is given by
+\begin{equation*} \frac{1}{\sigma^4} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}.\end{equation*}
+%
+\end{definition}
+\par
+
+A kurtosis of 3 indicates that the data is perfectly bell shaped (a "normal" distribution) whereas data further away from 3 indicates data that is less bell shaped.
+%
+\begin{theorem}[Alternate Formulas for Skewness and Kurtosis]\label{theorem-8}
+
+Skewness = 
+\begin{equation*}\frac{1}{s^3} 
+\left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 v \overline{x} - \overline{x}^3 \right ]\end{equation*}
+and Kurtosis =
+\begin{equation*}\frac{1}{s^4} 
+\left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v - 3 \overline{x}^4  \right ]\end{equation*}\begin{proof}\hypertarget{proof-5}{}
+
+For skewness, expand the cubic and break up the sum. Factoring out constants (such as \(\overline{x}\)) gives
+\begin{align*}
+& \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}\\
+& = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x} \frac{\sum_{k=1}^n x_k^2 }{n} + 3 \overline{x}^2 \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \overline{x}^3}{n}\\
+& = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}(v + \overline{x}^2) + 3 \overline{x}^3 - \overline{x}^3\\
+& = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}v - \overline{x}^3
+\end{align*}
+and divide by the cube of the standard deviation to finish. Note that the first expansion in the derivation above can be used quickly if the data is collected in a table and powers easily computed.
+%
+\par
+
+For kurtosis, similarly expand the quartic and break up the sum as before. Note that you can extract the value of the cubic term by solving for that term in the skewness formula above. Then,
+\begin{align*}
+& \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}\\
+& = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \frac{\sum_{k=1}^n x_k^2}{n} - 4 \overline{x}^3 \frac{\sum_{k=1}^n x_k}{n} + \frac{\sum_{k=1}^n \overline{x}^4}{n}\\
+& = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 (v+\overline{x}^2) - 4 \overline{x}^4 + \overline{x}^4\\
+& = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v - 3 \overline{x}^4 
+\end{align*}
+and then divide by the fourth power of the standard deviation.  Note again that the first expansion in the derivation above might also be a useful shortcut.
+%
+\end{proof}
+\end{theorem}
+\typeout{************************************************}
+\typeout{Section 2.8 Graphical Representation of Data}
+\typeout{************************************************}
+\section[Graphical Representation of Data]{Graphical Representation of Data}\label{section-11}
+Data sets can range from small to very large. Visual representations of these data sets often allow you to see trends and reveal a lot about the distribution of the data values.%
+\par
+
+Also, probability mass functions for discrete variables can be graphed as a set of points but sometimes these points do not convey size very well. A visual representation of these functions needs to be addressed.
+%
+\typeout{************************************************}
+\typeout{Subsection 2.8.1 Histograms}
+\typeout{************************************************}
+\subsection[Histograms]{Histograms}\label{subsection-7}
+Frequency Histograms - height matters%
+\par
+Consider the data set given by
+		
+\leavevmode%
+\begin{table}
+\centering
+\begin{tabular}{rr}
+k&\(x_k\)\tabularnewline\hrulemedium
+1&8\tabularnewline[0pt]
+2&12\tabularnewline[0pt]
+3&6\tabularnewline[0pt]
+4&3\tabularnewline[0pt]
+5&1\tabularnewline[0pt]
+6&2
+\end{tabular}
+\end{table}
+
+	
+A frequency histogram representing this data can be given by
+
+\includegraphics[width=1\linewidth]{images/frequencyhistogram.png}
+
+		
+		
+%
+\par
+Experiment with creating your own histogram by inputting your data into the interactive cell below.
+\begin{lstlisting}[style=sageinput]
+#  This function is used to convert an input string into separate entries
+def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+
+@interact
+def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated by commas")):
+    freq = g(freq)
+    freq = [int(k) for k in freq]
+    m = min(freq)
+    M = max(freq)
+    bn = M-m+1
+    histogram( freq, range=[m-1/2,M+1/2], bins = bn, align="mid", linewidth=2, edgecolor="blue", color="yellow").show()
+\end{lstlisting}
+
+
+		%
+\par
+Relative Frequency Histograms - In this case, area describes your data.  Notice in the interactive cell above that each bar is of width one. Therefore, frequency = area. In some instances where data may be grouped the total width of the interval may be different and so the height will need to be adjusted so that the total area of each bar corresponds to the relative frequency of that category.%
+\par
+Cummulative Histograms.  In these a running total is presented using all values from the given point and below.
+\begin{lstlisting}[style=sageinput]
+#  This function is used to convert an input string into separate entries
+def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+
+@interact
+def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated by commas")):
+    freq = g(freq)
+    freq = [int(k) for k in freq]
+    top = len(freq)
+    m = min(freq)
+    M = max(freq)
+    bn = M-m+1
+    histogram( freq, range=[m-1/2,M+1/2], cumulative = "true", bins = bn, align="mid", linewidth=2, edgecolor="blue", color="yellow").show(ymax=top)
+\end{lstlisting}
+		
+		%
+\par
+Stem-and-Leaf Plot - Histogram with data. Using the state population data above, consider organizing the data but using a "two-pass sort" where you first roughly break data up into groups based upon ranges which relate to their first digit(s). In this case, let's break up into groups according to populations corresponding to 0-4 million, 5-9 million, 10-14 million, 15-19, million, 20-24 million, 25-29 million, 30-35 million, and 35-39 million. We can represent these classes by using the stems 0L, 0H, 1L, 1H, 2L, 2H, 3L, and 3H where the L and H represent the one's digits L in {0, 1, 2, 3, 4} and H in {5, 6, 7, 8, 9}.  Once we group the data into these smaller groups then we can write the remaining portion of the number horizontally as leaves (in this case with one decimal place for all values.) This gives a step-and-leaf plot. If we additionally sort the data in the leaves then this gives you an ordered stem-and-leaf plot. For the state population data, the ordered stem-and-leaf plot is given by
+		
+
+		
+\includegraphics[width=1\linewidth]{images/stemandleaf.png}
+
+
+Notice how it is easy to now see that most state populations are relatively small and that there are relatively few states with larger population. Also, notice that you can use this plot to relatively easily identify minimum, maximum, and other order statistics.		
+		
+		%
+\par
+Box and Whisker Diagram - visual order statistics. This graphical display identifies the "5-number-summary" associated with the minimum, quartiles, and the maximum. That is, \(y_1, Q_1, Q_2, Q_3, y_n\).  These values separate the data roughly into quarters. To distinguish these quarters connect \(y_1\) and \(Q_1\) with a straight line (a whisker) and do the same with \(Q_3\) and \(y_n\). Use a box to connect \(Q_1\) with \(Q_2\) and the same to connect \(Q_2\) with \(Q_3\). Then the boxed areas also identify the IQR.    
+\begin{lstlisting}[style=sageinput]
+from pylab import boxplot,savefig,close
+@interact
+def _(data = input_box([1,2,3,4,6,7,8,9,11,15,21],label="Enter Your Data:")):
+    B = boxplot(data, notch=True, sym='x', vert=False)
+    savefig("boxplot.png")
+    close()
+\end{lstlisting}
+
+		%
+\typeout{************************************************}
+\typeout{Section 2.9 Exercises}
+\typeout{************************************************}
+\section[Exercises]{Exercises}\label{section-12}
+Complete the online homework "Computational Measures".%
+\par
+Create a data set with about 10 elements. For your data set, compute each of the measures from this chapter and present your data using a frequency histogram.%
+\par
+Find a "real-world" data set (similar perhaps to the Census data presented above.) Compute each of the measures from this chapter. Interpret and present your conclusions in an electronic report which can include an excel spreadsheet.%
 \typeout{************************************************}
 \typeout{Chapter 3 Counting and Combinatorics}
 \typeout{************************************************}
@@ -706,7 +1271,7 @@ If this data comes from the entire universe of possibilities then we call it a p
 \typeout{************************************************}
 \typeout{Section 3.1 Introduction}
 \typeout{************************************************}
-\section[Introduction]{Introduction}\label{section-9}
+\section[Introduction]{Introduction}\label{section-13}
 Discussion on the usefulness of having ways to count the number
 of elements in a set without having to explicitly listing all elements.%
 \par
@@ -752,7 +1317,7 @@ So, it is easy to see that these are all of the possible outcomes and that the t
 
 Notice how the list quickly grows when just adding one more choice. This illustrates how keeping track of the number of items in a set can quickly get impossible to keep up with and to count unless we can approach this problem using a more mathematical approach.
 %
-\begin{definition}[Cardinality]\label{definition-1}
+\begin{definition}[Cardinality]\label{definition-17}
 Given a set of elements A, the number of elements in the 
 		set is known as the sets cardinality and is denoted |A|. If the set has 
 		an infinite number of elements then we set |A| = \(\infty\).
@@ -760,11 +1325,11 @@ Given a set of elements A, the number of elements in the
 \par
 In order to "count without counting" we establish the following 
 	foundational principle.%
-\begin{theorem}[Multiplication Principle]\label{theorem-8}
+\begin{theorem}[Multiplication Principle]\label{theorem-9}
 Given two successive events A and B, the number of ways 
 		to perform A and then B is |A||B|.
 		\end{theorem}
-\begin{proof}\hypertarget{proof-5}{}
+\begin{proof}\hypertarget{proof-6}{}
 If either of the events has infinite cardinality, then it is 
 			clear
 			that the number of ways to perform A and then B will also be 
@@ -788,7 +1353,14 @@ B = \left \{  b_1, b_2, b_3, ... , b_{|B|} \right \}
 			second set has |A| |B| elements then the conclusion follows. 
 			coordinates.%
 \end{proof}
-\begin{example}[iPad security code]\label{example-6}
+\begin{definition}[Factorial]\label{definition-18}
+For any natural number n, 
+		\begin{gather*}
+n! = n(n-1)(n-2) ... 3 \cdot 2 \cdot 1
+\end{gather*}
+		%
+\end{definition}
+\begin{example}[iPad security code]\label{example-8}
 Consider your ipad's security. To unlock the screen you need to enter your four digit pass code. How easy is it to guess this pass code?%
 \par
 Using the standard 10 digit keypad, we first have two questions to consider?
@@ -805,7 +1377,7 @@ Using the standard 10 digit keypad, we first have two questions to consider?
 		Note that if you were allowed to reuse the digits then the number of possible outcomes would be more since all 10 digits would be available for each event.  Namely, \(10 \times 10 \times 10 \times 10 = 10000.\)
 		%
 \end{example}
-\begin{example}[iPad security code with greasy fingers]\label{example-7}
+\begin{example}[iPad security code with greasy fingers]\label{example-9}
 Reconsider your ipad's security. In this case, you like to eat
 		chocolate bars and have greasy fingers. When you type in your passcode
 		your fingers leave a residue over the four numbers pressed. If someone
@@ -813,7 +1385,7 @@ Reconsider your ipad's security. In this case, you like to eat
 \par
 Since there are only four numbers to pick from with order important, the number of possible passcodes remaining is \(4 \times 3 \times 2 \times 1 = 24\)%
 \end{example}
-\begin{example}[National Treasure]\label{example-8}
+\begin{example}[National Treasure]\label{example-10}
 In the 2004 movie "National Treasure" Ben and Riley are attempting 
 		to guess Abagail's password to enter the room with the Declaration. 
 		They are able
@@ -870,21 +1442,14 @@ Two characters are used twice and the others just once.\end{itemize}
 With this large collection of possible outcomes, how are the movie
 		characters able to determine the correct "VALLEYFORGE" passphrase?%
 \end{example}
-\begin{definition}[Factorial]\label{definition-2}
-For any natural number n, 
-		\begin{gather*}
-n! = n(n-1)(n-2) ... 3 \cdot 2 \cdot 1
-\end{gather*}
-		%
-\end{definition}
 \typeout{************************************************}
 \typeout{Section 3.2 Permutations}
 \typeout{************************************************}
-\section[Permutations]{Permutations}\label{section-10}
+\section[Permutations]{Permutations}\label{section-14}
 When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.%
-\begin{theorem}[Permutations of n objects]\label{theorem-9}
+\begin{theorem}[Permutations of n objects]\label{theorem-10}
 The number of ways to arrange n distinct items is n!\end{theorem}
-\begin{proof}\hypertarget{proof-6}{}
+\begin{proof}\hypertarget{proof-7}{}
 Notice that if n=1, then there is only 1 item to arrange and 
 			that there is only one possible arrangment.%
 \par
@@ -897,13 +1462,13 @@ Notice that if n=1, then there is only 1 item to arrange and
 			Notice that there are n+1 ways to choose 1 element from A and that in doing so leaves a set with n elements. Combining the induction hypothesis with the multiplication principle this gives (n+1)n! = (n+1)! possible outcomes.
 			%
 \end{proof}
-\begin{theorem}[Permutations of n objects selecting r]\label{theorem-10}
+\begin{theorem}[Permutations of n objects selecting r]\label{theorem-11}
 
 			The number of ways to arrange r items from a set of n distinct items 
 			is \( P_r^n = \frac{n!}{(n-r)!} \)
 			%
 \end{theorem}
-\begin{proof}\hypertarget{proof-7}{}
+\begin{proof}\hypertarget{proof-8}{}
 
 			Apply the multiplication principle r times noting that there are 
 			n choices for the first selection, n-1 choices for the second
@@ -916,7 +1481,7 @@ P_r^n & = n(n-1) ... (n-r+1)\\
 \end{align*}
 			%
 \end{proof}
-\begin{theorem}[Permutations when Not all items are distinguishable and without replacement: (Multinomial Coefficients)]\label{theorem-11}
+\begin{theorem}[Permutations when Not all items are distinguishable and without replacement: (Multinomial Coefficients)]\label{theorem-12}
 
 If n items belong to s categories, n1 in first, n2 in second, ... , ns in the last, the number of ways to pick all is
 !	
@@ -924,16 +1489,16 @@ If n items belong to s categories, n1 in first, n2 in second, ... , ns in the la
 \typeout{************************************************}
 \typeout{Section 3.3 Combinations}
 \typeout{************************************************}
-\section[Combinations]{Combinations}\label{section-11}
+\section[Combinations]{Combinations}\label{section-15}
 When counting various outcomes sometimes the order of things does not matter.
 In this case we count each different set of outcomes a combination. %
-\begin{theorem}[Combinations of n distinct objects selecting r without replacement]\label{theorem-12}
+\begin{theorem}[Combinations of n distinct objects selecting r without replacement]\label{theorem-13}
 
 			The number of ways to arrange r items from a set of n distinct items 
 			is \( C_r^n = \frac{n!}{r!(n-r)!} \)
 			%
 \end{theorem}
-\begin{proof}\hypertarget{proof-8}{}
+\begin{proof}\hypertarget{proof-9}{}
 
 			Consider creating a permutation of r objects from a set of size n
 			by first picking an unordered subset of size r and then counting 
@@ -945,18 +1510,18 @@ P_r^n = C_r^n \cdot r!
 			Solving give the result.
 			%
 \end{proof}
-\begin{theorem}[Combinations of n distinct objects selecting r with replacement]\label{theorem-13}
+\begin{theorem}[Combinations of n distinct objects selecting r with replacement]\label{theorem-14}
 
 			The number of ways to arrange r items from a set of n distinct items 
 			is \( C_r^{n+r-1} = \frac{n+r-1!}{r!(n-1)!} \)
 			%
 \end{theorem}
-\begin{proof}\hypertarget{proof-9}{}
+\begin{proof}\hypertarget{proof-10}{}
 
 			blah
 			%
 \end{proof}
-\begin{example}[]\label{example-9}
+\begin{example}[]\label{example-11}
 Revisiting your ipad's security, what happens if the order in which the digits are entered does not matter? If so, then you would be picking a combination of 4 digits without replacement from a group of 10 digits. Namely, 
 		\begin{align*}
 \frac{10!}{4!6!} & = \frac{10 \times 9 \times 8 \times 7 \times 6!}{4 \times 3 \times 2 \times 1 \times 6!}\\
@@ -976,18 +1541,25 @@ Revisiting your ipad's security, what happens if the order in which the digits a
 		which once again is more since numbers are allowed to repeat.
 		%
 \end{example}
-\begin{definition}[Binomial Coefficients]\label{definition-3}
+\begin{definition}[Binomial Coefficients]\label{definition-19}
 
 		The value \(C_r^n\) is known as the binomial coefficient. It is
 		denoted by \({n \choose r}\) and is read "n choose k".
 		%
 \end{definition}
-\begin{theorem}[Combinations when distinguishable and with replacement]\label{theorem-14}
+\begin{theorem}[Combinations when distinguishable and with replacement]\label{theorem-15}
 
 	= Number of ways to get unordered samples of size r from n objects. 
 	\end{theorem}
 \par
 Lots of interesting facts about the binomial coefficients.%
+\typeout{************************************************}
+\typeout{Section 3.4 Exercises}
+\typeout{************************************************}
+\section[Exercises]{Exercises}\label{section-16}
+Complete the online homework "Counting".%
+\par
+Completely determine the number of possible passphrases for the National Treasure example started above. Present your answer in a report form.%
 \typeout{************************************************}
 \typeout{Chapter 4 Probability and Probability Functions}
 \typeout{************************************************}
@@ -1003,10 +1575,7 @@ This chapter is a definitions of probability, consequences, and probability func
 Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.%
 \par
 People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. %
-\typeout{************************************************}
-\typeout{Subsection 4.1.1 }
-\typeout{************************************************}
-\subsection[]{}\label{subsection-7}
+\par
 When attempting to precisely measure this uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:%
 \leavevmode%
 \begin{itemize}[label=\textbullet]
@@ -1025,21 +1594,16 @@ When attempting to precisely measure this uncertainty a few experiments are in o
 \item{}Histogram. A bar chart representation of data where area corresponds to the value being described.%
 \end{itemize}
 \par
-To investigate these terms and to motivate our discussion of probability, consider flipping coins using the
-interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists
-of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads
-and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads
-or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying
-number of trials selected by you as you move the slider bar. Results are displayed using a histogram.%
+To investigate these terms and to motivate our discussion of probability, consider flipping coins using the interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying number of trials selected by you as you move the slider bar. Results are displayed using a histogram.%
 \par
 
-Question 1: What do you notice as the number of flips increases?
-%
+	Question 1: What do you notice as the number of flips increases?
+	%
 \par
 
-Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
-that to happen?
-%
+	Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
+	that to happen?
+	%
 \begin{lstlisting}[style=sageinput]
 coin = ["Heads", "Tails"]
 @interact
@@ -1066,17 +1630,15 @@ Notice that as the number of flips increases, the relative frequency of Heads (a
 	Let's try again
 	by doing a random experiment consisting of rolling a single die one time. Note that the sample space 
 	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
-%
-\par
-%
+	%
 \par
 
-Question 1: What do you notice as the number of rolls increases?
-%
+	Question 1: What do you notice as the number of rolls increases?
+	%
 \par
 
-Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
-%
+	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
+	%
 \begin{lstlisting}[style=sageinput]
 @interact
 def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [4,6,8,12,20]):
@@ -1103,7 +1665,10 @@ Notice in this instance that there are a larger number of options (for example 6
 \par
 In general, this suggests a rule: if there are n outcomes and each one has the same
 	chance of occurring on a given trial then on average on a large number of trials the relative
-	frequency of that outcome is 1/n.%
+	frequency of that outcome is 1/n.
+	In general, if a number of outcomes are "equally likely" then this is a good model for measuring
+	the proportion of outcomes that would be expected to have any given outcome. However, it is not
+	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:%
 \begin{lstlisting}[style=sageinput]
 @interact
 def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
@@ -1134,18 +1699,21 @@ Notice, not only are the answers not the same but they are not even close. To un
 \typeout{************************************************}
 \typeout{Section 4.2 Definition of Probability}
 \typeout{************************************************}
-\section[Definition of Probability]{Definition of Probability}\label{section-13}
+\section[Definition of Probability]{Definition of Probability}\label{section-18}
 \typeout{************************************************}
 \typeout{Subsection 4.2.1 Motivating the Definition}
 \typeout{************************************************}
 \subsection[Motivating the Definition]{Motivating the Definition}\label{ProbabilityDefns}
 Using the ideas from our examples above, let's consider how we might formally define a way
 	to measure the expectation from similar experiments.  Before doing so, we need a little notation:%
-\begin{definition}[]\label{definition-4}
+\begin{definition}[]\label{definition-20}
 The Cardinality of the set A is the number of elements in A. This will be denoted |A| (similar
-	to the idea of frequency of an outcome noted earlier.) If a set has
-	a infinite number of elements, then we will say it's cardinality is also infinite and 
-	write |A| = \(\infty\)\end{definition}
+		to the idea of frequency of an outcome noted earlier.) If a set has
+		a infinite number of elements, then we will say it's cardinality is also infinite and 
+		write |A| = \(\infty\)\end{definition}
+\begin{definition}[Pairwise Disjoint Sets]\label{definition-21}
+\( \{ A_1, A_2, ... , A_n \}\) are pairwise disjoint provided \(A_k \cap A_j = \emptyset\) so long as \(k \ne j\).
+		\end{definition}
 \par
 
 	To model the behavior above, consider how we might create a definition for our expectation
@@ -1196,13 +1764,13 @@ The probability P(A) of a given outcome A is a set function which satisfies:
 Based upon this definition we can immediately establish a number of results.%
 \begin{theorem}[Probability of Complements]\label{ProbabilityComplemnts}
  For any event A, \(P(A) + P(A^c) = 1\)\end{theorem}
-\begin{proof}\hypertarget{proof-10}{}
+\begin{proof}\hypertarget{proof-11}{}
 Let A be any event and note that \(A \cap A^c = \emptyset\).  But \(A \cup A^c = S\).
 			So, by subadditivity \(1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)\) as desired.%
 \end{proof}
 \begin{theorem}[]\label{ProbabilityEmptySet}
 \(P(\emptyset) = 0\)\end{theorem}
-\begin{proof}\hypertarget{proof-11}{}
+\begin{proof}\hypertarget{proof-12}{}
 Note that \(\emptyset^c = S\). So, by the theorem above, 
 			\(1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)\).
 			Cancelling the 1 on both sides gives \(P(\emptyset) = 0\). %
@@ -1210,7 +1778,7 @@ Note that \(\emptyset^c = S\). So, by the theorem above,
 \begin{theorem}[]\label{ProbabilityContainment}
 For events A and B with \( A \subset B, P(A) \le P(B)\).
 		\end{theorem}
-\begin{proof}\hypertarget{proof-12}{}
+\begin{proof}\hypertarget{proof-13}{}
 Assume sets A and B satisfy \( A \subset B\). Then, notice that
 			\(A \cap (B-A) = \emptyset\) and  \(B = A \cup (B-A)\). Therefore, by 
 			subadditivity and nonnegativity%
@@ -1221,12 +1789,12 @@ P(A) \le P(B)
 \end{gather*}\end{proof}
 \begin{theorem}[]\label{ProbabilityLessThanOne}
 For any event A, \(P(A) \le 1\)\end{theorem}
-\begin{proof}\hypertarget{proof-13}{}
+\begin{proof}\hypertarget{proof-14}{}
 Notice \(A \subset S\). By the theorem above \( P(A) \le P(S) = 1\)%
 \end{proof}
 \begin{theorem}[]\label{ProbabilityTwoUnions}
 For any sets A and B, \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)\end{theorem}
-\begin{proof}\hypertarget{proof-14}{}
+\begin{proof}\hypertarget{proof-15}{}
 Notice that we can write \(A \cup B\) as the disjoint union%
 \begin{gather*}
 A \cup B = (A-B) \cup (A \cap B) \cup (B-A).
@@ -1267,27 +1835,13 @@ P(A \cup B \cup C \cup D) & = P(A) + P(B) + P(C) + P(D)\\
 \typeout{************************************************}
 \typeout{Section 4.3 Conditional Probability}
 \typeout{************************************************}
-\section[Conditional Probability]{Conditional Probability}\label{section-14}
-\typeout{************************************************}
-\typeout{Subsection 4.3.1 Motivating Examples}
-\typeout{************************************************}
-\subsection[Motivating Examples]{Motivating Examples}\label{subsection-11}
-\begin{example}[Changing Sample Space - Balls]\label{example-10}
-Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption,
-	the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose
-	that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves
-	you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the 
-	probability changed for the second trial dependent on the outcome of the first trial.%
+\section[Conditional Probability]{Conditional Probability}\label{section-19}
+\begin{example}[Changing Sample Space - Balls]\label{example-12}
+Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.%
 \end{example}
-\begin{example}[Changing Sample Space - Cards]\label{example-11}
+\begin{example}[Changing Sample Space - Cards]\label{example-13}
 Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. 
-	When extracting one card randomly, the probability
-	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and set
-	aside.  Now, 
-	prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the 
-	second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second
-	draw. To compute this probability correctly, one need to formulate the question so that subadditivity can 
-	be utilized.%
+	When extracting one card randomly, the probability	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and setaside.  Now, prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second draw. To compute this probability correctly, one need to formulate the question so that subadditivity can  be utilized.%
 \par
 
 	To do this, consider 
@@ -1300,42 +1854,163 @@ Consider a deck of 52 standard playing cards and a success occurs when a Heart i
 
 	%
 \end{example}
-\typeout{************************************************}
-\typeout{Subsection 4.3.2 Conditional Probability}
-\typeout{************************************************}
-\subsection[Conditional Probability]{Conditional Probability}\label{subsection-12}
-\typeout{************************************************}
-\typeout{Subsection 4.3.2.1 Definition}
-\typeout{************************************************}
-\subsubsection[Definition]{Definition}\label{subsection-13}
-\begin{definition}[Conditional Probability]\label{definition-6}
-P(B | A) = P(A \(\cap\) B) / P(A)\end{definition}
-\begin{theorem}[]\label{theorem-20}
+\begin{definition}[Conditional Probability]\label{definition-23}
+P(B | A) = P(A \(\cap\) B) / P(A), provided P(A)\(\gt 0\).\end{definition}
+\begin{theorem}[]\label{theorem-21}
 Conditional Probability satisfies all of the requirements of regular probability.\end{theorem}
-\typeout{************************************************}
-\typeout{Subsection 4.3.2.2 Bayes}
-\typeout{************************************************}
-\subsubsection[Bayes]{Bayes}\label{subsection-14}
-\begin{theorem}[Bayes Theorem]\label{theorem-21}
+\begin{proof}\hypertarget{proof-16}{}
 
-		Stub
+		By definition, for any event probability must be nonnegative. Therefore
+		\(P(A \cap B) \ge 0\).  Therefore, P(B | A) \(\ge 0\).
+		%
+\par
+
+		Further, P (S | A) = P(A \(\cap\) S)/P(A) = P(A)/P(A) = 1.
+		%
+\end{proof}
+\begin{theorem}[Multiplication Rule]\label{theorem-22}
+\begin{equation*}P(A \cap B) = P(A) P(B | A) = P(B) P(A | B)\end{equation*}\end{theorem}
+\begin{proof}\hypertarget{proof-17}{}
+
+		Unravel the definition of conditional probably by taking the denominator to the other side. Also note that you can write \(A \cap B = B \cap A\).
+		%
+\end{proof}
+\typeout{************************************************}
+\typeout{Section 4.4 Bayes Theorem}
+\typeout{************************************************}
+\section[Bayes Theorem]{Bayes Theorem}\label{section-20}
+\begin{theorem}[Bayes Theorem]\label{theorem-23}
+Let \(S = \{ S_1, S_2, ... , S_m \}\) where the \(S_k\) are pairwise disjoint and \(S_1 \cup S_2 \cup ... \cup S_m = S\) (i.e. a partition of the space S).  Then for any \(A \subset S\)\begin{gather*}
+P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.
+\end{gather*}
+		The conditional probability \(P(S_j | A)\) is called the posterior probability of \(S_k\).
 		\end{theorem}
+\begin{proof}\hypertarget{proof-18}{}
+
+		Notice, by the definition of conditional probability and the multiplication rule
+		\begin{equation*}P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.\end{equation*}
+		But using the disjointness of the partition 
+		\begin{align*}
+P(A) & = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )\\
+    & = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)\\
+    & = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)\\
+    & = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)\\
+    & = \sum_{k=1}^m P(S_k)P(A | S_k)
+\end{align*}
+		Put these two expansions together to obtain the desired result.
+		%
+\end{proof}
+\begin{lstlisting}[style=sageinput]
+#  This function is used to convert an input string into separate entries
+def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+
+@interact
+def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),...$"),
+        Conditional_Probabilities=input_box('0.02,0.01,0.03',label='$P(A|B_1),P(A|B_2),...$'),
+        print_numbers=checkbox(True,label='Numerical Results on Graphs?'),
+        auto_update=False):
+            
+    Partition_Probabilities = g(Partition_Probabilities)
+    Conditional_Probabilities = g(Conditional_Probabilities)
+    n = len(Partition_Probabilities)
+    n0 = len(Conditional_Probabilities)
+    
+    # below needs to be n not equal to n0 but mathbook xml will not let me get the other
+    if (n > n0):
+        pretty_print("You must have the same number of partition probabilities and conditional probabilities.")
+        
+    else:                               # input data streams now are the same size!
+        colors = rainbow(n)
+        accum = float(0)                # to test whether partition probs sum to one
+        ends = [0]                      # where the graphed partition sectors change in pie chart 
+        mid = []                        # middle of each pie chart sector used for placement of text
+        p_Bk_given_A = []               # P( B_k | A )
+        pA = 0                          # P(A)
+        PP=[]                           # array to hold the numerical Partition Probabilities 
+        CP=[]                           # array to hold the numerical Conditional Probabilities     
+        for k in range(n):
+            PP.append(float(Partition_Probabilities[k]))
+            CP.append(float(Conditional_Probabilities[k]))    
+            p_Bk_given_A.append(PP[k]*CP[k] )
+            pA += p_Bk_given_A[k]
+            accum = accum + PP[k]
+            ends.append(accum)
+            mid.append((ends[k]+accum)/2)
+#
+#  Marching along from 0 to 1, saving angles for each partition sector boundary.
+#  Later, we will multiple these by 2*pi to get actual sector boundary angles.
+#
+        if abs(accum-float(1))>0.0000001:     #  Due to roundoff issues, this should be close enough.                     
+            pretty_print("Sum of probabilities should equal 1.")
+        
+        else:                           # probability data is sensible
+ 
+#        
+#  Draw the Venn diagram by drawing sectors from the angles determined above
+#  First, create a circle of radius 1 to illustrate the the sample space S
+#  Then draw each sector with varying colors and print out their names on the edge
+#
+            G = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0.4,aspect_ratio=True,axes=False,thickness=5)
+            for k in range(n):
+                G += disk((0,0), 1, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                G += text('$B_'+str(k+1)+'$',(1.1*cos(mid[k]*2*pi), 1.1*sin(mid[k]*2*pi)), rgbcolor='black')
+                
+            G += circle((0,0), 0.6, facecolor='yellow', fill = True, alpha = 0.1, thickness=5,edgecolor='black') 
+    
+#  Print the probabilities corresponding to each particular region as a list and on the graphs
+            if print_numbers:               
+
+                html("$P(A) = %s$"%(str(pA),))
+                for k in range(n):
+                    html("$P(B_{%s} | A)$"%(str(k+1))+"$ = %s$"%str(p_Bk_given_A[k]/pA))
+                                        
+                    G += text(str(p_Bk_given_A[k]),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    G += text(str(PP[k] - p_Bk_given_A[k]),(0.8*cos(mid[k]*2*pi), 0.8*sin(mid[k]*2*pi)), rgbcolor='black')
+        
+#  This is essentially a repeat of some of the above code but focused only on creating the smaller inner circle dealing
+#  with the set A so that the sectors now correspond in area to the Bayes Theorem probabilities
+
+
+            accum = float(0)                        
+            ends = [0]                     # where the graphed partition sectors change in pie chart 
+            mid = []                       # middle of each pie chart sector used for placement of text
+            for k in range(n): 
+                accum += float(p_Bk_given_A[k]/pA) 
+                ends.append(accum)
+                mid.append((ends[k]+accum)/2)
+            H = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0,aspect_ratio=True,axes=False,thickness=0)
+            H += circle((0,0), 0.6, facecolor='yellow',fill=True, alpha=0.1,aspect_ratio=True,axes=False,thickness=5,edgecolor='black')
+            
+            for k in range(n):
+                H += disk((0,0), 0.6, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                H += text('$B_'+str(k+1)+'|A$',(0.7*cos(mid[k]*2*pi), 0.7*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+        #  Now, print out the bayesian probabilities using the smaller set A only
+    
+            if print_numbers:
+                for k in range(n):
+                    H += text(str( N(p_Bk_given_A[k]/pA,digits=4) ),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+            G.show(title='Venn diagram of partition with A in middle')
+            print
+            H.show(title='Venn diagram presuming A has occured')
+\end{lstlisting}
 \typeout{************************************************}
-\typeout{Section 4.4 Independence}
+\typeout{Section 4.5 Independence}
 \typeout{************************************************}
-\section[Independence]{Independence}\label{section-15}
-\begin{definition}[Independent Events]\label{definition-7}
+\section[Independence]{Independence}\label{section-21}
+\begin{definition}[Independent Events]\label{definition-24}
 Events A and B are independent provided \(P(A \cap B) = P(A) P(B)\)\end{definition}
 \typeout{************************************************}
-\typeout{Section 4.5 Random Variables}
+\typeout{Section 4.6 Random Variables}
 \typeout{************************************************}
-\section[Random Variables]{Random Variables}\label{section-16}
+\section[Random Variables]{Random Variables}\label{section-22}
 For a given set of events, we might have difficulty doing mathematics since the outcomes
 	are not numerical. In order to accomodate our desire to convert to numerical measures we want
 	to assign numerical values to all outcomes. The process of doing this creates what is known as a random
 	variable.
 	%
-\begin{definition}[Random Variable]\label{definition-8}
+\begin{definition}[Random Variable]\label{definition-25}
 Given a random experiment with sample space S, a function X mapping each 
 		element of S to a unique real number is called a random variable. 
 		For each element s from the sample space S, denote this function by
@@ -1347,22 +2022,22 @@ We will make various restrictions on the range of the random variable to fit dif
 	generalized problems. Then, we will be able to work on a problem (which may be 
 	inherently non-numerical) by using the random variable in subsequent calculations.
 	%
-\begin{example}[Success vs Failure]\label{example-12}
+\begin{example}[Success vs Failure]\label{example-14}
 When dealing with only two outcomes, one might use S = { success, failure}.
 	Choose X(success)=1, X(failure)=0. Then, R={0,1}.%
 \end{example}
-\begin{example}[Standard Dice Pairs]\label{example-13}
+\begin{example}[Standard Dice Pairs]\label{example-15}
 When gambling with a pair of dice, one might use
 	S=ordered pairs of all possible rolls = {(a,b): a=die 1 outcome, b=die 2 outcome}.
 	Choose X( (a,b) ) = a+b. Then, R={2, 3, 4, 5, ..., 12}.%
 \end{example}
-\begin{example}[Other Dice Options]\label{example-14}
+\begin{example}[Other Dice Options]\label{example-16}
 When rolling dice in a board game (like RISK), one might use
 	S={(a,b): a=die 1 outcome, b=die 2 outcome}
 	Choose X( (a,b) ) = max{a,b}. Then, R={1, 2, 3, 4, 5, 6}
 	%
 \end{example}
-\begin{definition}[]\label{definition-9}
+\begin{definition}[]\label{definition-26}
 
 		R contains a countable number of points if either R is finite or there 
 		is a one to one correspondence between R and the positive integers. 
@@ -1370,69 +2045,153 @@ When rolling dice in a board game (like RISK), one might use
 		If R consists of an interval of points (or a union of intervals), 
 		then we call X a continuous random variable. 
 		\end{definition}
-{
-\usetikzlibrary{shapes.geometric, arrows}
-\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
-\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
-\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
-\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
-
-\tikzstyle{arrow} = [thick,->,>=stealth]
-
-
-\begin{tikzpicture}[node distance=2cm]
-
-<TikZ code>
-\node (S) [startstop] {Sample Space};
-\node (R) [process, right of=S, xshift=4cm] {Space of X};
-\node (Real) [startstop, below of=R] {Real Numbers};
-\draw [arrow] (S) -- node [yshift=0.3cm] {X} (R);
-\draw [arrow] (R) -- node [xshift=0.3cm] {f} (Real);
-\draw [arrow] (S) -- node [yshift=-0.3cm] {P} (Real);
-
-\end{tikzpicture}
-}
 \includegraphics[width=1\linewidth]{images/randomvariable.png}
 \typeout{************************************************}
-\typeout{Section 4.6 Probability Functions}
+\typeout{Section 4.7 Probability Functions}
 \typeout{************************************************}
 \section[Probability Functions]{Probability Functions}\label{ProbabilityFunctions}
-In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From
-this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so 
-to obtain (for discrete values) P(sample space value s)\( = f(X(s))\).  That is, the probability of a given outcome s is equal to the composition 
-which takes s to a numerical value x which is then plugged into f to get the same final values.%
-\begin{definition}[Probability Mass Function]\label{definition-10}
+In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)\( = f(X(s))\).  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.%
+\begin{definition}[Probability Mass Function]\label{definition-27}
 Given a discrete random variable X on a space R, a probability mass function on X is given by a function \(f:R \rightarrow \mathbb{R}\) such that:
 		\begin{align*}
 & \forall x \in R , f(x) \gt 0\\
 & \sum_{x \in R} f(x) = 1\\
 & A \subset R \Rightarrow P(X \in A) = \sum_{x \in A}f(x)
 \end{align*}\end{definition}
-\begin{definition}[Probability Density Function]\label{definition-11}
+\begin{definition}[Probability Density Function]\label{definition-28}
 Given a continuous random variable X on a space R, a probability density function on X is given by a function \(f:R \rightarrow \mathbb{R}\) such that:
 			\begin{align*}
 & \forall x \in R , f(x) \gt 0\\
 & \int_{R} f(x) = 1\\
 & A \subset R \Rightarrow P(X \in A) = \int_{A} f(x) dx
 \end{align*}\end{definition}
-\begin{definition}[Distribution Function]\label{definition-12}
+\begin{example}[Discrete Probability Function]\label{example-17}
+
+	Consider \(f(x) = x/10\) over R = {1,2,3,4}.  Then, f(x) is obviously positive for each of the values in R and certainly \(\sum_{x \in R} f(x) = f(1) + f(2) + f(3) + f(4) = 1/10 + 2/10 + 3/10 + 4/10 = 1\). Therefore, f(x) is a probability mass function over the space R.
+	%
+\end{example}
+\begin{lstlisting}[style=sageinput]
+# Combining all of the above into one interactive cell
+@interact
+def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets):"), 
+       Probs = input_box([1/20,1/20,1/20,3/20,1/20,4/20,4/20,1/20,1/20,3/20],label="Enter corresponding f(x) (in brackets):"),
+       n_samples=slider(100,10000,100,100,label="Number of times to sample from this distribution:")):
+    n = len(D)
+    R = range(n)
+    one_huh = sum(Probs)
+    pretty_print('\n\nJust to be certain, we should check to make certain the probabilities sum to 1\n')
+    pretty_print(html('$\sum_{x\epsilon R} f(x) = %s$'%str(one_huh)))
+    
+    G = Graphics()
+    if len(D)==len(Probs):
+        f = zip(D,Probs)
+        meanf = 0
+        variancef = 0
+        for k in R:
+            meanf += D[k]*Probs[k]
+            variancef += D[k]^2*Probs[k]
+            G += line([(D[k],0),(D[k],Probs[k])],color='green')
+        variancef = variancef - meanf^2
+        sd = sqrt(variancef)
+        G += points(f,color='blue',size=50)
+        G += point((meanf,0),color='yellow',size=60,zorder=3)
+        G += line([(meanf-sd,0),(meanf+sd,0)],color='red',thickness=5)
+    
+        g = DiscreteProbabilitySpace(D,Probs)
+        pretty_print('     mean = %s'%str(meanf))
+        pretty_print(' variance = %s'%str(variancef))
+    
+        #  perhaps to add mean and variance for pmf here
+    else:
+        print 'Domain D and Probabilities Probs must be lists of the same size'
+    
+    #  Now, let's sample from the distribution given above and see how a random sampling matches up
+
+    counts = [0] * len(Probs)
+    X = GeneralDiscreteDistribution(Probs)
+    sample = []
+
+    for _ in range(n_samples):
+        elem = X.get_random_element()
+        sample.append(D[elem])
+        counts[elem] += 1
+    Empirical = [1.0*x/n_samples for x in counts] # random
+    
+    samplemean = mean(sample)
+    samplevariance = variance(sample)
+    sampdev = sqrt(samplevariance)
+    
+    E = points(zip(D,Empirical),color='orange',size=40)
+    E += point((samplemean,0.005),color='brown',size=60,zorder=3)
+    E += line([(samplemean-sampdev,0.005),(samplemean+sampdev,0.005)],color='orange',thickness=5)    
+    (G+E).show(ymin=0,figsize=(8,5))
+\end{lstlisting}
+\begin{example}[Continuous Probability Function]\label{example-18}
+
+	Consider \(f(x) = x^2/c\) for some positive real number c and presume R = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make f(x) a probability density function, we must have
+	\begin{equation*}\int_{x \in R} f(x) = 1.\end{equation*}
+	In this instance you get
+	\begin{equation*}1 = \int_{-1}^2 x^2/c = x^3/(3c) |_{-1}^2 = \frac{8}{3c} - \frac{-1}{3c} = \frac{3}{c}\end{equation*}
+	Therefore, f(x) is a probability density function over R provided   = 3.
+	%
+\end{example}
+\begin{definition}[Distribution Function]\label{definition-29}
 Given a random variable X on a space R, a probability distribution function on X is given by a function 
 				   \(F:\mathbb{R} \rightarrow \mathbb{R}\) such that \(\displaystyle F(x)=P(X \le x)\)\end{definition}
+\begin{example}[Discrete Distribution Function]\label{example-19}
+Using \(f(x) = x/10\) over R = {1,2,3,4} again, note that F(x) will only change at these four domain values. We get
+	
+	\leavevmode%
+\begin{table}
+\centering
+\begin{tabular}{rr}
+X&F(x)\tabularnewline\hrulemedium
+\(x \lt 1\)&0\tabularnewline[0pt]
+\(1 \le x \lt 2\)&1/10\tabularnewline[0pt]
+\(2 \le x \lt 3\)&3/10\tabularnewline[0pt]
+\(3 \le x \lt 4\)&6/10\tabularnewline[0pt]
+\(4 \le x \)&1
+\end{tabular}
+\end{table}
+
+	%
+\end{example}
+\begin{example}[Continuous Distribution Function]\label{example-20}
+
+	Consider \(f(x) = x^2/3\) over R = [-1,2].  Then, for \(-1 \le x \le 2\),
+	\begin{equation*}F(x) = \int_{-1}^x u^2/3 du = x^3/9 + 1/9.\end{equation*}
+	Notice, F(-1) = 0 since nothing has yet been accumulated over values smaller than -1 and F(2)=1 since by that time everything has been accumulated. In summary:
+	
+	\leavevmode%
+\begin{table}
+\centering
+\begin{tabular}{rr}
+X&F(x)\tabularnewline\hrulemedium
+\(x \lt -1\)&0\tabularnewline[0pt]
+\(-1 \le x \lt 2\)&\(x^3/9 + 1/9\)\tabularnewline[0pt]
+\(2 \le x\)&1
+\end{tabular}
+\end{table}
+
+	
+	
+	%
+\end{example}
 \typeout{************************************************}
-\typeout{Subsection 4.6.1 Properties of the Distribution Function}
+\typeout{Section 4.8 Properties of the Distribution Function}
 \typeout{************************************************}
-\subsection[Properties of the Distribution Function]{Properties of the Distribution Function}\label{subsection-15}
+\section[Properties of the Distribution Function]{Properties of the Distribution Function}\label{section-24}
 \begin{theorem}[]\label{theorem-Fmin}
 \(F(x)=0, \forall x \le \inf(R)\)\end{theorem}
-\begin{proof}\hypertarget{proof-15}{}
+\begin{proof}\hypertarget{proof-19}{}
 \end{proof}
 \begin{theorem}[]\label{theorem-Fmax}
 \(F(x)=1, \forall x \ge \sup(R)\)\end{theorem}
-\begin{proof}\hypertarget{proof-16}{}
+\begin{proof}\hypertarget{proof-20}{}
 \end{proof}
-\begin{theorem}[]\label{theorem-24}
+\begin{theorem}[]\label{theorem-26}
 F is non-decreasing\end{theorem}
-\begin{proof}\hypertarget{proof-17}{}
+\begin{proof}\hypertarget{proof-21}{}
 Case 1: R discrete%
 \begin{align*}
 \forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2\\
@@ -1455,16 +2214,63 @@ for \(a \lt b, (a,b) \in R, P(a \lt X \lt b) = F(b) - F(a)\)\end{theorem}
 \begin{corollary}[]\label{corollary-ProbPointZero-continuous}
 For continuous distributions, P(X = a) = 0\end{corollary}
 \typeout{************************************************}
-\typeout{Subsection 4.6.2 Standard Units}
+\typeout{Section 4.9 Standard Units}
 \typeout{************************************************}
-\subsection[Standard Units]{Standard Units}\label{subsection-16}
+\section[Standard Units]{Standard Units}\label{section-25}
 Any distribution variable can be converted to “standard units” using the linear translation 
 			\(\displaystyle z = \frac{x-\mu}{\sigma}\). In doing so, then values of z will always represent the number of
 			standard deviations x is from the mean and will provide “dimensionless” comparisons.%
 \typeout{************************************************}
-\typeout{Section 4.7 Expected Value}
+\typeout{Section 4.10 Expected Value}
 \typeout{************************************************}
-\section[Expected Value]{Expected Value}\label{section-18}
+\section[Expected Value]{Expected Value}\label{section-26}
+Blaise Pascal was a 	17th century mathematician and philosopher who was accomplished in many areas but may likely be best known to you for his creation of what is now known as Pascal's Triangle. As part of his philosophical pursuits, he proposed what is known as "Pascal's wager". It suggests two  mutually exclusive outcomes: that God exists or that he does not. His argument is that a rational person should live as though God exists and seek to believe in God. If God does not actually exist, such a person will have only a finite loss (some pleasures, luxury, etc.), whereas they stand to receive infinite gains as represented by eternity in Heaven and avoid an infinite losses of eternity in Hell. This type of reasoning is part of what is known as "decision theory".
+	%
+\par
+You may not confront such dire payouts when making your daily decisions but we need a formal method for making these determinations precise. The procedure for doing so is what we call expected value.
+	%
+\begin{definition}[Expected Value]\label{definition-30}
+Given a random variable X over space R, corresponding probability function f(x) and "value function" u(x), the expected value of u(x) is given by
+	\begin{equation*}E = E[u(X)] = \sum_{x \in R} u(x) f(x)\end{equation*}
+	provided X is discrete, or
+	\begin{equation*}E = E[u(X)] = \int_R u(x)f(x) dx\end{equation*}
+	provided X is continuous.
+	%
+\end{definition}
+\begin{example}[Discrete Expected Value]\label{example-21}
+Consider \(f(x) = x/10\) over R = {1,2,3,4} where the payout is 10 euros if x=1, 5 euros if x=2, 2 euros if x=3 and -7 euros if x = 4.  Then your value function would be u(1)=10, u(2) = 5, u(3)=2, and u(4) = -7. Computing the expect payout gives
+	\begin{equation*}E = 10 \times 1/10 + 5 \times 2/10 + 2 \times 3/10 - 7 \times 4/10 = -2/10\end{equation*}
+	Therefore, the expected payout is actually negative due to a relatively large negative payout associated with the largest likelihood outcome and the larger positive payout only associated with the least likely outcome.
+	%
+\end{example}
+\begin{example}[Continuous Expected Value]\label{example-22}
+
+	Consider \(f(x) = x^2/3\) over R = [-1,2] with value function given by \(u(x) = e^x - 1\). Then, the expected value for u(x) is given by
+	\begin{equation*}E = \int_{-1}^2 (e^x-1) \cdot x^2/3 = -1/9 \cdot (e + 15) \cdot e^{-1} + 2/3 \cdot e^2 - 8/9 \approx 3.3129\end{equation*}
+	%
+\end{example}
+\par
+So, going back to Pascal's wager, let X = 0 represent disbelief when God doesn't exist and X = 1 represent disbelief when God does exist, X = 2 represent belief when God does exist, and X = 3 represent belief when God does not exist. Let p be the likelihood that God exists. Then you can compute the expected value of disbelief and the expect value of belief by first creating a value function. Below, for argument sake we are somewhat randomly assign a value of one million to disbelief if God doesn't exist. The conclusions are the same if you choose any other finite number...
+	\begin{gather*}
+u(0) = 1,000,000, f(0) = 1-p\\
+u(1) = -\infty, f(1) = p\\
+u(2) = \infty, f(2) = p\\
+u(3) = 0, f(3) = 1-p
+\end{gather*}
+	Then, 
+	\begin{align*}
+E[disbelief] & = u(0)f(0) + u(1)f(1)\\
+& = 1000000 \times (1-p) - \infty \times p\\
+& = -\infty
+\end{align*}
+	if p>0. On the other hand, 
+	\begin{align*}
+E[belief] & = u(2)f(2) + u(3)f(3)\\
+& = \infty \times p + 0 \times (1-p)\\
+& = \infty
+\end{align*}
+	if p>0. So Pascal's conclusion is that if there is even the slightest chance that God exists then belief is the smart and scientific choice.
+	%
 \typeout{************************************************}
 \typeout{Chapter 5 Binomial, Geometric, and Negative Binomial Distributions}
 \typeout{************************************************}
@@ -1490,14 +2296,14 @@ Consider the situation where one can observe a sequence  of n
 \typeout{************************************************}
 \typeout{Subsection 5.1.1 Derivation of Binomial Probability Function}
 \typeout{************************************************}
-\subsection[Derivation of Binomial Probability Function]{Derivation of Binomial Probability Function}\label{subsection-17}
+\subsection[Derivation of Binomial Probability Function]{Derivation of Binomial Probability Function}\label{subsection-11}
  Since successive trials are independent, then the probability of X successes occurring within n 
 		trials is given by 
 		\(P(X=x) = \binom{n}{x}P(SS...SFF...F) = \binom{n}{x}p^x(1-p)^{n-x}\)%
 \typeout{************************************************}
 \typeout{Subsection 5.1.2 Binomial Distribution mean}
 \typeout{************************************************}
-\subsection[Binomial Distribution mean]{Binomial Distribution mean}\label{subsection-18}
+\subsection[Binomial Distribution mean]{Binomial Distribution mean}\label{subsection-12}
 \begin{align*}
  \mu = E[X] & = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}\\
  & = \sum_{x=1}^{n} {x \frac{n(n-1)!}{x(x-1)!(n-x)!} p^x (1-p)^{n-x}}\\
@@ -1509,7 +2315,7 @@ Consider the situation where one can observe a sequence  of n
 \end{align*}\typeout{************************************************}
 \typeout{Subsection 5.1.3 Binomial Distribution variance}
 \typeout{************************************************}
-\subsection[Binomial Distribution variance]{Binomial Distribution variance}\label{subsection-19}
+\subsection[Binomial Distribution variance]{Binomial Distribution variance}\label{subsection-13}
 \begin{align*}
  \sigma^2 = E[X(X-1)] + \mu - \mu^2 & = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2\\
  & = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2\\
@@ -1534,7 +2340,7 @@ Consider the situation where one can observe a sequence  of independent
 \typeout{************************************************}
 \typeout{Subsection 5.2.1 Derivation of Geometric Probability Function}
 \typeout{************************************************}
-\subsection[Derivation of Geometric Probability Function]{Derivation of Geometric Probability Function}\label{subsection-20}
+\subsection[Derivation of Geometric Probability Function]{Derivation of Geometric Probability Function}\label{subsection-14}
  Since successive trials are independent, then the probability 
 			of the first success occurring on the mth trial presumes that
 			the previous m-1 trials were all failures.  Therefore the 
@@ -1542,13 +2348,13 @@ Consider the situation where one can observe a sequence  of independent
 \begin{equation*}f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p\end{equation*}\typeout{************************************************}
 \typeout{Subsection 5.2.2 Properties of the Geometric DistributionGeometric Distribution sums to 1}
 \typeout{************************************************}
-\subsection[Properties of the Geometric DistributionGeometric Distribution sums to 1]{Properties of the Geometric DistributionGeometric Distribution sums to 1}\label{subsection-21}
+\subsection[Properties of the Geometric DistributionGeometric Distribution sums to 1]{Properties of the Geometric DistributionGeometric Distribution sums to 1}\label{subsection-15}
 \begin{gather*}
 \SUM {k=1} {\infty} {f(x)} = \sum_{k=1}^{\infty} {(1-p)^{k-1} p} = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1
 \end{gather*}\typeout{************************************************}
 \typeout{Subsection 5.2.3 Derivation of Geometric Mean}
 \typeout{************************************************}
-\subsection[Derivation of Geometric Mean]{Derivation of Geometric Mean}\label{subsection-22}
+\subsection[Derivation of Geometric Mean]{Derivation of Geometric Mean}\label{subsection-16}
  %
 \begin{align*}
 \mu & = E[X] = \sum_{k=0}^{\infty} {k(1-p)^{k-1}p}\\
@@ -1558,7 +2364,7 @@ Consider the situation where one can observe a sequence  of independent
 \end{align*}\typeout{************************************************}
 \typeout{Subsection 5.2.4 Derivation of Geometric Variance}
 \typeout{************************************************}
-\subsection[Derivation of Geometric Variance]{Derivation of Geometric Variance}\label{subsection-23}
+\subsection[Derivation of Geometric Variance]{Derivation of Geometric Variance}\label{subsection-17}
  %
 \begin{align*}
 \sigma^2 & = E[X(X-1)] + \mu - \mu^2 \\
@@ -1569,7 +2375,7 @@ Consider the situation where one can observe a sequence  of independent
 \end{align*}\typeout{************************************************}
 \typeout{Subsection 5.2.5 Derivation of Geometric Distribution Function}
 \typeout{************************************************}
-\subsection[Derivation of Geometric Distribution Function]{Derivation of Geometric Distribution Function}\label{subsection-24}
+\subsection[Derivation of Geometric Distribution Function]{Derivation of Geometric Distribution Function}\label{subsection-18}
  Consider the accumulated probabilities over a range of values...%
 \begin{align*}
  P(X \le a) & = 1 - P(X \gt a)\\
@@ -1579,7 +2385,7 @@ Consider the situation where one can observe a sequence  of independent
 \end{align*}\typeout{************************************************}
 \typeout{Section 5.3 Negative Binomial}
 \typeout{************************************************}
-\section[Negative Binomial]{Negative Binomial}\label{section-21}
+\section[Negative Binomial]{Negative Binomial}\label{section-29}
 Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
 	stays constant from trial to trial. Call this likelihood the probably of
@@ -1594,10 +2400,10 @@ Note that r=1 gives the Geometric Distribution.%
 \typeout{************************************************}
 \typeout{Subsection 5.3.1 Negative Binomial Series}
 \typeout{************************************************}
-\subsection[Negative Binomial Series]{Negative Binomial Series}\label{subsection-25}
+\subsection[Negative Binomial Series]{Negative Binomial Series}\label{subsection-19}
 \begin{theorem}[]\label{theorem-NegBinomSeries}
 \(\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}\)\end{theorem}
-\begin{proof}\hypertarget{proof-18}{}
+\begin{proof}\hypertarget{proof-22}{}
 First, convert the problem to a slightly different form:%
 \( \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
 						 = \frac{1}{b^n} \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
@@ -1638,7 +2444,7 @@ Similarly,%
 \typeout{************************************************}
 \typeout{Subsection 5.3.2 Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1}
 \typeout{************************************************}
-\subsection[Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1]{Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1}\label{subsection-26}
+\subsection[Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1]{Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1}\label{subsection-20}
 Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success 
 		on each individual trial \(p\) where 
 		\( 0 \lt p \lt 1 \).  For a positive integer r, let the variable \(X\) measure the number of 
@@ -1665,15 +2471,15 @@ and by using \(k = m-r\)%
 \typeout{************************************************}
 \typeout{Section 6.1 Poisson Distribution}
 \typeout{************************************************}
-\section[Poisson Distribution]{Poisson Distribution}\label{section-22}
+\section[Poisson Distribution]{Poisson Distribution}\label{section-30}
 \typeout{************************************************}
 \typeout{Section 6.2 Exponential Distribution}
 \typeout{************************************************}
-\section[Exponential Distribution]{Exponential Distribution}\label{section-23}
+\section[Exponential Distribution]{Exponential Distribution}\label{section-31}
 \typeout{************************************************}
 \typeout{Section 6.3 Gamma Distribution}
 \typeout{************************************************}
-\section[Gamma Distribution]{Gamma Distribution}\label{section-24}
+\section[Gamma Distribution]{Gamma Distribution}\label{section-32}
 \typeout{************************************************}
 \typeout{Chapter 7 Normal Distributions}
 \typeout{************************************************}
@@ -1681,47 +2487,226 @@ and by using \(k = m-r\)%
 \typeout{************************************************}
 \typeout{Section 7.1 Properties of the Normal Distribution}
 \typeout{************************************************}
-\section[Properties of the Normal Distribution]{Properties of the Normal Distribution}\label{section-25}
+\section[Properties of the Normal Distribution]{Properties of the Normal Distribution}\label{section-33}
 
 	You have seen that most distributions become "bell shaped" as certain parameters are allowed to increase. The question might arise regarding whether this always must happen or is it just a happy coincidence. The amazing answer is that if you interpret the question in the correct way then this is always true.%
 
-	\begin{definition}[The Normal Distribution]\label{definition-13}
+	\begin{definition}[The Normal Distribution]\label{definition-31}
 Given two parameters \(\mu\) and \(\sigma\) a random variable X with density function
 	\begin{equation*}
 	f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
 	\end{equation*}\end{definition}
-\begin{theorem}[]\label{theorem-28}
+\begin{theorem}[]\label{theorem-30}
 
 	If \(\mu =0\) and \(\sigma=1\), then we say X has a standard normal distribution and often use Z as the variable name. In this case, the density function reduces to
 	\begin{equation*}
 	f(x) = \frac{1}{\sqrt{2 \pi}} e^{ z^2 / 2}
 	\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-19}{}
+\begin{proof}\hypertarget{proof-23}{}
 Convert to "standard units" using the conversion \(z = \frac{x-\mu}{\sigma} = \frac{x-0}{1} = x\).%
 \end{proof}
 \typeout{************************************************}
 \typeout{Section 7.2 Theorems}
 \typeout{************************************************}
-\section[Theorems]{Theorems}\label{section-26}
+\section[Theorems]{Theorems}\label{section-34}
 \typeout{************************************************}
 \typeout{Section 7.3 Chi-Square Distribution}
 \typeout{************************************************}
-\section[Chi-Square Distribution]{Chi-Square Distribution}\label{section-27}
+\section[Chi-Square Distribution]{Chi-Square Distribution}\label{section-35}
 \typeout{************************************************}
 \typeout{Section 7.4 Central Limit Theorem}
 \typeout{************************************************}
-\section[Central Limit Theorem]{Central Limit Theorem}\label{section-28}
+\section[Central Limit Theorem]{Central Limit Theorem}\label{section-36}
+
+Often, when one wants to solve various scientific problems, several assumptions will be made regarding the nature of the underlying setting and base their conclusions on those assumptions.  Indeed, if one is going to use a Binomial Distribution or a Negative Binomial Distribution, an assumption on the value of p is necessary.  For Poisson and Exponential Distributions, one must know the mean.  For Normal Distributions, one must assume values for both the mean and the standard deviation.   Where do these values come from?  Often, one may perform a preliminary study and obtain a sample statistic...such as a sample mean or a relative frequency and use these values for μ or p.%
+\par
+
+But what is the underlying distribution of these sample statistics?  The Central Limit Theorem gives the answer...%
+\par
+To motivate this discussion, consider the following two interactive experiments.  For the first graph below, a sequence of N random samples, each of size r, ranging from 0 to "Range" is generated and graphed as small data points.  As the number of samples N and the sample size r increase, notice that the data seems to cover the entire range of possible values relatively uniformly.  (For this scatter plot note that each row represents the data for one sample of size r.  The larger the N, the greater the number of rows.)  Each row is averaged and that mean value is plotted on the graph as a red circle.  If you check the "Show_Mean" box, the mean of these circles is indicated by the green line in the middle of the plot.
+%
+\par
+
+For the second graph below, the means are collected and the relative frequency of each is plotted.  As N increases, you should see that the results begin to show an interesting tendency.   As you increase the data range, you may notice this graph has a larger number of data values.  Smoothing groups this data into intervals of length two for perhaps a graph with less variability.
+%
+\par
+
+Consider each of the following:
+\leavevmode%
+\begin{itemize}[label=\textbullet]
+\item{}
+As N increases with single digit values of r, what appears to happen to the mean and range of the means?  How does increasing the data range from 1-100 to 1-200 or 1-300 affect these results?%
+\item{}As N increases (say, for a middle value of r), what appears to happen to the means?  How does increasing the data range from 1-100 to 1-200 or 1-300 affect these results?%
+\item{}As r increases (say, for a middle value of N), what appears to happen to the range of the averages?  Does your conclusion actually depend upon the value of N?  (Look at the graph and don't worry about the actual numerical values.)
+How does increasing N for the second graph affect the skewness and kurtosis of that graph?  Do things change significantly as r is increased?  %
+\end{itemize}
+
+%
+\begin{lstlisting}[style=sageinput]
+var('n,k')
+from sage.finance.time_series import TimeSeries
+
+@interact(layout=dict(top=[['Range'],['Show_Mean', 'Smoothing']],  
+bottom=[['N'],['r']]))
+
+def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),r=slider(3,200,1,2,label="r = Sample Size"),Show_Mean=False,Smoothing=False):
+    R=[1..N]     #  R ranges over the number of samples...will point to the list of averages
+    rangemax = Range
+
+    data = random_matrix(ZZ,N,r,x=rangemax)
+    datapoints = []
+    avg_values = []
+    avg_string = []
+    averages = []
+    for n in range(N):
+        temp = 0
+        for k in range(r):
+            datapoints += [(data[n][k],n)]
+            temp += data[n][k]
+        avg_values.append(round(temp/r))
+        if Smoothing:
+            avg_string.append(str(2*round((temp/r)/2)))    
+        else:
+            avg_string.append(str(round(temp/r)))
+            
+        averages += [(round(temp/r),n)]   #  make these averages integers for use in grouping later
+    SCAT = scatter_plot(datapoints,markersize=2,edgecolor='red',figsize=(10,4),axes_labels=['Sample Values','Sample Number'])
+    AVGS = scatter_plot(averages,markersize=50,edgecolor='blue',marker='o',figsize=(7,4))
+    
+    freqslist = frequency_distribution(avg_string,1).function().items()
+       
+       
+# compute sample statistics for the raw data as well as for the N averages
+    Mean_data = (sum(sum(data))/(N*r)).n()
+#    STD_data = sqrt(sum(sum( (data-Mean_data)^2 ))/(N*r)).n()
+    Mean_averages = mean(avg_values).n()
+#    STD_averages = sqrt(variance(avg_values).n())
+#    print "Data mean =",Mean_data," vs Mean of the averages =",Mean_averages
+#    print "Data STD = ",STD_data," vs Standard Dev of avgs =", STD_averages
+    if Show_Mean:
+        avg_line = line([(Mean_data,0),(Mean_data,N-1)],rgbcolor='green',thickness=10)
+        avg_text = text('xbar',(Mean_data,N),horizontal_alignment='right',rgbcolor='green')
+    else:
+        avg_line = Graphics()
+        avg_text = Graphics()
+            
+#  Plot a scatter plot exhibiting uniformly random data and the collection of averages 
+    print(html("The random data plot on the left with each row representing a sample with size determined by\n"+
+         "the slider above and each circle representing the average for that particular sample.\n"+
+         "First, keep sample size relatively low and increase the number of samples.  Then, \n"+
+         "watch what happens when you slowly increase the sample size."))
+
+    
+#  Plot the relative frequencies of the grouped sample averages
+    print(html("Now, the averages (ie. the circles) from above are collected and counted\n"+
+         "with the relative frequency of each average graphed below.  For a relatively large number of\n"+
+         "samples, notice what seems to happen to these averages as the sample size increases."))
+    if Smoothing:
+        binRange = Range//2
+    else:
+        binRange = Range
+    
+    # normed=True  # if you want to have relative frequencies below
+    
+    his_low = 2*rangemax/7
+    his_high = 5*rangemax/7
+    
+    T = histogram(avg_values,normed=False,bins=binRange,range=(his_low,his_high),axes_labels=['Sample Averages','Frequency']) 
+    #T = TimeSeries(avg_values).plot_histogram(axes_labels=['Sample Averages','Frequency'])   
+    
+    pretty_print('Scatter Plot of random data.  Horizontal is number of samples.')
+    (SCAT+AVGS+avg_line+avg_text).show()
+    pretty_print('Histogram of Sample Averages')
+    T.show(figsize=(5,2))
+\end{lstlisting}
+\begin{lstlisting}[style=sageinput]
+var('n,k')
+from sage.finance.time_series import TimeSeries
+
+@interact(layout=dict(top=[['Range'],['Show_Mean', 'Smoothing']],  
+bottom=[['N'],['r']]))
+
+def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),r=slider(3,200,1,2,label="r = Sample Size"),Show_Mean=False,Smoothing=False):
+    R=[1..N]     #  R ranges over the number of samples...will point to the list of averages
+    rangemax = Range
+
+    data = random_matrix(ZZ,N,r,x=rangemax)
+    datapoints = []
+    avg_values = []
+    avg_string = []
+    averages = []
+    for n in range(N):
+        temp = 0
+        for k in range(r):
+            datapoints += [(data[n][k],n)]
+            temp += data[n][k]
+        avg_values.append(round(temp/r))
+        if Smoothing:
+            avg_string.append(str(2*round((temp/r)/2)))    
+        else:
+            avg_string.append(str(round(temp/r)))
+            
+        averages += [(round(temp/r),n)]   #  make these averages integers for use in grouping later
+    SCAT = scatter_plot(datapoints,markersize=2,edgecolor='red',figsize=(10,4),axes_labels=['Sample Values','Sample Number'])
+    AVGS = scatter_plot(averages,markersize=50,edgecolor='blue',marker='o',figsize=(7,4))
+    
+    freqslist = frequency_distribution(avg_string,1).function().items()
+       
+       
+# compute sample statistics for the raw data as well as for the N averages
+    Mean_data = (sum(sum(data))/(N*r)).n()
+#    STD_data = sqrt(sum(sum( (data-Mean_data)^2 ))/(N*r)).n()
+    Mean_averages = mean(avg_values).n()
+#    STD_averages = sqrt(variance(avg_values).n())
+#    print "Data mean =",Mean_data," vs Mean of the averages =",Mean_averages
+#    print "Data STD = ",STD_data," vs Standard Dev of avgs =", STD_averages
+    if Show_Mean:
+        avg_line = line([(Mean_data,0),(Mean_data,N-1)],rgbcolor='green',thickness=10)
+        avg_text = text('xbar',(Mean_data,N),horizontal_alignment='right',rgbcolor='green')
+    else:
+        avg_line = Graphics()
+        avg_text = Graphics()
+            
+#  Plot a scatter plot exhibiting uniformly random data and the collection of averages 
+    print(html("The random data plot on the left with each row representing a sample with size determined by\n"+
+         "the slider above and each circle representing the average for that particular sample.\n"+
+         "First, keep sample size relatively low and increase the number of samples.  Then, \n"+
+         "watch what happens when you slowly increase the sample size."))
+
+    
+#  Plot the relative frequencies of the grouped sample averages
+    print(html("Now, the averages (ie. the circles) from above are collected and counted\n"+
+         "with the relative frequency of each average graphed below.  For a relatively large number of\n"+
+         "samples, notice what seems to happen to these averages as the sample size increases."))
+    if Smoothing:
+        binRange = Range//2
+    else:
+        binRange = Range
+    
+    # normed=True  # if you want to have relative frequencies below
+    
+    his_low = 2*rangemax/7
+    his_high = 5*rangemax/7
+    
+    T = histogram(avg_values,normed=False,bins=binRange,range=(his_low,his_high),axes_labels=['Sample Averages','Frequency']) 
+    #T = TimeSeries(avg_values).plot_histogram(axes_labels=['Sample Averages','Frequency'])   
+    
+    pretty_print('Scatter Plot of random data.  Horizontal is number of samples.')
+    (SCAT+AVGS+avg_line+avg_text).show()
+    pretty_print('Histogram of Sample Averages')
+    T.show(figsize=(5,2))
+\end{lstlisting}
 \typeout{************************************************}
 \typeout{Subsection 7.4.1 }
 \typeout{************************************************}
-\subsection[]{}\label{subsection-27}
+\subsection[]{}\label{subsection-21}
 
 	Theorem
 	%
 \typeout{************************************************}
 \typeout{Subsection 7.4.2 }
 \typeout{************************************************}
-\subsection[]{}\label{subsection-28}
+\subsection[]{}\label{subsection-22}
 
 	Approximating distributions
 	Limiting distributions
@@ -1733,11 +2718,11 @@ Convert to "standard units" using the conversion \(z = \frac{x-\mu}{\sigma} = \f
 \typeout{************************************************}
 \typeout{Section 8.1 Chebyshev}
 \typeout{************************************************}
-\section[Chebyshev]{Chebyshev}\label{section-29}
+\section[Chebyshev]{Chebyshev}\label{section-37}
 An interval centered on the mean in which at least a certain proportion
 	of the actual data must lie.
 	%
-\begin{theorem}[Chebyshev's Theorem]\label{theorem-29}
+\begin{theorem}[Chebyshev's Theorem]\label{theorem-31}
 
 	Given a random variable X with given mean μ and standard deviation σ, for k>1 at least
 	2
@@ -1747,13 +2732,13 @@ An interval centered on the mean in which at least a certain proportion
 \typeout{************************************************}
 \typeout{Section 8.2 Measures of Spread}
 \typeout{************************************************}
-\section[Measures of Spread]{Measures of Spread}\label{section-30}
+\section[Measures of Spread]{Measures of Spread}\label{section-38}
 Measures of spread:
 • Average Deviation from the Mean – always zero for any distribution
 • Average Absolute Deviation from the Mean – difficult to deal with algebra when absolute values are used
 • Average Squared Deviation from the Mean – always non-negative and good with algebra and calculus 
 %
-\begin{definition}[Variance]\label{definition-14}
+\begin{definition}[Variance]\label{definition-32}
 The variance is a measure of spread found by using the average squared deviation from the mean
 σ2
  = ( ) )(

@@ -326,6 +326,32 @@ In this case we count each different set of outcomes a combination. </p>
 
 <section><title>Exercises</title>
 <p>Complete the online homework "Counting".</p>
+<p>
+A standard deck of playing cards consists of 52 cards broken up into four "suits" known as Hearts, Spades, Diamonds, and Clubs. Each suit is broken up additionally into unique cards with "face values" from {2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace} and generally in that order from low to high.</p>
+<p>
+1.  Pick two cards without replacement one after the other from this deck and determine the following number of possible outcomes:
+<ul>
+<li>The number of ways to get an Ace for both cards.</li>
+<li>The number of ways to get an Ace for only one of the two cards.</li>
+<li>The number of ways to get an Ace on the first draw and a Spade on the second draw.</li>
+</ul>
+2.  Pick five cards without replacement one after the other from a newly shuffled full deck and determine the following number of possible outcomes:
+<ul>
+<li>All cards have different faces</li>
+<li>"A pair". That is, two cards have the same face but the others are from three other faces.</li>
+<li>"Three of a kind".  That is, three cards have the same face but the others are from two other faces.</li>
+<li>"Two Pair". That is, two cards come from one face, two other cards come from a common face that is not the same as the first two cards, and the last card comes from some other face.</li>
+<li>"Full House". That is, three cards have the same face and the other two come from a common face that is not the same as the first three cards.</li>
+<li>"Four of a Kind". That is, four cards have the same face and the other card comes from some other face.</li>
+<li>"Flush". That is, the five cards for a sequence in order of adjacent faces in the original list and from the same suit.</li>
+<li>"Royal Flush". That is, a flush but only with the cards {Ace, King, Queen, Jack, 10}.</li>
+</ul>
+</p>
+
+<p>
+Analyze the game of
+<url http="http://mathworld.wolfram.com/Craps.html">"craps"</url>.
+</p>
 <p>Completely determine the number of possible passphrases for the National Treasure example started above. Present your answer in a report form.</p>
 </section>
 

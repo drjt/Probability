@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-01T10:55:15-05:00    *-->
+<!--*    on 2016-09-02T15:01:05-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AATA Independence</title>
+<title>AATA Bayes Theorem</title>
 <meta name="Keywords" content="Authored in MathBook XML">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
 <script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
@@ -37,8 +37,15 @@ MathJax.Hub.Config({
         scale: 88,
     },
 });
-    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><link href="https://math.mc.edu/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
-<script type="text/javascript" src="https://math.mc.edu/webwork2_files/js/vendor/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate Sage Code'});
+});
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
@@ -106,40 +113,189 @@ MathJax.Hub.Config({
 <li><a href="RelativeFrequency.html">Relative Frequency</a></li>
 <li><a href="section-18.html">Definition of Probability</a></li>
 <li><a href="section-19.html">Conditional Probability</a></li>
-<li><a href="section-20.html" class="active">Independence</a></li>
-<li><a href="section-21.html">Random Variables</a></li>
+<li><a href="section-20.html" class="active">Bayes Theorem</a></li>
+<li><a href="section-21.html">Independence</a></li>
+<li><a href="section-22.html">Random Variables</a></li>
 <li><a href="ProbabilityFunctions.html">Probability Functions</a></li>
-<li><a href="section-23.html">Expected Value</a></li>
+<li><a href="section-24.html">Properties of the Distribution Function</a></li>
+<li><a href="section-25.html">Standard Units</a></li>
+<li><a href="section-26.html">Expected Value</a></li>
 </ul>
 <h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">5</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
 <ul>
 <li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
 <li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
-<li><a href="section-26.html">Negative Binomial</a></li>
+<li><a href="section-29.html">Negative Binomial</a></li>
 </ul>
 <h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">6</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
 <ul>
-<li><a href="section-27.html">Poisson Distribution</a></li>
-<li><a href="section-28.html">Exponential Distribution</a></li>
-<li><a href="section-29.html">Gamma Distribution</a></li>
+<li><a href="section-30.html">Poisson Distribution</a></li>
+<li><a href="section-31.html">Exponential Distribution</a></li>
+<li><a href="section-32.html">Gamma Distribution</a></li>
 </ul>
 <h2 class="link"><a href="Normal.html"><span class="codenumber">7</span><span class="title">Normal Distributions</span></a></h2>
 <ul>
-<li><a href="section-30.html">Properties of the Normal Distribution</a></li>
-<li><a href="section-31.html">Theorems</a></li>
-<li><a href="section-32.html">Chi-Square Distribution</a></li>
-<li><a href="section-33.html">Central Limit Theorem</a></li>
+<li><a href="section-33.html">Properties of the Normal Distribution</a></li>
+<li><a href="section-34.html">Theorems</a></li>
+<li><a href="section-35.html">Chi-Square Distribution</a></li>
+<li><a href="section-36.html">Central Limit Theorem</a></li>
 </ul>
 <h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">8</span><span class="title">Estimating Data using Intervals</span></a></h2>
 <ul>
-<li><a href="section-34.html">Chebyshev</a></li>
-<li><a href="section-35.html">Measures of Spread</a></li>
+<li><a href="section-37.html">Point Estimates</a></li>
+<li><a href="section-38.html">Chebyshev</a></li>
+<li><a href="section-39.html">Measures of Spread</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-20"><header title="Section 4.4 Independence"><h1 class="heading hide-type" alt="Section 4.4 Independence">
-<span class="type">Section</span><span class="codenumber">4.4</span><span class="title">Independence</span>
-</h1></header><article class="definition-like" id="definition-23"><h5 class="heading">
-<span class="type">Definition</span><span class="codenumber">4.4.1</span><span class="title">Independent Events</span>
-</h5>Events A and B are independent provided \(P(A \cap B) = P(A) P(B)\)</article></section></div></main>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-20"><header title="Section 4.4 Bayes Theorem"><h1 class="heading hide-type" alt="Section 4.4 Bayes Theorem">
+<span class="type">Section</span><span class="codenumber">4.4</span><span class="title">Bayes Theorem</span>
+</h1></header><article class="theorem-like" id="theorem-24"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">4.4.1</span><span class="title">Bayes Theorem</span>
+</h5>Let \(S = \{ S_1, S_2, ... , S_m \}\) where the \(S_k\) are pairwise disjoint and \(S_1 \cup S_2 \cup ... \cup S_m = S\) (i.e. a partition of the space S).  Then for any \(A \subset S\)\begin{gather*}
+P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.
+\end{gather*}
+		The conditional probability \(P(S_j | A)\) is called the posterior probability of \(S_k\).
+		</article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-19" id="proof-19"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-19" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-195">
+		Notice, by the definition of conditional probability and the multiplication rule
+		\begin{equation*}P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.\end{equation*}
+		But using the disjointness of the partition 
+		\begin{align*}
+P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )\\
+    &amp; = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)\\
+    &amp; = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)\\
+    &amp; = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)\\
+    &amp; = \sum_{k=1}^m P(S_k)P(A | S_k)
+\end{align*}
+		Put these two expansions together to obtain the desired result.
+		</p></article></span>
+</div>
+<p id="p-196">
+To illustrate this result, from the web site <a class="external-url" href="http://stattrek.com/probability/bayes-theorem.aspx" target="_blank"><tt class="code-inline tex2jax_ignore">http://stattrek.com/probability/bayes-theorem.aspx</tt></a> consider the following problem:
+</p>
+<p id="p-197">
+Marie is getting married tomorrow, at an outdoor ceremony in the desert. In recent years, it has rained only 5 days each year. Unfortunately, the weatherman has predicted rain for tomorrow. When it actually rains, the weatherman correctly forecasts rain 90% of the time. When it doesn't rain, he incorrectly forecasts rain 10% of the time. What is the probability that it will rain on the day of Marie's wedding?
+</p>
+<p id="p-198">
+Notice, all days can be classified into one of two disjoint options:
+<ul style="list-style-type: disc;">
+<li id="li-111">Rainy, in which case we can deduce from the given info that P(Rain) = 5/365</li>
+<li id="li-112">No Rainy, and since this is the complement of above, P(No Rain) = 360/365</li>
+</ul>
+In the notation of Bayes Theorem, let A represent a forecast of Rain and note you have \(P(\text{Rain}) = P(S_1) = \frac{5}{365}\) and \(P(\text{No Rain}) = \frac{360}{365}\). Further, you are given the conditional probabilities
+<ul style="list-style-type: disc;">
+<li id="li-113">\(P(\text{Rain | Forecast Rain}) = P( A | S_1) = 0.9\)</li>
+<li id="li-114">\(P(\text{Rain | Forecast Rain}) = P( A | S_2) = 0.1\)</li>
+</ul>
+Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes Theorem allows you to turn this around...
+\begin{align*}
+P(\text{Rain}) &amp;  = P(S_1) P( A | S_1) + P(S_2) P(A | S_2)\\
+ &amp; = \frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1\\
+ &amp; = NUMBER 
+\end{align*}
+Hence, putting these together gives
+\begin{align*}
+P(\text{Rain | Forecast Rain}) &amp; = \frac{\frac{5}{365} \cdot 0.9}{\frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1}\\
+ &amp; = \frac{5 \cdot 0.9}{5 \cdot 0.9 + 360 \cdot 0.1}\\
+ &amp; = \frac{45}{45+360} \approx 0.111
+\end{align*}
+So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
+</p>
+<div class="sagecell-sage"><script type="text/x-sage">#  This function is used to convert an input string into separate entries
+def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+
+@interact
+def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),...$"),
+        Conditional_Probabilities=input_box('0.02,0.01,0.03',label='$P(A|B_1),P(A|B_2),...$'),
+        print_numbers=checkbox(True,label='Numerical Results on Graphs?'),
+        auto_update=False):
+            
+    Partition_Probabilities = g(Partition_Probabilities)
+    Conditional_Probabilities = g(Conditional_Probabilities)
+    n = len(Partition_Probabilities)
+    n0 = len(Conditional_Probabilities)
+    
+    # below needs to be n not equal to n0 but mathbook xml will not let me get the other
+    if (n > n0):
+        pretty_print("You must have the same number of partition probabilities and conditional probabilities.")
+        
+    else:                               # input data streams now are the same size!
+        colors = rainbow(n)
+        accum = float(0)                # to test whether partition probs sum to one
+        ends = [0]                      # where the graphed partition sectors change in pie chart 
+        mid = []                        # middle of each pie chart sector used for placement of text
+        p_Bk_given_A = []               # P( B_k | A )
+        pA = 0                          # P(A)
+        PP=[]                           # array to hold the numerical Partition Probabilities 
+        CP=[]                           # array to hold the numerical Conditional Probabilities     
+        for k in range(n):
+            PP.append(float(Partition_Probabilities[k]))
+            CP.append(float(Conditional_Probabilities[k]))    
+            p_Bk_given_A.append(PP[k]*CP[k] )
+            pA += p_Bk_given_A[k]
+            accum = accum + PP[k]
+            ends.append(accum)
+            mid.append((ends[k]+accum)/2)
+#
+#  Marching along from 0 to 1, saving angles for each partition sector boundary.
+#  Later, we will multiple these by 2*pi to get actual sector boundary angles.
+#
+        if abs(accum-float(1))>0.0000001:     #  Due to roundoff issues, this should be close enough.                     
+            pretty_print("Sum of probabilities should equal 1.")
+        
+        else:                           # probability data is sensible
+ 
+#        
+#  Draw the Venn diagram by drawing sectors from the angles determined above
+#  First, create a circle of radius 1 to illustrate the the sample space S
+#  Then draw each sector with varying colors and print out their names on the edge
+#
+            G = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0.4,aspect_ratio=True,axes=False,thickness=5)
+            for k in range(n):
+                G += disk((0,0), 1, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                G += text('$B_'+str(k+1)+'$',(1.1*cos(mid[k]*2*pi), 1.1*sin(mid[k]*2*pi)), rgbcolor='black')
+                
+            G += circle((0,0), 0.6, facecolor='yellow', fill = True, alpha = 0.1, thickness=5,edgecolor='black') 
+    
+#  Print the probabilities corresponding to each particular region as a list and on the graphs
+            if print_numbers:               
+
+                html("$P(A) = %s$"%(str(pA),))
+                for k in range(n):
+                    html("$P(B_{%s} | A)$"%(str(k+1))+"$ = %s$"%str(p_Bk_given_A[k]/pA))
+                                        
+                    G += text(str(p_Bk_given_A[k]),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    G += text(str(PP[k] - p_Bk_given_A[k]),(0.8*cos(mid[k]*2*pi), 0.8*sin(mid[k]*2*pi)), rgbcolor='black')
+        
+#  This is essentially a repeat of some of the above code but focused only on creating the smaller inner circle dealing
+#  with the set A so that the sectors now correspond in area to the Bayes Theorem probabilities
+
+
+            accum = float(0)                        
+            ends = [0]                     # where the graphed partition sectors change in pie chart 
+            mid = []                       # middle of each pie chart sector used for placement of text
+            for k in range(n): 
+                accum += float(p_Bk_given_A[k]/pA) 
+                ends.append(accum)
+                mid.append((ends[k]+accum)/2)
+            H = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0,aspect_ratio=True,axes=False,thickness=0)
+            H += circle((0,0), 0.6, facecolor='yellow',fill=True, alpha=0.1,aspect_ratio=True,axes=False,thickness=5,edgecolor='black')
+            
+            for k in range(n):
+                H += disk((0,0), 0.6, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                H += text('$B_'+str(k+1)+'|A$',(0.7*cos(mid[k]*2*pi), 0.7*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+        #  Now, print out the bayesian probabilities using the smaller set A only
+    
+            if print_numbers:
+                for k in range(n):
+                    H += text(str( N(p_Bk_given_A[k]/pA,digits=4) ),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+            G.show(title='Venn diagram of partition with A in middle')
+            print
+            H.show(title='Venn diagram presuming A has occured')
+</script></div>
+
+</section></div></main>
 </div>
 </body>
 </html>

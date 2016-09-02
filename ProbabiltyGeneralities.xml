@@ -15,11 +15,10 @@
 </introduction>
 
 
-<section xml:id="RelativeFrequency">
-<title>Relative Frequency</title>
-<p>Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
-<p>People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p>
-<subsection>
+<section xml:id="RelativeFrequency"><title>Relative Frequency</title>
+	<p>Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
+	<p>People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p>
+
 	<p>When attempting to precisely measure this uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
 	<ul>
 		<li>S = Universal Set or Sample Space Experiment or Outcome Space. 
@@ -36,19 +35,18 @@
 		<li>|A| / n = Relative Frequency. A proportion of successes to total number of trials.</li>
 		<li>Histogram. A bar chart representation of data where area corresponds to the value being described.</li>
 	</ul>
-<p>To investigate these terms and to motivate our discussion of probability, consider flipping coins using the
-interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists
-of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads
-and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads
-or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying
-number of trials selected by you as you move the slider bar. Results are displayed using a histogram.</p>
-<p>
-Question 1: What do you notice as the number of flips increases?
-</p>
-<p>
-Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
-that to happen?
-</p>
+
+	<p>To investigate these terms and to motivate our discussion of probability, consider flipping coins using the interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying number of trials selected by you as you move the slider bar. Results are displayed using a histogram.</p>
+
+	<p>
+	Question 1: What do you notice as the number of flips increases?
+	</p>
+	<p>
+	Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
+	that to happen?
+	</p>
+	
+	
 <sage>
 <input>
 coin = ["Heads", "Tails"]
@@ -68,6 +66,8 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
 </input>
 </sage>
+
+
 	<p>Notice that as the number of flips increases, the relative frequency of Heads (and Tails)
 	stabilized around 0.5. This makes sense intuitively since there are two options for each 
 	individual flip and 1/2 of those options are Heads while the other 1/2 is Tails.</p>
@@ -75,27 +75,29 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	Let's try again
 	by doing a random experiment consisting of rolling a single die one time. Note that the sample space 
 	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
-</p>
-
-<p></p>
+	</p>
 
 
-<exercise>
-<introduction>
-Let's see if you understand the relationship between frequency and relative frequency.
-</introduction>
-<webwork source="local/relative_frequency1.pg" />
-<conclusion>
-So, these are simple calculations.
-</conclusion>
-</exercise>
+<!--
+	<exercise>
+		<introduction>
+		Let's see if you understand the relationship between frequency and relative frequency.
+		</introduction>
+		<webwork source="local/relative_frequency1.pg" />
+		<conclusion>
+		So, these are simple calculations.
+		</conclusion>
+	</exercise>
+-->
 
-<p>
-Question 1: What do you notice as the number of rolls increases?
-</p>
-<p>
-Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
-</p>
+	<p>
+	Question 1: What do you notice as the number of rolls increases?
+	</p>
+	<p>
+	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
+	</p>
+
+
 <sage>
 <input>
 @interact
@@ -117,15 +119,19 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [
 	show(bar_chart(freq,axes=False,ymin=0)) 
 </input>
 </sage>
+
+
 	<p>Notice in this instance that there are a larger number of options (for example 6 on a regular
 	die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die)
 	as the number of rolls increased.</p>
 	<p>In general, this suggests a rule: if there are n outcomes and each one has the same
 	chance of occurring on a given trial then on average on a large number of trials the relative
-	frequency of that outcome is 1/n.</p>
+	frequency of that outcome is 1/n.
 	In general, if a number of outcomes are "equally likely" then this is a good model for measuring
 	the proportion of outcomes that would be expected to have any given outcome. However, it is not
-	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:
+	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:</p>
+
+
 <sage>
 <title>Rolling Two Dice and Measuring their Sum</title>
 <input>
@@ -149,6 +155,8 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 
 </input>
 </sage>
+
+
 	<p>Notice, not only are the answers not the same but they are not even close. To understand why this 
 	is different from the examples before, consider the possible outcomes from each pair of die. Since we
 	are measuring the sum of the dice then (for a pair of standard 6-sided dice) the possible sums are from 
@@ -156,21 +164,26 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	a 7--namely from the pairs (1,6), (2,5), (3,4), (4,3), (5,2), and (6,1). So it might make some sense
 	that the likelihood of getting a 7 is 6 times larger than that of getting a 2. Check to see if that
 	is the case with your experiment above.</p>
-</subsection>
 </section>
 
-<section>
-<title>Definition of Probability</title>
-<subsection xml:id="ProbabilityDefns">
-	<title>Motivating the Definition</title>
+<section><title>Definition of Probability</title>
+<subsection xml:id="ProbabilityDefns"><title>Motivating the Definition</title>
 	<p>Using the ideas from our examples above, let's consider how we might formally define a way
 	to measure the expectation from similar experiments.  Before doing so, we need a little notation:</p>
-	<definition>
-	<statement>The Cardinality of the set A is the number of elements in A. This will be denoted |A| (similar
-	to the idea of frequency of an outcome noted earlier.) If a set has
-	a infinite number of elements, then we will say it's cardinality is also infinite and 
-	write |A| = <m>\infty</m></statement>
-	</definition>
+
+		<definition>
+		<statement>The Cardinality of the set A is the number of elements in A. This will be denoted |A| (similar
+		to the idea of frequency of an outcome noted earlier.) If a set has
+		a infinite number of elements, then we will say it's cardinality is also infinite and 
+		write |A| = <m>\infty</m></statement>
+		</definition>
+	
+		<definition><title>Pairwise Disjoint Sets</title>
+		<statement>
+		<m> \{ A_1, A_2, ... , A_n \}</m> are pairwise disjoint provided <m>A_k \cap A_j = \emptyset</m> so long as <m>k \ne j</m>.
+		</statement>
+		</definition>
+		
 	
 	<p>
 	To model the behavior above, consider how we might create a definition for our expectation
@@ -198,8 +211,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	individual relative frequencies</li>
 	</ol>
 </subsection>
-<subsection>
-	<title>Probability</title>
+<subsection><title>Probability</title>
 	<p>Based upon these we give the following:</p>
 	<definition xml:id="DefnProb">
 		<statement>The probability P(A) of a given outcome A is a set function which satisfies:
@@ -213,8 +225,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	</definition>
 </subsection>
 	
-<subsection xml:id="BasicProbabilityTheorems">
-	<title>Basic Probability Theorems</title>
+<subsection xml:id="BasicProbabilityTheorems"><title>Basic Probability Theorems</title>
 	<p>Based upon this definition we can immediately establish a number of results.</p>
 	<theorem xml:id="ProbabilityComplemnts"><title>Probability of Complements</title>
 		<statement> For any event A, <m>P(A) + P(A^c) = 1</m>
@@ -300,31 +311,77 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 			</md>
 		</statement>
 	</corollary>
+	
 </subsection>
+
+<subsection><title>Equally Likely Outcomes</title>
+<p>
+Many times, you will be dealing with making selections from a sample space where each item in the space has an equal chance of being selected. This may happen (for example) when items in the sample space are of equal size or when selecting a card from a completely shuffled deck or when coins are flipped or when a normal fair die is rolled. 
+</p>
+<p>It is important to notice that not all outcomes are equally likely--even in times when there are only two of them. Indeed, it is generally not an equally likely situation when picking the winner of a football game which pits, say, the New Orleans Saints professional football team with the New Orleans Home School Saints. Even though there are only two options the probability of the professional team winning is much greater than the chances that the high school will prevail. 
+</p>
+<p>
+When items are equally likely (sometimes also called "randomly selected") then each individual event has the same chance of being selected as any other. In this instance, determining the probability of a collection of outcomes is relatively simple.
+</p>
+<theorem><title>Probability of Equally Likely Events</title>
+<statement>If outcomes in S are equally likely, then for <m>A \subset S, P(A) = \frac{|A|}{|S|}</m> </statement>
+<proof>
+<p>
+Enumerate S = {<m>x_1, x_2, ..., x_{|S|}</m>} and note <m>P( \{ x_k \} ) = c</m> for some constant c since each item is equally likely. However, using each outcome as a disjoint event and the definition of probability, 
+<md>
+	<mrow>1 = P(S) &amp; = P( \{ x_1 \} \cup \{x_2 \} \cup ... \cup \{x_{|S|} \} )</mrow>
+	<mrow> &amp; = P(\{ x_1 \}) + P(\{ x_2 \} ) + ... + P(\{ x_{|S|} \} )</mrow>
+	<mrow> &amp; = c + c + ... + c = {|S|} \times c</mrow>
+</md>
+and so <m>c = \frac{1}{{|S|}}</m>. Therefore, <m>P( \{ x_k \} ) = \frac{1}{|S|}</m> .
+</p>
+<p>
+Hence, with A = {<m>a_1, a_2, ..., a_{|A|}</m>}, breaking up the disjoint probabilities as above gives
+<md>
+	<mrow>P(A) &amp; = P( \{ a_1 \} \cup \{ a_2 \} \cup ... \cup \{ a_{|A|} \} )</mrow>
+	<mrow> &amp; = P(\{ a_1 \}) + P(\{ a_2 \} ) + ... + P(\{ a_{|A|} \} )</mrow>
+	<mrow> &amp; = \frac{1}{{|S|}} + \frac{1}{{|S|}} + ... + \frac{1}{{|S|}}</mrow>
+	<mrow> &amp; = \frac{|A|}{{|S|}}</mrow>
+</md>
+as desired.
+</p>
+</proof>
+</theorem>
+</subsection>
+
+<subsection><title>Exercises</title>
+<homework>
+<p>
+HOMEWORK: Determine the probabilities associated with the various 5-card hands.
+</p>
+
+<p>
+HOMEWORK: Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
+</p>
+
+<p>
+HOMEWORK: Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
+</p>
+
+
+<p>
+HOMEWORK: Analyze the game of
+<url href="http://mathworld.wolfram.com/Craps.html">"craps"</url>.
+</p>
+</homework>
+</subsection>
+
 </section>
 
 <section>
 <title>Conditional Probability</title>
-<subsection>
-	<title>Motivating Examples</title>
-	<example>
-	<title>Changing Sample Space - Balls</title>
-	<p>Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption,
-	the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose
-	that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves
-	you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the 
-	probability changed for the second trial dependent on the outcome of the first trial.</p>
-	</example>
-	<example>
-	<title>Changing Sample Space - Cards</title>
-	<p>Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. 
-	When extracting one card randomly, the probability
-	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and set
-	aside.  Now, 
-	prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the 
-	second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second
-	draw. To compute this probability correctly, one need to formulate the question so that subadditivity can 
-	be utilized.</p>
+
+	
+	<p><title>Changing Sample Space - Balls:</title>  Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.</p>
+
+
+	<p><title>Changing Sample Space - Cards: </title>
+	Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. When extracting one card randomly, the probability	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and setaside.  Now, prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second draw. To compute this probability correctly, one need to formulate the question so that subadditivity can  be utilized.</p>
 	<p>
 	To do this, consider 
 	P(Heart on 2nd draw) 
@@ -335,30 +392,200 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	= (13 12) / (52 51) + (39 13) / (52 51) = 12 / (4 51) + (3 13) / ( 4 51) =  
 
 	</p>
-	</example>
-</subsection>
-<subsection>
-<title>Conditional Probability</title>
-	<subsection>
-	<title>Definition</title>
-		<definition>
+	
+	<definition>
 		<title>Conditional Probability</title>
-			<statement>P(B | A) = P(A <m>\cap</m> B) / P(A)</statement>
+			<statement>P(B | A) = P(A <m>\cap</m> B) / P(A), provided P(A)<m>\gt 0</m>.</statement>
 		</definition>
 		<theorem>
 		<statement>Conditional Probability satisfies all of the requirements of regular probability.</statement>
+		<proof>
+		<p>
+		By definition, for any event probability must be nonnegative. Therefore
+		<m>P(A \cap B) \ge 0</m>.  Therefore, P(B | A) <m>\ge 0</m>.
+		</p>
+		<p>
+		Further, P (S | A) = P(A <m>\cap</m> S)/P(A) = P(A)/P(A) = 1.
+		</p>
+		</proof>
 		</theorem>
-	</subsection>
-	<subsection>	
-	<title>Bayes</title>
+		
+		<theorem><title>Multiplication Rule</title>
+		<statement>
+			<me>P(A \cap B) = P(A) P(B | A) = P(B) P(A | B)</me>
+		</statement>
+		<proof>
+		<p>
+		Unravel the definition of conditional probably by taking the denominator to the other side. Also note that you can write <m>A \cap B = B \cap A</m>.
+		</p>
+		</proof>
+		</theorem>
+	</section>
+	
+	
+	
+	<section><title>Bayes Theorem</title>	
+	
 		<theorem>
 		<title>Bayes Theorem</title>
-		<statement>
-		Stub
+		<statement>Let <m>S = \{ S_1, S_2, ... , S_m \}</m> where the <m>S_k</m> are pairwise disjoint and <m>S_1 \cup S_2 \cup ... \cup S_m = S</m> (i.e. a partition of the space S).  Then for any <m>A \subset S</m>
+		<md>
+			<mrow>P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.</mrow>
+		</md>
+		The conditional probability <m>P(S_j | A)</m> is called the posterior probability of <m>S_k</m>.
 		</statement>
+		<proof>
+		<p>
+		Notice, by the definition of conditional probability and the multiplication rule
+		<me>P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.</me>
+		But using the disjointness of the partition 
+		<md>
+		<mrow>P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )</mrow>
+		<mrow>    &amp; = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)</mrow>
+		<mrow>    &amp; = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)</mrow>
+		<mrow>    &amp; = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)</mrow>
+		<mrow>    &amp; = \sum_{k=1}^m P(S_k)P(A | S_k)</mrow>
+		</md>
+		Put these two expansions together to obtain the desired result.
+		</p>
+		</proof>
 		</theorem>
-	</subsection>
-</subsection>
+	
+	
+<p>
+To illustrate this result, from the web site <url href="http://stattrek.com/probability/bayes-theorem.aspx"></url> consider the following problem:
+</p>
+<p>
+Marie is getting married tomorrow, at an outdoor ceremony in the desert. In recent years, it has rained only 5 days each year. Unfortunately, the weatherman has predicted rain for tomorrow. When it actually rains, the weatherman correctly forecasts rain 90% of the time. When it doesn't rain, he incorrectly forecasts rain 10% of the time. What is the probability that it will rain on the day of Marie's wedding?
+</p>
+<p>
+Notice, all days can be classified into one of two disjoint options:
+<ul>
+	<li>Rainy, in which case we can deduce from the given info that P(Rain) = 5/365</li>
+	<li>No Rainy, and since this is the complement of above, P(No Rain) = 360/365</li>
+</ul>
+In the notation of Bayes Theorem, let A represent a forecast of Rain and note you have <m>P(\text{Rain}) = P(S_1) = \frac{5}{365}</m> and <m>P(\text{No Rain}) = \frac{360}{365}</m>. Further, you are given the conditional probabilities
+<ul>
+	<li><m>P(\text{Rain | Forecast Rain}) = P( A | S_1) = 0.9</m></li>
+	<li><m>P(\text{Rain | Forecast Rain}) = P( A | S_2) = 0.1</m></li>
+</ul>
+Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes Theorem allows you to turn this around...
+<md>
+	<mrow>P(\text{Rain}) &amp;  = P(S_1) P( A | S_1) + P(S_2) P(A | S_2)</mrow>	
+	<mrow> &amp; = \frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1</mrow>
+	<mrow> &amp; = NUMBER </mrow>
+</md>
+Hence, putting these together gives
+<md>
+	<mrow>P(\text{Rain | Forecast Rain}) &amp; = \frac{\frac{5}{365} \cdot 0.9}{\frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1}</mrow>
+	<mrow> &amp; = \frac{5 \cdot 0.9}{5 \cdot 0.9 + 360 \cdot 0.1}</mrow>
+	<mrow> &amp; = \frac{45}{45+360} \approx 0.111</mrow>
+</md>
+So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
+</p>	
+	
+<sage>
+<input>
+
+#  This function is used to convert an input string into separate entries
+def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+
+@interact
+def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),...$"),
+        Conditional_Probabilities=input_box('0.02,0.01,0.03',label='$P(A|B_1),P(A|B_2),...$'),
+        print_numbers=checkbox(True,label='Numerical Results on Graphs?'),
+        auto_update=False):
+            
+    Partition_Probabilities = g(Partition_Probabilities)
+    Conditional_Probabilities = g(Conditional_Probabilities)
+    n = len(Partition_Probabilities)
+    n0 = len(Conditional_Probabilities)
+    
+    # below needs to be n not equal to n0 but mathbook xml will not let me get the other
+    if (n > n0):
+        pretty_print("You must have the same number of partition probabilities and conditional probabilities.")
+        
+    else:                               # input data streams now are the same size!
+        colors = rainbow(n)
+        accum = float(0)                # to test whether partition probs sum to one
+        ends = [0]                      # where the graphed partition sectors change in pie chart 
+        mid = []                        # middle of each pie chart sector used for placement of text
+        p_Bk_given_A = []               # P( B_k | A )
+        pA = 0                          # P(A)
+        PP=[]                           # array to hold the numerical Partition Probabilities 
+        CP=[]                           # array to hold the numerical Conditional Probabilities     
+        for k in range(n):
+            PP.append(float(Partition_Probabilities[k]))
+            CP.append(float(Conditional_Probabilities[k]))    
+            p_Bk_given_A.append(PP[k]*CP[k] )
+            pA += p_Bk_given_A[k]
+            accum = accum + PP[k]
+            ends.append(accum)
+            mid.append((ends[k]+accum)/2)
+#
+#  Marching along from 0 to 1, saving angles for each partition sector boundary.
+#  Later, we will multiple these by 2*pi to get actual sector boundary angles.
+#
+        if abs(accum-float(1))>0.0000001:     #  Due to roundoff issues, this should be close enough.                     
+            pretty_print("Sum of probabilities should equal 1.")
+        
+        else:                           # probability data is sensible
+ 
+#        
+#  Draw the Venn diagram by drawing sectors from the angles determined above
+#  First, create a circle of radius 1 to illustrate the the sample space S
+#  Then draw each sector with varying colors and print out their names on the edge
+#
+            G = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0.4,aspect_ratio=True,axes=False,thickness=5)
+            for k in range(n):
+                G += disk((0,0), 1, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                G += text('$B_'+str(k+1)+'$',(1.1*cos(mid[k]*2*pi), 1.1*sin(mid[k]*2*pi)), rgbcolor='black')
+                
+            G += circle((0,0), 0.6, facecolor='yellow', fill = True, alpha = 0.1, thickness=5,edgecolor='black') 
+    
+#  Print the probabilities corresponding to each particular region as a list and on the graphs
+            if print_numbers:               
+
+                html("$P(A) = %s$"%(str(pA),))
+                for k in range(n):
+                    html("$P(B_{%s} | A)$"%(str(k+1))+"$ = %s$"%str(p_Bk_given_A[k]/pA))
+                                        
+                    G += text(str(p_Bk_given_A[k]),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    G += text(str(PP[k] - p_Bk_given_A[k]),(0.8*cos(mid[k]*2*pi), 0.8*sin(mid[k]*2*pi)), rgbcolor='black')
+        
+#  This is essentially a repeat of some of the above code but focused only on creating the smaller inner circle dealing
+#  with the set A so that the sectors now correspond in area to the Bayes Theorem probabilities
+
+
+            accum = float(0)                        
+            ends = [0]                     # where the graphed partition sectors change in pie chart 
+            mid = []                       # middle of each pie chart sector used for placement of text
+            for k in range(n): 
+                accum += float(p_Bk_given_A[k]/pA) 
+                ends.append(accum)
+                mid.append((ends[k]+accum)/2)
+            H = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0,aspect_ratio=True,axes=False,thickness=0)
+            H += circle((0,0), 0.6, facecolor='yellow',fill=True, alpha=0.1,aspect_ratio=True,axes=False,thickness=5,edgecolor='black')
+            
+            for k in range(n):
+                H += disk((0,0), 0.6, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                H += text('$B_'+str(k+1)+'|A$',(0.7*cos(mid[k]*2*pi), 0.7*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+        #  Now, print out the bayesian probabilities using the smaller set A only
+    
+            if print_numbers:
+                for k in range(n):
+                    H += text(str( N(p_Bk_given_A[k]/pA,digits=4) ),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+            G.show(title='Venn diagram of partition with A in middle')
+            print
+            H.show(title='Venn diagram presuming A has occured')
+</input>
+</sage>
+
+<homework>
+
+</homework>
 
 </section>
 
@@ -428,10 +655,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 
 
 <section xml:id="ProbabilityFunctions"><title>Probability Functions</title>
-<p>In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From
-this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so 
-to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition 
-which takes s to a numerical value x which is then plugged into f to get the same final values.</p>
+	<p>In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.</p>
 
 	<definition><title>Probability Mass Function</title>
 		<statement>Given a discrete random variable X on a space R, a probability mass function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
@@ -575,9 +799,8 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	
 	</p>
 	</example>
-	
-	<subsection>
-	<title>Properties of the Distribution Function</title>
+</section>	
+<section><title>Properties of the Distribution Function</title>
 		
 		<theorem xml:id="theorem-Fmin">
 			<statement><m>F(x)=0, \forall x \le \inf(R)</m></statement>
@@ -624,19 +847,17 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 			<statement>For continuous distributions, P(X = a) = 0</statement>
 		</corollary>
 		
-	</subsection>
+</section>
 	
-	<subsection>
+<section>
 		<title>Standard Units</title>
 			<p>Any distribution variable can be converted to “standard units” using the linear translation 
 			<m>\displaystyle z = \frac{x-\mu}{\sigma}</m>. In doing so, then values of z will always represent the number of
 			standard deviations x is from the mean and will provide “dimensionless” comparisons.</p>
-	</subsection>    
-</section>
+</section>    
 
 
-<section>
-	<title>Expected Value</title>
+<section><title>Expected Value</title>
 	<p>Blaise Pascal was a 	17th century mathematician and philosopher who was accomplished in many areas but may likely be best known to you for his creation of what is now known as Pascal's Triangle. As part of his philosophical pursuits, he proposed what is known as "Pascal's wager". It suggests two  mutually exclusive outcomes: that God exists or that he does not. His argument is that a rational person should live as though God exists and seek to believe in God. If God does not actually exist, such a person will have only a finite loss (some pleasures, luxury, etc.), whereas they stand to receive infinite gains as represented by eternity in Heaven and avoid an infinite losses of eternity in Hell. This type of reasoning is part of what is known as "decision theory".
 	</p>
 	<p>You may not confront such dire payouts when making your daily decisions but we need a formal method for making these determinations precise. The procedure for doing so is what we call expected value.

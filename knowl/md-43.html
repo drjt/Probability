@@ -1,14 +1,14 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-01T10:55:16-05:00    *-->
+<!--*    on 2016-09-02T15:01:06-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 \begin{align*}
-\forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2\\
-F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx \\
- &amp; = \int_{-\infty}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx\\
- &amp; \ge \int_{-\infty}^{x_1} f(x) dx\\
- &amp; = F(x_1)
-\end{align*}<span class="incontext"><a href="ProbabilityFunctions.html#md-43">in-context</a></span>
+P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )\\
+    &amp; = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)\\
+    &amp; = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)\\
+    &amp; = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)\\
+    &amp; = \sum_{k=1}^m P(S_k)P(A | S_k)
+\end{align*}<span class="incontext"><a href="section-20.html#md-43">in-context</a></span>
