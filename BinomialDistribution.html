@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-07T12:41:50-05:00    *-->
+<!--*    on 2016-09-07T16:06:24-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -146,7 +146,7 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="BinomialDistribution"><header title="Section 6.1 Binomial Distribution"><h1 class="heading hide-type" alt="Section 6.1 Binomial Distribution">
 <span class="type">Section</span><span class="codenumber">6.1</span><span class="title">Binomial Distribution</span><a href="BinomialDistribution.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-228">Consider the situation where one can observe a sequence  of n
+</h1></header><p id="p-229">Consider the situation where one can observe a sequence  of n
 	independent trials with the likelihood of a 
 	success on each individual trial stays constant from trial to trial.
 	Call this likelihood the probably of "success" and 
@@ -157,7 +157,7 @@ MathJax.Hub.Config({
 	distribution of probabilities is called a Binomial Distribution.</p>
 <section class="subsection" id="subsection-13"><header title="Subsection 6.1.1 Derivation of Binomial Probability Function"><h1 class="heading hide-type" alt="Subsection 6.1.1 Derivation of Binomial Probability Function">
 <span class="type">Subsection</span><span class="codenumber">6.1.1</span><span class="title">Derivation of Binomial Probability Function</span>
-</h1></header><p id="p-229"> Since successive trials are independent, then the probability of X successes occurring within n 
+</h1></header><p id="p-230"> Since successive trials are independent, then the probability of X successes occurring within n 
 		trials is given by 
 		\(P(X=x) = \binom{n}{x}P(SS...SFF...F) = \binom{n}{x}p^x(1-p)^{n-x}\)</p></section><section class="subsection" id="subsection-14"><header title="Subsection 6.1.2 Binomial Distribution mean"><h1 class="heading hide-type" alt="Subsection 6.1.2 Binomial Distribution mean">
 <span class="type">Subsection</span><span class="codenumber">6.1.2</span><span class="title">Binomial Distribution mean</span>
@@ -165,7 +165,7 @@ MathJax.Hub.Config({
  \mu = E[X] &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}\\
  &amp; = \sum_{x=1}^{n} {x \frac{n(n-1)!}{x(x-1)!(n-x)!} p^x (1-p)^{n-x}}\\
  &amp; = np \sum_{x=1}^{n} {\frac{(n-1)!}{(x-1)!((n-1)-(x-1))!} p^{x-1} (1-p)^{(n-1)-(x-1)}}
-\end{align*}<p id="p-230">Using the change of variables \(k=x-1\) and \(m = n-1\) yields a binomial series</p>\begin{align*}
+\end{align*}<p id="p-231">Using the change of variables \(k=x-1\) and \(m = n-1\) yields a binomial series</p>\begin{align*}
  &amp; = np \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}}\\
  &amp; = np (p + (1-p))^m = np
 \end{align*}</section><section class="subsection" id="subsection-15"><header title="Subsection 6.1.3 Binomial Distribution variance"><h1 class="heading hide-type" alt="Subsection 6.1.3 Binomial Distribution variance">
@@ -174,7 +174,7 @@ MathJax.Hub.Config({
  \sigma^2 = E[X(X-1)] + \mu - \mu^2 &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2\\
  &amp; = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2\\
  &amp; = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2
-\end{align*}<p id="p-231">Using the change of variables \(k=x-2\) and \(m = n-2\) yields a binomial series</p>\begin{align*}
+\end{align*}<p id="p-232">Using the change of variables \(k=x-2\) and \(m = n-2\) yields a binomial series</p>\begin{align*}
  &amp; = n(n-1)p^2  \sum{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2\\
  &amp; = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)
 \end{align*}</section></section></div></main>

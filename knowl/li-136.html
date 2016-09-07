@@ -1,11 +1,22 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-07T12:41:51-05:00    *-->
+<!--*    on 2016-09-07T16:06:25-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="list"><h5 class="heading">
-<span class="type">Item</span> <span class="codenumber"></span>
+<span class="type">Item</span> <span class="codenumber">1</span>
 </h5>
-As N increases with single digit values of r, what appears to happen to the mean and range of the means?  How does increasing the data range from 1-100 to 1-200 or 1-300 affect these results?</article><span class="incontext"><a href="section-39.html#li-136">in-context</a></span>
+<p id="p-227">		
+			\begin{align*}
+\sum_{x=0}^n \binom{n}{x} y^x &amp; = (1+y)^n, \text{ by the Binomial Theorem}\\
+&amp; = (1+y)^{n_1} \cdot (1+y)^{n_2} \\
+&amp; = \sum_{x=0}^{n_1} \binom{n_1}{x} y^x \cdot \sum_{x=0}^{n_2} \binom{n_2}{x} y^x \\
+&amp; = \sum_{x=0}^n \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t} y^x
+\end{align*}		
+			Equating like coefficients for the various powers of y gives
+			\begin{equation*}\binom{n}{r} = \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t}.\end{equation*}
+			Dividing gives
+			\begin{equation*}1 = \sum_{x=0}^r f(x).\end{equation*}
+			</p></article><span class="incontext"><a href="section-29.html#li-136">in-context</a></span>

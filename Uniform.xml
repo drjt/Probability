@@ -123,12 +123,30 @@
 	<ol>
 		<li><m>f(x) = = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</m> satisfies the properties of a probability function over R = [a,b].</li>
 		<li><m>\mu = \frac{n_1}{n}</m></li>
-		<li><m>\sigma^2 = \frac{n_1}{n} \frac{n_2}{n} \frac{n_1+n_2-r}{n-1}</m></li>
+		<li><m>\sigma^2 = r \frac{n_1}{n} \frac{n_2}{n} \frac{n-r}{n-1}</m></li>
 		<li>Skewness</li>
 		<li>Kurtosis </li>
 	</ol>
 
 	</statement>
+	<proof>
+	<ol>
+		<li>
+			<p>		
+			<md>
+				<mrow>\sum_{x=0}^n \binom{n}{x} y^x &amp; = (1+y)^n, \text{ by the Binomial Theorem}</mrow>
+				<mrow>&amp; = (1+y)^{n_1} \cdot (1+y)^{n_2} </mrow>
+				<mrow>&amp; = \sum_{x=0}^{n_1} \binom{n_1}{x} y^x \cdot \sum_{x=0}^{n_2} \binom{n_2}{x} y^x </mrow>
+				<mrow>&amp; = \sum_{x=0}^n \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t} y^x</mrow>
+			</md>		
+			Equating like coefficients for the various powers of y gives
+			<me>\binom{n}{r} = \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t}.</me>
+			Dividing gives
+			<me>1 = \sum_{x=0}^r f(x).</me>
+			</p>
+		</li>
+	</ol>
+	</proof>
 	</theorem>
 	
 </section>
