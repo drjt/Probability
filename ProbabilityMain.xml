@@ -17,6 +17,7 @@
   		<xi:include href="./Combinatorics.xml" />    
   		   
   		<xi:include href="./ProbabiltyGeneralities.xml" /> 
+  		<xi:include href="./Uniform.xml" /> 
   		<xi:include href="./Binomial.xml" /> 
   		<xi:include href="./Exponential.xml" /> 
   		<xi:include href="./Normal.xml" /> 

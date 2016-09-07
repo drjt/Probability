@@ -1,9 +1,30 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-02T15:01:06-05:00    *-->
+<!--*    on 2016-09-07T12:41:51-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
-<p>Convert to "standard units" using the conversion \(z = \frac{x-\mu}{\sigma} = \frac{x-0}{1} = x\).</p></article><span class="incontext"><a href="section-33.html#proof-24">in-context</a></span>
+<ol style="list-style-type: decimal;">
+<li id="li-121">Trivially, by construction you get \begin{equation*}\sum_{k=1}^n \frac{1}{n} = 1\end{equation*}
+		Also, 1/n is positive for all x values.
+		</li>
+<li id="li-122">\begin{align*}
+\mu &amp; = \sum_{k=1}^n x \cdot \frac{1}{n}\\
+ &amp; = \frac{1}{n}\sum_{k=1}^n x \\
+ &amp; = \frac{1}{n} \frac{n(n+1)}{2}\\
+ &amp; = \frac{1+n}{2}
+\end{align*}</li>
+<li id="li-123">\begin{align*}
+\sigma^2 &amp; = \sum_{k=1}^n x^2 \cdot \frac{1}{n} - \mu^2\\
+ &amp; = \frac{1}{n}\sum_{k=1}^n x^2 - \left ( \frac{1+n}{2}\right )^2 \\
+ &amp; = \frac{1}{n} \frac{n(n+1)(2n+1)}{6} - \frac{1+2n+n^2}{4}\\
+ &amp; = \frac{(2n^2+3n+1)}{6} - \frac{1+2n+n^2}{4}\\
+ &amp; = \frac{(4n^2+6n+2)}{12} - \frac{3+6n+3n^2}{12}\\
+ &amp; = \frac{(n^2-1)}{12}
+\end{align*}</li>
+<li id="li-124"><p id="p-221">For Kurtosis, use the fourth moment and simplify...
+		</p></li>
+<li id="li-125">
+</ol></article><span class="incontext"><a href="section-27.html#proof-24">in-context</a></span>

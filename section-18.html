@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-02T15:01:05-05:00    *-->
+<!--*    on 2016-09-07T12:41:50-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -113,30 +113,36 @@ MathJax.Hub.Config({
 <li><a href="section-25.html">Standard Units</a></li>
 <li><a href="section-26.html">Expected Value</a></li>
 </ul>
-<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">5</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
+<h2 class="link"><a href="UniformHypergeometric.html"><span class="codenumber">5</span><span class="title">Uniform and Hypergeometric Distributions</span></a></h2>
+<ul>
+<li><a href="section-27.html">Discrete Uniform Distribution</a></li>
+<li><a href="section-28.html">Continuous Uniform Distribution</a></li>
+<li><a href="section-29.html">Hypergeometric Distribution</a></li>
+</ul>
+<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">6</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
 <ul>
 <li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
 <li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
-<li><a href="section-29.html">Negative Binomial</a></li>
+<li><a href="section-32.html">Negative Binomial</a></li>
 </ul>
-<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">6</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
+<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">7</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
 <ul>
-<li><a href="section-30.html">Poisson Distribution</a></li>
-<li><a href="section-31.html">Exponential Distribution</a></li>
-<li><a href="section-32.html">Gamma Distribution</a></li>
+<li><a href="section-33.html">Poisson Distribution</a></li>
+<li><a href="section-34.html">Exponential Distribution</a></li>
+<li><a href="section-35.html">Gamma Distribution</a></li>
 </ul>
-<h2 class="link"><a href="Normal.html"><span class="codenumber">7</span><span class="title">Normal Distributions</span></a></h2>
+<h2 class="link"><a href="Normal.html"><span class="codenumber">8</span><span class="title">Normal Distributions</span></a></h2>
 <ul>
-<li><a href="section-33.html">Properties of the Normal Distribution</a></li>
-<li><a href="section-34.html">Theorems</a></li>
-<li><a href="section-35.html">Chi-Square Distribution</a></li>
-<li><a href="section-36.html">Central Limit Theorem</a></li>
+<li><a href="section-36.html">Properties of the Normal Distribution</a></li>
+<li><a href="section-37.html">Theorems</a></li>
+<li><a href="section-38.html">Chi-Square Distribution</a></li>
+<li><a href="section-39.html">Central Limit Theorem</a></li>
 </ul>
-<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">8</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">9</span><span class="title">Estimating Data using Intervals</span></a></h2>
 <ul>
-<li><a href="section-37.html">Point Estimates</a></li>
-<li><a href="section-38.html">Chebyshev</a></li>
-<li><a href="section-39.html">Measures of Spread</a></li>
+<li><a href="section-40.html">Point Estimates</a></li>
+<li><a href="section-41.html">Chebyshev</a></li>
+<li><a href="section-42.html">Measures of Spread</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-18"><header title="Section 4.2 Definition of Probability"><h1 class="heading hide-type" alt="Section 4.2 Definition of Probability">
 <span class="type">Section</span><span class="codenumber">4.2</span><span class="title">Definition of Probability</span>
@@ -190,13 +196,13 @@ MathJax.Hub.Config({
 <article class="theorem-like" id="ProbabilityComplemnts"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.2.4</span><span class="title">Probability of Complements</span>
 </h5> For any event A, \(P(A) + P(A^c) = 1\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-11" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-172">Let A be any event and note that \(A \cap A^c = \emptyset\).  But \(A \cup A^c = S\).
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-12" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-172">Let A be any event and note that \(A \cap A^c = \emptyset\).  But \(A \cup A^c = S\).
 			So, by subadditivity \(1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)\) as desired.</p></article></span>
 </div>
 <article class="theorem-like" id="ProbabilityEmptySet"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.2.5</span>
 </h5>\(P(\emptyset) = 0\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-12" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-173">Note that \(\emptyset^c = S\). So, by the theorem above, 
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-173">Note that \(\emptyset^c = S\). So, by the theorem above, 
 			\(1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)\).
 			Cancelling the 1 on both sides gives \(P(\emptyset) = 0\). </p></article></span>
 </div>
@@ -204,7 +210,7 @@ MathJax.Hub.Config({
 <span class="type">Theorem</span><span class="codenumber">4.2.6</span>
 </h5>For events A and B with \( A \subset B, P(A) \le P(B)\).
 		</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-174">Assume sets A and B satisfy \( A \subset B\). Then, notice that
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-14" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-174">Assume sets A and B satisfy \( A \subset B\). Then, notice that
 			\(A \cap (B-A) = \emptyset\) and  \(B = A \cup (B-A)\). Therefore, by 
 			subadditivity and nonnegativity</p>\begin{gather*}
 0 \le P(B-A)\\
@@ -215,12 +221,12 @@ P(A) \le P(B)
 <article class="theorem-like" id="ProbabilityLessThanOne"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.2.7</span>
 </h5>For any event A, \(P(A) \le 1\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-14" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-175">Notice \(A \subset S\). By the theorem above \( P(A) \le P(S) = 1\)</p></article></span>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-15" id="proof-15"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-15" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-175">Notice \(A \subset S\). By the theorem above \( P(A) \le P(S) = 1\)</p></article></span>
 </div>
 <article class="theorem-like" id="ProbabilityTwoUnions"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.2.8</span>
 </h5>For any sets A and B, \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-15" id="proof-15"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-15" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-176">Notice that we can write \(A \cup B\) as the disjoint union</p>\begin{gather*}
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-16" id="proof-16"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-16" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-176">Notice that we can write \(A \cup B\) as the disjoint union</p>\begin{gather*}
 A \cup B = (A-B) \cup (A \cap B) \cup (B-A).
 \end{gather*}<p id="p-177">We can also write disjointly</p>\begin{gather*}
 A = (A-B) \cup (A \cap B)\\
@@ -262,10 +268,10 @@ Many times, you will be dealing with making selections from a sample space where
 <p id="p-182">
 When items are equally likely (sometimes also called "randomly selected") then each individual event has the same chance of being selected as any other. In this instance, determining the probability of a collection of outcomes is relatively simple.
 </p>
-<article class="theorem-like" id="theorem-21"><h5 class="heading">
+<article class="theorem-like" id="theorem-22"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.2.11</span><span class="title">Probability of Equally Likely Events</span>
 </h5>If outcomes in S are equally likely, then for \(A \subset S, P(A) = \frac{|A|}{|S|}\)</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-16" id="proof-16"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-16" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-183">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-17" id="proof-17"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-17" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-183">
 Enumerate S = {\(x_1, x_2, ..., x_{|S|}\)} and note \(P( \{ x_k \} ) = c\) for some constant c since each item is equally likely. However, using each outcome as a disjoint event and the definition of probability, 
 \begin{align*}
 1 = P(S) &amp; = P( \{ x_1 \} \cup \{x_2 \} \cup ... \cup \{x_{|S|} \} )\\

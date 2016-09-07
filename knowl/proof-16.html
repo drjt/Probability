@@ -1,27 +1,19 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-02T15:01:06-05:00    *-->
+<!--*    on 2016-09-07T12:41:51-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
-<p>
-Enumerate S = {\(x_1, x_2, ..., x_{|S|}\)} and note \(P( \{ x_k \} ) = c\) for some constant c since each item is equally likely. However, using each outcome as a disjoint event and the definition of probability, 
-\begin{align*}
-1 = P(S) &amp; = P( \{ x_1 \} \cup \{x_2 \} \cup ... \cup \{x_{|S|} \} )\\
- &amp; = P(\{ x_1 \}) + P(\{ x_2 \} ) + ... + P(\{ x_{|S|} \} )\\
- &amp; = c + c + ... + c = {|S|} \times c
-\end{align*}
-and so \(c = \frac{1}{{|S|}}\). Therefore, \(P( \{ x_k \} ) = \frac{1}{|S|}\) .
-</p>
-<p>
-Hence, with A = {\(a_1, a_2, ..., a_{|A|}\)}, breaking up the disjoint probabilities as above gives
-\begin{align*}
-P(A) &amp; = P( \{ a_1 \} \cup \{ a_2 \} \cup ... \cup \{ a_{|A|} \} )\\
- &amp; = P(\{ a_1 \}) + P(\{ a_2 \} ) + ... + P(\{ a_{|A|} \} )\\
- &amp; = \frac{1}{{|S|}} + \frac{1}{{|S|}} + ... + \frac{1}{{|S|}}\\
- &amp; = \frac{|A|}{{|S|}}
-\end{align*}
-as desired.
-</p></article><span class="incontext"><a href="section-18.html#proof-16">in-context</a></span>
+<p>Notice that we can write \(A \cup B\) as the disjoint union</p>\begin{gather*}
+A \cup B = (A-B) \cup (A \cap B) \cup (B-A).
+\end{gather*}<p>We can also write disjointly</p>\begin{gather*}
+A = (A-B) \cup (A \cap B)\\
+B = (A \cap B) \cup (B-A)
+\end{gather*}<p>Hence, </p>\begin{align*}
+P(A) &amp; + P(B) - P(A \cap B) \\
+&amp; = [P(A-B) + P(A \cap B)] + [P(A \cap B) + P(B-A)] - P(A \cap B)\\
+&amp; = P(A-B) + P(A \cap B) + P(B-A)\\
+&amp; = P(A \cup B)
+\end{align*}</article><span class="incontext"><a href="section-18.html#proof-16">in-context</a></span>

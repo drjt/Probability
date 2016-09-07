@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="UniformHypergeometric" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Uniform and Hypergeometric Distributions</title>
+	<introduction>
+	<p>
+	When motivating our definition of probability you may have noticed that we modeled our definition on the relative frequency of equally-likely outcomes. In this chapter you will develop the theoretical formulas which can be used to model equally-likely outcomes.
+	</p>
+	</introduction>
+<section>	
+	<title>Discrete Uniform Distribution</title>
+	<p>
+	Assume that you have a variable with space R = {1, 2, 3, ..., n} so that the likelihood of each value is equally likely. Then, the probability function satisfies <m>f(x) = c</m> for any <m>x \in R</m>.  As before, since <m>\sum_{x \in R} f(x) = 1</m>, then <me>f(x) = \frac{1}{n}</me> is the probability function.
+	</p>
+	<theorem><title>Properties of the Discrete Uniform Probability Function</title>
+	<statement>
+	<ol>
+		<li><m>f(x) = \frac{1}{n}</m> over R = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function</li>
+		<li><m>\mu = \frac{1+n}{2}</m></li>
+		<li><m>\sigma^2 = \frac{n^2-1}{12}</m></li>
+		<li>Skewness = 0</li>
+		<li>Kurtoses = </li>
+		<li>Distribution function F(x) = frac{x}{n} for <m>x \in R</m>.</li>
+	</ol>
+	</statement>
+	<proof>
+	<ol>
+		<li>Trivially, by construction you get <me>\sum_{k=1}^n \frac{1}{n} = 1</me>
+		Also, 1/n is positive for all x values.
+		</li>
+		<li>
+		<md>
+			<mrow>\mu &amp; = \sum_{k=1}^n x \cdot \frac{1}{n}</mrow>
+			<mrow> &amp; = \frac{1}{n}\sum_{k=1}^n x </mrow>
+			<mrow> &amp; = \frac{1}{n} \frac{n(n+1)}{2}</mrow>
+			<mrow> &amp; = \frac{1+n}{2}</mrow>
+		</md>
+		</li>
+		<li>
+		<md>
+			<mrow>\sigma^2 &amp; = \sum_{k=1}^n x^2 \cdot \frac{1}{n} - \mu^2</mrow>
+			<mrow> &amp; = \frac{1}{n}\sum_{k=1}^n x^2 - \left ( \frac{1+n}{2}\right )^2 </mrow>
+			<mrow> &amp; = \frac{1}{n} \frac{n(n+1)(2n+1)}{6} - \frac{1+2n+n^2}{4}</mrow>
+			<mrow> &amp; = \frac{(2n^2+3n+1)}{6} - \frac{1+2n+n^2}{4}</mrow>
+			<mrow> &amp; = \frac{(4n^2+6n+2)}{12} - \frac{3+6n+3n^2}{12}</mrow>
+			<mrow> &amp; = \frac{(n^2-1)}{12}</mrow>
+		</md>
+		</li>
+		<p>For skewness,
+		<md>
+			<mrow>&amp; \sum_{k=1}^n x^3 \cdot \frac{1}{n} - \sigma^2 \mu + 2\mu^2</mrow>
+			<mrow> &amp; = \frac{1}{n}\sum_{k=1}^n x^3 - \frac{(n^2-1)}{12} \frac{1+n}{2}\left ( \frac{1+n}{2}\right )^3 </mrow>
+
+		</md>
+		</p>
+		<li>
+		<p>For Kurtosis, use the fourth moment and simplify...
+		</p>
+		</li>
+		<li>
+		</li>
+	</ol>
+	</proof>
+	</theorem>
+
+	
+</section>
+
+<section>	
+	<title>Continuous Uniform Distribution</title>
+	<p>
+	Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + w \lt X \lt v + w)</m>.  In integral notation you obtain the following:
+	<md>
+		<mrow>\int_u^v f(x) dx = \int_{u+w}^{v+w} f(x) dx</mrow>
+		<mrow>F(v)-F(u) = F(v+w)-F(u+w)</mrow>
+		<mrow>F(u+w)-F(u) = F(v+w)-F(v)</mrow>
+	</md>
+	which is true regardless of w so long as you stay in the domain of interest. This only happens if F is linear and therefore f must be constant. Say, f(x)=c. In many situations, the space of X will be a single interval with R = [a,b]. Unless otherwise noted, this will be our assumption as well.
+	</p>
+	
+	<theorem><title>Properties of the Continuous Uniform Probability Function</title>
+	<statement>
+	<ol>
+		<li><m>f(x) = \frac{1}{b-a}</m> satisfies the properties of a probability function over R = [a,b].</li>
+		<li><m>\mu = \frac{a+b}{2}</m></li>
+		<li><m>\sigma^2 = \frac{b^2-a^2}{12}</m></li>
+		<li>Skewness = 0</li>
+		<li>Kurtosis </li>
+	</ol>
+	</statement>
+	
+	
+	</theorem>
+	
+</section>
+
+
+<section>	
+	<title>Hypergeometric Distribution</title>
+	
+	<p>
+	For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.</p>
+	<p>
+	Indeed, consider a collection of n items from which you want to take a sample of size r without replacement. If <m>n_1</m> of the items are "desired" and the remainder are not, let the random variable X measure the number of items from the first group in your sample. The resulting collection of probabilities is called a Hypergeometric Distribution.
+	</p>
+	<p>
+	Since you are sampling without replacement and trying only measure the number of items from your desired group in the sample, then the space of X will include R = {0, 1, ..., r} assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>. In the case when r is too large for either of these, the formulas below will follow noting that binomial coefficients are zero if the top is smaller than the bottom or if the bottom is negative.
+	</p>
+	<p>
+	So f(x) = P(X = x) = P(x from the sample are from the target group and the remainder are not). Breaking these up gives
+	<me>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</me>
+	</p>
+	
+	<theorem><title>Properties of the Hypergeometric Distribution</title>
+	<statement>
+	<ol>
+		<li><m>f(x) = = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</m> satisfies the properties of a probability function over R = [a,b].</li>
+		<li><m>\mu = \frac{n_1}{n}</m></li>
+		<li><m>\sigma^2 = \frac{n_1}{n} \frac{n_2}{n} \frac{n_1+n_2-r}{n-1}</m></li>
+		<li>Skewness</li>
+		<li>Kurtosis </li>
+	</ol>
+
+	</statement>
+	</theorem>
+	
+</section>
+
+
+</chapter>
