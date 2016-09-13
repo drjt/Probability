@@ -1,0 +1,22 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2016-09-13T15:31:00-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>Experiment with creating your own histogram by inputting your data into the interactive cell below.
+<div class="sagecell-sage"><script type="text/x-sage">#  This function is used to convert an input string into separate entries
+def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+
+@interact
+def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated by commas")):
+    freq = g(freq)
+    freq = [int(k) for k in freq]
+    m = min(freq)
+    M = max(freq)
+    bn = M-m+1
+    histogram( freq, range=[m-1/2,M+1/2], bins = bn, align="mid", linewidth=2, edgecolor="blue", color="yellow").show()
+</script></div>
+
+		</p><span class="incontext"><a href="section-11.html#p-103">in-context</a></span>

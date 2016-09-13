@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2016-09-13T15:30:59-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AATA Relative Frequency</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate Sage Code'});
+});
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading">
+<span class="title">Introduction to Mathematical Probability and Statistics</span><span class="subtitle">A Calculus-based Approach</span>
+</h1>
+<p class="byline">John Travis</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="ProbabilityGeneralities.html">Previous</a><a class="up-button button toolbar-item" href="ProbabilityGeneralities.html">Up</a><a class="next-button button toolbar-item" href="section-18.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ProbabilityGeneralities.html">Previous</a><a class="up-button button toolbar-item" href="ProbabilityGeneralities.html">Up</a><a class="next-button button toolbar-item" href="section-18.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="biography-1.html">Author Biography</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link"><a href="PowerSeriesReview.html"><span class="codenumber">1</span><span class="title">Review of Calculus</span></a></h2>
+<ul>
+<li><a href="section-1.html">Geometric Series</a></li>
+<li><a href="section-2.html">Binomial Sums</a></li>
+<li><a href="section-3.html">Negative Binomial Series</a></li>
+</ul>
+<h2 class="link"><a href="RepresentingData.html"><span class="codenumber">2</span><span class="title">Representing Data</span></a></h2>
+<ul>
+<li><a href="section-4.html">Measurement Scales</a></li>
+<li><a href="section-5.html">Techniques for Representing Data</a></li>
+<li><a href="section-6.html">Measures of Position</a></li>
+<li><a href="section-7.html">Measures of the Middle</a></li>
+<li><a href="section-8.html">Measures of Spread</a></li>
+<li><a href="section-9.html">Grouped Data</a></li>
+<li><a href="section-10.html">Other Point Measures</a></li>
+<li><a href="section-11.html">Graphical Representation of Data</a></li>
+<li><a href="section-12.html">Exercises</a></li>
+</ul>
+<h2 class="link"><a href="Combinatorics.html"><span class="codenumber">3</span><span class="title">Counting and Combinatorics</span></a></h2>
+<ul>
+<li><a href="section-13.html">Introduction</a></li>
+<li><a href="section-14.html">Permutations</a></li>
+<li><a href="section-15.html">Combinations</a></li>
+<li><a href="section-16.html">Exercises</a></li>
+</ul>
+<h2 class="link active"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability Theory</span></a></h2>
+<ul>
+<li><a href="RelativeFrequency.html" class="active">Relative Frequency</a></li>
+<li><a href="section-18.html">Definition of Probability</a></li>
+<li><a href="section-19.html">Conditional Probability</a></li>
+<li><a href="section-20.html">Bayes Theorem</a></li>
+<li><a href="section-21.html">Independence</a></li>
+</ul>
+<h2 class="link"><a href="ProbabilityFunctions.html"><span class="codenumber">5</span><span class="title">Probability Functions</span></a></h2>
+<ul>
+<li><a href="section-22.html">Random Variables</a></li>
+<li><a href="section-23.html">Probability Functions</a></li>
+<li><a href="section-24.html">Properties of the Distribution Function</a></li>
+<li><a href="section-25.html">Standard Units</a></li>
+<li><a href="section-26.html">Expected Value</a></li>
+</ul>
+<h2 class="link"><a href="UniformHypergeometric.html"><span class="codenumber">6</span><span class="title">Uniform and Hypergeometric Distributions</span></a></h2>
+<ul>
+<li><a href="section-27.html">Discrete Uniform Distribution</a></li>
+<li><a href="section-28.html">Continuous Uniform Distribution</a></li>
+<li><a href="section-29.html">Hypergeometric Distribution</a></li>
+</ul>
+<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">7</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
+<ul>
+<li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
+<li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
+<li><a href="section-32.html">Negative Binomial</a></li>
+</ul>
+<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">8</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
+<ul>
+<li><a href="section-33.html">Poisson Distribution</a></li>
+<li><a href="section-34.html">Exponential Distribution</a></li>
+<li><a href="section-35.html">Gamma Distribution</a></li>
+</ul>
+<h2 class="link"><a href="Normal.html"><span class="codenumber">9</span><span class="title">Normal Distributions</span></a></h2>
+<ul>
+<li><a href="section-36.html">Properties of the Normal Distribution</a></li>
+<li><a href="section-37.html">Theorems</a></li>
+<li><a href="section-38.html">Chi-Square Distribution</a></li>
+<li><a href="section-39.html">Central Limit Theorem</a></li>
+</ul>
+<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">10</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<ul>
+<li><a href="section-40.html">Point Estimates</a></li>
+<li><a href="section-41.html">Chebyshev</a></li>
+<li><a href="section-42.html">Measures of Spread</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="RelativeFrequency"><header title="Section 4.1 Relative Frequency"><h1 class="heading hide-type" alt="Section 4.1 Relative Frequency">
+<span class="type">Section</span><span class="codenumber">4.1</span><span class="title">Relative Frequency</span><a href="RelativeFrequency.html" class="permalink">¶ permalink</a>
+</h1></header><article class="introduction" id="introduction-3"><h5 class="heading"><span></span></h5>
+<p id="p-152">Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
+<p id="p-153">People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p></article><p id="p-154">When attempting to precisely measure this uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
+<ul style="list-style-type: disc;">
+<li id="li-96">S = Universal Set or Sample Space Experiment or Outcome Space. 
+		This is the collection of all possible outcomes.</li>
+<li id="li-97">Random Experiment. A random experiment is a repeatable activity which has more than one
+		possible outcome all of which can be specified in advance but can not be known in advance with certainty.</li>
+<li id="li-98">Trial. Performing a Random Experiment one time and measuring the result.</li>
+<li id="li-99">A = Event. A collection of outcomes.  Generally denoted by an upper case letter such as A, B, C, etc.</li>
+<li id="li-100">Success/Failure. When recording the result of a trial, a success for event A occurs when the outcome
+		lies in A. If not, then the trial was a failure. There is no qualitative meaning to this term.</li>
+<li id="li-101">Mutually Exclusive Events. Two events which share no common outcomes. Also known as disjoint events.</li>
+<li id="li-102">|A| = Frequency. In a sequence of n events, the frequency is the number of trials which resulted in 
+		a success for event A.</li>
+<li id="li-103">|A| / n = Relative Frequency. A proportion of successes to total number of trials.</li>
+<li id="li-104">Histogram. A bar chart representation of data where area corresponds to the value being described.</li>
+</ul>
+<p id="p-155">To investigate these terms and to motivate our discussion of probability, consider flipping coins using the interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying number of trials selected by you as you move the slider bar. Results are displayed using a histogram.</p>
+<p id="p-156">
+	Question 1: What do you notice as the number of flips increases?
+	</p>
+<p id="p-157">
+	Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
+	that to happen?
+	</p>
+<div class="sagecell-sage"><script type="text/x-sage">coin = ["Heads", "Tails"]
+@interact
+def _(num_rolls = slider([5..5000],label="Number of Flips")):
+	rolls = [choice(coin) for roll in range(num_rolls)]
+	show(rolls)   
+	freq = [0,0]
+	for outcome in rolls:
+		if (outcome=='Tails'):
+			freq[0] = freq[0]+1
+		else:
+			freq[1] = freq[1]+1
+	print("\nThe frequency of tails = "+ str(freq[0]))+" and heads = "+ str(freq[1])+"."
+	rel = [freq[0]/num_rolls,freq[1]/num_rolls]
+	print("\nThe relative frequencies for Tails and Heads:"+str(rel))
+	show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
+</script></div>
+<p id="p-158">Notice that as the number of flips increases, the relative frequency of Heads (and Tails)
+	stabilized around 0.5. This makes sense intuitively since there are two options for each 
+	individual flip and 1/2 of those options are Heads while the other 1/2 is Tails.</p>
+<p id="p-159">
+	Let's try again
+	by doing a random experiment consisting of rolling a single die one time. Note that the sample space 
+	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
+	</p>
+<p id="p-160">
+	Question 1: What do you notice as the number of rolls increases?
+	</p>
+<p id="p-161">
+	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
+	</p>
+<div class="sagecell-sage"><script type="text/x-sage">@interact
+def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [4,6,8,12,20]):
+	die = list((1..Number_of_Sides))
+	rolls = [choice(die) for roll in range(num_rolls)]
+	show(rolls)   
+
+	freq = [rolls.count(outcome) for outcome in set(die)]  # count the numbers for each outcome
+	print 'The frequencies of each outcome is '+str(freq)
+
+	print 'The relative frequencies of each outcome:'
+	rel_freq = [freq[outcome-1]/num_rolls for outcome in set(die)]  # make frequencies relative
+	print rel_freq
+	fs = []
+	for f in rel_freq:
+		fs.append(f.n(digits=4))
+	print fs
+	show(bar_chart(freq,axes=False,ymin=0))
+</script></div>
+<p id="p-162">Notice in this instance that there are a larger number of options (for example 6 on a regular
+	die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die)
+	as the number of rolls increased.</p>
+<p id="p-163">In general, this suggests a rule: if there are n outcomes and each one has the same
+	chance of occurring on a given trial then on average on a large number of trials the relative
+	frequency of that outcome is 1/n.
+	In general, if a number of outcomes are "equally likely" then this is a good model for measuring
+	the proportion of outcomes that would be expected to have any given outcome. However, it is not
+	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:</p>
+<div class="sagecell-sage"><script type="text/x-sage">@interact
+def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
+    die = list((1..num_sides))
+    dice = list((2..num_sides*2))
+    rolls = [(choice(die),choice(die)) for roll in range(num_rolls)]
+    sums = [sum(rolls[roll]) for roll in range(num_rolls)]
+    show(rolls)   
+
+    freq = [sums.count(outcome) for outcome in set(dice)]  # count the numbers for each outcome
+    print 'The frequencies of each outcome is '+str(freq)
+    
+    print 'The relative frequencies of each outcome:'
+    rel_freq = [freq[outcome-2]/num_rolls for outcome in set(dice)]  # make frequencies relative
+    print rel_freq        
+    show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
+    print "Relative Frequence of ",dice[0]," is about ",rel_freq[0].n(digits=4)
+    print "Relative Frequence of ",dice[num_sides-1]," is about ",rel_freq[num_sides-1].n(digits=4)
+</script></div>
+<p id="p-164">Notice, not only are the answers not the same but they are not even close. To understand why this 
+	is different from the examples before, consider the possible outcomes from each pair of die. Since we
+	are measuring the sum of the dice then (for a pair of standard 6-sided dice) the possible sums are from 
+	2 to 12. However, there is only one way to get a 2--namely from a (1,1) pair--while there are 6 ways to get
+	a 7--namely from the pairs (1,6), (2,5), (3,4), (4,3), (5,2), and (6,1). So it might make some sense
+	that the likelihood of getting a 7 is 6 times larger than that of getting a 2. Check to see if that
+	is the case with your experiment above.</p></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2016-09-13T15:31:00-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<article class="definition-like"><h5 class="heading">
+<span class="type">Definition</span><span class="codenumber">2.5.3</span><span class="title">Variance and Standard Deviation</span>
+</h5>
+<p>The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by \(\sigma^2\). Therefore
+	\begin{equation*} \sigma^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} \end{equation*}
+</p>
+<p>The standard deviation is the square root of the variance. If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by \(\sigma\). Therefore
+\begin{equation*} \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.\end{equation*}
+</p>
+<p>From the data {2,5,8,10}, you have found that the mean is 6.25. Computing the variance then involves accumulating and averaging the squared differences of each data value and this mean. Then
+\begin{align*}
+&amp; \frac{1}{4} \left ( (2-6.25)^2 + (5-6.25)^2 + (8-6.25)^2 + (10-6.25)^2 \right ) \\
+&amp; = \frac{18.0625 + 1.5625 + 3.0625 + 14.0625}{4} \\
+&amp; = \frac{36.75}{4}\\
+&amp; = 9.1875.
+\end{align*}
+ </p>
+<p>
+If data comes from a sample of the population then we call it a sample variance and denote this value by v. Since sample data tends to reflect certain "biases" then we increase this value slightly by \(\frac{n}{n-1}\) to give the sample variance
+\begin{equation*}s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n-1}.\end{equation*}
+and the sample standard deviation similarly as the square root of the sample variance.
+</p></article><span class="incontext"><a href="section-8.html#definition-14">in-context</a></span>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--* Generated from MathBook XML source *-->
+<!--*    on 2016-09-13T15:30:59-05:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>AATA Geometric Series</title>
+<meta name="Keywords" content="Authored in MathBook XML">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+// contrib directory for accessibility menu, moot after v2.6+?
+MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        // [Contrib]accessibility menu moot after v2.6+?
+        extensions: ["AMSmath.js", "AMSsymbols.js", "extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", "[Contrib]/a11y/accessibility-menu.js", ],
+        equationNumbers: { autoNumber: "none",
+                           useLabelIds: true,
+                           // JS comment, XML CDATA protect XHTML quality of file
+                           // if removed in XSL, use entities
+                           //<![CDATA[
+                           formatID: function (n) {return String(n).replace(/[:'"<>&]/g,"")},
+                           //]]>
+                         },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    "HTML-CSS": {
+        scale: 88,
+    },
+});
+    </script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate Sage Code'});
+});
+</script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<div style="display:none;">\(
+\newcommand{\lt}{ &lt; }
+\newcommand{\gt}{ &gt; }
+\newcommand{\amp}{ &amp; }
+\)</div>
+<header id="masthead"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading">
+<span class="title">Introduction to Mathematical Probability and Statistics</span><span class="subtitle">A Calculus-based Approach</span>
+</h1>
+<p class="byline">John Travis</p>
+</div>
+</div></div>
+<nav id="primary-navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="previous-button toolbar-item button" href="PowerSeriesReview.html">Previous</a><a class="up-button button toolbar-item" href="PowerSeriesReview.html">Up</a><a class="next-button button toolbar-item" href="section-2.html">Next</a>
+</div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="PowerSeriesReview.html">Previous</a><a class="up-button button toolbar-item" href="PowerSeriesReview.html">Up</a><a class="next-button button toolbar-item" href="section-2.html">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="index.html"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html">Colophon</a></li>
+<li><a href="biography-1.html">Author Biography</a></li>
+<li><a href="preface-1.html">Preface</a></li>
+</ul>
+<h2 class="link active"><a href="PowerSeriesReview.html"><span class="codenumber">1</span><span class="title">Review of Calculus</span></a></h2>
+<ul>
+<li><a href="section-1.html" class="active">Geometric Series</a></li>
+<li><a href="section-2.html">Binomial Sums</a></li>
+<li><a href="section-3.html">Negative Binomial Series</a></li>
+</ul>
+<h2 class="link"><a href="RepresentingData.html"><span class="codenumber">2</span><span class="title">Representing Data</span></a></h2>
+<ul>
+<li><a href="section-4.html">Measurement Scales</a></li>
+<li><a href="section-5.html">Techniques for Representing Data</a></li>
+<li><a href="section-6.html">Measures of Position</a></li>
+<li><a href="section-7.html">Measures of the Middle</a></li>
+<li><a href="section-8.html">Measures of Spread</a></li>
+<li><a href="section-9.html">Grouped Data</a></li>
+<li><a href="section-10.html">Other Point Measures</a></li>
+<li><a href="section-11.html">Graphical Representation of Data</a></li>
+<li><a href="section-12.html">Exercises</a></li>
+</ul>
+<h2 class="link"><a href="Combinatorics.html"><span class="codenumber">3</span><span class="title">Counting and Combinatorics</span></a></h2>
+<ul>
+<li><a href="section-13.html">Introduction</a></li>
+<li><a href="section-14.html">Permutations</a></li>
+<li><a href="section-15.html">Combinations</a></li>
+<li><a href="section-16.html">Exercises</a></li>
+</ul>
+<h2 class="link"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability Theory</span></a></h2>
+<ul>
+<li><a href="RelativeFrequency.html">Relative Frequency</a></li>
+<li><a href="section-18.html">Definition of Probability</a></li>
+<li><a href="section-19.html">Conditional Probability</a></li>
+<li><a href="section-20.html">Bayes Theorem</a></li>
+<li><a href="section-21.html">Independence</a></li>
+</ul>
+<h2 class="link"><a href="ProbabilityFunctions.html"><span class="codenumber">5</span><span class="title">Probability Functions</span></a></h2>
+<ul>
+<li><a href="section-22.html">Random Variables</a></li>
+<li><a href="section-23.html">Probability Functions</a></li>
+<li><a href="section-24.html">Properties of the Distribution Function</a></li>
+<li><a href="section-25.html">Standard Units</a></li>
+<li><a href="section-26.html">Expected Value</a></li>
+</ul>
+<h2 class="link"><a href="UniformHypergeometric.html"><span class="codenumber">6</span><span class="title">Uniform and Hypergeometric Distributions</span></a></h2>
+<ul>
+<li><a href="section-27.html">Discrete Uniform Distribution</a></li>
+<li><a href="section-28.html">Continuous Uniform Distribution</a></li>
+<li><a href="section-29.html">Hypergeometric Distribution</a></li>
+</ul>
+<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">7</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
+<ul>
+<li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
+<li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
+<li><a href="section-32.html">Negative Binomial</a></li>
+</ul>
+<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">8</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
+<ul>
+<li><a href="section-33.html">Poisson Distribution</a></li>
+<li><a href="section-34.html">Exponential Distribution</a></li>
+<li><a href="section-35.html">Gamma Distribution</a></li>
+</ul>
+<h2 class="link"><a href="Normal.html"><span class="codenumber">9</span><span class="title">Normal Distributions</span></a></h2>
+<ul>
+<li><a href="section-36.html">Properties of the Normal Distribution</a></li>
+<li><a href="section-37.html">Theorems</a></li>
+<li><a href="section-38.html">Chi-Square Distribution</a></li>
+<li><a href="section-39.html">Central Limit Theorem</a></li>
+</ul>
+<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">10</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<ul>
+<li><a href="section-40.html">Point Estimates</a></li>
+<li><a href="section-41.html">Chebyshev</a></li>
+<li><a href="section-42.html">Measures of Spread</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-1"><header title="Section 1.1 Geometric Series"><h1 class="heading hide-type" alt="Section 1.1 Geometric Series">
+<span class="type">Section</span><span class="codenumber">1.1</span><span class="title">Geometric Series</span>
+</h1></header><p id="p-8">
+		  Knowledge of the use of power series is very important when dealing with both 
+		  probability functions. </p>\begin{gather*}
+S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}
+\end{gather*} provided x is small is of utmost importance  
+		<p id="p-9">as is its extension know as the negative binomial series \(( n \in \mathbb{N} )\).</p>\begin{gather*}
+NB = \sum_{k=0}^{\infty} (-1)^k \binom{-n + k - 1}{k} {x^k b^{-n-k}} = \frac{1}{(x+b)^n}
+\end{gather*}<p id="p-10">In this section, we review this series, develop its properties, and explore some of its extensions.</p>
+<section class="subsection" id="subsection-1"><header title="Subsection 1.1.1 Geometric Series"><h1 class="heading hide-type" alt="Subsection 1.1.1 Geometric Series">
+<span class="type">Subsection</span><span class="codenumber">1.1.1</span><span class="title">Geometric Series</span>
+</h1></header><article class="theorem-like" id="theorem-GeomSeries"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">1.1.1</span>
+</h5>\( S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}\)</article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-1" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-11">Consider the partial sum</p>\begin{gather*}
+ S_n = \sum_{k=0}^{n} {x^k} = 1 + x + x^2 + ... + x^n \\
+ (1-x)S_n = S_n - x S_n = 1 + x + x^2 + ... + x^n - (x + x^2 + ... + x^n + x^{n+1}) = 1 - x^{n+1} \\
+ \Rightarrow S_n = \frac{1-x^{n+1}}{1-x} 
+\end{gather*}<p id="p-12">and so as \( n \rightarrow \infty \),</p>\begin{gather*}
+ S_n \rightarrow S = \frac{1}{1-x} 
+\end{gather*}</article></span>
+</div>
+<p id="p-13">
+		The interactive activity below shows how well the partial sums approximate \(\frac{1}{1-x}\)
+		as the number of terms increases.
+		</p>
+<div class="sagecell-sage"><script type="text/x-sage">var('x,n,k')
+f = 1/(1-x)
+@interact
+def _(n = slider(2,20,1,2)):
+	Sn = sum(x^k,k,0,n)
+	pretty_print(html('$S_n(x) = %s$'%str(latex(Sn))))
+	G = plot(f,x,-1,0.9,color='black')
+	G += plot(Sn,x,-1,0.9,color='blue')
+	G += plot(abs(f-Sn),x,-1,0.9,color='red')
+	G.show(title="Partial Sums (blue) vs Infinite Series (black) and Error (red)",figsize=(5,4))
+</script></div></section><section class="subsection" id="subsection-2"><header title="Subsection 1.1.2 Alternate Forms for the Geometric Series"><h1 class="heading hide-type" alt="Subsection 1.1.2 Alternate Forms for the Geometric Series">
+<span class="type">Subsection</span><span class="codenumber">1.1.2</span><span class="title">Alternate Forms for the Geometric Series</span>
+</h1></header><article class="theorem-like" id="theorem-2"><h5 class="heading">
+<span class="type">Theorem</span><span class="codenumber">1.1.2</span><span class="title">Generalized Geometric Series</span>
+</h5>For \(k \in \mathbb{N}, \sum_{k=M}^{\infty} {x^k} = \frac{x^M}{1-x}\)</article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-2" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof">\begin{align*}
+\sum_{k=M}^{\infty} {x^k} &amp; = x^M \sum_{k=0}^{\infty} {x^k}\\
+ &amp; = x^M \frac{1}{1-x}\\
+ &amp; = \frac{x^M}{1-x}
+\end{align*}</article></span>
+</div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-1" id="example-1"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.1.3</span><span class="title">Integrating and Differentiating to get new Power Series</span>
+</h5></article></a></div>
+<div id="hk-example-1" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-14">The geometric power series is a nice function which is relatively easily differentiated and integrated. In doing so, one can obtain
+					new power series which might also be very useful in their own right.  Here we develop a few which are of special interest.</p>
+<p id="p-15">Let \(f(x) = \sum_{k=0}^\infty x^k = \frac{1}{1-x}\).  Then,</p>\begin{gather*}
+ f'(x) = \sum_{k=1}^{\infty} {kx^{k-1}} = \frac{1}{(1-x)^2}\\
+ f''(x) = \sum_{k=2}^{\infty} {k(k-1)x^{k-1}} = \frac{2}{(1-x)^3}\\
+ f^{(n)}(x) = \sum_{k=n}^{\infty} {k(k-1)...(k-n+1)x^{k-n}} = \frac{n!}{(1-x)^{n+1}}\\
+ \int f(x) dx = \sum_{k=0}^{\infty} {\frac{x^{k+1}}{k+1}} = -ln(1-x)
+\end{gather*}</article></div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-2" id="example-2"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.1.4</span><span class="title">Playing with the base</span>
+</h5></article></a></div>
+<div id="hk-example-2" style="display: none;" class="tex2jax_ignore"><article class="example-like">\begin{align*}
+\sum_{k=0}^{\infty} {a^k x^k} &amp; = \sum_{k=0}^{\infty} {(ax)^k}\\
+ &amp; = \frac{1}{1-ax}, |x| \lt \frac{1}{a}
+\end{align*}<p id="p-16">or perhaps</p>\begin{gather*}
+\sum_{k=0}^{\infty} {(x-b)^k} = \frac{1}{1-(x-b)}, |x-b| \lt 1
+\end{gather*}</article></div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-3" id="example-3"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.1.5</span><span class="title">Application: Converting repeating decimals to fractional form</span>
+</h5></article></a></div>
+<div id="hk-example-3" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-17">Consider this example:</p>\begin{align*}
+2.48484848... &amp; = 2 + 0.48 + 0.0048 + 0.000048 + ...\\
+ &amp;  = 2 + 0.48(1 + 0.01 + 0.0001 + ... ) = 2 + 0.48 \sum_{k=0}^\infty (0.01)^k
+\end{align*}<p id="p-18">Therefore, applying the Geometric Series</p>\begin{align*}
+ 2.48484848... &amp; = 2 + 0.48 \frac{1}{1-0.01} \\
+ &amp; = 2 + 0.48 \frac{100}{99} = 2 + \frac{48}{99} 
+\end{align*}</article></div>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-example-4" id="example-4"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">1.1.6</span><span class="title">Playing around with repeating decimals</span>
+</h5></article></a></div>
+<div id="hk-example-4" style="display: none;" class="tex2jax_ignore"><article class="example-like"><p id="p-19">Certainly most students would agree that \( 0.333333... = \frac{1}{3} \). So, what about \(0.999999...\)?  
+			Simply follow the pattern above</p>\begin{align*}
+0.999999... &amp; = 0.9 + 0.09 + 0.009 + 0.0009 + ... = 0.9(1 + 0.1 + 0.1^2 + 0.1^3 + ...\\
+ &amp; = 0.9 \frac{1}{1-0.1} = 0.9 \frac{1}{0.9} = 1 
+\end{align*}</article></div></section></section></div></main>
+</div>
+</body>
+</html>
