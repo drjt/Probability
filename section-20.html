@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-07T16:06:24-05:00    *-->
+<!--*    on 2016-09-13T15:10:43-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -108,45 +108,48 @@ MathJax.Hub.Config({
 <li><a href="section-15.html">Combinations</a></li>
 <li><a href="section-16.html">Exercises</a></li>
 </ul>
-<h2 class="link active"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability and Probability Functions</span></a></h2>
+<h2 class="link active"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability Theory</span></a></h2>
 <ul>
 <li><a href="RelativeFrequency.html">Relative Frequency</a></li>
 <li><a href="section-18.html">Definition of Probability</a></li>
 <li><a href="section-19.html">Conditional Probability</a></li>
 <li><a href="section-20.html" class="active">Bayes Theorem</a></li>
 <li><a href="section-21.html">Independence</a></li>
+</ul>
+<h2 class="link"><a href="ProbabilityFunctions.html"><span class="codenumber">5</span><span class="title">Probability Functions</span></a></h2>
+<ul>
 <li><a href="section-22.html">Random Variables</a></li>
-<li><a href="ProbabilityFunctions.html">Probability Functions</a></li>
+<li><a href="section-23.html">Probability Functions</a></li>
 <li><a href="section-24.html">Properties of the Distribution Function</a></li>
 <li><a href="section-25.html">Standard Units</a></li>
 <li><a href="section-26.html">Expected Value</a></li>
 </ul>
-<h2 class="link"><a href="UniformHypergeometric.html"><span class="codenumber">5</span><span class="title">Uniform and Hypergeometric Distributions</span></a></h2>
+<h2 class="link"><a href="UniformHypergeometric.html"><span class="codenumber">6</span><span class="title">Uniform and Hypergeometric Distributions</span></a></h2>
 <ul>
 <li><a href="section-27.html">Discrete Uniform Distribution</a></li>
 <li><a href="section-28.html">Continuous Uniform Distribution</a></li>
 <li><a href="section-29.html">Hypergeometric Distribution</a></li>
 </ul>
-<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">6</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
+<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">7</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
 <ul>
 <li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
 <li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
 <li><a href="section-32.html">Negative Binomial</a></li>
 </ul>
-<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">7</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
+<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">8</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
 <ul>
 <li><a href="section-33.html">Poisson Distribution</a></li>
 <li><a href="section-34.html">Exponential Distribution</a></li>
 <li><a href="section-35.html">Gamma Distribution</a></li>
 </ul>
-<h2 class="link"><a href="Normal.html"><span class="codenumber">8</span><span class="title">Normal Distributions</span></a></h2>
+<h2 class="link"><a href="Normal.html"><span class="codenumber">9</span><span class="title">Normal Distributions</span></a></h2>
 <ul>
 <li><a href="section-36.html">Properties of the Normal Distribution</a></li>
 <li><a href="section-37.html">Theorems</a></li>
 <li><a href="section-38.html">Chi-Square Distribution</a></li>
 <li><a href="section-39.html">Central Limit Theorem</a></li>
 </ul>
-<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">9</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">10</span><span class="title">Estimating Data using Intervals</span></a></h2>
 <ul>
 <li><a href="section-40.html">Point Estimates</a></li>
 <li><a href="section-41.html">Chebyshev</a></li>
@@ -154,14 +157,16 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-20"><header title="Section 4.4 Bayes Theorem"><h1 class="heading hide-type" alt="Section 4.4 Bayes Theorem">
 <span class="type">Section</span><span class="codenumber">4.4</span><span class="title">Bayes Theorem</span>
-</h1></header><article class="theorem-like" id="theorem-25"><h5 class="heading">
+</h1></header><article class="introduction" id="introduction-6"><h5 class="heading"><span></span></h5>
+<p id="p-201">Conditional probabilities can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as \(P(A | B)\) but need \(P(B | A)\). The ability to "play around with history" by switching what has been presumed to occur leads to the following.
+		</p></article><article class="theorem-like" id="theorem-25"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.4.1</span><span class="title">Bayes Theorem</span>
 </h5>Let \(S = \{ S_1, S_2, ... , S_m \}\) where the \(S_k\) are pairwise disjoint and \(S_1 \cup S_2 \cup ... \cup S_m = S\) (i.e. a partition of the space S).  Then for any \(A \subset S\)\begin{gather*}
 P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.
 \end{gather*}
 		The conditional probability \(P(S_j | A)\) is called the posterior probability of \(S_k\).
 		</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-20" id="proof-20"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-20" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-195">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-20" id="proof-20"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-20" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-202">
 		Notice, by the definition of conditional probability and the multiplication rule
 		\begin{equation*}P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.\end{equation*}
 		But using the disjointness of the partition 
@@ -175,37 +180,42 @@ P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )\\
 		Put these two expansions together to obtain the desired result.
 		</p></article></span>
 </div>
-<p id="p-196">
-To illustrate this result, from the web site <a class="external-url" href="http://stattrek.com/probability/bayes-theorem.aspx" target="_blank"><tt class="code-inline tex2jax_ignore">http://stattrek.com/probability/bayes-theorem.aspx</tt></a> consider the following problem:
-</p>
-<p id="p-197">
-Marie is getting married tomorrow, at an outdoor ceremony in the desert. In recent years, it has rained only 5 days each year. Unfortunately, the weatherman has predicted rain for tomorrow. When it actually rains, the weatherman correctly forecasts rain 90% of the time. When it doesn't rain, he incorrectly forecasts rain 10% of the time. What is the probability that it will rain on the day of Marie's wedding?
-</p>
-<p id="p-198">
-Notice, all days can be classified into one of two disjoint options:
-<ul style="list-style-type: disc;">
-<li id="li-111">Rainy, in which case we can deduce from the given info that P(Rain) = 5/365</li>
-<li id="li-112">No Rainy, and since this is the complement of above, P(No Rain) = 360/365</li>
+<p id="p-203">
+	To illustrate this result, from the web site <a class="external-url" href="http://stattrek.com/probability/bayes-theorem.aspx" target="_blank"><tt class="code-inline tex2jax_ignore">http://stattrek.com/probability/bayes-theorem.aspx</tt></a> consider the following problem:
+	</p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-exercise-1" id="exercise-1"><h5 class="heading">
+<span class="type">Exercise</span> <span class="codenumber">4.4.2</span>
+</h5></a></div>
+<div id="hk-exercise-1" style="display: none;" class="tex2jax_ignore">
+<article class="exercise-like">
+	Marie is getting married tomorrow, at an outdoor ceremony in the desert. In recent years, it has rained only 5 days each year. Unfortunately, the weatherman has predicted rain for tomorrow. When it actually rains, the weatherman correctly forecasts rain 90% of the time. When it doesn't rain, he incorrectly forecasts rain 10% of the time. What is the probability that it will rain on the day of Marie's wedding?
+	
+	Notice, all days can be classified into one of two disjoint options:
+	<ul style="list-style-type: disc;">
+<li id="li-129">Rainy, in which case we can deduce from the given info that P(Rain) = 5/365</li>
+<li id="li-130">No Rainy, and since this is the complement of above, P(No Rain) = 360/365</li>
 </ul>
-In the notation of Bayes Theorem, let A represent a forecast of Rain and note you have \(P(\text{Rain}) = P(S_1) = \frac{5}{365}\) and \(P(\text{No Rain}) = \frac{360}{365}\). Further, you are given the conditional probabilities
-<ul style="list-style-type: disc;">
-<li id="li-113">\(P(\text{Rain | Forecast Rain}) = P( A | S_1) = 0.9\)</li>
-<li id="li-114">\(P(\text{Rain | Forecast Rain}) = P( A | S_2) = 0.1\)</li>
+	In the notation of Bayes Theorem, let A represent a forecast of Rain and note you have \(P(\text{Rain}) = P(S_1) = \frac{5}{365}\) and \(P(\text{No Rain}) = \frac{360}{365}\). Further, you are given the conditional probabilities
+	<ul style="list-style-type: disc;">
+<li id="li-131">\(P(\text{Rain | Forecast Rain}) = P( A | S_1) = 0.9\)</li>
+<li id="li-132">\(P(\text{Rain | Forecast Rain}) = P( A | S_2) = 0.1\)</li>
 </ul>
-Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes Theorem allows you to turn this around...
-\begin{align*}
+	Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes Theorem allows you to turn this around...
+	\begin{align*}
 P(\text{Rain}) &amp;  = P(S_1) P( A | S_1) + P(S_2) P(A | S_2)\\
  &amp; = \frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1\\
  &amp; = NUMBER 
 \end{align*}
-Hence, putting these together gives
-\begin{align*}
+	Hence, putting these together gives
+	\begin{align*}
 P(\text{Rain | Forecast Rain}) &amp; = \frac{\frac{5}{365} \cdot 0.9}{\frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1}\\
  &amp; = \frac{5 \cdot 0.9}{5 \cdot 0.9 + 360 \cdot 0.1}\\
  &amp; = \frac{45}{45+360} \approx 0.111
 \end{align*}
-So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
-</p>
+	So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
+	</article><div class="hidden-knowl-wrapper"></div>
+</div>
+<p id="p-206">The interactive cell below can be used to easily compute all of the conditional probabilities associated with Bayes's Theorem. Notice how the relative size of the pie-shaped partition changes when you presume that an event in the space has already occurred.</p>
 <div class="sagecell-sage"><script type="text/x-sage">#  This function is used to convert an input string into separate entries
 def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
 
@@ -300,8 +310,66 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
             print
             H.show(title='Venn diagram presuming A has occured')
 </script></div>
+<section class="subsection" id="subsection-14"><header title="Subsection 4.4.1 HOMEWORK"><h1 class="heading hide-type" alt="Subsection 4.4.1 HOMEWORK">
+<span class="type">Subsection</span><span class="codenumber">4.4.1</span><span class="title">HOMEWORK</span>
+</h1></header><p id="p-207">
+	
+	A. Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
 
-</section></div></main>
+	<figure class="figure-like" id="table-6"><table>
+<tr>
+<td class="r m b2 r2 l0 t0">Age</td>
+<td class="r m b2 r2 l0 t0">Proportion of Insured</td>
+<td class="r m b2 r0 l0 t0">Probability of Accident</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0">16-20</td>
+<td class="r m b0 r2 l0 t0">0.05</td>
+<td class="r m b0 r0 l0 t0">0.08</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0">21-25</td>
+<td class="r m b0 r2 l0 t0">0.06</td>
+<td class="r m b0 r0 l0 t0">0.07</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0">26-55</td>
+<td class="r m b0 r2 l0 t0">0.49</td>
+<td class="r m b0 r0 l0 t0">0.02</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0">55-65</td>
+<td class="r m b0 r2 l0 t0">0.25</td>
+<td class="r m b0 r0 l0 t0">0.03</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0">over 65</td>
+<td class="r m b0 r2 l0 t0">0.15</td>
+<td class="r m b0 r0 l0 t0">0.04</td>
+</tr>
+</table></figure>
+	
+	One of your family friends insured by this company has an accident. 
+	<ol style="list-style-type: decimal;">
+<li id="li-133">Determine the conditional probability that the driver was in the 16-20 age range.</li>
+<li id="li-134">Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.</li>
+<li id="li-135">Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.</li>
+</ol>
+	</p>
+<p id="p-208">
+	B. Congratulations...your family is having a baby! As part of the prenatal care, some testing is part of the normal procedure including one for spinal bifida (which is a condition in which part of the spinal cord may be exposed.) Indeed, measurement of maternal serum AFP values is a standard tool used in obstetrical care to identify pregnancies that may have an increased risk for this disorder. You want to make plans for the new child's care and want to know how serious to take the test results. However, some times the test indicates that the child has the disorder when in actuality it does not (a false positive) and likewise may indicate that the child does not have the disorder when in fact it does (a false negative.) 
+	</p>
+<p id="p-209">The combined accuracy rate for the screen to detect the chromosomal abnormalities mentioned above is approximately 85% with a false positive rate of 5%. This means that (from <a class="external-url" href="http://americanpregnancy.org/prenatal-testing/first-trimester-screen/" target="_blank">americanpregnancy.org</a>)
+	<ul style="list-style-type: disc;">
+<li id="li-136">Approximately 85 out of every 100 babies affected by the abnormalities addressed by the screen will be identified. (Positive Positive)</li>
+<li id="li-137">Approximately 5% of all normal pregnancies will receive a positive result or an abnormal level. (False Positive)</li>
+</ul>
+	<ol style="list-style-type: decimal;">
+<li id="li-138">Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.</li>
+<li id="li-139">Given that your test came back negative, determine the likelihood that the child will not have spina bifida</li>
+<li id="li-140">Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.</li>
+</ol>
+	</p></section></section></div></main>
 </div>
 </body>
 </html>

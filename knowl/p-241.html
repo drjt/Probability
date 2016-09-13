@@ -1,8 +1,16 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-07T16:06:25-05:00    *-->
+<!--*    on 2016-09-13T15:10:44-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
-<p><h5 class="heading"><span class="type">Paragraph</span></h5>So, let's replace \(\frac{a}{b} = x\) and ignore for a while the term factored out. Then, we only need to show </p><span class="incontext"><a href="section-32.html#p-241">in-context</a></span>
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+	Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests \(P(u \lt X \lt v) = P(u + w \lt X \lt v + w)\).  In integral notation you obtain the following:
+	\begin{gather*}
+\int_u^v f(x) dx = \int_{u+w}^{v+w} f(x) dx\\
+F(v)-F(u) = F(v+w)-F(u+w)\\
+F(u+w)-F(u) = F(v+w)-F(v)
+\end{gather*}
+	which is true regardless of w so long as you stay in the domain of interest. This only happens if F is linear and therefore f must be constant. Say, f(x)=c. In many situations, the space of X will be a single interval with R = [a,b]. Unless otherwise noted, this will be our assumption as well.
+	</p><span class="incontext"><a href="section-28.html#p-241">in-context</a></span>

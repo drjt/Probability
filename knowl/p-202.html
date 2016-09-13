@@ -1,10 +1,20 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-07T16:06:25-05:00    *-->
+<!--*    on 2016-09-13T15:10:44-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
-<p><h5 class="heading"><span class="type">Paragraph</span></h5>When gambling with a pair of dice, one might use
-	S=ordered pairs of all possible rolls = {(a,b): a=die 1 outcome, b=die 2 outcome}.
-	Choose X( (a,b) ) = a+b. Then, R={2, 3, 4, 5, ..., 12}.</p><span class="incontext"><a href="section-22.html#p-202">in-context</a></span>
+<p><h5 class="heading"><span class="type">Paragraph</span></h5>
+		Notice, by the definition of conditional probability and the multiplication rule
+		\begin{equation*}P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.\end{equation*}
+		But using the disjointness of the partition 
+		\begin{align*}
+P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )\\
+    &amp; = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)\\
+    &amp; = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)\\
+    &amp; = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)\\
+    &amp; = \sum_{k=1}^m P(S_k)P(A | S_k)
+\end{align*}
+		Put these two expansions together to obtain the desired result.
+		</p><span class="incontext"><a href="section-20.html#p-202">in-context</a></span>

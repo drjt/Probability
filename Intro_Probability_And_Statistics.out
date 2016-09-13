@@ -18,30 +18,36 @@
 \BOOKMARK [1][-]{section.3.2}{Permutations}{chapter.3}% 18
 \BOOKMARK [1][-]{section.3.3}{Combinations}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.4}{Exercises}{chapter.3}% 20
-\BOOKMARK [0][-]{chapter.4}{Probability and Probability Functions}{}% 21
+\BOOKMARK [0][-]{chapter.4}{Probability Theory}{}% 21
 \BOOKMARK [1][-]{section.4.1}{Relative Frequency}{chapter.4}% 22
 \BOOKMARK [1][-]{section.4.2}{Definition of Probability}{chapter.4}% 23
 \BOOKMARK [1][-]{section.4.3}{Conditional Probability}{chapter.4}% 24
 \BOOKMARK [1][-]{section.4.4}{Bayes Theorem}{chapter.4}% 25
 \BOOKMARK [1][-]{section.4.5}{Independence}{chapter.4}% 26
-\BOOKMARK [1][-]{section.4.6}{Random Variables}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.7}{Probability Functions}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.8}{Properties of the Distribution Function}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.9}{Standard Units}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.10}{Expected Value}{chapter.4}% 31
-\BOOKMARK [0][-]{chapter.5}{Binomial, Geometric, and Negative Binomial Distributions}{}% 32
-\BOOKMARK [1][-]{section.5.1}{Binomial Distribution}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.2}{Geometric Distribution}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.3}{Negative Binomial}{chapter.5}% 35
-\BOOKMARK [0][-]{chapter.6}{Poisson, Exponential, and Gamma Distributions}{}% 36
-\BOOKMARK [1][-]{section.6.1}{Poisson Distribution}{chapter.6}% 37
-\BOOKMARK [1][-]{section.6.2}{Exponential Distribution}{chapter.6}% 38
-\BOOKMARK [1][-]{section.6.3}{Gamma Distribution}{chapter.6}% 39
-\BOOKMARK [0][-]{chapter.7}{Normal Distributions}{}% 40
-\BOOKMARK [1][-]{section.7.1}{Properties of the Normal Distribution}{chapter.7}% 41
-\BOOKMARK [1][-]{section.7.2}{Theorems}{chapter.7}% 42
-\BOOKMARK [1][-]{section.7.3}{Chi-Square Distribution}{chapter.7}% 43
-\BOOKMARK [1][-]{section.7.4}{Central Limit Theorem}{chapter.7}% 44
-\BOOKMARK [0][-]{chapter.8}{Estimating Data using Intervals}{}% 45
-\BOOKMARK [1][-]{section.8.1}{Chebyshev}{chapter.8}% 46
-\BOOKMARK [1][-]{section.8.2}{Measures of Spread}{chapter.8}% 47
+\BOOKMARK [0][-]{chapter.5}{Probability Functions}{}% 27
+\BOOKMARK [1][-]{section.5.1}{Random Variables}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.2}{Probability Functions}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.3}{Properties of the Distribution Function}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.4}{Standard Units}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.5}{Expected Value}{chapter.5}% 32
+\BOOKMARK [0][-]{chapter.6}{Uniform and Hypergeometric Distributions}{}% 33
+\BOOKMARK [1][-]{section.6.1}{Discrete Uniform Distribution}{chapter.6}% 34
+\BOOKMARK [1][-]{section.6.2}{Continuous Uniform Distribution}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.3}{Hypergeometric Distribution}{chapter.6}% 36
+\BOOKMARK [0][-]{chapter.7}{Binomial, Geometric, and Negative Binomial Distributions}{}% 37
+\BOOKMARK [1][-]{section.7.1}{Binomial Distribution}{chapter.7}% 38
+\BOOKMARK [1][-]{section.7.2}{Geometric Distribution}{chapter.7}% 39
+\BOOKMARK [1][-]{section.7.3}{Negative Binomial}{chapter.7}% 40
+\BOOKMARK [0][-]{chapter.8}{Poisson, Exponential, and Gamma Distributions}{}% 41
+\BOOKMARK [1][-]{section.8.1}{Poisson Distribution}{chapter.8}% 42
+\BOOKMARK [1][-]{section.8.2}{Exponential Distribution}{chapter.8}% 43
+\BOOKMARK [1][-]{section.8.3}{Gamma Distribution}{chapter.8}% 44
+\BOOKMARK [0][-]{chapter.9}{Normal Distributions}{}% 45
+\BOOKMARK [1][-]{section.9.1}{Properties of the Normal Distribution}{chapter.9}% 46
+\BOOKMARK [1][-]{section.9.2}{Theorems}{chapter.9}% 47
+\BOOKMARK [1][-]{section.9.3}{Chi-Square Distribution}{chapter.9}% 48
+\BOOKMARK [1][-]{section.9.4}{Central Limit Theorem}{chapter.9}% 49
+\BOOKMARK [0][-]{chapter.10}{Estimating Data using Intervals}{}% 50
+\BOOKMARK [1][-]{section.10.1}{Point Estimates}{chapter.10}% 51
+\BOOKMARK [1][-]{section.10.2}{Chebyshev}{chapter.10}% 52
+\BOOKMARK [1][-]{section.10.3}{Measures of Spread}{chapter.10}% 53

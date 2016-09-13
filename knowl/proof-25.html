@@ -1,20 +1,20 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-07T16:06:25-05:00    *-->
+<!--*    on 2016-09-13T15:10:44-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
-<ol style="list-style-type: decimal;"><li id="li-136"><p id="p-227">		
-			\begin{align*}
-\sum_{x=0}^n \binom{n}{x} y^x &amp; = (1+y)^n, \text{ by the Binomial Theorem}\\
-&amp; = (1+y)^{n_1} \cdot (1+y)^{n_2} \\
-&amp; = \sum_{x=0}^{n_1} \binom{n_1}{x} y^x \cdot \sum_{x=0}^{n_2} \binom{n_2}{x} y^x \\
-&amp; = \sum_{x=0}^n \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t} y^x
-\end{align*}		
-			Equating like coefficients for the various powers of y gives
-			\begin{equation*}\binom{n}{r} = \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t}.\end{equation*}
-			Dividing gives
-			\begin{equation*}1 = \sum_{x=0}^r f(x).\end{equation*}
-			</p></li></ol></article><span class="incontext"><a href="section-29.html#proof-25">in-context</a></span>
+<p>Case 1: R discrete</p>\begin{align*}
+\forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2\\
+F(x_2) &amp; = \sum_{x \le x_2} f(x) \\
+&amp; = \sum_{x \le x_1} f(x) + \sum_{x_1 \lt x \le x_2} f(x)\\
+&amp; \ge \sum_{x \le x_1} f(x) = F(x_1)
+\end{align*}<p>Case 2: R continuous</p>\begin{align*}
+\forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2\\
+F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx \\
+ &amp; = \int_{-\infty}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx\\
+ &amp; \ge \int_{-\infty}^{x_1} f(x) dx\\
+ &amp; = F(x_1)
+\end{align*}</article><span class="incontext"><a href="section-24.html#proof-25">in-context</a></span>

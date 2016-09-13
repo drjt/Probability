@@ -1,9 +1,20 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-07T16:06:25-05:00    *-->
+<!--*    on 2016-09-13T15:10:44-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5>
-<p>Convert to "standard units" using the conversion \(z = \frac{x-\mu}{\sigma} = \frac{x-0}{1} = x\).</p></article><span class="incontext"><a href="section-36.html#proof-27">in-context</a></span>
+<ol style="list-style-type: decimal;"><li id="li-171"><p id="p-246">		
+			\begin{align*}
+\sum_{x=0}^n \binom{n}{x} y^x &amp; = (1+y)^n, \text{ by the Binomial Theorem}\\
+&amp; = (1+y)^{n_1} \cdot (1+y)^{n_2} \\
+&amp; = \sum_{x=0}^{n_1} \binom{n_1}{x} y^x \cdot \sum_{x=0}^{n_2} \binom{n_2}{x} y^x \\
+&amp; = \sum_{x=0}^n \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t} y^x
+\end{align*}		
+			Equating like coefficients for the various powers of y gives
+			\begin{equation*}\binom{n}{r} = \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t}.\end{equation*}
+			Dividing gives
+			\begin{equation*}1 = \sum_{x=0}^r f(x).\end{equation*}
+			</p></li></ol></article><span class="incontext"><a href="section-29.html#proof-27">in-context</a></span>

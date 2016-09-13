@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="ProbabilityGeneralities" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Probability Theory</title>
+
+<introduction>
+	<p>This chapter uses relative frequency to motivate the definition of probability and then delves into the resulting consequences.</p>
+</introduction>
+
+
+<section xml:id="RelativeFrequency"><title>Relative Frequency</title>
+	<introduction>
+	<p>Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
+	<p>People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p>
+	</introduction>
+
+	<p>When attempting to precisely measure this uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
+	<ul>
+		<li>S = Universal Set or Sample Space Experiment or Outcome Space. 
+		This is the collection of all possible outcomes.</li>
+		<li>Random Experiment. A random experiment is a repeatable activity which has more than one
+		possible outcome all of which can be specified in advance but can not be known in advance with certainty.</li>
+		<li>Trial. Performing a Random Experiment one time and measuring the result.</li> 
+		<li>A = Event. A collection of outcomes.  Generally denoted by an upper case letter such as A, B, C, etc.</li>
+		<li>Success/Failure. When recording the result of a trial, a success for event A occurs when the outcome
+		lies in A. If not, then the trial was a failure. There is no qualitative meaning to this term.</li>
+		<li>Mutually Exclusive Events. Two events which share no common outcomes. Also known as disjoint events.</li>
+		<li>|A| = Frequency. In a sequence of n events, the frequency is the number of trials which resulted in 
+		a success for event A.</li>
+		<li>|A| / n = Relative Frequency. A proportion of successes to total number of trials.</li>
+		<li>Histogram. A bar chart representation of data where area corresponds to the value being described.</li>
+	</ul>
+
+	<p>To investigate these terms and to motivate our discussion of probability, consider flipping coins using the interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying number of trials selected by you as you move the slider bar. Results are displayed using a histogram.</p>
+
+	<p>
+	Question 1: What do you notice as the number of flips increases?
+	</p>
+	<p>
+	Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
+	that to happen?
+	</p>
+	
+	
+<sage>
+<input>
+coin = ["Heads", "Tails"]
+@interact
+def _(num_rolls = slider([5..5000],label="Number of Flips")):
+	rolls = [choice(coin) for roll in range(num_rolls)]
+	show(rolls)   
+	freq = [0,0]
+	for outcome in rolls:
+		if (outcome=='Tails'):
+			freq[0] = freq[0]+1
+		else:
+			freq[1] = freq[1]+1
+	print("\nThe frequency of tails = "+ str(freq[0]))+" and heads = "+ str(freq[1])+"."
+	rel = [freq[0]/num_rolls,freq[1]/num_rolls]
+	print("\nThe relative frequencies for Tails and Heads:"+str(rel))
+	show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
+</input>
+</sage>
+
+
+	<p>Notice that as the number of flips increases, the relative frequency of Heads (and Tails)
+	stabilized around 0.5. This makes sense intuitively since there are two options for each 
+	individual flip and 1/2 of those options are Heads while the other 1/2 is Tails.</p>
+	<p>
+	Let's try again
+	by doing a random experiment consisting of rolling a single die one time. Note that the sample space 
+	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
+	</p>
+
+
+<!--
+	<exercise>
+		<introduction>
+		Let's see if you understand the relationship between frequency and relative frequency.
+		</introduction>
+		<webwork source="local/relative_frequency1.pg" />
+		<conclusion>
+		So, these are simple calculations.
+		</conclusion>
+	</exercise>
+-->
+
+	<p>
+	Question 1: What do you notice as the number of rolls increases?
+	</p>
+	<p>
+	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
+	</p>
+
+
+<sage>
+<input>
+@interact
+def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [4,6,8,12,20]):
+	die = list((1..Number_of_Sides))
+	rolls = [choice(die) for roll in range(num_rolls)]
+	show(rolls)   
+
+	freq = [rolls.count(outcome) for outcome in set(die)]  # count the numbers for each outcome
+	print 'The frequencies of each outcome is '+str(freq)
+
+	print 'The relative frequencies of each outcome:'
+	rel_freq = [freq[outcome-1]/num_rolls for outcome in set(die)]  # make frequencies relative
+	print rel_freq
+	fs = []
+	for f in rel_freq:
+		fs.append(f.n(digits=4))
+	print fs
+	show(bar_chart(freq,axes=False,ymin=0)) 
+</input>
+</sage>
+
+
+	<p>Notice in this instance that there are a larger number of options (for example 6 on a regular
+	die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die)
+	as the number of rolls increased.</p>
+	<p>In general, this suggests a rule: if there are n outcomes and each one has the same
+	chance of occurring on a given trial then on average on a large number of trials the relative
+	frequency of that outcome is 1/n.
+	In general, if a number of outcomes are "equally likely" then this is a good model for measuring
+	the proportion of outcomes that would be expected to have any given outcome. However, it is not
+	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:</p>
+
+
+<sage>
+<title>Rolling Two Dice and Measuring their Sum</title>
+<input>
+@interact
+def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
+    die = list((1..num_sides))
+    dice = list((2..num_sides*2))
+    rolls = [(choice(die),choice(die)) for roll in range(num_rolls)]
+    sums = [sum(rolls[roll]) for roll in range(num_rolls)]
+    show(rolls)   
+
+    freq = [sums.count(outcome) for outcome in set(dice)]  # count the numbers for each outcome
+    print 'The frequencies of each outcome is '+str(freq)
+    
+    print 'The relative frequencies of each outcome:'
+    rel_freq = [freq[outcome-2]/num_rolls for outcome in set(dice)]  # make frequencies relative
+    print rel_freq        
+    show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
+    print "Relative Frequence of ",dice[0]," is about ",rel_freq[0].n(digits=4)
+    print "Relative Frequence of ",dice[num_sides-1]," is about ",rel_freq[num_sides-1].n(digits=4)
+
+</input>
+</sage>
+
+
+	<p>Notice, not only are the answers not the same but they are not even close. To understand why this 
+	is different from the examples before, consider the possible outcomes from each pair of die. Since we
+	are measuring the sum of the dice then (for a pair of standard 6-sided dice) the possible sums are from 
+	2 to 12. However, there is only one way to get a 2--namely from a (1,1) pair--while there are 6 ways to get
+	a 7--namely from the pairs (1,6), (2,5), (3,4), (4,3), (5,2), and (6,1). So it might make some sense
+	that the likelihood of getting a 7 is 6 times larger than that of getting a 2. Check to see if that
+	is the case with your experiment above.</p>
+</section>
+
+<section><title>Definition of Probability</title>
+	<introduction>
+		<p>
+		Relative frequency gives a way to measure the proportion of "successful" outcomes when doing an experimental approach. From the interactive applications above, it appears that the relative frequency does jump around as the experiment is repeated but that the amount of variation decreases as the number of experiments increases. This is known to be true in general and leads to what is known as the "Law of Large Numbers". We would like to formalize what these relative frequencies seem to be approaching and will call this theoretical limit the "probability" of the outcome. In doing so, we will do our best to model our definition so that it follow the behavior of relative frequency.
+		</p>
+	</introduction>
+	<subsection xml:id="ProbabilityDefns"><title>Motivating the Definition</title>
+		<p>Using the ideas from our examples above, let's consider how we might formally define a way
+		to measure the expectation from similar experiments.  Before doing so, we need a little notation:</p>
+
+			<definition>
+			<statement>The Cardinality of the set A is the number of elements in A. This will be denoted |A| (similar
+			to the idea of frequency of an outcome noted earlier.) If a set has
+			a infinite number of elements, then we will say it's cardinality is also infinite and 
+			write |A| = <m>\infty</m></statement>
+			</definition>
+	
+			<definition><title>Pairwise Disjoint Sets</title>
+			<statement>
+			<m> \{ A_1, A_2, ... , A_n \}</m> are pairwise disjoint provided <m>A_k \cap A_j = \emptyset</m> so long as <m>k \ne j</m>.
+			</statement>
+			</definition>
+		
+	
+		<p>
+		To model the behavior above, consider how we might create a definition for our expectation
+		of a given outcome by following the ideas uncovered above. To do so, first consider a desired collection
+		of outcomes A. If each outcome in A is equally likely then we might follow the concept behind relative 
+		frequency and consider a measure of expectation be |A|/|S|. Indeed, on a standard 
+		6-sided die, the expectation of the outcome A={2} from the collection S = {1,2,3,4,5,6} should be
+		|A|/|S| = 1/6.</p>
+		<p>From the example where we take the sum of two die, the outcome A={4,5} from the
+		collection S = {2,3,4,...,12} would be</p>
+		<md>
+			<mrow>|A| = | {(1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1)}| = 7</mrow>
+			<mrow>|S| = | {(1,1),...,(1,6),(2,1),...,(2,6),...,(6,1),...,(6,6)}| = 36</mrow>
+		</md>
+		<p>and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
+		with the sum of the two outcomes from your experiment above.</p>
+				
+		<p>We are ready to now formally give a name to the theoretical measure of expectation for
+		outcomes from an experiment. Taking our cue from the ideas related to equally likely outcomes, we 
+		make our definition have the following basic properties:</p>
+		<ol>
+			<li>Relative frequency cannot be negative, since cardinality cannot be negative</li>
+			<li>Relative frequencies for disjoint events should sum to one</li>
+			<li>Relative frequencies for collections of disjoint outcomes should equal the sum of the
+		individual relative frequencies</li>
+		</ol>
+	</subsection>
+
+
+	<subsection><title>Probability</title>
+		<p>Based upon these we give the following:</p>
+		<definition xml:id="DefnProb">
+			<statement>The probability P(A) of a given outcome A is a set function which satisfies:
+			<ol>
+				<li>(Nonnegativity) P(A) <m>\ge 0</m></li>
+				<li>(Totality) P(S) = 1</li>
+				<li>(Subadditivity) If A <m>\cap</m> B = <m>\emptyset</m>, then P(A <m>\cup</m> B) = P(A) + P(B).  
+				In general, if {<m>A_k</m>} are pairwise disjoint then <m>P( \cup_k A_k) = \sum_k P(A_k)</m>.</li>
+			</ol>
+			</statement>
+		</definition>
+	</subsection>
+	
+
+	<subsection xml:id="BasicProbabilityTheorems"><title>Basic Probability Theorems</title>
+		<p>Based upon this definition we can immediately establish a number of results.</p>
+		<theorem xml:id="ProbabilityComplemnts"><title>Probability of Complements</title>
+			<statement> For any event A, <m>P(A) + P(A^c) = 1</m>
+			</statement>
+			<proof>
+				<p>Let A be any event and note that <m>A \cap A^c = \emptyset</m>.  But <m>A \cup A^c = S</m>.
+				So, by subadditivity <m>1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)</m> as desired.</p>
+			</proof>
+		</theorem>
+		<theorem xml:id="ProbabilityEmptySet">
+			<statement><m>P(\emptyset) = 0</m>
+			</statement>
+			<proof>
+				<p>Note that <m>\emptyset^c = S</m>. So, by the theorem above, 
+				<m>1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)</m>.
+				Cancelling the 1 on both sides gives <m>P(\emptyset) = 0</m>. </p>
+			</proof>
+		</theorem>
+		<theorem xml:id="ProbabilityContainment">
+			<statement>For events A and B with <m> A \subset B, P(A) \le P(B)</m>.
+			</statement>
+			<proof>
+				<p>Assume sets A and B satisfy <m> A \subset B</m>. Then, notice that
+				<m>A \cap (B-A) = \emptyset</m> and  <m>B = A \cup (B-A)</m>. Therefore, by 
+				subadditivity and nonnegativity</p>
+				<md>
+					<mrow>0 \le P(B-A)</mrow>
+					<mrow>P(A) \le P(A) + P(B-A) </mrow>
+					<mrow>P(A) \le P(B)</mrow>
+				</md>
+			</proof>
+		</theorem>
+		<theorem xml:id="ProbabilityLessThanOne">
+			<statement>For any event A, <m>P(A) \le 1</m> 
+			</statement>
+			<proof>
+				<p>Notice <m>A \subset S</m>. By the theorem above <m> P(A) \le P(S) = 1</m></p>
+			</proof>
+		</theorem>
+		<theorem xml:id="ProbabilityTwoUnions">
+			<statement>For any sets A and B, <m>P(A \cup B) = P(A) + P(B) - P(A \cap B)</m>
+			</statement>
+			<proof>
+				<p>Notice that we can write <m>A \cup B</m> as the disjoint union</p>
+				<md>
+					<mrow>A \cup B = (A-B) \cup (A \cap B) \cup (B-A).</mrow>
+				</md> 
+				<p>We can also write disjointly</p>
+				<md>
+					<mrow>A = (A-B) \cup (A \cap B)</mrow>
+					<mrow>B = (A \cap B) \cup (B-A)</mrow>
+				</md>
+				<p>Hence, </p>
+				<md>
+					<mrow>P(A) &amp; + P(B) - P(A \cap B) </mrow>
+					<mrow>&amp; = [P(A-B) + P(A \cap B)] + [P(A \cap B) + P(B-A)] - P(A \cap B)</mrow>
+					<mrow>&amp; = P(A-B) + P(A \cap B) + P(B-A)</mrow>
+					<mrow>&amp; = P(A \cup B)</mrow>
+				</md>
+			</proof>
+		</theorem>
+		<p>This result can be extended to more that two sets using a property known as inclusion-exclusion. The
+		following two theorems illustrate this property and are presented without proof.
+		</p>
+		<corollary xml:id="ProbabilityThreeUnions">
+			<statement>
+				For any sets A, B and C, 
+				<md>
+					<mrow>P(A \cup B \cup C) &amp; = P(A) + P(B) + P(C)</mrow> 
+					<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(B \cap C) </mrow>
+					<mrow>&amp; + P(A \cap B \cap C)</mrow>
+				</md>
+			</statement>
+		</corollary>
+		<corollary xml:id="ProbabilityFourUnions">
+			<statement>
+				For any sets A, B, C and D, 
+				<md>
+					<mrow>P(A \cup B \cup C \cup D) &amp; = P(A) + P(B) + P(C) + P(D)</mrow>
+					<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(A \cap D)  - P(B \cap C) - P(B \cap D) - P(C \cap D)</mrow>
+					<mrow>&amp; + P(A \cap B \cap C) + P(A \cap B \cap D) + P(A \cap C \cap D) + P(B \cap C \cap D)</mrow>
+					<mrow>&amp; - P(A \cap B \cap C \cap D)</mrow>
+				</md>
+			</statement>
+		</corollary>
+	
+	</subsection>
+
+	<subsection><title>Equally Likely Outcomes</title>
+	<p>
+	Many times, you will be dealing with making selections from a sample space where each item in the space has an equal chance of being selected. This may happen (for example) when items in the sample space are of equal size or when selecting a card from a completely shuffled deck or when coins are flipped or when a normal fair die is rolled. 
+	</p>
+	<p>It is important to notice that not all outcomes are equally likely--even in times when there are only two of them. Indeed, it is generally not an equally likely situation when picking the winner of a football game which pits, say, the New Orleans Saints professional football team with the New Orleans Home School Saints. Even though there are only two options the probability of the professional team winning is much greater than the chances that the high school will prevail. 
+	</p>
+	<p>
+	When items are equally likely (sometimes also called "randomly selected") then each individual event has the same chance of being selected as any other. In this instance, determining the probability of a collection of outcomes is relatively simple.
+	</p>
+	<theorem><title>Probability of Equally Likely Events</title>
+	<statement>If outcomes in S are equally likely, then for <m>A \subset S, P(A) = \frac{|A|}{|S|}</m> </statement>
+	<proof>
+	<p>
+	Enumerate S = {<m>x_1, x_2, ..., x_{|S|}</m>} and note <m>P( \{ x_k \} ) = c</m> for some constant c since each item is equally likely. However, using each outcome as a disjoint event and the definition of probability, 
+	<md>
+		<mrow>1 = P(S) &amp; = P( \{ x_1 \} \cup \{x_2 \} \cup ... \cup \{x_{|S|} \} )</mrow>
+		<mrow> &amp; = P(\{ x_1 \}) + P(\{ x_2 \} ) + ... + P(\{ x_{|S|} \} )</mrow>
+		<mrow> &amp; = c + c + ... + c = {|S|} \times c</mrow>
+	</md>
+	and so <m>c = \frac{1}{{|S|}}</m>. Therefore, <m>P( \{ x_k \} ) = \frac{1}{|S|}</m> .
+	</p>
+	<p>
+	Hence, with A = {<m>a_1, a_2, ..., a_{|A|}</m>}, breaking up the disjoint probabilities as above gives
+	<md>
+		<mrow>P(A) &amp; = P( \{ a_1 \} \cup \{ a_2 \} \cup ... \cup \{ a_{|A|} \} )</mrow>
+		<mrow> &amp; = P(\{ a_1 \}) + P(\{ a_2 \} ) + ... + P(\{ a_{|A|} \} )</mrow>
+		<mrow> &amp; = \frac{1}{{|S|}} + \frac{1}{{|S|}} + ... + \frac{1}{{|S|}}</mrow>
+		<mrow> &amp; = \frac{|A|}{{|S|}}</mrow>
+	</md>
+	as desired.
+	</p>
+	</proof>
+	</theorem>
+	</subsection>
+
+	<subsection><title>HOMEWORK</title>
+
+	<p>
+	A.  Determine the probabilities associated with the various 5-card hands.
+	</p>
+
+	<p>
+	B.  Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
+	</p>
+
+	<p>
+	C.  Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
+	</p>
+
+	<p>
+	D.  Analyze the game of
+	<url href="http://mathworld.wolfram.com/Craps.html">"craps"</url>.
+	</p>
+	</subsection>
+
+</section>
+
+<section>
+<title>Conditional Probability</title>
+	<introduction>
+	<p>When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain than it the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
+	</p>
+	</introduction>
+	
+	<p><title>Changing Sample Space - Balls:</title>  Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.</p>
+
+
+	<p><title>Changing Sample Space - Cards: </title>
+	Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. When extracting one card randomly, the probability	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and setaside.  Now, prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second draw. To compute this probability correctly, one need to formulate the question so that subadditivity can  be utilized.</p>
+	<p>
+	To do this, consider 
+	P(Heart on 2nd draw) 
+	= P( [Heart on 1st draw <m>\cap</m> Heart on 2nd draw] <m>\cup</m> [Not Heart on 1st draw <m>\cap</m> Heart on 2nd draw] )
+	= P(Heart on 1st draw <m>\cap</m> Heart on 2nd draw ) + P(Not Heart on 1st draw <m>\cap</m> Heart on 2nd draw )
+	= | Heart on 1st draw <m>\cap</m> Heart on 2nd draw | / | Number of ways to get two cards |
+	+ | Not Heart on 1st draw <m>\cap</m> Heart on 2nd draw / | Number of ways to get two cards |
+	= (13 12) / (52 51) + (39 13) / (52 51) = 12 / (4 51) + (3 13) / ( 4 51) =  
+
+	</p>
+	
+	<definition>
+		<title>Conditional Probability</title>
+			<statement>P(B | A) = P(A <m>\cap</m> B) / P(A), provided P(A)<m>\gt 0</m>.</statement>
+		</definition>
+		<theorem>
+		<statement>Conditional Probability satisfies all of the requirements of regular probability.</statement>
+		<proof>
+		<p>
+		By definition, for any event probability must be nonnegative. Therefore
+		<m>P(A \cap B) \ge 0</m>.  Therefore, P(B | A) <m>\ge 0</m>.
+		</p>
+		<p>
+		Further, P (S | A) = P(A <m>\cap</m> S)/P(A) = P(A)/P(A) = 1.
+		</p>
+		</proof>
+		</theorem>
+		
+		<theorem><title>Multiplication Rule</title>
+		<statement>
+			<me>P(A \cap B) = P(A) P(B | A) = P(B) P(A | B)</me>
+		</statement>
+		<proof>
+		<p>
+		Unravel the definition of conditional probably by taking the denominator to the other side. Also note that you can write <m>A \cap B = B \cap A</m>.
+		</p>
+		</proof>
+		</theorem>
+	
+	<subsection><title>HOMEWORK</title>
+	
+	<p>
+	A.  Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, determine
+	<ol>
+		<li><m>P(A \cup B)</m></li>
+		<li><m>P(B | A)</m></li>
+		<li><m>P(A | B)</m></li>
+		<li><m>P(A^c \cap B^c)</m></li>
+	</ol>
+	</p>
+
+	<p>
+	B. The table below classifies students at your university according to gender and according to major.
+
+	<table halign="left">
+      	<tabular halign="right">
+      
+<row><cell bottom="medium" right="medium">Enrollment</cell><cell bottom="medium">Male</cell><cell bottom="medium" right="medium">Female</cell><cell bottom="medium">Totals</cell></row>      
+<row><cell right="medium">STEM</cell><cell>420</cell><cell right="medium">510</cell><cell>930</cell></row>
+<row><cell right="medium">Business</cell><cell>320</cell><cell right="medium">270</cell><cell>590</cell></row>
+<row><cell bottom="medium" right="medium">Other</cell><cell bottom="medium">610</cell><cell bottom="medium" right="medium">710</cell><cell bottom="medium">1320</cell></row>
+<row><cell right="medium">Totals</cell><cell>1350</cell><cell right="medium">1490</cell><cell>2840</cell></row>
+		</tabular>
+	</table>
+
+	Determine the following:
+	<ol>
+		<li>P( STEM major )</li>
+		<li>P( STEM | Female )</li>
+		<li>P( Female | STEM )</li>
+		<li>P( Female | Not STEM)</li>
+	</ol>
+	</p>
+	
+	
+	<p>
+	C. You are in a probability and statistics class with a teacher who has predetermined that only one student can make an A for the course. To be "fair", he places a number of slips of paper in a bowl equal to the number of students in the course with one of the slips having an A designation. Students in the course each can pick once randomly from the bowl and without replacement to see if they can get the lucky slip.  Determine the following:
+	<ol>
+		<li>If there are 15 students in your course, determine the probabilities of getting an A in the course if you pick first and if you pick last.</li>
+		<li>Since the teacher likes you the most, she will give you the option of deciding whether to pick at any position. If so, determine the position that would give you the best likelihood of getting the A slop.</li>
+		<li>Suppose again that the teacher was feeling more generous and decided instead to allow for two A's. Determine how that changes your likelihood of winning and on what position you would like to choose.</li>
+		<li>Continue as above except that only one slip does not have an A on it.</li>
+		<li>Discuss how your choice is affected by the number of students in the course or the number of A slips included.</li>
+	</ol>
+	</p>
+
+	<p>
+	D. In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 equally likely days let r be the number of people in a sample and consider the following:
+	<ol>
+		<li>Determine the number of different outcomes of birthdays when order matters and birthdays are allowed to be repeated.</li>
+		<li>Determine the number of different outcomes when birthdays are not allowed to be repeated.</li>
+		<li>Determine the probability that two or more of your r students have the same birthday.</li>
+		<li>Prepare a spreadsheet with the probabilities found above from r=2 to r=50. Determine the value of r for which this probability is closest to 0.5.</li>
+		<li>As best as you can, sample two groups of the size found above and gather birthday information. For each group, determine if there is a shared birthday or not.  Compare your results with others in the class to check whether the sampling validates that about half of the samples should have a shared birthday group.</li>
+	</ol>
+	</p>
+
+
+	</subsection>
+	</section>
+	
+	<section><title>Bayes Theorem</title>	
+		<introduction>
+		<p>Conditional probabilities can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to the following.
+		</p>
+		</introduction>
+	
+		<theorem>
+		<title>Bayes Theorem</title>
+		<statement>Let <m>S = \{ S_1, S_2, ... , S_m \}</m> where the <m>S_k</m> are pairwise disjoint and <m>S_1 \cup S_2 \cup ... \cup S_m = S</m> (i.e. a partition of the space S).  Then for any <m>A \subset S</m>
+		<md>
+			<mrow>P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.</mrow>
+		</md>
+		The conditional probability <m>P(S_j | A)</m> is called the posterior probability of <m>S_k</m>.
+		</statement>
+		<proof>
+		<p>
+		Notice, by the definition of conditional probability and the multiplication rule
+		<me>P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.</me>
+		But using the disjointness of the partition 
+		<md>
+		<mrow>P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )</mrow>
+		<mrow>    &amp; = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)</mrow>
+		<mrow>    &amp; = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)</mrow>
+		<mrow>    &amp; = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)</mrow>
+		<mrow>    &amp; = \sum_{k=1}^m P(S_k)P(A | S_k)</mrow>
+		</md>
+		Put these two expansions together to obtain the desired result.
+		</p>
+		</proof>
+		</theorem>
+	
+	
+	<p>
+	To illustrate this result, from the web site <url href="http://stattrek.com/probability/bayes-theorem.aspx"></url> consider the following problem:
+	</p>
+<exercise>
+	<p>
+	Marie is getting married tomorrow, at an outdoor ceremony in the desert. In recent years, it has rained only 5 days each year. Unfortunately, the weatherman has predicted rain for tomorrow. When it actually rains, the weatherman correctly forecasts rain 90% of the time. When it doesn't rain, he incorrectly forecasts rain 10% of the time. What is the probability that it will rain on the day of Marie's wedding?
+	</p>
+	<p>
+	Notice, all days can be classified into one of two disjoint options:
+	<ul>
+		<li>Rainy, in which case we can deduce from the given info that P(Rain) = 5/365</li>
+		<li>No Rainy, and since this is the complement of above, P(No Rain) = 360/365</li>
+	</ul>
+	In the notation of Bayes Theorem, let A represent a forecast of Rain and note you have <m>P(\text{Rain}) = P(S_1) = \frac{5}{365}</m> and <m>P(\text{No Rain}) = \frac{360}{365}</m>. Further, you are given the conditional probabilities
+	<ul>
+		<li><m>P(\text{Rain | Forecast Rain}) = P( A | S_1) = 0.9</m></li>
+		<li><m>P(\text{Rain | Forecast Rain}) = P( A | S_2) = 0.1</m></li>
+	</ul>
+	Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes Theorem allows you to turn this around...
+	<md>
+		<mrow>P(\text{Rain}) &amp;  = P(S_1) P( A | S_1) + P(S_2) P(A | S_2)</mrow>	
+		<mrow> &amp; = \frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1</mrow>
+		<mrow> &amp; = NUMBER </mrow>
+	</md>
+	Hence, putting these together gives
+	<md>
+		<mrow>P(\text{Rain | Forecast Rain}) &amp; = \frac{\frac{5}{365} \cdot 0.9}{\frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1}</mrow>
+		<mrow> &amp; = \frac{5 \cdot 0.9}{5 \cdot 0.9 + 360 \cdot 0.1}</mrow>
+		<mrow> &amp; = \frac{45}{45+360} \approx 0.111</mrow>
+	</md>
+	So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
+	</p>	
+</exercise>	
+
+<p>The interactive cell below can be used to easily compute all of the conditional probabilities associated with Bayes's Theorem. Notice how the relative size of the pie-shaped partition changes when you presume that an event in the space has already occurred.</p>
+<sage>
+<input>
+
+#  This function is used to convert an input string into separate entries
+def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+
+@interact
+def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),...$"),
+        Conditional_Probabilities=input_box('0.02,0.01,0.03',label='$P(A|B_1),P(A|B_2),...$'),
+        print_numbers=checkbox(True,label='Numerical Results on Graphs?'),
+        auto_update=False):
+            
+    Partition_Probabilities = g(Partition_Probabilities)
+    Conditional_Probabilities = g(Conditional_Probabilities)
+    n = len(Partition_Probabilities)
+    n0 = len(Conditional_Probabilities)
+    
+    # below needs to be n not equal to n0 but mathbook xml will not let me get the other
+    if (n > n0):
+        pretty_print("You must have the same number of partition probabilities and conditional probabilities.")
+        
+    else:                               # input data streams now are the same size!
+        colors = rainbow(n)
+        accum = float(0)                # to test whether partition probs sum to one
+        ends = [0]                      # where the graphed partition sectors change in pie chart 
+        mid = []                        # middle of each pie chart sector used for placement of text
+        p_Bk_given_A = []               # P( B_k | A )
+        pA = 0                          # P(A)
+        PP=[]                           # array to hold the numerical Partition Probabilities 
+        CP=[]                           # array to hold the numerical Conditional Probabilities     
+        for k in range(n):
+            PP.append(float(Partition_Probabilities[k]))
+            CP.append(float(Conditional_Probabilities[k]))    
+            p_Bk_given_A.append(PP[k]*CP[k] )
+            pA += p_Bk_given_A[k]
+            accum = accum + PP[k]
+            ends.append(accum)
+            mid.append((ends[k]+accum)/2)
+#
+#  Marching along from 0 to 1, saving angles for each partition sector boundary.
+#  Later, we will multiple these by 2*pi to get actual sector boundary angles.
+#
+        if abs(accum-float(1))>0.0000001:     #  Due to roundoff issues, this should be close enough.                     
+            pretty_print("Sum of probabilities should equal 1.")
+        
+        else:                           # probability data is sensible
+ 
+#        
+#  Draw the Venn diagram by drawing sectors from the angles determined above
+#  First, create a circle of radius 1 to illustrate the the sample space S
+#  Then draw each sector with varying colors and print out their names on the edge
+#
+            G = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0.4,aspect_ratio=True,axes=False,thickness=5)
+            for k in range(n):
+                G += disk((0,0), 1, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                G += text('$B_'+str(k+1)+'$',(1.1*cos(mid[k]*2*pi), 1.1*sin(mid[k]*2*pi)), rgbcolor='black')
+                
+            G += circle((0,0), 0.6, facecolor='yellow', fill = True, alpha = 0.1, thickness=5,edgecolor='black') 
+    
+#  Print the probabilities corresponding to each particular region as a list and on the graphs
+            if print_numbers:               
+
+                html("$P(A) = %s$"%(str(pA),))
+                for k in range(n):
+                    html("$P(B_{%s} | A)$"%(str(k+1))+"$ = %s$"%str(p_Bk_given_A[k]/pA))
+                                        
+                    G += text(str(p_Bk_given_A[k]),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    G += text(str(PP[k] - p_Bk_given_A[k]),(0.8*cos(mid[k]*2*pi), 0.8*sin(mid[k]*2*pi)), rgbcolor='black')
+        
+#  This is essentially a repeat of some of the above code but focused only on creating the smaller inner circle dealing
+#  with the set A so that the sectors now correspond in area to the Bayes Theorem probabilities
+
+
+            accum = float(0)                        
+            ends = [0]                     # where the graphed partition sectors change in pie chart 
+            mid = []                       # middle of each pie chart sector used for placement of text
+            for k in range(n): 
+                accum += float(p_Bk_given_A[k]/pA) 
+                ends.append(accum)
+                mid.append((ends[k]+accum)/2)
+            H = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0,aspect_ratio=True,axes=False,thickness=0)
+            H += circle((0,0), 0.6, facecolor='yellow',fill=True, alpha=0.1,aspect_ratio=True,axes=False,thickness=5,edgecolor='black')
+            
+            for k in range(n):
+                H += disk((0,0), 0.6, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                H += text('$B_'+str(k+1)+'|A$',(0.7*cos(mid[k]*2*pi), 0.7*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+        #  Now, print out the bayesian probabilities using the smaller set A only
+    
+            if print_numbers:
+                for k in range(n):
+                    H += text(str( N(p_Bk_given_A[k]/pA,digits=4) ),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+            G.show(title='Venn diagram of partition with A in middle')
+            print
+            H.show(title='Venn diagram presuming A has occured')
+</input>
+</sage>
+
+
+	<subsection><title>HOMEWORK</title>
+	<p>
+	
+	A. Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
+
+	<table halign="left">
+      	<tabular halign="right">
+      
+<row><cell bottom="medium" right="medium">Age</cell><cell bottom="medium" right="medium">Proportion of Insured</cell><cell bottom="medium">Probability of Accident</cell></row>      
+<row><cell right="medium">16-20</cell><cell right="medium">0.05</cell><cell>0.08</cell></row>
+<row><cell right="medium">21-25</cell><cell right="medium">0.06</cell><cell>0.07</cell></row>
+<row><cell right="medium">26-55</cell><cell right="medium">0.49</cell><cell>0.02</cell></row>
+<row><cell right="medium">55-65</cell><cell right="medium">0.25</cell><cell>0.03</cell></row>
+<row><cell right="medium">over 65</cell><cell right="medium">0.15</cell><cell>0.04</cell></row>
+		</tabular>
+	</table>
+	
+	One of your family friends insured by this company has an accident. 
+	<ol>
+		<li>Determine the conditional probability that the driver was in the 16-20 age range.</li>
+		<li>Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.</li>
+		<li>Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.</li>
+	</ol>
+	</p>
+	
+	<p>
+	B. Congratulations...your family is having a baby! As part of the prenatal care, some testing is part of the normal procedure including one for spinal bifida (which is a condition in which part of the spinal cord may be exposed.) Indeed, measurement of maternal serum AFP values is a standard tool used in obstetrical care to identify pregnancies that may have an increased risk for this disorder. You want to make plans for the new child's care and want to know how serious to take the test results. However, some times the test indicates that the child has the disorder when in actuality it does not (a false positive) and likewise may indicate that the child does not have the disorder when in fact it does (a false negative.) 
+	</p>
+	<p>The combined accuracy rate for the screen to detect the chromosomal abnormalities mentioned above is approximately 85% with a false positive rate of 5%. This means that (from <url href="http://americanpregnancy.org/prenatal-testing/first-trimester-screen/">americanpregnancy.org</url>)
+	<ul>
+		<li>Approximately 85 out of every 100 babies affected by the abnormalities addressed by the screen will be identified. (Positive Positive)</li>
+		<li>Approximately 5% of all normal pregnancies will receive a positive result or an abnormal level. (False Positive)</li>
+	</ul>
+	<ol>
+		<li>Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.</li>
+		<li>Given that your test came back negative, determine the likelihood that the child will not have spina bifida</li>
+		<li>Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.</li>
+	</ol>
+	</p>
+	
+	</subsection>
+
+</section>
+
+<section>
+<title>Independence</title>
+
+	<introduction>
+	<p>
+		You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
+	</p>
+	</introduction>
+	
+	<definition>
+	<title>Independent Events</title>
+		<statement>Events A and B are independent provided 
+		<me>P(A \cap B) = P(A) P(B)</me>
+		</statement>
+	</definition>
+	
+	<corollary><title>Independence and Conditional Probability</title>
+		<statement>
+			Given independent events A and B, 
+			<me>P(B | A) = P(B)</me> and <me>P(A | B) = P(A).</me>
+		</statement>
+		<proof>
+			<p>By the multiplication rule and the definition of independence, for any events A and B
+			<me>P(A) \cdot P(B) = P(A \cap B) = P(A) \cdot P(B | A) .</me>
+			Therefore, if P(A) is non-zero, canceling yields the first result. Switching around notation provides the second.
+			</p>
+		</proof>
+	</corollary>
+
+
+	<corollary><title>Independence and Mutual Exclusivity</title>
+		<statement>
+			If events A and B are both independent and mutually exclusive, then at least one of them has zero probability.
+		</statement>
+			<proof>
+				<p>
+				By independence, <m>P(A \cap B) = P(A) \cdot P(B)</m>. However, by mutually exclusivity, <m>A \cap B = \emptyset \Rightarrow P(A \cap B) = 0</m> gives
+				<me>P(A) \cdot P(B) = 0.</me>
+				Hence, one or the other (or both) must be zero.
+				</p>
+			</proof>
+	</corollary>
+
+	<corollary><title>Successive Independent Events</title>
+		<statement>Given a sequence of independent events <m>A_1, A_2, A_3, ...</m>,
+		<me>P(\cap_{k \in R} A_k) = \prod_{k \in R} P(A_k)</me>
+		</statement>
+	</corollary>
+	
+	<subsection><title>HOMEWORK</title>
+	
+	<p>
+	A.  Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, verify that A and B are not independent.
+	</p>
+
+	<p>
+	B.  Given A, B, and C are independent events, with P(A) = 2/5, P(B) = 3/4, and P(C) = 1/6, determine:
+	<ol>
+		<li><m>P(A \cap B \cap C)</m></li>
+		<li><m>P(A^c \cap B^c \cap C)</m></li>
+		<li><m>P(A \cup B \cup C)</m></li>
+	</ol>
+	</p>
+	
+	<p>
+	C.  Suppose for a pair of dice you want to consider the events A = {rolling a 7 or 11} and B = {otherwise}.  Rolling the dice 5 times, determine
+	<ol>
+		<li>P(AABBB)</li>
+		<li>P(BBBAA)</li>
+		<li>The probability of getting A on exactly two rolls of the dice.</li>
+	</ol>
+	</p>
+	
+	<p>
+	D.  To help "insure" the success of a mission, you propose several redundant components so that the mission is a success if one or more succeed. Supposing that these separate components act independently of each other and that each component has a 75% chance of success, determine:
+	<ol>
+		<li>The probability of failure if you utilize 2 components.</li>
+		<li>The probability of failure if you utilize 5 components.</li>
+		<li>The number of components needed to insure that the probability of success is at least 99%.</li>
+	</ol>
+	</p>
+	
+	</subsection>
+	
+</section>
+
+
+
+</chapter>

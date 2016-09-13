@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-07T16:06:24-05:00    *-->
+<!--*    on 2016-09-13T15:10:43-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -100,45 +100,48 @@ MathJax.Hub.Config({
 <li><a href="section-15.html">Combinations</a></li>
 <li><a href="section-16.html">Exercises</a></li>
 </ul>
-<h2 class="link active"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability and Probability Functions</span></a></h2>
+<h2 class="link active"><a href="ProbabilityGeneralities.html"><span class="codenumber">4</span><span class="title">Probability Theory</span></a></h2>
 <ul>
 <li><a href="RelativeFrequency.html">Relative Frequency</a></li>
 <li><a href="section-18.html">Definition of Probability</a></li>
 <li><a href="section-19.html" class="active">Conditional Probability</a></li>
 <li><a href="section-20.html">Bayes Theorem</a></li>
 <li><a href="section-21.html">Independence</a></li>
+</ul>
+<h2 class="link"><a href="ProbabilityFunctions.html"><span class="codenumber">5</span><span class="title">Probability Functions</span></a></h2>
+<ul>
 <li><a href="section-22.html">Random Variables</a></li>
-<li><a href="ProbabilityFunctions.html">Probability Functions</a></li>
+<li><a href="section-23.html">Probability Functions</a></li>
 <li><a href="section-24.html">Properties of the Distribution Function</a></li>
 <li><a href="section-25.html">Standard Units</a></li>
 <li><a href="section-26.html">Expected Value</a></li>
 </ul>
-<h2 class="link"><a href="UniformHypergeometric.html"><span class="codenumber">5</span><span class="title">Uniform and Hypergeometric Distributions</span></a></h2>
+<h2 class="link"><a href="UniformHypergeometric.html"><span class="codenumber">6</span><span class="title">Uniform and Hypergeometric Distributions</span></a></h2>
 <ul>
 <li><a href="section-27.html">Discrete Uniform Distribution</a></li>
 <li><a href="section-28.html">Continuous Uniform Distribution</a></li>
 <li><a href="section-29.html">Hypergeometric Distribution</a></li>
 </ul>
-<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">6</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
+<h2 class="link"><a href="BinomNegBinom.html"><span class="codenumber">7</span><span class="title">Binomial, Geometric, and Negative Binomial Distributions</span></a></h2>
 <ul>
 <li><a href="BinomialDistribution.html">Binomial Distribution</a></li>
 <li><a href="GeometricDistribution.html">Geometric Distribution</a></li>
 <li><a href="section-32.html">Negative Binomial</a></li>
 </ul>
-<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">7</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
+<h2 class="link"><a href="PoissonExponential.html"><span class="codenumber">8</span><span class="title">Poisson, Exponential, and Gamma Distributions</span></a></h2>
 <ul>
 <li><a href="section-33.html">Poisson Distribution</a></li>
 <li><a href="section-34.html">Exponential Distribution</a></li>
 <li><a href="section-35.html">Gamma Distribution</a></li>
 </ul>
-<h2 class="link"><a href="Normal.html"><span class="codenumber">8</span><span class="title">Normal Distributions</span></a></h2>
+<h2 class="link"><a href="Normal.html"><span class="codenumber">9</span><span class="title">Normal Distributions</span></a></h2>
 <ul>
 <li><a href="section-36.html">Properties of the Normal Distribution</a></li>
 <li><a href="section-37.html">Theorems</a></li>
 <li><a href="section-38.html">Chi-Square Distribution</a></li>
 <li><a href="section-39.html">Central Limit Theorem</a></li>
 </ul>
-<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">9</span><span class="title">Estimating Data using Intervals</span></a></h2>
+<h2 class="link"><a href="IntervalEstimation.html"><span class="codenumber">10</span><span class="title">Estimating Data using Intervals</span></a></h2>
 <ul>
 <li><a href="section-40.html">Point Estimates</a></li>
 <li><a href="section-41.html">Chebyshev</a></li>
@@ -146,10 +149,12 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in MathBook XML</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-19"><header title="Section 4.3 Conditional Probability"><h1 class="heading hide-type" alt="Section 4.3 Conditional Probability">
 <span class="type">Section</span><span class="codenumber">4.3</span><span class="title">Conditional Probability</span>
-</h1></header><p id="p-189">  Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.</p>
-<p id="p-190">
+</h1></header><article class="introduction" id="introduction-5"><h5 class="heading"><span></span></h5>
+<p id="p-190">When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain than it the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
+	</p></article><p id="p-191">  Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.</p>
+<p id="p-192">
 	Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. When extracting one card randomly, the probability	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and setaside.  Now, prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second draw. To compute this probability correctly, one need to formulate the question so that subadditivity can  be utilized.</p>
-<p id="p-191">
+<p id="p-193">
 	To do this, consider 
 	P(Heart on 2nd draw) 
 	= P( [Heart on 1st draw \(\cap\) Heart on 2nd draw] \(\cup\) [Not Heart on 1st draw \(\cap\) Heart on 2nd draw] )
@@ -164,21 +169,96 @@ MathJax.Hub.Config({
 </h5>P(B | A) = P(A \(\cap\) B) / P(A), provided P(A)\(\gt 0\).</article><article class="theorem-like" id="theorem-23"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.3.2</span>
 </h5>Conditional Probability satisfies all of the requirements of regular probability.</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-18" id="proof-18"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-18" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-192">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-18" id="proof-18"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-18" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-194">
 		By definition, for any event probability must be nonnegative. Therefore
 		\(P(A \cap B) \ge 0\).  Therefore, P(B | A) \(\ge 0\).
 		</p>
-<p id="p-193">
+<p id="p-195">
 		Further, P (S | A) = P(A \(\cap\) S)/P(A) = P(A)/P(A) = 1.
 		</p></article></span>
 </div>
 <article class="theorem-like" id="theorem-24"><h5 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.3.3</span><span class="title">Multiplication Rule</span>
 </h5>\begin{equation*}P(A \cap B) = P(A) P(B | A) = P(B) P(A | B)\end{equation*}</article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-19" id="proof-19"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-19" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-194">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-19" id="proof-19"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-19" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-196">
 		Unravel the definition of conditional probably by taking the denominator to the other side. Also note that you can write \(A \cap B = B \cap A\).
 		</p></article></span>
-</div></section></div></main>
+</div>
+<section class="subsection" id="subsection-13"><header title="Subsection 4.3.1 HOMEWORK"><h1 class="heading hide-type" alt="Subsection 4.3.1 HOMEWORK">
+<span class="type">Subsection</span><span class="codenumber">4.3.1</span><span class="title">HOMEWORK</span>
+</h1></header><p id="p-197">
+	A.  Given P(A) = 0.43, P(B) = 0.72, and \(P(A \cap B) = 0.29\), determine
+	<ol style="list-style-type: decimal;">
+<li id="li-111">\(P(A \cup B)\)</li>
+<li id="li-112">\(P(B | A)\)</li>
+<li id="li-113">\(P(A | B)\)</li>
+<li id="li-114">\(P(A^c \cap B^c)\)</li>
+</ol>
+	</p>
+<p id="p-198">
+	B. The table below classifies students at your university according to gender and according to major.
+
+	<figure class="figure-like" id="table-5"><table>
+<tr>
+<td class="r m b2 r2 l0 t0">Enrollment</td>
+<td class="r m b2 r0 l0 t0">Male</td>
+<td class="r m b2 r2 l0 t0">Female</td>
+<td class="r m b2 r0 l0 t0">Totals</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0">STEM</td>
+<td class="r m b0 r0 l0 t0">420</td>
+<td class="r m b0 r2 l0 t0">510</td>
+<td class="r m b0 r0 l0 t0">930</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0">Business</td>
+<td class="r m b0 r0 l0 t0">320</td>
+<td class="r m b0 r2 l0 t0">270</td>
+<td class="r m b0 r0 l0 t0">590</td>
+</tr>
+<tr>
+<td class="r m b2 r2 l0 t0">Other</td>
+<td class="r m b2 r0 l0 t0">610</td>
+<td class="r m b2 r2 l0 t0">710</td>
+<td class="r m b2 r0 l0 t0">1320</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l0 t0">Totals</td>
+<td class="r m b0 r0 l0 t0">1350</td>
+<td class="r m b0 r2 l0 t0">1490</td>
+<td class="r m b0 r0 l0 t0">2840</td>
+</tr>
+</table></figure>
+
+	Determine the following:
+	<ol style="list-style-type: decimal;">
+<li id="li-115">P( STEM major )</li>
+<li id="li-116">P( STEM | Female )</li>
+<li id="li-117">P( Female | STEM )</li>
+<li id="li-118">P( Female | Not STEM)</li>
+</ol>
+	</p>
+<p id="p-199">
+	C. You are in a probability and statistics class with a teacher who has predetermined that only one student can make an A for the course. To be "fair", he places a number of slips of paper in a bowl equal to the number of students in the course with one of the slips having an A designation. Students in the course each can pick once randomly from the bowl and without replacement to see if they can get the lucky slip.  Determine the following:
+	<ol style="list-style-type: decimal;">
+<li id="li-119">If there are 15 students in your course, determine the probabilities of getting an A in the course if you pick first and if you pick last.</li>
+<li id="li-120">Since the teacher likes you the most, she will give you the option of deciding whether to pick at any position. If so, determine the position that would give you the best likelihood of getting the A slop.</li>
+<li id="li-121">Suppose again that the teacher was feeling more generous and decided instead to allow for two A's. Determine how that changes your likelihood of winning and on what position you would like to choose.</li>
+<li id="li-122">Continue as above except that only one slip does not have an A on it.</li>
+<li id="li-123">Discuss how your choice is affected by the number of students in the course or the number of A slips included.</li>
+</ol>
+	</p>
+<p id="p-200">
+	D. In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 equally likely days let r be the number of people in a sample and consider the following:
+	<ol style="list-style-type: decimal;">
+<li id="li-124">Determine the number of different outcomes of birthdays when order matters and birthdays are allowed to be repeated.</li>
+<li id="li-125">Determine the number of different outcomes when birthdays are not allowed to be repeated.</li>
+<li id="li-126">Determine the probability that two or more of your r students have the same birthday.</li>
+<li id="li-127">Prepare a spreadsheet with the probabilities found above from r=2 to r=50. Determine the value of r for which this probability is closest to 0.5.</li>
+<li id="li-128">As best as you can, sample two groups of the size found above and gather birthday information. For each group, determine if there is a shared birthday or not.  Compare your results with others in the class to check whether the sampling validates that about half of the samples should have a shared birthday group.</li>
+</ol>
+	</p></section></section></div></main>
 </div>
 </body>
 </html>

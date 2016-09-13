@@ -1,10 +1,32 @@
 <!--**************************************-->
 <!--* Generated from MathBook XML source *-->
-<!--*    on 2016-09-07T16:06:25-05:00    *-->
+<!--*    on 2016-09-13T15:10:44-05:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
 <!--**************************************-->
 <p><h5 class="heading"><span class="type">Paragraph</span></h5>
-	Consider \(f(x) = x/10\) over R = {1,2,3,4}.  Then, f(x) is obviously positive for each of the values in R and certainly \(\sum_{x \in R} f(x) = f(1) + f(2) + f(3) + f(4) = 1/10 + 2/10 + 3/10 + 4/10 = 1\). Therefore, f(x) is a probability mass function over the space R.
-	</p><span class="incontext"><a href="ProbabilityFunctions.html#p-205">in-context</a></span>
+	Notice, all days can be classified into one of two disjoint options:
+	<ul style="list-style-type: disc;">
+<li id="li-129">Rainy, in which case we can deduce from the given info that P(Rain) = 5/365</li>
+<li id="li-130">No Rainy, and since this is the complement of above, P(No Rain) = 360/365</li>
+</ul>
+	In the notation of Bayes Theorem, let A represent a forecast of Rain and note you have \(P(\text{Rain}) = P(S_1) = \frac{5}{365}\) and \(P(\text{No Rain}) = \frac{360}{365}\). Further, you are given the conditional probabilities
+	<ul style="list-style-type: disc;">
+<li id="li-131">\(P(\text{Rain | Forecast Rain}) = P( A | S_1) = 0.9\)</li>
+<li id="li-132">\(P(\text{Rain | Forecast Rain}) = P( A | S_2) = 0.1\)</li>
+</ul>
+	Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes Theorem allows you to turn this around...
+	\begin{align*}
+P(\text{Rain}) &amp;  = P(S_1) P( A | S_1) + P(S_2) P(A | S_2)\\
+ &amp; = \frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1\\
+ &amp; = NUMBER 
+\end{align*}
+	Hence, putting these together gives
+	\begin{align*}
+P(\text{Rain | Forecast Rain}) &amp; = \frac{\frac{5}{365} \cdot 0.9}{\frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1}\\
+ &amp; = \frac{5 \cdot 0.9}{5 \cdot 0.9 + 360 \cdot 0.1}\\
+ &amp; = \frac{45}{45+360} \approx 0.111
+\end{align*}
+	So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
+	</p><span class="incontext"><a href="section-20.html#p-205">in-context</a></span>
