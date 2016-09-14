@@ -279,6 +279,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	</p>
 	<p>You may not confront such dire payouts when making your daily decisions but we need a formal method for making these determinations precise. The procedure for doing so is what we call expected value.
 	</p>
+	
 	<definition><title>Expected Value</title>
 	<p>Given a random variable X over space R, corresponding probability function f(x) and "value function" u(x), the expected value of u(x) is given by
 	<me>E = E[u(X)] = \sum_{x \in R} u(x) f(x)</me>
@@ -287,6 +288,27 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	provided X is continuous.
 	</p>
 	</definition>
+	
+	<theorem><title>Expected Value is a Linear Operator</title>
+	<statement>
+	<p>
+	<ol>
+		<li>E[c] = c</li>
+		<li>E[c u(X)] = c E[u(X)]</li>
+		<li>E[u(X) + v(X)] = E[u(X)] + E[v(X)]</li>
+	</ol>
+	</p>
+	</statement>
+	<proof>
+	<p>Each of these follows by utilizing the corresponding linearity properties of the summation and integration operations. For example, to verify part three in the continuous case:
+	<md>
+		<mrow>E[u(X) + v(X)] &amp; = \int_{x \in R} [u(x)+v(x)]f(x) dx</mrow>
+		<mrow> &amp; = \int_{x \in R} u(x)f(x) dx + \int_{x \in R} u(x)f(x) dx</mrow>
+		<mrow> &amp; = E[u(X)] + E[v(X)].</mrow>
+	</md>
+	</p>
+	</proof>
+	</theorem>
 	
 	<example><title>Discrete Expected Value</title>
 	<p>Consider <m>f(x) = x/10</m> over R = {1,2,3,4} where the payout is 10 euros if x=1, 5 euros if x=2, 2 euros if x=3 and -7 euros if x = 4.  Then your value function would be u(1)=10, u(2) = 5, u(3)=2, and u(4) = -7. Computing the expect payout gives
@@ -301,6 +323,136 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	<me>E = \int_{-1}^2 (e^x-1) \cdot x^2/3 = -1/9 \cdot (e + 15) \cdot e^{-1} + 2/3 \cdot e^2 - 8/9 \approx 3.3129</me>
 	</p>
 	</example>
+
+	<definition><title>Theoretical Measures</title>
+	<statement>
+	<p>
+	Given a random variable with probability function f(x) over space R
+	<ol>
+		<li>The mean of X = <m>\mu = E[x]</m></li>
+		<li>The variance of X = <m>\sigma^2 = E[(x-\mu)^2]</m></li>
+		<li>The skewness of X = <m>\frac{E[(x-\mu)^3]}{\sigma^3}</m></li>
+		<li>The kurtosis of X = <m>\frac{E[(x-\mu)^4]}{\sigma^4}</m></li>
+	</ol>
+	</p>
+	</statement>
+	</definition>
+	
+	<theorem><title>Alternate Formulas for Theoretical Measures</title>
+	<statement>
+	<ol>
+		<li><m>\sigma^2 = E[x^2] - \mu^2 = E[X(x-1)] + \mu - \mu^2</m></li>
+		<li>Skewness = <m>\frac{1}{\sigma^3} \cdot \left [ E[X^3] - 3 \mu E[X^2] + 2\mu^3 \right ]</m></li>
+		<li>Kurtosis in terms of 4th moments</li>
+	</ol>
+	</statement>
+	</theorem>
+	
+	<p>
+	Consider the following example when computing these statistics for a discrete variable. In this case, we will utilize a variable with a relatively small space so that the summations can be easily done by hand. Indeed, consider
+	
+	<table halign="left">
+      	<tabular halign="right">
+      
+<row><cell bottom="medium" right="medium">X</cell><cell bottom="medium" right="medium">f(x)</cell></row>      
+<row><cell right="medium">0</cell><cell right="medium">0.10</cell></row>
+<row><cell right="medium">1</cell><cell right="medium">0.25</cell></row>
+<row><cell right="medium">2</cell><cell right="medium">0.40</cell></row>
+<row><cell right="medium">4</cell><cell right="medium">0.15</cell></row>
+<row><cell right="medium">7</cell><cell right="medium">0.10</cell></row>
+		</tabular>
+	</table>
+
+	Then
+	<md>
+		<mrow>\mu &amp; = 0 \cdot 0.10 + 1 \cdot 0.25 + 2 \cdot 0.40 + 4 \cdot 0.15 + 7 \cdot 0.10</mrow>
+		<mrow> &amp; = 0 + 0.25 + 0.80 + 0.60 + 0.70</mrow>
+		<mrow> &amp; = 2.35</mrow>
+	</md>
+	Notice where this lies on the probability histogram for this distribution.
+	</p>
+	
+	<p>For the variance
+	<md>
+		<mrow>\sigma^2 &amp; = 0^2 \cdot 0.10 + 1^2 \cdot 0.25 + 2^2 \cdot 0.40 + 4^2 \cdot 0.15 + 7^2 \cdot 0.10 - 2.35^2</mrow>
+		<mrow> &amp; = 0 + 0.25 + 1.60 + 2.40 + 4.90 - 5.5225</mrow>
+		<mrow> &amp; = 9.15 - 5.225</mrow>
+		<mrow> &amp; = 3.6275 </mrow>
+	</md>	
+	and so the standard deviation <m>\sigma = \sqrt{3.6275} \approx 1.90</m>.
+	</p>
+	
+	<p>For the skewness
+	<md>
+		<mrow> &amp; E[X^3] - 3 \mu E[X^2] + 2\mu^3</mrow>
+		<mrow> &amp; = 0^3 \cdot 0.10 + 1^3 \cdot 0.25 + 2^3 \cdot 0.40 + 4^3 \cdot 0.15 + 7^3 \cdot 0.10 - 3 \cdot 2.35 \cdot 9.15 + 2 \cdot 2.35^3</mrow>
+		<mrow> &amp; = 0 + 0.25 + 3.20 + 9.60 + 34.3 - 64.5075 + 11.045</mrow>
+		<mrow> &amp; = 47.35 - 64.5075 + 11.045</mrow>
+		<mrow> &amp; = -6.1125</mrow>
+	</md>
+	which yields a skewness of <m>-6.1125/ \sigma^2 \approx -6.1125 / 1.9^3 \approx -0.89</m> indicates a slight skewness to the left of the mean. 
+	</p>
+	
+	<p>Finally, for kurtosis
+	<md>
+		<mrow> &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3\mu^4</mrow>
+		<mrow> &amp; = 0^4 \cdot 0.10 + 1^4 \cdot 0.25 + 2^4 \cdot 0.40 + 4^4 \cdot 0.15 + 7^4 \cdot 0.10 - 4 \cdot 2.35 \cdot 47.35 + 6 \cdot 2.35^2 \cdot 9.15^2 - 3 \cdot 2.35^4</mrow>
+		<mrow> &amp; \approx 0 + 0.25 + 6.40 + 38.4 + 240.1 - 445.09 + 2774.15 - 91.49</mrow>
+		<mrow> &amp; \approx 2522.72</mrow>
+	</md>
+	which yields a kurtosis of <m> 2522.72 / \sigma^4 \approx 2522.72 / 1.9^4 \approx MISTAKE</m>.
+	</p>
+	
+	<p>
+	Consider the following example when computing these statistics for a continuous variable. 
+	Let <m>f(x) = \frac{3}{4} \cdot (1-x^2)</m> over R = [-1,1].  
+	Then for the mean
+	<md>
+		<mrow>\mu &amp; = \int_{-1}^1 x \cdot \frac{3}{4} \cdot (1-x^2) dx</mrow>
+		<mrow> &amp; = \int_{-1}^1 \frac{3}{4} \cdot (x-x^3) dx</mrow>
+		<mrow> &amp; = \frac{3}{4} \cdot (x^2/2-x^4/4) \big |_{-1}^1</mrow>
+		<mrow> &amp; = \frac{3}{4} \cdot [(1/2)-(1/4)] - [(1/2) - (1/4)]</mrow>
+		<mrow> &amp; = 0</mrow>
+	</md>
+	as expected since the probability function is symmetric about x=0.
+	</p>
+	
+	<p>For the variance
+	<md>
+		<mrow>\sigma^2 &amp; = \int_{-1}^1 x^2 \cdot \frac{3}{4} \cdot (1-x^2) dx - \mu^2</mrow>
+		<mrow> &amp; = \int_{-1}^1 \cdot \frac{3}{4} \cdot (x^2-x^4) dx - 0</mrow>
+		<mrow> &amp; = \frac{3}{4} \cdot (x^3 /3 -x^5 / 5) \big |_{-1}^1</mrow>
+		<mrow> &amp; = \frac{3}{4} \cdot 2 \cdot (1/3-1/5)</mrow>
+		<mrow> &amp; = \frac{3}{4} \cdot \frac{4}{15}</mrow>
+		<mrow> &amp; = \frac{1}{5}</mrow>
+	</md>
+	and taking the square root gives a standard deviation slightly less than 1/2.
+	</p>
+	
+	<p>For the skewness, notice that the graph is symmetrical about the mean and so we would expect a skewness of 0.  Just to check it out
+	<md>
+		<mrow> &amp; E[X^3] - 3 \mu E[X^2] + 2\mu^3</mrow>
+		<mrow> &amp; = \int_{-1}^1 x^3 \cdot \frac{3}{4} \cdot (1-x^2) dx - 3 E[X^2] \cdot 0 + 0^3 </mrow>
+		<mrow> &amp; = \int_{-1}^1 \cdot \frac{3}{4} \cdot (x^3-x^5) dx</mrow>
+		<mrow> &amp; = \frac{3}{4} \cdot (x^4/4-x^6/6) \big |_{-1}^1</mrow>
+		<mrow> &amp; = 0</mrow>
+	</md>
+	as expected without having to actually complete the calculation by dividing by <m>\frac{1}{\sigma^3}</m>.
+	</p>
+	
+	<p>Finally, note that the probability function in this case is modestly close to a bell shaped curve so we would expect a kurtosis in the vicinity of 3. Indeed, noting that (conveniently) <m>\mu = 0</m> gives
+	<md>
+		<mrow> &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3 \mu^4</mrow>
+		<mrow> &amp; = \int_{-1}^1 x^4 \cdot \frac{3}{4} \cdot (1-x^2) dx</mrow>
+		<mrow> &amp; = \frac{3}{4} \cdot (x^5 /5-x^7 /7) \big |_{-1}^1</mrow>
+		<mrow> &amp; = \frac{3}{4} \cdot 2(1/5-1/7)</mrow>
+		<mrow> &amp; = \frac{3}{35}</mrow>
+	</md>
+	and so by dividing by <m>\sigma^4 = \sqrt{\frac{1}{5}}^4 = \frac{1}{25}</m> gives a kurtosis of
+	<me>\frac{3}{35} / \frac{1}{25} = \frac{75}{35} \approx 2.14.</me>
+	</p>
+	
+
 	
 	<p>So, going back to Pascal's wager, let X = 0 represent disbelief when God doesn't exist and X = 1 represent disbelief when God does exist, X = 2 represent belief when God does exist, and X = 3 represent belief when God does not exist. Let p be the likelihood that God exists. Then you can compute the expected value of disbelief and the expect value of belief by first creating a value function. Below, for argument sake we are somewhat randomly assign a value of one million to disbelief if God doesn't exist. The conclusions are the same if you choose any other finite number...
 	<md>
