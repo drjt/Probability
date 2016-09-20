@@ -19,6 +19,26 @@
 	<p>
 	Assume that you have a variable with space R = {1, 2, 3, ..., n} so that the likelihood of each value is equally likely. Then, the probability function satisfies <m>f(x) = c</m> for any <m>x \in R</m>.  As before, since <m>\sum_{x \in R} f(x) = 1</m>, then <me>f(x) = \frac{1}{n}</me> is the probability function.
 	</p>
+	
+	
+<sage>
+<input>
+# Uniform distribution over 1 .. n
+pretty_print("Discrete Uniform Distribution over the set 1, 2, ..., n")
+var('x')
+@interact
+def _(n=slider(2,10,1,2)):
+    np1 = n+1
+    R = range(1,np1)
+    f(x) = 1/n
+    pretty_print(html('Density Function: $f(x) =%s$'%str(latex(f(x)))+' over the space $R = %s$'%str(R)))
+    points((k,f(x=k)) for k in R).show()
+    for k in R:
+        pretty_print(html('$f(%s'%k+') = %s'%f(x=k)+' \\approx %s$'%f(x=k).n(digits=5)))
+
+</input>
+</sage>
+
 	<theorem><title>Properties of the Discrete Uniform Probability Function</title>
 	<statement>
 	<ol>

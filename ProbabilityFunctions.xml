@@ -32,26 +32,43 @@
 		</statement>
 	</definition>
 
+
+<image source="images/randomvariable.png" />
+
+
 	<p>We will make various restrictions on the range of the random variable to fit different 
 	generalized problems. Then, we will be able to work on a problem (which may be 
 	inherently non-numerical) by using the random variable in subsequent calculations.
 	</p>
 	<example>
 	<title>Success vs Failure</title>
-	<p>When dealing with only two outcomes, one might use S = { success, failure}.
-	Choose X(success)=1, X(failure)=0. Then, R={0,1}.</p>
+	<p>When dealing with only two outcomes, one might use 
+	<me>S = \text{{ success, failure }}.</me>
+	Choose 
+	<md>
+		<mrow>X(success)=1</mrow>
+		<mrow>X(failure)=0.</mrow>
+	</md>
+	Then, R={0,1}.
+	</p>
 	</example>
 	<example>
 	<title>Standard Dice Pairs</title>
 	<p>When gambling with a pair of dice, one might use
-	S=ordered pairs of all possible rolls = {(a,b): a=die 1 outcome, b=die 2 outcome}.
-	Choose X( (a,b) ) = a+b. Then, R={2, 3, 4, 5, ..., 12}.</p>
+	S=ordered pairs of all possible rolls.  Then 
+	<me>S = \text{ {(a,b): a=die 1 outcome, b=die 2 outcome}}.</me>
+	Choose 
+	<me>X( (a,b) ) = a+b.</me> 
+	Then, R={2, 3, 4, 5, ..., 12}.
+	</p>
 	</example>
 	<example>
 	<title>Other Dice Options</title>
 	<p>When rolling dice in a board game (like RISK), one might use
-	S={(a,b): a=die 1 outcome, b=die 2 outcome}
-	Choose X( (a,b) ) = max{a,b}. Then, R={1, 2, 3, 4, 5, 6}
+	<me>S= \text{{(a,b): a=die 1 outcome, b=die 2 outcome}}</me>
+	Choose 
+	<me>X( (a,b) ) = \text{max{a,b}}.</me> 
+	Then, R={1, 2, 3, 4, 5, 6}.
 	</p>
 	</example>
 
@@ -64,9 +81,20 @@
 		then we call X a continuous random variable. 
 		</statement>
 	</definition>
-
-
-<image source="images/randomvariable.png" />
+	
+	<subsection><title>HOMEWORK</title>
+	<p>
+	A. You flip three coins and measure the number of heads obtained. Determine the space R for the corresponding random variable X. From the eight possible outcomes, determine all outcomes corresponding to X=2. Identify the random variable as discrete or continuous.
+	</p>
+	
+	<p>
+	B. You flip one coin repeatedly until you get a second head. Determine the space R for the corresponding random variable X. From the possibilities, determine all outcomes corresponding to X=4. Identify the random variable as discrete or continuous.
+	</p>
+	
+	<p>
+	C. Now you want to measure the time between accidents at a particular intersection in town. Determine the space R for the corresponding random variable X. Describe all outcomes corresponding to <m>X \lt 1</m>. Be purposeful in the problem to describe the units you are using to measure time. Identify the random variable as discrete or continuous.
+	</p>
+	</subsection>
 
 </section>
 
@@ -74,7 +102,7 @@
 <section><title>Probability Functions</title>
 	<p>In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.</p>
 
-	<definition><title>Probability Mass Function</title>
+	<definition><title>Probability "Mass" Function</title>
 		<statement>Given a discrete random variable X on a space R, a probability mass function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
 		<md>
 			<mrow>&amp; \forall x \in R , f(x) \gt 0</mrow>
@@ -84,15 +112,19 @@
 		</statement>
 	</definition>
 	
-	<definition><title>Probability Density Function</title>
+	<definition><title>Probability "Density" Function</title>
 		<statement>Given a continuous random variable X on a space R, a probability density function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
 			<md>
 				<mrow>&amp; \forall x \in R , f(x) \gt 0</mrow>
-				<mrow>&amp; \int_{R} f(x) = 1</mrow>
+				<mrow>&amp; \int_{R} f(x) dx = 1</mrow>
 				<mrow>&amp; A \subset R \Rightarrow P(X \in A) = \int_{A} f(x) dx</mrow>
 			</md>
 		</statement>
 	</definition>
+	
+	<p>
+	For the purposes of this book, we will use the term "Probability Function" to refer to either of these options.
+	</p>
 	
 	<example>
 	<title>Discrete Probability Function</title>
@@ -216,63 +248,62 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	
 	</p>
 	</example>
-</section>	
-<section><title>Properties of the Distribution Function</title>
 		
-		<theorem xml:id="theorem-Fmin">
-			<statement><m>F(x)=0, \forall x \le \inf(R)</m></statement>
-			<proof>TBA</proof>
-		</theorem>
-		
-		<theorem xml:id="theorem-Fmax">
-			<statement><m>F(x)=1, \forall x \ge \sup(R)</m></statement>
-			<proof>TBA</proof>
-		</theorem>
-		
-		<theorem>
-			<statement xml:id="theorem-F-non-decreasing">F is non-decreasing</statement>
-			<proof>
-				<p>Case 1: R discrete</p>
-				<md>
-					<mrow>\forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2</mrow>
-					<mrow>F(x_2) &amp; = \sum_{x \le x_2} f(x) </mrow>
-					<mrow>&amp; = \sum_{x \le x_1} f(x) + \sum_{x_1 \lt x \le x_2} f(x)</mrow>
-					<mrow>&amp; \ge \sum_{x \le x_1} f(x) = F(x_1)</mrow>
-				</md>
-				<p>Case 2: R continuous</p>
-				<md>
-					<mrow>\forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2</mrow>
-					<mrow>F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx </mrow>
-					<mrow> &amp; = \int_{-\infty}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx</mrow>
-					<mrow> &amp; \ge \int_{-\infty}^{x_1} f(x) dx</mrow>
-					<mrow> &amp; = F(x_1)</mrow>
-				</md>
-			</proof>
-		</theorem>
-		
-		<theorem xml:id="theorem-Fvsf-discrete">
-			<title>Using Discrete Distribution Function to compute probabilities</title>
-			<statement>for <m>x \in R, f(x) = F(x) - F(x-1)</m></statement>
-		</theorem>
-		
-		<theorem xml:id="theorem-Fvsf-continuyous">
-			<title>Using Continuous Distribution function to compute probabilities</title>
-			<statement>for <m>a \lt b, (a,b) \in R, P(a \lt X \lt b) = F(b) - F(a)</m></statement>
-		</theorem>
-		
-		<corollary xml:id="corollary-ProbPointZero-continuous">
-			<statement>For continuous distributions, P(X = a) = 0</statement>
-		</corollary>
-		
-</section>
+	<theorem xml:id="theorem-Fmin">
+		<statement><m>F(x)=0, \forall x \le \inf(R)</m></statement>
+		<proof>TBA</proof>
+	</theorem>
 	
-<section>
-		<title>Standard Units</title>
-			<p>Any distribution variable can be converted to “standard units” using the linear translation 
-			<m>\displaystyle z = \frac{x-\mu}{\sigma}</m>. In doing so, then values of z will always represent the number of
-			standard deviations x is from the mean and will provide “dimensionless” comparisons.</p>
-</section>    
-
+	<theorem xml:id="theorem-Fmax">
+		<statement><m>F(x)=1, \forall x \ge \sup(R)</m></statement>
+		<proof>TBA</proof>
+	</theorem>
+	
+	<theorem>
+		<statement xml:id="theorem-F-non-decreasing">F is non-decreasing</statement>
+		<proof>
+			<p>Case 1: R discrete</p>
+			<md>
+				<mrow>\forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2</mrow>
+				<mrow>F(x_2) &amp; = \sum_{x \le x_2} f(x) </mrow>
+				<mrow>&amp; = \sum_{x \le x_1} f(x) + \sum_{x_1 \lt x \le x_2} f(x)</mrow>
+				<mrow>&amp; \ge \sum_{x \le x_1} f(x) = F(x_1)</mrow>
+			</md>
+			<p>Case 2: R continuous</p>
+			<md>
+				<mrow>\forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2</mrow>
+				<mrow>F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx </mrow>
+				<mrow> &amp; = \int_{-\infty}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx</mrow>
+				<mrow> &amp; \ge \int_{-\infty}^{x_1} f(x) dx</mrow>
+				<mrow> &amp; = F(x_1)</mrow>
+			</md>
+		</proof>
+	</theorem>
+	
+	<theorem xml:id="theorem-Fvsf-discrete">
+		<title>Using Discrete Distribution Function to compute probabilities</title>
+		<statement>for <m>x \in R, f(x) = F(x) - F(x-1)</m></statement>
+	</theorem>
+	
+	<theorem xml:id="theorem-Fvsf-continuyous">
+		<title>Using Continuous Distribution function to compute probabilities</title>
+		<statement>for <m>a \lt b, (a,b) \in R, P(a \lt X \lt b) = F(b) - F(a)</m></statement>
+	</theorem>
+	
+	<corollary xml:id="corollary-ProbPointZero-continuous">
+		<statement>For continuous distributions, P(X = a) = 0</statement>
+	</corollary>
+	
+	<subsection><title>HOMEWORK</title>
+	<p>
+	A.  Consider the random variable from the previous section where you flip three coins and measure the number of heads obtained. Determine f(0), f(1), f(2), and f(3) and the corresponding distribution function F(x). These can be expressed in a table format. Generalize your answer to the case when you flip a n coins where n is a fixed natural number.
+	</p>
+	<p>
+	B.  
+	</p>
+	</subsection>
+		
+</section> 
 
 <section><title>Expected Value</title>
 	<p>Blaise Pascal was a 	17th century mathematician and philosopher who was accomplished in many areas but may likely be best known to you for his creation of what is now known as Pascal's Triangle. As part of his philosophical pursuits, he proposed what is known as "Pascal's wager". It suggests two  mutually exclusive outcomes: that God exists or that he does not. His argument is that a rational person should live as though God exists and seek to believe in God. If God does not actually exist, such a person will have only a finite loss (some pleasures, luxury, etc.), whereas they stand to receive infinite gains as represented by eternity in Heaven and avoid an infinite losses of eternity in Hell. This type of reasoning is part of what is known as "decision theory".
@@ -343,9 +374,14 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	<ol>
 		<li><m>\sigma^2 = E[x^2] - \mu^2 = E[X(x-1)] + \mu - \mu^2</m></li>
 		<li>Skewness = <m>\frac{1}{\sigma^3} \cdot \left [ E[X^3] - 3 \mu E[X^2] + 2\mu^3 \right ]</m></li>
-		<li>Kurtosis in terms of 4th moments</li>
+		<li>Kurtosis = <m>\frac{1}{\sigma^4} \cdot \left [ E[X^4] - 4 \mu E[X^3] + 6\mu^2 E[X^2] - 3 \mu^4 \right ]</m></li>
 	</ol>
 	</statement>
+	<proof>
+		<p>
+		In each case, expand the binomial inside and use the linearity of expected value.
+		</p>
+	</proof>
 	</theorem>
 	
 	<p>
@@ -354,16 +390,19 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	<table halign="left">
       	<tabular halign="right">
       
-<row><cell bottom="medium" right="medium">X</cell><cell bottom="medium" right="medium">f(x)</cell></row>      
-<row><cell right="medium">0</cell><cell right="medium">0.10</cell></row>
-<row><cell right="medium">1</cell><cell right="medium">0.25</cell></row>
-<row><cell right="medium">2</cell><cell right="medium">0.40</cell></row>
-<row><cell right="medium">4</cell><cell right="medium">0.15</cell></row>
-<row><cell right="medium">7</cell><cell right="medium">0.10</cell></row>
+<row><cell bottom="medium" right="medium">X</cell><cell bottom="medium">f(x)</cell></row>      
+<row><cell right="medium">0</cell><cell>0.10</cell></row>
+<row><cell right="medium">1</cell><cell>0.25</cell></row>
+<row><cell right="medium">2</cell><cell>0.40</cell></row>
+<row><cell right="medium">4</cell><cell>0.15</cell></row>
+<row><cell right="medium">7</cell><cell>0.10</cell></row>
 		</tabular>
 	</table>
-
-	Then
+	
+	<image source="images/DiscreteHistogramExample.png" />
+	</p>
+	<p>
+	Using the definition of mean as a sum,
 	<md>
 		<mrow>\mu &amp; = 0 \cdot 0.10 + 1 \cdot 0.25 + 2 \cdot 0.40 + 4 \cdot 0.15 + 7 \cdot 0.10</mrow>
 		<mrow> &amp; = 0 + 0.25 + 0.80 + 0.60 + 0.70</mrow>
@@ -374,38 +413,43 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	
 	<p>For the variance
 	<md>
-		<mrow>\sigma^2 &amp; = 0^2 \cdot 0.10 + 1^2 \cdot 0.25 + 2^2 \cdot 0.40 + 4^2 \cdot 0.15 + 7^2 \cdot 0.10 - 2.35^2</mrow>
+		<mrow>\sigma^2 &amp; = E[X^2] - \mu^2</mrow>
+		<mrow> &amp; = \left [ 0^2 \cdot 0.10 + 1^2 \cdot 0.25 + 2^2 \cdot 0.40 + 4^2 \cdot 0.15 + 7^2 \cdot 0.10 \right ] - 2.35^2</mrow>
 		<mrow> &amp; = 0 + 0.25 + 1.60 + 2.40 + 4.90 - 5.5225</mrow>
 		<mrow> &amp; = 9.15 - 5.225</mrow>
 		<mrow> &amp; = 3.6275 </mrow>
 	</md>	
-	and so the standard deviation <m>\sigma = \sqrt{3.6275} \approx 1.90</m>.
+	and so the standard deviation <m>\sigma = \sqrt{3.6275} \approx 1.90</m>. Notice that 4 times this value encompasses almost all of the range of the distribution.
 	</p>
 	
 	<p>For the skewness
 	<md>
-		<mrow> &amp; E[X^3] - 3 \mu E[X^2] + 2\mu^3</mrow>
-		<mrow> &amp; = 0^3 \cdot 0.10 + 1^3 \cdot 0.25 + 2^3 \cdot 0.40 + 4^3 \cdot 0.15 + 7^3 \cdot 0.10 - 3 \cdot 2.35 \cdot 9.15 + 2 \cdot 2.35^3</mrow>
-		<mrow> &amp; = 0 + 0.25 + 3.20 + 9.60 + 34.3 - 64.5075 + 11.045</mrow>
-		<mrow> &amp; = 47.35 - 64.5075 + 11.045</mrow>
-		<mrow> &amp; = -6.1125</mrow>
+		<mrow> \text{Numerator = } &amp; E[X^3] - 3 \mu E[X^2] + 2\mu^3</mrow>
+		<mrow> &amp; = \left [ 0^3 \cdot 0.10 + 1^3 \cdot 0.25 + 2^3 \cdot 0.40 + 4^3 \cdot 0.15 + 7^3 \cdot 0.10 \right ] - 3 \cdot 2.35 \cdot 9.15 + 2 \cdot 2.35^3</mrow>
+		<mrow> &amp; \approx 0 + 0.25 + 3.20 + 9.60 + 34.3 - 64.5075 + 25.96</mrow>
+		<mrow> &amp; = 47.35 - 64.5075 + 25.96</mrow>
+		<mrow> &amp; \approx 8.80</mrow>
 	</md>
-	which yields a skewness of <m>-6.1125/ \sigma^2 \approx -6.1125 / 1.9^3 \approx -0.89</m> indicates a slight skewness to the left of the mean. 
+	which yields a skewness of <m>8.80 / \sigma^3 \approx 1.27 </m>. This indicates a slight skewness to the right of the mean. You can notice the 4 and 7 entries on the histogram illustrate a slight trailing off to the right.
 	</p>
 	
 	<p>Finally, for kurtosis
 	<md>
-		<mrow> &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3\mu^4</mrow>
-		<mrow> &amp; = 0^4 \cdot 0.10 + 1^4 \cdot 0.25 + 2^4 \cdot 0.40 + 4^4 \cdot 0.15 + 7^4 \cdot 0.10 - 4 \cdot 2.35 \cdot 47.35 + 6 \cdot 2.35^2 \cdot 9.15^2 - 3 \cdot 2.35^4</mrow>
-		<mrow> &amp; \approx 0 + 0.25 + 6.40 + 38.4 + 240.1 - 445.09 + 2774.15 - 91.49</mrow>
-		<mrow> &amp; \approx 2522.72</mrow>
+		<mrow> \text{Numerator = } &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3\mu^4</mrow>
+		<mrow> &amp; = \left [ 0^4 \cdot 0.10 + 1^4 \cdot 0.25 + 2^4 \cdot 0.40 + 4^4 \cdot 0.15 + 7^4 \cdot 0.10 \right ] - 4 \cdot 2.35 \cdot 47.35 + 6 \cdot 2.35^2 \cdot 9.15^2 - 3 \cdot 2.35^4</mrow>
+		<mrow> &amp; \approx 0 + 0.25 + 6.40 + 38.4 + 240.1 - 445.09 + 303.19 - 91.49</mrow>
+		<mrow> &amp; \approx 285.15 - 445.09 + 303.19 - 91.49</mrow>
+		<mrow> &amp; \approx 51.75</mrow>
 	</md>
-	which yields a kurtosis of <m> 2522.72 / \sigma^4 \approx 2522.72 / 1.9^4 \approx MISTAKE</m>.
+	which yields a kurtosis of <m> 51.75 / \sigma^4 \approx 3.93</m> which also notes that the data appears to have a modestly bell-shaped distribution.
 	</p>
 	
 	<p>
 	Consider the following example when computing these statistics for a continuous variable. 
 	Let <m>f(x) = \frac{3}{4} \cdot (1-x^2)</m> over R = [-1,1].  
+		<image source="images/ContinuousDistributionExample.png" />
+	</p>
+	<p>
 	Then for the mean
 	<md>
 		<mrow>\mu &amp; = \int_{-1}^1 x \cdot \frac{3}{4} \cdot (1-x^2) dx</mrow>
@@ -426,23 +470,23 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 		<mrow> &amp; = \frac{3}{4} \cdot \frac{4}{15}</mrow>
 		<mrow> &amp; = \frac{1}{5}</mrow>
 	</md>
-	and taking the square root gives a standard deviation slightly less than 1/2.
+	and taking the square root gives a standard deviation slightly less than 1/2. Notice that four times this value encompasses almost all of the range of the distribution.
 	</p>
 	
 	<p>For the skewness, notice that the graph is symmetrical about the mean and so we would expect a skewness of 0.  Just to check it out
 	<md>
-		<mrow> &amp; E[X^3] - 3 \mu E[X^2] + 2\mu^3</mrow>
+		<mrow> \text{Numerator = } &amp; E[X^3] - 3 \mu E[X^2] + 2\mu^3</mrow>
 		<mrow> &amp; = \int_{-1}^1 x^3 \cdot \frac{3}{4} \cdot (1-x^2) dx - 3 E[X^2] \cdot 0 + 0^3 </mrow>
 		<mrow> &amp; = \int_{-1}^1 \cdot \frac{3}{4} \cdot (x^3-x^5) dx</mrow>
 		<mrow> &amp; = \frac{3}{4} \cdot (x^4/4-x^6/6) \big |_{-1}^1</mrow>
 		<mrow> &amp; = 0</mrow>
 	</md>
-	as expected without having to actually complete the calculation by dividing by <m>\frac{1}{\sigma^3}</m>.
+	as expected without having to actually complete the calculation by dividing by the cube of the standard deviation.
 	</p>
 	
 	<p>Finally, note that the probability function in this case is modestly close to a bell shaped curve so we would expect a kurtosis in the vicinity of 3. Indeed, noting that (conveniently) <m>\mu = 0</m> gives
 	<md>
-		<mrow> &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3 \mu^4</mrow>
+		<mrow> \text{Numerator = } &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3 \mu^4</mrow>
 		<mrow> &amp; = \int_{-1}^1 x^4 \cdot \frac{3}{4} \cdot (1-x^2) dx</mrow>
 		<mrow> &amp; = \frac{3}{4} \cdot (x^5 /5-x^7 /7) \big |_{-1}^1</mrow>
 		<mrow> &amp; = \frac{3}{4} \cdot 2(1/5-1/7)</mrow>
@@ -454,7 +498,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	
 
 	
-	<p>So, going back to Pascal's wager, let X = 0 represent disbelief when God doesn't exist and X = 1 represent disbelief when God does exist, X = 2 represent belief when God does exist, and X = 3 represent belief when God does not exist. Let p be the likelihood that God exists. Then you can compute the expected value of disbelief and the expect value of belief by first creating a value function. Below, for argument sake we are somewhat randomly assign a value of one million to disbelief if God doesn't exist. The conclusions are the same if you choose any other finite number...
+	<p>Going back to Pascal's wager, let X = 0 represent disbelief when God doesn't exist and X = 1 represent disbelief when God does exist, X = 2 represent belief when God does exist, and X = 3 represent belief when God does not exist. Let p be the likelihood that God exists. Then you can compute the expected value of disbelief and the expect value of belief by first creating a value function. Below, for argument sake we are somewhat randomly assign a value of one million to disbelief if God doesn't exist. The conclusions are the same if you choose any other finite number...
 	<md>
 		<mrow>u(0) = 1,000,000, f(0) = 1-p</mrow>
 		<mrow>u(1) = -\infty, f(1) = p</mrow>
@@ -478,6 +522,11 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 
 </section>
 
-
+	
+<section><title>Standard Units</title>
+	<p>Any distribution variable can be converted to “standard units” using the linear translation 
+	<m>\displaystyle z = \frac{x-\mu}{\sigma}</m>. In doing so, then values of z will always represent the number of
+	standard deviations x is from the mean and will provide “dimensionless” comparisons.</p>
+</section>   
 
 </chapter>

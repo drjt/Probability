@@ -80,17 +80,21 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	</p>
 
 
-<!--
+
 	<exercise>
 		<introduction>
+		<p>
 		Let's see if you understand the relationship between frequency and relative frequency.
+		</p>
 		</introduction>
 		<webwork source="local/relative_frequency1.pg" />
 		<conclusion>
+		<p>
 		So, these are simple calculations.
+		</p>
 		</conclusion>
 	</exercise>
--->
+
 
 	<p>
 	Question 1: What do you notice as the number of rolls increases?
@@ -489,6 +493,15 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 		<li>As best as you can, sample two groups of the size found above and gather birthday information. For each group, determine if there is a shared birthday or not.  Compare your results with others in the class to check whether the sampling validates that about half of the samples should have a shared birthday group.</li>
 	</ol>
 	</p>
+	
+	<p>
+	E.  This one is from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. Given that a 6 will be removed, determine the probability that the other die is a 6.
+	</p>
+	<solution>
+	<p>
+	In this case, you are presented with an outcome where the possible choices consist of (1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).  Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
+	</p>
+	</solution>
 
 
 	</subsection>
@@ -786,6 +799,15 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 		<li>The number of components needed to insure that the probability of success is at least 99%.</li>
 	</ol>
 	</p>
+	
+	<p>
+	E.  Again, from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. A 6 is removed and you are presented with the other die.  Determine the probability that it is a 6.
+	</p>
+	<solution> 
+	<p>
+	For this setting, notice that the outcomes from each of the two dice are independent of each other. Removing one of the dice, regardless of it's value, does not affect the other. The question in this case does not ask for a conditional probability.
+	</p>
+	</solution>
 	
 	</subsection>
 	

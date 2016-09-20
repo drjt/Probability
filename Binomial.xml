@@ -27,6 +27,30 @@
 	If we let the variable <m>X</m> measure the number of successes 
 	obtained when doing a fixed number of trials n, then the resulting
 	distribution of probabilities is called a Binomial Distribution.</p>
+	
+<sage>
+<input>
+# Binomial distribution over 0 .. n
+# Probability of success on one independent trial = p must also be given
+var('x')
+@interact
+def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
+    np1 = n+1
+    R = range(np1)
+    f(x) = factorial(n)/(factorial(x)*factorial(n-x))*p^x*(1-p)^(n-x)
+    pretty_print(html('Density Function: $f(x) =%s$'%str(latex(f(x)))))
+    pretty_print(html('over the space $R = %s$'%str(R)))
+    G = points((k,f(x=k)) for k in R)
+    G.show()
+    R = [k for k in R]
+    probs = [f(x=k) for k in R]
+#    H = histogram( R, weights = probs, align="mid", linewidth=2, edgecolor="blue", color="yellow")
+#    H.show()
+    for k in R:
+        pretty_print(html('$f(%s'%k+') = %s'%latex(f(x=k))+' \\approx %s$'%f(x=k).n(digits=5)))
+</input>
+</sage>
+
 	<subsection>
 		<title>Derivation of Binomial Probability Function</title>
 		<p> Since successive trials are independent, then the probability of X successes occurring within n 
@@ -75,37 +99,70 @@
 	to obtain the first success, 
 	then the resulting distribution of probabilities is called a 
 	Geometric Distribution.</p>
-		
-	<subsection>
-		<title>Derivation of Geometric Probability Function</title>
-			<p> Since successive trials are independent, then the probability 
-			of the first success occurring on the mth trial presumes that
-			the previous m-1 trials were all failures.  Therefore the 
-			desired probability is given by </p>
-			<me>f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p</me>
-	</subsection> 
+
+	<p> Since successive trials are independent, then the probability 
+	of the first success occurring on the mth trial presumes that
+	the previous m-1 trials were all failures.  Therefore the 
+	desired probability is given by </p>
+	<me>f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p</me>
 	
-	<subsection><title>Properties of the Geometric Distribution</title>
-		<title>Geometric Distribution sums to 1</title>
+	<theorem><title>Geometric Distribution sums to 1</title>
+		<statement><me>f(x) = (1-p)^{m-1}p</me> sums to 1 over <m>R = \{ 1, 2, ... \}</m>
+		</statement>
+		<proof>
+		<p>
 		<md>
-			<mrow>\SUM {k=1} {\infty} {f(x)} = \sum_{k=1}^{\infty} {(1-p)^{k-1} p} = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1</mrow>
+			<mrow>\sum_{k=1}^{\infty} {f(x)} = \sum_{k=1}^{\infty} {(1-p)^{k-1} p} = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1</mrow>
 		</md>
-	</subsection>
+		</p>
+		</proof>
+	</theorem>
 	
-	<subsection>
-		<title>Derivation of Geometric Mean</title>
-			<p> </p>
+<sage>
+<input>
+# Geometric distribution over 0 .. n
+# Probability of success on one independent trial = p must also be given
+var('x')
+# n = 50 by default. actually should be infinite
+@interact
+def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
+    np1 = n+1
+    R = range(1,np1)
+    f(x) = (1-p)^(x-1)*p
+    F(x) = 1 - (1-p)^x
+    pretty_print(html('Density Function: $f(x) =%s$'%str(latex(f(x)))+' over the space $R = %s$'%str(R)))
+    points((k,f(x=k)) for k in R).show(title="Probability Function")
+    print
+    points((k,F(x=k)) for k in R).show(title="Distribution Function")
+    if (n == 25):
+        for k in R:
+            pretty_print(html('$f(%s'%k+') = %s'%latex(f(x=k))+' \\approx %s$'%f(x=k).n(digits=5)))
+</input>
+</sage>
+	
+	<theorem><title>Geometric Mean</title>
+		<statement>For the geometric distribution, 
+			<me>\mu = 1/p</me>
+		</statement>
+		<proof>
+			<p> 
 			<md>
 				<mrow>\mu &amp; = E[X] = \sum_{k=0}^{\infty} {k(1-p)^{k-1}p}</mrow>
 				<mrow> &amp; = p \sum_{k=1}^{\infty} {k(1-p)^{k-1}}</mrow>
 				<mrow> &amp; = p \frac{1}{(1-(1-p))^2}</mrow>
 				<mrow> &amp; = p \frac{1}{p^2} = \frac{1}{p}</mrow>
 			</md>
-	</subsection> 
+			</p>
+		</proof>
+	</theorem> 
+
 	
-	<subsection>
-		<title>Derivation of Geometric Variance</title>
-			<p> </p>
+	<theorem><title>Geometric Variance</title>
+			<statement>For the geometric distribution 
+				<me>\sigma^2  = \frac{1-p}{p^2}</me>
+			</statement>
+			<proof>
+			<p> 
 			<md>
 				<mrow>\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
 				<mrow> &amp; = \su _{k=0}^{\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 </mrow>
@@ -113,18 +170,27 @@
 				<mrow> &amp; = (1-p)p \frac{2}{(1-(1-p))^3} + \frac{1}{p} - \frac{1}{p^2}</mrow>
 				<mrow> &amp; = \frac{1-p}{p^2}</mrow>
 			</md>
-	</subsection> 
+			</p>
+			</proof>
+	</theorem> 
 	
-	<subsection>
-		<title>Derivation of Geometric Distribution Function</title>
-		<p> Consider the accumulated probabilities over a range of values...</p>
+	<theorem>
+		<title>Geometric Distribution Function</title>
+		<statement>
+			<me>F(a) =  1- (1-p)^{a}</me>
+		</statement>
+		<proof>
+		<p> Consider the accumulated probabilities over a range of values...
 		<md>
 			<mrow> P(X \le a) &amp; = 1 - P(X \gt a)</mrow>
 			<mrow> &amp; = 1- \sum_{k={a+1}}^{\infty} {(1-p)^{k-1}p}</mrow>
 			<mrow> &amp; = 1- p \frac{(1-p)^{a}}{1-(1-p)}</mrow>
 			<mrow> &amp; = 1- (1-p)^{a}</mrow>
 		</md>
-	</subsection> 
+		</p>
+		</proof>
+	</theorem> 
+
 </section>
 
 <section>
@@ -139,6 +205,7 @@
 	then the resulting distribution of probabilities is called a 
 	Geometric Distribution.</p>
 	<p>Note that r=1 gives the Geometric Distribution.</p>
+	
 	<subsection><title>Negative Binomial Series</title>
 		<theorem xml:id="theorem-NegBinomSeries">
 		<statement> 
