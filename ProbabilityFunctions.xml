@@ -109,6 +109,7 @@
 			<mrow>&amp; \sum_{x \in R} f(x) = 1</mrow>
 			<mrow>&amp; A \subset R \Rightarrow P(X \in A) = \sum_{x \in A}f(x)</mrow>
 		</md>
+		For <m>x \not\in R</m>, you can use the convention f(x)=0.
 		</statement>
 	</definition>
 	
@@ -119,6 +120,7 @@
 				<mrow>&amp; \int_{R} f(x) dx = 1</mrow>
 				<mrow>&amp; A \subset R \Rightarrow P(X \in A) = \int_{A} f(x) dx</mrow>
 			</md>
+		For <m>x \not\in R</m>, you can use the convention f(x)=0.
 		</statement>
 	</definition>
 	
@@ -216,12 +218,12 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	<table halign="left">
       	<tabular halign="right">
       
-<row><cell bottom="medium">X</cell><cell bottom="medium">F(x)</cell></row>      
-<row><cell><m>x \lt 1</m></cell><cell>0</cell></row>
-<row><cell><m>1 \le x \lt 2</m></cell><cell>1/10</cell></row>
-<row><cell><m>2 \le x \lt 3</m></cell><cell>3/10</cell></row>
-<row><cell><m>3 \le x \lt 4</m></cell><cell>6/10</cell></row>
-<row><cell><m>4 \le x </m></cell><cell>1</cell></row>
+<row><cell bottom="medium" right="medium">X</cell><cell bottom="medium">F(x)</cell></row>      
+<row><cell right="medium"><m>x \lt 1</m></cell><cell>0</cell></row>
+<row><cell right="medium"><m>1 \le x \lt 2</m></cell><cell>1/10</cell></row>
+<row><cell right="medium"><m>2 \le x \lt 3</m></cell><cell>3/10</cell></row>
+<row><cell right="medium"><m>3 \le x \lt 4</m></cell><cell>6/10</cell></row>
+<row><cell right="medium"><m>4 \le x </m></cell><cell>1</cell></row>
 		</tabular>
 	</table>
 	</p>
@@ -237,10 +239,10 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	<table halign="left">
       	<tabular halign="right">
       
-<row><cell bottom="medium">X</cell><cell bottom="medium">F(x)</cell></row>      
-<row><cell><m>x \lt -1</m></cell><cell>0</cell></row>
-<row><cell><m>-1 \le x \lt 2</m></cell><cell><m>x^3/9 + 1/9</m></cell></row>
-<row><cell><m>2 \le x</m></cell><cell>1</cell></row>
+<row><cell bottom="medium" right="medium">X</cell><cell bottom="medium">F(x)</cell></row>      
+<row><cell right="medium"><m>x \lt -1</m></cell><cell>0</cell></row>
+<row><cell right="medium"><m>-1 \le x \lt 2</m></cell><cell><m>x^3/9 + 1/9</m></cell></row>
+<row><cell right="medium"><m>2 \le x</m></cell><cell>1</cell></row>
 	
 		</tabular>
 	</table>
@@ -250,13 +252,26 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	</example>
 		
 	<theorem xml:id="theorem-Fmin">
-		<statement><m>F(x)=0, \forall x \le \inf(R)</m></statement>
-		<proof>TBA</proof>
+		<statement><m>F(x)=0, \forall x \lt \inf(R)</m></statement>
+		<proof>
+		<p>
+		Let a = inf(R). Then, for 
+		<me>x \lt a, F(x) = P(X \le x) \le P(X \lt a) = 0</me> 
+		since none of the x-values in this range are in R.
+		</p>
+		</proof>
 	</theorem>
 	
 	<theorem xml:id="theorem-Fmax">
 		<statement><m>F(x)=1, \forall x \ge \sup(R)</m></statement>
-		<proof>TBA</proof>
+		<proof>
+		<p>
+		Let b = sup(R). Then, for 
+		<me>x \ge b, F(x) = P(X \le x)  = P(X \le b) + P( b \lt X le x) = P(X le b) = 1</me> 
+		since all of the x-values in this range are in R and therefore will either sum over or integrate over all of R.
+		</p>
+		
+		</proof>
 	</theorem>
 	
 	<theorem>
@@ -283,15 +298,37 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	<theorem xml:id="theorem-Fvsf-discrete">
 		<title>Using Discrete Distribution Function to compute probabilities</title>
 		<statement>for <m>x \in R, f(x) = F(x) - F(x-1)</m></statement>
+		<proof>
+		<p>Assume <m>x \in R</m> for some discrete R. Then,
+		<me>F(x) - F(x-1) = \sum_{u \le x} f(u) - \sum_{u \lt x} f(u) = f(x)</me>
+		</p>
+		</proof>
 	</theorem>
 	
 	<theorem xml:id="theorem-Fvsf-continuyous">
 		<title>Using Continuous Distribution function to compute probabilities</title>
-		<statement>for <m>a \lt b, (a,b) \in R, P(a \lt X \lt b) = F(b) - F(a)</m></statement>
+		<statement>for <m>a \lt b, (a,b) \in R, P(a \lt X \le b) = F(b) - F(a)</m></statement>
+		<proof>
+		<p>
+		For a and b as noted, consider 
+		<md>
+		<mrow>F(b) - F(a) &amp; = \int_{-\infty}^b f(x) dx - \int_{-\infty}^a f(x) dx</mrow>
+		<mrow> &amp; = \int_a^b f(x) dx </mrow>
+		<mrow> &amp; = P(a \lt x \le b)</mrow>
+		</md>
+		</p>
+		</proof>
 	</theorem>
 	
 	<corollary xml:id="corollary-ProbPointZero-continuous">
 		<statement>For continuous distributions, P(X = a) = 0</statement>
+		<proof>
+		<p>
+		We will assume that F(x) is a continuous function. With that assumption, note
+		<me>P(a-\epsilon \lt  x \le a)  = \int_{a-\epsilon}^a f(x) dx = F(a) - F(a-\epsilon)</me>
+		Take the limit as <m> \epsilon \rightarrow 0^+</m> to get the result noting that
+		</p>
+		</proof>
 	</corollary>
 	
 	<subsection><title>HOMEWORK</title>
@@ -507,13 +544,13 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	</md>
 	Then, 
 	<md>
-		<mrow>E[disbelief] &amp; = u(0)f(0) + u(1)f(1)</mrow>
+		<mrow>E[\text{disbelief}] &amp; = u(0)f(0) + u(1)f(1)</mrow>
 		<mrow>&amp; = 1000000 \times (1-p) - \infty \times p</mrow>
 		<mrow>&amp; = -\infty</mrow>
 	</md>
 	if p>0. On the other hand, 
 	<md>
-		<mrow>E[belief] &amp; = u(2)f(2) + u(3)f(3)</mrow>
+		<mrow>E[\text{belief}] &amp; = u(2)f(2) + u(3)f(3)</mrow>
 		<mrow>&amp; = \infty \times p + 0 \times (1-p)</mrow>
 		<mrow>&amp; = \infty</mrow>
 	</md>
