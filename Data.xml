@@ -305,6 +305,7 @@ Mean utilizes all of the data values so each term is important. Utilizes them al
 <p>The US Census Bureau reported the following state populations (in millions) for 2013:
 <url href="Data/USA_States_Populations_2014.xlsx">Spreadsheet</url>
 </p>
+<p>
 <table halign="left">
       <tabular halign="right">
       
@@ -364,21 +365,23 @@ Mean utilizes all of the data values so each term is important. Utilizes them al
       </tabular>
       </table>
 
-<p>Notice that these are already in order so you can presume <m>y_1 = 0.6</m> million is the minimum and <m>y_{50} = 38.3</m> million is the maximum. Therefore, the midrange is given by
-<me>
-\frac{0.6+38.3}{2} = \frac{38.9}{2} = 19.45 million.
-</me>
-</p>
-<p>
-The mean of this data takes a bit of arithmetic but gives
-<me>\frac{\sum_{k=1}^{50} y_k }{50} = \frac{316.1}{50} \approx 6.33</me>
-million residents.
-</p>
-<p>
-Since the number of states is even, the median is found by averaging the 25th and 26th order statistics. In this case, 
-<me>\frac{y_{25}+y_{26}}{2}=\frac{4.4+4.6}{2} \approx 4.5 </me> million residents.
-</p>
+Determine the minimum, maximim, midrange, and mean for this data.
+	<solution>
+		<p>Notice that these are already in order so you can presume 
+		<m>y_1 = 0.6</m> million is the minimum and <m>y_{50} = 38.3</m> 
+		million is the maximum. Therefore, the midrange is given by
+		<me>\frac{0.6+38.3}{2} = \frac{38.9}{2} = 19.45 \text{million}.</me>
 
+		Note, in this collection of "states" data the District of Columbia is included so that the number of data items is n=51. The mean of this data takes a bit of arithmetic but gives
+		<me>\frac{\sum_{k=1}^{51} y_k }{51} = \frac{316.1}{51} \approx 6.20</me>
+		million residents. 
+		</p>
+		<p>
+		Since the number of states is odd, the median is found by looking at the 26th order statistics. In this case, that is the 4.6 million residents of Louisiana.
+		</p>
+	</solution>
+
+</p>
 </example>
 
 </section>
@@ -467,9 +470,9 @@ TBA
 <p>The Population of the individual USA states according to the 2013 Census 
 Consider the data set {}</p>
 
-<example><title>Numerical Example of these Quantitative Measures</title>
+<exercise><title>Numerical Example of these Quantitative Measures</title>
 <p>The US Census Bureau reported the following state populations (in millions) for 2013:</p>
-
+<p>
 <table halign="left">
       <tabular halign="right">
       
@@ -528,43 +531,46 @@ Consider the data set {}</p>
       
       </tabular>
       </table>
-
-<p>Again, you should note that these are already in order so the range is quickly found to be 
-<me>y_n - y_1 = 38.3 - 0.6 = 37.7</me> 
-million residents.
 </p>
 <p>
-For IQR, we first must determine the quartiles. The median (found earlier) already is the second quartile so we have <m>Q_2 = 4.5</m> million. For the other two, the formula for computing percentiles gives you the 25th percentiile
-<md>
-	<mrow>(n+1)p = 51(1/4) = 12.75</mrow>
-	<mrow>Q_1 = P^{0.25} = 0.25 \times 1.9 + 0.75 \times 2.1 = 2.05</mrow>
-</md>
-and the 75th percentile
-<md>
-	<mrow>(n+1)p = 51(3/4) = 38.25</mrow>
-	<mrow>Q_3 = P^{0.75} = 0.75 \times 7 + 0.25 \times 8.3 = 7.325.</mrow>
-</md>
-Hence, the IQR = 7.325 - 2.05 = 5.275 million residents.
-</p>
+Determine the range, quartiles, and variance for this sample data.
+	<solution> 
+	<p>Again, you should note that these are already in order so the range is quickly found to be 
+	<me>y_n - y_1 = 38.3 - 0.6 = 37.7</me> 
+	million residents.
+	</p>
+	<p>
+	For IQR, we first must determine the quartiles. The median (found earlier) already is the second quartile so we have <m>Q_2 = 4.5</m> million. For the other two, the formula for computing percentiles gives you the 25th percentiile
+	<md>
+		<mrow>(n+1)p = 51(1/4) = 12.75</mrow>
+		<mrow>Q_1 = P^{0.25} = 0.25 \times 1.9 + 0.75 \times 2.1 = 2.05</mrow>
+	</md>
+	and the 75th percentile
+	<md>
+		<mrow>(n+1)p = 51(3/4) = 38.25</mrow>
+		<mrow>Q_3 = P^{0.75} = 0.75 \times 7 + 0.25 \times 8.3 = 7.325.</mrow>
+	</md>
+	Hence, the IQR = 7.325 - 2.05 = 5.275 million residents.
+	</p>
 
-<p>
-From the computation before, the mean of this data is about 6.33
-million residents. So, to determine the variance you may find it easier to compute using the theorem above. 
-<md>
-<mrow> v &amp; = \left ( \frac{\sum_{k=1}^n y_k^2 }{n} \right ) - \mu^2
-</mrow>
-<mrow> &amp; \approx \frac{4434.37}{50} - (6.33)^2
-</mrow>
-<mrow> &amp; = 48.72
-</mrow>
-</md>
-and so you get a sample variance of
-<me> s^2 \approx \frac{50}{49} \cdot 48.72 = 49.71</me>
-and a sample standard deviation of
-<me>s \approx \sqrt{49.71} = 7.05</me> million residents.
+	<p>
+	From the computation before, again note that n=51 since the District of Columbia is included. The mean of this data found before was found to be approximately 6.20 million residents. So, to determine the variance you may find it easier to compute using the theorem above. 
+	<md>
+	<mrow> v &amp; = \left ( \frac{\sum_{k=1}^n y_k^2 }{n} \right ) - \mu^2
+	</mrow>
+	<mrow> &amp; \approx \frac{4434.37}{51} - (6.20)^2
+	</mrow>
+	<mrow> &amp; = 48.51
+	</mrow>
+	</md>
+	and so you get a sample variance of
+	<me> s^2 \approx \frac{51}{50} \cdot 48.51 = 49.48</me>
+	and a sample standard deviation of
+	<me>s \approx \sqrt{49.48} \approx 7.03</me> million residents.
+	</p>
+	</solution>
 </p>
-
-</example>
+</exercise>
 
 </section>
 
@@ -581,7 +587,7 @@ and the following grouped data formula for the variance
 
 </p>
 
-
+<exercise>
 <p>
 Consider the following data set
 </p>
@@ -611,31 +617,37 @@ Consider the following data set
 2,
 5}</p>
 <p>
-Collecting this data into a frequency distribution gives
-<table halign="left">
-      <tabular halign="right">
-      
-		<row><cell bottom="medium">x</cell><cell bottom="medium">frequency</cell></row>      
-		<row><cell>1</cell><cell>5</cell></row>
-		<row><cell>2</cell><cell>7</cell></row>
-		<row><cell>3</cell><cell>4</cell></row>
-		<row><cell>4</cell><cell>3</cell></row>
-		<row><cell>5</cell><cell>6</cell></row>
-	</tabular>
-</table>
-Therefore, 
-	<me>
-	\overline{x} = \frac{1 \times 5 + 2 \times 7 + 3 \times 4 + 4 \times 3 + 5 \times 6}{5+7+4+3+6} = \frac{5 + 14 + 12 + 12 + 30}{25} = \frac{43}{25}
-	</me>
-and 
-	<md>
-		<mrow>v &amp; = \frac{1^2 \times 5 + 2^2 \times 7 + 3^2 \times 4 + 4^2 \times 3 + 5^2 \times 6}{5+7+4+3+6} - \left ( \frac{43}{25} \right )^2 </mrow>
-		<mrow> &amp; = \frac{5 + 28 + 36 + 48 + 150}{25} - \left ( \frac{43}{25} \right )^2 </mrow>
-		<mrow> &amp; = \frac{4826}{625}</mrow>
-		<mrow> &amp; \approx 7.7216</mrow>
-	</md>
-and so <m>s^2 = \frac{25}{24} \frac{4826}{625} \approx 8.043</m>. 
+Create a frequency distribution and determine the sample mean and variance.
+	<solution>
+	<p>
+	Collecting this data into a frequency distribution gives
+	<table halign="left">
+		  <tabular halign="right">
+	  
+			<row><cell bottom="medium">x</cell><cell bottom="medium">frequency</cell></row>      
+			<row><cell>1</cell><cell>5</cell></row>
+			<row><cell>2</cell><cell>7</cell></row>
+			<row><cell>3</cell><cell>4</cell></row>
+			<row><cell>4</cell><cell>3</cell></row>
+			<row><cell>5</cell><cell>6</cell></row>
+		</tabular>
+	</table>
+	Therefore, 
+		<me>
+		\overline{x} = \frac{1 \times 5 + 2 \times 7 + 3 \times 4 + 4 \times 3 + 5 \times 6}{5+7+4+3+6} = \frac{5 + 14 + 12 + 12 + 30}{25} = \frac{43}{25}
+		</me>
+	and 
+		<md>
+			<mrow>v &amp; = \frac{1^2 \times 5 + 2^2 \times 7 + 3^2 \times 4 + 4^2 \times 3 + 5^2 \times 6}{5+7+4+3+6} - \left ( \frac{43}{25} \right )^2 </mrow>
+			<mrow> &amp; = \frac{5 + 28 + 36 + 48 + 150}{25} - \left ( \frac{43}{25} \right )^2 </mrow>
+			<mrow> &amp; = \frac{4826}{625}</mrow>
+			<mrow> &amp; \approx 7.7216</mrow>
+		</md>
+	and so <m>s^2 = \frac{25}{24} \frac{4826}{625} \approx 8.043</m>. 
+	</p>
+	</solution>
 </p>
+</exercise>
 
 </section>
 
@@ -820,8 +832,7 @@ def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated b
 		</p>
 		<p>Stem-and-Leaf Plot - Histogram with data. Using the state population data above, consider organizing the data but using a "two-pass sort" where you first roughly break data up into groups based upon ranges which relate to their first digit(s). In this case, let's break up into groups according to populations corresponding to 0-4 million, 5-9 million, 10-14 million, 15-19, million, 20-24 million, 25-29 million, 30-35 million, and 35-39 million. We can represent these classes by using the stems 0L, 0H, 1L, 1H, 2L, 2H, 3L, and 3H where the L and H represent the one's digits L in {0, 1, 2, 3, 4} and H in {5, 6, 7, 8, 9}.  Once we group the data into these smaller groups then we can write the remaining portion of the number horizontally as leaves (in this case with one decimal place for all values.) This gives a step-and-leaf plot. If we additionally sort the data in the leaves then this gives you an ordered stem-and-leaf plot. For the state population data, the ordered stem-and-leaf plot is given by
 		
-
-		
+	
 <image source="images/stemandleaf.png" />
 
 Notice how it is easy to now see that most state populations are relatively small and that there are relatively few states with larger population. Also, notice that you can use this plot to relatively easily identify minimum, maximum, and other order statistics.		
@@ -845,8 +856,15 @@ def _(data = input_box([1,2,3,4,6,7,8,9,11,15,21],label="Enter Your Data:")):
 
 <section><title>Exercises</title>
 <p>Complete the online homework "Computational Measures".</p>
+
+<exercise>
 <p>Create a data set with about 10 elements. For your data set, compute each of the measures from this chapter and present your data using a frequency histogram.</p>
+</exercise>
+
+<exercise>
 <p>Find a "real-world" data set (similar perhaps to the Census data presented above.) Compute each of the measures from this chapter. Interpret and present your conclusions in an electronic report which can include an excel spreadsheet.</p>
+</exercise>
+
 </section>
 
 </chapter>

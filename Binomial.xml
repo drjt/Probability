@@ -7,7 +7,7 @@
 <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
 <!-- See the file COPYING for copying conditions.             -->
 
-<chapter xml:id="BinomNegBinom" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
 
 <title>Binomial, Geometric, and Negative Binomial Distributions</title>
 
@@ -16,7 +16,7 @@
 	of these variable and the other fixed.</p>
 </introduction>
 
-<section xml:id="BinomialDistribution">
+<section>
  	<title>Binomial Distribution</title>	
 	<p>Consider the situation where one can observe a sequence  of n
 	independent trials with the likelihood of a 
@@ -51,44 +51,112 @@ def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
 </input>
 </sage>
 
-	<subsection>
-		<title>Derivation of Binomial Probability Function</title>
-		<p> Since successive trials are independent, then the probability of X successes occurring within n 
-		trials is given by 
-		<m>P(X=x) = \binom{n}{x}P(SS...SFF...F) = \binom{n}{x}p^x(1-p)^{n-x}</m></p>
-	</subsection> 
-	<subsection>
-		<title>Binomial Distribution mean</title>
+	<theorem><title>Derivation of Binomial Probability Function</title>
+	<statement> For R = {0, 1, ..., n},
+	<me>f(x) = \binom{n}{x}p^x(1-p)^{n-x}</me>
+	</statement>
+		<proof>
+		<p> Since successive trials are independent, then the probability of X successes occurring within n trials is given by 
+		<me>P(X=x) = \binom{n}{x}P(SS...SFF...F) = 		
+						\binom{n}{x}p^x(1-p)^{n-x}</me>
+		</p>
+		</proof>
+	</theorem>
+
+	<theorem><title>Verification of Binomial Distribution Formula</title>
+	<statement><me>\sum_{x \in R} f(x) = \sum_{x=0}^n \binom{n}{x}p^x(1-p)^{n-x} = 1.</me></statement>
+	<proof>
+	<p>
+		Using the Binomial Theorem with a = p and b = 1-p yields
+		<me>\sum_{x=0}^n \binom{n}{x}p^x(1-p)^{n-x} = (p + (1-p))^n = 1</me>
+	</p>
+	</proof>
+	</theorem>
+
+	<theorem><title>Binomial Distribution mean</title>
+	<statement><me>\mu = np</me></statement>
+	<proof>
+		<p>
 		<md>
-			<mrow> \mu = E[X] &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow>
+			<mrow> \mu &amp; = E[X] </mrow>
+			<mrow> &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow>
 			<mrow> &amp; = \sum_{x=1}^{n} {x \frac{n(n-1)!}{x(x-1)!(n-x)!} p^x (1-p)^{n-x}}</mrow>
 			<mrow> &amp; = np \sum_{x=1}^{n} {\frac{(n-1)!}{(x-1)!((n-1)-(x-1))!} p^{x-1} (1-p)^{(n-1)-(x-1)}}</mrow>
 		</md>
-		<p>Using the change of variables <m>k=x-1</m> and <m>m = n-1</m> yields a binomial series</p>
+
+		Using the change of variables <m>k=x-1</m> and <m>m = n-1</m> yields a binomial series
 		<md>
 			<mrow> &amp; = np \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}}</mrow>
 			<mrow> &amp; = np (p + (1-p))^m = np</mrow>
 		</md>
-	</subsection>
-	<subsection>
-		<title>Binomial Distribution variance</title>
-<md>
-<mrow> \sigma^2 = E[X(X-1)] + \mu - \mu^2 &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow>
-<mrow> &amp; = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2</mrow>
-<mrow> &amp; = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow>
-</md>
+		</p>
+	</proof>
+	</theorem>
 
-		<p>Using the change of variables <m>k=x-2</m> and <m>m = n-2</m> yields a binomial series</p>
+	<theorem><title>Binomial Distribution variance</title>
+	<statement><me>\sigma^2 = np(1-p)</me></statement>
+	<proof>
+	<p>
 		<md>
-			<mrow> &amp; = n(n-1)p^2  \sum{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2</mrow>
-			<mrow> &amp; = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)</mrow>
+		<mrow> \sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
+		<mrow> &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow>
+		<mrow> &amp; = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2</mrow>
+		<mrow> &amp; = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow>
 		</md>
-	</subsection>
+	</p>
+	<p>Using the change of variables <m>k=x-2</m> and <m>m = n-2</m> yields a binomial series
+	<md>
+		<mrow> &amp; = n(n-1)p^2  \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2</mrow>
+		<mrow> &amp; = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)</mrow>
+	</md>
+	</p>
+	</proof>
+	</theorem>
+
+<p>The following uses Sage to determine the general formulas for the Binomial distribution.
+</p>
+<sage>
+	<input>
+var('x,n,p')
+assume(x,'integer')
+f(x) = binomial(n,x)*p^x*(1-p)^(n-x)
+mu = sum(x*f,x,0,n)
+M2 = sum(x^2*f,x,0,n)
+M3 = sum(x^3*f,x,0,n)
+M4 = sum(x^4*f,x,0,n)
+
+pretty_print('Mean = ',mu)
+
+v = (M2-mu^2).factor()
+pretty_print('Variance = ',v)
+stand = sqrt(v)
+
+sk = ((M3 - 3*M2*mu + 2*mu^3)).factor()/stand^3
+pretty_print('Skewness = ',sk)
+
+kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
+pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
+	</input>
+</sage>
+
+<p>Flipping Coins</p>
+<p>Suppose you flip a coin exactly 20 times. Determine the probability of getting exactly 10 heads and then determine the probability of getting 10 or fewer heads.
+</p>
+<solution>
+<p>
+This is binomial with n = 20, p = 1/2 and you are looking for f(10). With these values
+<me>f(10) = \binom{20}{10} \cdot \left ( \frac{1}{2} \right )^{10} \cdot \left ( \frac{1}{2} \right 	)^{20-10} = \frac{46189}{262144} \approx 0.176</me>
+</p>
+<p>
+Notice, the mean for this distribution is also 10 so one might expect 10 heads in general.  Next, to determine the probability for 10 or fewer heads requires F(10) = f(0) + f(1) + ... + f(10). There is no "nice" formula for F but this calculation can be performed using a graphing calculator, such as the TI-84 with F(x) = binomcdf(n,p,x). In this case, F(10) = binomcdf(20,1/2,10) = 0.588.
+</p>
+</solution>
+
 </section>
 
 
 
-<section xml:id="GeometricDistribution">
+<section>
 	<title>Geometric Distribution</title>
 	<p>Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
@@ -103,8 +171,10 @@ def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
 	<p> Since successive trials are independent, then the probability 
 	of the first success occurring on the mth trial presumes that
 	the previous m-1 trials were all failures.  Therefore the 
-	desired probability is given by </p>
-	<me>f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p</me>
+	desired probability is given by 
+		<me>f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p</me>
+	</p>
+	
 	
 	<theorem><title>Geometric Distribution sums to 1</title>
 		<statement><me>f(x) = (1-p)^{m-1}p</me> sums to 1 over <m>R = \{ 1, 2, ... \}</m>
@@ -173,6 +243,7 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 			</p>
 			</proof>
 	</theorem> 
+
 	
 	<theorem>
 		<title>Geometric Distribution Function</title>
@@ -191,10 +262,64 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 		</proof>
 	</theorem> 
 
+
+	
+	<theorem>
+		<title>Statistics for Geometric Distribution</title>
+		<statement>Mean, Variance, Skewness, Kurtosis computed by Sage.
+		
+<sage>
+	<input>
+var('x,n,p')
+assume(x,'integer')
+f(x) = p*(1-p)^(x-1)
+mu = sum(x*f,x,0,oo)
+M2 = sum(x^2*f,x,0,oo)
+M3 = sum(x^3*f,x,0,oo)
+M4 = sum(x^4*f,x,0,oo)
+
+pretty_print('Mean = ',mu)
+
+v = (M2-mu^2).factor()
+pretty_print('Variance = ',v)
+stand = sqrt(v)
+
+sk = ((M3 - 3*M2*mu + 2*mu^3)).factor()/stand^3
+pretty_print('Skewness = ',sk)
+
+kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
+pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
+	</input>
+</sage>
+
+		</statement>
+		
+	</theorem>
+
+
+
+	<theorem><title>The Geometric Distribution yields a memoryless model.</title>
+	<statement>
+	<p>If X has a geometric distribution and a and b are nonnegative integers, then
+	<me>P( X > a + b | X > b ) = P( X > a)</me>
+	</p>
+	</statement>
+	<proof>
+	<p>Using the definition of conditional probability,
+	<md>
+		<mrow>P( X > a + b | X > b ) &amp; = P( X > a + b \cap X > b ) \ P( X > b)</mrow>
+		<mrow> &amp; = P( X > a + b ) / P( X > b)</mrow>
+		<mrow> &amp; = (1-p)^{a+b} / (1-p)^b</mrow>
+		<mrow> &amp; = (1-p)^a</mrow>
+		<mrow> &amp; = P(X > a)</mrow>
+	</md>
+	</p>
+	</proof>
+	</theorem>
+
 </section>
 
-<section>
-	<title>Negative Binomial</title>	
+<section><title>Negative Binomial</title>	
 	<p>Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
 	stays constant from trial to trial. Call this likelihood the probably of
@@ -206,78 +331,203 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 	Geometric Distribution.</p>
 	<p>Note that r=1 gives the Geometric Distribution.</p>
 	
-	<subsection><title>Negative Binomial Series</title>
-		<theorem xml:id="theorem-NegBinomSeries">
+	<theorem><title>Negative Binomial Series</title>
 		<statement> 
-			<m>\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}</m> 
+			<me>\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}</me> 
 		</statement>
-		</theorem>
 		<proof>					
-			<p>First, convert the problem to a slightly different form:</p>		
+			<p>First, convert the problem to a slightly different form:		
 			<m> \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
 						 = \frac{1}{b^n} \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
 			</m>
+			</p>
 
-			<p>So, let's replace <m>\frac{a}{b} = x</m> and ignore for a while the term factored out. Then, we only need to show </p>
+			<p>So, let's replace <m>\frac{a}{b} = x</m> and ignore for a while the term factored out. Then, we only need to show 
 			<md>
 				<mrow>\sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k} = \left ( \frac{1}{1+x} \right )^n </mrow>
 			</md>
-			<p>However</p>
+			However
 			<md>
 				<mrow> \left ( \frac{1}{1+x} \right )^n &amp; = \left ( \frac{1}{1 - (-x)} \right )^n </mrow>
 				<mrow> &amp; = \left ( \sum_{k=0}^{\infty} {(-1)^k x^k} \right )^n</mrow>
 			</md>
-			
+			</p>
 			<p>This infinite sum raised to a power can be expanded by distributing terms in the standard way. 
 			In doing so, the various powers of x multiplied together
 			will create a series in powers of x involving <m>x^0, x^1, x^2, ...</m>.  
 			To detemine the final coefficients notice that the number of time <m>m^k</m> will 
 			appear in this product depends upon the number of ways one can write k as a sum of nonnegative integers.</p>
+			
 			<p>For example, the coefficient of <m>x^3</m> will come from the n ways of multiplying the coefficients 
 			<m>x^3, x^0, ..., x^0</m> and <m>x^2, x^1, x^0, ..., x^0</m>
-			 and <m>x^1, x^1, x^1, x^0,..., x^0</m>. This is equivalent to finding the number of ways to write the 
-			 number k as a sum of nonnegative integers. The possible set of
-			 nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  
-			 For example, if k = 3 then *||** means 
+			 and <m>x^1, x^1, x^1, x^0,..., x^0</m>. This is equivalent to finding the number of ways to write the number k as a sum of nonnegative integers. The possible set of nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  For example, if k = 3 then *||** means 
 			 <m>x^1 x^0 x^2 = x^3</m>. Similarly for k = 5 and |**|*|**| implies <m> x^0 x^2 x^1 x^2 x^0 = x^5</m>. 
-			 The number of ways to interchange the identical *'s among the
-			 idential |'s is <m>\binom{n+k-1}{k}</m>. </p>
-			 <p>Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x 
-			 will require an odd number of odd powers. So, the 
-			 coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,</p>
+			 The number of ways to interchange the identical *'s among the idential |'s is <m>\binom{n+k-1}{k}</m>. </p>
+			 
+			 <p>Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x will require an odd number of odd powers. So, the coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,
 			<md>	
 				<mrow> \left ( \frac{1}{1+x} \right )^n = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k}</mrow>
 			</md>	
-			<p>Similarly,</p>
+			Similarly,
 			<m> \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}</m>
-
-		</proof>	
-	</subsection>	
-			
-	<subsection>
-		<title>Negative Binomial Distribution Formulas</title>
-		<p>Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success 
-		on each individual trial <m>p</m> where 
-		<m> 0 \lt p \lt 1 </m>.  For a positive integer r, let the variable <m>X</m> measure the number of 
-		trials needed in order to obtain the rth success.
-		Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
-
-			<p> Since successive trials are independent, then the probability of the rth success occurring on the 
-			mth trial presumes that in 
-			the previous m-1 trials were r-1 successes and m-r failures.  Therefore the desired probability is given by 
-			<md><mrow>P(X=m) = \binom{m - 1}{r-1}(1-p)^{m-r}p^r</mrow></md>
 			</p>
 
-			<title>Negative Binomial Distribution Sums to 1</title>
-			<m>\SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}p^r} &amp; = p^r \SUM {m=r} {\infty} {\binom{m - 1}{r-1}(1-p)^{m-r}}</m>
-			<p>and by using <m>k = m-r</m></p>
-			<md>
-				<mrow> &amp; = p^r \sum_{k=0}^{\infty} {\binom{r + k - 1}{k}(1-p)^k}</mrow>
-				<mrow> &amp; = p^r \frac{1}{(1-(1-p))^r}</mrow>
-				<mrow> &amp; = 1</mrow>
-			</md>
+		</proof>	
+	</theorem>	
+			
+	<p>Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success on each individual trial <m>p</m> where 
+	<m> 0 \lt p \lt 1 </m>.  
+	For a positive integer r, let the variable <m>X</m> measure the number of trials needed in order to obtain the rth success. Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
 
-	</subsection>
+
+	<theorem><title>Derivation of Negative Binomial Probability Function</title>
+	<statement> <me>f(x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r,</me>
+	for <m>x \in R = \{r, r+1, ... \}</m>.
+	</statement>
+	<proof>
+		<p> Since successive trials are independent, then the probability of the rth success occurring on the x-th trial presumes that in the previous x-1 trials were r-1 successes and x-r failures. You can arrange these indistinguishable successes (and failures) in <m>\binom{x-1}{r-1}</m> unique ways. Therefore the desired probability is given by 
+			<md><mrow>P(X=m) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r</mrow></md>
+		</p>
+	</proof>
+	</theorem>
+
+	<theorem><title>Negative Binomial Distribution Sums to 1</title>
+	<statement>
+		<me>\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = 1</me>
+	</statement>
+	<proof><p>
+		<me>\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = p^r \sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}}</me>
+		<p>and by using <m>k = x-r</m></p>
+		<md>
+			<mrow> &amp; = p^r \sum_{k=0}^{\infty} {\binom{r + k - 1}{k}(1-p)^k}</mrow>
+			<mrow> &amp; = p^r \frac{1}{(1-(1-p))^r}</mrow>
+			<mrow> &amp; = 1</mrow>
+		</md>
+	</p>
+	</proof>
+	</theorem>
+	
+	
+	<theorem>
+		<title>Statistics for Negative Binomial Distribution</title>
+		<statement>For the Negative Binomial Distribution, 
+		<me>\mu = r \frac{1-p}{p}</me>
+		<me>\sigma^2 = r \frac{1-p}{p^2}</me>
+		<me>\gamma_1 = \frac{2-p}{\sqrt{r(1-p)}}</me>
+		<me>\gamma_2 = \frac{p^2-6p+6}{r(1-p)}</me>
+		
+<sage>
+	<input>
+var('x,n,p,r')
+assume(x,'integer')
+@interact
+def _(r=[2,3,4,5,6]):
+    f(x) = binomial(x-1,r-1)*p^r*(1-p)^(x-1)
+    mu = sum(x*f,x,r,oo).factor()
+    M2 = sum(x^2*f,x,r,oo).factor()
+    M3 = sum(x^3*f,x,r,oo).factor()
+    M4 = sum(x^4*f,x,r,oo).factor()
+    
+    pretty_print('Mean = ',mu)
+    
+    v = (M2-mu^2).factor()
+    pretty_print('Variance = ',v)
+    stand = sqrt(v)
+    
+    sk = ((M3 - 3*M2*mu + 2*mu^3)).factor()/stand^3
+    pretty_print('Skewness = ',sk)
+    
+    kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
+    pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
+	</input>
+</sage>
+
+		</statement>
+		
+	</theorem>
+	
+
+</section>
+
+<section><title>Exercises</title>
+
+<exercise><title> - Gallup Consumer Confidence Polling</title>
+<p>
+A January 2008 Gallup poll on consumer confidence asked the question "How would you rate economic conditions in this country today" and 22% responded "Excellent" or "Good", 45% responded "Only Fair", and 33% responded "Poor". If you pick a representative sample of 25 people and ask them the same question, if X measures the number of responses that are "Excellent" or "Good", determine
+<ul>
+	<li>P(X is at most 5).</li>
+	<li>P(X is at least 5).</li>
+	<li>the expected number of Excellent or Good responses.</li>
+</ul>
+<solution>
+<p>
+This is a Binomial distribution with n=25 and p = 0.22.
+
+<ul>	
+	<li>P(X is at most 5) = F(5) = f(0)+f(1)+f(2)+f(3)+f(4)+f(5) = 0.51843</li>
+	<li>P(X is at least 5) = 1 - F(4) = 0.67183</li>
+	<li><m>\mu = np = 25 \cdot .22 = 5.5</m></li>
+</ul>
+</p>
+</solution>
+</p>
+</exercise>
+
+<exercise><title> - Rolling Dice</title>
+<p>
+You keep on rolling a pair of dice and let X be the number of rolls needed until you get a sum of 7 or 11 for the second time. Determine:
+<ol>
+	<li>P(7 or 11 on one roll)</li>
+	<li>The expected number of rolls until you get the second 7 or 11 sum.</li>
+	<li>P(X = 12)</li>
+	<li><m>P(X \ge 4)</m></li>
+</ol>
+<solution>
+<p> For this problem, use the Negative Binomial Distribution when looking for the number of trials till the 2nd success. p is determined in the first answer.
+<ol>
+	<li>P(7 or 11 on one roll) = 8/36 = 2/9, using equally likely outcomes.</li>
+	<li><m>\mu = \frac{r}{p} = \frac{2}{2/9} = 9</m></li>
+	<li><m>P( X = 12) = \binom{11}{1} (7/9)^10 \cdot (2/9)^2 = 0.044</m></li>
+	<li><md>
+		<mrow>P(X \ge 4) &amp; = 1- P(x \le 3) </mrow>
+		<mrow> &amp; = 1 - [ f(2) + f(3) ]</mrow>
+		<mrow> &amp; = 1 - \left[ \binom{2}{1} (7/9)^1 \cdot (2/9)^2 + \binom{1}{1} (2/9)^2 \right ]</mrow>
+		<mrow> &amp; = 1 - 0.1262 = 0.8738.</mrow>
+	</md></li>
+</ol>
+</p>
+</solution>
+</p>
+</exercise>
+
+<exercise><title> - Collecting Kids Meal Prizes</title>
+<p>
+You love to eat at Chick-Fil-A with your kids and want to collect all of the five new book titles that come randomly included with each kids meal.  If the promotion with these books starts today, determine:
+<ol>
+	<li>The probability that you get a book you don't have when purchasing the first children's meal.</li>
+	<li>The probability that you it takes more than four purchases in order to get a second title.</li>
+	<li>The expected total number of children's meals you would expect to purchase in order to get all five titles.</li>
+</ol>
+<solution>
+<p>
+<ol>
+	<li>One. The first meal will certainly have a book that you have not received yet.</li>
+	<li>This is a geometric distribution with p=4/5.  P(X &gt; 4) = 1 - F(4) = <m>(1 - 4/5)^4 = \frac{1}{625}</m> which is very small. Note, in this case you would have needed to receive the same title randomly for all of the first four kids meal purchases. If this were to ever happen, please let the people at the counter know and it will be their pleasure to swap out for a new title. </li>
+	<li>Use the geometric distribution five times with changing values for p. For the first book p = 1 means you are certain to get a new title. For the second book title the probability of success is p=4/5; for the third book title the probability of success is p=3/5; for the fourth the probability is p=2/5; and for the last the probability is p = 1/5. Using the mean as 1/p in each case and accumulating these gives the total expected number of meals to purchase as 
+	<md>
+		<mrow> &amp; 1 + \frac{1}{\frac{4}{5}} + \frac{1}{\frac{3}{5}} + \frac{1}{\frac{2}{5}} + \frac{1}{\frac{1}{5}} </mrow>
+		<mrow> &amp; = 1 + \frac{5}{4} + \frac{5}{3} + \frac{5}{2} + \frac{5}{1} </mrow>
+		<mrow> &amp; = \frac{12 + 15 + 25 + 30 + 60}{12} </mrow>
+		<mrow> &amp; = \frac{142}{12} = 11.833</mrow>
+	</md> 
+	and so you would need 12 kids meals.  If this were to happen, please be certain to donate the "extra" books to an organization that works with kids or directly to some kids that you might know.</li>
+</ol>
+</p>
+</solution>
+</p>
+</exercise>
+
+
 </section>
 
 </chapter>
