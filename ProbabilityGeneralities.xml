@@ -80,7 +80,7 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	</p>
 
 
-
+<!--
 	<exercise>
 		<introduction>
 		<p>
@@ -94,7 +94,7 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 		</p>
 		</conclusion>
 	</exercise>
-
+-->
 
 	<p>
 	Question 1: What do you notice as the number of rolls increases?
@@ -641,8 +641,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 		</p>
 		</proof>
 		</theorem>
-	
-	
+		
 	<p>
 	To illustrate this result, from the web site <url href="http://stattrek.com/probability/bayes-theorem.aspx"></url> consider the following problem:
 	</p>

@@ -15,66 +15,59 @@
 \contentsline {section}{\numberline {2.3}Measures of Position}{6}{section.2.3}
 \contentsline {section}{\numberline {2.4}Measures of the Middle}{8}{section.2.4}
 \contentsline {section}{\numberline {2.5}Measures of Spread}{11}{section.2.5}
-\contentsline {section}{\numberline {2.6}Grouped Data}{14}{section.2.6}
-\contentsline {section}{\numberline {2.7}Other Point Measures}{15}{section.2.7}
-\contentsline {section}{\numberline {2.8}Graphical Representation of Data}{16}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Histograms}{16}{subsection.2.8.1}
-\contentsline {section}{\numberline {2.9}Exercises}{19}{section.2.9}
-\contentsline {chapter}{\numberline {3}Counting and Combinatorics}{21}{chapter.3}
-\contentsline {section}{\numberline {3.1}Introduction}{21}{section.3.1}
-\contentsline {section}{\numberline {3.2}Permutations}{24}{section.3.2}
-\contentsline {section}{\numberline {3.3}Combinations}{25}{section.3.3}
-\contentsline {section}{\numberline {3.4}Exercises}{26}{section.3.4}
-\contentsline {chapter}{\numberline {4}Probability Theory}{29}{chapter.4}
-\contentsline {section}{\numberline {4.1}Relative Frequency}{29}{section.4.1}
-\contentsline {section}{\numberline {4.2}Definition of Probability}{32}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Motivating the Definition}{32}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Probability}{32}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Basic Probability Theorems}{33}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Equally Likely Outcomes}{34}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}HOMEWORK}{35}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Conditional Probability}{35}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}HOMEWORK}{36}{subsection.4.3.1}
-\contentsline {section}{\numberline {4.4}Bayes Theorem}{37}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}HOMEWORK}{40}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}Independence}{41}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}HOMEWORK}{42}{subsection.4.5.1}
-\contentsline {chapter}{\numberline {5}Probability Functions}{43}{chapter.5}
-\contentsline {section}{\numberline {5.1}Random Variables}{43}{section.5.1}
-\contentsline {section}{\numberline {5.2}Probability Functions}{44}{section.5.2}
-\contentsline {section}{\numberline {5.3}Properties of the Distribution Function}{47}{section.5.3}
-\contentsline {section}{\numberline {5.4}Standard Units}{47}{section.5.4}
-\contentsline {section}{\numberline {5.5}Expected Value}{48}{section.5.5}
-\contentsline {chapter}{\numberline {6}Uniform and Hypergeometric Distributions}{51}{chapter.6}
-\contentsline {section}{\numberline {6.1}Discrete Uniform Distribution}{51}{section.6.1}
-\contentsline {section}{\numberline {6.2}Continuous Uniform Distribution}{52}{section.6.2}
-\contentsline {section}{\numberline {6.3}Hypergeometric Distribution}{53}{section.6.3}
-\contentsline {chapter}{\numberline {7}Binomial, Geometric, and Negative Binomial Distributions}{55}{chapter.7}
-\contentsline {section}{\numberline {7.1}Binomial Distribution}{55}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Derivation of Binomial Probability Function}{55}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Binomial Distribution mean}{55}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Binomial Distribution variance}{56}{subsection.7.1.3}
-\contentsline {section}{\numberline {7.2}Geometric Distribution}{56}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Derivation of Geometric Probability Function}{56}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Properties of the Geometric DistributionGeometric Distribution sums to 1}{56}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Derivation of Geometric Mean}{57}{subsection.7.2.3}
-\contentsline {subsection}{\numberline {7.2.4}Derivation of Geometric Variance}{57}{subsection.7.2.4}
-\contentsline {subsection}{\numberline {7.2.5}Derivation of Geometric Distribution Function}{57}{subsection.7.2.5}
-\contentsline {section}{\numberline {7.3}Negative Binomial}{57}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Negative Binomial Series}{58}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}Negative Binomial Distribution FormulasNegative Binomial Distribution Sums to 1}{58}{subsection.7.3.2}
-\contentsline {chapter}{\numberline {8}Poisson, Exponential, and Gamma Distributions}{61}{chapter.8}
-\contentsline {section}{\numberline {8.1}Poisson Distribution}{61}{section.8.1}
-\contentsline {section}{\numberline {8.2}Exponential Distribution}{61}{section.8.2}
-\contentsline {section}{\numberline {8.3}Gamma Distribution}{61}{section.8.3}
-\contentsline {chapter}{\numberline {9}Normal Distributions}{63}{chapter.9}
-\contentsline {section}{\numberline {9.1}Properties of the Normal Distribution}{63}{section.9.1}
-\contentsline {section}{\numberline {9.2}Theorems}{63}{section.9.2}
-\contentsline {section}{\numberline {9.3}Chi-Square Distribution}{63}{section.9.3}
-\contentsline {section}{\numberline {9.4}Central Limit Theorem}{63}{section.9.4}
-\contentsline {subsection}{\numberline {9.4.1}}{68}{subsection.9.4.1}
-\contentsline {subsection}{\numberline {9.4.2}}{68}{subsection.9.4.2}
-\contentsline {chapter}{\numberline {10}Estimating Data using Intervals}{69}{chapter.10}
-\contentsline {section}{\numberline {10.1}Point Estimates}{69}{section.10.1}
-\contentsline {section}{\numberline {10.2}Chebyshev}{69}{section.10.2}
-\contentsline {section}{\numberline {10.3}Measures of Spread}{69}{section.10.3}
+\contentsline {section}{\numberline {2.6}Grouped Data}{12}{section.2.6}
+\contentsline {section}{\numberline {2.7}Other Point Measures}{13}{section.2.7}
+\contentsline {section}{\numberline {2.8}Graphical Representation of Data}{14}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Histograms}{14}{subsection.2.8.1}
+\contentsline {section}{\numberline {2.9}Exercises}{17}{section.2.9}
+\contentsline {chapter}{\numberline {3}Counting and Combinatorics}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}Permutations}{22}{section.3.2}
+\contentsline {section}{\numberline {3.3}Combinations}{23}{section.3.3}
+\contentsline {section}{\numberline {3.4}Exercises}{24}{section.3.4}
+\contentsline {chapter}{\numberline {4}Probability Theory}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Relative Frequency}{27}{section.4.1}
+\contentsline {section}{\numberline {4.2}Definition of Probability}{30}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Motivating the Definition}{30}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Probability}{31}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Basic Probability Theorems}{31}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Equally Likely Outcomes}{32}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}HOMEWORK}{33}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Conditional Probability}{33}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}HOMEWORK}{34}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Bayes Theorem}{38}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}HOMEWORK}{41}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Independence}{42}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}HOMEWORK}{43}{subsection.4.5.1}
+\contentsline {chapter}{\numberline {5}Probability Functions}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Random Variables}{45}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}HOMEWORK}{46}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Probability Functions}{46}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}HOMEWORK}{50}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Expected Value}{51}{section.5.3}
+\contentsline {section}{\numberline {5.4}Standard Units}{56}{section.5.4}
+\contentsline {chapter}{\numberline {6}Uniform and Hypergeometric Distributions}{57}{chapter.6}
+\contentsline {section}{\numberline {6.1}Discrete Uniform Distribution}{57}{section.6.1}
+\contentsline {section}{\numberline {6.2}Continuous Uniform Distribution}{59}{section.6.2}
+\contentsline {section}{\numberline {6.3}Hypergeometric Distribution}{60}{section.6.3}
+\contentsline {section}{\numberline {6.4}Exercises}{63}{section.6.4}
+\contentsline {chapter}{\numberline {7}Binomial, Geometric, and Negative Binomial Distributions}{65}{chapter.7}
+\contentsline {section}{\numberline {7.1}Binomial Distribution}{65}{section.7.1}
+\contentsline {section}{\numberline {7.2}Geometric Distribution}{68}{section.7.2}
+\contentsline {section}{\numberline {7.3}Negative Binomial}{71}{section.7.3}
+\contentsline {section}{\numberline {7.4}Exercises}{73}{section.7.4}
+\contentsline {chapter}{\numberline {8}Poisson, Exponential, and Gamma Distributions}{75}{chapter.8}
+\contentsline {section}{\numberline {8.1}Poisson Distribution}{75}{section.8.1}
+\contentsline {section}{\numberline {8.2}Exponential Distribution}{75}{section.8.2}
+\contentsline {section}{\numberline {8.3}Gamma Distribution}{75}{section.8.3}
+\contentsline {chapter}{\numberline {9}Normal Distributions}{77}{chapter.9}
+\contentsline {section}{\numberline {9.1}Properties of the Normal Distribution}{77}{section.9.1}
+\contentsline {section}{\numberline {9.2}Theorems}{77}{section.9.2}
+\contentsline {section}{\numberline {9.3}Chi-Square Distribution}{77}{section.9.3}
+\contentsline {section}{\numberline {9.4}Central Limit Theorem}{77}{section.9.4}
+\contentsline {subsection}{\numberline {9.4.1}}{82}{subsection.9.4.1}
+\contentsline {subsection}{\numberline {9.4.2}}{82}{subsection.9.4.2}
+\contentsline {chapter}{\numberline {10}Estimating Data using Intervals}{83}{chapter.10}
+\contentsline {section}{\numberline {10.1}Point Estimates}{83}{section.10.1}
+\contentsline {section}{\numberline {10.2}Chebyshev}{83}{section.10.2}
+\contentsline {section}{\numberline {10.3}Measures of Spread}{84}{section.10.3}

@@ -12,21 +12,22 @@
 <title>Binomial, Geometric, and Negative Binomial Distributions</title>
 
 <introduction>
-	<p>Distributions relating number of successes to number of trials with one 
-	of these variable and the other fixed.</p>
+	<p>Many practical problems involve measuring simply whether something was a success or a failure. In these situations, "success" should not be interpreted as having any moral or subjective meaning but only construed to mean that something you are looking for actually occurs.</p>
+	
+	<p>In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable X over the space R = {0,1} mapping X(success) = 1 and X(failure)=0. If p = P(success) then 
+	<me>f(x) = p^x \cdot (1-p)^{1-x}</me>
+	would be a formula but which only related to two values P(failure) = f(0) = (1-p) and P(Success) = f(1) = p.  
+	</p>
+	<p>Notice that p=0 means that you will always get a failure and that p=1 means that you will always get a success. In these cases, X would no longer be a random variable since the outcome for X could be predicted with certainty. Therefore, we will always assume that <m>0 &lt; p &lt; 1</m>.
+	</p>
+	<p>
+	The Bernoulli distribution on its own is not extremely useful but serves as a starting point for several others that are useful.  Indeed, in this chapter you will investigate distributions that relate some number of successes in multiple trials to some number of independent trials. The difference between these distributions will be that one of these variables will be fixed and the other one will be variable.
+</p>
 </introduction>
 
 <section>
  	<title>Binomial Distribution</title>	
-	<p>Consider the situation where one can observe a sequence  of n
-	independent trials with the likelihood of a 
-	success on each individual trial stays constant from trial to trial.
-	Call this likelihood the probably of "success" and 
-	denote its value by 
-	<m>p</m> where <m> 0 \lt p \lt 1 </m>.  
-	If we let the variable <m>X</m> measure the number of successes 
-	obtained when doing a fixed number of trials n, then the resulting
-	distribution of probabilities is called a Binomial Distribution.</p>
+	<p>Consider a sequence  of n independent Bernoulli trials with the likelihood of a success p on each individual trial stays constant from trial to trial with <m> 0 \lt p \lt 1 </m>. If we let the variable <m>X</m> measure the number of successes obtained when doing a fixed number of trials n, then the resulting distribution of probabilities is called a Binomial Distribution.</p>
 	
 <sage>
 <input>
