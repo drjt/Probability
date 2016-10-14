@@ -10,23 +10,303 @@
 <chapter xml:id="PoissonExponential" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Poisson, Exponential, and Gamma Distributions</title>
 
-<section>	
-	<title>Poisson Distribution</title>
+<section><title>Introduction</title>
+<p>
+In this chapter, you will investigate the relationship between number of successes as time changes.  One of these will be fixed and the other one variable.
+</p>
+</section>
 
+<section><title>Poisson Distribution</title>
+<p>
+In this section, you will consider measuring a variable number of successes, or changes, within a fixed interval.
+<definition><title>Poisson Process</title>
+<statement>A Poisson process is a process which satisfies the following:
+<ol>
+	<li>The successes in non-overlapping intervals are independent.</li>
+	<li>The probability of exactly one success is a sufficiently small interval of length h is proportional to h.</li>
+	<li>The probability of two or more successes in a sufficiently small interval is essentially 0.</li>
+	<li></li>
+</ol>
+</statement>
+</definition>
+
+<theorem><title>Poisson Probability Function</title>
+<statement>
+<p>Assume X measures the number of successes in an interval [0,T] for some Poisson process. Then, 
+<me>f(x) = \frac{\mu^x e^{-\mu}}{x!}</me>
+for R = {0, 1, 2, ... }.
+</p>
+</statement>
+<proof>
+<p>
+For any natural number n, break up the given interval [0,T] into n uniform parts each of width h = T/n.  Using the properties of Poisson processes, if n is very large, h will be very small and eventually small enough so that P(exactly one success on a given interval) = <m>p = \lambda \frac{T}{n}</m>. However, since there are a finite number of independent intervals each with probability p of containing a success then you can use a Binomial distribution to evaluate the corresponding probabilities so long as n is finite. Doing so yields and taking the limit as n approaches infinity gives:
+<md>
+	<mrow>f(x) &amp; = P(\text{X changes in [0,T]}) </mrow>
+	<mrow> &amp; = \lim_{n \rightarrow \infty} \binom{n}{x} p^x (1-p)^{n-x}</mrow>
+	<mrow> &amp; = \lim_{n \rightarrow \infty} \binom{n}{x} (\frac{\lambda T}{n})^x (1-\lambda \frac{T}{n})^{n-x}</mrow>
+	<mrow> &amp; = \lim_{n \rightarrow \infty} \frac{n(n-1)...(n-x+1)}{x!} ( \frac{\lambda T}{n})^x (1- \frac{\lambda T}{n})^{n-x}</mrow>
+	<mrow> &amp; = \frac{(\lambda T)^x}{x!} \lim_{n \rightarrow \infty} \frac{n(n-1)...(n-x+1)}{n \cdot n \cdot ... \cdot n} (1-\lambda \frac{T}{n})^{n}(1-\lambda \frac{T}{n})^{-x}</mrow>
+	<mrow> &amp; = \frac{(\lambda T)^x}{x!} \lim_{n \rightarrow \infty} (1-\frac{1}{n})...(1-\frac{x-1}{n})  (1- \frac{\lambda T}{n})^{n}(1- \frac{\lambda T}{n})^{-x}</mrow>
+	<mrow> &amp; = \frac{(\lambda T)^x}{x!} 
+	\lim_{n \rightarrow \infty} (1- \frac{\lambda T}{n})^{n}
+	\lim_{n \rightarrow \infty} (1- \frac{\lambda T}{n})^{-x}</mrow>
+	<mrow> &amp; = \frac{(\lambda T)^x}{x!} 
+	\lim_{n \rightarrow \infty} (1- \frac{\lambda T}{n})^{n} \cdot 1</mrow>
+	<mrow> &amp; = \frac{(\lambda T)^x}{x!} 
+	e^{-\lambda T}</mrow>
+</md>
+</p>
+</proof>
+</theorem>
+
+<theorem><title>Verify Poisson Probability Function</title>
+<statement>
+	<me>\sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} e^{-\lambda T} = 1</me>
+</statement>
+<proof>
+<p>Using the Power Series expansion for the natural exponential,
+<md>
+	<mrow> \sum_{x=0}^{\infty} f(x) &amp; = \sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} e^{-\lambda T} </mrow>		
+	<mrow> &amp; = e^{-\lambda T} \sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} </mrow>
+	<mrow> &amp; = e^{-\lambda T} e^{\lambda T}  </mrow>
+	<mrow> &amp; = 1</mrow>
+</md>
+</p>
+</proof>
+</theorem>
+
+<theorem><title>Statistics for Poisson</title>
+<statement>
+<me>\mu = \lambda T</me>
+<me>\sigma^2 = \mu</me>
+<me>\gamma_1 = \frac{1}{\sqrt{\mu}}</me>
+<me>\gamma_2 = \frac{1}{\mu}+3</me>
+</statement>
+<proof>
+<p> Using the f(x) generated in the previous theorem
+<md>
+	<mrow>\mu &amp; = E[X] </mrow>
+	<mrow> &amp; = \sum_{x=0}^{\infty} x \cdot \frac{(\lambda T)^x}{x!} e^{-\lambda T}</mrow>
+	<mrow> &amp; = \lambda T e^{-\lambda T} \sum_{x=1}^{\infty} \frac{(\lambda T)^{x-1}}{(x-1)!} </mrow>
+	<mrow> &amp; = \lambda T e^{-\lambda T} \sum_{k=0}^{\infty} \frac{(\lambda T)^k}{k!} </mrow>
+	<mrow> &amp; = \lambda T e^{-\lambda T} e^{\lambda T} </mrow>
+	<mrow> &amp; = \lambda T </mrow>
+</md>
+which confirms the use of <m>\mu</m> in the original probability formula.
+</p>
+<p>
+Continuing with <m>\mu = \lambda T</m>, the variance is given by
+<md>
+	<mrow>\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
+	<mrow> &amp; = \sum_{x=0}^{\infty} x(x-1) \cdot \frac{\mu^x}{x!} e^{-\mu} + \mu - \mu^2</mrow>
+	<mrow> &amp; = e^{-\mu} \mu^2 \sum_{x=2}^{\infty} \frac{\mu^{x-2}}{(x-2)!} + \mu - \mu^2</mrow>
+	<mrow> &amp; = e^{-\mu} \mu^2 \sum_{k=0}^{\infty} \frac{\mu^k}{k!} + \mu - \mu^2</mrow>
+	<mrow> &amp; = \mu^2 + \mu - \mu^2 </mrow>
+	<mrow> &amp; = \mu</mrow>
+</md>
+
+To derive the skewness and kurtosis, you can depend upon Sage...see the live cell below.
+</p>
+
+</proof>
+</theorem>
+
+<p>
+<sage>
+	<input>
+var('x,mu')
+assume(x,'integer')
+
+f(x) =e^(-mu)*mu^x/factorial(x)
+mu = sum(x*f,x,0,oo).factor()
+M2 = sum(x^2*f,x,0,oo).factor()
+M3 = sum(x^3*f,x,0,oo).factor()
+M4 = sum(x^4*f,x,0,oo).factor()
+
+pretty_print('Mean = ',mu)
+
+v = (M2-mu^2).factor()
+pretty_print('Variance = ',v)
+stand = sqrt(v)
+
+sk = ((M3 - 3*M2*mu + 2*mu^3)).factor()/stand^3
+pretty_print('Skewness = ',sk)
+
+kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
+pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
+	</input>
+</sage>
+</p>
+Approximation by binomial means you can also use Poisson to approximate Binomial for n sufficiently large.
+</p>	
+</section>
+
+
+
+
+
+<section><title>Exponential Distribution</title>
+<p>
+In this section, you will consider an interval [0,X] of variable length needed before encountering the first success (or change).
+
+
+<definition><title>Exponential Distribution Probability Function</title>
+<statement><p>If X measures the variable interval length needed until you get the first success, then X has an exponential distribution with	
+	<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}</me>
+</p>
+</statement>
+</definition>
+
+<theorem><title>Verification of Exponential Probability Function</title>
+<statement>
+	<me>\int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx = 1</me>
+</statement>
+<proof>
+	<p>
+	<md>
+		<mrow> &amp; \int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx</mrow>
+		<mrow> &amp; = \int_0^{\infty} e^{-u} dx</mrow>
+		<mrow> &amp; = -e^{-u} \big |_0^{\infty} = 1</mrow>
+	</md>
+	</p>
+</proof>
+</theorem>
+
+
+<theorem><title>Derivation of Statistics for Exponential Distribution and Plotting</title>
+<statement>
+	<me>\sigma^2 = \mu^2</me>
+	<me>\gamma_1 = 2</me>
+	<me>\gamma_2 = 9</me>
+</statement>
+<proof>
+	<p>
+	For the mean, notice that
+	<md>
+		<mrow>\text{Mean} &amp; = \int_0^{\infty} x \cdot \frac{1}{\mu} e^{-\frac{x}{\mu}} </mrow>
+		<mrow> &amp; = [ (1-x) e^{-\frac{x}{\mu}} ] \big |_0^{\infty} = \mu</mrow>
+	</md>
+	and so the use of <m>\mu</m> in f(x) is warranted.
+	</p>
+	<p>
+	The remaining statistics are derived similarly using repeated integration by parts. The interactive Sage cell below calculates those for you automatically.
+	</p>
+</proof>
+</theorem>
+
+
+<sage>
+	<input>
+# Exponential Distribution
+var('x,mu')
+assume(mu>0)
+
+f(x) =e^(-x/mu)/mu
+mu = integral(x*f,x,0,oo).factor()
+M2 = integral(x^2*f,x,0,oo).factor()
+M3 = integral(x^3*f,x,0,oo).factor()
+M4 = integral(x^4*f,x,0,oo).factor()
+
+pretty_print('Mean = ',mu)
+
+v = (M2-mu^2).factor()
+pretty_print('Variance = ',v)
+stand = sqrt(v)
+
+sk = (((M3 - 3*M2*mu + 2*mu^3))/stand^3).simplify()
+pretty_print('Skewness = ',sk)
+
+kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
+pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
+@interact
+def _(m = slider(1,12,1/2,2,label='mu')):
+    plot(f(mu=m),x,0,30).show(ymax=1)
+	</input>
+</sage>
+</p>
 	
 </section>
 
-<section>	
-	<title>Exponential Distribution</title>
 
-	
+<section><title>Gamma Distribution</title>
+<p>
+In this section, you will consider an interval [0,X] of variable length needed before encountering the r-th success (or change).
+
+<sage>
+<input>
+# Gamma Distribution Graphing
+var('x,mu,r')
+assume(mu>0)
+assume(r,'integer')
+@interact
+def _(r=[2,3,6,12,24],mu=slider(1,12,1,5,label='mu')):
+    f(x) =x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
+    plot(f,x,0,200).show()
+    
+</input>
+</sage>
+</p>
+
+<p>
+Derivation of mean, variance, skewness, and kurtosis. Pick "alpha" for the general formulas.
+<sage>
+	<input>
+# Gamma Distribution
+var('x,mu,r,alpha')
+assume(mu>0)
+assume(alpha,'integer')
+assume(alpha>1)
+@interact
+def _(r=[2,3,6,9,alpha]):
+    f(x) =x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
+    mean = integral(x*f,x,0,oo).full_simplify()
+    M2 = integral(x^2*f,x,0,oo).full_simplify()
+    M3 = integral(x^3*f,x,0,oo).full_simplify()
+    M4 = integral(x^4*f,x,0,oo).full_simplify()
+    
+    pretty_print('Mean = ',mean)
+    
+    v = (M2-mean^2).factor()
+    pretty_print('Variance = ',v)
+    stand = sqrt(v)
+    
+    sk = (((M3 - 3*M2*mean + 2*mean^3))/stand^3).full_simplify()
+    pretty_print('Skewness = ',sk)
+    
+    kurt = (M4 - 4*M3*mean + 6*M2*mean^2 -3*mean^4).factor()/stand^4
+    pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
+	</input>
+</sage>
+</p>
 </section>
 
+<section><title>Exercises</title>
 
-<section>	
-	<title>Gamma Distribution</title>
-
+<exercise><title> - Home Sales</title>
+<p>
+A local realty office sells on average 10 houses a week.  Let X measure the number of houses the sell in the next week.  Determine
+<ol>
+	<li>the probability the realty office sells 12 houses next week.</li>
+	<li>the probability the realty office sells fewer than 10 houses next week.</li>
+	<li>the interval <m>\mu - 2\sigma \le X \le \mu + 2\sigma</m>.</li>
+	<li><m>P(\mu - 2\sigma \le X \le \mu + 2\sigma)</m>.</li>
 	
+</ol>
+</p>
+</exercise>
+
+
+<exercise><title> - Computer Network Data Traffic</title>
+<p>
+Consider the arrival of requests on a server. Presume that the requests are considered as coming from an anonymous and large collection of users independently of each other on an average of 50 requests per second. If X measures the number of requests per second, determine
+<ol>
+	<li>the probability that in any given second the server gets fewer than 50 requests</li>
+	<li>P(\mu - 2\sigma \le X \le \mu + 2\sigma)</li>
+	<li>the expected number of requests per hour.</li>
+</ol>
+</p>
+</exercise>
+
 </section>
 
 

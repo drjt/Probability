@@ -274,18 +274,18 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 var('x,n,p')
 assume(x,'integer')
 f(x) = p*(1-p)^(x-1)
-mu = sum(x*f,x,0,oo)
-M2 = sum(x^2*f,x,0,oo)
-M3 = sum(x^3*f,x,0,oo)
-M4 = sum(x^4*f,x,0,oo)
+mu = sum(x*f,x,0,oo).full_simplify()
+M2 = sum(x^2*f,x,0,oo).full_simplify()
+M3 = sum(x^3*f,x,0,oo).full_simplify()
+M4 = sum(x^4*f,x,0,oo).full_simplify()
 
 pretty_print('Mean = ',mu)
 
-v = (M2-mu^2).factor()
+v = (M2-mu^2).factor().full_simplify()
 pretty_print('Variance = ',v)
 stand = sqrt(v)
 
-sk = ((M3 - 3*M2*mu + 2*mu^3)).factor()/stand^3
+sk = (((M3 - 3*M2*mu + 2*mu^3))/stand^3).full_simplify()
 pretty_print('Skewness = ',sk)
 
 kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
@@ -419,26 +419,29 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 		
 <sage>
 	<input>
-var('x,n,p,r')
+# Negative Binomial
+var('x,n,p,r,alpha')
 assume(x,'integer')
+assume(alpha,'integer')
+assume(alpha>1)
 @interact
-def _(r=[2,3,4,5,6]):
+def _(r=[2,5,10,alpha]):
     f(x) = binomial(x-1,r-1)*p^r*(1-p)^(x-1)
-    mu = sum(x*f,x,r,oo).factor()
-    M2 = sum(x^2*f,x,r,oo).factor()
-    M3 = sum(x^3*f,x,r,oo).factor()
-    M4 = sum(x^4*f,x,r,oo).factor()
+    mu = sum(x*f,x,r,oo).full_simplify()
+    M2 = sum(x^2*f,x,r,oo).full_simplify()
+    M3 = sum(x^3*f,x,r,oo).full_simplify()
+    M4 = sum(x^4*f,x,r,oo).full_simplify()
     
     pretty_print('Mean = ',mu)
     
-    v = (M2-mu^2).factor()
+    v = (M2-mu^2).full_simplify()
     pretty_print('Variance = ',v)
     stand = sqrt(v)
     
-    sk = ((M3 - 3*M2*mu + 2*mu^3)).factor()/stand^3
+    sk = (((M3 - 3*M2*mu + 2*mu^3))/stand^3).full_simplify()
     pretty_print('Skewness = ',sk)
     
-    kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
+    kurt = ((M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4)/stand^4).full_simplify()
     pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</input>
 </sage>
@@ -525,6 +528,28 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 </ol>
 </p>
 </solution>
+</p>
+</exercise>
+
+<exercise><title> - Rolling Dice</title>
+<p>Suppose you roll a standard pair of 6-sided dice 20 times and let X measure the number of outcomes which result in a sum of 7 or 11. Determine:
+<ol>
+	<li>the expected number of rolls which have a sum of 7 or 11</li>
+	<li>P(X=5)</li>
+	<li>P( X &gt; 5)</li>
+	<li>P( X &lt; 5)</li>
+</ol>
+</p>
+</exercise>
+
+<exercise><title> - Rolling Dice yet again</title>
+<p>Suppose you roll a standard pair of 6-sided dice X times until you get a sum of 7 or 11 a third time. Determine:
+<ol>
+	<li>the expected number of rolls needed on average.</li>
+	<li>P(X=5)</li>
+	<li>P( X &gt; 5)</li>
+	<li>P( X &lt; 5)</li>
+</ol>
 </p>
 </exercise>
 
