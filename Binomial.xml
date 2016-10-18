@@ -90,10 +90,17 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 	</input>
 </sage>
 
-	<theorem><title>Binomial Distribution mean</title>
-	<statement><me>\mu = np</me></statement>
+	<theorem><title>Binomial Distribution Statistics</title>
+	<statement><p>For the Binomial Distribution
+	<me>\mu = np</me>
+	<me>\sigma^2 = np(1-p)</me>
+	<me>\gamma_1 = \frac{1-2p}{\sqrt{np(1-p)}}</me>
+	<me>\gamma_2 = \frac{1-6p(1-p)}{np(1-p)} + 3</me>
+	</p>
+	</statement>
+
 	<proof>
-		<p>
+		<p>For the mean,
 		<md>
 			<mrow> \mu &amp; = E[X] </mrow>
 			<mrow> &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow>
@@ -107,13 +114,8 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 			<mrow> &amp; = np (p + (1-p))^m = np</mrow>
 		</md>
 		</p>
-	</proof>
-	</theorem>
 
-	<theorem><title>Binomial Distribution variance</title>
-	<statement><me>\sigma^2 = np(1-p)</me></statement>
-	<proof>
-	<p>
+	<p>For the variance,
 		<md>
 		<mrow> \sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
 		<mrow> &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow>
@@ -127,8 +129,14 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 		<mrow> &amp; = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)</mrow>
 	</md>
 	</p>
+
+
+	<p>The skewness and kurtosis can be found similarly using formulas involving E[X(X-1)(X-2)] and E[X(X-1)(X-2)(X-3)]. The complete determination is performed using Sage below.
+	</p>
+
 	</proof>
 	</theorem>
+
 
 <p>The following uses Sage to determine the general formulas for the Binomial distribution.
 </p>
@@ -189,17 +197,17 @@ Notice, the mean for this distribution is also 10 so one might expect 10 heads i
 	of the first success occurring on the mth trial presumes that
 	the previous m-1 trials were all failures.  Therefore the 
 	desired probability is given by 
-		<me>f(x) = P(X=m) = P(FF...FS) = (1-p)^{m-1}p</me>
+		<me>f(x) = P(X = x) = P(FF...FS) = (1-p)^{x-1}p</me>
 	</p>
 	
 	
 	<theorem><title>Geometric Distribution sums to 1</title>
-		<statement><me>f(x) = (1-p)^{m-1}p</me> sums to 1 over <m>R = \{ 1, 2, ... \}</m>
+		<statement><me>f(x) = (1-p)^{x-1}p</me> sums to 1 over <m>R = \{ 1, 2, ... \}</m>
 		</statement>
 		<proof>
 		<p>
 		<md>
-			<mrow>\sum_{k=1}^{\infty} {f(x)} = \sum_{k=1}^{\infty} {(1-p)^{k-1} p} = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1</mrow>
+			<mrow>\sum_{x=1}^{\infty} {f(x)} = \sum_{x=1}^{\infty} {(1-p)^{x-1} p} = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1</mrow>
 		</md>
 		</p>
 		</proof>
@@ -265,15 +273,15 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 	<theorem>
 		<title>Geometric Distribution Function</title>
 		<statement>
-			<me>F(a) =  1- (1-p)^{a}</me>
+			<me>F(x) =  1- (1-p)^{x}</me>
 		</statement>
 		<proof>
 		<p> Consider the accumulated probabilities over a range of values...
 		<md>
-			<mrow> P(X \le a) &amp; = 1 - P(X \gt a)</mrow>
-			<mrow> &amp; = 1- \sum_{k={a+1}}^{\infty} {(1-p)^{k-1}p}</mrow>
-			<mrow> &amp; = 1- p \frac{(1-p)^{a}}{1-(1-p)}</mrow>
-			<mrow> &amp; = 1- (1-p)^{a}</mrow>
+			<mrow> P(X \le x) &amp; = 1 - P(X \gt x)</mrow>
+			<mrow> &amp; = 1- \sum_{k={x+1}}^{\infty} {(1-p)^{k-1}p}</mrow>
+			<mrow> &amp; = 1- p \frac{(1-p)^{x}}{1-(1-p)}</mrow>
+			<mrow> &amp; = 1- (1-p)^{x}</mrow>
 		</md>
 		</p>
 		</proof>
@@ -403,7 +411,7 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</statement>
 	<proof>
 		<p> Since successive trials are independent, then the probability of the rth success occurring on the x-th trial presumes that in the previous x-1 trials were r-1 successes and x-r failures. You can arrange these indistinguishable successes (and failures) in <m>\binom{x-1}{r-1}</m> unique ways. Therefore the desired probability is given by 
-			<md><mrow>P(X=m) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r</mrow></md>
+			<md><mrow>P(X=x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r</mrow></md>
 		</p>
 	</proof>
 	</theorem>
@@ -447,10 +455,10 @@ def _(p=input_box(0.3,width=15),r=slider(1,10,1,2)):
 	<theorem>
 		<title>Statistics for Negative Binomial Distribution</title>
 		<statement>For the Negative Binomial Distribution, 
-		<me>\mu = r \frac{1-p}{p}</me>
+		<me>\mu = \frac{r}{p}</me>
 		<me>\sigma^2 = r \frac{1-p}{p^2}</me>
 		<me>\gamma_1 = \frac{2-p}{\sqrt{r(1-p)}}</me>
-		<me>\gamma_2 = \frac{p^2-6p+6}{r(1-p)}</me>
+		<me>\gamma_2 = \frac{p^2-6p+6}{r(1-p)} + 3</me>
 		
 <sage>
 	<input>
@@ -458,27 +466,28 @@ def _(p=input_box(0.3,width=15),r=slider(1,10,1,2)):
 var('x,n,p,r,alpha')
 assume(x,'integer')
 assume(alpha,'integer')
-assume(alpha>1)
+assume(alpha &gt; 2)
+assume(0 &lt; p &lt; 1)
 @interact
-def _(r=[2,5,10,alpha]):
-    f(x) = binomial(x-1,r-1)*p^r*(1-p)^(x-1)
+def _(r=[2,5,10,15,alpha]):
+    f(x) = binomial(x-1,r-1)*p^r*(1-p)^(x-r)
     mu = sum(x*f,x,r,oo).full_simplify()
     M2 = sum(x^2*f,x,r,oo).full_simplify()
     M3 = sum(x^3*f,x,r,oo).full_simplify()
     M4 = sum(x^4*f,x,r,oo).full_simplify()
-    
+        
     pretty_print('Mean = ',mu)
     
     v = (M2-mu^2).full_simplify()
     pretty_print('Variance = ',v)
     stand = sqrt(v)
     
-    sk = (((M3 - 3*M2*mu + 2*mu^3))/stand^3).full_simplify()
+    sk = (((M3 - 3*M2*mu + 2*mu^3)).full_simplify()/stand^3).factor()
     pretty_print('Skewness = ',sk)
     
-    kurt = ((M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4)/stand^4).full_simplify()
+    kurt = ((M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4)/v^2).full_simplify()
     pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
-	</input>
+    </input>
 </sage>
 
 		</statement>
@@ -530,7 +539,7 @@ You keep on rolling a pair of dice and let X be the number of rolls needed until
 	<li><md>
 		<mrow>P(X \ge 4) &amp; = 1- P(x \le 3) </mrow>
 		<mrow> &amp; = 1 - [ f(2) + f(3) ]</mrow>
-		<mrow> &amp; = 1 - \left[ \binom{2}{1} (7/9)^1 \cdot (2/9)^2 + \binom{1}{1} (2/9)^2 \right ]</mrow>
+		<mrow> &amp; = 1 - \left[ \binom{1}{1} (2/9)^2 + \binom{2}{1} (7/9)^1 \cdot (2/9)^2 \right ]</mrow>
 		<mrow> &amp; = 1 - 0.1262 = 0.8738.</mrow>
 	</md></li>
 </ol>

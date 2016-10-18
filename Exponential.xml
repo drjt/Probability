@@ -12,34 +12,40 @@
 
 <section><title>Introduction</title>
 <p>
-In this chapter, you will investigate the relationship between number of successes as time changes.  One of these will be fixed and the other one variable.
-</p>
-</section>
+In this chapter, you will investigate the relationship between number of successes over some interval.  For each, one of these quantities will be fixed and the other one variable. First, consider the following:
 
-<section><title>Poisson Distribution</title>
-<p>
-In this section, you will consider measuring a variable number of successes, or changes, within a fixed interval.
 <definition><title>Poisson Process</title>
-<statement>A Poisson process is a process which satisfies the following:
+<statement>A Poisson process is a course of action in which:
 <ol>
-	<li>The successes in non-overlapping intervals are independent.</li>
-	<li>The probability of exactly one success is a sufficiently small interval of length h is proportional to h.</li>
+	<li>Successes in non-overlapping subintervals are independent of each other.</li>
+	<li>The probability of exactly one success in a sufficiently small interval of length h is proportional to h.  In notation, P(one success) = <m>\lambda h</m>.</li>
 	<li>The probability of two or more successes in a sufficiently small interval is essentially 0.</li>
-	<li></li>
 </ol>
 </statement>
 </definition>
 
+You should presume these assumptions implicitly for the distributions discussed in this chapter.
+</p>
+
+</section>
+
+<section><title>Poisson Distribution</title>
+<p>
+Consider a Poisson Process where you start with an interval of fixed length T and where X measures the variable number of successes, or changes, within a that interval. The resulting distribution of X will be called a Poisson distribution.
+
 <theorem><title>Poisson Probability Function</title>
 <statement>
-<p>Assume X measures the number of successes in an interval [0,T] for some Poisson process. Then, 
+<p>Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
 <me>f(x) = \frac{\mu^x e^{-\mu}}{x!}</me>
 for R = {0, 1, 2, ... }.
 </p>
 </statement>
 <proof>
 <p>
-For any natural number n, break up the given interval [0,T] into n uniform parts each of width h = T/n.  Using the properties of Poisson processes, if n is very large, h will be very small and eventually small enough so that P(exactly one success on a given interval) = <m>p = \lambda \frac{T}{n}</m>. However, since there are a finite number of independent intervals each with probability p of containing a success then you can use a Binomial distribution to evaluate the corresponding probabilities so long as n is finite. Doing so yields and taking the limit as n approaches infinity gives:
+For a sufficiently large natural number n, break up the given interval [0,T] into n uniform parts each of width h = T/n.  Using the properties of Poisson processes, n very large implies h will be very small and eventually small enough so that 
+<me>P(\text{exactly one success on a given interval}) = p = \lambda \frac{T}{n}.</me> 
+
+However, since there are a finite number of independent intervals each with probability p of containing a success then you can use a Binomial distribution to evaluate the corresponding probabilities so long as n is finite. Doing so yields and taking the limit as n approaches infinity gives:
 <md>
 	<mrow>f(x) &amp; = P(\text{X changes in [0,T]}) </mrow>
 	<mrow> &amp; = \lim_{n \rightarrow \infty} \binom{n}{x} p^x (1-p)^{n-x}</mrow>
@@ -143,35 +149,65 @@ Approximation by binomial means you can also use Poisson to approximate Binomial
 
 
 
-
-
 <section><title>Exponential Distribution</title>
-<p>
-In this section, you will consider an interval [0,X] of variable length needed before encountering the first success (or change).
+	<p>
+Once again, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain a first success. The resulting distribution of X will be called an Exponential distribution.
+	</p>
 
+
+<p>
+To derive the probability function for this distribution, consider finding f(x) by first considering F(x). This gives
+
+<md>
+	<mrow>F(x)&amp;  = P(X \le x)</mrow> 
+	<mrow> &amp; = 1 - P(X \gt x)</mrow>
+	<mrow> &amp; = 1 - P(\text{first change occurs after an interval of length x})</mrow>
+	<mrow> &amp; = 1 - P(\text{no changes in the interval [0,x]})</mrow>
+	<mrow> &amp; = 1 - \frac{(\lambda x)^0 e^{-\lambda x}}{0!}</mrow>
+	<mrow> &amp; = 1 - e^{-\lambda x}</mrow>
+</md>
+where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. Using this distribution function and taking the derivative yields
+<me>f(x) = F'(x) = \lambda e^{-\lambda x}.</me>
+</p>
 
 <definition><title>Exponential Distribution Probability Function</title>
-<statement><p>If X measures the variable interval length needed until you get the first success, then X has an exponential distribution with	
-	<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}</me>
-</p>
-</statement>
+	<statement>
+	<p>Given a Poisson process and a constant <m>\mu</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
+		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
+	</p>
+	</statement>
 </definition>
 
 <theorem><title>Verification of Exponential Probability Function</title>
-<statement>
-	<me>\int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx = 1</me>
-</statement>
-<proof>
-	<p>
-	<md>
-		<mrow> &amp; \int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx</mrow>
-		<mrow> &amp; = \int_0^{\infty} e^{-u} dx</mrow>
-		<mrow> &amp; = -e^{-u} \big |_0^{\infty} = 1</mrow>
-	</md>
-	</p>
-</proof>
+	<statement>
+		<me>\int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx = 1</me>
+	</statement>
+	<proof>
+		<p>
+		<md>
+			<mrow> &amp; \int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx</mrow>
+			<mrow> &amp; = \int_0^{\infty} e^{-u} dx</mrow>
+			<mrow> &amp; = -e^{-u} \big |_0^{\infty} = 1</mrow>
+		</md>
+		</p>
+	</proof>
 </theorem>
 
+<theorem><title>Distribution function for Exponential Distribution</title>
+	<statement>
+		<me>F(x) = 1 - e^{-\frac{x}{\mu}}</me>
+	</statement>
+	<proof>
+	<p>
+	Using <m>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}</m>, note
+	<md>
+		<mrow>F(x) &amp; = \int_0^x \frac{1}{\mu} e^{-\frac{u}{\mu}} du</mrow>
+		<mrow> &amp; =  - e^{-\frac{u}{\mu}} \big |_0^x</mrow>
+		<mrow> &amp; = 1 - e^{-\frac{x}{\mu}}</mrow>
+	</md>
+	</p>
+	</proof>
+</theorem>
 
 <theorem><title>Derivation of Statistics for Exponential Distribution and Plotting</title>
 <statement>
@@ -194,7 +230,7 @@ In this section, you will consider an interval [0,X] of variable length needed b
 </proof>
 </theorem>
 
-
+<p>
 <sage>
 	<input>
 # Exponential Distribution
@@ -228,9 +264,71 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 </section>
 
 
+
 <section><title>Gamma Distribution</title>
+	<p>
+Extending the exponential distribution model developed above, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain the rth success for some natural number r. The resulting distribution of X will be called a Gamma distribution.
+
+
+<definition><title>Gamma Function</title>
+<statement>
+	<me>\Gamma(t) = \int_0^{\infty} u^{t-1} e^{-u} du</me>
+</statement>
+</definition>
+
+<theorem><title>Gamma Function on the natural numbers</title>
+<statement>
+<p>For <m>n \in \mathbb{N}</m>,
+<me>\Gamma(n+1) = n!</me>
+</p>
+</statement>
+<proof>
 <p>
-In this section, you will consider an interval [0,X] of variable length needed before encountering the r-th success (or change).
+Letting n be a natural number and applying integration by parts one time gives
+<md>
+	<mrow>\Gamma(n+1) &amp; = \int_0^{\infty} u^n e^{-u} du</mrow>
+	<mrow> &amp; = -u^n \cdot e^{-u} \big |_0^{\infty} + n \int_0^{\infty} u^{n-1} e^{-u} du </mrow>
+	<mrow> &amp; = 0 - 0 + n \Gamma(n)</mrow>
+</md>
+Continuing using an inductive argument to obtain the final result.
+</p>
+</proof>
+</theorem>
+
+<p>To find the probability function for the gamma distribution, once again focus on the development of F(x). Assuming r is a natural number greater than 1 and noting that X measures the interval length needed in order to achieve the rth success
+<md>
+	<mrow>F(x) &amp; = P(X \le x)</mrow>
+	<mrow> &amp; = 1 - P(X \gt x)</mrow>
+	<mrow> &amp; = 1 - P(\text{fewer than r successes in [0,x]})</mrow>
+	<mrow> &amp; = 1 - \big [ \frac{(\lambda x)^0 e^{-\lambda x}}{0!} + \frac{(\lambda x)^1 e^{-\lambda x}}{1!} + ... + \frac{(\lambda x)^{r-1} e^{-\lambda x}}{(r-1)!} \big ]</mrow>
+	<mrow> &amp; = 1 - \sum_{k=0}^{r-1} \frac{(\lambda x)^k e^{-\lambda x}}{k!} </mrow>
+</md>
+where the discrete Poisson probability function is used on the interval [0,x]. The derivative of this function however is "telescoping" and terms cancel. Indeed,
+<md>
+	<mrow>F'(x) &amp; = \lambda e^{-\lambda x}/0!</mrow>
+	<mrow> &amp; - \lambda e^{-\lambda x}/1! + \lambda x \cdot \lambda e^{-\lambda x}/1!</mrow>
+	<mrow> &amp; - \lambda^2 2x e^{-\lambda x}/2! + \lambda^2 x^2 \cdot \lambda e^{-\lambda x}/2!</mrow>
+	<mrow> &amp; - \lambda^3 3x^2 e^{-\lambda x}/3! + \lambda^3 x^3 \cdot \lambda e^{-\lambda x}/3!</mrow>
+	<mrow> &amp; . . .</mrow>
+	<mrow> &amp; - \lambda^{r-1} (r-1)x^{r-2} e^{-\lambda x}/(r-1)! + \lambda^{r-1} x^{r-1} \cdot \lambda e^{-\lambda x}/(r-1)!</mrow>
+	<mrow> &amp; = \lambda^r x^{r-1} e^{-\lambda x}/(r-1)!</mrow>
+</md>
+where you can replace <m>(r-1)! = \Gamma(r)</m>.
+</p>
+
+<theorem><title>Mean</title>
+<statement>
+<p>
+For this random variable, <m>E[X] = \mu</m> and so the use of <m>\mu</m> means the mean is the only parameter needed.
+</p>
+</statement>
+</theorem>
+
+<theorem><title>Gamma Distribution Probability Function</title>
+<statement>If X measures the interval until the rth success, then
+<me>f(x) =  \frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}</me>
+</statement>
+</theorem>
 
 <sage>
 <input>
@@ -302,7 +400,6 @@ Consider the arrival of requests on a server. Presume that the requests are cons
 <ol>
 	<li>the probability that in any given second the server gets fewer than 50 requests</li>
 	<li><m>P(\mu - 2\sigma \le X \le \mu + 2\sigma)</m></li>
-	<li><m>P(\mu - 3\sigma \le X \le \mu + 3\sigma)</m></li>
 	<li>the expected number of requests per hour.</li>
 </ol>
 
