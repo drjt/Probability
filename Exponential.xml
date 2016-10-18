@@ -260,7 +260,26 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 	</input>
 </sage>
 </p>
-	
+
+<theorem><title>The Exponential Distribution yields a continuous memoryless model.</title>
+<statement>
+	<p>If X has an exponential distribution and a and b are nonnegative integers, then
+	<me>P( X > a + b | X > b ) = P( X > a)</me>
+	</p>
+</statement>
+<proof>
+	<p>Using the definition of conditional probability,
+	<md>
+		<mrow>P( X > a + b | X > b ) &amp; = P( X > a + b \cap X > b ) \ P( X > b)</mrow>
+		<mrow> &amp; = P( X > a + b ) / P( X > b)</mrow>
+		<mrow> &amp; = e^{-(a+b)/ \mu} / e^{-b / \mu}</mrow>
+		<mrow> &amp; = e^{-a/ \mu}</mrow>
+		<mrow> &amp; = P(X > a)</mrow>
+	</md>
+	</p>
+</proof>
+</theorem>
+
 </section>
 
 

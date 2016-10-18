@@ -260,7 +260,7 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 			<p> 
 			<md>
 				<mrow>\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
-				<mrow> &amp; = \su _{k=0}^{\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 </mrow>
+				<mrow> &amp; = \sum_{k=0}^{\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 </mrow>
 				<mrow> &amp; = (1-p)p \sum_{k=2}^{\infty} {k(k-1)(1-p)^{k-2}} + \frac{1}{p} - \frac{1}{p^2}</mrow>
 				<mrow> &amp; = (1-p)p \frac{2}{(1-(1-p))^3} + \frac{1}{p} - \frac{1}{p^2}</mrow>
 				<mrow> &amp; = \frac{1-p}{p^2}</mrow>
