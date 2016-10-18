@@ -73,6 +73,22 @@ def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
 	</p>
 	</proof>
 	</theorem>
+	
+<p>Utilize the interactive cell below to compute f(x) and F(x) for the Binomial distribution</p>
+<sage>
+	<input>
+# Binomial calculator
+@interact
+def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
+    R = range(n+1)
+    f(x) = binomial(n,x)*p^x*(1-p)^(n-x)
+    acc = 0
+    for k in R:
+        prob = f(x=k)
+        acc = acc+prob
+        pretty_print('f(%s) = '%k,' %.8f'%prob,' and F(%s) = '%k,' %.8f'%acc)
+	</input>
+</sage>
 
 	<theorem><title>Binomial Distribution mean</title>
 	<statement><me>\mu = np</me></statement>
@@ -408,7 +424,26 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</proof>
 	</theorem>
 	
-	
+
+<p>Utilize the interactive cell below to compute f(x) and F(x) for the negative binomial distribution.
+
+<sage>
+	<input>
+# Negative Binomial calculator
+@interact
+def _(p=input_box(0.3,width=15),r=slider(1,10,1,2)):
+    n = 4*(floor(r/p)+1)
+    np1 = n+1
+    R = range(r,np1)
+    f(x) = (factorial(x-1)/(factorial(r-1)*factorial(x-r)))*(1-p)^(x-r)*p^r
+    acc = 0
+    for k in R:
+        prob = f(x=k)
+        acc = acc+prob
+        pretty_print('f(%s) = '%k,' %.8f'%prob,' and F(%s) = '%k,' %.8f'%acc)
+	</input>
+</sage>
+</p>
 	<theorem>
 		<title>Statistics for Negative Binomial Distribution</title>
 		<statement>For the Negative Binomial Distribution, 
@@ -550,6 +585,36 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 	<li>P( X &gt; 5)</li>
 	<li>P( X &lt; 5)</li>
 </ol>
+</p>
+</exercise>
+
+<exercise>
+<title> - 2 standard deviations from the mean</title>
+<p>Given p = 0.3 determine the following:
+<ol>
+	<li>For Binomial with n = 50, <m>P(\mu - 2\sigma \le X \le \mu + 2\sigma)</m></li>
+	<li>For Negative Binomial with r = 2, <m>P(\mu - 2\sigma \le X \le \mu + 2\sigma)</m></li>
+</ol>
+<solution>
+<p>
+For Binomial with p = 0.3 and n = 50, <m>\mu = n \cdot p = 15</m> and <m>\sigma^2 = n \cdot p \cdot (1-p) = 10.5</m>.  So, <m>\sigma = \sqrt{10.5}</m>.  Therefore,
+<md>
+	<mrow>P(\mu - 2\sigma \le X \le \mu + 2\sigma) &amp; = P(15 - 2 \sqrt{10.5} \le X \le 15 + 2 \sqrt{10.5})</mrow>
+	<mrow> &amp; P( X \in \{9, 10, 11, ... , 19, 20, 21 \} )</mrow>
+</md>
+Then 
+<me>F(21) - F(8) \approx 0.97491 - 0.01825 = 0.95666 </me>
+</p>
+<p>
+For Negative Binomial with p = 0.3 and r = 2, <m>\mu = \frac{2}{0.3} = \frac{20}{3}</m> and <m>\sigma^2 = 2 \frac{0.7}{0.3^2} = \frac{140}{9}</m> and so <m>\sigma \approx 3.9</m>.  Therefore,
+<md>
+	<mrow>P(\mu - 2\sigma \le X \le \mu + 2\sigma) &amp; = P(6.7 - 7.8 \le X \le 6.7 + 7.8)</mrow>
+	<mrow> &amp; P( X \in \{2, 3, ... , 14, 15, 16 \} )</mrow>
+</md>
+Then,
+	<me>F(16) \approx 0.973888</me>
+</p>
+</solution>
 </p>
 </exercise>
 
