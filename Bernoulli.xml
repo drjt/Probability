@@ -7,14 +7,14 @@
 <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
 <!-- See the file COPYING for copying conditions.             -->
 
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="BinomialGeometricNegBinomial" xmlns:xi="http://www.w3.org/2001/XInclude">
 
-<title>Binomial, Geometric, and Negative Binomial Distributions</title>
+<title>Distributions based upon Bernoulli Trials</title>
 
-<introduction>
+<section><title>Introduction</title>
 	<p>Many practical problems involve measuring simply whether something was a success or a failure. In these situations, "success" should not be interpreted as having any moral or subjective meaning but only construed to mean that something you are looking for actually occurs.</p>
 	
-	<p>In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable X over the space R = {0,1} mapping X(success) = 1 and X(failure)=0. If p = P(success) then 
+	<p>In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable X over the space <m>R = \{0, 1 \}</m> mapping X(success) = 1 and X(failure)=0. If p = P(success) then 
 	<me>f(x) = p^x \cdot (1-p)^{1-x}</me>
 	would be a formula but which only related to two values P(failure) = f(0) = (1-p) and P(Success) = f(1) = p.  
 	</p>
@@ -23,11 +23,20 @@
 	<p>
 	The Bernoulli distribution on its own is not extremely useful but serves as a starting point for several others that are useful.  Indeed, in this chapter you will investigate distributions that relate some number of successes in multiple trials to some number of independent trials. The difference between these distributions will be that one of these variables will be fixed and the other one will be variable.
 </p>
-</introduction>
+<p>
+In this chapter, you will investigate the following distributions:
+<ol>
+	<li>Binomial - the number of trials is fixed and X measures the variable number of successes</li>
+	<li>Geometric - the number of successes is fixed--at 1--and X measures the variable number of trials</li>
+	<li>Negative Binomial - the number of successes is fixed and X measures the variable number of trials</li>
+</ol>
+</p>
+
+</section>
 
 <section>
  	<title>Binomial Distribution</title>	
-	<p>Consider a sequence  of n independent Bernoulli trials with the likelihood of a success p on each individual trial stays constant from trial to trial with <m> 0 \lt p \lt 1 </m>. If we let the variable <m>X</m> measure the number of successes obtained when doing a fixed number of trials n, then the resulting distribution of probabilities is called a Binomial Distribution.</p>
+	<p>Consider a sequence  of n independent Bernoulli trials with the likelihood of a success p on each individual trial stays constant from trial to trial with <m> 0 \lt p \lt 1 </m>. If we let the variable <m>X</m> measure the number of successes obtained when doing a fixed number of trials n with <m>R = \{ 0, 1, ..., n \}</m>, then the resulting distribution of probabilities is called a Binomial Distribution.</p>
 	
 <sage>
 <input>
@@ -189,7 +198,7 @@ Notice, the mean for this distribution is also 10 so one might expect 10 heads i
 	"success" and denote its value by <m>p</m> 
 	where <m> 0 \lt p \lt 1 </m>.  
 	If we let the variable <m>X</m> measure the number of trials needed in order
-	to obtain the first success, 
+	to obtain the first success with <m>R = \{1, 2, 3, ... \}</m>, 
 	then the resulting distribution of probabilities is called a 
 	Geometric Distribution.</p>
 
@@ -351,7 +360,8 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	"success" and denote its value by <m>p</m> 
 	where <m> 0 \lt p \lt 1 </m>.  
 	If we let the variable <m>X</m> measure the number of trials needed in order
-	to obtain the rth success, <m>r \ge 1</m> 
+	to obtain the rth success, <m>r \ge 1</m>, with 
+	<m>R = \{r, r+1, r+2, ... \}</m>
 	then the resulting distribution of probabilities is called a 
 	Geometric Distribution.</p>
 	<p>Note that r=1 gives the Geometric Distribution.</p>

@@ -10,30 +10,63 @@
 <chapter xml:id="Normal" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Normal Distributions</title>
 
+<section><title>Introduction</title>
+<p>
+You should have noticed by now that many distributions tend to have a bell-shaped graph as parameters are allowed to increase. Indeed, the formulas for skewness <m>\gamma_1</m> and kurtosis <m>\gamma_2</m> approach 0 and 3 respectively for the Hypergeometric, Binomial, Negative Binomial, Poisson, and Gamma Distributions. One might wonder if this is just a happy coincidence or is something more insidious at play. 
+</p>
+<p>
+The answer by appealing to mathematics reveals that nothing sinister is going on but that it is indeed true that the eventual destiny for distributions is one that is bell-shaped. It is therefore of interest to figure out if that distribution has a nice form that can be accessed directly. The focus of this chapter is to consider this bell-shaped goal known as the "normal distribution."
+</p>
+</section>
+
 <section>	
-	<title>Properties of the Normal Distribution</title>
-	<Introduction>
-	<p>You have seen that most distributions become "bell shaped" as certain parameters are allowed to increase. The question might arise regarding whether this always must happen or is it just a happy coincidence. The amazing answer is that if you interpret the question in the correct way then this is always true.</p>
-	</Introduction>
+	<title>The Normal Distribution</title>
+
 	<definition>
 	<title>The Normal Distribution</title>
-	<statement>Given two parameters <m>\mu</m> and <m>\sigma</m> a random variable X with density function
-	<me>
-	f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
-	</me>	
+	<statement>Given two parameters <m>\mu</m> and <m>\sigma</m> a random variable X over <m>R = (-\infty,\infty)</m> with density function
+		<me>
+		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
+		</me>	
+	has what is called a normal distribution.
 	</statement>
 	</definition>
 	
 	<theorem>
 	<statement>
-	If <m>\mu =0</m> and <m>\sigma=1</m>, then we say X has a standard normal distribution and often use Z as the variable name. In this case, the density function reduces to
-	<me>
-	f(x) = \frac{1}{\sqrt{2 \pi}} e^{ z^2 / 2}
-	</me>
+		<p>
+If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal distribution and often use Z as the variable name. In this case, the density function reduces to
+		<me>f(x) = \frac{1}{\sqrt{2 \pi}} e^{ z^2 / 2}</me>
+		</p>
 	</statement>
 	<proof>
-	<p>Convert to "standard units" using the conversion <m>z = \frac{x-\mu}{\sigma} = \frac{x-0}{1} = x</m>.</p>
+		<p>Convert to "standard units" using the conversion 
+			<me>z = \frac{x-\mu}{\sigma} = \frac{x-0}{1} = x.</me>
+		</p>
 	</proof>
+	</theorem>
+
+	<theorem><title>Verifying the normal probability function</title>
+	<statement>
+		<p>
+		<me>\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} = 1</me>
+		</p>
+	</statement>
+	</theorem>
+	
+	<theorem><title>Verifying the normal probability mean</title>
+	<statement>
+		<p>
+		<me>\int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} = \mu</me>
+		</p>
+	</statement>
+	</theorem>
+	
+	<theorem><title>Verifying the normal probability variance</title>
+	<statement><p>
+		<me>\int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} = \sigma^2</me>
+		</p>
+	</statement>
 	</theorem>
 
 </section>

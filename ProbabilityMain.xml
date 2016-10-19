@@ -11,16 +11,17 @@
   	
 	  	<xi:include href="./frontmatter.xml" /> 
 
-  		<xi:include href="./PowerSeriesReview.xml" /> 
   		<xi:include href="./Data.xml" /> 
   		<xi:include href="./Combinatorics.xml" />       
   		<xi:include href="./ProbabilityGeneralities.xml" /> 
   		<xi:include href="./ProbabilityFunctions.xml" /> 
   		<xi:include href="./Uniform.xml" /> 
-  		<xi:include href="./Binomial.xml" /> 
-  		<xi:include href="./Exponential.xml" /> 
+  		<xi:include href="./Bernoulli.xml" /> 
+  		<xi:include href="./Poisson.xml" /> 
   		<xi:include href="./Normal.xml" /> 
   		<xi:include href="./Intervals.xml" /> 
+
+  		<xi:include href="./PowerSeriesReview.xml" /> 
 
 	</book>
 

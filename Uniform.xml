@@ -8,12 +8,23 @@
 <!-- See the file COPYING for copying conditions.             -->
 
 <chapter xml:id="UniformHypergeometric" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Uniform and Hypergeometric Distributions</title>
-	<introduction>
+    <title>Distributions based upon Equally likely Outcomes</title>
+
+<section><title>Introduction</title>
 	<p>
 	When motivating our definition of probability you may have noticed that we modeled our definition on the relative frequency of equally-likely outcomes. In this chapter you will develop the theoretical formulas which can be used to model equally-likely outcomes.
 	</p>
-	</introduction>
+	
+<p>
+In this chapter, you will investigate the following distributions:
+<ol>
+	<li>Discrete Uniform - each of a finite collection of outcomes is equally likely and prescribed a "position" and X measures the position of an item selected randomly from the outcomes.</li>
+	<li>Continuous Uniform - an interval of values is possible with sub-intervals of equal length having equal probabilities and X measures a location inside that interval.</li>
+	<li>Hypergeometric - each of a finite collection of values are equally likely and grouped into two classes (successes vs failures) and a subset of that collection is extracted with X measuring the number of successes in the sample.</li>
+</ol>
+</p>
+</section>	
+	
 <section>	
 	<title>Discrete Uniform Distribution</title>
 	<p>
@@ -136,7 +147,7 @@ Further, the probability of getting an outcome in A={2,3} would be f(2)+f(3) = 1
 		<mrow>F(v)-F(u) = F(v+w)-F(u+w)</mrow>
 		<mrow>F(u+w)-F(u) = F(v+w)-F(v)</mrow>
 	</md>
-	which is true regardless of w so long as you stay in the domain of interest. This only happens if F is linear and therefore f must be constant. Say, f(x)=c. In many situations, the space of X will be a single interval with R = [a,b]. Unless otherwise noted, this will be our assumption as well.
+	which is true regardless of w so long as you stay in the domain of interest. This only happens if F is linear and therefore f must be constant. Say, f(x)=c. In many situations, the space of X will be a single interval with <m>R = [a,b]</m>. Unless otherwise noted, this will be our assumption as well.
 	</p>
 	
 	<theorem><title>Properties of the Continuous Uniform Probability Function</title>
@@ -212,7 +223,7 @@ For x in this range,
 	<p>
 	For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.</p>
 	<p>
-	Indeed, consider a collection of n items from which you want to take a sample of size r without replacement. If <m>n_1</m> of the items are "desired" and the remainder are not, let the random variable X measure the number of items from the first group in your sample. The resulting collection of probabilities is called a Hypergeometric Distribution.
+	Indeed, consider a collection of n items from which you want to take a sample of size r without replacement. If <m>n_1</m> of the items are "desired" and the remainder are not, let the random variable X measure the number of items from the first group in your sample with <m>R = \{0, 1, ..., r \}</m>. The resulting collection of probabilities is called a Hypergeometric Distribution.
 	</p>
 	<p>
 	Since you are sampling without replacement and trying only measure the number of items from your desired group in the sample, then the space of X will include R = {0, 1, ..., r} assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>. In the case when r is too large for either of these, the formulas below will follow noting that binomial coefficients are zero if the top is smaller than the bottom or if the bottom is negative.
@@ -366,6 +377,41 @@ Explain how the following situations can be modeled using a continuous uniform d
 	<li>The location on a automobile tire where the next puncture will occur.</li>
 </ul>
 </p>
+</exercise>
+
+<exercise><title> - Continous Uniform on a different space</title>
+<p>
+Determine an explicit formula for f(x) and the resulting mean and variance for a continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
+<solution>
+<p>
+Since you must have 
+<me>\int_{x \in R} f(x) dx = 1</me>
+and since f(x) must be constant than all you must do is measure the accumulated width of the intervals in R. This is 5 + 1 + 6 = 12 and so
+<me>
+f(x)=\left\{\begin{matrix}
+ \frac{1}{12}, &amp; -2 \le x \le 3
+\\ \frac{1}{12}, &amp; 5 \le x \le 6
+\\ \frac{1}{12}, &amp; 9 \le x \le 15
+\\ 0, &amp; \text{otherwise}
+\end{matrix}\right.
+</me>
+For the mean, 
+<md>
+	<mrow>\int_{x \in R} x \frac{1}{12} dx &amp; = \int_{-2}^3 \frac{x}{12} dx + \int_5^6 \frac{x}{12} dx + \int_9^{15} \frac{x}{12} dx</mrow>
+	<mrow> &amp; = \frac{9-4}{24} + \frac{36-25}{24} + \frac{225-81}{24}</mrow>
+	<mrow> &amp; = \frac{5+11+144}{24} = \frac{160}{24} = \frac{20}{3}.</mrow>
+</md>
+For the variance,
+<md>
+	<mrow>\int_{x \in R} x^2 \frac{1}{12} dx - \mu^2 &amp; = \int_{-2}^3 \frac{x^2}{12} dx + \int_5^6 \frac{x^2}{12} dx + \int_9^{15} \frac{x^2}{12} dx - \mu^2</mrow>
+	<mrow> &amp; = \frac{81+8}{36} + \frac{216-125}{36} + \frac{3375-729}{36} - \big ( \frac{20}{3} \big )^2</mrow>
+	<mrow> &amp; = \frac{89+91+2646}{36} - \frac{400}{9} = \frac{2826-1600}{36} </mrow>
+	<mrow> &amp; = \frac{1226}{36} \approx	34.055.</mrow>
+</md>
+</p>
+</solution>
+</p>
+
 </exercise>
 
 <exercise><title> - Louisiana Mega Millions Lottery</title>

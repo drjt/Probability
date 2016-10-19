@@ -7,8 +7,8 @@
 <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
 <!-- See the file COPYING for copying conditions.             -->
 
-<chapter xml:id="PoissonExponential" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Poisson, Exponential, and Gamma Distributions</title>
+<chapter xml:id="PoissonExponentialGamma" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Distributions based upon Poisson Processes</title>
 
 <section><title>Introduction</title>
 <p>
@@ -26,6 +26,14 @@ In this chapter, you will investigate the relationship between number of success
 
 You should presume these assumptions implicitly for the distributions discussed in this chapter.
 </p>
+<p>
+In this chapter, you will investigate the following distributions:
+<ol>
+	<li>Poisson - the interval is fixed and X measures the variable number of successes.</li>
+	<li>Exponential - the number of successes is fixed--at 1--and X measures the variable interval length needed to get that success.</li>
+	<li>Gamma - the number of successes is fixed and X measures the variable interval needed to get the desired number of successes.</li>
+</ol>
+</p>
 
 </section>
 
@@ -37,7 +45,7 @@ Consider a Poisson Process where you start with an interval of fixed length T an
 <statement>
 <p>Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
 <me>f(x) = \frac{\mu^x e^{-\mu}}{x!}</me>
-for R = {0, 1, 2, ... }.
+for <m>R = \{ 0, 1, 2, ... \}</m>.
 </p>
 </statement>
 <proof>
@@ -151,7 +159,7 @@ Approximation by binomial means you can also use Poisson to approximate Binomial
 
 <section><title>Exponential Distribution</title>
 	<p>
-Once again, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain a first success. The resulting distribution of X will be called an Exponential distribution.
+Once again, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain a first success with <m>R = (0,\infty)</m>. The resulting distribution of X will be called an Exponential distribution.
 	</p>
 
 
@@ -286,7 +294,7 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 
 <section><title>Gamma Distribution</title>
 	<p>
-Extending the exponential distribution model developed above, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain the rth success for some natural number r. The resulting distribution of X will be called a Gamma distribution.
+Extending the exponential distribution model developed above, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain the rth success for some natural number r. Then <m>R = (0,\infty)</m> and the resulting distribution of X will be called a Gamma distribution.
 
 
 <definition><title>Gamma Function</title>
