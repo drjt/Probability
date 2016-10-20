@@ -17,6 +17,9 @@ You should have noticed by now that many distributions tend to have a bell-shape
 <p>
 The answer by appealing to mathematics reveals that nothing sinister is going on but that it is indeed true that the eventual destiny for distributions is one that is bell-shaped. It is therefore of interest to figure out if that distribution has a nice form that can be accessed directly. The focus of this chapter is to consider this bell-shaped goal known as the "normal distribution."
 </p>
+<p>
+This book presents the normal distribution by simply presenting it's probability function without derivation. In order to more carefully investigate the development of the normal distribution (and the Chi-Square Distribution) you will need to study "Moment Generating Functions" and some serious mathematics. Without supplying this rigor you can still utilized the results. 
+</p>
 </section>
 
 <section>	
@@ -24,11 +27,10 @@ The answer by appealing to mathematics reveals that nothing sinister is going on
 
 	<definition>
 	<title>The Normal Distribution</title>
-	<statement>Given two parameters <m>\mu</m> and <m>\sigma</m> a random variable X over <m>R = (-\infty,\infty)</m> with density function
+	<statement>Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution with probability function given by
 		<me>
 		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
 		</me>	
-	has what is called a normal distribution.
 	</statement>
 	</definition>
 	
@@ -49,35 +51,86 @@ If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal dis
 	<theorem><title>Verifying the normal probability function</title>
 	<statement>
 		<p>
-		<me>\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} = 1</me>
+		<me>\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = 1</me>
 		</p>
 	</statement>
+	<proof>
+
+<p>Note that you can convert the integral above to standard units so that it is sufficient to show
+<me>I = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{z^2}{2} } dz = 1</me>
+Toward this end, consider <m>I^2</m> and change the variables to get
+<md>
+	<mrow>I^2 &amp; = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{u^2}{2} } du \cdot \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{v^2}{2} } dv</mrow>
+	<mrow>&amp; = \frac{1}{2 \pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{ -\frac{u^2+v^2}{2} } du dv</mrow>
+</md>
+Converting to polar coordinates using 
+<me> du dv = r dr d\theta </me>
+gives
+<md>
+	<mrow>I^2 &amp; = \frac{1}{2 \pi} \int_0^{2 \pi} \int_0^{\infty} e^{ -\frac{r^2}{2} } r dr d\theta</mrow>
+	<mrow> &amp; = \frac{1}{2 \pi} \int_0^{2 \pi} -e^{ -\frac{r^2}{2} } \big |_0^{\infty} d\theta</mrow>
+	<mrow> &amp; = \frac{1}{2 \pi} \int_0^{2 \pi} 1 \cdot d\theta</mrow>
+	<mrow> &amp; = \frac{1}{2 \pi} \theta \big |_0^{2 \pi} = 1</mrow>
+</md>
+as desired.
+</p>
+	</proof>
 	</theorem>
+	
+	
+	
+	
 	
 	<theorem><title>Verifying the normal probability mean</title>
 	<statement>
 		<p>
-		<me>\int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} = \mu</me>
+		<me>E[X] = \int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \mu</me>
 		</p>
 	</statement>
+	<proof>
+	<p>
+<md>
+	<mrow>E[X] &amp;= \int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx </mrow>
+	<mrow> &amp;= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} (\mu + z\sigma) \cdot e^{ -z^2 / 2} dz</mrow>
+	<mrow> &amp;= \mu \cdot \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} e^{ -z^2 / 2} dz + \sigma \cdot \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} z \cdot e^{ -z^2 / 2} dz</mrow>
+	<mrow> &amp;= \mu \cdot 1 + \sigma \cdot 0</mrow>
+	<mrow> &amp; = \mu</mrow>
+</md>
+	and therefore the use of <m>\mu</m> is warranted.
+	</p>
+	</proof>
 	</theorem>
+	
+	
+	
+	
 	
 	<theorem><title>Verifying the normal probability variance</title>
 	<statement><p>
-		<me>\int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} = \sigma^2</me>
+		<me>E[(X-\mu)^2] = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \sigma^2</me>
 		</p>
+	<proof>
+	<p>
+	<md>
+		<mrow>E[(X-\mu)^2] &amp; = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx</mrow>
+		<mrow> &amp; = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \sigma^2 z^2 \cdot  e^{ -z^2 / 2} dz</mrow>
+		<mrow> &amp; = \frac{\sigma^2}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} z \cdot z e^{ -z^2 / 2} dz</mrow>
+
+		<mrow> &amp; = \frac{\sigma^2}{\sqrt{2 \pi}} \cdot \big [ -z e^{-z^2 / 2} \big |_{-\infty}^{\infty} + \int_{-\infty}^{\infty}  e^{ -z^2 / 2}  dz \big ]</mrow>
+		<mrow> &amp; = \frac{\sigma^2}{\sqrt{2 \pi}} \cdot \big [ 0 + \sqrt{2 \pi} \big ]</mrow>
+		<mrow> &amp; = \sigma^2 </mrow>
+
+
+	</md>
+	using integration by parts and using the integration in the proof of the mean above.  So, the use of <m>\sigma</m> is warranted.
+	</p>
+	</proof>
+
 	</statement>
+	
+	
 	</theorem>
 
-</section>
-
-<section>	
-	<title>Normal Distribution Theorems</title>
-	<p>
-	Some of the results needed related to using the normal distribution.
-	</p>
-
-	
 </section>
 
 

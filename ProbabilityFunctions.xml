@@ -331,6 +331,26 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 		</proof>
 	</corollary>
 	
+	<theorem><title>F(x) vs f(x), for continuous distributions</title>
+	<statement>
+		<p>If X is a continuous random variable, f the corresponding probability function, and F the associated distribution function, then
+			<me>f(x) = F'(x)</me>
+		</p>
+	</statement>
+	<proof>
+	<p>Assume X is continuous and f and F as above. Notice, by the definition of f, <m>\lim_{x \rightarrow \pm \infty} f(x) = 0</m> since otherwise the integral over the entire space could not be finite.
+	</p>
+	<p>
+	Now, let A(x) be any antiderivative of f(x). Then, by the Fundamental Theorem of Calculus,
+	<md>
+		<mrow>F(x) &amp; = \int_{-\infty}^x f(u) du</mrow>
+		<mrow> &amp; = A(x) - \lim_{u \rightarrow -\infty} A(u)</mrow>
+	</md>
+	Hence, <m>F'(x) = A'(x) - \lim_{u \rightarrow -\infty} A'(u) = f(x)</m> as desired.
+	</p>
+	</proof>
+	</theorem>
+	
 	<subsection><title>HOMEWORK</title>
 	<p>
 	A.  Consider the random variable from the previous section where you flip three coins and measure the number of heads obtained. Determine f(0), f(1), f(2), and f(3) and the corresponding distribution function F(x). These can be expressed in a table format. Generalize your answer to the case when you flip a n coins where n is a fixed natural number.
