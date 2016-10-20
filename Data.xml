@@ -49,15 +49,15 @@
 				<ol>
 				 <li>Range</li>
 				 <li>Variance and Standard Deviation</li>
+				 <li>Interquartile Range</li>
 				 <li>Quantiles</li>
 				 </ol>
 			</li>
 			<li>Measures of Skewness 
 			- indicates the level of symmetry of the data
 				<ol>
-				 <li>Pearson Coefficient</li>
 				 <li>Standard Skewness</li>
-				 <li>Bowley's Measure</li>
+				 <li>Pearson Coefficient</li>
 				</ol>
 			</li>
 			<li>Measures of Kurtosis 
@@ -65,14 +65,6 @@
 				<ol>
 				 <li>Standard Kurtosis</li>
 				 <li>Coefficient of Kurtosis</li>
-				</ol>
-			</li>
-			<li>Measures of Association for Bivariate Data 
-			- indicates the likeliness of functional correlation of the data.
-				<ol>
-				 <li>Pearson Correlation Coefficient</li>
-				 <li>Spearman Rank Correlation Cooeficient</li>
-				 <li>Quantile-Quantile Plots</li>
 				</ol>
 			</li>
 			<li>Detection of Outliers 
@@ -88,19 +80,8 @@
 			- indictes if the data is bell-shaped
 				<ol>
 				 <li>Standard Percentages relative to standard deviations from the mean</li>
-				 <li>Chi-square</li>
-				 <li>Kolmogorov-Smirnov</li>
-				 <li>Lilliefors</li>
-				 <li>Shapiro-Wilk</li>
 				</ol>
 			</li>
-			<li>Tests for Randomness 
-			- indicates whether the data has a non-systematic pattern
-				<ol>
-				 <li>Runs Test</li>
-				 <li>Mean-Square Successive Differences</li> 
-				</ol>
-			</li>	
 		</ul>
 	</li>
 
@@ -214,12 +195,12 @@
 		<me>
 		AM = \frac{x_1 + ... + x_n}{n} = \frac{\sum_{k=1}^n x_k}{n}.
 		</me>
-	If this data comes from sample data then we call it a sample mean and denote this value by <m>\overline{x}</m>. If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by <m>\mu</m>.</p>
+	If this data comes from sample data then we call it a sample mean and denote this value by <m>\overline{x}</m>. If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by <m>\mu</m>.  When presented with raw data, it might be good to generally presume that data comes from a sample and utilize <m>\overline{x}</m>.</p>
 	</definition>
 	
 	<p>
 	To illustrate, consider the previous data set: {2,5,8,10}. The arithmetic mean is given by
-	<me>\frac{2+5+8+10}{4} = \frac{25}{4} = 6.25.</me>
+	<me>\overline{x} = \frac{2+5+8+10}{4} = \frac{25}{4} = 6.25.</me>
 	</p>
 	
 	<p>
@@ -373,7 +354,7 @@ Determine the minimum, maximim, midrange, and mean for this data.
 		<me>\frac{0.6+38.3}{2} = \frac{38.9}{2} = 19.45 \text{million}.</me>
 
 		Note, in this collection of "states" data the District of Columbia is included so that the number of data items is n=51. The mean of this data takes a bit of arithmetic but gives
-		<me>\frac{\sum_{k=1}^{51} y_k }{51} = \frac{316.1}{51} \approx 6.20</me>
+		<me>\overline{x} = \frac{\sum_{k=1}^{51} y_k }{51} = \frac{316.1}{51} \approx 6.20</me>
 		million residents. 
 		</p>
 		<p>
@@ -385,7 +366,6 @@ Determine the minimum, maximim, midrange, and mean for this data.
 </example>
 
 </section>
-
 
 <section>
 <title>Measures of Spread</title>
@@ -409,17 +389,17 @@ For the data set {2, 5, 8, 10}, you have found that <m>Q_1 = 2.75</m> and <m>Q_3
 </p>
 
 <p>
-Average Deviation from the Mean:  Given a data set <m>x_1, x_2, ... , x_n</m> with mean <m>\mu</m> each term deviates from the mean by the value <m>x_k - \mu</m>. So, averaging these gives
+Average Deviation from the Mean (Population):  Given a population data set <m>x_1, x_2, ... , x_n</m> with mean <m>\mu</m> each term deviates from the mean by the value <m>x_k - \mu</m>. So, averaging these gives
 <me> \frac{\sum_{k=1}^n (x_k-\mu)}{n} = \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \mu}{n} = \mu - \mu = 0</me>
 which is always zero for any provided set of data. This cancellation makes this measure not useful. To avoid cancellation, perhaps removing negatives would help.
 </p>
 
-<p>Average Absolute Deviation from the Mean:  
+<p>Average Absolute Deviation from the Mean (Population):  
 <me> \frac{\sum_{k=1}^n \left | x_k-\mu \right |}{n} </me>
 which, although nicely stated, is difficult to deal with algebraically since the absolute values do not simplify well algebraically. To avoid this algebraic roadblock, we can look for another way to nearly accomplish the same goal by squaring and then square rooting. 
 </p>
 
-<p>Average Squared Deviation from the Mean:
+<p>Average Squared Deviation from the Mean (Population):
 <me> \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
 which will always be non-negative but can be easily expanded using algebra. Since this is a mouthful, this measure is generally called the variance. 
 </p>
@@ -428,9 +408,8 @@ which will always be non-negative but can be easily expanded using algebra. Sinc
 Using the average squared deviation from the mean, differences have been squared. Thus all values added are non-negative but very small ones have been made even smaller and larger ones have possibly been made much larger. To undo this scaling issue, one must take a square root to get things back into the right ball park. 
 </p>
 
-<definition><title>Variance and Standard Deviation</title>
-<p>The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>\sigma^2</m>. Therefore
-	<me> \sigma^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
+<p>The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>s^2</m>. Therefore
+	<me>s^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
 </p>
 <p>The standard deviation is the square root of the variance. If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by <m>\sigma</m>. Therefore
 <me> \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.</me>
@@ -445,14 +424,13 @@ Using the average squared deviation from the mean, differences have been squared
 	Therefore, the standard deviation for this data set is given by
 	<me>\sqrt{9.1875} \approx 3.031.</me>
 </md>
- </p>
+</p>
 
 <p>
 If data comes from a sample of the population then we call it a sample variance and denote this value by v. Since sample data tends to reflect certain "biases" then we increase this value slightly by <m>\frac{n}{n-1}</m> to give the sample variance
 <me>s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n-1}.</me>
 and the sample standard deviation similarly as the square root of the sample variance.
 </p>
-</definition>
 
 <theorem><title>Alternate Forms for Variance</title>
 <statement>
@@ -653,13 +631,13 @@ Create a frequency distribution and determine the sample mean and variance.
 
 <section><title>Other Point Measures</title>
 
-<p>Beyond measures of the middle and of spread includes a way you can determine if data is heaped up to one side or the other of the mean. One such measure is the skewness...
+<p>Beyond measures of the middle and of spread includes a way you can determine if data is heaped up to one side or the other of the mean. One such measure is the skewness.
 </p>
 
 <definition><title>Skewness</title>
-<p>The Skewness of <m>x_1, x_2, ..., x_n</m> is given by
-<me> \frac{1}{\sigma^3} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}.</me>
-</p>
+<p>For sample data, the Skewness of <m>x_1, x_2, ..., x_n</m> is given by
+<me> \frac{1}{s^3} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}</me>
+and similarly for population data but using <m>\mu, \sigma</m>.</p>
 </definition>
 
 <p>
@@ -672,7 +650,8 @@ In addition to skewness, data might tend to be clustered around the mean and oft
 
 <definition><title>Kurtosis</title>
 <p>The Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
-<me> \frac{1}{\sigma^4} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}.</me>
+<me> \frac{1}{s^4} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}</me>
+and similarly for population data again using <m>\mu, \sigma</m>.
 </p>
 </definition>
 

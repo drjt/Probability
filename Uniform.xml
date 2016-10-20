@@ -382,6 +382,7 @@ Explain how the following situations can be modeled using a continuous uniform d
 <exercise><title> - Continous Uniform on a different space</title>
 <p>
 Determine an explicit formula for f(x) and the resulting mean and variance for a continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
+
 <solution>
 <p>
 Since you must have 
@@ -396,20 +397,21 @@ f(x)=\left\{\begin{matrix}
 \end{matrix}\right.
 </me>
 For the mean, 
-<md>
-	<mrow>\int_{x \in R} x \frac{1}{12} dx &amp; = \int_{-2}^3 \frac{x}{12} dx + \int_5^6 \frac{x}{12} dx + \int_9^{15} \frac{x}{12} dx</mrow>
-	<mrow> &amp; = \frac{9-4}{24} + \frac{36-25}{24} + \frac{225-81}{24}</mrow>
-	<mrow> &amp; = \frac{5+11+144}{24} = \frac{160}{24} = \frac{20}{3}.</mrow>
-</md>
+	<md>
+		<mrow>\int_{x \in R} x \frac{1}{12} dx &amp; = \int_{-2}^3 \frac{x}{12} dx + \int_5^6 \frac{x}{12} dx + \int_9^{15} \frac{x}{12} dx</mrow>
+		<mrow> &amp; = \frac{9-4}{24} + \frac{36-25}{24} + \frac{225-81}{24}</mrow>
+		<mrow> &amp; = \frac{5+11+144}{24} = \frac{160}{24} = \frac{20}{3}.</mrow>
+	</md>
 For the variance,
-<md>
-	<mrow>\int_{x \in R} x^2 \frac{1}{12} dx - \mu^2 &amp; = \int_{-2}^3 \frac{x^2}{12} dx + \int_5^6 \frac{x^2}{12} dx + \int_9^{15} \frac{x^2}{12} dx - \mu^2</mrow>
-	<mrow> &amp; = \frac{81+8}{36} + \frac{216-125}{36} + \frac{3375-729}{36} - \big ( \frac{20}{3} \big )^2</mrow>
-	<mrow> &amp; = \frac{89+91+2646}{36} - \frac{400}{9} = \frac{2826-1600}{36} </mrow>
-	<mrow> &amp; = \frac{1226}{36} \approx	34.055.</mrow>
-</md>
+	<md>
+		<mrow>\int_{x \in R} x^2 \frac{1}{12} dx - \mu^2 &amp; = \int_{-2}^3 \frac{x^2}{12} dx + \int_5^6 \frac{x^2}{12} dx + \int_9^{15} \frac{x^2}{12} dx - \mu^2</mrow>
+		<mrow> &amp; = \frac{81+8}{36} + \frac{216-125}{36} + \frac{3375-729}{36} - \big ( \frac{20}{3} \big )^2</mrow>
+		<mrow> &amp; = \frac{89+91+2646}{36} - \frac{400}{9} = \frac{2826-1600}{36} </mrow>
+		<mrow> &amp; = \frac{1226}{36} \approx	34.055.</mrow>
+	</md>
 </p>
 </solution>
+
 </p>
 
 </exercise>

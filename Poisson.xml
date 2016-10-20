@@ -420,6 +420,66 @@ A local realty office sells on average 10 houses a week.  Let X measure the numb
 </p>
 </exercise>
 
+<exercise><title> - Customer arrivals - Total</title>
+<p>
+Customers arrive at your store on the average of 10 per hour.  Assuming that the arrival of customers satisfies the properties of a Poisson process, determine:
+<ol>
+	<li>the expected number of customers to arrive in a given 3 hour period.</li>
+	<li>the probability that fewer than 10 customers arrive in a given hour.</li>
+</ol>
+<solution>
+<p>
+Using the given information, apply the Poisson distribution.  For one hour <m>\mu = 10</m> so that for three hours the expected number of customers would be triple with 30 expected customers.
+</p>
+<p>
+With <m>\mu_1 = 10</m>, 
+<md>
+	<mrow>P(X \lt 10) &amp; = F(9)</mrow>
+	<mrow> &amp; = \frac{10^0 e^{-10}}{0!} + \frac{10^1 e^{-10}}{1!} + \frac{10^2 e^{-10}}{2!} + ... + \frac{10^8 e^{-10}}{8!} + \frac{10^9 e^{-10}}{9!}</mrow>
+	<mrow>&amp; = e^{-10} \cdot ( 1 + 10 + \frac{100}{2} + ... + \frac{10^8}{8!} + \frac{10^9}{9!} )</mrow>
+</md>
+</p>
+</solution>
+</p>
+</exercise>
+
+<exercise><title> - Customer arrivals - First</title>
+<p>
+Customers arrive at your store on the average of 10 per hour.  Assuming that the arrival of customers satisfies the properties of a Poisson process, determine:
+<ol>
+	<li>the number of minutes expected between the arrival of each customer</li>
+	<li>the probability it takes more than 9 minutes before the next customer arrives.</li>
+</ol>
+<solution>
+<p>
+Using the given information, apply the exponential distribution.  Since 10 arrive on average in one hour then you would expect 1 to arrive in 6 minutes.
+</p>
+<p>
+With <m>\mu = 6</m> minutes, 
+<me>P(X \gt 9) = 1 - F(9) = e^{-9/6}.</me>
+</p>
+</solution>
+</p>
+</exercise>
+
+<exercise><title> - Customer arrivals - 10th</title>
+<p>
+Customers arrive at your store on the average of 10 per hour.  Assuming that the arrival of customers satisfies the properties of a Poisson process, determine:
+<ol>
+	<li>the number of minutes expected for the arrival of three customers.</li>
+	<li>the probability it takes less than 20 minutes before the third customer arrives.</li>
+</ol>
+<solution>
+<p>
+Using the given information, apply the gamma distribution.  Since 10 arrive on average in one hour then you would expect 1 to arrive in 6 minutes and therefore 3 to arrive on average in 18 minutes.
+</p>
+<p>
+With <m>\mu = 18</m> minutes, 
+<me>P(X \lt 20) = F(20).</me>
+</p>
+</solution>
+</p>
+</exercise>
 
 <exercise><title> - Computer Network Data Traffic</title>
 <p>

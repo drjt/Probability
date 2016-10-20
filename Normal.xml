@@ -72,7 +72,10 @@ If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal dis
 </section>
 
 <section>	
-	<title>Theorems</title>
+	<title>Normal Distribution Theorems</title>
+	<p>
+	Some of the results needed related to using the normal distribution.
+	</p>
 
 	
 </section>
@@ -80,6 +83,9 @@ If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal dis
 
 <section>	
 	<title>Chi-Square Distribution</title>
+	<p>
+	Development of the Chi-Square distribution and it's application.
+	</p>
 
 	
 </section>
@@ -272,18 +278,15 @@ def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),
 </sage>
 
 
-	<subsection>
 	<p>
 	Theorem
 	</p>
-	</subsection>
-	
-	<subsection>
+
 	<p>
 	Approximating distributions
 	Limiting distributions
 	</p>
-	</subsection>
+
 </section>
 
 
