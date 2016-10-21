@@ -8,23 +8,30 @@
 <!-- See the file COPYING for copying conditions.             -->
 
 <chapter xml:id="RepresentingData" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Representing Data</title>
+    <title>Statistical Measures</title>
 
+
+<section><title>Introduction</title>
+<p>
+To compute your final grade in a class your teacher will first make several assignments and examinations for you to take. These assessments ultimately will be assigned some numerical score indicating your level of success. However, you final grade can only be one value and it would make sense that the grade be a reflection of your work on these tasks. But, it can only be a single value that represents the totality of your work in the course. 
+</p>
+<p>
+In this chapter, you will consider a number of ways to use point values to represent different aspects of a provided set of data. In doing so, you will also need to take into account whether that data set is the entire list of possibilities--known as the population--or just a subset of that population perhaps obtained by taking repeated measurements from that population--that is, a sample. Each of these values will be called a "statistical measure".
+</p>
+</section>
 <section>	
 	<title>Measurement Scales</title>
-
+	<p>In creating statistical measures, you might want to consider one of the following general types.
 	<ul>
-		<li>Nominal - Mutually Exclusive and Exhaustive categories for which the numerical value has only identification
-		significance. Ex: Male = 1, Female = -1</li>
-		<li>Ordinal - Discrete values ranked from lowest to highest or vice versa. Ex: Class grades for GPA.</li>
-		<li>Interval - Ordinal data where distance between data values is of significance. Ex: Heights and Weights.</li>
-		<li>Ratio - Interval data where ratios of observations have meaning. Ex: Percentile rankings</li>
+		<li>Nominal measures - In this case, data falls into mutually exclusive and exhaustive categories for which the numerical value is only used for identification purposes. For example, assigning Male = 1, Female = -1.</li>
+		<li>Ordinal measures - In this case, data consists of discrete numerical values which can be ranked from lowest to highest or vice versa. For example, your grades in a class grades which are used to compute your GPA.</li>
+		<li>Interval measures - In this case, data possesses an order and where the distance between data values is of significance. For example, heights and weights.</li>
+		<li>Ratio measures - In this case, data can be expressed as a position in some interval and where ratios between observations have meaning. For example, percentile rankings</li>
 	</ul>
-</section>
-
-	
-<section>
-<title>Techniques for Representing Data</title>
+	In the subsequent sections of this chapter, you will see that a number of different measures are available for most data sets. Determining which "correct" measure to use for describing any given data set will depend the actual situation surrounding the collection of the data.
+	</p>
+<p>
+The following categorizes several statistical measures which will be developed in this chapter. Details on each are provided in subsequent sections.
 <ul>
 	<li>Tabular Methods - 
 	based on the entire population yielding a global picture
@@ -86,12 +93,16 @@
 	</li>
 
 </ul>
+</p>
 <p>Remark: Many of these measures above are relative and some are absolute.</p>
 	
 </section>
 
+
+
+
 <section>
-<title>Measures of Position</title>
+<title>Statistical Measures of Position</title>
 	<p>Given a collection of data, sorting the data may provide several useful descriptors. These include:
 	</p>
 	<definition>
@@ -185,8 +196,11 @@
 
 </section>
 
+
+
+
 <section>
-<title>Measures of the Middle</title>
+<title>Statistical Measures of the Middle</title>
 
 	<definition><title>Arithmetic Mean</title>
 	<p>Suppose X is a discrete random variable with range 
@@ -367,9 +381,14 @@ Determine the minimum, maximim, midrange, and mean for this data.
 
 </section>
 
-<section>
-<title>Measures of Spread</title>
 
+
+
+
+<section>
+<title>Statistical Measures of Variation</title>
+<p>These measures provide some indication of how much the data set is "spread out".
+</p>
 
 <definition><title>Range:</title>
 <p>Using the order statistics, <me>y_n - y_1.</me>  
@@ -552,7 +571,10 @@ Determine the range, quartiles, and variance for this sample data.
 
 </section>
 
-<section><title>Grouped Data</title>
+
+
+
+<section><title>Adjusting Statistical Measures for Grouped Data</title>
 <p>As you considered the measures of the center and spread before, each data point was considered individually. Often, data may however be grouped into categories and perhaps expressed as a frequency distribution. In this case, rather than considering <m>x_k</m> to be the kth data value can take advantage of the grouping to perhaps save a bit on arithmetic.</p>
 <p>Indeed, let's assume that data is grouped into m categories <m>x_1, x_2, ..., x_m</m> with corresponding frequencies <m>f_1, f_2, ..., f_m</m>. Then, for example, when computing the mean rather than adding <m>x_1</m> with itself <m>f_1</m> times just compute <m>x_1 \times f_1</m> for the first category and continuing through the remaining categories. This gives the following grouped data formula for the mean
 		<me>
@@ -629,7 +651,9 @@ Create a frequency distribution and determine the sample mean and variance.
 
 </section>
 
-<section><title>Other Point Measures</title>
+
+
+<section><title>Other Statistical Point Measures</title>
 
 <p>Beyond measures of the middle and of spread includes a way you can determine if data is heaped up to one side or the other of the mean. One such measure is the skewness.
 </p>
@@ -694,7 +718,9 @@ and then divide by the fourth power of the standard deviation.  Note again that 
 
 </section>
 
-<section><title>Graphical Representation of Data</title>
+
+
+<section><title>Visual Statistical Measures - Graphical Representation of Data</title>
 <p>Data sets can range from small to very large. Visual representations of these data sets often allow you to see trends and reveal a lot about the distribution of the data values.</p>
 
 <p>
@@ -832,6 +858,9 @@ def _(data = input_box([1,2,3,4,6,7,8,9,11,15,21],label="Enter Your Data:")):
 		
 	</subsection>
 </section>
+
+
+
 
 <section><title>Exercises</title>
 <p>Complete the online homework "Computational Measures".</p>
