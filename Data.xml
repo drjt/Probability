@@ -101,48 +101,62 @@ The following categorizes several statistical measures which will be developed i
 
 
 
-<section>
-<title>Statistical Measures of Position</title>
-	<p>Given a collection of data, sorting the data may provide several useful descriptors. These include:
+<section><title>Statistical Measures of Position</title>
+	<p>Given a collection of data, sorting the data may provide several useful descriptors. When sorting data, you can easily use something like a spreadsheet for larger data sets but in this section you will also see there are ways to perform a sort by hand. In either case, statistical measures of position generally involve very little computational work and take into account only the order of the data from lowest to highest.  To assist with notation, we will generally use x-values to represent the original raw data and y-values to represent that same data but now in order with the subscript indicating the positional placement.
 	</p>
+	
+	
 	<definition>
-	<title>Order Statistic:</title>
-	<p>Given the given data set <m>x_1, x_2, ... , x_n</m>, after sorting the data label the sorted data as <m>y_1, y_2, ..., y_n</m> where  
+	<title>Order Statistic</title>
+	<p>From the data set <m>x_1, x_2, ... , x_n</m>, label the sorted data as <m>y_1, y_2, ..., y_n</m> where  
 	<me> y_1 \le y_2 \le ... \le y_n.</me> 
-	Then, the kth order statistic is given by <m>y_k</m>. </p>
+	Define <m>y_k</m> as the kth order statistic. </p>
 	</definition>
 	
+	<example><title>Age of Presidents - order statistics</title>
 	<p>
 	For example, the age at inauguration for presidents from 1981-2016 gives the data <m>x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47</m> (Reagan, Bush, Clinton, Bush, Obama). For this data, the order statistics are denoted <m>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69</m>.
 	</p>
+	</example>
 	
+	<p>
+	Once the data is sorted, it should be very easy for you to locate the smallest and largest values. 
+	</p>
 	<definition><title>Minimum/Maximum:</title>  
 	<p>The smallest and largest values in the data set. Using the notation above, minimum = <m>y_1</m> and the maximum = <m>y_n</m></p>
 	</definition>
 	
+	<example><title>Age of Presidents - Minimum/Maximum</title>
 	<p>
 	Using the Presidential ages above, minimum = <m>y_1 = 46</m> and maximum = <m>y_5 = 69</m>.
 	</p>
+	</example>
 
-	<definition><title>Percentiles:</title>
+	<p>
+	Below, you will see how to determine a value which separates the ordered data into two groups with a desired percentage on each side. Note that many utilize approximate methods for computing "percentiles" including many graphing and scientific calculators. The definition below provides for a unique measure for each unique value of p.
+	</p>
+	
+	<definition><title>Percentiles</title>
 	<p>A percentile is a numerical value <m>P^p</m> at which approximately 100p% of the given data is smaller.</p>
+	<p>To compute the percentile value with <m>0 \lt p \lt 1</m> for order statistics <m>y_1, y_2, ..., y_n</m> use the formula 
+		<me>P^{p} = (1-r)y_m + ry_{m+1}</me>
+	where m is the integer part of (n+1)p, namely 
+		<me>m = \left\lfloor (n+1)p \right\rfloor</me> 
+	and 
+		<me>r = (n+1)p - m,</me>
+	
+	the fractional part of (n+1)p. 
+	</p>
 	</definition> 
 	
+<p>The formula for percentiles determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be averages of equal numbers and will then be the common value.</p>
+	
+	<example><title>Small Example - Quartiles</title>
 	<p>
-	To motivate your understanding of percentiles, consider the following data set: {2,5,8,10}. The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
+Consider the following data set: {2,5,8,10}. The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
 	</p>
 
-	<p>To compute the percentile value exactly consider a percentage in the form 100p, for <m>0 \lt p \lt 1</m>, and the order statistics <m>y_1, y_2, ..., y_n</m>. Then, the 100pth percentile is given by <me>P^{p} = (1-r)y_m + ry_{m+1}</me>
-	where m is the integer part of (n+1)p, namely <me>m = \left\lfloor (n+1)p \right\rfloor
-	</me> 
-	and 
-	<me>r = (n+1)p - m,</me>
-	the fractional part of (n+1)p.  This determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be of equal numbers and will then be the common value.</p>
-
-
-	<example>
-	<title>Basic Percentiles</title>
-		<p>Using the data set {2,5,8,10} with n=4 values, the 25th percentile is computed by considering 
+		<p>More precisely	, the 25th percentile is computed by considering 
 		<me>(n+1)p = (4+1)0.25 = 5/4 = 1.25</me>.  
 		So, m = 1 and r = 0.25. Therefore 
 		<me>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</me> 
@@ -165,9 +179,10 @@ The following categorizes several statistical measures which will be developed i
 		</p>
 	</example>
 
+	<p>Some special percentiles are provided special names...
+	</p>
 
-
-	<definition><title>Quartiles:</title> 
+	<definition><title>Quartiles</title> 
 	<p>Given a sorted data set, the first, second, and third quartiles are the values of 
 	<m>Q_1 = P^{0.25}, Q_2 = P^{0.5}</m> and <m>Q_3 = P^{0.75}</m>.
 	</p>
@@ -184,14 +199,20 @@ The following categorizes several statistical measures which will be developed i
 	<m>Q_1 = 2.75, Q_2 = 6.5,</m> and <m>Q_3 = 9.5</m>.
 	</p>
 
+	<p>
+	For a given data set, a summary of these statistics is often desired in order to give the user a quick overview of the more important order statistics.
+	</p>
+
 	<definition><title>5-number summary</title>
 	<p>Given a set of data, the 5-number summary is a vector of the order statistics given by <m>\lt</m> minimum, <m>Q_1</m>, <m>Q_2</m>, <m>Q_3</m>, maximum <m>\gt</m>. 
 	</p>
 	</definition>
 	
+	<example><title>Small example - 5 number summary</title>
 	<p>Returning to our previous example, the five number summary would be
 	<m>\lt 2, 2.75, 6.5, 9.5, 10 \gt</m>
 	</p>
+	</example>
 
 
 </section>
@@ -228,45 +249,6 @@ The following categorizes several statistical measures which will be developed i
 		</me>
 	</p>
 
-<p>
-Other Means:
-</p>
-
-<definition><title>Geometric Mean</title>
-<p>
-	<me>GM = (x_1 x_2 ... x_n)^{1/n}</me>
-</p>
-</definition>
-
-	<p>
-	Again, consider {2,5,8,10}. The geometric mean is given by
-	<me>(2 \times 5 \times 8 \times 10)^{1/4} = 800^{1/4} \approx = 5.318</me>
-	</p>
-
-
-<definition><title>Harmonic Mean</title>
-<p>
-	<me>\frac{1}{HM} = \frac{1}{n} \sum_{k=1}^n \frac{1}{x_k}</me>
-</p>
-where HM is the reciprocal of this expression.
-</definition>
-
-	<p>
-	Once again, consider {2,5,8,10}. The harmonic mean is given by first computing
-	<me>\frac{1}{4} (\frac{1}{2} + \frac{1}{5} + \frac{1}{8} + \frac{1}{10}) = 800^{1/4} \approx = 0.23125</me>
-	and so HM = <m>\frac{1}{0.23125} \ approx 4.32</m>
-	</p>
-
-
-<theorem>
-<title>Relative sizes of Means</title>
-	<statement> <m>HM \le GM \le AM</m>. </statement>
-</theorem>
-
-<theorem>
-<title>Mean Formula</title>
-	<statement><m>AM×HM=GM^2</m></statement>
-</theorem>
 
 <definition><title>Median:</title>
 <p>A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.</p>
@@ -274,9 +256,9 @@ where HM is the reciprocal of this expression.
 
 <p>
 For data sets with an odd number of values, this is the "middle" data value if one were to successively cross off pairs from the two ends of the sorted date. For data sets with an even number of values, this is a average of the two data values left after crossing off these pairs.  Using the order statistics, the median equals
-<me>y_{\frac{n+1}{2}}</me>
+	<me>y_{\frac{n+1}{2}}</me>
 if n is odd and
-<me>\frac{y_\frac{n}{2} + y_{\frac{n}{2}+1}}{2}</me>
+	<me>\frac{y_\frac{n}{2} + y_{\frac{n}{2}+1}}{2}</me>
 if n is even.
 </p>
 
@@ -285,7 +267,7 @@ if n is even.
 
 <definition><title>Midrange:</title>
 <p>A mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
-<me>\frac{y_1+y_n}{2}</me>
+	<me>\frac{y_1+y_n}{2}</me>
 </p>
 </definition>
 

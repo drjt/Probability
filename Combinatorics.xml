@@ -105,6 +105,7 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		<md>
 			<mrow>n! = n(n-1)(n-2) ... 3 \cdot 2 \cdot 1</mrow>
 		</md>
+		and by convention set 0! = 1.
 		</p>
 		</statement>
 	</definition>
@@ -187,11 +188,13 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 	
 </section>
 
+
+
 <section>
 <title>Permutations</title>
 <p>When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.</p>
 	<theorem>
-	<title>Permutations of n objects</title>
+	<title>Permutations of everything</title>
 	<statement>The number of ways to arrange n distinct items is n!</statement>
 		<proof>
 			<p>Notice that if n=1, then there is only 1 item to arrange and 
@@ -208,11 +211,12 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 	</theorem>
 
 	<theorem>
-	<title>Permutations of n objects selecting a subset of size r without replacement</title>
+	<title>Permutations of a subset without replacement</title>
 		<statement>
 			<p> 
 			The number of ways to arrange r items from a set of n distinct items 
-			is <m> P_r^n = \frac{n!}{(n-r)!} </m>
+			is 
+			<me> P_r^n = \frac{n!}{(n-r)!} </me>
 			</p>
 		</statement>
 		<proof>
@@ -230,9 +234,12 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		</proof>
 	</theorem>
 	
+	
+	
 	<theorem>
-	<title>Permutations of n objects selecting r times with replacement</title>
-		<statement>The number of ways to obtain an arrangement of r choices from a group of size n is <m>n^r</m>
+	<title>Permutations of a subset with replacement</title>
+		<statement>The number of ways to obtain an arrangement of r choices from a group of size n is 
+		<me>n^r</me>
 		</statement>
 		<proof>
 			<p>
@@ -242,8 +249,10 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		</proof>
 	</theorem>
 	
+	
+	
 	<theorem>
-	<title>Permutations when not all items are distinguishable and without replacement: (Multinomial Coefficients)</title>
+	<title>Permutations when not all items are distinguishable (Multinomial Coefficients)</title>
 	<statement>
 If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ... , <m>n_s</m> in the last, the number of ways to pick all is
 		<me>\frac{n!}{n_1! \cdot n_2! ... n_2!}</me>	
@@ -252,16 +261,19 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 	
 </section>
 
+
+
 <section>
 <title>Combinations</title>
 <p>When counting various outcomes sometimes the order of things does not matter.
 In this case we count each different set of outcomes a combination. </p>
 	<theorem>
-	<title>Combinations of n distinct objects selecting r without replacement</title>
+	<title>Combinations of a subset without replacement</title>
 		<statement>
 			<p>
 			The number of ways to arrange r items from a set of n distinct items 
-			is <m> C_r^n = \frac{n!}{r!(n-r)!} </m>
+			is 
+			<me> C_r^n = \frac{n!}{r!(n-r)!} </me>
 			</p>
 		</statement>
 		<proof>
@@ -278,12 +290,14 @@ In this case we count each different set of outcomes a combination. </p>
 		</proof>
 	</theorem>
 
+
 	<theorem>
-	<title>Combinations of n distinct objects selecting r with replacement</title>
+	<title>Combinations of a subset with replacement</title>
 		<statement>
 			<p>
 			The number of ways to arrange r items from a set of n distinct items 
-			is <m> C_r^{n+r-1} = \frac{(r+n-1)!}{r!(n-1)!} </m>
+			is 
+			<me> C_r^{n+r-1} = \frac{(r+n-1)!}{r!(n-1)!} </me>
 			</p>
 		</statement>
 		<proof>
@@ -294,7 +308,8 @@ In this case we count each different set of outcomes a combination. </p>
 		</proof>
 	</theorem>
 
-	<example>
+
+	<example><title>Ipad Security</title>
 		<p>Revisiting your ipad's security, what happens if the order in which the digits are entered does not matter? If so, then you would be picking a combination of 4 digits without replacement from a group of 10 digits. Namely, 
 		<md>
 			<mrow>\frac{10!}{4!6!} &amp; = \frac{10 \times 9 \times 8 \times 7 \times 6!}{4 \times 3 \times 2 \times 1 \times 6!}</mrow>
@@ -313,6 +328,8 @@ In this case we count each different set of outcomes a combination. </p>
 		which once again is more since numbers are allowed to repeat.
 		</p>
 	</example>
+	
+	
 		
 	<definition>
 	<title>Binomial Coefficients</title>
@@ -324,16 +341,42 @@ In this case we count each different set of outcomes a combination. </p>
 		</statement>
 	</definition>
 	
-
-	<theorem>
-	<title>Combinations when distinguishable and with replacement</title>
-	<statement>
-	= Number of ways to get unordered samples of size r from n objects. 
-	</statement>
-	</theorem>
 	
-	<p>Lots of interesting facts about the binomial coefficients.</p>
+	<p>Binomial coefficients have a number of interesting properties.  Many of these are very useful as well in probability calculations.  Several of these properties are collected below. In particular, these relationships verify that the binomial coefficients are the values found in Pascal's Triangle.</p>
 
+	<theorem><title> Binomial Coefficient Formulas</title>
+	<statement><p> For <m> n \in \mathbb{N}</m>,
+	<ol>
+		<li><m>\binom{n}{0} = 1</m></li>
+		<li><m>\binom{n}{n} = 1</m></li>
+		<li><m>\binom{n}{1} = n</m></li>
+		<li><m>\binom{n}{n-1} = n</m></li>
+		<li><m>\binom{n}{r} = \binom{n}{n-r}</m></li>
+		<li><m>\binom{n+1}{r+1} = \binom{n}{r} + \binom{n}{r+1}</m></li>
+	</ol>
+	</p>
+	</statement>
+	<proof>
+	<p>
+	<ol>
+		<li><m>\binom{n}{0} = \frac{n}{0!(n-0)!} = 1</m></li>
+		<li><m>\binom{n}{n} = \frac{n}{n!(n-n)!} = 1</m></li>
+		<li><m>\binom{n}{1} = \frac{n}{1!(n-1)!} = n</m></li>
+		<li><m>\binom{n}{n-1} = \frac{n}{(n-1)!(n-(n-1))!} = n</m></li>
+		<li><m>\binom{n}{r} = \frac{n}{r!(n-r)!} = \frac{n!}{(n-r)!(n-(n-r))!} = \binom{n}{n-r}</m></li>
+		<li>
+		<md>
+			<mrow>\binom{n}{r} + \binom{n}{r+1} &amp; = \frac{n!}{r!(n-r)!} + \frac{n!}{(r+1)!(n-(r+1))!}</mrow>
+			<mrow> &amp; = (r+1) \frac{n!}{(r+1)!(n-r)!} + (n-r) \frac{n!}{(r+1)!(n-r))!}</mrow>
+			<mrow> &amp; = \frac{(r+1) n! + (n-r)n!}{(r+1)!(n-r)!}</mrow>
+			<mrow> &amp; = \frac{(n+1) n!}{(r+1)!((n+1)-(r+1))!}</mrow>
+			<mrow> &amp; = \binom{n+1}{r+1}</mrow>
+		</md>
+		</li>
+	</ol>
+	</p>
+	</proof>
+	</theorem>
 
 </section>
 

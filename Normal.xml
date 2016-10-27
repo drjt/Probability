@@ -134,13 +134,61 @@ as desired.
 </section>
 
 
-<section>	
-	<title>Chi-Square Distribution</title>
-	<p>
-	Development of the Chi-Square distribution and it's application.
-	</p>
+<section><title>Normal Distirbution as a Limiting Distribution</title>
+<p>Over the past several chapters you should have noticed that many distributions have skewness and kurtosis formulae which have limiting values of 0 and 3 respectively. This means that each of those distributions which can be approximated by the normal distribution for "large" parameter values. Let's look at each of these and note the similarities.
+</p>
+<p>When converting probability problems from continuous (such as exponential or uniform) then no adjustment to the question is needed since you are approximating one area with another area. However, when converting probability problems from discrete (such as binomial or geometric) then you need to consider how the interval would need to be adjusted so that histogram areas for the discrete problem would relate to areas under the normal curve. Generally, you will need to expand the stated interval each way by 1/2.
+</p>
 
-	
+<example><title>Binomial as Normal</title>
+<p>Binomial becomes normal as <m> n \rightarrow \infty</m>.  Consider n = 50 and p = 0.3.  Then, <m>\mu = 15</m> and <m>\sigma^2 = 10.5</m>.   
+</p>
+<p>Using the binomial formulas, 
+<me>P( X = 16 ) = \binom{50}{15} 0.3^16 \cdot 0.7^34 \approx 0.11470</me>
+Using the normal distribution,
+<md>
+	<mrow>P( X = 16 ) &amp; = P( 15.5 \lt X \lt 16.5) </mrow>
+	<mrow> &amp; \approx normalcdf(15.5,16.5,15,sqrt(10.5)) </mrow>
+	<mrow> &amp; = 0.11697</mrow>
+</md>
+Notice that these are very close.
+</p>
+</example>
+
+<example><title>Poisson as Normal</title>
+<p>Poisson becomes normal as <m> \mu \rightarrow \infty</m>.  Consider <m>\mu = 20</m>.  Then, <m>\sigma^2 = \mu = 20</m>.   
+</p>
+<p>Using the Poisson formulas, 
+<me>P( X = 19 ) = \frac{20^19 e^{-20}}{19!} \approx 0.08883</me>
+Using the normal distribution,
+<md>
+	<mrow>P( X = 19 ) &amp; = P( 18.5 \lt X \lt 19.5) </mrow>
+	<mrow> &amp; \approx normalcdf(18.5,19.5,20,sqrt(20)) </mrow>
+	<mrow> &amp; = 0.08683</mrow>
+</md>
+Again, these are very close.
+</p>
+</example>
+
+
+<example><title>Gamma as Normal</title>
+<p>Gamma becomes normal as <m> r \rightarrow \infty</m>.  Assume that the average time till a first success is 12 minutes and that <m>r = 8</m>.  Then, the mean for the Gamma distribution is <m>\mu = 12 \cdot 8 = 96</m> and <m>\sigma^2 = 8 \cdot 12^2 = 1152</m> and so <m>\sigma \approx 33.9411</m>.   
+</p>
+<p>Using the Gamma formulas, 
+<md>
+	<mrow>P( 90 \le X \le 100 ) &amp; = \int_{90}^{100} f(x) dx </mrow>
+	<mrow> &amp; = 0.59252 - 0.47536 = 0.11716.</mrow>
+</md>
+Using the normal distribution,
+<me>P( 90 \le X \le 100) =  \approx normalcdf(90,100,96,33.9411) = 0.11707.</me>
+Amazingly these are also very close.
+</p>
+</example>
+
+<p>
+As these examples illustrate, you will have increasing success in approximating the desired probabilities so long as the distribution's corresponding parameter is allowed to be "sufficiently large". The mathematical reason this is true is nailed down in the next section through what is known as the central limit theorem.
+</p>
+
 </section>
 
 
@@ -330,16 +378,43 @@ def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),
 	</input>
 </sage>
 
+<p>These results illustrate what can be described more mathematically through the following theorem. It is presented here without proof.
+</p>
 
+<theorem><title>Central Limit Theorem</title>
+	<statement>
+	Presume X is a random variable from a distribution with known mean <m>\mu</m> and known variance <m>\sigma^2</m>.  
+	For some natural number n, sample the distribution repeatedly creating a string of random variables denoted <m>X_1, X_2, ... , X_n</m>.  Set <m>\overline{X} = \frac{\sum X_k}{n}</m>.  
+	Then, <m>\overline{X}</m> is approximately normally distributed with mean <m>\mu</m> and variance <m>\sigma_{\overline{X}}^2 = \frac{\sigma^2}{n}</m>.
+	</statement>
+</theorem>
+	
+	
+	
+<example><title>X vs <m>\overline{X}</m></title>
+<p>Consider an exponential variable X with mean time till first success of <m>\mu = 4</m>.  Then, <m>\sigma = 2</m> using the exponential formulas.
+</p>
+<p>You can use the exponential probability function to compute probabilities dealing with X. Indeed,
+<me>P(X \lt 3.9) = F(3.9) = 1 - e^{-3.9/4} \approx 0.6228 .</me>
+</p>
+<p>
+If instead you plan to sample from this distribution n=32 times, the Central Limit Theorem implies that you will get a random variable <m>\overline{X}</m> which has an approximate normal distribution with the same mean but with new variance <m>\sigma_{\overline{X}}^2 = \frac{4}{32} = \frac{1}{8}</m>.  Therefore
+<me>P( \overline{X} \lt 3.9 ) \approx normalcdf(0,3.9,4,sqrt(1/8)) = 0.2119 .</me>
+</p>
+</example>
+
+
+
+</section>
+
+
+<section>	
+	<title>Chi-Square Distribution</title>
 	<p>
-	Theorem
+	Development of the Chi-Square distribution and it's application.
 	</p>
 
-	<p>
-	Approximating distributions
-	Limiting distributions
-	</p>
-
+	
 </section>
 
 

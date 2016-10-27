@@ -10,9 +10,13 @@
 <chapter xml:id="ProbabilityFunctions" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Probability Functions</title>
 
-<introduction>
-	<p>This chapter is a definitions general probability functions.</p>
-</introduction>
+<section><title>Introduction</title>
+	<p>Each of the probability exercises thus far required you to utilize basic definitions and theorems to determine the answer. Starting a new problem meant starting over from scratch. This is burdensome.  However, you may have noticed that some of the ways you might have created solutions for some problems ending up looking very similar to the solutions for others. In this chapter, you will consider the framework needed for creating general solution techniques. These techniques will give a number of "distributions" which are general ways to solve a particular type of problem.
+	</p>
+	<p>
+	Toward that end, in this chapter you will see how to create a random variable which takes items in the sample space and assigns corresponding numerical values. From that, you will see how to create "Probability Functions" on that variable that provide the desired probability by simple function evaluation. General properties these functions possess will also be developed.
+	</p>
+</section>
 
 
 <section><title>Random Variables</title>

@@ -403,6 +403,22 @@ def _(r=[2,3,6,9,alpha]):
 	</input>
 </sage>
 </p>
+<p>Finally, the interactive cell below can be used to compute the distribution function for the gamma distribution for various input values. If you desire to let r get bigger than the slider allows, feel free to edit the cell above and evaluate again.
+
+<sage>
+	<input>
+# Gamma Distribution Calculator
+var('x,mu,r')
+pretty_print('Enter the number of successes desired, the given mean, and the value of X to get F(X)')
+@interact
+def _(r=slider(1,10,1,2),mu = input_box(2,label="$\mu = $",width=10),b=input_box(2,label="X = ",width=10)):
+    f(x) =x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
+    p = integral(f,x,0,b)
+    
+    pretty_print('Probability = \t',p,' which is approximately \t',p.n(digits=5))
+	</input>
+</sage>
+</p>
 </section>
 
 <section><title>Exercises</title>

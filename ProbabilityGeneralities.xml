@@ -10,18 +10,17 @@
 <chapter xml:id="ProbabilityGeneralities" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Probability Theory</title>
 
-<introduction>
+<section><title>Introduction</title>
 	<p>This chapter uses relative frequency to motivate the definition of probability and then delves into the resulting consequences.</p>
-</introduction>
+	<p>Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
+	<p>People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p>
+</section>
 
 
 <section xml:id="RelativeFrequency"><title>Relative Frequency</title>
-	<introduction>
-	<p>Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
-	<p>People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p>
-	</introduction>
 
-	<p>When attempting to precisely measure this uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
+
+	<p>When attempting to precisely measure uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
 	<ul>
 		<li>S = Universal Set or Sample Space Experiment or Outcome Space. 
 		This is the collection of all possible outcomes.</li>
@@ -179,21 +178,18 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 		</p>
 	</introduction>
 	<subsection xml:id="ProbabilityDefns"><title>Motivating the Definition</title>
-		<p>Using the ideas from our examples above, let's consider how we might formally define a way
+		<p>Using the ideas from our examples above, consider how you might formally define a way
 		to measure the expectation from similar experiments.  Before doing so, we need a little notation:</p>
 
-			<definition>
-			<statement>The Cardinality of the set A is the number of elements in A. This will be denoted |A| (similar
-			to the idea of frequency of an outcome noted earlier.) If a set has
-			a infinite number of elements, then we will say it's cardinality is also infinite and 
-			write |A| = <m>\infty</m></statement>
-			</definition>
-	
-			<definition><title>Pairwise Disjoint Sets</title>
-			<statement>
-			<m> \{ A_1, A_2, ... , A_n \}</m> are pairwise disjoint provided <m>A_k \cap A_j = \emptyset</m> so long as <m>k \ne j</m>.
-			</statement>
-			</definition>
+
+		<definition><title>Pairwise Disjoint Sets</title>
+		<statement>
+		<p>
+		<m> \{ A_1, A_2, ... , A_n \}</m> are pairwise disjoint provided <m>A_k \cap A_j = \emptyset</m> so long as <m>k \ne j</m>.
+		Disjoint sets as also often called mutually exclusive.
+		</p>
+		</statement>
+		</definition>
 		
 	
 		<p>
