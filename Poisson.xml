@@ -293,9 +293,9 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 
 
 <section><title>Gamma Distribution</title>
-	<p>
+<p>
 Extending the exponential distribution model developed above, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain the rth success for some natural number r. Then <m>R = (0,\infty)</m> and the resulting distribution of X will be called a Gamma distribution.
-
+</p>
 
 <definition><title>Gamma Function</title>
 <statement>
@@ -322,6 +322,8 @@ Continuing using an inductive argument to obtain the final result.
 </proof>
 </theorem>
 
+
+
 <p>To find the probability function for the gamma distribution, once again focus on the development of F(x). Assuming r is a natural number greater than 1 and noting that X measures the interval length needed in order to achieve the rth success
 <md>
 	<mrow>F(x) &amp; = P(X \le x)</mrow>
@@ -343,19 +345,43 @@ where the discrete Poisson probability function is used on the interval [0,x]. T
 where you can replace <m>(r-1)! = \Gamma(r)</m>.
 </p>
 
-<theorem><title>Mean</title>
-<statement>
+
 <p>
-For this random variable, <m>E[X] = \mu</m> and so the use of <m>\mu</m> means the mean is the only parameter needed.
+Notice that for this random variable, <m>\mu = \lambda T</m> can be obtained for the exponential distribution. For the Gamma distribution, the following takes <m>\mu</m> to be the average interval till the first success and then modifies the corresponding Gamma parameters according to increasing values of r.
 </p>
+
+<p>
+<definition><title>Gamma Distribution Probability Function</title>
+<statement>If X measures the interval until the rth success and <m>\mu as the average interval until the 1st success</m>, then X with probability function
+<me>f(x) =  \frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}</me>
+has a Gamma Distribution.
 </statement>
+</definition>
+
+<theorem><title>Verify Gamma Probability function</title>
+<statement>
+<me>\int_0^{\infty} \frac{x^{r-1} e^{-x/ \mu}}{\Gamma(r) \mu^r} dx = 1</me>
+</statement>
+<proof><p>
+Evaluate the sage code below.
+</p>
+</proof>
 </theorem>
 
-<theorem><title>Gamma Distribution Probability Function</title>
-<statement>If X measures the interval until the rth success, then
-<me>f(x) =  \frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}</me>
-</statement>
-</theorem>
+<sage>
+	<input>
+# Gamma Distribution
+var('x,mu,r')
+assume(mu>0)
+assume(r,'integer')
+assume(r>1)
+f(x) =x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
+S = integral(f,x,0,oo).full_simplify()
+F = '$ \int_0^{\infty} \\frac{x^{r-1} e^{-x/ \mu}}{\Gamma(r) \mu^r} dx = %s$'%str(S)
+html(F) 
+	</input>
+</sage>
+
 
 <sage>
 <input>
@@ -403,6 +429,8 @@ def _(r=[2,3,6,9,alpha]):
 	</input>
 </sage>
 </p>
+
+
 <p>Finally, the interactive cell below can be used to compute the distribution function for the gamma distribution for various input values. If you desire to let r get bigger than the slider allows, feel free to edit the cell above and evaluate again.
 
 <sage>

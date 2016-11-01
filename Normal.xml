@@ -18,7 +18,7 @@ You should have noticed by now that many distributions tend to have a bell-shape
 The answer by appealing to mathematics reveals that nothing sinister is going on but that it is indeed true that the eventual destiny for distributions is one that is bell-shaped. It is therefore of interest to figure out if that distribution has a nice form that can be accessed directly. The focus of this chapter is to consider this bell-shaped goal known as the "normal distribution."
 </p>
 <p>
-This book presents the normal distribution by simply presenting it's probability function without derivation. In order to more carefully investigate the development of the normal distribution (and the Chi-Square Distribution) you will need to study "Moment Generating Functions" and some serious mathematics. Without supplying this rigor you can still utilized the results. 
+This book presents the normal distribution by simply presenting it's probability function without derivation. In order to more carefully investigate the development of the normal distribution (and the Chi-Square Distribution) you will need to study "Moment Generating Functions" and some serious mathematics. Without supplying this rigor you can still utilize the results. 
 </p>
 </section>
 
@@ -27,7 +27,7 @@ This book presents the normal distribution by simply presenting it's probability
 
 	<definition>
 	<title>The Normal Distribution</title>
-	<statement>Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution with probability function given by
+	<statement>Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution provided it has a probability function given by
 		<me>
 		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
 		</me>	
@@ -38,7 +38,7 @@ This book presents the normal distribution by simply presenting it's probability
 	<statement>
 		<p>
 If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal distribution and often use Z as the variable name. In this case, the density function reduces to
-		<me>f(x) = \frac{1}{\sqrt{2 \pi}} e^{ z^2 / 2}</me>
+		<me>f(z) = \frac{1}{\sqrt{2 \pi}} e^{ z^2 / 2}</me>
 		</p>
 	</statement>
 	<proof>
@@ -64,7 +64,8 @@ Toward this end, consider <m>I^2</m> and change the variables to get
 	<mrow>&amp; = \frac{1}{2 \pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{ -\frac{u^2+v^2}{2} } du dv</mrow>
 </md>
 Converting to polar coordinates using 
-<me> du dv = r dr d\theta </me>
+<me> du dv = r dr d\theta </me> and
+<me> u^2 + v^2 = r^2</me>
 gives
 <md>
 	<mrow>I^2 &amp; = \frac{1}{2 \pi} \int_0^{2 \pi} \int_0^{\infty} e^{ -\frac{r^2}{2} } r dr d\theta</mrow>
@@ -89,6 +90,10 @@ as desired.
 	</statement>
 	<proof>
 	<p>
+	<me>z = \frac{x-\mu}{\sigma}</me>
+	implies by solving that
+	<me> x = \mu + z \sigma</me>
+	and therefore
 <md>
 	<mrow>E[X] &amp;= \int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx </mrow>
 	<mrow> &amp;= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} (\mu + z\sigma) \cdot e^{ -z^2 / 2} dz</mrow>
@@ -134,73 +139,59 @@ as desired.
 </section>
 
 
-<section><title>Normal Distirbution as a Limiting Distribution</title>
-<p>Over the past several chapters you should have noticed that many distributions have skewness and kurtosis formulae which have limiting values of 0 and 3 respectively. This means that each of those distributions which can be approximated by the normal distribution for "large" parameter values. Let's look at each of these and note the similarities.
-</p>
-<p>When converting probability problems from continuous (such as exponential or uniform) then no adjustment to the question is needed since you are approximating one area with another area. However, when converting probability problems from discrete (such as binomial or geometric) then you need to consider how the interval would need to be adjusted so that histogram areas for the discrete problem would relate to areas under the normal curve. Generally, you will need to expand the stated interval each way by 1/2.
-</p>
 
-<example><title>Binomial as Normal</title>
-<p>Binomial becomes normal as <m> n \rightarrow \infty</m>.  Consider n = 50 and p = 0.3.  Then, <m>\mu = 15</m> and <m>\sigma^2 = 10.5</m>.   
-</p>
-<p>Using the binomial formulas, 
-<me>P( X = 16 ) = \binom{50}{15} 0.3^16 \cdot 0.7^34 \approx 0.11470</me>
-Using the normal distribution,
-<md>
-	<mrow>P( X = 16 ) &amp; = P( 15.5 \lt X \lt 16.5) </mrow>
-	<mrow> &amp; \approx normalcdf(15.5,16.5,15,sqrt(10.5)) </mrow>
-	<mrow> &amp; = 0.11697</mrow>
-</md>
-Notice that these are very close.
-</p>
-</example>
+<section>	
+	<title>Chi-Square Distribution</title>
+	<p>The following distribution is related to both the Normal Distribution and to the Gamma Distribution. Initially, consider a gamma distribution with probability function
+	
+	<me>\frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}.</me>
 
-<example><title>Poisson as Normal</title>
-<p>Poisson becomes normal as <m> \mu \rightarrow \infty</m>.  Consider <m>\mu = 20</m>.  Then, <m>\sigma^2 = \mu = 20</m>.   
-</p>
-<p>Using the Poisson formulas, 
-<me>P( X = 19 ) = \frac{20^19 e^{-20}}{19!} \approx 0.08883</me>
-Using the normal distribution,
-<md>
-	<mrow>P( X = 19 ) &amp; = P( 18.5 \lt X \lt 19.5) </mrow>
-	<mrow> &amp; \approx normalcdf(18.5,19.5,20,sqrt(20)) </mrow>
-	<mrow> &amp; = 0.08683</mrow>
-</md>
-Again, these are very close.
-</p>
-</example>
+Replacing <m>\mu = 2</m> and r with r/2 gives
 
+	<me>\frac{x^{r/2-1} \cdot e^{-x/2}}{\Gamma(r/2) \cdot 2^{r/2}}</me>
 
-<example><title>Gamma as Normal</title>
-<p>Gamma becomes normal as <m> r \rightarrow \infty</m>.  Assume that the average time till a first success is 12 minutes and that <m>r = 8</m>.  Then, the mean for the Gamma distribution is <m>\mu = 12 \cdot 8 = 96</m> and <m>\sigma^2 = 8 \cdot 12^2 = 1152</m> and so <m>\sigma \approx 33.9411</m>.   
-</p>
-<p>Using the Gamma formulas, 
-<md>
-	<mrow>P( 90 \le X \le 100 ) &amp; = \int_{90}^{100} f(x) dx </mrow>
-	<mrow> &amp; = 0.59252 - 0.47536 = 0.11716.</mrow>
-</md>
-Using the normal distribution,
-<me>P( 90 \le X \le 100) =  \approx normalcdf(90,100,96,33.9411) = 0.11707.</me>
-Amazingly these are also very close.
-</p>
-</example>
+which is given a special name below.
+	</p>
+	
+	<p>
 
-<p>
-As these examples illustrate, you will have increasing success in approximating the desired probabilities so long as the distribution's corresponding parameter is allowed to be "sufficiently large". The mathematical reason this is true is nailed down in the next section through what is known as the central limit theorem.
-</p>
+	<definition><title>Chi-Square Probability Function</title>
+	<statement>Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
+	<me>f(x) = \frac{x^{r/2-1} e^{-x/2} }{\Gamma(r/2) 2^{r/2}}.</me>
+	Then X has a Chi-Square distribution with r degrees of freedom. This is often denoted <m>\chi^2(r)</m>.
+	</statement>
+	</definition>
+	
+	<theorem><title><m>\chi^2</m> statistics</title>
+	<statement>
+		<me>\mu = r</me>
+		<me>\sigma^2 = 2r</me>
+		<me>\gamma_1 = 2 \sqrt{2/r}</me>
+		<me>\gamma_2 = \frac{12}{r}</me>
+	</statement>
+	</theorem>
+	
+	<theorem><title>Relationship between Normal and <m>\chi^2</m></title>
+	<statement>
+	If <m>Z_1, Z_2, ..., Z_r</m> are r standard normal variables, then
+	<me> X = \sum_{k=1}^r Z_k^2</me>
+	is <m>\chi^2(r)</m>.
+	</statement>
+	</theorem>
+	
+	</p>
 
+	
 </section>
 
 
-<section>	
-	<title>Central Limit Theorem</title>
-	<p>
-Often, when one wants to solve various scientific problems, several assumptions will be made regarding the nature of the underlying setting and base their conclusions on those assumptions.  Indeed, if one is going to use a Binomial Distribution or a Negative Binomial Distribution, an assumption on the value of p is necessary.  For Poisson and Exponential Distributions, one must know the mean.  For Normal Distributions, one must assume values for both the mean and the standard deviation.   Where do these values come from?  Often, one may perform a preliminary study and obtain a sample statistic...such as a sample mean or a relative frequency and use these values for μ or p.</p>
 
-<p>
-But what is the underlying distribution of these sample statistics?  The Central Limit Theorem gives the answer...</p>
+<section><title>Normal Distribution as a Limiting Distribution</title>
+<p>Over the past several chapters you should have noticed that many distributions have skewness and kurtosis formulae which have limiting values of 0 and 3 respectively. This means that each of those distributions which can be approximated by the normal distribution for "large" parameter values.
+</p>
 
-<p>To motivate this discussion, consider the following two interactive experiments.  For the first graph below, a sequence of N random samples, each of size r, ranging from 0 to "Range" is generated and graphed as small data points.  As the number of samples N and the sample size r increase, notice that the data seems to cover the entire range of possible values relatively uniformly.  (For this scatter plot note that each row represents the data for one sample of size r.  The larger the N, the greater the number of rows.)  Each row is averaged and that mean value is plotted on the graph as a red circle.  If you check the "Show_Mean" box, the mean of these circles is indicated by the green line in the middle of the plot.
+
+<p>To see how this works, consider a "random" distribution in the following two interactive experiments.  For the first graph below, a sequence of N random samples, each of size r, ranging from 0 to "Range" is generated and graphed as small data points.  As the number of samples N and the sample size r increase, notice that the data seems to cover the entire range of possible values relatively uniformly.  (For this scatter plot note that each row represents the data for one sample of size r.  The larger the N, the greater the number of rows.)  Each row is averaged and that mean value is plotted on the graph as a red circle.  If you check the "Show_Mean" box, the mean of these circles is indicated by the green line in the middle of the plot.
 </p>
 
 <p>
@@ -378,20 +369,57 @@ def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),
 	</input>
 </sage>
 
-<p>These results illustrate what can be described more mathematically through the following theorem. It is presented here without proof.
+<p>
+So, even with random data, if you are to consider the arrangement of the collected means rather than the arrangement of the actual data then the means appear to have a bell-shaped distribution as well.
 </p>
+
+</section>
+
+
+<section>	
+	<title>Central Limit Theorem</title>
+	<p>
+Often, when one wants to solve various scientific problems, several assumptions will be made regarding the nature of the underlying setting and base their conclusions on those assumptions.  Indeed, if one is going to use a Binomial Distribution or a Negative Binomial Distribution, an assumption on the value of p is necessary.  For Poisson and Exponential Distributions, one must know the mean.  For Normal Distributions, one must assume values for both the mean and the standard deviation.   Where do these values come from?  Often, one may perform a preliminary study and obtain a sample statistic...such as a sample mean or a relative frequency and use these values for μ or p.</p>
+
+<p>
+But what is the underlying distribution of these sample statistics?  The Central Limit Theorem gives the answer...</p>
+
+
+<p>The results from the previous section illustrate the tendency for bell-shaped distributions. This tendency can be described more mathematically through the following theorem. It is presented here without proof.
+</p>
+
+
+
+
 
 <theorem><title>Central Limit Theorem</title>
 	<statement>
-	Presume X is a random variable from a distribution with known mean <m>\mu</m> and known variance <m>\sigma^2</m>.  
-	For some natural number n, sample the distribution repeatedly creating a string of random variables denoted <m>X_1, X_2, ... , X_n</m>.  Set <m>\overline{X} = \frac{\sum X_k}{n}</m>.  
-	Then, <m>\overline{X}</m> is approximately normally distributed with mean <m>\mu</m> and variance <m>\sigma_{\overline{X}}^2 = \frac{\sigma^2}{n}</m>.
+	<p>
+	Presume X is a random variable from a distribution with known mean <m>\mu</m> and known variance <m>\sigma_x^2</m>.  
+	For some natural number n, sample the distribution repeatedly creating a string of random variables denoted <m>X_1, X_2, ... , X_n</m> and set <m>\overline{X} = \frac{\sum X_k}{n}</m>. 
+	</p>
+	<p> 
+	Then, <m>\overline{X}</m> is approximately normally distributed with mean <m>\mu</m> and variance <m>\sigma^2 = \frac{\sigma_x^2}{n}</m>.
+	</p>
 	</statement>
 </theorem>
-	
-	
-	
-<example><title>X vs <m>\overline{X}</m></title>
+
+
+
+
+<p>
+Often the Central Limit Theorem is stated more formally using a conversion to standard units. Indeed, the theorem indicates that the random variable <m>\overline{X}</m> has variance <m>\frac{\sigma^2}{n}</m> which means as n grows this variance approaches 0. So, the limiting random variable has a zero variance and therefore is no longer a random variable. To avoid this issue, the Central Limit Theorem is often stated as:
+</p>
+<p>For random variables
+<me>W_n = \frac{\overline{X} - \mu}{\sigma/ \sqrt{n}}</me>
+with corresponding distribution function <m>F_n(W_n)</m>,
+<me>\lim_{n \rightarrow \infty} F_n(c) = \int_{-\infty}^c \frac{1}{\sqrt{2 \pi}} e^{-z^2/2} dz</me>
+that is, the standard normal distribution function.
+</p>
+
+
+
+<example><title>Exponential X vs Normal <m>\overline{X}</m></title>
 <p>Consider an exponential variable X with mean time till first success of <m>\mu = 4</m>.  Then, <m>\sigma = 2</m> using the exponential formulas.
 </p>
 <p>You can use the exponential probability function to compute probabilities dealing with X. Indeed,
@@ -403,18 +431,129 @@ If instead you plan to sample from this distribution n=32 times, the Central Lim
 </p>
 </example>
 
+<p>When converting probability problems from continuous (such as exponential or uniform) then no adjustment to the question is needed since you are approximating one area with another area. However, when converting probability problems from discrete (such as binomial or geometric) then you need to consider how the interval would need to be adjusted so that histogram areas for the discrete problem would relate to areas under the normal curve. Generally, you will need to expand the stated interval each way by 1/2.
+</p>
 
 
-</section>
+<p>
+The Central Limit Theorem provides that regardless of the distribution of X, the distribution of an average of X's is approximately normally distributed. However, it also shows why X may also be approximated for some distributions using the normal distribution as certain parameters are allowed to increase. Below, you can see how Binomial and Poisson distributions can be approximated directly using the Normal distribution.
+</p>
+
+<p>Toward that end, for <m>0 \lt p \lt 1</m> consider a sequence of Bernoulli trials <m>Y_1, Y_2, ..., Y_n</m> with each over the space {0,1}. Then, 
+<me>X = \sum_{k=1}^n Y_k</me>
+is a Binomial variable.
+</p>
+
+<theorem><title>Binomial as approximate Normal</title>
+<statement>Given a Binomial variable X with <m>\mu = np</m> and <m>\sigma^2 = np(1-p)</m>, then X is approximately also normal with the same mean and variance so long as <m>np \gt 5</m> and <m>n(1-p) \gt 5</m>.
+</statement>
+<proof>
+<p>
+Using the Bernoulli variables <m>Y_k</m> each with mean p and variance p(1-p), note that the Central Limit Theorem applied to <m>\overline{X} = \frac{\sum Y_k}{n}</m> gives that
+<me>\frac{\overline{X}-p}{\sqrt{p(1-p)/n}}</me>
+is approximately standard normal. By multiplying top and bottom by n yields
+<me>\frac{\sum Y_k - np}{\sqrt{np(1-p)}}</me>
+is approximately standard normal. But <m>\sum Y_k</m> actually is the sum of the number of successes in n trials and is therefore a Binomial variable.
+</p>
+</proof>
+</theorem>
 
 
-<section>	
-	<title>Chi-Square Distribution</title>
-	<p>
-	Development of the Chi-Square distribution and it's application.
-	</p>
+<example><title>Binomial as Normal</title>
+<p>Binomial becomes normal as <m> n \rightarrow \infty</m>.  Consider n = 50 and p = 0.3.  Then, <m>\mu = 15</m> and <m>\sigma^2 = 10.5</m>.   
+</p>
+<p>Using the binomial formulas, for example,
+<me>P( X = 16 ) = \binom{50}{15} 0.3^{16} \cdot 0.7^{34} \approx 0.11470</me>
+Using the normal distribution,
+<md>
+	<mrow>P( X = 16 ) &amp; = P( 15.5 \lt X \lt 16.5) </mrow>
+	<mrow> &amp; \approx normalcdf(15.5,16.5,15,sqrt(10.5)) </mrow>
+	<mrow> &amp; = 0.11697</mrow>
+</md>
+Notice that these are very close.
+</p>
+</example>
+
+
+
+<corollary><title>Poisson as approximate Normal</title>
+<statement>Given a Poisson variable X with <m>\mu</m> and <m>\sigma^2 = \mu</m> given, then X is approximately also normal with the same mean and variance so long as CONDITION????.
+</statement>
+<proof>
+<p>
+Note from before that the Poisson distribution function was derived by approximating with Binomial and letting n approach infinity. Therefore, by the previous theorem, the Poisson variable is also approximately Normal using the Poisson mean and variance rather than the binomial's. Indeed, in standard units
+<me>\frac{Y - \mu}{\sqrt{\mu}}</me>
+is approximately normal for large <m>\mu</m>.
+</p>
+</proof>
+</corollary>
+	
+	
+	
+<example><title>Poisson as Normal</title>
+<p>Poisson becomes normal as <m> \mu \rightarrow \infty</m>.  Consider <m>\mu = 20</m>.  Then, <m>\sigma^2 = \mu = 20</m>.   
+</p>
+<p>Using the Poisson formulas, for example,
+<me>P( X = 19 ) = \frac{20^{19} e^{-20}}{19!} \approx 0.08883</me>
+Using the normal distribution,
+<md>
+	<mrow>P( X = 19 ) &amp; = P( 18.5 \lt X \lt 19.5) </mrow>
+	<mrow> &amp; \approx normalcdf(18.5,19.5,20,sqrt(20)) </mrow>
+	<mrow> &amp; = 0.08683</mrow>
+</md>
+Again, these are very close.
+</p>
+</example>
 
 	
+	
+<theorem><title>Gamma as approximate Normal</title>
+<statement>Given a Gamma variable X with mean <m>r \mu</m> and variance <m> r BLOB</m> given, then X is approximately also normal with the same mean and variance so long as CONDITION????.
+</statement>
+</theorem>
+	
+	
+
+<example><title>Gamma as Normal</title>
+<p>Gamma becomes normal as <m> r \rightarrow \infty</m>.  Assume that the average time till a first success is 12 minutes and that <m>r = 8</m>.  Then, the mean for the Gamma distribution is <m>\mu = 12 \cdot 8 = 96</m> and <m>\sigma^2 = 8 \cdot 12^2 = 1152</m> and so <m>\sigma \approx 33.9411</m>.   
+</p>
+<p>Using the Gamma formulas, 
+<md>
+	<mrow>P( 90 \le X \le 100 ) &amp; = \int_{90}^{100} f(x) dx </mrow>
+	<mrow> &amp; = 0.59252 - 0.47536 = 0.11716.</mrow>
+</md>
+Using the normal distribution,
+<me>P( 90 \le X \le 100) \approx normalcdf(90,100,96,33.9411) = 0.11707.</me>
+Amazingly, these are also very close.
+</p>
+</example>
+	
+
+<example><title>Uniform X vs Normal <m>\overline{X}</m></title>
+<p>Consider a discrete uniform variable X over R = {1,2,...,20}.  Then, <m>\mu = 10.5</m> and <m>\sigma = \frac{20^2-1^2}{20}</m> using the uniform formulas.
+</p>
+<p>You can use the uniform probability function to compute probabilities dealing with X. Indeed,
+<me>P(8 \le X \le 11) = P(X \in \{8,9,10,11 \} = \frac{4}{20} = 1/5.</me>
+</p>
+<p>
+If instead you plan to sample from this distribution n=49 times, the Central Limit Theorem implies that you will get a random variable <m>\overline{X}</m> which has an approximate normal distribution with the same mean but with new variance <m>\sigma_{\overline{X}}^2 = \frac{199/20}{49} = \frac{199}{580}</m>.  Therefore, expanding the interval to include the boundaries of the corresponding histogram areas,
+<me>P( 8 \le \overline{X} \lt 11 ) = P(7.5 \le \overline{X} \le 11.5) \approx normalcdf(7.5,11.5,10.5,0.585750) \approx 0.9561 .</me>
+</p>
+</example>
+
+
+<p>
+As these examples illustrate, you will have increasing success in approximating the desired probabilities so long as the distribution's corresponding parameter is allowed to be "sufficiently large". The mathematical reasoning this is true is not provided but depends upon the "Central Limit Theorem" discussed in the next section.
+</p>
+
+
+<p>
+The above theorems allow you to utilize the normal distribution to compute approximate probabilities for the variable X in the stated distributions. This is not always true for all distributions since some do not have parameters which allow for approaching normality. However, regardless of the distribution the Central Limit Theorem always allows you to approximate probabilities if they involve an average of repeated attempts...that is, for variable <m>\overline{X}</m>. This usefulness is illustrated in the examples below.
+</p>
+	
+
+
+
 </section>
 
 
