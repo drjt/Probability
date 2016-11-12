@@ -24,21 +24,43 @@ This book presents the normal distribution by simply presenting it's probability
 
 <section>	
 	<title>The Normal Distribution</title>
-
+	
+	<p>
+	
 	<definition>
 	<title>The Normal Distribution</title>
 	<statement>Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution provided it has a probability function given by
 		<me>
-		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
+		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
 		</me>	
 	</statement>
 	</definition>
-	
+
+	<p>
+	The normal distribution is also sometimes referred to as the Gaussian Distribution (often by Physicists) or the Bell Curve (often by social scientists).
+	</p>
+<sage>
+	<input>
+var('x,mu,sigma')
+f(x) = e^(-((x-mu)/sigma)^2/2)/(sigma*sqrt(2*pi))
+@interact
+def _(m=slider(-10,10,1,0,label='$\mu$'),s=slider(1/5,5,1/10,1,label='$\sigma$')):
+    titletext = "Normal Curve with mean "+str(m)+" and standard deviation "+str(s)
+    G = plot(f(mu=m,sigma=s),(x,m-5*s,m+5*s))
+    G += point((0,1),size=1)+point((12,0),size=1)+point((-12,0),size=1)
+    G += point((m,f(x=m,mu=m,sigma=s)),color='red',size=20)
+    G += point((m+s,f(x=m+s,mu=m,sigma=s)),color='green',size=20)
+    G += point((m-s,f(x=m-s,mu=m,sigma=s)),color='green',size=20)    
+    show(G,figsize=(5,3),title=titletext,ymin=0,ymax=1,xmin=-15,xmax=15)
+    </input>
+</sage>
+
+
 	<theorem>
 	<statement>
 		<p>
-If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal distribution and often use Z as the variable name. In this case, the density function reduces to
-		<me>f(z) = \frac{1}{\sqrt{2 \pi}} e^{ z^2 / 2}</me>
+If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal distribution and often use Z as the variable name and will use <m>\Phi(z)</m> for the standard normal distribution function. In this case, the density function reduces to
+		<me>f(z) = \frac{1}{\sqrt{2 \pi}} e^{ -z^2 / 2}</me>
 		</p>
 	</statement>
 	<proof>
@@ -51,7 +73,7 @@ If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal dis
 	<theorem><title>Verifying the normal probability function</title>
 	<statement>
 		<p>
-		<me>\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = 1</me>
+		<me>\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = 1</me>
 		</p>
 	</statement>
 	<proof>
@@ -112,7 +134,7 @@ as desired.
 	
 	<theorem><title>Verifying the normal probability variance</title>
 	<statement><p>
-		<me>E[(X-\mu)^2] = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \sigma^2</me>
+		<me>E[(X-\mu)^2] = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \sigma^2</me>
 		</p>
 	<proof>
 	<p>
@@ -124,18 +146,31 @@ as desired.
 		<mrow> &amp; = \frac{\sigma^2}{\sqrt{2 \pi}} \cdot \big [ -z e^{-z^2 / 2} \big |_{-\infty}^{\infty} + \int_{-\infty}^{\infty}  e^{ -z^2 / 2}  dz \big ]</mrow>
 		<mrow> &amp; = \frac{\sigma^2}{\sqrt{2 \pi}} \cdot \big [ 0 + \sqrt{2 \pi} \big ]</mrow>
 		<mrow> &amp; = \sigma^2 </mrow>
-
-
 	</md>
 	using integration by parts and using the integration in the proof of the mean above.  So, the use of <m>\sigma</m> is warranted.
 	</p>
 	</proof>
-
 	</statement>
-	
-	
 	</theorem>
+	
+	
+<p>
+Notice that the work needed to complete the integrals over the entire domain above was pretty serious. To determine probabilities for a given interval is however not possible in general and therefore approximations are needed. When using TI graphing calculators, you can use 
+<me>P( a \lt x \lt b ) = \text{normalcdf}(a,b,\mu, \sigma).</me>
+Or you can use the calculator below.
+</p>
+	
+<sage>
+	<input>
+@interact(layout=dict(top=[['a', 'b']],bottom=[['mu','sigma']]))
+def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = '),mu=input_box(0,width=8,label='$\mu = $'),sigma=input_box(1,width=8,label='$\sigma = $')):
+    f = e^(-((x-mu)/sigma)^2/2)/(sigma*sqrt(2*pi))
+    P = integral_numerical(f,a,b)[0]
+    print "P("+str(a)+" &lt; X &lt; "+str(b)+") ~= "+str(P)
+	</input>
+</sage>
 
+</p>
 </section>
 
 
@@ -161,13 +196,23 @@ which is given a special name below.
 	Then X has a Chi-Square distribution with r degrees of freedom. This is often denoted <m>\chi^2(r)</m>.
 	</statement>
 	</definition>
-	
+
+<sage>
+	<input>
+# Chi-Square Grapher
+@interact
+def _(r=slider(1,20,1,3,label='r =')):
+    f = x^(r/2-1)*e^(-x/2)/(gamma(r/2)*2^(r/2))
+    plot(f,x,0,20).show()
+	</input>
+</sage>
+
 	<theorem><title><m>\chi^2</m> statistics</title>
 	<statement>
 		<me>\mu = r</me>
 		<me>\sigma^2 = 2r</me>
 		<me>\gamma_1 = 2 \sqrt{2/r}</me>
-		<me>\gamma_2 = \frac{12}{r}</me>
+		<me>\gamma_2 = \frac{12}{r} + 3</me>
 	</statement>
 	</theorem>
 	
@@ -178,6 +223,19 @@ which is given a special name below.
 	is <m>\chi^2(r)</m>.
 	</statement>
 	</theorem>
+	
+	It also can be difficult to compute Chi-Square probabilities manually so you will perhaps want to use a numerical approximation in this case as well. The TI graphing calculator can be used with <m>\Chi^2</m>cdf(a,b,r).  Or, you can use the calculator below.
+
+<sage>
+	<input>
+# Chi-Square Calculator
+@interact(layout=dict(top=[['a', 'b']],bottom=[['r']]))
+def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),r=input_box(2,width=8,label='r =')):
+    f = x^(r/2-1)*e^(-x/2)/(gamma(r/2)*2^(r/2))
+    P = numerical_integral(f,a,b)[0]
+    print "P("+str(a)+" &lt; X &lt; "+str(b)+") ~= "+str(P)
+    </input>
+</sage>
 	
 	</p>
 
@@ -413,7 +471,7 @@ Often the Central Limit Theorem is stated more formally using a conversion to st
 <p>For random variables
 <me>W_n = \frac{\overline{X} - \mu}{\sigma/ \sqrt{n}}</me>
 with corresponding distribution function <m>F_n(W_n)</m>,
-<me>\lim_{n \rightarrow \infty} F_n(c) = \int_{-\infty}^c \frac{1}{\sqrt{2 \pi}} e^{-z^2/2} dz</me>
+<me>\lim_{n \rightarrow \infty} F_n(c) = \int_{-\infty}^c \frac{1}{\sqrt{2 \pi}} e^{-z^2/2} dz = \Phi(c)</me>
 that is, the standard normal distribution function.
 </p>
 
@@ -463,7 +521,7 @@ is approximately standard normal. But <m>\sum Y_k</m> actually is the sum of the
 <p>Binomial becomes normal as <m> n \rightarrow \infty</m>.  Consider n = 50 and p = 0.3.  Then, <m>\mu = 15</m> and <m>\sigma^2 = 10.5</m>.   
 </p>
 <p>Using the binomial formulas, for example,
-<me>P( X = 16 ) = \binom{50}{15} 0.3^{16} \cdot 0.7^{34} \approx 0.11470</me>
+<me>P( X = 16 ) = \binom{50}{16} 0.3^{16} \cdot 0.7^{34} \approx 0.11470</me>
 Using the normal distribution,
 <md>
 	<mrow>P( X = 16 ) &amp; = P( 15.5 \lt X \lt 16.5) </mrow>
@@ -477,7 +535,7 @@ Notice that these are very close.
 
 
 <corollary><title>Poisson as approximate Normal</title>
-<statement>Given a Poisson variable X with <m>\mu</m> and <m>\sigma^2 = \mu</m> given, then X is approximately also normal with the same mean and variance so long as CONDITION????.
+<statement>Given a Poisson variable X with <m>\mu</m> and <m>\sigma^2 = \mu</m> given, then X is approximately also normal with the same mean and variance so long as <m>\mu \gt 5</m>.
 </statement>
 <proof>
 <p>
@@ -533,11 +591,11 @@ Amazingly, these are also very close.
 <p>Consider a discrete uniform variable X over R = {1,2,...,20}.  Then, <m>\mu = 10.5</m> and <m>\sigma = \frac{20^2-1^2}{20}</m> using the uniform formulas.
 </p>
 <p>You can use the uniform probability function to compute probabilities dealing with X. Indeed,
-<me>P(8 \le X \le 11) = P(X \in \{8,9,10,11 \} = \frac{4}{20} = 1/5.</me>
+<me>P(8 \le X \lt 12) = P(X \in \{8,9,10,11 \} = \frac{4}{20} = 1/5.</me>
 </p>
 <p>
 If instead you plan to sample from this distribution n=49 times, the Central Limit Theorem implies that you will get a random variable <m>\overline{X}</m> which has an approximate normal distribution with the same mean but with new variance <m>\sigma_{\overline{X}}^2 = \frac{199/20}{49} = \frac{199}{580}</m>.  Therefore, expanding the interval to include the boundaries of the corresponding histogram areas,
-<me>P( 8 \le \overline{X} \lt 11 ) = P(7.5 \le \overline{X} \le 11.5) \approx normalcdf(7.5,11.5,10.5,0.585750) \approx 0.9561 .</me>
+<me>P( 8 \le \overline{X} \lt 12 ) = P(7.5 \le \overline{X} \le 11.5) \approx normalcdf(7.5,11.5,10.5,0.585750) \approx 0.9561 .</me>
 </p>
 </example>
 
@@ -550,9 +608,45 @@ As these examples illustrate, you will have increasing success in approximating 
 <p>
 The above theorems allow you to utilize the normal distribution to compute approximate probabilities for the variable X in the stated distributions. This is not always true for all distributions since some do not have parameters which allow for approaching normality. However, regardless of the distribution the Central Limit Theorem always allows you to approximate probabilities if they involve an average of repeated attempts...that is, for variable <m>\overline{X}</m>. This usefulness is illustrated in the examples below.
 </p>
-	
+
+</section>
+
+<section><title>Exercises</title>
 
 
+<exercise><title> - Computing basic standard normal probabilities</title>
+<p>
+Compute
+<ul>
+	<li><me>P( Z \gt 0)</me></li>
+	<li><me>P( Z \lt 0.892)</me></li>
+	<li><me>P( Z \lt -0.892)</me></li>
+	<li><me>P( -1.45 \lt Z \lt 2.37)</me></li>
+	<li><me>P( -1 \lt Z \lt 1)</me>
+which is the probability of lying within 1 standard deviation of the mean.</li>
+	<li><me>P( -2 \lt Z \lt 2)</me>
+which is the probability of lying within 2 standard deviations of the mean.</li>
+	<li><me>P( -3 \lt Z \lt 3)</me>
+which is the probability of lying within 3 standard deviations of the mean.</li>
+	<li>A value for a so that <me>P( Z \lt a) = 0.8</me>
+which would be the location of the 80th percentile.</li>
+</ul>
+</p>
+</exercise>
+
+<exercise><title> - Computing basic normal probabilities</title>
+<p>Given <m>\mu = 25</m> and <m>\sigma = 4</m> compute
+<me>P(X \lt \mu)</me>
+<me>P( X \gt 26)</me>
+<me>P( X \gt 22)</me>
+<me>P( 20 \le X \le 26)</me>
+</p>
+</exercise>
+
+<exercise><title> - IQ values</title>
+<p>The Intelligence Quotient (IQ) is a measure of your ability to think and reason. Presuming that IQ scores are normally distributed with mean 100 and standard deviation 15, determine the location of the 90th percentile.  That is, the IQ score below which you will find approximately 90% of other IQ scores.
+</p>
+</exercise>
 
 </section>
 

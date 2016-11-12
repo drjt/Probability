@@ -31,13 +31,20 @@ For Binomial, Geometric, what is p? For exponential, what is the mean?  For norm
 <p>This estimate will have to be determined likely by utilizing sampling in some form. Since such an estimate will come from partial information (i.e. a sample) then it is very likely going to only be an approximation to the exact (but unknown) value. In general, an estimator is a numerical value which is used in the place of an unknown population statistic. To determine precisely what is a "best" estimator requires a multivariate approach and is beyond the scope of this text. Indeed, to justify why each of the following are good estimators look up the topic "Maximum Likelihood Estimators".
 </p>
 
-<p>From your previous experience with the Binomial, Geometric, and Negative Binomial distributions, you will remember that each required a known value for p before you could proceed with any calculations. From our experiments in the first chapter we saw that relative frequency appeared to stabilize around what you might expect for the true proportion of success and therefore using <m>\tilde{p} = \frac{Y}{n}</m> is a good estimator for an unknown proportion of success p.
+<p>From your previous experience with the Binomial, Geometric, and Negative Binomial distributions, you will remember that each required a known value for p before you could proceed with any calculations. From our experiments in the first chapter we saw that relative frequency appeared to stabilize around what you might expect for the true proportion of success and therefore estimating the unknown proportion of success p using 
+<me>p \approx \tilde{p} = \frac{y}{n}</me>
+where y is the number of successes in a collection of n bernoulli trials.
 </p>
 
-<p>From your previous experience with the Poisson, Exponential, and Gamma distributions, you should also remember that each required a known value for <m>\mu</m> before proceeding with calculations. The sample mean <m>\overline{X} = \frac{Y}{n}</m> is a good estimator for an unknown population mean <m>\mu</m>.
+<p>From your previous experience with the Poisson, Exponential, and Gamma distributions, you should also remember that each required a known value for <m>\mu</m> before proceeding with calculations. So, estimating the unknown population mean <m>\mu</m> using 
+<me>\mu \approx \overline{x} = \frac{y}{n} = \frac{\sum x_k}{n}</me>
+where y is the sum of n individual sample values.
 </p>
 
-<p>The Normal distribution also requires a numerical value for <m>\sigma</m>, the population's standard deviation. It can be shown that the maximum likelihood estimator for <m>\sigma^2</m> is the variance v found in chapter one. However, you may remember that at that time we always adjusted this value somewhat using the formula <m>s^2 = \frac{n}{n-1} v</m> which increased the variance slightly. To uncover why you would not use the maximum likelihood estimator v requires you to look up the idea of "bias". As it turns out, v is maximum likelihood but exhibits mathematical bias whereas <m>s^2</m> is slightly suboptimal with respect to likelihood but exhibits no bias. Therefore, for estimating <m>\sigma^2</m> and therefore <m>\sigma</m> we will use <m>s^2</m> and s.
+<p>The Normal distribution also requires a numerical value for <m>\sigma</m>, the population's standard deviation. It can be shown that the maximum likelihood estimator for <m>\sigma^2</m> is the variance v found in chapter one. However, you may remember that at that time we always adjusted this value somewhat using the formula <m>s^2 = \frac{n}{n-1} v</m> which increased the variance slightly. To uncover why you would not use the maximum likelihood estimator v requires you to look up the idea of "bias". As it turns out, v is maximum likelihood but exhibits mathematical bias whereas <m>s^2</m> is slightly suboptimal with respect to likelihood but exhibits no bias. Therefore, for estimating the unknown population variance <m>\sigma^2</m> you can use 
+<me>\sigma^2 \approx s^2</me> 
+and similarly
+<me>\sigma \approx s.</me> 
 </p>
 
 </section>
@@ -158,6 +165,9 @@ The Wilson Score is another way to determine a confidence interval the in some w
 </me>
 </p>
 </statement>
+</theorem>
+
+<theorem><title>Determining Sample Size</title>
 </theorem>
 
 <example><title>Comparison of the three Confidence Interval methods for p</title>
