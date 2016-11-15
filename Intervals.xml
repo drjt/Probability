@@ -22,33 +22,6 @@ In this chapter we first discuss how to determine appropriate methods for estima
 </p>
 </section>
 
-<section><title>Point Estimates</title>
-
-<p>
-For Binomial, Geometric, what is p? For exponential, what is the mean?  For normal, what are the mean and standard deviation? Each of these parameters are necessary before you can compute any probability values from their respective formulas. Since they might not be given in a particular instance, they will need to be estimated in some manner. 
-</p>
-
-<p>This estimate will have to be determined likely by utilizing sampling in some form. Since such an estimate will come from partial information (i.e. a sample) then it is very likely going to only be an approximation to the exact (but unknown) value. In general, an estimator is a numerical value which is used in the place of an unknown population statistic. To determine precisely what is a "best" estimator requires a multivariate approach and is beyond the scope of this text. Indeed, to justify why each of the following are good estimators look up the topic "Maximum Likelihood Estimators".
-</p>
-
-<p>From your previous experience with the Binomial, Geometric, and Negative Binomial distributions, you will remember that each required a known value for p before you could proceed with any calculations. From our experiments in the first chapter we saw that relative frequency appeared to stabilize around what you might expect for the true proportion of success and therefore estimating the unknown proportion of success p using 
-<me>p \approx \tilde{p} = \frac{y}{n}</me>
-where y is the number of successes in a collection of n bernoulli trials.
-</p>
-
-<p>From your previous experience with the Poisson, Exponential, and Gamma distributions, you should also remember that each required a known value for <m>\mu</m> before proceeding with calculations. So, estimating the unknown population mean <m>\mu</m> using 
-<me>\mu \approx \overline{x} = \frac{y}{n} = \frac{\sum x_k}{n}</me>
-where y is the sum of n individual sample values.
-</p>
-
-<p>The Normal distribution also requires a numerical value for <m>\sigma</m>, the population's standard deviation. It can be shown that the maximum likelihood estimator for <m>\sigma^2</m> is the variance v found in chapter one. However, you may remember that at that time we always adjusted this value somewhat using the formula <m>s^2 = \frac{n}{n-1} v</m> which increased the variance slightly. To uncover why you would not use the maximum likelihood estimator v requires you to look up the idea of "bias". As it turns out, v is maximum likelihood but exhibits mathematical bias whereas <m>s^2</m> is slightly suboptimal with respect to likelihood but exhibits no bias. Therefore, for estimating the unknown population variance <m>\sigma^2</m> you can use 
-<me>\sigma^2 \approx s^2</me> 
-and similarly
-<me>\sigma \approx s.</me> 
-</p>
-
-</section>
-
 <section>	
 	<title>Interval Estimates - Chebyshev</title>
 
@@ -61,7 +34,7 @@ and similarly
 	<statement>
 	Given a random variable X with given mean <m>\mu</m> and standard deviation <m>\sigma</m>, for <m> a \in \mathbb{R}^+</m> , 
 	
-	<me>P( \big | X - \mu \big | \lt k \sigma ) \gt 1 - \frac{\sigma^2}{a^2}</me>
+	<me>P( \big | X - \mu \big | \lt a ) \gt 1 - \frac{\sigma^2}{a^2}</me>
 	</statement>
 	<proof>
 	<p>
@@ -78,17 +51,68 @@ and similarly
 	</p>
 	</proof>
 	</theorem>
+	
+	<corollary><title>Alternate Form for Chebyshev's Theorem</title>
+	<statement>
+	<p>For positive k,
+	<me>P( \big | X - \mu \big | \lt k \sigma ) \gt 1 - \frac{1}{k^2}</me>
+	</p>
+	</statement>
+	</corollary>
 
-	<corollary>
-	<statement>At least 75% of the data for any distribution must lie within two standard deviations of the mean and at least 88% must lie within three.
+	<corollary><title>Special Cases for Chebyshev's Theorem</title>
+	<statement>For any distribution, it is not possible for f(x)=0 within one standard deviation of the mean. Aslo, at least 75% of the data for any distribution must lie within two standard deviations of the mean and at least 88% must lie within three.
 	</statement>
 	<proof>
+	<p>
+	Apply the Chebyshev Theorem with <m>a = \sigma</m> to get
+	<me>P(\mu - \sigma \lt X \lt \mu + \sigma) \gt 1 - \frac{\sigma^2}{\sigma^2} = 0</me>
+	</p>
 	<p>
 	Apply the Chebyshev Theorem with <m>a = 2 \sigma</m> to get <m>1 - \frac{1}{2^2} = 0.75</m> and with <m>k = 3 \sigma</m> to get <m>1 - \frac{1}{3^2} = \frac{8}{9} > 0.8888</m>.
 	</p>
 	</proof>
 	</corollary>
+	
+	<example><title> - Comparing known distribution to Chebyshev</title>
+	<p>
+	</p>
+	</example>
 </section>
+
+<section><title>Point Estimates</title>
+
+<p>
+For Binomial, Geometric, what is p? For exponential, what is the mean?  For normal, what are the mean and standard deviation? Each of these parameters are necessary before you can compute any probability values from their respective formulas. Since they might not be given in a particular instance, they will need to be estimated in some manner. 
+</p>
+
+<p>This estimate will have to be determined likely by utilizing sampling in some form. Since such an estimate will come from partial information (i.e. a sample) then it is very likely going to only be an approximation to the exact (but unknown) value. In general, an estimator is a numerical value which is used in the place of an unknown population statistic. To determine precisely what is a "best" estimator requires a multivariate approach and is beyond the scope of this text. Indeed, to justify why each of the following are good estimators look up the topic "Maximum Likelihood Estimators".
+</p>
+
+<p>From your previous experience with the Poisson, Exponential, and Gamma distributions, you should also remember that each required a known value for <m>\mu</m> before proceeding with calculations.  It is sensible to consider estimating the unknown population mean <m>\mu</m> using the sample mean
+<me>\mu \approx \overline{x} = \frac{\sum x_k}{n}</me>
+where the values <m>x_k</m> are the n individual sample values.
+</p>
+
+<p>
+For any continous variable and indeed for <m>\overline{X}</m>), <m>P(\overline{X} = \mu) = 0</m>. In general, you should expect a sample statistic to be close but not precisely equal to the population statistic. Indeed, if you were so lucky as to have the sample statistic to land on the population statistic, doing one more trial would mess things up anyway and the sample statistic would certainly change some.
+</p>
+
+<p>In a similar manner with the Binomial, Geometric, and Negative Binomial distributions, you will remember that each required a known value for p before  proceeding with any calculations. From our experiments we saw that relative frequency appeared to stabilize around what you might expect for the true proportion of success and therefore estimating the unknown proportion of success p using relative frequency
+<me>p \approx \tilde{p} = \frac{y}{n}</me>
+where y is the number of successes in a collection of n bernoulli trials. Again, notice that the relative frequency <m>\tilde{p}</m> is technically an average as well so the probability that a given relative frequency will like exactly on the actual value of p is again zero.
+</p>
+
+<p>Finally, the Normal distribution requires a numerical value for <m>\sigma</m>, the population's standard deviation. It can be shown that the maximum likelihood estimator for <m>\sigma^2</m> is the variance v found in chapter one. However, you may remember that at that time we always adjusted this value somewhat using the formula <m>s^2 = \frac{n}{n-1} v</m> which increased the variance slightly. To uncover why you would not use the maximum likelihood estimator v requires you to look up the idea of "bias". As it turns out, v is maximum likelihood but exhibits mathematical bias whereas <m>s^2</m> is slightly suboptimal with respect to likelihood but exhibits no bias. Therefore, for estimating the unknown population variance <m>\sigma^2</m> you can use sample variance
+<me>\sigma^2 \approx s^2</me> 
+and similarly sample standard deviation
+<me>\sigma \approx s</me>
+to approximate the theoretical standard deviation. 
+</p>
+
+</section>
+
+
 
 <section><title>Interval Estimates - Confidence Interval for p</title>
 <p>
@@ -97,9 +121,13 @@ Sometimes selecting a value for p for a Binomial, Geometric, or Negative Binomia
 <p>
 In these later situations, we found in the previous section that relative frequency <m>\frac{Y}{n}</m> is generally a good way to estimate p. In this section, you will investigate how to measure the closeness--and thereby assure some confidence in that estimate--regarding how well the point estimate approximates the actual value of p.
 </p>
+
+
+
+
 <definition><title>Confidence Intervals for p</title>
 <statement>
-<p>Given a point estimate <m>\tilde{p}</m> for p, a confidence interval is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form
+<p>Given a point estimate <m>\tilde{p}</m> for p, a confidence interval for p is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form
 <me>P(\tilde{p} - E_1 \lt p \lt \tilde{p} + E_2) = 1 - \alpha</me>
 where <m>\alpha</m> is near 0 and <m>E_k \gt 0</m>.  One-sided confidence intervals for p can be similarly described 
 <me>P( p \lt \tilde{p} + E_2) = 1 - \alpha</me>
@@ -108,9 +136,6 @@ or
 </p>
 </statement>
 </definition>
-
-
-
 
 <p>
 Generally, symmmetry is presumed when using a two-sided confidence interval so that <m>E_1 = E_2 = E</m> and therefore the interval looks like
@@ -158,6 +183,7 @@ This method should be used only when trying to create the roughest and "safest" 
 </p>
 <p>
 The Wilson Score is another way to determine a confidence interval the in some ways is betters than either of the two methods described above. This confidence interval is more complicated than just taking <m>\tilde{p}</m> and adding and subtracting E.  
+
 <theorem><title>Wilson Score Confidence Interval for p</title>
 <statement>
 <p>
@@ -165,9 +191,6 @@ The Wilson Score is another way to determine a confidence interval the in some w
 </me>
 </p>
 </statement>
-</theorem>
-
-<theorem><title>Determining Sample Size</title>
 </theorem>
 
 <example><title>Comparison of the three Confidence Interval methods for p</title>
@@ -206,12 +229,97 @@ which is slightly different than the first and slightly smaller than the second.
 </example>
 
 </p>
+
+
+<theorem><title>Determining Sample Size for proportions</title>
+<statement>Given a margin of error E and preliminary relative frequency estimate <m>\tilde{p_0}</m> the sample size needed to create the corresponding confidence interval is given by 
+<me>n \gt \left ( \frac{z_{\alpha /2}}{E} \right )^2 \tilde{p_0}(1-\tilde{p_0}).</me>
+</statement>
+<proof>
+Solve for n in the confidence interval above.
+</proof>
+</theorem>
+
+<example><title>Determining Sample Size for one proportion</title>
+<p>
+Given a 99% confidence level, margin of error E=0.03, and preliminary estimate <m>\tilde{p_0} = 0.35</m>, notice that <m>z_{\alpha / 2} = 2.58</m> gives
+<me>n \gt \left ( \frac{2.58}{0.03} \right )^2 0.35 \cdot 0.65 \approx 1682.59</me>
+or a sample size of at least 1683.
+</p>
+</example>
+
+
 </section>
 
 <section><title>Interval Estimates - Confidence Interval for <m>\mu</m></title>
 <p>
-Simple Interval
+As with the confidence intervals above for proportions, the Central Limit Theorem also allows you to create an interval centered on a sample mean for estimating the population mean <m>\mu</m>.
 </p>
+
+
+<definition><title>Confidence Interval for One Mean</title>
+<statement>
+<p>
+Given a sample mean <m>\overline{x}</m>, a two-sided confidence interval for the mean with confidence level <m>1-\alpha</m> is an interval 
+<me>\overline{x} - E_1 \lt \mu \lt \overline{x} + E_2</me>
+such that
+<me>P(\overline{x} - E_1 \lt \mu \lt \overline{x} + E_1) = 1-\alpha.</me>
+Generally, the interval is symmetrical of the form <m>\overline{x} \pm E</m> with E again known as the margin of error.  One-sided confidence intervals can be determined in the same manner as in the previous section.
+</p>
+</statement>
+</definition>
+
+<p>
+Once again, utilize the Central Limit Theorem.  Notice that the symmetrical confidence interval 
+<me>P(\overline{x} - E \lt \mu \lt \overline{x} + E) = 1-\alpha.</me>
+is equivalent to
+<me>P \left ( \frac{-E}{\sigma / \sqrt{n}} \lt \frac{\overline{x} - \mu}{\sigma / \sqrt{n}} \lt \frac{E}{\sigma / \sqrt{n}} \right ) = 1 - \alpha</me>
+in which the middle term can be approximated using a standard normal variable and therefore this statement is approximately
+<me>P \left ( \frac{-E}{\sigma / \sqrt{n}} \lt Z \lt \frac{E}{\sigma / \sqrt{n}} \right ) = 1 - \alpha.</me>
+Using the symmetry of the standard normal distribution about Z=0 gives
+<me>\Phi \left ( \frac{E}{\sigma / \sqrt{n}} \right ) = P \left ( Z \lt \frac{E}{\sigma / \sqrt{n}} \right ) = 1 - \frac{\alpha}{2}</me>
+and so to determine E requires the inverse of the standard normal distribution function. In this case, many people write <m>E = z_{\alpha / 2}.</m>  Fortunately this value is easily computed using graphing calculators or other automatic methods although your ancient teacher might have been required to use tables. On a TI calculator, use
+<me>z_{\alpha /2} = \text{InvNorm}( 1 - \frac{\alpha}{2} )</me>
+which gives a confidence interval for the mean
+<me>\overline{x} - z_{\alpha / 2} \frac{\sigma}{\sqrt{n}} \lt \mu \lt \overline{x} + z_{\alpha / 2} \frac{\sigma}{\sqrt{n}}</me>
+with confidence level <m>1-\alpha</m> and margin of error 
+<me>E = z_{\alpha /2} \frac{\sigma}{\sqrt{n}}.</me>
+</p>
+
+<p>
+It should be noted that the use of the Central Limit Theorem makes the use of  InvNorm an approximation. It can be shown that so long as n is larger than 30 then generally this approximation is reasonable.
+</p>
+
+
+<p>
+Additionally, this derivation assumes that <m>\mu</m> is not known...indeed the goal is to approximate that mean using <m>\overline{x}</m>...but that <m>\sigma</m> is known. This is often not the case. It can however be shown that if n is larger than 30, replacing <m>\sigma</m> with the sample standard deviation s gives an acceptable confidence interval.
+</p>
+
+<theorem><title>Sample Size needed for <m>\mu</m> given Margin of Error</title>
+<statement>
+<p>
+Given confidence level <m>1-\alpha</m> and margin of error E, the sample size needed to determine an appropriate confidence interval satisfies
+<me> n \gt \left ( z_{\alpha /2} \frac{\sigma}{E} \right )^2</me>
+</p>
+</statement>
+<proof>
+Solve for n in the formula for E above. Notice that n must be an integer so you will need to round up. You will also need an estimate for the sample standard deviation s by using a preliminary sample. 
+</proof>
+</theorem>
+
+<p>
+Notice, in practice you might want to take n to be a little larger than the absolute minimum value prescribed above since you are dealing with approximations (Central Limit Theorem and the use of an estimate for s rather than the actual <m>\sigma</m>.)
+</p>
+
+
+<example><title>Determining Sample Size for one Mean</title>
+<p>
+Given a 95% confidence level, margin of error E=0.1, and preliminary sample with standard deviation s = 2, <m>z_{\alpha / 2} = 1.96</m> gives
+<me>n \gt \left ( 1.96 \cdot \frac{2}{0.1} \right )^2 \approx 1536.64</me>
+or a sample size of at least 1537.
+</p>
+</example>
+
 </section>
 
 
@@ -221,7 +329,11 @@ Simple Interval using Chi-Square
 </p>
 </section>
 
+<section><title>Exercises</title>
+<p>
 
+</p>
+</section>
 
 
 </chapter>

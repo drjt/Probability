@@ -18,7 +18,7 @@ You should have noticed by now that many distributions tend to have a bell-shape
 The answer by appealing to mathematics reveals that nothing sinister is going on but that it is indeed true that the eventual destiny for distributions is one that is bell-shaped. It is therefore of interest to figure out if that distribution has a nice form that can be accessed directly. The focus of this chapter is to consider this bell-shaped goal known as the "normal distribution."
 </p>
 <p>
-This book presents the normal distribution by simply presenting it's probability function without derivation. In order to more carefully investigate the development of the normal distribution (and the Chi-Square Distribution) you will need to study "Moment Generating Functions" and some serious mathematics. Without supplying this rigor you can still utilize the results. 
+We present the normal distribution by simply presenting it's probability function without derivation. In order to more carefully investigate the development of the normal distribution (and the Chi-Square Distribution) you will need to study "Moment Generating Functions" and some serious mathematics. Without supplying this rigor you can still utilize the results. 
 </p>
 </section>
 
@@ -153,7 +153,38 @@ as desired.
 	</statement>
 	</theorem>
 	
+	<theorem><title>Properties of the Normal Distribution</title>
+	<statement>
 	
+	</statement>
+	</theorem>
+	
+	<theorem><title>Normal Distribution Maximum</title>
+	<statement>
+	<p>The maximum of the normal distribution probability function occurs when <m>x = \mu</m>
+	</p>
+	</statement>
+	<proof>
+	<p>Take the derivative of the probability function to get 
+	<me>\frac{\sqrt{2} {\left(\mu - x\right)} e^{\left(-\frac{{\left(\mu - x\right)}^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{3}}</me>
+	which is zero only when <m>x = \mu</m>.  Easily by evaluating to the left and right of this value shows that this critical value yields a maximum.
+	</p>
+	</proof>
+	</theorem>
+
+	<theorem><title>Normal Distribution Points of Inflection</title>
+	<statement>
+	<p>Points of Inflection for the normal distribution probability function occurs when <m>x = \mu + \sigma</m> and <m>x = \mu - \sigma</m>.
+	</p>
+	</statement>
+	<proof>
+	<p>Take the second derivative of the probability function to get 
+	<me>\frac{\sqrt{2} {\left(\mu + \sigma - x\right)} {\left(\mu - \sigma - x\right)} e^{\left(-\frac{\mu^{2}}{2 \, \sigma^{2}} + \frac{\mu x}{\sigma^{2}} - \frac{x^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{5}}</me>
+	which is zero only when <m>x = \mu \pm \sigma</m>.  Easily by evaluating to the left and right of this value shows that these critical values yield points of inflection.
+	</p>
+	</proof>
+	</theorem>
+
 <p>
 Notice that the work needed to complete the integrals over the entire domain above was pretty serious. To determine probabilities for a given interval is however not possible in general and therefore approximations are needed. When using TI graphing calculators, you can use 
 <me>P( a \lt x \lt b ) = \text{normalcdf}(a,b,\mu, \sigma).</me>
