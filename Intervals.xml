@@ -324,9 +324,68 @@ or a sample size of at least 1537.
 
 
 <section><title>Interval Estimates - Confidence Interval for <m>\sigma^2</m></title>
+
 <p>
-Simple Interval using Chi-Square
+Once again, you may need to approximate the population variance or standard deviation but only have the sample values available. One difference from the previous sections is that you are not dealing with an average of values (such as <m>\overline{x}</m> or <m>\tilde{p}</m>) but with the average of the squares of values. The Central Limit Theorem does not directly help you in this case but the following result (presented without proof) provides a solution.
+
+<theorem><title>Relationship between Variance and <m>\chi ^2</m></title>
+<statement>
+<p>If <m>S^2</m> is a random variable of possible sample variance values from a sample of size n, then
+<me>W = \frac{(n-1)S^2}{\sigma^2}</me>
+is approximately <m>\chi ^2(n-1).</m>
 </p>
+</statement>
+</theorem>
+
+To create a confidence interval for <m>\sigma^2</m> first consider an interval of the form
+<me>E_1 \lt \sigma^2 \lt E_2</me>
+and determine values for the boundaries so that the likelihood of this being true is high. For this case, since the chi-square distribution only has a positive domain and is not symmetrical, you will not expect to determine a symmetrical confidence interval.  Therefore, consider
+<me>P (E_1 \lt \sigma^2 \lt E_2 ) = 1 - \alpha </me> 
+and by playing around with algebra you get
+<me>P \left ( \frac{E_1}{(n-1)S^2} \lt \frac{\sigma^2}{(n-1)S^2} \lt \frac{E_2}{(n-1)S^2} \right ) = 1 - \alpha </me> 
+or by inverting the inequality yields
+<me>P \left ( \frac{(n-1)S^2}{E_2} \lt \frac{(n-1)S^2}{\sigma^2} \lt \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha .</me> 
+Using the previous theorem, note that the inside variable can be replaced with a chi-square variable. If F is the distribution function for chi-square, then you get
+<me>F \left ( \frac{(n-1)S^2}{E_1} \right ) - F \left ( \frac{(n-1)S^2}{E_2} \right ) = 1 - \alpha .</me> 
+For a given value of <m>\alpha</m> there are many possible choices but often one often utilized is one in which 
+<me> F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha / 2</me> 
+and 
+<me> F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha / 2 .</me>
+Using the inverse chi-square gives values for the expression on the inside and algebra can be used to solve for each of <m>E_1, E_2</m>. 
+
+<example><title> - Two-sided Confidence interval for <m>\sigma^2</m></title>
+<p>
+</p>
+</example>
+</p>
+
+<p>
+Similar to above, another choice to estimate <m>\sigma ^2</m> is to use a one sided confidence interval. If you want to find one of these, continue as described above but just leave one endpoint off.  Indeed, 
+<me>\sigma^2 \lt E_2</me>
+can be determined using 
+<me> F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha</me>
+and 
+<me>E_1 \lt \sigma^2 </me>
+can be determined using
+<me> F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha.</me>
+
+
+<example><title> - One-sided Confidence intervals for <m>\sigma^2</m></title>
+<p>
+</p>
+</example>
+</p>
+
+<p>
+Finally, to determine a confidence interval for <m>\sigma</m>, proceed using the protocols described above and simply take the square root on the resulting interval.
+
+<example><title> - Confidence intervals for <m>\sigma</m></title>
+<p>
+</p>
+</example>
+
+</p>
+
 </section>
 
 <section><title>Exercises</title>
