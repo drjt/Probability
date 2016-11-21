@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="CurveEstimation" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Regression</title>
+
+<section><title>Introduction</title>
+<p>
+Given two distinct points, there is one line which passes exactly through both.  Indeed, if the points are <m>(x_0,y_0), (x_0,y_0)</m> then presuming the x-values are different gives the equation
+<me> y = \frac{y_1 - y_0}{x_1 - x_0}(x - x_0) + y_0</me>
+is the linear function which passes through both points.  If the x's are equal then 
+<me> x = x_0</me>
+is your linear equation. 
+However, once you collect three or more points it is likely that there is no line which exactly "interpolates" all of the points.
+</p>
+
+<p>
+In this chapter, you will investigate how to create polynomial functions which in some manner approximate a collection of data point in some "best" manner.
+</p>
+</section>
+
+<section><title>Linear Regression</title>
+<p>
+In this section, we will presume only one independent variable x and one dependent variable y.
+</p>
+</section>
+
+<section><title>Higher Degree Regression</title>
+<p>
+In this section, we will presume only one independent variable x and one dependent variable y.
+
+</p>
+</section>
+
+
+
+</chapter>

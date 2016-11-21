@@ -128,6 +128,8 @@ In these later situations, we found in the previous section that relative freque
 <definition><title>Confidence Intervals for p</title>
 <statement>
 <p>Given a point estimate <m>\tilde{p}</m> for p, a confidence interval for p is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form
+<me>\tilde{p} - E_1 \lt p \lt \tilde{p} + E_2</me>
+with
 <me>P(\tilde{p} - E_1 \lt p \lt \tilde{p} + E_2) = 1 - \alpha</me>
 where <m>\alpha</m> is near 0 and <m>E_k \gt 0</m>.  One-sided confidence intervals for p can be similarly described 
 <me>P( p \lt \tilde{p} + E_2) = 1 - \alpha</me>
@@ -156,7 +158,9 @@ Setting <m>E = z_{ \alpha/2}\sqrt{\tilde{p}(1-\tilde{p})/n}</m> gives a way to d
 </p>
 <p>
 To complete the interval, one needs a specific value for <m>z_{ \alpha/2}</m>.
-Generally, one chooses confidence levels on the order of 90%, 95%, or 99% with 95% being the usual choice.
+Generally, one chooses confidence levels on the order of 90%, 95%, or 99% with 95% being the usual choice.  Fortunately this value is easily computed using graphing calculators or other automatic methods although your ancient teacher might have been required to use tables. On a TI calculator, use
+<me>z_{\alpha /2} = \text{InvNorm}( 1 - \frac{\alpha}{2} )</me>
+
 </p>
 <p>
 For 90% confidence level, you need to find a z-value so that
@@ -273,14 +277,16 @@ Generally, the interval is symmetrical of the form <m>\overline{x} \pm E</m> wit
 Once again, utilize the Central Limit Theorem.  Notice that the symmetrical confidence interval 
 <me>P(\overline{x} - E \lt \mu \lt \overline{x} + E) = 1-\alpha.</me>
 is equivalent to
+
 <me>P \left ( \frac{-E}{\sigma / \sqrt{n}} \lt \frac{\overline{x} - \mu}{\sigma / \sqrt{n}} \lt \frac{E}{\sigma / \sqrt{n}} \right ) = 1 - \alpha</me>
 in which the middle term can be approximated using a standard normal variable and therefore this statement is approximately
+
 <me>P \left ( \frac{-E}{\sigma / \sqrt{n}} \lt Z \lt \frac{E}{\sigma / \sqrt{n}} \right ) = 1 - \alpha.</me>
+
 Using the symmetry of the standard normal distribution about Z=0 gives
-<me>\Phi \left ( \frac{E}{\sigma / \sqrt{n}} \right ) = P \left ( Z \lt \frac{E}{\sigma / \sqrt{n}} \right ) = 1 - \frac{\alpha}{2}</me>
-and so to determine E requires the inverse of the standard normal distribution function. In this case, many people write <m>E = z_{\alpha / 2}.</m>  Fortunately this value is easily computed using graphing calculators or other automatic methods although your ancient teacher might have been required to use tables. On a TI calculator, use
-<me>z_{\alpha /2} = \text{InvNorm}( 1 - \frac{\alpha}{2} )</me>
-which gives a confidence interval for the mean
+<me>\Phi (z_{\alpha/2} ) = \Phi \left ( \frac{E}{\sigma / \sqrt{n}} \right ) = P \left ( Z \lt \frac{E}{\sigma / \sqrt{n}} \right ) = 1 - \frac{\alpha}{2}</me>
+
+and so to determine E requires the inverse of the standard normal distribution function.  Using an appropriate <m>z_{\alpha /2}</m> (as determine in a manner described in the previous section) gives a confidence interval for the mean
 <me>\overline{x} - z_{\alpha / 2} \frac{\sigma}{\sqrt{n}} \lt \mu \lt \overline{x} + z_{\alpha / 2} \frac{\sigma}{\sqrt{n}}</me>
 with confidence level <m>1-\alpha</m> and margin of error 
 <me>E = z_{\alpha /2} \frac{\sigma}{\sqrt{n}}.</me>
@@ -303,7 +309,9 @@ Given confidence level <m>1-\alpha</m> and margin of error E, the sample size ne
 </p>
 </statement>
 <proof>
+<p>
 Solve for n in the formula for E above. Notice that n must be an integer so you will need to round up. You will also need an estimate for the sample standard deviation s by using a preliminary sample. 
+</p>
 </proof>
 </theorem>
 
@@ -327,6 +335,8 @@ or a sample size of at least 1537.
 
 <p>
 Once again, you may need to approximate the population variance or standard deviation but only have the sample values available. One difference from the previous sections is that you are not dealing with an average of values (such as <m>\overline{x}</m> or <m>\tilde{p}</m>) but with the average of the squares of values. The Central Limit Theorem does not directly help you in this case but the following result (presented without proof) provides a solution.
+</p>
+
 
 <theorem><title>Relationship between Variance and <m>\chi ^2</m></title>
 <statement>
@@ -337,37 +347,66 @@ is approximately <m>\chi ^2(n-1).</m>
 </statement>
 </theorem>
 
+<p>
 To create a confidence interval for <m>\sigma^2</m> first consider an interval of the form
 <me>E_1 \lt \sigma^2 \lt E_2</me>
 and determine values for the boundaries so that the likelihood of this being true is high. For this case, since the chi-square distribution only has a positive domain and is not symmetrical, you will not expect to determine a symmetrical confidence interval.  Therefore, consider
 <me>P (E_1 \lt \sigma^2 \lt E_2 ) = 1 - \alpha </me> 
+
 and by playing around with algebra you get
 <me>P \left ( \frac{E_1}{(n-1)S^2} \lt \frac{\sigma^2}{(n-1)S^2} \lt \frac{E_2}{(n-1)S^2} \right ) = 1 - \alpha </me> 
+
 or by inverting the inequality yields
 <me>P \left ( \frac{(n-1)S^2}{E_2} \lt \frac{(n-1)S^2}{\sigma^2} \lt \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha .</me> 
+
 Using the previous theorem, note that the inside variable can be replaced with a chi-square variable. If F is the distribution function for chi-square, then you get
 <me>F \left ( \frac{(n-1)S^2}{E_1} \right ) - F \left ( \frac{(n-1)S^2}{E_2} \right ) = 1 - \alpha .</me> 
+
 For a given value of <m>\alpha</m> there are many possible choices but often one often utilized is one in which 
-<me> F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha / 2</me> 
-and 
-<me> F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha / 2 .</me>
+
+<me> F(\chi^2_{1-\alpha/2} ) = F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha / 2</me>
+and
+<me> F(\chi^2_{\alpha/2} ) = F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha / 2.</me> 
+
 Using the inverse chi-square gives values for the expression on the inside and algebra can be used to solve for each of <m>E_1, E_2</m>. 
+</p>
+
+<p>
+To determine appropriate values for <m>\chi^2_{1-\alpha/2} </m> with equal probabilities in each tail, consider using the interactive cell below:
+</p>
+
+<sage>
+	<input>
+# Chi-Square Calculator for confidence intervals with equal alpha/2 tails
+@interact(layout=dict(top=[['c'],['n']]))
+def _(c=input_box(0.95,width=10,label='Confidence Level = '),n=input_box(20,width=8,label='n =')):
+    alpha = 1-c
+    T = RealDistribution('chisquared', n)
+    a = T.cum_distribution_function_inv(alpha/2)
+    b = T.cum_distribution_function_inv(1-alpha/2)
+    print 'From the Chi-Square distribution for X:'
+    print 'P(',a,' &gt; X &gt; ',(b),') = ',c
+	</input>
+</sage>
+
+<p>
 
 <example><title> - Two-sided Confidence interval for <m>\sigma^2</m></title>
 <p>
 </p>
 </example>
+
 </p>
 
 <p>
 Similar to above, another choice to estimate <m>\sigma ^2</m> is to use a one sided confidence interval. If you want to find one of these, continue as described above but just leave one endpoint off.  Indeed, 
 <me>\sigma^2 \lt E_2</me>
 can be determined using 
-<me> F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha</me>
+<me> F(\chi^2_{\alpha} ) = F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha</me>
 and 
 <me>E_1 \lt \sigma^2 </me>
 can be determined using
-<me> F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha.</me>
+<me> F(\chi^2_{1-\alpha} ) = F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha.</me>
 
 
 <example><title> - One-sided Confidence intervals for <m>\sigma^2</m></title>

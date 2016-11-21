@@ -20,6 +20,7 @@
   		<xi:include href="./Poisson.xml" /> 
   		<xi:include href="./Normal.xml" /> 
   		<xi:include href="./Intervals.xml" /> 
+  		<xi:include href="./Regression.xml" /> 
 
   		<xi:include href="./PowerSeriesReview.xml" /> 
 

@@ -559,7 +559,39 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	<me>\gamma_2 = \frac{3}{35} / \frac{1}{25} = \frac{75}{35} \approx 2.14.</me>
 	</p>
 	
-
+<example><title>Roulette</title>
+<p>
+Roulette is a gambling game popular in may casinos in which a player attempts to win money from the casino by predicting the location that a ball lands on in a spinning wheel.  There are two variations of this game...the American version and the European version. The difference being that the American version has one additional numbered slot on the wheel. The American version of the game will be used for the purposes of this example.
+</p>
+<p>
+A Roulette wheel consists of 38 equally-sized sectors identified with the numbers 1 through 36 plus 0 and 00. The 0 and 00 sectors are colored green and half of the remaining numbers are in sectors colored red with the remainder colored black.  A steel ball is dropped onto a spinning wheel and as the wheel comes to rest the sector in which it comes to rest is noted.  It is easy to determine that the probability of landing on any one of the 38 sectors is 1/38. A picture of a typical American-style wheel and betting board is given by
+<image source="images/6-1-American-Roulette-1024x463.png" />. (Found at BigFishGames.com.)
+</p>
+<p>
+Since this is a game in a casino, there must be the opportunity to bet (and likely lose) money. For the remainder of this example we will assume that you are betting 1 dollar each time. If you were to bet more then the values would scale correspondingly. However, if you place your bet on any single number and the ball ends up on the sector corresponding to that number, you win a net of 35 dollars.  If the ball lands elsewhere you lose your dollar. Therefore the expected value of winning if you bet on one number is
+<me>E[\text{win on one}] = 35 \cdot \frac{1}{38} - 1 \cdot \frac{37}{38} = - \frac{2}{38}</me>
+which is a little more than a nickel loss on average.
+</p>
+<p>
+You can bet on two numbers as well and if the ball lands on either of the two then you win a payout in this case of 17 dollars.  Therefore the expected value of winning if you bet on two numbers is
+<me>E[\text{win on two numbers}] = 17 \cdot \frac{2}{38} - 1 \cdot \frac{36}{38} = - \frac{2}{38}.</me>
+</p>
+<p>
+Continuing, you can bet on three numbers and if the ball lands on any of the three then you win a payout of 11 dollars.  Therefore the expected value of winning if you bet on three numbers is
+<me>E[\text{win on three numbers}] = 11 \cdot \frac{3}{38} - 1 \cdot \frac{35}{38} = - \frac{2}{38}.</me>
+</p>
+<p>
+You can bet on all reds, all blacks, all evens (ignoring 0 and 00), or all odds and get your dollar back. The expected value for any of these options is
+<me>E[\text{win on eighteen numbers}] = 1 \cdot \frac{18}{38} - 1 \cdot \frac{20}{38} = - \frac{2}{38}.</me>
+</p>
+<p>There is one special way to bet which uses the the 5 numbers {0, 00, 1, 2, 3} and pays 6 dollars. This is called the "top line of basket".  Notice that the use of five numbers will make getting the same expected value as the other cases impossible using regular dollars and cents. The expected value of winning in this case us
+<me>E[\text{win on top line of basket}] = 6 \cdot \frac{5}{38} - 1 \cdot \frac{33}{38} = - \frac{3}{38}</me>
+which is of course worse and is the only normal way to bet on roulette which has a different expected value. 
+</p>
+<p>
+There are other possible ways to bet on roulette but none provide a better expected value of winning.  The moral of this story is that you should never bet on the 5 number option and if you ever get ahead by winning on roulette using any of the possible options then you should probably stop quickly since over a long period of time it is expected that you will lose an average of <m>\frac{1}{19}</m> dollars per game.
+</p>
+</example>
 	
 	<p>Going back to Pascal's wager, let X = 0 represent disbelief when God doesn't exist and X = 1 represent disbelief when God does exist, X = 2 represent belief when God does exist, and X = 3 represent belief when God does not exist. Let p be the likelihood that God exists. Then you can compute the expected value of disbelief and the expect value of belief by first creating a value function. Below, for argument sake we are somewhat randomly assign a value of one million to disbelief if God doesn't exist. The conclusions are the same if you choose any other finite number...
 	<md>
