@@ -29,11 +29,48 @@ In this chapter, you will investigate how to create polynomial functions which i
 <p>
 In this section, we will presume only one independent variable x and one dependent variable y.
 </p>
+<p>
+Consider a collection of data points 
+<me>(x_1,y_1), (x_2,y_2), ... , (x_n,y_n)</me>
+and a general linear function 
+<me>f(x) = mx + b.</me>
+It is possible that each of the given data points are exactly "interpolated" by the linear function so that
+<me>f(x_k) = y_k</me>
+for k = 1, 2, ... , n.  However, in general this is unlikely since even three points are not likely to be colinear. However, you may notice that the data points exhibit a linear tendency or that the underlying physics might suggest a linear model. If so, you may find it easier to predict values of y for given values of x using a linear approximation. Here you will investigate a method for doing so called "linear regression", "least-squares", or "best-fit line".
+</p>
+<p>
+To determine a best-fit line, you need to determine what is meant by the word "best". Here, we will derive the standard approach which interprets this to mean that the total vertical error between the line and the provided data points is minimized in some fashion.  Indeed, this vertical error would be of the form
+<me>e_k = f(x_k) - y_k</me>
+and would be zero if f(x) exactly interpolated at the given data point.  Note, some of these errors will be positive and some will be negative. To avoid any possible cancellation of errors, you can look at taking absolute values (which is tough to deal with algebraically) or by squaring the errors. This second option will be the approach taken here. This is similar to the approach taken earlier when developing formulas for the variance.
+</p>
+<p>The best-fit line therefore will be the line <m>f(x) = mx+b</m> so that the "total squared error" is minimized. This total squared error is given by
+<me>TSE(m,b) = \sum_{k=1}^n e_k^2 = \sum_{k=1}^n (f(x_k) - y_k)^2 = \sum_{k=0}^n (m x_k + b - y_k)^2.</me>
+To minimize this function of the two variables m and b, take partial derivatives and set them equal to zero to get the critical values:
+<me>TSE_m = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot x_k</me>
+and
+<me>TSE_b = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot 1 .</me>
+Setting equal to zero and solving gives what is known as the "normal equations":
+<me>m \sum_{k=1}^n x_k^2 + b \sum_{k=1}^n x_k = \sum_{k=1}^n x_k y_k</me>
+and
+<me>m \sum_{k=1}^n x_k + b \sum_{k=1}^n 1 = \sum_{k=1}^n y_k.</me>
+Solving these for m and b gives the best fit line.
+</p>
+
 </section>
 
 <section><title>Higher Degree Regression</title>
 <p>
-In this section, we will presume only one independent variable x and one dependent variable y.
+Continuing in a similar fashion to the previous section, consider now an approximation using a quadratic function <m>f(x) = ax^2 + bx + c</m>.  In this case, the total squared error would be of the form
+<me>TSE(a,b,c) = \sum_{k=0}^n (a x_k^2 + b x_k + c - y_k)^2.</me>
+Taking all three partials gives
+<me>TSE_a = \sum_{k=1}^n 2(a x_k^2 + b x_k + c - y_k) \cdot x_k^2</me>
+<me>TSE_b = \sum_{k=1}^n 2(a x_k^2 + b x_k + c - y_k) \cdot x_k</me>
+<me>TSE_c = \sum_{k=1}^n 2(a x_k^2 + b x_k + c - y_k) \cdot 1 .</me>
+Once again, setting equal to zero and solving gives the normal equations for the best-fit quadratic
+<me>a \sum_{k=1}^n x_k^4 + b \sum_{k=1}^n x_k^3 + c \sum_{k=1}^n x_k^2 = \sum_{k=1}^n x_k^2 y_k</me>
+<me>a \sum_{k=1}^n x_k^3 + b \sum_{k=1}^n x_k^2 + c \sum_{k=1}^n x_k = \sum_{k=1}^n x_k y_k</me>
+<me>a \sum_{k=1}^n x_k^2 + b \sum_{k=1}^n x_k + c \sum_{k=1}^n 1 = \sum_{k=1}^n y_k.</me>
+
 
 </p>
 </section>

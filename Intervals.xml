@@ -181,7 +181,7 @@ The calculators InvNorm(0.995) gives <m>z_{ 0.005} \approx 2.576</m>.
 </p>
 <p>
 Notice that when computing the confidence intervals above that we choose to just replace some of the p terms with <m>\tilde{p}</m> so that only one p term was left and could be isolated in the middle. There are other ways to deal with this. The easiest is to take the worst case scenario for the p terms in the denominator above. Indeed, the confidence interval is made wider (and therefore more likely to contain the actual p) if the square root term is as large as possible, using basic calculus it is easy to see that p(1-p) is maximized when p = 1/2. Therefore, a second alternative is to create your confidence interval using
-<me>z = \frac{\tilde{p} - p}{\frac{1}{2\sqrt{	n}}}</me>
+<me>z = \frac{\tilde{p} - p}{\frac{1}{2\sqrt{n}}}</me>
 and therefore <m>E = \frac{z_{ \alpha/2}}{2\sqrt{n}}</m>.
 This method should be used only when trying to create the roughest and "safest" interval.
 </p>
@@ -289,7 +289,7 @@ As with the confidence intervals above for proportions, the Central Limit Theore
 Given a sample mean <m>\overline{x}</m>, a two-sided confidence interval for the mean with confidence level <m>1-\alpha</m> is an interval 
 <me>\overline{x} - E_1 \lt \mu \lt \overline{x} + E_2</me>
 such that
-<me>P(\overline{x} - E_1 \lt \mu \lt \overline{x} + E_1) = 1-\alpha.</me>
+<me>P(\overline{x} - E_1 \lt \mu \lt \overline{x} + E_2) = 1-\alpha.</me>
 Generally, the interval is symmetrical of the form <m>\overline{x} \pm E</m> with E again known as the margin of error.  One-sided confidence intervals can be determined in the same manner as in the previous section.
 </p>
 </statement>
@@ -605,6 +605,18 @@ or
 </p>
 </exercise>
 
+<exercise><title> - Confidence Interval Experiment</title>
+<p>
+
+</p>
+</exercise>
+Roll two regular pair of dice 35 times, recording the sum of the dots for each roll.  Using the data from your sample, determine the corresponding sample mean and sample variance.  Using this data, create a 95% confidence interval for the population mean and a 95% "centered" confidence interval for the standard deviation. Once complete, compare your results with what you know should be the correct population statistics an appropriate "hat" distribution. (You might want to use the chi-square calculator provided earlier in this text.)
+</p>
+<p>
+Go back over your 35 rolls and count the number of 7's or 11's rolled. Determine a corresponding relative frequency for this outcome. Using this data, create a 95% confidence interval for the theoretical proportion of success p.  Compare your result with what you know should be the correct theoretical p. 
+</p>
+<p>
+Repeat this exercise but this time roll 105 times.  Notice how these differ from the confidence intervals created with the smaller set.  Write a paragraph describing how these compare and whether one is better or not than the other.
 </p>
 </section>
 
