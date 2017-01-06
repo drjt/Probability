@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  11 OCT 2016 17:00
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  4 JAN 2017 09:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1181,207 +1181,132 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--326
 
  [8]
 ************************************************
-Chapter 1 Review of Calculus
+Chapter 1 Statistical Measures
 ************************************************
 Chapter 1.
 ************************************************
-Introduction 
+Section 1.1 Introduction
 ************************************************
 ************************************************
-Section 1.1 Geometric Series
+Section 1.2 Measurement Scales
 ************************************************
-************************************************
-Subsection 1.1.1 Geometric Series
-************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.369 \item{
+            }Tabular Methods - [1
 
-Overfull \hbox (36.76187pt too wide) in paragraph at lines 369--369
-[] 
+
+]
+************************************************
+Section 1.3 Statistical Measures of Position
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.448 ...1 \le y_2 \le ... \le y_n.\end{equation*}
+                                                   [2]
+Overfull \hbox (9.65144pt too wide) in paragraph at lines 475--476
+[]\T1/cmr/m/n/10 To com-pute the per-centile value with $\OT1/cmr/m/n/10 0 \OML
+/cmm/m/it/10 < p < \OT1/cmr/m/n/10 1$ \T1/cmr/m/n/10 for or-der statis-tics $\O
+ML/cmm/m/it/10 y[]; y[]; :::; y[]$
  []
 
+[3]
+************************************************
+Section 1.4 Statistical Measures of the Middle
+************************************************
+[4]
+
+LaTeX Warning: Float too large for page by 19.03595pt on input line 663.
+
+[5] [6]
+************************************************
+Section 1.5 Statistical Measures of Variation
+************************************************
+[7]
+************************************************
+Section 1.6 Adjusting Statistical Measures for Grouped Data
+************************************************
+[8]
+************************************************
+Section 1.7 Other Statistical Point Measures
+************************************************
+[9]
+************************************************
+Section 1.8 Visual Statistical Measures - Graphical Representation of Data
+************************************************
+************************************************
+Subsection 1.8.1 Histograms
+************************************************
+<images/frequencyhistogram.png, id=439, 590.205pt x 541.02126pt>
+File: images/frequencyhistogram.png Graphic file (type png)
+
+<use images/frequencyhistogram.png>
+Package pdftex.def Info: images/frequencyhistogram.png used on input line 872.
+(pdftex.def)             Requested size: 340.0pt x 311.67093pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 872--873
+[][] 
+ []
+
+
+Underfull \vbox (badness 2426) has occurred while \output is active []
+
+ [10]
 (/usr/local/texlive/2011/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 378.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 879.
 
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 382.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.384 	pretty_print(
-                    html('$S_n(x) = %s$'%str(latex(Sn)))) [1
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 881.
 
-
-]
-************************************************
-Subsection 1.1.2 Alternate Forms for the Geometric Series
-************************************************
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.420 \end{gather*}
-                   \end{example} [2]
-************************************************
-Section 1.2 Binomial Sums
-************************************************
-! Missing $ inserted.
-<inserted text> 
-                $
-l.444 ...s technically not a series since the sum_
-                                                  if finite
-? 
-
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 445.
-
-
-! Package amsmath Error: \begin{gather*} allowed only in paragraph mode.
-
-See the amsmath package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.447 \begin{gather*}
-                     
-? 
-************************************************
-Subsection 1.2.1 
-************************************************
-! Missing $ inserted.
-<inserted text> 
-                $
-l.452 \subsection
-                 [{}]{}\label{subsection-3}
-? 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-************************************************
-Subsection 1.2.2 Binomial Series
-************************************************
-! Missing $ inserted.
-<inserted text> 
-                $
-l.478 		This finite sum_
-                        is known as the Binomial Series.%
-? 
-************************************************
-Subsection 1.2.2.1 
-************************************************
-! Missing $ inserted.
-<inserted text> 
-                $
-l.482 \subsubsection
-                    [{}]{}\label{subsection-5}
-? 
-
-Overfull \hbox (23.28604pt too wide) in paragraph at lines 477--482
-\T1/cmr/m/n/10 Consider $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a;
- b\OT1/cmr/m/n/10 ) = [][] []$\T1/cmr/m/n/10 . This fi-nite sum$[]\OML/cmm/m/it
-/10 sknownastheBinomialSeries:$ 
+Overfull \hbox (69.59247pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/10 1.8.  VISUAL STATISTICAL MEASURES - GRAPHICAL REPRESENTATION OF
+ DATA \T1/cmr/m/n/10 11
  []
 
-************************************************
-Subsection 1.2.3 Trinomial Series
-************************************************
-************************************************
-Section 1.3 Negative Binomial Series
-************************************************
-************************************************
-Chapter 2 Representing Data
-************************************************
-[4]
-Chapter 2.
-************************************************
-Section 2.1 Measurement Scales
-************************************************
-************************************************
-Section 2.2 Techniques for Representing Data
-************************************************
-[5
-
-]
-Overfull \hbox (13.39743pt too wide) in paragraph at lines 608--612
-[]\T1/cmr/m/n/10 Tests for Ran-dom-ness - in-di-cates whether the data has a no
-n-systematic
- []
-
-************************************************
-Section 2.3 Measures of Position
-************************************************
-[6] [7]
-************************************************
-Section 2.4 Measures of the Middle
-************************************************
-
-! Package inputenc Error: Unicode char \u8:× not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.760 \(AM×
-            HM=GM^2\)\end{theorem}
-? 
-[8]
-
-LaTeX Warning: Float too large for page by 19.03595pt on input line 849.
-
-************************************************
-Section 2.5 Measures of Spread
-************************************************
-[9] [10] [11]
-************************************************
-Section 2.6 Grouped Data
-************************************************
-************************************************
-Section 2.7 Other Point Measures
-************************************************
-[12] [13]
-************************************************
-Section 2.8 Graphical Representation of Data
-************************************************
-************************************************
-Subsection 2.8.1 Histograms
-************************************************
-<images/frequencyhistogram.png, id=499, 590.205pt x 541.02126pt>
-File: images/frequencyhistogram.png Graphic file (type png)
-
-<use images/frequencyhistogram.png>
-Package pdftex.def Info: images/frequencyhistogram.png used on input line 1055.
-
-(pdftex.def)             Requested size: 340.0pt x 311.67093pt.
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 1055--1056
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14]
-[15 <./images/frequencyhistogram.png>]
-<images/stemandleaf.png, id=527, 1076.02pt x 372.39125pt>
+[11 <./images/frequencyhistogram.png>]
+<images/stemandleaf.png, id=470, 1076.02pt x 372.39125pt>
 File: images/stemandleaf.png Graphic file (type png)
 
 <use images/stemandleaf.png>
-Package pdftex.def Info: images/stemandleaf.png used on input line 1102.
+Package pdftex.def Info: images/stemandleaf.png used on input line 919.
 (pdftex.def)             Requested size: 340.0pt x 117.66753pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 1102--1103
+Overfull \hbox (15.0pt too wide) in paragraph at lines 919--920
 [][] 
  []
 
-[16 <./images/stemandleaf.png>]
+[12 <./images/stemandleaf.png>]
 ************************************************
-Section 2.9 Exercises
+Section 1.9 Exercises
 ************************************************
+************************************************
+Chapter 2 Regression
+************************************************
+[13] [14
+
+]
+Chapter 2.
+************************************************
+Section 2.1 Introduction
+************************************************
+************************************************
+Section 2.2 Linear Regression
+************************************************
+[15]
+************************************************
+Section 2.3 Higher Degree Regression
+************************************************
+[16]
 ************************************************
 Chapter 3 Counting and Combinatorics
 ************************************************
@@ -1404,88 +1329,86 @@ Section 3.3 Combinations
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 1417.
+(amsmath)                 on input line 1313.
 
+[24]
 ************************************************
 Section 3.4 Exercises
 ************************************************
-[24]
+[25]
 ************************************************
 Chapter 4 Probability Theory
 ************************************************
-[25] [26
-
-]
+[26]
 Chapter 4.
 ************************************************
+Section 4.1 Introduction
+************************************************
+************************************************
+Section 4.2 Relative Frequency
+************************************************
+[27
+
+] [28] [29]
+************************************************
+Section 4.3 Definition of Probability
+************************************************
+************************************************
 Introduction 
 ************************************************
 ************************************************
-Section 4.1 Relative Frequency
-************************************************
-************************************************
-Introduction 
-************************************************
-[27] [28] [29]
-************************************************
-Section 4.2 Definition of Probability
-************************************************
-************************************************
-Introduction 
-************************************************
-************************************************
-Subsection 4.2.1 Motivating the Definition
+Subsection 4.3.1 Motivating the Definition
 ************************************************
 [30]
 ************************************************
-Subsection 4.2.2 Probability
+Subsection 4.3.2 Probability
 ************************************************
 ************************************************
-Subsection 4.2.3 Basic Probability Theorems
+Subsection 4.3.3 Basic Probability Theorems
 ************************************************
 [31]
-Overfull \hbox (70.46492pt too wide) in paragraph at lines 1739--1739
+Overfull \hbox (70.46492pt too wide) in paragraph at lines 1662--1662
 [] 
  []
 
 ************************************************
-Subsection 4.2.4 Equally Likely Outcomes
+Subsection 4.3.4 Equally Likely Outcomes
 ************************************************
 [32]
 ************************************************
-Subsection 4.2.5 HOMEWORK
+Subsection 4.3.5 HOMEWORK
 ************************************************
 ************************************************
-Section 4.3 Conditional Probability
+Section 4.4 Conditional Probability
 ************************************************
 ************************************************
 Introduction 
 ************************************************
 [33]
 ************************************************
-Subsection 4.3.1 HOMEWORK
+Subsection 4.4.1 HOMEWORK
 ************************************************
 [34]
-Overfull \hbox (53.22314pt too wide) detected at line 1903
+Overfull \hbox (53.22314pt too wide) detected at line 1826
 \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([]) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])
 []  = [] = []\OML/cmm/m/it/10 :
  []
 
 
-Overfull \hbox (11.9598pt too wide) detected at line 1911
+Overfull \hbox (11.9598pt too wide) detected at line 1834
 \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([]) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])
 []  = [] = []
  []
 
 
-Overfull \hbox (32.72607pt too wide) detected at line 1914
+Overfull \hbox (32.72607pt too wide) detected at line 1837
 \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([]) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])
 []  = (\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1) \OMS/cmsy/m/n
 /10 ^^A [] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 :
  []
 
 
-Overfull \hbox (8.01526pt too wide) detected at line 1916
+Overfull \hbox (8.01526pt too wide) detected at line 1839
 \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])[]  = [] = [] = []\OML/cmm/m/it/10 :
  []
 
@@ -1493,13 +1416,13 @@ Overfull \hbox (8.01526pt too wide) detected at line 1916
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2008 ...seat and you sit in yours) = \frac{1}{k}
+l.1931 ...seat and you sit in yours) = \frac{1}{k}
                                                    \cdot 1%
 ? 
 ! Extra }, or forgotten $.
 \frac  #1#2->{\begingroup #1\endgroup \@@over #2}
                                                  
-l.2008 ...seat and you sit in yours) = \frac{1}{k}
+l.1931 ...seat and you sit in yours) = \frac{1}{k}
                                                    \cdot 1%
 ? 
 
@@ -1509,7 +1432,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2009 \item
+l.1932 \item
             {}P(first guy sits in your seat and you do not sit in yours) = \...
 
 ? 
@@ -1520,7 +1443,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2009 \item{
+l.1932 \item{
              }P(first guy sits in your seat and you do not sit in yours) = \...
 
 ? 
@@ -1531,7 +1454,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2009 \item{
+l.1932 \item{
              }P(first guy sits in your seat and you do not sit in yours) = \...
 
 ? 
@@ -1542,59 +1465,59 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2010 \item
+l.1933 \item
             {}P(other k-2 travelers make their choices) = \((k-2) \frac{1}{k...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2010 \item{
+l.1933 \item{
              }P(other k-2 travelers make their choices) = \((k-2) \frac{1}{k...
 
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.2010 \item{
+l.1933 \item{
              }P(other k-2 travelers make their choices) = \((k-2) \frac{1}{k...
 
 ? 
 
-Overfull \hbox (131.63646pt too wide) in paragraph at lines 2008--2010
+Overfull \hbox (131.63646pt too wide) in paragraph at lines 1931--1933
 []\T1/cmr/m/n/10 P(first guy sits in his own seat and you sit in yours) = 1$[]$
  
  []
 
 ************************************************
-Section 4.4 Bayes Theorem
+Section 4.5 Bayes Theorem
 ************************************************
 ************************************************
 Introduction 
 ************************************************
 [37]
-Overfull \hbox (4.1474pt too wide) in paragraph at lines 2058--2060
+Overfull \hbox (4.1474pt too wide) in paragraph at lines 1981--1983
 []\T1/cmr/m/n/10 To il-lus-trate this re-sult, from the web site [][]$\T1/cmtt/
 m/n/9 http : / / stattrek . com / probability /
  []
 
 
-Overfull \hbox (160.32721pt too wide) in paragraph at lines 2069--2070
+Overfull \hbox (160.32721pt too wide) in paragraph at lines 1992--1993
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (208.35126pt too wide) in paragraph at lines 2070--2071
+Overfull \hbox (208.35126pt too wide) in paragraph at lines 1993--1994
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 [38]
-Overfull \hbox (4.27911pt too wide) in paragraph at lines 2094--2095
+Overfull \hbox (4.27911pt too wide) in paragraph at lines 2017--2018
 [][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (52.62247pt too wide) in paragraph at lines 2114--2115
+Overfull \hbox (52.62247pt too wide) in paragraph at lines 2037--2038
 [][][][][][][][][][][][][]  
  []
 
@@ -1602,27 +1525,27 @@ Overfull \hbox (52.62247pt too wide) in paragraph at lines 2114--2115
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
-Overfull \hbox (52.62247pt too wide) in paragraph at lines 2117--2119
+Overfull \hbox (52.62247pt too wide) in paragraph at lines 2040--2042
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (86.63449pt too wide) in paragraph at lines 2128--2129
+Overfull \hbox (86.63449pt too wide) in paragraph at lines 2051--2052
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (35.61646pt too wide) in paragraph at lines 2129--2131
+Overfull \hbox (35.61646pt too wide) in paragraph at lines 2052--2054
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (41.28513pt too wide) in paragraph at lines 2142--2143
+Overfull \hbox (41.28513pt too wide) in paragraph at lines 2065--2066
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (154.65854pt too wide) in paragraph at lines 2143--2145
+Overfull \hbox (154.65854pt too wide) in paragraph at lines 2066--2068
 [][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -1630,23 +1553,23 @@ Overfull \hbox (154.65854pt too wide) in paragraph at lines 2143--2145
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [40]
-Overfull \hbox (63.95981pt too wide) in paragraph at lines 2147--2149
+Overfull \hbox (63.95981pt too wide) in paragraph at lines 2070--2072
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 ************************************************
-Subsection 4.4.1 HOMEWORK
+Subsection 4.5.1 HOMEWORK
 ************************************************
 [41]
 ************************************************
-Section 4.5 Independence
+Section 4.6 Independence
 ************************************************
 ************************************************
 Introduction 
 ************************************************
 [42]
 ************************************************
-Subsection 4.5.1 HOMEWORK
+Subsection 4.6.1 HOMEWORK
 ************************************************
 [43]
 ************************************************
@@ -1655,104 +1578,111 @@ Chapter 5 Probability Functions
 [44]
 Chapter 5.
 ************************************************
-Introduction 
+Section 5.1 Introduction
 ************************************************
 ************************************************
-Section 5.1 Random Variables
+Section 5.2 Random Variables
 ************************************************
-<images/randomvariable.png, id=974, 322.20375pt x 162.6075pt>
+<images/randomvariable.png, id=962, 322.20375pt x 162.6075pt>
 File: images/randomvariable.png Graphic file (type png)
 
 <use images/randomvariable.png>
-Package pdftex.def Info: images/randomvariable.png used on input line 2349.
+Package pdftex.def Info: images/randomvariable.png used on input line 2278.
 (pdftex.def)             Requested size: 340.0pt x 171.59644pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 2349--2350
+Overfull \hbox (15.0pt too wide) in paragraph at lines 2278--2279
 [][] 
  []
 
-[45
 
- <./images/randomvariable.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45
+
+]
 ************************************************
-Subsection 5.1.1 HOMEWORK
+Subsection 5.2.1 HOMEWORK
 ************************************************
+[46 <./images/randomvariable.png>]
 ************************************************
-Section 5.2 Probability Functions
+Section 5.3 Probability Functions
 ************************************************
-[46]
-Overfull \hbox (160.32721pt too wide) in paragraph at lines 2442--2443
+[47]
+Overfull \hbox (160.32721pt too wide) in paragraph at lines 2371--2372
 [][][][][][][][] 
  []
 
 
-Overfull \hbox (24.27911pt too wide) in paragraph at lines 2458--2459
+Overfull \hbox (24.27911pt too wide) in paragraph at lines 2387--2388
 [][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[47]
-Overfull \hbox (12.94177pt too wide) in paragraph at lines 2462--2463
+
+Overfull \hbox (12.94177pt too wide) in paragraph at lines 2391--2392
 [][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (63.95981pt too wide) in paragraph at lines 2463--2465
+Overfull \hbox (63.95981pt too wide) in paragraph at lines 2392--2394
 [][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (35.61646pt too wide) in paragraph at lines 2490--2491
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+Overfull \hbox (35.61646pt too wide) in paragraph at lines 2419--2420
 [][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (217.01392pt too wide) in paragraph at lines 2491--2492
+Overfull \hbox (217.01392pt too wide) in paragraph at lines 2420--2421
 [][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[48] [49]
+[49] [50]
 ************************************************
-Subsection 5.2.1 HOMEWORK
+Subsection 5.3.1 HOMEWORK
 ************************************************
 ************************************************
-Section 5.3 Expected Value
+Section 5.4 Expected Value
 ************************************************
-[50] [51]
-<images/DiscreteHistogramExample.png, id=1101, 399.4925pt x 354.32375pt>
+[51] [52]
+<images/DiscreteHistogramExample.png, id=1095, 399.4925pt x 354.32375pt>
 File: images/DiscreteHistogramExample.png Graphic file (type png)
 
 <use images/DiscreteHistogramExample.png>
 Package pdftex.def Info: images/DiscreteHistogramExample.png used on input line
- 2716.
+ 2663.
 (pdftex.def)             Requested size: 340.0pt x 301.57127pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 2716--2717
+Overfull \hbox (15.0pt too wide) in paragraph at lines 2663--2664
 [][] 
  []
 
 
-Underfull \vbox (badness 6575) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [52]
-Overfull \hbox (78.9008pt too wide) in paragraph at lines 2748--2748
+ [53]
+Overfull \hbox (78.9008pt too wide) in paragraph at lines 2695--2695
 [] 
  []
 
 
-Overfull \hbox (160.09514pt too wide) in paragraph at lines 2759--2759
+Overfull \hbox (160.09514pt too wide) in paragraph at lines 2706--2706
 [] 
  []
 
-[53 <./images/DiscreteHistogramExample.png>]
-<images/ContinuousDistributionExample.png, id=1130, 566.5968pt x 422.0568pt>
+[54 <./images/DiscreteHistogramExample.png>]
+<images/ContinuousDistributionExample.png, id=1124, 566.5968pt x 422.0568pt>
 File: images/ContinuousDistributionExample.png Graphic file (type png)
 
 <use images/ContinuousDistributionExample.png>
 Package pdftex.def Info: images/ContinuousDistributionExample.png used on input
- line 2766.
+ line 2713.
 (pdftex.def)             Requested size: 340.0pt x 253.26178pt.
 
-Overfull \hbox (235.38239pt too wide) in paragraph at lines 2764--2767
+Overfull \hbox (235.38239pt too wide) in paragraph at lines 2711--2714
 \T1/cmr/m/n/10 tin-u-ous vari-able. Let $\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = [] \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 (1 \
 OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 )$ \T1/cmr/m/n/10 over 
@@ -1762,32 +1692,55 @@ R = [-1,1]. []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54 <./images/ContinuousDistributionExample.png>] [55]
+ [55 <./images/ContinuousDistributionExample.png>] [56]
+<images/6-1-American-Roulette-1024x463.png, id=1135, 1027.84pt x 464.73625pt>
+File: images/6-1-American-Roulette-1024x463.png Graphic file (type png)
+
+<use images/6-1-American-Roulette-1024x463.png>
+Package pdftex.def Info: images/6-1-American-Roulette-1024x463.png used on inpu
+t line 2770.
+(pdftex.def)             Requested size: 340.0pt x 153.73218pt.
+ [57 <./images/6-1-American-Roulette-1024x463.png>]
 ************************************************
-Section 5.4 Standard Units
+Section 5.5 Standard Units
 ************************************************
 ************************************************
-Chapter 6 Uniform and Hypergeometric Distributions
+Chapter 6 Distributions based upon Equally likely Outcomes
 ************************************************
-[56]
+[58]
 Chapter 6.
 ************************************************
-Introduction 
+Section 6.1 Introduction
 ************************************************
 ************************************************
-Section 6.1 Discrete Uniform Distribution
+Section 6.2 Discrete Uniform Distribution
 ************************************************
-[57
+[59
 
-] [58]
+]
+Underfull \vbox (badness 3291) has occurred while \output is active []
+
+
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 60 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+ []
+
+[60]
 ************************************************
-Section 6.2 Continuous Uniform Distribution
+Section 6.3 Continuous Uniform Distribution
 ************************************************
-[59]
+[61]
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 62 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+ []
+
+[62]
 ************************************************
-Section 6.3 Hypergeometric Distribution
+Section 6.4 Hypergeometric Distribution
 ************************************************
-[60] [61]
+[63]
 
 ! Package inputenc Error: Unicode char \u8:μ not set up for use with LaTeX.
 
@@ -1810,377 +1763,488 @@ l.3085 ...la is similar and uses E(X(X-1)+ μ - μ
                                                   2. The proof of skewness a...
 
 ? 
-[62]
+
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 64 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+ []
+
+[64]
 ************************************************
-Section 6.4 Exercises
+Section 6.5 Exercises
 ************************************************
 ************************************************
-Chapter 7 Binomial, Geometric, and Negative Binomial Distributions
+Chapter 7 Distributions based upon Bernoulli Trials
 ************************************************
-[63] [64
+[65]
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 66 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+ []
+
+[66
 
 ]
 Chapter 7.
 ************************************************
-Introduction 
+Section 7.1 Introduction
 ************************************************
 ************************************************
-Section 7.1 Binomial Distribution
+Section 7.2 Binomial Distribution
 ************************************************
-[65]
-Overfull \hbox (46.9538pt too wide) in paragraph at lines 3166--3167
+[67]
+Overfull \hbox (46.9538pt too wide) in paragraph at lines 3180--3181
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-
-Overfull \hbox (79.94046pt too wide) has occurred while \output is active
-\T1/cmr/m/n/10 66 \T1/cmr/m/sl/10 CHAPTER 7.  BINOMIAL, GEOMETRIC, AND NEGATIVE
- BINOMIAL DISTRIBUTIONS
+[68]
+Overfull \hbox (1.60443pt too wide) in paragraph at lines 3214--3215
+[][][][][][][][][][][][][][][][][][]  
  []
 
-[66]
-Overfull \hbox (23.81306pt too wide) in paragraph at lines 3222--3222
+
+Overfull \hbox (23.81306pt too wide) in paragraph at lines 3253--3253
 [] 
  []
 
-[67]
+[69]
 ************************************************
-Section 7.2 Geometric Distribution
+Section 7.3 Geometric Distribution
 ************************************************
-
-Overfull \hbox (79.94046pt too wide) has occurred while \output is active
-\T1/cmr/m/n/10 68 \T1/cmr/m/sl/10 CHAPTER 7.  BINOMIAL, GEOMETRIC, AND NEGATIVE
- BINOMIAL DISTRIBUTIONS
- []
-
-[68]
-! Undefined control sequence.
-<argument> ...E[X(X-1)] + \mu - \mu ^2 \\ & = \su 
-                                                  _{k=0}^{\infty } {k(k-1)(1...
-l.3341 \end{align*}
-                   
-? 
-! Undefined control sequence.
-<argument> ...E[X(X-1)] + \mu - \mu ^2 \\ & = \su 
-                                                  _{k=0}^{\infty } {k(k-1)(1...
-l.3341 \end{align*}
-                   
-? 
-
-Underfull \vbox (badness 6910) has occurred while \output is active []
-
- [69]
-Overfull \hbox (4.7339pt too wide) in paragraph at lines 3357--3358
-[][]\T1/cmr/bx/n/10 Theorem 7.2.5 \T1/cmr/m/n/10 (Statis-tics for Ge-o-met-ric 
+[70] [71]
+Overfull \hbox (4.7339pt too wide) in paragraph at lines 3391--3392
+[][]\T1/cmr/bx/n/10 Theorem 7.3.5 \T1/cmr/m/n/10 (Statis-tics for Ge-o-met-ric 
 Dis-tri-bu-tion)\T1/cmr/bx/n/10 . []\T1/cmr/m/it/10 Mean, Vari-ance, Skew-
  []
 
-
-Overfull \hbox (79.94046pt too wide) has occurred while \output is active
-\T1/cmr/m/n/10 70 \T1/cmr/m/sl/10 CHAPTER 7.  BINOMIAL, GEOMETRIC, AND NEGATIVE
- BINOMIAL DISTRIBUTIONS
- []
-
-[70]
+[72]
 ************************************************
-Section 7.3 Negative Binomial
+Section 7.4 Negative Binomial
 ************************************************
 
-Overfull \hbox (15.47804pt too wide) in paragraph at lines 3415--3420
+Overfull \hbox (15.47804pt too wide) in paragraph at lines 3450--3455
 []\T1/cmr/m/n/10 First, con-vert the prob-lem to a slightly dif-fer-ent form: $
 [] \OT1/cmr/m/n/10 = [][] =
  []
 
-[71]
-Overfull \hbox (79.94046pt too wide) has occurred while \output is active
-\T1/cmr/m/n/10 72 \T1/cmr/m/sl/10 CHAPTER 7.  BINOMIAL, GEOMETRIC, AND NEGATIVE
- BINOMIAL DISTRIBUTIONS
+[73] [74]
+Overfull \hbox (80.96582pt too wide) in paragraph at lines 3526--3527
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[72]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/it' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/it' tried instead on input line 3487.
+(Font)              Font shape `T1/cmtt/m/it' tried instead on input line 3545.
 
-
+[75]
 ************************************************
-Section 7.4 Exercises
+Section 7.5 Exercises
 ************************************************
 ************************************************
-Chapter 8 Poisson, Exponential, and Gamma Distributions
+Chapter 8 Distributions based upon Poisson Processes
 ************************************************
-[73]
-Overfull \hbox (79.94046pt too wide) has occurred while \output is active
-\T1/cmr/m/n/10 74 \T1/cmr/m/sl/10 CHAPTER 7.  BINOMIAL, GEOMETRIC, AND NEGATIVE
- BINOMIAL DISTRIBUTIONS
- []
-
-[74
-
-]
+[76]
 Chapter 8.
 ************************************************
-Section 8.1 Poisson Distribution
+Section 8.1 Introduction
 ************************************************
 ************************************************
-Section 8.2 Exponential Distribution
+Section 8.2 Poisson Distribution
 ************************************************
+[77
+
+] [78] [79]
 ************************************************
-Section 8.3 Gamma Distribution
+Section 8.3 Exponential Distribution
+************************************************
+[80] [81]
+************************************************
+Section 8.4 Gamma Distribution
+************************************************
+[82]
+Overfull \hbox (2.95245pt too wide) in paragraph at lines 3894--3895
+\T1/cmr/m/n/10 the in-ter-val un-til the rth suc-cess and $\OML/cmm/m/it/10 ^^V
+astheaverageintervaluntilthe\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 stsuccess$\T1/cmr
+/m/n/10 ,
+ []
+
+[83]
+************************************************
+Section 8.5 Exercises
 ************************************************
 ************************************************
 Chapter 9 Normal Distributions
 ************************************************
-[75]
-Overfull \hbox (15.99884pt too wide) has occurred while \output is active
-\T1/cmr/m/n/10 76 \T1/cmr/m/sl/10 CHAPTER 8.  POISSON, EXPONENTIAL, AND GAMMA D
-ISTRIBUTIONS
- []
-
-[76
-
-]
+[84]
 Chapter 9.
 ************************************************
-Section 9.1 Properties of the Normal Distribution
+Section 9.1 Introduction
 ************************************************
 ************************************************
-Section 9.2 Theorems
+Section 9.2 The Normal Distribution
 ************************************************
+
+Overfull \hbox (137.65253pt too wide) in paragraph at lines 4036--4037
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (69.62848pt too wide) in paragraph at lines 4039--4040
+[][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (1.60443pt too wide) in paragraph at lines 4040--4041
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[85
+
+]
+Overfull \hbox (35.61646pt too wide) in paragraph at lines 4041--4042
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (35.61646pt too wide) in paragraph at lines 4042--4043
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (83.6405pt too wide) in paragraph at lines 4043--4044
+[][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[86] [87]
 ************************************************
 Section 9.3 Chi-Square Distribution
 ************************************************
+[88]
 ************************************************
-Section 9.4 Central Limit Theorem
+Section 9.4 Normal Distribution as a Limiting Distribution
 ************************************************
-
-! Package inputenc Error: Unicode char \u8:μ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3571 ...ve frequency and use these values for μ
-                                                   or p.%
-? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.3576 ...s a red circle.  If you check the "Show_
+l.4251 ...s a red circle.  If you check the "Show_
                                                   Mean" box, the mean of the...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.3578 \par
+l.4253 \par
            
 ? 
 
-Overfull \hbox (53.18768pt too wide) in paragraph at lines 3576--3578
-\T1/cmr/m/n/10 "Show$[]\OML/cmm/m/it/10 ean\OT1/cmr/m/n/10 "\OML/cmm/m/it/10 bo
-x; themeanofthesecirclesisindicatedbythegreenlineinthemiddleoftheplot:$ 
+Overfull \hbox (95.12189pt too wide) in paragraph at lines 4251--4253
+\T1/cmr/m/n/10 check the "Show$[]\OML/cmm/m/it/10 ean\OT1/cmr/m/n/10 "\OML/cmm/
+m/it/10 box; themeanofthesecirclesisindicatedbythegreenlineinthemiddleoftheplot
+:$ 
  []
 
-[77]
-Overfull \hbox (1.60443pt too wide) in paragraph at lines 3602--3603
+[89]
+Overfull \hbox (1.60443pt too wide) in paragraph at lines 4277--4278
 [][][][][][][][][][][][][][] 
  []
 
-[78]
-Overfull \hbox (222.68259pt too wide) in paragraph at lines 3623--3624
+
+Overfull \hbox (222.68259pt too wide) in paragraph at lines 4298--4299
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (160.32721pt too wide) in paragraph at lines 3624--3626
+Overfull \hbox (160.32721pt too wide) in paragraph at lines 4299--4301
 [][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-
-Overfull \hbox (29.94778pt too wide) in paragraph at lines 3626--3629
+[90]
+Overfull \hbox (29.94778pt too wide) in paragraph at lines 4301--4304
 [][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (120.64651pt too wide) in paragraph at lines 3637--3638
+Overfull \hbox (120.64651pt too wide) in paragraph at lines 4312--4313
 [][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (148.98987pt too wide) in paragraph at lines 3638--3639
+Overfull \hbox (148.98987pt too wide) in paragraph at lines 4313--4314
 [][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [79]
-Overfull \hbox (251.02594pt too wide) in paragraph at lines 3664--3665
+ [91]
+Overfull \hbox (251.02594pt too wide) in paragraph at lines 4339--4340
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (52.62247pt too wide) in paragraph at lines 3665--3667
+Overfull \hbox (52.62247pt too wide) in paragraph at lines 4340--4342
 [][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (1.60443pt too wide) in paragraph at lines 3679--3680
+Overfull \hbox (1.60443pt too wide) in paragraph at lines 4354--4355
 [][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (222.68259pt too wide) in paragraph at lines 3700--3701
+Overfull \hbox (222.68259pt too wide) in paragraph at lines 4375--4376
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[80]
-Overfull \hbox (160.32721pt too wide) in paragraph at lines 3701--3703
+
+Overfull \hbox (160.32721pt too wide) in paragraph at lines 4376--4378
 [][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (29.94778pt too wide) in paragraph at lines 3703--3706
+Overfull \hbox (29.94778pt too wide) in paragraph at lines 4378--4381
 [][][][][][][][][][][]  
  []
 
-
-Overfull \hbox (120.64651pt too wide) in paragraph at lines 3714--3715
+[92]
+Overfull \hbox (120.64651pt too wide) in paragraph at lines 4389--4390
 [][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (148.98987pt too wide) in paragraph at lines 3715--3716
+Overfull \hbox (148.98987pt too wide) in paragraph at lines 4390--4391
 [][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (251.02594pt too wide) in paragraph at lines 4416--4417
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (52.62247pt too wide) in paragraph at lines 4417--4419
+[][][][][][][][][][][][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [81]
-Overfull \hbox (251.02594pt too wide) in paragraph at lines 3741--3742
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ [93]
+************************************************
+Section 9.5 Central Limit Theorem
+************************************************
+
+! Package inputenc Error: Unicode char \u8:μ not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4433 ...ve frequency and use these values for μ
+                                                   or p.%
+? 
+[94] [95]
+Overfull \hbox (32.7024pt too wide) detected at line 4565
+\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (8 \OMS/cmsy/m/n/10 ^^T [] \OML/cmm/m/it/10 <
+ \OT1/cmr/m/n/10 12) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (7\OML/cmm/m/it/10 :\O
+T1/cmr/m/n/10 5 \OMS/cmsy/m/n/10 ^^T [] ^^T \OT1/cmr/m/n/10 11\OML/cmm/m/it/10 
+:\OT1/cmr/m/n/10 5) \OMS/cmsy/m/n/10 ^^Y \OML/cmm/m/it/10 normalcdf\OT1/cmr/m/n
+/10 (7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 11\
+OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm
+/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10
+ :\OT1/cmr/m/n/10 585750) \OMS/cmsy/m/n/10 ^^Y \OT1/cmr/m/n/10 0\OML/cmm/m/it/1
+0 :\OT1/cmr/m/n/10 9561\OML/cmm/m/it/10 :
  []
 
+[96]
+************************************************
+Section 9.6 Exercises
+************************************************
+************************************************
+Chapter 10 Estimation
+************************************************
+[97] [98
 
-Overfull \hbox (52.62247pt too wide) in paragraph at lines 3742--3744
-[][][][][][][][][][][][] 
- []
-
-************************************************
-Subsection 9.4.1 
-************************************************
-************************************************
-Subsection 9.4.2 
-************************************************
-************************************************
-Chapter 10 Estimating Data using Intervals
-************************************************
-[82]
+]
 Chapter 10.
+************************************************
+Section 10.1 Introduction
+************************************************
+************************************************
+Section 10.2 Interval Estimates - Chebyshev
+************************************************
+
+Underfull \vbox (badness 3199) has occurred while \output is active []
+
+ [99]
+************************************************
+Section 10.3 Point Estimates
+************************************************
+[100]
+************************************************
+Section 10.4 Interval Estimates - Confidence Interval for p
+************************************************
+[101] [102] [103]
+************************************************
+Section 10.5 Interval Estimates - Confidence Interval for \(\mu \)
+************************************************
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 4849.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mu' on input line 4849.
+
+[104] [105]
+************************************************
+Section 10.6 Interval Estimates - Confidence Interval for \(\sigma ^2\)
+************************************************
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 4914.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sigma' on input line 4914.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 4914.
+
+[106]
+Overfull \hbox (63.95981pt too wide) in paragraph at lines 4976--4977
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (1.60443pt too wide) in paragraph at lines 4977--4978
+[][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (1.60443pt too wide) in paragraph at lines 4978--4979
+[][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (75.29715pt too wide) in paragraph at lines 4979--4980
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[107]
+Overfull \hbox (41.28513pt too wide) in paragraph at lines 5006--5007
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (52.62247pt too wide) in paragraph at lines 5009--5010
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[108]
+************************************************
+Section 10.7 Exercises
+************************************************
+[109]
+************************************************
+Chapter 11 Review of Calculus
+************************************************
+[110]
+Chapter 11.
 ************************************************
 Introduction 
 ************************************************
 ************************************************
-Section 10.1 Point Estimates
+Section 11.1 Geometric Series
 ************************************************
 ************************************************
-Section 10.2 Chebyshev
+Subsection 11.1.1 Geometric Series
 ************************************************
 
-! Package inputenc Error: Unicode char \u8:μ not set up for use with LaTeX.
+Overfull \hbox (36.76187pt too wide) in paragraph at lines 5172--5172
+[] 
+ []
 
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3798 ...n a random variable X with given mean μ
-                                                   and standard deviation σ...
-
-? 
-
-! Package inputenc Error: Unicode char \u8:σ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3798 ... given mean μ and standard deviation σ
-                                                  , for k>1 at least
-? 
-
-! Package inputenc Error: Unicode char \u8:− not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3801 	k −
-              of the observations lie within k standard deviations from the ...
-
-? 
-************************************************
-Section 10.3 Measures of Spread
-************************************************
-[83
+[111
 
 ]
+************************************************
+Subsection 11.1.2 Alternate Forms for the Geometric Series
+************************************************
+[112]
+************************************************
+Section 11.2 Binomial Sums
+************************************************
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5247 ... technically not a series since the sum_
+                                                  if finite
+? 
 
-! Package inputenc Error: Unicode char \u8:σ not set up for use with LaTeX.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 5248.
 
-See the inputenc package documentation for explanation.
+
+
+! Package amsmath Error: \begin{gather*} allowed only in paragraph mode.
+
+See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3814 σ
-         2
+l.5250 \begin{gather*}
+                      
+? 
+************************************************
+Subsection 11.2.1 
+************************************************
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5255 \subsection
+                  [{}]{}\label{subsection-14}
 ? 
 
-! Package inputenc Error: Unicode char \u8:∑ not set up for use with LaTeX.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3821 k ∑
-             xfx =
+ [113]
+************************************************
+Subsection 11.2.2 Binomial Series
+************************************************
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5281 		This finite sum_
+                         is known as the Binomial Series.%
+? 
+************************************************
+Subsection 11.2.2.1 
+************************************************
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5285 \subsubsection
+                     [{}]{}\label{subsection-16}
 ? 
 
-! Package inputenc Error: Unicode char \u8:− not set up for use with LaTeX.
+Overfull \hbox (23.28604pt too wide) in paragraph at lines 5280--5285
+\T1/cmr/m/n/10 Consider $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a;
+ b\OT1/cmr/m/n/10 ) = [][] []$\T1/cmr/m/n/10 . This fi-nite sum$[]\OML/cmm/m/it
+/10 sknownastheBinomialSeries:$ 
+ []
 
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3822 −
-           μ
-? 
-
-! Package inputenc Error: Unicode char \u8:μ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3822 − μ
-             
-? 
-
-! Package inputenc Error: Unicode char \u8:σ not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3824 and is denoted by σ
-                           . \end{definition}
-? 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3825.
-[84]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3825.
+************************************************
+Subsection 11.2.3 Trinomial Series
+************************************************
+************************************************
+Section 11.3 Negative Binomial Series
+************************************************
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5312.
+[114]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5312.
  (./Intro_Probability_And_Statistics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3825.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3825.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5312.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5312.
 
 
 
@@ -2191,55 +2255,72 @@ Package rerunfilecheck Warning: File `Intro_Probability_And_Statistics.out' has
 
 Package rerunfilecheck Info: Checksums for `Intro_Probability_And_Statistics.ou
 t':
-(rerunfilecheck)             Before: FA393595E562677E5DD6069AB0372805;3484
-(rerunfilecheck)             After:  F9D4A95D94947EBDD05E4D3CB7F888AB;3510.
+(rerunfilecheck)             Before: F9D4A95D94947EBDD05E4D3CB7F888AB;3510
+(rerunfilecheck)             After:  97DF366436C6490C0FA7B83926199947;4672.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3825.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5312.
  ) 
 Here is how much of TeX's memory you used:
- 21447 strings out of 493633
- 371245 string characters out of 3143378
- 643730 words of memory out of 3000000
- 23201 multiletter control sequences out of 15000+200000
- 23378 words of font info for 59 fonts, out of 3000000 for 9000
+ 21944 strings out of 493633
+ 377935 string characters out of 3143378
+ 644470 words of memory out of 3000000
+ 23308 multiletter control sequences out of 15000+200000
+ 25127 words of font info for 66 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 56i,12n,65p,1873b,2043s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section.5.5} has been referenced but does not exi
+ 56i,12n,65p,1873b,2098s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{section.2.9} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.2.4} has been referenced but does not exist
+, replaced by a fixed one
 
 {/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
 usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
-local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
-cal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/t
-exlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
-ive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive
-/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2
-011/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
-ve/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive
-/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2
-011/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/201
-1/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2011/
-texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2011/te
-xmf-dist/fonts/type1/public/cm-super/sfit0900.pfb></usr/local/texlive/2011/texm
-f-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2011/texmf-
-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2011/texmf-di
-st/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2011/texmf-dist
-/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2011/texmf-dist/f
-onts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2011/texmf-dist/fon
-ts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2011/texmf-dist/fonts
-/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2011/texmf-dist/fonts/t
-ype1/public/cm-super/sftt1000.pfb>
-Output written on Intro_Probability_And_Statistics.pdf (94 pages, 761149 bytes)
-.
+sr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb>
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local
+/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/tex
+live/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive
+/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2
+011/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/201
+1/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2011/
+texmf-dist/fonts/type1/public/cm-super/sfit0900.pfb></usr/local/texlive/2011/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2011/texm
+f-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2011/texmf-
+dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2011/texmf-di
+st/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2011/texmf-dist
+/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2011/texmf-dist/f
+onts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2011/texmf-dist/fon
+ts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2011/texmf-dist/fonts
+/type1/public/cm-super/sftt1000.pfb>
+Output written on Intro_Probability_And_Statistics.pdf (124 pages, 1250746 byte
+s).
 PDF statistics:
- 2007 PDF objects out of 2073 (max. 8388607)
- 1857 compressed objects within 19 object streams
- 1120 named destinations out of 1200 (max. 500000)
- 462 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2587 PDF objects out of 2984 (max. 8388607)
+ 2398 compressed objects within 24 object streams
+ 1507 named destinations out of 1728 (max. 500000)
+ 475 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,54 +1,70 @@
 \BOOKMARK [0][-]{chapter*.1}{Preface}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Review of Calculus}{}% 2
-\BOOKMARK [1][-]{section.1.1}{Geometric Series}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Binomial Sums}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Negative Binomial Series}{chapter.1}% 5
-\BOOKMARK [0][-]{chapter.2}{Representing Data}{}% 6
-\BOOKMARK [1][-]{section.2.1}{Measurement Scales}{chapter.2}% 7
-\BOOKMARK [1][-]{section.2.2}{Techniques for Representing Data}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.3}{Measures of Position}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.4}{Measures of the Middle}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.5}{Measures of Spread}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.6}{Grouped Data}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.7}{Other Point Measures}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.8}{Graphical Representation of Data}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.9}{Exercises}{chapter.2}% 15
+\BOOKMARK [0][-]{chapter.1}{Statistical Measures}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Measurement Scales}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Statistical Measures of Position}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Statistical Measures of the Middle}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.5}{Statistical Measures of Variation}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.6}{Adjusting Statistical Measures for Grouped Data}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.7}{Other Statistical Point Measures}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.8}{Visual Statistical Measures - Graphical Representation of Data}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.9}{Exercises}{chapter.1}% 11
+\BOOKMARK [0][-]{chapter.2}{Regression}{}% 12
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{Linear Regression}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Higher Degree Regression}{chapter.2}% 15
 \BOOKMARK [0][-]{chapter.3}{Counting and Combinatorics}{}% 16
 \BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 17
 \BOOKMARK [1][-]{section.3.2}{Permutations}{chapter.3}% 18
 \BOOKMARK [1][-]{section.3.3}{Combinations}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.4}{Exercises}{chapter.3}% 20
 \BOOKMARK [0][-]{chapter.4}{Probability Theory}{}% 21
-\BOOKMARK [1][-]{section.4.1}{Relative Frequency}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.2}{Definition of Probability}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.3}{Conditional Probability}{chapter.4}% 24
-\BOOKMARK [1][-]{section.4.4}{Bayes Theorem}{chapter.4}% 25
-\BOOKMARK [1][-]{section.4.5}{Independence}{chapter.4}% 26
-\BOOKMARK [0][-]{chapter.5}{Probability Functions}{}% 27
-\BOOKMARK [1][-]{section.5.1}{Random Variables}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.2}{Probability Functions}{chapter.5}% 29
-\BOOKMARK [1][-]{section.5.3}{Expected Value}{chapter.5}% 30
-\BOOKMARK [1][-]{section.5.4}{Standard Units}{chapter.5}% 31
-\BOOKMARK [0][-]{chapter.6}{Uniform and Hypergeometric Distributions}{}% 32
-\BOOKMARK [1][-]{section.6.1}{Discrete Uniform Distribution}{chapter.6}% 33
-\BOOKMARK [1][-]{section.6.2}{Continuous Uniform Distribution}{chapter.6}% 34
-\BOOKMARK [1][-]{section.6.3}{Hypergeometric Distribution}{chapter.6}% 35
-\BOOKMARK [1][-]{section.6.4}{Exercises}{chapter.6}% 36
-\BOOKMARK [0][-]{chapter.7}{Binomial, Geometric, and Negative Binomial Distributions}{}% 37
-\BOOKMARK [1][-]{section.7.1}{Binomial Distribution}{chapter.7}% 38
-\BOOKMARK [1][-]{section.7.2}{Geometric Distribution}{chapter.7}% 39
-\BOOKMARK [1][-]{section.7.3}{Negative Binomial}{chapter.7}% 40
-\BOOKMARK [1][-]{section.7.4}{Exercises}{chapter.7}% 41
-\BOOKMARK [0][-]{chapter.8}{Poisson, Exponential, and Gamma Distributions}{}% 42
-\BOOKMARK [1][-]{section.8.1}{Poisson Distribution}{chapter.8}% 43
-\BOOKMARK [1][-]{section.8.2}{Exponential Distribution}{chapter.8}% 44
-\BOOKMARK [1][-]{section.8.3}{Gamma Distribution}{chapter.8}% 45
-\BOOKMARK [0][-]{chapter.9}{Normal Distributions}{}% 46
-\BOOKMARK [1][-]{section.9.1}{Properties of the Normal Distribution}{chapter.9}% 47
-\BOOKMARK [1][-]{section.9.2}{Theorems}{chapter.9}% 48
-\BOOKMARK [1][-]{section.9.3}{Chi-Square Distribution}{chapter.9}% 49
-\BOOKMARK [1][-]{section.9.4}{Central Limit Theorem}{chapter.9}% 50
-\BOOKMARK [0][-]{chapter.10}{Estimating Data using Intervals}{}% 51
-\BOOKMARK [1][-]{section.10.1}{Point Estimates}{chapter.10}% 52
-\BOOKMARK [1][-]{section.10.2}{Chebyshev}{chapter.10}% 53
-\BOOKMARK [1][-]{section.10.3}{Measures of Spread}{chapter.10}% 54
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Relative Frequency}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.3}{Definition of Probability}{chapter.4}% 24
+\BOOKMARK [1][-]{section.4.4}{Conditional Probability}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.5}{Bayes Theorem}{chapter.4}% 26
+\BOOKMARK [1][-]{section.4.6}{Independence}{chapter.4}% 27
+\BOOKMARK [0][-]{chapter.5}{Probability Functions}{}% 28
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.2}{Random Variables}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.3}{Probability Functions}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.4}{Expected Value}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.5}{Standard Units}{chapter.5}% 33
+\BOOKMARK [0][-]{chapter.6}{Distributions based upon Equally likely Outcomes}{}% 34
+\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 35
+\BOOKMARK [1][-]{section.6.2}{Discrete Uniform Distribution}{chapter.6}% 36
+\BOOKMARK [1][-]{section.6.3}{Continuous Uniform Distribution}{chapter.6}% 37
+\BOOKMARK [1][-]{section.6.4}{Hypergeometric Distribution}{chapter.6}% 38
+\BOOKMARK [1][-]{section.6.5}{Exercises}{chapter.6}% 39
+\BOOKMARK [0][-]{chapter.7}{Distributions based upon Bernoulli Trials}{}% 40
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 41
+\BOOKMARK [1][-]{section.7.2}{Binomial Distribution}{chapter.7}% 42
+\BOOKMARK [1][-]{section.7.3}{Geometric Distribution}{chapter.7}% 43
+\BOOKMARK [1][-]{section.7.4}{Negative Binomial}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.5}{Exercises}{chapter.7}% 45
+\BOOKMARK [0][-]{chapter.8}{Distributions based upon Poisson Processes}{}% 46
+\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 47
+\BOOKMARK [1][-]{section.8.2}{Poisson Distribution}{chapter.8}% 48
+\BOOKMARK [1][-]{section.8.3}{Exponential Distribution}{chapter.8}% 49
+\BOOKMARK [1][-]{section.8.4}{Gamma Distribution}{chapter.8}% 50
+\BOOKMARK [1][-]{section.8.5}{Exercises}{chapter.8}% 51
+\BOOKMARK [0][-]{chapter.9}{Normal Distributions}{}% 52
+\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 53
+\BOOKMARK [1][-]{section.9.2}{The Normal Distribution}{chapter.9}% 54
+\BOOKMARK [1][-]{section.9.3}{Chi-Square Distribution}{chapter.9}% 55
+\BOOKMARK [1][-]{section.9.4}{Normal Distribution as a Limiting Distribution}{chapter.9}% 56
+\BOOKMARK [1][-]{section.9.5}{Central Limit Theorem}{chapter.9}% 57
+\BOOKMARK [1][-]{section.9.6}{Exercises}{chapter.9}% 58
+\BOOKMARK [0][-]{chapter.10}{Estimation}{}% 59
+\BOOKMARK [1][-]{section.10.1}{Introduction}{chapter.10}% 60
+\BOOKMARK [1][-]{section.10.2}{Interval Estimates - Chebyshev}{chapter.10}% 61
+\BOOKMARK [1][-]{section.10.3}{Point Estimates}{chapter.10}% 62
+\BOOKMARK [1][-]{section.10.4}{Interval Estimates - Confidence Interval for p}{chapter.10}% 63
+\BOOKMARK [1][-]{section.10.5}{Interval Estimates - Confidence Interval for }{chapter.10}% 64
+\BOOKMARK [1][-]{section.10.6}{Interval Estimates - Confidence Interval for 2}{chapter.10}% 65
+\BOOKMARK [1][-]{section.10.7}{Exercises}{chapter.10}% 66
+\BOOKMARK [0][-]{chapter.11}{Review of Calculus}{}% 67
+\BOOKMARK [1][-]{section.11.1}{Geometric Series}{chapter.11}% 68
+\BOOKMARK [1][-]{section.11.2}{Binomial Sums}{chapter.11}% 69
+\BOOKMARK [1][-]{section.11.3}{Negative Binomial Series}{chapter.11}% 70

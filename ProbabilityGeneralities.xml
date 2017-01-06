@@ -79,21 +79,179 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	</p>
 
 
-<!--
+
+
+
+
+
+
+       <exercise>
+                <title>Adding Single-Digit Integers</title>
+
+                <introduction>
+                    <p>A simple, but functional example to begin with. If you are just learning how to add, you can test yourself here.</p>
+                </introduction>
+
+                <webwork xml:id="integer-addition">
+                    <title>Integer Addition</title>
+
+                    <setup>
+                        <var name="$a">
+                            <static>9</static>
+                        </var>
+                        <var name="$b">
+                            <static>8</static>
+                        </var>
+                        <var name="$c" category="integer">
+                            <static>17</static>
+                        </var>
+
+                        <pg-code>
+                            $a = Compute(random(1, 9, 1));
+                            $b = Compute(random(1, 9, 1));
+                            $c = $a + $b;
+                        </pg-code>
+                    </setup>
+
+                    <statement>
+                        <p>Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:</p>
+                        <p><m><var name="$a" /> + <var name="$b" /> =</m> <var name="$c" width="2" /></p>
+                    </statement>
+
+                    <solution>
+                        <p><m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.</p>
+                    </solution>
+                </webwork>
+
+                <conclusion>
+                    <p>That was a simple problem.  Let's move on.</p>
+                </conclusion>
+            </exercise>
+
+
+<exercise>
+	<webwork>
+		<input>
+
+DOCUMENT();
+
+loadMacros(
+   "PGstandard.pl",     # Standard macros for PG language
+   "MathObjects.pl",
+   "problemRandomize.pl",
+);
+
+# Print problem number and point value (weight) for the problem
+TEXT(beginproblem());
+
+#  Allow for the user to try another version of the problem once they get it correct.
+ProblemRandomize(when=>"Correct",onlyAfterDue=>0);
+
+# Show which answers are correct and which ones are incorrect
+$showPartialCorrectAnswers = 1;
+
+##############################################################
+#
+#  Setup
+#
+#
+
+$blues = random(2,4,1);
+$yellows = random(2,4,1);
+$browns = random(5,6,1);
+$reds = random(2,4,1);
+$greens = random(2,4,1);
+$n = $blues+$yellows+$browns+$reds+$greens;
+
+##############################################################
+#
+#  Text
+#
+#
+
+Context()->texStrings;
+
+BEGIN_TEXT
+A fun size bag of M\(\&\)Ms has about $n candies.  You open one of the bags and discover:
+$PAR
+$BCENTER
+$blues Blues, $yellows Yellows, $browns Browns, $reds Reds and $greens Greens.
+$ECENTER
+$PAR
+$BCENTER
+The probability of choosing a brown is \{ans_rule(4)\}.
+$PAR
+The odds in favor of choosing a yellow is \{ans_rule(4)\}
+$PAR
+The probability of choosing either a blue or a red is \{ans_rule(4)\}
+$PAR
+The odds against a green being chosen is \{ans_rule(4)\}
+$ECENTER
+
+END_TEXT
+Context()->normalStrings;
+
+$showHint = 3;
+BEGIN_HINT
+Odds in favor of an event = number of favorable outcomes / number of unfavorable outcomes.
+$BR
+Odds against an event = number of unfavorable outcomes / number of favorable outcomes.
+END_HINT
+
+
+##############################################################
+#
+#  Answers
+#
+#
+
+ANS( Compute("$browns/$n")->cmp() );
+ANS( Compute("$yellows/($n-$yellows)")->cmp() );
+ANS( Compute("($blues+$reds)/$n")->cmp() );
+ANS( Compute("($n-$greens)/$greens")->cmp() );
+
+ENDDOCUMENT();
+
+		</input>
+	</webwork>
+</exercise>
+
+
+
+
+
+
 	<exercise>
 		<introduction>
 		<p>
 		Let's see if you understand the relationship between frequency and relative frequency.
 		</p>
 		</introduction>
-		<webwork source="local/relative_frequency1.pg" />
+		<webwork source="local/relative_frequency1.pg">
+		</webwork>
 		<conclusion>
 		<p>
 		So, these are simple calculations.
 		</p>
 		</conclusion>
 	</exercise>
--->
+
+
+	<exercise>
+		<introduction>
+		<p>
+		Let's see if you understand the relationship between frequency and relative frequency.
+		</p>
+		</introduction>
+		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		So, these are simple calculations.
+		</p>
+		</conclusion>
+	</exercise>
+
 
 	<p>
 	Question 1: What do you notice as the number of rolls increases?
