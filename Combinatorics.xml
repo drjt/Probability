@@ -136,7 +136,7 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 	
 	<example>
 		<title>National Treasure</title>
-		<p>In the 2004 movie "National Treasure" Ben and Riley are attempting 
+		<p>In the 2004 movie National Treasure, Ben and Riley are attempting 
 		to guess Abagail's password to enter the room with the Declaration. 
 		They are able
 		to determine the passphrase to get into the vault room by doing a scan
@@ -159,21 +159,18 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		<p>Notice, in this case you don't know which characters might be reused and so the number of possible outcomes will be much larger. What is the answer?</p>
 		<p>You can break this problem down into distinct cases:
 		<ul>
-			<li>Using 9 characters
-			<p>This is the answer computed above.</p></li>
-			<li>Using 10 characters
-			<p>In this case, 1 character can be used twice. To determine the number of possibilities, let's first pick which character can be doubled. There are 9 options for picking that character.  Next, if we consider the two instances of that letter as distinct values then we can just count the number of ways to arrange unique 10 characters which is 10! However, swapping the two characters (which are actually identical) would not give a new passphrase. Since these are counted twice, let's divide these out to give 10!/2.</p></li>
-			<li>Using 11 characters
-				<p>In this situation we have two unique options:
+			<li><p>Using 9 characters: The answer was computed above.</p></li>
+			<li><p>Using 10 characters: In this case, 1 character can be used twice. To determine the number of possibilities, let's first pick which character can be doubled. There are 9 options for picking that character.  Next, if we consider the two instances of that letter as distinct values then we can just count the number of ways to arrange unique 10 characters which is 10! However, swapping the two characters (which are actually identical) would not give a new passphrase. Since these are counted twice, let's divide these out to give 10!/2.</p></li>
+			<li><p>Using 11 characters:In this situation we have two unique options:
 				<ul>
-					<li>One character is used three times and the others just once.
+					<li><p>One character is used three times and the others just once.</p>
 					<p>Continuing as in the previous case, 11!/3!.</p>
 					<li>Two characters are used twice and the others just once.</li>
 					</li>
 				</ul>
 				</p>
 			</li>
-			<li>Using 12 characters</li>
+			<li><p>Using 12 characters</p></li>
 			<ol>
 			
 				<li>One letter from the nine is used four times and all the others are used once.</li>

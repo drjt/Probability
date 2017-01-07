@@ -18,8 +18,6 @@
 
 
 <section xml:id="RelativeFrequency"><title>Relative Frequency</title>
-
-
 	<p>When attempting to precisely measure uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
 	<ul>
 		<li>S = Universal Set or Sample Space Experiment or Outcome Space. 
@@ -79,148 +77,7 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	</p>
 
 
-
-
-
-
-
-
-       <exercise>
-                <title>Adding Single-Digit Integers</title>
-
-                <introduction>
-                    <p>A simple, but functional example to begin with. If you are just learning how to add, you can test yourself here.</p>
-                </introduction>
-
-                <webwork xml:id="integer-addition">
-                    <title>Integer Addition</title>
-
-                    <setup>
-                        <var name="$a">
-                            <static>9</static>
-                        </var>
-                        <var name="$b">
-                            <static>8</static>
-                        </var>
-                        <var name="$c" category="integer">
-                            <static>17</static>
-                        </var>
-
-                        <pg-code>
-                            $a = Compute(random(1, 9, 1));
-                            $b = Compute(random(1, 9, 1));
-                            $c = $a + $b;
-                        </pg-code>
-                    </setup>
-
-                    <statement>
-                        <p>Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:</p>
-                        <p><m><var name="$a" /> + <var name="$b" /> =</m> <var name="$c" width="2" /></p>
-                    </statement>
-
-                    <solution>
-                        <p><m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.</p>
-                    </solution>
-                </webwork>
-
-                <conclusion>
-                    <p>That was a simple problem.  Let's move on.</p>
-                </conclusion>
-            </exercise>
-
-
-<exercise>
-	<webwork>
-		<input>
-
-DOCUMENT();
-
-loadMacros(
-   "PGstandard.pl",     # Standard macros for PG language
-   "MathObjects.pl",
-   "problemRandomize.pl",
-);
-
-# Print problem number and point value (weight) for the problem
-TEXT(beginproblem());
-
-#  Allow for the user to try another version of the problem once they get it correct.
-ProblemRandomize(when=>"Correct",onlyAfterDue=>0);
-
-# Show which answers are correct and which ones are incorrect
-$showPartialCorrectAnswers = 1;
-
-##############################################################
-#
-#  Setup
-#
-#
-
-$blues = random(2,4,1);
-$yellows = random(2,4,1);
-$browns = random(5,6,1);
-$reds = random(2,4,1);
-$greens = random(2,4,1);
-$n = $blues+$yellows+$browns+$reds+$greens;
-
-##############################################################
-#
-#  Text
-#
-#
-
-Context()->texStrings;
-
-BEGIN_TEXT
-A fun size bag of M\(\&\)Ms has about $n candies.  You open one of the bags and discover:
-$PAR
-$BCENTER
-$blues Blues, $yellows Yellows, $browns Browns, $reds Reds and $greens Greens.
-$ECENTER
-$PAR
-$BCENTER
-The probability of choosing a brown is \{ans_rule(4)\}.
-$PAR
-The odds in favor of choosing a yellow is \{ans_rule(4)\}
-$PAR
-The probability of choosing either a blue or a red is \{ans_rule(4)\}
-$PAR
-The odds against a green being chosen is \{ans_rule(4)\}
-$ECENTER
-
-END_TEXT
-Context()->normalStrings;
-
-$showHint = 3;
-BEGIN_HINT
-Odds in favor of an event = number of favorable outcomes / number of unfavorable outcomes.
-$BR
-Odds against an event = number of unfavorable outcomes / number of favorable outcomes.
-END_HINT
-
-
-##############################################################
-#
-#  Answers
-#
-#
-
-ANS( Compute("$browns/$n")->cmp() );
-ANS( Compute("$yellows/($n-$yellows)")->cmp() );
-ANS( Compute("($blues+$reds)/$n")->cmp() );
-ANS( Compute("($n-$greens)/$greens")->cmp() );
-
-ENDDOCUMENT();
-
-		</input>
-	</webwork>
-</exercise>
-
-
-
-
-
-
+<!--
 	<exercise>
 		<introduction>
 		<p>
@@ -235,6 +92,8 @@ ENDDOCUMENT();
 		</p>
 		</conclusion>
 	</exercise>
+-->
+
 
 
 	<exercise>
@@ -329,160 +188,175 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	is the case with your experiment above.</p>
 </section>
 
+
+
+
+
+
+
+
 <section><title>Definition of Probability</title>
 	<introduction>
 		<p>
 		Relative frequency gives a way to measure the proportion of "successful" outcomes when doing an experimental approach. From the interactive applications above, it appears that the relative frequency does jump around as the experiment is repeated but that the amount of variation decreases as the number of experiments increases. This is known to be true in general and leads to what is known as the "Law of Large Numbers". We would like to formalize what these relative frequencies seem to be approaching and will call this theoretical limit the "probability" of the outcome. In doing so, we will do our best to model our definition so that it follow the behavior of relative frequency.
 		</p>
 	</introduction>
-	<subsection xml:id="ProbabilityDefns"><title>Motivating the Definition</title>
-		<p>Using the ideas from our examples above, consider how you might formally define a way
-		to measure the expectation from similar experiments.  Before doing so, we need a little notation:</p>
+	<p>Using the ideas from our examples above, consider how you might formally define a way
+	to measure the expectation from similar experiments.  Before doing so, we need a little notation:</p>
 
 
-		<definition><title>Pairwise Disjoint Sets</title>
-		<statement>
-		<p>
-		<m> \{ A_1, A_2, ... , A_n \}</m> are pairwise disjoint provided <m>A_k \cap A_j = \emptyset</m> so long as <m>k \ne j</m>.
-		Disjoint sets as also often called mutually exclusive.
-		</p>
-		</statement>
-		</definition>
-		
+	<definition><title>Pairwise Disjoint Sets</title>
+	<statement>
+	<p>
+	<m> \{ A_1, A_2, ... , A_n \}</m> are pairwise disjoint provided <m>A_k \cap A_j = \emptyset</m> so long as <m>k \ne j</m>.
+	Disjoint sets as also often called mutually exclusive.
+	</p>
+	</statement>
+	</definition>
 	
-		<p>
-		To model the behavior above, consider how we might create a definition for our expectation
-		of a given outcome by following the ideas uncovered above. To do so, first consider a desired collection
-		of outcomes A. If each outcome in A is equally likely then we might follow the concept behind relative 
-		frequency and consider a measure of expectation be |A|/|S|. Indeed, on a standard 
-		6-sided die, the expectation of the outcome A={2} from the collection S = {1,2,3,4,5,6} should be
-		|A|/|S| = 1/6.</p>
-		<p>From the example where we take the sum of two die, the outcome A={4,5} from the
-		collection S = {2,3,4,...,12} would be</p>
-		<md>
-			<mrow>|A| = | {(1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1)}| = 7</mrow>
-			<mrow>|S| = | {(1,1),...,(1,6),(2,1),...,(2,6),...,(6,1),...,(6,6)}| = 36</mrow>
-		</md>
-		<p>and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
-		with the sum of the two outcomes from your experiment above.</p>
-				
-		<p>We are ready to now formally give a name to the theoretical measure of expectation for
-		outcomes from an experiment. Taking our cue from the ideas related to equally likely outcomes, we 
-		make our definition have the following basic properties:</p>
+
+	<p>
+	To model the behavior above, consider how we might create a definition for our expectation
+	of a given outcome by following the ideas uncovered above. To do so, first consider a desired collection
+	of outcomes A. If each outcome in A is equally likely then we might follow the concept behind relative 
+	frequency and consider a measure of expectation be |A|/|S|. Indeed, on a standard 
+	6-sided die, the expectation of the outcome A={2} from the collection S = {1,2,3,4,5,6} should be
+	|A|/|S| = 1/6.</p>
+	<p>From the example where we take the sum of two die, the outcome A={4,5} from the
+	collection S = {2,3,4,...,12} would be</p>
+	<md>
+		<mrow>|A| = | {(1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1)}| = 7</mrow>
+		<mrow>|S| = | {(1,1),...,(1,6),(2,1),...,(2,6),...,(6,1),...,(6,6)}| = 36</mrow>
+	</md>
+	<p>and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
+	with the sum of the two outcomes from your experiment above.</p>
+			
+	<p>We are ready to now formally give a name to the theoretical measure of expectation for
+	outcomes from an experiment. Taking our cue from the ideas related to equally likely outcomes, we 
+	make our definition have the following basic properties:</p>
+	<ol>
+		<li>Relative frequency cannot be negative, since cardinality cannot be negative</li>
+		<li>Relative frequencies for disjoint events should sum to one</li>
+		<li>Relative frequencies for collections of disjoint outcomes should equal the sum of the
+	individual relative frequencies</li>
+	</ol>
+	
+	<p>Based upon these we give the following:</p>
+	<definition xml:id="DefnProb">
+		<statement>The probability P(A) of a given outcome A is a set function which satisfies:
 		<ol>
-			<li>Relative frequency cannot be negative, since cardinality cannot be negative</li>
-			<li>Relative frequencies for disjoint events should sum to one</li>
-			<li>Relative frequencies for collections of disjoint outcomes should equal the sum of the
-		individual relative frequencies</li>
+			<li>(Nonnegativity) P(A) <m>\ge 0</m></li>
+			<li>(Totality) P(S) = 1</li>
+			<li>(Subadditivity) If A <m>\cap</m> B = <m>\emptyset</m>, then P(A <m>\cup</m> B) = P(A) + P(B).  
+			In general, if {<m>A_k</m>} are pairwise disjoint then <m>P( \cup_k A_k) = \sum_k P(A_k)</m>.</li>
 		</ol>
-	</subsection>
-
-
-	<subsection><title>Probability</title>
-		<p>Based upon these we give the following:</p>
-		<definition xml:id="DefnProb">
-			<statement>The probability P(A) of a given outcome A is a set function which satisfies:
-			<ol>
-				<li>(Nonnegativity) P(A) <m>\ge 0</m></li>
-				<li>(Totality) P(S) = 1</li>
-				<li>(Subadditivity) If A <m>\cap</m> B = <m>\emptyset</m>, then P(A <m>\cup</m> B) = P(A) + P(B).  
-				In general, if {<m>A_k</m>} are pairwise disjoint then <m>P( \cup_k A_k) = \sum_k P(A_k)</m>.</li>
-			</ol>
-			</statement>
-		</definition>
-	</subsection>
+		</statement>
+	</definition>	
 	
 
-	<subsection xml:id="BasicProbabilityTheorems"><title>Basic Probability Theorems</title>
-		<p>Based upon this definition we can immediately establish a number of results.</p>
-		<theorem xml:id="ProbabilityComplemnts"><title>Probability of Complements</title>
-			<statement> For any event A, <m>P(A) + P(A^c) = 1</m>
-			</statement>
-			<proof>
-				<p>Let A be any event and note that <m>A \cap A^c = \emptyset</m>.  But <m>A \cup A^c = S</m>.
-				So, by subadditivity <m>1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)</m> as desired.</p>
-			</proof>
-		</theorem>
-		<theorem xml:id="ProbabilityEmptySet">
-			<statement><m>P(\emptyset) = 0</m>
-			</statement>
-			<proof>
-				<p>Note that <m>\emptyset^c = S</m>. So, by the theorem above, 
-				<m>1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)</m>.
-				Cancelling the 1 on both sides gives <m>P(\emptyset) = 0</m>. </p>
-			</proof>
-		</theorem>
-		<theorem xml:id="ProbabilityContainment">
-			<statement>For events A and B with <m> A \subset B, P(A) \le P(B)</m>.
-			</statement>
-			<proof>
-				<p>Assume sets A and B satisfy <m> A \subset B</m>. Then, notice that
-				<m>A \cap (B-A) = \emptyset</m> and  <m>B = A \cup (B-A)</m>. Therefore, by 
-				subadditivity and nonnegativity</p>
-				<md>
-					<mrow>0 \le P(B-A)</mrow>
-					<mrow>P(A) \le P(A) + P(B-A) </mrow>
-					<mrow>P(A) \le P(B)</mrow>
-				</md>
-			</proof>
-		</theorem>
-		<theorem xml:id="ProbabilityLessThanOne">
-			<statement>For any event A, <m>P(A) \le 1</m> 
-			</statement>
-			<proof>
-				<p>Notice <m>A \subset S</m>. By the theorem above <m> P(A) \le P(S) = 1</m></p>
-			</proof>
-		</theorem>
-		<theorem xml:id="ProbabilityTwoUnions">
-			<statement>For any sets A and B, <m>P(A \cup B) = P(A) + P(B) - P(A \cap B)</m>
-			</statement>
-			<proof>
-				<p>Notice that we can write <m>A \cup B</m> as the disjoint union</p>
-				<md>
-					<mrow>A \cup B = (A-B) \cup (A \cap B) \cup (B-A).</mrow>
-				</md> 
-				<p>We can also write disjointly</p>
-				<md>
-					<mrow>A = (A-B) \cup (A \cap B)</mrow>
-					<mrow>B = (A \cap B) \cup (B-A)</mrow>
-				</md>
-				<p>Hence, </p>
-				<md>
-					<mrow>P(A) &amp; + P(B) - P(A \cap B) </mrow>
-					<mrow>&amp; = [P(A-B) + P(A \cap B)] + [P(A \cap B) + P(B-A)] - P(A \cap B)</mrow>
-					<mrow>&amp; = P(A-B) + P(A \cap B) + P(B-A)</mrow>
-					<mrow>&amp; = P(A \cup B)</mrow>
-				</md>
-			</proof>
-		</theorem>
-		<p>This result can be extended to more that two sets using a property known as inclusion-exclusion. The
-		following two theorems illustrate this property and are presented without proof.
+	<exercise>
+		<introduction>
+		<p>
+		Using the definition above determine the following probabilities.  (This one not available
+		in the PCC library for some reason.)
 		</p>
-		<corollary xml:id="ProbabilityThreeUnions">
-			<statement>
-				For any sets A, B and C, 
-				<md>
-					<mrow>P(A \cup B \cup C) &amp; = P(A) + P(B) + P(C)</mrow> 
-					<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(B \cap C) </mrow>
-					<mrow>&amp; + P(A \cap B \cap C)</mrow>
-				</md>
-			</statement>
-		</corollary>
-		<corollary xml:id="ProbabilityFourUnions">
-			<statement>
-				For any sets A, B, C and D, 
-				<md>
-					<mrow>P(A \cup B \cup C \cup D) &amp; = P(A) + P(B) + P(C) + P(D)</mrow>
-					<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(A \cap D)  - P(B \cap C) - P(B \cap D) - P(C \cap D)</mrow>
-					<mrow>&amp; + P(A \cap B \cap C) + P(A \cap B \cap D) + P(A \cap C \cap D) + P(B \cap C \cap D)</mrow>
-					<mrow>&amp; - P(A \cap B \cap C \cap D)</mrow>
-				</md>
-			</statement>
-		</corollary>
-	
-	</subsection>
+		</introduction>
+		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		Notice when you are given complete information regarding the entire data set then determining
+		probabilities for events can be relatively easy to compute.
+		</p>
+		</conclusion>
+	</exercise>
 
-	<subsection><title>Equally Likely Outcomes</title>
+	<p>Based upon this definition we can immediately establish a number of results.</p>
+	<theorem xml:id="ProbabilityComplemnts"><title>Probability of Complements</title>
+		<statement> For any event A, <m>P(A) + P(A^c) = 1</m>
+		</statement>
+		<proof>
+			<p>Let A be any event and note that <m>A \cap A^c = \emptyset</m>.  But <m>A \cup A^c = S</m>.
+			So, by subadditivity <m>1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)</m> as desired.</p>
+		</proof>
+	</theorem>
+	<theorem xml:id="ProbabilityEmptySet">
+		<statement><m>P(\emptyset) = 0</m>
+		</statement>
+		<proof>
+			<p>Note that <m>\emptyset^c = S</m>. So, by the theorem above, 
+			<m>1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)</m>.
+			Cancelling the 1 on both sides gives <m>P(\emptyset) = 0</m>. </p>
+		</proof>
+	</theorem>
+	<theorem xml:id="ProbabilityContainment">
+		<statement>For events A and B with <m> A \subset B, P(A) \le P(B)</m>.
+		</statement>
+		<proof>
+			<p>Assume sets A and B satisfy <m> A \subset B</m>. Then, notice that
+			<m>A \cap (B-A) = \emptyset</m> and  <m>B = A \cup (B-A)</m>. Therefore, by 
+			subadditivity and nonnegativity</p>
+			<md>
+				<mrow>0 \le P(B-A)</mrow>
+				<mrow>P(A) \le P(A) + P(B-A) </mrow>
+				<mrow>P(A) \le P(B)</mrow>
+			</md>
+		</proof>
+	</theorem>
+	<theorem xml:id="ProbabilityLessThanOne">
+		<statement>For any event A, <m>P(A) \le 1</m> 
+		</statement>
+		<proof>
+			<p>Notice <m>A \subset S</m>. By the theorem above <m> P(A) \le P(S) = 1</m></p>
+		</proof>
+	</theorem>
+	<theorem xml:id="ProbabilityTwoUnions">
+		<statement>For any sets A and B, <m>P(A \cup B) = P(A) + P(B) - P(A \cap B)</m>
+		</statement>
+		<proof>
+			<p>Notice that we can write <m>A \cup B</m> as the disjoint union</p>
+			<md>
+				<mrow>A \cup B = (A-B) \cup (A \cap B) \cup (B-A).</mrow>
+			</md> 
+			<p>We can also write disjointly</p>
+			<md>
+				<mrow>A = (A-B) \cup (A \cap B)</mrow>
+				<mrow>B = (A \cap B) \cup (B-A)</mrow>
+			</md>
+			<p>Hence, </p>
+			<md>
+				<mrow>P(A) &amp; + P(B) - P(A \cap B) </mrow>
+				<mrow>&amp; = [P(A-B) + P(A \cap B)] + [P(A \cap B) + P(B-A)] - P(A \cap B)</mrow>
+				<mrow>&amp; = P(A-B) + P(A \cap B) + P(B-A)</mrow>
+				<mrow>&amp; = P(A \cup B)</mrow>
+			</md>
+		</proof>
+	</theorem>
+	<p>This result can be extended to more that two sets using a property known as inclusion-exclusion. The
+	following two theorems illustrate this property and are presented without proof.
+	</p>
+	<corollary xml:id="ProbabilityThreeUnions">
+		<statement>
+			For any sets A, B and C, 
+			<md>
+				<mrow>P(A \cup B \cup C) &amp; = P(A) + P(B) + P(C)</mrow> 
+				<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(B \cap C) </mrow>
+				<mrow>&amp; + P(A \cap B \cap C)</mrow>
+			</md>
+		</statement>
+	</corollary>
+	<corollary xml:id="ProbabilityFourUnions">
+		<statement>
+			For any sets A, B, C and D, 
+			<md>
+				<mrow>P(A \cup B \cup C \cup D) &amp; = P(A) + P(B) + P(C) + P(D)</mrow>
+				<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(A \cap D)  - P(B \cap C) - P(B \cap D) - P(C \cap D)</mrow>
+				<mrow>&amp; + P(A \cap B \cap C) + P(A \cap B \cap D) + P(A \cap C \cap D) + P(B \cap C \cap D)</mrow>
+				<mrow>&amp; - P(A \cap B \cap C \cap D)</mrow>
+			</md>
+		</statement>
+	</corollary>
+	
 	<p>
 	Many times, you will be dealing with making selections from a sample space where each item in the space has an equal chance of being selected. This may happen (for example) when items in the sample space are of equal size or when selecting a card from a completely shuffled deck or when coins are flipped or when a normal fair die is rolled. 
 	</p>
@@ -515,27 +389,22 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	</p>
 	</proof>
 	</theorem>
-	</subsection>
+	
 
-	<subsection><title>HOMEWORK</title>
-
-	<p>
-	A.  Determine the probabilities associated with the various 5-card hands.
-	</p>
-
-	<p>
-	B.  Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
-	</p>
-
-	<p>
-	C.  Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
-	</p>
-
-	<p>
-	D.  Analyze the game of
-	<url href="http://mathworld.wolfram.com/Craps.html">"craps"</url>.
-	</p>
-	</subsection>
+	<exercise>
+		<introduction>
+		<p>This one is a little harder and uses the binomial coefficients from Combinatorics.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		Notice how the probabilities look similar to relative frequencies. It's just the case 
+		that you are counting ALL of the individual simple possibilities that lead to a success.
+		</p>
+		</conclusion>
+	</exercise>
 
 </section>
 
@@ -590,212 +459,57 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 		</proof>
 		</theorem>
 	
-	<subsection><title>HOMEWORK</title>
 	
-	<p>
-	A.  Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, determine
-	<ol>
-		<li><m>P(A \cup B)</m></li>
-		<li><m>P(B | A)</m></li>
-		<li><m>P(A | B)</m></li>
-		<li><m>P(A^c \cap B^c)</m></li>
-	</ol>
-	</p>
 
-	<p>
-	B. The table below classifies students at your university according to gender and according to major.
 
-	<table halign="left">
-      	<tabular halign="right">
-      
-<row><cell bottom="medium" right="medium">Enrollment</cell><cell bottom="medium">Male</cell><cell bottom="medium" right="medium">Female</cell><cell bottom="medium">Totals</cell></row>      
-<row><cell right="medium">STEM</cell><cell>420</cell><cell right="medium">510</cell><cell>930</cell></row>
-<row><cell right="medium">Business</cell><cell>320</cell><cell right="medium">270</cell><cell>590</cell></row>
-<row><cell bottom="medium" right="medium">Other</cell><cell bottom="medium">610</cell><cell bottom="medium" right="medium">710</cell><cell bottom="medium">1320</cell></row>
-<row><cell right="medium">Totals</cell><cell>1350</cell><cell right="medium">1490</cell><cell>2840</cell></row>
-		</tabular>
-	</table>
-
-	Determine the following:
-	<ol>
-		<li>P( STEM major )</li>
-		<li>P( STEM | Female )</li>
-		<li>P( Female | STEM )</li>
-		<li>P( Female | Not STEM)</li>
-	</ol>
-	</p>
-	
-	
-	<p>
-	C. You are in a probability and statistics class with a teacher who has predetermined that only one student can make an A for the course. To be "fair", he places a number of slips of paper in a bowl equal to the number of students in the course with one of the slips having an A designation. Students in the course each can pick once randomly from the bowl and without replacement to see if they can get the lucky slip.  Determine the following:
-	<ol>
-		<li>If there are 15 students in your course, determine the probabilities of getting an A in the course if you pick first and if you pick last.</li>
-		<li>Since the teacher likes you the most, she will give you the option of deciding whether to pick at any position. If so, determine the position that would give you the best likelihood of getting the A slop.</li>
-		<li>Suppose again that the teacher was feeling more generous and decided instead to allow for two A's. Determine how that changes your likelihood of winning and on what position you would like to choose.</li>
-		<li>Continue as above except that only one slip does not have an A on it.</li>
-		<li>Discuss how your choice is affected by the number of students in the course or the number of A slips included.</li>
-	</ol>
-	<solution>
-	<p>
-	Using the normal equally-likely definition, <m>P(\text{first}) = \frac{1}{15}</m>.
-	</p>
-	<p>
-	To get the A on the last pick requires that all of the previous picks to be something else. You don't get the opportunity to pick the A if it has already been selected. So, if L stands for losing (not getting the A), then 
-	<me> P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) \\ = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3  \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</me>
-	Therefore, it is the same probability of getting the A whether you pick first or last.  In general, to win on the kth pick gives
-	<me> P(\text{kth}) = P(\text{LL...LA}) \\ = \frac{14 \cdot 13 \cdot ... \cdot (15-k)  \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</me>
-	Hence, it is the same probability regardless of when you get to pick.
-	</p>
-	
-	
-	<p>
-	If there are two A's possible, then the options for person k in include either receiving the first of the two slips or the second. The probability for determining the first of the two is computed in a manner similar to above except that there is one more A and one less other.
-	<me> P(\text{kth as first}) = P(\text{LL...LA}) \\ = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</me>
-
-	The probability of getting the second A means exactly one of the previous k-1 selections also picked the other A. There are k-1 ways that this could happen. Computing for one of the options and multiplying by k-1 gives
-	<me> P(\text{kth as second}) = P(\text{LL...LAA}) \\ = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</me>	
-	Adding these two together gives
-	<me>P(\text{getting an A when there are two}) \\ = \frac{2 \cdot (15-k) + 2 \cdot (k-1)}{15 \cdot 14} = \frac{28}{15 \cdot 14} = \frac{2}{15}.</me>
-
-	For example, if k = 5,
-	<me> P(\text{5th as first}) = P(\text{LLLLA}) \\ = \frac{13 \cdot 12 \cdot 11 \cdot 10  \cdot 2}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} = \frac{20}{15 \cdot 14}</me>
-	<me> P(\text{5th as second}) = P(\text{LL...LAA}) \\ = 4 \cdot \frac{13 \cdot 12 \cdot \cdot 11 \cdot 2 \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} \\ = \frac{8}{15 \cdot 14}.</me>	
-	Adding these together yields the general result. So, once again, it doesn't matter which pick you use since the likelihood of getting an A is the same for all positions.
-	</p>
-	</solution>
-	</p>
-
-	<p>
-	D. In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 equally likely days let r be the number of people in a sample and consider the following:
-	<ol>
-		<li>Determine the number of different outcomes of birthdays when order matters and birthdays are allowed to be repeated.</li>
-		<li>Determine the number of different outcomes when birthdays are not allowed to be repeated.</li>
-		<li>Determine the probability that two or more of your r students have the same birthday.</li>
-		<li>Prepare a spreadsheet with the probabilities found above from r=2 to r=50. Determine the value of r for which this probability is closest to 0.5.</li>
-		<li>As best as you can, sample two groups of the size found above and gather birthday information. For each group, determine if there is a shared birthday or not.  Compare your results with others in the class to check whether the sampling validates that about half of the samples should have a shared birthday group.</li>
-	</ol>
-	
-	<solution>
-	<p>
-	The correct sample size to get past a probability of 0.5 is 23 people. You should justify this numerically by justifying the following probabilities:
-<pre>
-#	P(Match)	
-1	0
-2	0.0027
-3	0.0082
-4	0.0164
-5	0.0271
-6	0.0405
-7	0.0562
-8	0.0743
-9	0.0946
-10	0.1169
-11	0.1411
-12	0.1670
-13	0.1944
-14	0.2231
-15	0.2529
-16	0.2836
-17	0.3150
-18	0.3469
-19	0.3791
-20	0.4114
-21	0.4437
-22	0.4757
-23	0.5073
-24	0.5383
-25	0.5687
-26	0.5982
-27	0.6269
-28	0.6545
-29	0.6810
-30	0.7063
-</pre>
-	</p>
-	</solution>
-	</p>
-		
-	<p>
-	E.  This one is from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. Given that a 6 will be removed, determine the probability that the other die is a 6.
-	</p>
-	<solution>
-	<p>
-	In this case, you are presented with an outcome where the possible choices consist of (1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).  Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
-	</p>
-	<p>
-	It is interesting to note that if the question instead was posed so that one of the dice was a 6 and it was removed, then the probability of the other dice showing a 6 would be 1/6.
-	</p>
-	
-	</solution>
-
-	<p>
-	F. This is a famous problem.  100 people are in line, boarding an airplane with 100 seats, one at a time. They are in no particular order. The first person has lost his boarding pass, so he sits in a random seat. The second person does the following:
-
-	<ul>
-	<li>Goes to his seat (the one it says to go to on the boarding pass). If unoccupied, sit in it.</li>
-	<li>If occupied, find a random seat to sit in.</li>
-	</ul>
-	Everyone else behind him does the same. What is the probability that the last person sits in his correct seat?
-
-	<solution>
-	<p>
-	To get the idea, consider what happens with only 2 people, then only 3. Generalize. 
-	</p>
-	<p>
-	The answer is 1/2. To obtain this, you can define recursively the probability that the kth person sits in their own set as f(k).  Consider the first traveler's and your seats. Then you get the following cases:
-	<ul>
-		<li>P(first guy sits in his own seat and you sit in yours) = \frac{1}{k} \cdot 1</li>
-		<li>P(first guy sits in your seat and you do not sit in yours) = \frac{1}{k} \cdot 0</li>
-		<li>P(other k-2 travelers make their choices) = <m>(k-2) \frac{1}{k} f(k-1)</m></li>
-	</ul>
-	<me>f(k) = 1/k + 0 + (k-2)/k f(k-1)</me>
-	with f(2) = 1/2.
-	</p>
-	<p>
-	For example,
-	f(3) = 1/3 + f(2)/3 = 1/3 + 1/6 = 1/2.   
-	f(4) = 1/4 + 2/4 f(3) = 1/4 + 1/2 1/2 = 1/2.
-	f(5) = 1/5 + 3/5 1/2 = 1/2.
-	f(6) = 1/6 + 4/6 1/2 = 1/2. Etc.
-	</p>
-	</solution>	
-
-	</p>
-
-	</subsection>
-	</section>
-	
-	<section><title>Bayes Theorem</title>	
+	<exercise>
 		<introduction>
-		<p>Conditional probabilities can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to the following.
+		<p>Conditional Probability sometimes makes you have to think carefully about the ways to get 
+		the desired outcome.
 		</p>
 		</introduction>
-	
-		<theorem>
-		<title>Bayes Theorem</title>
-		<statement>Let <m>S = \{ S_1, S_2, ... , S_m \}</m> where the <m>S_k</m> are pairwise disjoint and <m>S_1 \cup S_2 \cup ... \cup S_m = S</m> (i.e. a partition of the space S).  Then for any <m>A \subset S</m>
-		<md>
-			<mrow>P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.</mrow>
-		</md>
-		The conditional probability <m>P(S_j | A)</m> is called the posterior probability of <m>S_k</m>.
-		</statement>
-		<proof>
+		<webwork source="Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg">
+		</webwork>
+		<conclusion>
 		<p>
-		Notice, by the definition of conditional probability and the multiplication rule
-		<me>P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.</me>
-		But using the disjointness of the partition 
-		<md>
-		<mrow>P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )</mrow>
-		<mrow>    &amp; = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)</mrow>
-		<mrow>    &amp; = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)</mrow>
-		<mrow>    &amp; = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)</mrow>
-		<mrow>    &amp; = \sum_{k=1}^m P(S_k)P(A | S_k)</mrow>
-		</md>
-		Put these two expansions together to obtain the desired result.
+		See how you had to break the given question up into two disjoint pieces.
 		</p>
-		</proof>
-		</theorem>
-		
+		</conclusion>
+	</exercise>	
+
+</section>
+	
+<section><title>Bayes Theorem</title>	
+	<introduction>
+	<p>Conditional probabilities can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to the following.
+	</p>
+	</introduction>
+
+	<theorem>
+	<title>Bayes Theorem</title>
+	<statement>Let <m>S = \{ S_1, S_2, ... , S_m \}</m> where the <m>S_k</m> are pairwise disjoint and <m>S_1 \cup S_2 \cup ... \cup S_m = S</m> (i.e. a partition of the space S).  Then for any <m>A \subset S</m>
+	<md>
+		<mrow>P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.</mrow>
+	</md>
+	The conditional probability <m>P(S_j | A)</m> is called the posterior probability of <m>S_k</m>.
+	</statement>
+	<proof>
+	<p>
+	Notice, by the definition of conditional probability and the multiplication rule
+	<me>P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.</me>
+	But using the disjointness of the partition 
+	<md>
+	<mrow>P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )</mrow>
+	<mrow>    &amp; = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)</mrow>
+	<mrow>    &amp; = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)</mrow>
+	<mrow>    &amp; = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)</mrow>
+	<mrow>    &amp; = \sum_{k=1}^m P(S_k)P(A | S_k)</mrow>
+	</md>
+	Put these two expansions together to obtain the desired result.
+	</p>
+	</proof>
+	</theorem>
+	
 	<p>
 	To illustrate this result, from the web site <url href="http://stattrek.com/probability/bayes-theorem.aspx"></url> consider the following problem:
 	</p>
@@ -829,6 +543,38 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
 	</p>	
 </exercise>	
+
+
+<exercise>
+	<introduction>
+	<p>
+	Let's try a Bayes Theorem example...
+	</p>
+	</introduction>
+	<webwork source="Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg">
+	</webwork>
+	<conclusion>
+	<p>
+	You have to be careful to extract the conditional probabilities from the problem.
+	</p>
+	</conclusion>
+</exercise>
+
+<exercise>
+	<introduction>
+	<p>
+	Here is a more extensive Bayes Theorem example...
+	</p>
+	</introduction>
+	<webwork source="Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg">
+	</webwork>
+	<conclusion>
+	<p>
+	Notice that having the data expressed in tabular form sometimes makes it easier to deal with.
+	</p>
+	</conclusion>
+</exercise>
+
 
 <p>The interactive cell below can be used to easily compute all of the conditional probabilities associated with Bayes's Theorem. Notice how the relative size of the pie-shaped partition changes when you presume that an event in the space has already occurred.</p>
 <sage>
@@ -931,56 +677,18 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 </sage>
 
 
-	<subsection><title>HOMEWORK</title>
-	<p>
-	
-	A. Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
-
-	<table halign="left">
-      	<tabular halign="right">
-      
-<row><cell bottom="medium" right="medium">Age</cell><cell bottom="medium" right="medium">Proportion of Insured</cell><cell bottom="medium">Probability of Accident</cell></row>      
-<row><cell right="medium">16-20</cell><cell right="medium">0.05</cell><cell>0.08</cell></row>
-<row><cell right="medium">21-25</cell><cell right="medium">0.06</cell><cell>0.07</cell></row>
-<row><cell right="medium">26-55</cell><cell right="medium">0.49</cell><cell>0.02</cell></row>
-<row><cell right="medium">55-65</cell><cell right="medium">0.25</cell><cell>0.03</cell></row>
-<row><cell right="medium">over 65</cell><cell right="medium">0.15</cell><cell>0.04</cell></row>
-		</tabular>
-	</table>
-	
-	One of your family friends insured by this company has an accident. 
-	<ol>
-		<li>Determine the conditional probability that the driver was in the 16-20 age range.</li>
-		<li>Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.</li>
-		<li>Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.</li>
-	</ol>
-	</p>
-	
-	<p>
-	B. Congratulations...your family is having a baby! As part of the prenatal care, some testing is part of the normal procedure including one for spinal bifida (which is a condition in which part of the spinal cord may be exposed.) Indeed, measurement of maternal serum AFP values is a standard tool used in obstetrical care to identify pregnancies that may have an increased risk for this disorder. You want to make plans for the new child's care and want to know how serious to take the test results. However, some times the test indicates that the child has the disorder when in actuality it does not (a false positive) and likewise may indicate that the child does not have the disorder when in fact it does (a false negative.) 
-	</p>
-	<p>The combined accuracy rate for the screen to detect the chromosomal abnormalities mentioned above is approximately 85% with a false positive rate of 5%. This means that (from <url href="http://americanpregnancy.org/prenatal-testing/first-trimester-screen/">americanpregnancy.org</url>)
-	<ul>
-		<li>Approximately 85 out of every 100 babies affected by the abnormalities addressed by the screen will be identified. (Positive Positive)</li>
-		<li>Approximately 5% of all normal pregnancies will receive a positive result or an abnormal level. (False Positive)</li>
-	</ul>
-	<ol>
-		<li>Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.</li>
-		<li>Given that your test came back negative, determine the likelihood that the child will not have spina bifida</li>
-		<li>Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.</li>
-	</ol>
-	</p>
-	
-	</subsection>
-
 </section>
 
-<section>
-<title>Independence</title>
+
+
+
+
+
+
+<section><title>Independence</title>
 
 	<introduction>
-	<p>
-		You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
+	<p>You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
 	</p>
 	</introduction>
 	
@@ -1004,17 +712,33 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 		</proof>
 	</corollary>
 
+	<exercise>
+		<introduction>
+		<p>
+		Independence makes combined probabilities VERY easy to compute.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		Basically you just multiply individual probabilities together.  Independence is often
+		assumed since it makes computations easier. That said, you should remember to consider
+		each time whether independence should or should not be assumed.
+		</p>
+		</conclusion>
+	</exercise>
 
 	<corollary><title>Independence and Mutual Exclusivity</title>
 		<statement>
 			If events A and B are both independent and mutually exclusive, then at least one of them has zero probability.
 		</statement>
-			<proof>
-				<p>
-				By independence, <m>P(A \cap B) = P(A) \cdot P(B)</m>. However, by mutually exclusivity, <m>A \cap B = \emptyset \Rightarrow P(A \cap B) = 0</m> gives
-				<me>P(A) \cdot P(B) = 0.</me>
-				Hence, one or the other (or both) must be zero.
-				</p>
+		<proof>
+			<p>
+			By independence, <m>P(A \cap B) = P(A) \cdot P(B)</m>. However, by mutually exclusivity, <m>A \cap B = \emptyset \Rightarrow P(A \cap B) = 0</m> gives
+			<me>P(A) \cdot P(B) = 0.</me>
+			Hence, one or the other (or both) must be zero.
+			</p>
 			</proof>
 	</corollary>
 
@@ -1023,52 +747,360 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 		<me>P(\cap_{k \in R} A_k) = \prod_{k \in R} P(A_k)</me>
 		</statement>
 	</corollary>
-	
-	<subsection><title>HOMEWORK</title>
-	
-	<p>
-	A.  Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, verify that A and B are not independent.
-	</p>
+		
+</section>
 
+
+
+
+<section><title>Exercises</title>
+
+<exercise>
+	<title>Poker</title>
+	<statement><p>
+	Determine the probabilities associated with the various 5-card hands.
+	</p>
+	</statement>
+</exercise>
+
+<exercise><title>Dice</title>
+	<statement>
 	<p>
-	B.  Given A, B, and C are independent events, with P(A) = 2/5, P(B) = 3/4, and P(C) = 1/6, determine:
+	Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
+	</p>
+	</statement>
+</exercise>
+
+<exercise><title>Skew Dice</title>
+	<statement>
+	<p>
+	Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
+	</p>
+	</statement>
+</exercise>
+
+<exercise><title>Craps</title>
+	<statement><p>
+	Analyze the game of
+	<url href="http://mathworld.wolfram.com/Craps.html">"craps"</url>.
+	</p>
+	</statement>
+</exercise>
+
+
+
+<p>Conditional Probabilities</p>
+
+<exercise><title>Conditional Basic computation</title>
+	<statement><p>
+	Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, determine
+	<ol>
+		<li><m>P(A \cup B)</m></li>
+		<li><m>P(B | A)</m></li>
+		<li><m>P(A | B)</m></li>
+		<li><m>P(A^c \cap B^c)</m></li>
+	</ol>
+	</p>
+	</statement>
+</exercise>
+
+<exercise><title>Gender vs University Major</title>
+	<statement><p>
+	The table below classifies students at your university according to gender and according to major.
+
+	<table halign="left">
+      	<tabular halign="right">
+      
+<row><cell bottom="medium" right="medium">Enrollment</cell><cell bottom="medium">Male</cell><cell bottom="medium" right="medium">Female</cell><cell bottom="medium">Totals</cell></row>      
+<row><cell right="medium">STEM</cell><cell>420</cell><cell right="medium">510</cell><cell>930</cell></row>
+<row><cell right="medium">Business</cell><cell>320</cell><cell right="medium">270</cell><cell>590</cell></row>
+<row><cell bottom="medium" right="medium">Other</cell><cell bottom="medium">610</cell><cell bottom="medium" right="medium">710</cell><cell bottom="medium">1320</cell></row>
+<row><cell right="medium">Totals</cell><cell>1350</cell><cell right="medium">1490</cell><cell>2840</cell></row>
+		</tabular>
+	</table>
+
+	Determine the following:
+	<ol>
+		<li>P( STEM major )</li>
+		<li>P( STEM | Female )</li>
+		<li>P( Female | STEM )</li>
+		<li>P( Female | Not STEM)</li>
+	</ol>
+	</p>
+	</statement>
+</exercise>
+	
+<exercise><title>Mean Tough Teacher</title>
+	<statement>	
+	<p>
+	You are in a probability and statistics class with a teacher who has predetermined that only one student can make an A for the course. To be "fair", he places a number of slips of paper in a bowl equal to the number of students in the course with one of the slips having an A designation. Students in the course each can pick once randomly from the bowl and without replacement to see if they can get the lucky slip.  Determine the following:
+	<ol>
+		<li>If there are 15 students in your course, determine the probabilities of getting an A in the course if you pick first and if you pick last.</li>
+		<li>Since the teacher likes you the most, she will give you the option of deciding whether to pick at any position. If so, determine the position that would give you the best likelihood of getting the A slop.</li>
+		<li>Suppose again that the teacher was feeling more generous and decided instead to allow for two A's. Determine how that changes your likelihood of winning and on what position you would like to choose.</li>
+		<li>Continue as above except that only one slip does not have an A on it.</li>
+		<li>Discuss how your choice is affected by the number of students in the course or the number of A slips included.</li>
+	</ol>
+	</p>
+	</statement>
+	
+	<solution>
+	<p>
+	Using the normal equally-likely definition, <m>P(\text{first}) = \frac{1}{15}</m>.
+	</p>
+	<p>
+	To get the A on the last pick requires that all of the previous picks to be something else. You don't get the opportunity to pick the A if it has already been selected. So, if L stands for losing (not getting the A), then 
+	<me> P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) \\ = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3  \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</me>
+	Therefore, it is the same probability of getting the A whether you pick first or last.  In general, to win on the kth pick gives
+	<me> P(\text{kth}) = P(\text{LL...LA}) \\ = \frac{14 \cdot 13 \cdot ... \cdot (15-k)  \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</me>
+	Hence, it is the same probability regardless of when you get to pick.
+	</p>
+	
+	
+	<p>
+	If there are two A's possible, then the options for person k in include either receiving the first of the two slips or the second. The probability for determining the first of the two is computed in a manner similar to above except that there is one more A and one less other.
+	<me> P(\text{kth as first}) = P(\text{LL...LA}) \\ = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</me>
+
+	The probability of getting the second A means exactly one of the previous k-1 selections also picked the other A. There are k-1 ways that this could happen. Computing for one of the options and multiplying by k-1 gives
+	<me> P(\text{kth as second}) = P(\text{LL...LAA}) \\ = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</me>	
+	Adding these two together gives
+	<me>P(\text{getting an A when there are two}) \\ = \frac{2 \cdot (15-k) + 2 \cdot (k-1)}{15 \cdot 14} = \frac{28}{15 \cdot 14} = \frac{2}{15}.</me>
+
+	For example, if k = 5,
+	<me> P(\text{5th as first}) = P(\text{LLLLA}) \\ = \frac{13 \cdot 12 \cdot 11 \cdot 10  \cdot 2}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} = \frac{20}{15 \cdot 14}</me>
+	<me> P(\text{5th as second}) = P(\text{LL...LAA}) \\ = 4 \cdot \frac{13 \cdot 12 \cdot \cdot 11 \cdot 2 \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} \\ = \frac{8}{15 \cdot 14}.</me>	
+	Adding these together yields the general result. So, once again, it doesn't matter which pick you use since the likelihood of getting an A is the same for all positions.
+	</p>
+	</solution>
+</exercise>
+
+<exercise><title>Shared Birthdays</title>
+	<statement>
+	<p>
+	In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 equally likely days let r be the number of people in a sample and consider the following:
+	<ol>
+		<li>Determine the number of different outcomes of birthdays when order matters and birthdays are allowed to be repeated.</li>
+		<li>Determine the number of different outcomes when birthdays are not allowed to be repeated.</li>
+		<li>Determine the probability that two or more of your r students have the same birthday.</li>
+		<li>Prepare a spreadsheet with the probabilities found above from r=2 to r=50. Determine the value of r for which this probability is closest to 0.5.</li>
+		<li>As best as you can, sample two groups of the size found above and gather birthday information. For each group, determine if there is a shared birthday or not.  Compare your results with others in the class to check whether the sampling validates that about half of the samples should have a shared birthday group.</li>
+	</ol>
+	</p>
+	</statement>
+	
+	<solution>
+	<p>
+	The correct sample size to get past a probability of 0.5 is 23 people. You should justify this numerically by justifying the following probabilities:
+<pre>
+#	P(Match)	
+1	0
+2	0.0027
+3	0.0082
+4	0.0164
+5	0.0271
+6	0.0405
+7	0.0562
+8	0.0743
+9	0.0946
+10	0.1169
+11	0.1411
+12	0.1670
+13	0.1944
+14	0.2231
+15	0.2529
+16	0.2836
+17	0.3150
+18	0.3469
+19	0.3791
+20	0.4114
+21	0.4437
+22	0.4757
+23	0.5073
+24	0.5383
+25	0.5687
+26	0.5982
+27	0.6269
+28	0.6545
+29	0.6810
+30	0.7063
+</pre>
+	</p>
+	</solution>
+</exercise>
+
+<exercise><title>Internet meme solution</title>	
+	<statement>	
+	<p>
+	This one is from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. Given that a 6 will be removed, determine the probability that the other die is a 6.
+	</p>
+	</statement>
+	
+	<solution>
+	<p>
+	In this case, you are presented with an outcome where the possible choices consist of (1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).  Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
+	</p>
+	<p>
+	It is interesting to note that if the question instead was posed so that one of the dice was a 6 and it was removed, then the probability of the other dice showing a 6 would be 1/6.
+	</p>
+	
+	</solution>
+</exercise>
+
+<exercise><title>100 people on an airplane with boarding pass issues</title>
+	<statement>
+	<p>
+	This is a famous problem.  100 people are in line, boarding an airplane with 100 seats, one at a time. They are in no particular order. The first person has lost his boarding pass, so he sits in a random seat. The second person does the following:
+
+	<ul>
+	<li>Goes to his seat (the one it says to go to on the boarding pass). If unoccupied, sit in it.</li>
+	<li>If occupied, find a random seat to sit in.</li>
+	</ul>
+	Everyone else behind him does the same. What is the probability that the last person sits in his correct seat?
+	</p>
+	</statement>
+
+	<solution>
+	<p>
+	To get the idea, consider what happens with only 2 people, then only 3. Generalize. 
+	</p>
+	<p>
+	The answer is 1/2. To obtain this, you can define recursively the probability that the kth person sits in their own set as f(k).  Consider the first traveler's and your seats. Then you get the following cases:
+	<ul>
+		<li>P(first guy sits in his own seat and you sit in yours) = \frac{1}{k} \cdot 1</li>
+		<li>P(first guy sits in your seat and you do not sit in yours) = \frac{1}{k} \cdot 0</li>
+		<li>P(other k-2 travelers make their choices) = <m>(k-2) \frac{1}{k} f(k-1)</m></li>
+	</ul>
+	<me>f(k) = 1/k + 0 + (k-2)/k f(k-1)</me>
+	with f(2) = 1/2.
+	</p>
+	<p>
+	For example,
+	f(3) = 1/3 + f(2)/3 = 1/3 + 1/6 = 1/2.   
+	f(4) = 1/4 + 2/4 f(3) = 1/4 + 1/2 1/2 = 1/2.
+	f(5) = 1/5 + 3/5 1/2 = 1/2.
+	f(6) = 1/6 + 4/6 1/2 = 1/2. Etc.
+	</p>
+	</solution>	
+</exercise>
+
+<p>Bayes Theorem</p>
+
+
+<exercise><title>Insured vs Accident</title>
+	<statement>
+	<p>
+	Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
+
+	<table halign="left">
+      	<tabular halign="right">
+      
+<row><cell bottom="medium" right="medium">Age</cell><cell bottom="medium" right="medium">Proportion of Insured</cell><cell bottom="medium">Probability of Accident</cell></row>      
+<row><cell right="medium">16-20</cell><cell right="medium">0.05</cell><cell>0.08</cell></row>
+<row><cell right="medium">21-25</cell><cell right="medium">0.06</cell><cell>0.07</cell></row>
+<row><cell right="medium">26-55</cell><cell right="medium">0.49</cell><cell>0.02</cell></row>
+<row><cell right="medium">55-65</cell><cell right="medium">0.25</cell><cell>0.03</cell></row>
+<row><cell right="medium">over 65</cell><cell right="medium">0.15</cell><cell>0.04</cell></row>
+		</tabular>
+	</table>
+	
+	One of your family friends insured by this company has an accident. 
+	<ol>
+		<li>Determine the conditional probability that the driver was in the 16-20 age range.</li>
+		<li>Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.</li>
+		<li>Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.</li>
+	</ol>
+	</p>
+	</statement>
+</exercise>
+	
+<exercise><title>Spinal bifida odds</title>
+	<statement>
+	<p>
+	Congratulations...your family is having a baby! As part of the prenatal care, some testing is part of the normal procedure including one for spinal bifida (which is a condition in which part of the spinal cord may be exposed.) Indeed, measurement of maternal serum AFP values is a standard tool used in obstetrical care to identify pregnancies that may have an increased risk for this disorder. You want to make plans for the new child's care and want to know how serious to take the test results. However, some times the test indicates that the child has the disorder when in actuality it does not (a false positive) and likewise may indicate that the child does not have the disorder when in fact it does (a false negative.) 
+	</p>
+	<p>The combined accuracy rate for the screen to detect the chromosomal abnormalities mentioned above is approximately 85% with a false positive rate of 5%. This means that (from <url href="http://americanpregnancy.org/prenatal-testing/first-trimester-screen/">americanpregnancy.org</url>)
+	<ul>
+		<li>Approximately 85 out of every 100 babies affected by the abnormalities addressed by the screen will be identified. (Positive Positive)</li>
+		<li>Approximately 5% of all normal pregnancies will receive a positive result or an abnormal level. (False Positive)</li>
+	</ul>
+	<ol>
+		<li>Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.</li>
+		<li>Given that your test came back negative, determine the likelihood that the child will not have spina bifida</li>
+		<li>Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.</li>
+	</ol>
+	</p>
+	</statement>
+</exercise>
+	
+<p>Independence</p>
+
+
+<exercise><title>Basic Independence Calculations</title>
+	<statement>
+	<p>
+	Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, verify that A and B are not independent.
+	</p>
+	</statement>
+</exercise>
+
+<exercise><title>Compound events and Independence</title>
+	<statement>
+	<p>
+	Given A, B, and C are independent events, with P(A) = 2/5, P(B) = 3/4, and P(C) = 1/6, determine:
 	<ol>
 		<li><m>P(A \cap B \cap C)</m></li>
 		<li><m>P(A^c \cap B^c \cap C)</m></li>
 		<li><m>P(A \cup B \cup C)</m></li>
 	</ol>
 	</p>
+	</statement>
+</exercise>
 	
+<exercise><title>Rolling multiple dice</title>
+	<statement>
 	<p>
-	C.  Suppose for a pair of dice you want to consider the events A = {rolling a 7 or 11} and B = {otherwise}.  Rolling the dice 5 times, determine
+	Suppose for a pair of dice you want to consider the events A = {rolling a 7 or 11} and B = {otherwise}.  Rolling the dice 5 times, determine
 	<ol>
 		<li>P(AABBB)</li>
 		<li>P(BBBAA)</li>
 		<li>The probability of getting A on exactly two rolls of the dice.</li>
 	</ol>
 	</p>
-	
+	</statement>
+</exercise>
+
+<exercise><title>Redundancy</title>
+	<statement>	
 	<p>
-	D.  To help "insure" the success of a mission, you propose several redundant components so that the mission is a success if one or more succeed. Supposing that these separate components act independently of each other and that each component has a 75% chance of success, determine:
+	To help "insure" the success of a mission, you propose several redundant components so that the mission is a success if one or more succeed. Supposing that these separate components act independently of each other and that each component has a 75% chance of success, determine:
 	<ol>
 		<li>The probability of failure if you utilize 2 components.</li>
 		<li>The probability of failure if you utilize 5 components.</li>
 		<li>The number of components needed to insure that the probability of success is at least 99%.</li>
 	</ol>
 	</p>
-	
+	</statement>
+</exercise>
+
+<exercise><title>Internet Meme redux</title>
+	<statement>	
 	<p>
-	E.  Again, from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. A 6 is removed and you are presented with the other die.  Determine the probability that it is a 6.
+	Again, from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. A 6 is removed and you are presented with the other die.  Determine the probability that it is a 6.
 	</p>
+	</statement>
 	<solution> 
 	<p>
 	For this setting, notice that the outcomes from each of the two dice are independent of each other. Removing one of the dice, regardless of it's value, does not affect the other. The question in this case does not ask for a conditional probability.
 	</p>
 	</solution>
-	
+</exercise>
+
+<exercise><title>Single Elimination Tounament</title>
+	<statement>
 	<p>
-	F.  Consider a n=4 team single-elimination tournament where the teams are "seeded" from 1 (the best team) to 4 (the worst team).  For this tournament, team 1 plays team 4 and team 2 plays team 3. The winner of each play each other to determine the final winner. When teams j and k play, set P(j wins) = <m>\frac{k}{j+k}</m> and similarly for team k.  Assuming separate games are independent of each other, determine the probability that team 4 wins the tournament. What about with 8 teams? What about 64 teams?
+	Consider a n=4 team single-elimination tournament where the teams are "seeded" from 1 (the best team) to 4 (the worst team).  For this tournament, team 1 plays team 4 and team 2 plays team 3. The winner of each play each other to determine the final winner. When teams j and k play, set P(j wins) = <m>\frac{k}{j+k}</m> and similarly for team k.  Assuming separate games are independent of each other, determine the probability that team 4 wins the tournament. What about with 8 teams? What about 64 teams?
 	</p>
+	</statement>
 	<solution>
 	<p>
 	P(4 wins) = P(4 beats 1) P(4 beats the winner of the other bracket)
@@ -1092,8 +1124,8 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 	P(3 wins) = 2/5 [(4/5)(1/4) + (1/5)(4/7) ] = 0.1257
 	</p>
 	</solution>
-	
-	</subsection>
+</exercise>
+
 	
 </section>
 

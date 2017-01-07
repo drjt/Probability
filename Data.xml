@@ -19,81 +19,86 @@ To compute your final grade in a class your teacher will first make several assi
 In this chapter, you will consider a number of ways to use point values to represent different aspects of a provided set of data. In doing so, you will also need to take into account whether that data set is the entire list of possibilities--known as the population--or just a subset of that population perhaps obtained by taking repeated measurements from that population--that is, a sample. Each of these values will be called a "statistical measure".
 </p>
 </section>
-<section>	
-	<title>Measurement Scales</title>
-	<p>In creating statistical measures, you might want to consider one of the following general types.
+
+
+
+<section><title>Measurement Scales</title>
+	<p>In creating statistical measures, you might want to consider one of the following general types.</p>
 	<ul>
-		<li>Nominal measures - In this case, data falls into mutually exclusive and exhaustive categories for which the numerical value is only used for identification purposes. For example, assigning Male = 1, Female = -1.</li>
-		<li>Ordinal measures - In this case, data consists of discrete numerical values which can be ranked from lowest to highest or vice versa. For example, your grades in a class grades which are used to compute your GPA.</li>
-		<li>Interval measures - In this case, data possesses an order and where the distance between data values is of significance. For example, heights and weights.</li>
-		<li>Ratio measures - In this case, data can be expressed as a position in some interval and where ratios between observations have meaning. For example, percentile rankings</li>
+		<li><p>Nominal measures - In this case, data falls into mutually exclusive and exhaustive categories for which the numerical value is only used for identification purposes. For example, assigning Male = 1, Female = -1.</p></li>
+		<li><p>Ordinal measures - In this case, data consists of discrete numerical values which can be ranked from lowest to highest or vice versa. For example, your grades in a class grades which are used to compute your GPA.</p></li>
+		<li><p>Interval measures - In this case, data possesses an order and where the distance between data values is of significance. For example, heights and weights.</p></li>
+		<li><p>Ratio measures - In this case, data can be expressed as a position in some interval and where ratios between observations have meaning. For example, percentile rankings</p></li>
 	</ul>
-	In the subsequent sections of this chapter, you will see that a number of different measures are available for most data sets. Determining which "correct" measure to use for describing any given data set will depend the actual situation surrounding the collection of the data.
+	<p>In the subsequent sections of this chapter, you will see that a number of different measures are available for most data sets. Determining which "correct" measure to use for describing any given data set will depend the actual situation surrounding the collection of the data.
 	</p>
+	
 <p>
 The following categorizes several statistical measures which will be developed in this chapter. Details on each are provided in subsequent sections.
+</p>
+
 <ul>
-	<li>Tabular Methods - 
-	based on the entire population yielding a global picture
+	<li><p>Tabular Methods - 
+	based on the entire population yielding a global picture</p>
 		<ul>
-			<li>frequency distributions</li>
-			<li>relative frequency distributions</li>
-			<li>cummulative frequency distributions</li>
-			<li>Stem-and-Leaf Displays</li>
-			<li>Box-and-Whisker Diagrams</li>
+			<li><p>frequency distributions</p></li>
+			<li><p>relative frequency distributions</p></li>
+			<li><p>cummulative frequency distributions</p></li>
+			<li><p>Stem-and-Leaf Displays</p></li>
+			<li><p>Box-and-Whisker Diagrams</p></li>
 		</ul>
 	</li>
-	<li>Summary Methods
+	<li><p>Summary Methods</p>
 		<ul>
-			<li>Measures of the center
+			<li><p>Measures of the center</p>
 				<ol>
-				 <li>Mean</li>
-				 <li>Median</li>
-				 <li>Mode</li>
+				 <li><p>Mean</p></li>
+				 <li><p>Median</p></li>
+				 <li><p>Mode</p></li>
 				</ol>
 			</li>
-			<li>Measures of spread
+			<li><p>Measures of spread</p>
 				<ol>
-				 <li>Range</li>
-				 <li>Variance and Standard Deviation</li>
-				 <li>Interquartile Range</li>
-				 <li>Quantiles</li>
+				 <li><p>Range</p></li>
+				 <li><p>Variance and Standard Deviation</p></li>
+				 <li><p>Interquartile Range</p></li>
+				 <li><p>Quantiles</p></li>
 				 </ol>
 			</li>
-			<li>Measures of Skewness 
-			- indicates the level of symmetry of the data
+			<li><p>Measures of Skewness
+			- indicates the level of symmetry of the data</p>
 				<ol>
-				 <li>Standard Skewness</li>
-				 <li>Pearson Coefficient</li>
+				 <li><p>Standard Skewness</p></li>
+				 <li><p>Pearson Coefficient</p></li>
 				</ol>
 			</li>
-			<li>Measures of Kurtosis 
-			- indicates flatness or roundedness of the peak of the data
+			<li><p>Measures of Kurtosis 
+			- indicates flatness or roundedness of the peak of the data</p>
 				<ol>
-				 <li>Standard Kurtosis</li>
-				 <li>Coefficient of Kurtosis</li>
+				 <li><p>Standard Kurtosis</p></li>
+				 <li><p>Coefficient of Kurtosis</p></li>
 				</ol>
 			</li>
-			<li>Detection of Outliers 
+			<li><p>Detection of Outliers 
 			- indicates whether abnormally large or small data distorts other 
-			techniques
+			techniques</p>
 				<ol>
-				 <li>Z-scores</li>
-				 <li>Trimming</li>
-				 <li>Winsorizing</li>
+				 <li><p>Z-scores</p></li>
+				 <li><p>Trimming</p></li>
+				 <li><p>Winsorizing</p></li>
 				</ol>
 			</li>
-			<li>Tests for Normality 
-			- indictes if the data is bell-shaped
+			<li><p>Tests for Normality 
+			- indictes if the data is bell-shaped</p>
 				<ol>
-				 <li>Standard Percentages relative to standard deviations from the mean</li>
+				 <li><p>Standard Percentages relative to standard deviations from the mean</p></li>
 				</ol>
 			</li>
 		</ul>
 	</li>
 
 </ul>
-</p>
+
 <p>Remark: Many of these measures above are relative and some are absolute.</p>
 	
 </section>
@@ -106,37 +111,47 @@ The following categorizes several statistical measures which will be developed i
 	</p>
 	
 	
-	<definition>
+<definition>
 	<title>Order Statistic</title>
+	<statement>
 	<p>From the data set <m>x_1, x_2, ... , x_n</m>, label the sorted data as <m>y_1, y_2, ..., y_n</m> where  
 	<me> y_1 \le y_2 \le ... \le y_n.</me> 
 	Define <m>y_k</m> as the kth order statistic. </p>
-	</definition>
+	</statement>
+</definition>
 	
-	<example><title>Age of Presidents - order statistics</title>
+<example><title>Age of Presidents - order statistics</title>
+	<statement>
 	<p>
 	For example, the age at inauguration for presidents from 1981-2016 gives the data <m>x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47</m> (Reagan, Bush, Clinton, Bush, Obama). For this data, the order statistics are denoted <m>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69</m>.
 	</p>
-	</example>
+	</statement>
+</example>
 	
 	<p>
 	Once the data is sorted, it should be very easy for you to locate the smallest and largest values. 
 	</p>
-	<definition><title>Minimum/Maximum:</title>  
+
+<definition><title>Minimum/Maximum:</title>  
+	<statement>
 	<p>The smallest and largest values in the data set. Using the notation above, minimum = <m>y_1</m> and the maximum = <m>y_n</m></p>
-	</definition>
+	</statement>
+</definition>
 	
-	<example><title>Age of Presidents - Minimum/Maximum</title>
+<example><title>Age of Presidents - Minimum/Maximum</title>
+	<statement>
 	<p>
 	Using the Presidential ages above, minimum = <m>y_1 = 46</m> and maximum = <m>y_5 = 69</m>.
 	</p>
-	</example>
+	</statement>
+</example>
 
 	<p>
 	Below, you will see how to determine a value which separates the ordered data into two groups with a desired percentage on each side. Note that many utilize approximate methods for computing "percentiles" including many graphing and scientific calculators. The definition below provides for a unique measure for each unique value of p.
 	</p>
 	
-	<definition><title>Percentiles</title>
+<definition><title>Percentiles</title>
+	<statement>
 	<p>A percentile is a numerical value <m>P^p</m> at which approximately 100p% of the given data is smaller.</p>
 	<p>To compute the percentile value with <m>0 \lt p \lt 1</m> for order statistics <m>y_1, y_2, ..., y_n</m> use the formula 
 		<me>P^{p} = (1-r)y_m + ry_{m+1}</me>
@@ -147,52 +162,59 @@ The following categorizes several statistical measures which will be developed i
 	
 	the fractional part of (n+1)p. 
 	</p>
-	</definition> 
+	</statement>
+</definition> 
 	
 <p>The formula for percentiles determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be averages of equal numbers and will then be the common value.</p>
 	
-	<example><title>Small Example - Quartiles</title>
+<example><title>Small Example - Quartiles</title>
+	<statement>
 	<p>
 Consider the following data set: {2,5,8,10}. The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
 	</p>
 
-		<p>More precisely	, the 25th percentile is computed by considering 
-		<me>(n+1)p = (4+1)0.25 = 5/4 = 1.25</me>.  
-		So, m = 1 and r = 0.25. Therefore 
-		<me>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</me> 
-		as noted above. 
-		</p>
-		<p>
-		Similarly, the 75th percentile is given by
-		<me>(n+1)p = (4+1)0.75 = 15/4 = 3.75</me>.  
-		So, m = 3 and r = 0.75. Therefore 
-		<me>P^{0.75} = 0.25 \times 8 + 0.75 \times 10 = 9.5</me> 
-		
-		It is interesting to note that 3 also lies between 2 and 5 as does 2.75 and has the same percentages above (75 percent) and below (25 percent). However, it should designate a slightly larger percentile location. Indeed, going backward:
-		<md>
-			<mrow>3 = (1-r) \times 2 + r \times 5</mrow>
-			<mrow>\Rightarrow r = \frac{1}{3}</mrow>
-			<mrow>\Rightarrow (n+1)p = 1 + \frac{1}{3} = \frac{4}{3}</mrow>
-			<mrow>\Rightarrow p = \frac{4}{15} \approx 0.267</mrow>
-		</md>
-		and so 3 would actually be at approximately the 26.7th percentile.
-		</p>
-	</example>
+	<p>More precisely	, the 25th percentile is computed by considering 
+	<me>(n+1)p = (4+1)0.25 = 5/4 = 1.25</me>.  
+	So, m = 1 and r = 0.25. Therefore 
+	<me>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</me> 
+	as noted above. 
+	</p>
+	<p>
+	Similarly, the 75th percentile is given by
+	<me>(n+1)p = (4+1)0.75 = 15/4 = 3.75</me>.  
+	So, m = 3 and r = 0.75. Therefore 
+	<me>P^{0.75} = 0.25 \times 8 + 0.75 \times 10 = 9.5</me> 
+	
+	It is interesting to note that 3 also lies between 2 and 5 as does 2.75 and has the same percentages above (75 percent) and below (25 percent). However, it should designate a slightly larger percentile location. Indeed, going backward:
+	<md>
+		<mrow>3 = (1-r) \times 2 + r \times 5</mrow>
+		<mrow>\Rightarrow r = \frac{1}{3}</mrow>
+		<mrow>\Rightarrow (n+1)p = 1 + \frac{1}{3} = \frac{4}{3}</mrow>
+		<mrow>\Rightarrow p = \frac{4}{15} \approx 0.267</mrow>
+	</md>
+	and so 3 would actually be at approximately the 26.7th percentile.
+	</p>
+	</statement>
+</example>
 
 	<p>Some special percentiles are provided special names...
 	</p>
 
-	<definition><title>Quartiles</title> 
+<definition><title>Quartiles</title> 
+	<statement>
 	<p>Given a sorted data set, the first, second, and third quartiles are the values of 
 	<m>Q_1 = P^{0.25}, Q_2 = P^{0.5}</m> and <m>Q_3 = P^{0.75}</m>.
 	</p>
-	</definition>
+	</statement>
+</definition>
 
-	<definition><title>Deciles:</title>
+<definition><title>Deciles:</title>
+	<statement>
 	<p>Given a sorted data set, the first, second, ..., ninth deciles are the value of 
 	<m>D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}</m>
 	</p>
-	</definition>
+	</statement>
+</definition>
 	
 	<p>
 	For your data set {2,5,8,10}, 
@@ -203,16 +225,20 @@ Consider the following data set: {2,5,8,10}. The 50th percentile should be a num
 	For a given data set, a summary of these statistics is often desired in order to give the user a quick overview of the more important order statistics.
 	</p>
 
-	<definition><title>5-number summary</title>
+<definition><title>5-number summary</title>
+	<statement>
 	<p>Given a set of data, the 5-number summary is a vector of the order statistics given by <m>\lt</m> minimum, <m>Q_1</m>, <m>Q_2</m>, <m>Q_3</m>, maximum <m>\gt</m>. 
 	</p>
-	</definition>
+	</statement>
+</definition>
 	
-	<example><title>Small example - 5 number summary</title>
+<example><title>Small example - 5 number summary</title>
+	<statement>
 	<p>Returning to our previous example, the five number summary would be
 	<m>\lt 2, 2.75, 6.5, 9.5, 10 \gt</m>
 	</p>
-	</example>
+	</statement>
+</example>
 
 
 </section>
@@ -845,14 +871,19 @@ def _(data = input_box([1,2,3,4,6,7,8,9,11,15,21],label="Enter Your Data:")):
 
 
 <section><title>Exercises</title>
+
 <p>Complete the online homework "Computational Measures".</p>
 
 <exercise>
-<p>Create a data set with about 10 elements. For your data set, compute each of the measures from this chapter and present your data using a frequency histogram.</p>
+	<statement>
+	<p>Create a data set with about 10 elements. For your data set, compute each of the measures from this chapter and present your data using a frequency histogram.</p>
+	</statement>
 </exercise>
 
 <exercise>
-<p>Find a "real-world" data set (similar perhaps to the Census data presented above.) Compute each of the measures from this chapter. Interpret and present your conclusions in an electronic report which can include an excel spreadsheet.</p>
+	<statement>
+	<p>Find a "real-world" data set (similar perhaps to the Census data presented above.) Compute each of the measures from this chapter. Interpret and present your conclusions in an electronic report which can include an excel spreadsheet.</p>
+	</statement>
 </exercise>
 
 </section>

@@ -330,6 +330,7 @@ def _(N1=slider(1,40,1,10,label='$N_1$'),
 <section><title>Exercises</title>
 
 <exercise><title> - The Proverbial Urn Problem</title>
+<statement>
 <p>
 You have an urn with 10 marbles of which <m>n_1 = 6</m> are red and <m>N_2 = 4</m> are blue. You select randomly r = 3 of the marbles without replacement and let X represent the number of red marbles in your sample. With R = {0, 1, 2, 3}, determine:
 <ul>
@@ -338,9 +339,11 @@ You have an urn with 10 marbles of which <m>n_1 = 6</m> are red and <m>N_2 = 4</
 	<li>P(at most 2 of the 3 are red) = f(0) + f(1) + f(2)</li>
 </ul> 
 </p>
+</statement>
 </exercise>
 
 <exercise><title> - Playing Cards</title>
+<statement>
 <p>
 You randomly select a hand of five cards without replacement from an ordinary deck of playing cards.  
 <ul>
@@ -348,9 +351,11 @@ You randomly select a hand of five cards without replacement from an ordinary de
 	<li>Determine the probability that three of the five are face cards (ie, Jacks, Queens, Kings, or Aces).</li>
 </ul>
 </p>
+</statement>
 </exercise>
 
 <exercise><title> - Starting Seniors</title>
+<statement>
 <p>
 You are picking an eleven member football starting team by picking randomly from a group with 15 seniors and 35 others.  Using a hypergeometric distribution, determine:
 <ul>
@@ -360,16 +365,19 @@ You are picking an eleven member football starting team by picking randomly from
 	<li>If your team has all seniors, explain whether someone could suggest that your decision on members was unfair</li>
 </ul>
 </p>
+</statement>
 </exercise>
 
 <exercise><title> - Old Faithful</title>
+<statement>
 <p>
 Ole Faithful geyser in Yellowstone National Park erupts every 91 minutes. You show up at some random time in the eruption cycle and your tour bus plans to stay for 25 minutes. Determine the likelihood that you will be able to see it erupt.  Express your answer in terms of the continuous uniform distribution by giving f(x), F(x), and the specific answer to this question.
 </p>
+</statement>
 </exercise>
 
 <exercise><title> - Continuous Uniform Random Variable Scenarios</title>
-<p>
+<statement><p>
 Explain how the following situations can be modeled using a continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
 <ul>
 	<li>The location on a prize wheel where the spun wheel will stop.</li>
@@ -377,12 +385,15 @@ Explain how the following situations can be modeled using a continuous uniform d
 	<li>The location on a automobile tire where the next puncture will occur.</li>
 </ul>
 </p>
+</statement>
 </exercise>
 
 <exercise><title> - Continous Uniform on a different space</title>
+<statement>
 <p>
 Determine an explicit formula for f(x) and the resulting mean and variance for a continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
-
+</p>
+</statement>
 <solution>
 <p>
 Since you must have 
@@ -412,11 +423,10 @@ For the variance,
 </p>
 </solution>
 
-</p>
-
 </exercise>
 
 <exercise><title> - Louisiana Mega Millions Lottery</title>
+<statement>
 <p>
 To play the Mega Millions Louisiana Lottery consists of picking five numbers from 1 to 75 and one yellow Mega Ball number from 1 through 15. (You can play up to five different sets of numbers on each playslip but we will just assume one play per ticket to keep things straight.) Each play costs $1 and you can pay an additional $1 to apply a "multiplier" which multiplies any non-Jackpot prize by the Multiplier number (2, 3, 4, or 5) randomly selected at the time of the drawing.</p>
 <p> On October 10, 2016 the jackpots listed were
@@ -431,6 +441,8 @@ To play the Mega Millions Louisiana Lottery consists of picking five numbers fro
 	<li>Match 1 plus Mega ball = $2</li>
 	<li>Match only the Mega ball = $1</li>
 </ul>
+</p>
+<p>
 Verify the posted odds
 <ul>
 	<li>Match 5 plus Mega ball = 1 in 258,890,850</li>
@@ -443,7 +455,11 @@ Verify the posted odds
 	<li>Match 1 plus Mega ball = 1 in 56</li>
 	<li>Match only the Mega ball = 1 in 21</li>
 </ul>
+</p>
+<p>
 Determine the expected payout for each ticket purchased. Also, determine what the Jackpot would need to be in order for the game to be considered "fair" with an expected value of zero.
+</p>
+</statement>
 
 <solution>
 <p>
@@ -455,6 +471,8 @@ To match only 5 means you also MUST miss the Mega Ball which has probability 14/
 <me>\frac{1}{17259390} \cdot \frac{14}{15} = \frac{1}{17259390 \cdot \frac{15}{14}} \approx \frac{1}{18492204}.</me>
 Continue in this manner to determine the other odds.
 </p>
+
+
 <p>
 For the expected earnings, first determine a value function corresponding to each outcome and apply the discrete expected value process. This gives
 <md>
@@ -466,6 +484,8 @@ For the expected earnings, first determine a value function corresponding to eac
 </md>
 So, the expected payout is approximately 30 cents. Subtracting the cost of playing ($1) indicates that the average winnings per play of the Louisiana Lottery would be -70 cents. So, you would be better off to take, say, 50 cents and just give it to the local school system every time you consider playing this game rather than actually playing.
 </p>
+
+
 <p>
 To determine the Jackpot A needed to make this a fair game means to solve the equation
 <md>
@@ -477,6 +497,8 @@ To determine the Jackpot A needed to make this a fair game means to solve the eq
 </md>
 for A.
 </p>
+
+
 <p>
 Finally, to deal with the multiplier, note that all but the Jackpot payouts would be increased by the multiplier m where <m>m \in \{1,2,3,4,5\}</m>.  For the cost of an extra $1 (total cost of $2 per bet) the expected payout increases as the multiplier increases but each of these decreases likelihood of winning that payout by a factor of 1/5.  In general, let x = 1, 2, ..., 9 indicate the various winning options in order listed above, f(x) the corresponding probabilities listed for each option, and  u(x) the listed payouts. Then the expected payout is given by
 <me> \$32600000 \cdot \frac{1}{258,890,850} + \sum_{m=1}^5
@@ -492,7 +514,6 @@ Therefore, the expect value of spending another dollar to get the multiplier eff
 </p>
 
 </solution>
-</p>
 </exercise>
 
 </section>

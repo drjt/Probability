@@ -1,3 +1,4 @@
+\hypertarget {Intro_Probability_And_Statistics}{}
 \contentsline {chapter}{Preface}{v}{chapter*.1}
 \contentsline {chapter}{\numberline {1}Statistical Measures}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Introduction}{1}{section.1.1}
@@ -23,65 +24,58 @@
 \contentsline {section}{\numberline {4.1}Introduction}{27}{section.4.1}
 \contentsline {section}{\numberline {4.2}Relative Frequency}{27}{section.4.2}
 \contentsline {section}{\numberline {4.3}Definition of Probability}{30}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Motivating the Definition}{30}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Probability}{31}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Basic Probability Theorems}{31}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Equally Likely Outcomes}{32}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}HOMEWORK}{33}{subsection.4.3.5}
 \contentsline {section}{\numberline {4.4}Conditional Probability}{33}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}HOMEWORK}{34}{subsection.4.4.1}
-\contentsline {section}{\numberline {4.5}Bayes Theorem}{38}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}HOMEWORK}{41}{subsection.4.5.1}
-\contentsline {section}{\numberline {4.6}Independence}{42}{section.4.6}
-\contentsline {subsection}{\numberline {4.6.1}HOMEWORK}{43}{subsection.4.6.1}
-\contentsline {chapter}{\numberline {5}Probability Functions}{45}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{45}{section.5.1}
-\contentsline {section}{\numberline {5.2}Random Variables}{45}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}HOMEWORK}{47}{subsection.5.2.1}
-\contentsline {section}{\numberline {5.3}Probability Functions}{47}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}HOMEWORK}{51}{subsection.5.3.1}
-\contentsline {section}{\numberline {5.4}Expected Value}{51}{section.5.4}
-\contentsline {section}{\numberline {5.5}Standard Units}{58}{section.5.5}
-\contentsline {chapter}{\numberline {6}Distributions based upon Equally likely Outcomes}{59}{chapter.6}
-\contentsline {section}{\numberline {6.1}Introduction}{59}{section.6.1}
-\contentsline {section}{\numberline {6.2}Discrete Uniform Distribution}{59}{section.6.2}
-\contentsline {section}{\numberline {6.3}Continuous Uniform Distribution}{62}{section.6.3}
-\contentsline {section}{\numberline {6.4}Hypergeometric Distribution}{63}{section.6.4}
-\contentsline {section}{\numberline {6.5}Exercises}{65}{section.6.5}
-\contentsline {chapter}{\numberline {7}Distributions based upon Bernoulli Trials}{67}{chapter.7}
-\contentsline {section}{\numberline {7.1}Introduction}{67}{section.7.1}
-\contentsline {section}{\numberline {7.2}Binomial Distribution}{68}{section.7.2}
-\contentsline {section}{\numberline {7.3}Geometric Distribution}{70}{section.7.3}
-\contentsline {section}{\numberline {7.4}Negative Binomial}{73}{section.7.4}
-\contentsline {section}{\numberline {7.5}Exercises}{76}{section.7.5}
-\contentsline {chapter}{\numberline {8}Distributions based upon Poisson Processes}{77}{chapter.8}
-\contentsline {section}{\numberline {8.1}Introduction}{77}{section.8.1}
-\contentsline {section}{\numberline {8.2}Poisson Distribution}{77}{section.8.2}
-\contentsline {section}{\numberline {8.3}Exponential Distribution}{80}{section.8.3}
-\contentsline {section}{\numberline {8.4}Gamma Distribution}{82}{section.8.4}
-\contentsline {section}{\numberline {8.5}Exercises}{84}{section.8.5}
-\contentsline {chapter}{\numberline {9}Normal Distributions}{85}{chapter.9}
-\contentsline {section}{\numberline {9.1}Introduction}{85}{section.9.1}
-\contentsline {section}{\numberline {9.2}The Normal Distribution}{85}{section.9.2}
-\contentsline {section}{\numberline {9.3}Chi-Square Distribution}{88}{section.9.3}
-\contentsline {section}{\numberline {9.4}Normal Distribution as a Limiting Distribution}{89}{section.9.4}
-\contentsline {section}{\numberline {9.5}Central Limit Theorem}{94}{section.9.5}
-\contentsline {section}{\numberline {9.6}Exercises}{97}{section.9.6}
-\contentsline {chapter}{\numberline {10}Estimation}{99}{chapter.10}
-\contentsline {section}{\numberline {10.1}Introduction}{99}{section.10.1}
-\contentsline {section}{\numberline {10.2}Interval Estimates - Chebyshev}{99}{section.10.2}
-\contentsline {section}{\numberline {10.3}Point Estimates}{100}{section.10.3}
-\contentsline {section}{\numberline {10.4}Interval Estimates - Confidence Interval for p}{101}{section.10.4}
-\contentsline {section}{\numberline {10.5}Interval Estimates - Confidence Interval for \(\mu \)}{105}{section.10.5}
-\contentsline {section}{\numberline {10.6}Interval Estimates - Confidence Interval for \(\sigma ^2\)}{106}{section.10.6}
-\contentsline {section}{\numberline {10.7}Exercises}{110}{section.10.7}
-\contentsline {chapter}{\numberline {11}Review of Calculus}{111}{chapter.11}
-\contentsline {section}{\numberline {11.1}Geometric Series}{111}{section.11.1}
-\contentsline {subsection}{\numberline {11.1.1}Geometric Series}{111}{subsection.11.1.1}
-\contentsline {subsection}{\numberline {11.1.2}Alternate Forms for the Geometric Series}{112}{subsection.11.1.2}
-\contentsline {section}{\numberline {11.2}Binomial Sums}{113}{section.11.2}
-\contentsline {subsection}{\numberline {11.2.1}}{113}{subsection.11.2.1}
-\contentsline {subsection}{\numberline {11.2.2}Binomial Series}{114}{subsection.11.2.2}
-\contentsline {subsubsection}{\numberline {11.2.2.1}}{114}{subsubsection.11.2.2.1}
-\contentsline {subsection}{\numberline {11.2.3}Trinomial Series}{114}{subsection.11.2.3}
-\contentsline {section}{\numberline {11.3}Negative Binomial Series}{114}{section.11.3}
+\contentsline {section}{\numberline {4.5}Bayes Theorem}{34}{section.4.5}
+\contentsline {section}{\numberline {4.6}Independence}{38}{section.4.6}
+\contentsline {section}{\numberline {4.7}Exercises}{39}{section.4.7}
+\contentsline {chapter}{\numberline {5}Probability Functions}{47}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{47}{section.5.1}
+\contentsline {section}{\numberline {5.2}Random Variables}{47}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}HOMEWORK}{49}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Probability Functions}{49}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}HOMEWORK}{53}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.4}Expected Value}{53}{section.5.4}
+\contentsline {section}{\numberline {5.5}Standard Units}{60}{section.5.5}
+\contentsline {chapter}{\numberline {6}Distributions based upon Equally likely Outcomes}{61}{chapter.6}
+\contentsline {section}{\numberline {6.1}Introduction}{61}{section.6.1}
+\contentsline {section}{\numberline {6.2}Discrete Uniform Distribution}{61}{section.6.2}
+\contentsline {section}{\numberline {6.3}Continuous Uniform Distribution}{64}{section.6.3}
+\contentsline {section}{\numberline {6.4}Hypergeometric Distribution}{65}{section.6.4}
+\contentsline {section}{\numberline {6.5}Exercises}{67}{section.6.5}
+\contentsline {chapter}{\numberline {7}Distributions based upon Bernoulli Trials}{73}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{73}{section.7.1}
+\contentsline {section}{\numberline {7.2}Binomial Distribution}{74}{section.7.2}
+\contentsline {section}{\numberline {7.3}Geometric Distribution}{76}{section.7.3}
+\contentsline {section}{\numberline {7.4}Negative Binomial}{79}{section.7.4}
+\contentsline {section}{\numberline {7.5}Exercises}{82}{section.7.5}
+\contentsline {chapter}{\numberline {8}Distributions based upon Poisson Processes}{83}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{83}{section.8.1}
+\contentsline {section}{\numberline {8.2}Poisson Distribution}{83}{section.8.2}
+\contentsline {section}{\numberline {8.3}Exponential Distribution}{86}{section.8.3}
+\contentsline {section}{\numberline {8.4}Gamma Distribution}{88}{section.8.4}
+\contentsline {section}{\numberline {8.5}Exercises}{90}{section.8.5}
+\contentsline {chapter}{\numberline {9}Normal Distributions}{91}{chapter.9}
+\contentsline {section}{\numberline {9.1}Introduction}{91}{section.9.1}
+\contentsline {section}{\numberline {9.2}The Normal Distribution}{91}{section.9.2}
+\contentsline {section}{\numberline {9.3}Chi-Square Distribution}{94}{section.9.3}
+\contentsline {section}{\numberline {9.4}Normal Distribution as a Limiting Distribution}{95}{section.9.4}
+\contentsline {section}{\numberline {9.5}Central Limit Theorem}{100}{section.9.5}
+\contentsline {section}{\numberline {9.6}Exercises}{103}{section.9.6}
+\contentsline {chapter}{\numberline {10}Estimation}{105}{chapter.10}
+\contentsline {section}{\numberline {10.1}Introduction}{105}{section.10.1}
+\contentsline {section}{\numberline {10.2}Interval Estimates - Chebyshev}{105}{section.10.2}
+\contentsline {section}{\numberline {10.3}Point Estimates}{106}{section.10.3}
+\contentsline {section}{\numberline {10.4}Interval Estimates - Confidence Interval for p}{107}{section.10.4}
+\contentsline {section}{\numberline {10.5}Interval Estimates - Confidence Interval for \(\mu \)}{111}{section.10.5}
+\contentsline {section}{\numberline {10.6}Interval Estimates - Confidence Interval for \(\sigma ^2\)}{112}{section.10.6}
+\contentsline {section}{\numberline {10.7}Exercises}{116}{section.10.7}
+\contentsline {chapter}{\numberline {11}Review of Calculus}{117}{chapter.11}
+\contentsline {section}{\numberline {11.1}Geometric Series}{117}{section.11.1}
+\contentsline {subsection}{\numberline {11.1.1}Geometric Series}{117}{subsection.11.1.1}
+\contentsline {subsection}{\numberline {11.1.2}Alternate Forms for the Geometric Series}{118}{subsection.11.1.2}
+\contentsline {section}{\numberline {11.2}Binomial Sums}{119}{section.11.2}
+\contentsline {subsection}{\numberline {11.2.1}}{119}{subsection.11.2.1}
+\contentsline {subsection}{\numberline {11.2.2}Binomial Series}{120}{subsection.11.2.2}
+\contentsline {subsubsection}{\numberline {11.2.2.1}}{120}{subsubsection.11.2.2.1}
+\contentsline {subsection}{\numberline {11.2.3}Trinomial Series}{120}{subsection.11.2.3}
+\contentsline {section}{\numberline {11.3}Negative Binomial Series}{120}{section.11.3}
