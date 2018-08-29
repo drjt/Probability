@@ -273,6 +273,47 @@ def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),
 	
 </section>
 
+<section><title>Other "Bell Shaped" distributions</title>
+<p>The Normal distribution discussed above is very important when doing statistical analysis. It however is not the only distribution that is symmetrical about the mean and looks like a bell.  In this section, we consider two other options--one which is virtually useless and another which is very useful.
+</p>
+<p><title>The Cauchy Distribution</title>
+For a useless distribution, consider a continuous random variable on the real numbers defined by
+<me>f(x) = \frac{1/\pi}{1+x^2}.</me>
+A random variable with this probability function is said to be a Cauchy Distribution.
+</p>
+<theorem><title>The Cauchy Distribution</title>
+<statement><me>f(x) = \frac{1/\pi}{1+x^2}</me>
+is a probability function on <m>(-\infty, \infty)</m>.
+</statement>
+<proof>
+Easily, note that 
+<me>\int_{-\infty}^{\infty} \frac{1}{1+x^2} dx = arctan(\infty) - arctan(-\infty) = \pi/2 - (-\pi/2) = \pi.</me>
+Dividing by <m>\pi</m> gives the Cauchy probability function integrates to 1.
+</proof>
+</theorem>
+<p>
+Now that we have a probability function, it is important to determine its mean and variance. It should be obvious that when doing so using the Cauchy probability function, problems quickly arise.  Indeed,
+<me>\int_{-\infty}^{\infty} x \frac{1}{1+x^2} dx = (1/2) ( \ln( | \infty |) - \ln( | -\infty |)</me>
+which is problematic.  Further, for the variance
+<me>\int_{-\infty}^{\infty} x^2 \frac{1}{1+x^2} dx </me>
+and note that the integrand does not converge to 0 at the endpoints and therefore the integral is automatically considered divergent.  Thus it is reasonable to note that the Cauchy distribution has no variance.
+</p>
+<p>On the other hand, there is another bell-shaped distribution that is useful and its random variable can be created by using a mixture of a normal variable and a Cauchy variable. Indeed, suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
+<me>T = \frac{Z}{\sqrt(Y/r)}.</me>
+Then, T is said to have a (Student) t distribution.  The good news is that this distribution is useful and its statistics are presented below without proof.
+
+<theorem><title>Student t-distribution</title>
+<statement>For the Student t variable T defined above, 
+<me> \mu = 0</me>
+and if r>2
+<me> \sigma^2 = \frac{r}{r-2}.</me>
+</statement>
+</theorem>
+</p>
+
+
+</section>
+
 
 
 <section><title>Normal Distribution as a Limiting Distribution</title>

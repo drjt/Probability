@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file is part of the documentation of MathBook XML   -->
+<!--                                                          -->
+<!--    MathBook XML Author's Guide                           -->
+<!--                                                          -->
+<!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
+<!-- See the file COPYING for copying conditions.             -->
+
+<chapter xml:id="HypothesisTesting" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Hypothesis Testing</title>
+
+<section><title>Introduction</title>
+<p>
+When creating confidence intervals, you started with a sample and used the sample statistic (sample mean, relative frequency, sample variance, etc.) to anchor an interval which (with high possibility) contains the corresponding population statistic <m>\mu, p, \sigma^2</m>, etc. In this section, we instead start with an educated guess for one of the population statistics <m>\mu, p, \sigma^2</m> and then statistically compare that value with the subsequently collected sample statistic.
+</p>
+<p>
+The educated guess noted above is often called the "null hypothesis" and should be considered as a guess that one tries to disprove if possible by using a subsequent statistical sample.
+</p>
+
+
+<p>
+Discussion on Type 1 and Type 2 errors.
+</p>
+
+
+
+</section>
+<section><title>Hypothesis Test for one proportion</title>
+
+	<p><m> H_0 : p = p_0</m>
+	vs  <m> H_a : p \neq p_0</m>
+	</p>
+
+	<p><m> H_0 : p = p_0</m>
+	vs  <m> H_a : p \gt p_0</m>
+	</p>
+
+	<p><m> H_0 : p = p_0</m>
+	vs  <m> H_a : p \lt p_0</m>
+	</p>
+	
+</section>
+
+<section><title>Hypothesis Test for one mean</title>
+
+	<p><m> H_0 : \mu = \mu_0</m>
+	vs  <m> H_a : \mu \neq \mu_0</m>
+	</p>
+
+	<p><m> H_0 : \mu = \mu_0</m>
+	vs  <m> H_a : \mu \gt \mu_0</m>
+	</p>
+
+	<p><m> H_0 : \mu = \mu_0</m>
+	vs  <m> H_a : \mu \lt \mu_0</m>
+	</p>
+	
+	
+</section>
+
+<section><title>Hypothesis Test for the difference of two means</title>
+
+	<p><m> H_0 : \mu_1 = \mu_2</m>
+	vs  <m> H_a : \mu_1 \neq \mu_2</m>
+	</p>	
+	
+</section>
+
+
+<section><title>Hypothesis Test for one variance</title>
+
+	<p><m> H_0 : \sigma^2 = \mu_0</m>
+	vs  <m> H_a : \sigma^2 \neq \mu_0</m>
+	</p>
+
+	<p><m> H_0 : \sigma^2 = \sigma_0^2</m>
+	vs  <m> H_a : \sigma^2 \gt \sigma_0^2</m>
+	</p>
+
+	<p><m> H_0 : \sigma^2 = \sigma_0^2</m>
+	vs  <m> H_a : \sigma^2 \lt \sigma_0^2</m>
+	</p>
+	
+	
+</section>
+
+
+</chapter>

@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-01-07T11:30:24-05:00    *%
+%*    on 2018-08-09T10:34:58-05:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -366,7 +366,7 @@ Department of Mathematics\\
 Mississippi College\\
 \href{mailto:travis@mc.edu}{\nolinkurl{travis@mc.edu}}
 }
-\date{January 7, 2017}
+\date{August 9, 2018}
 \begin{document}
 \frontmatter
 %% begin: half-title
@@ -396,7 +396,7 @@ Mississippi College\\
 {\Large Mississippi College}\\[3\baselineskip]
 {\Large }\\[0.5\baselineskip]
 {\normalsize }\\[3\baselineskip]
-{\Large January 7, 2017}\\}
+{\Large August 9, 2018}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -1049,10 +1049,10 @@ Find a "real-world" data set (similar perhaps to the Census data presented above
 \typeout{************************************************}
 \section[{Introduction}]{Introduction}\label{section-10}
 
-Given two distinct points, there is one line which passes exactly through both.  Indeed, if the points are \((x_0,y_0), (x_0,y_0)\) then presuming the x-values are different gives the equation
-\begin{equation*} y = \frac{y_1 - y_0}{x_1 - x_0}(x - x_0) + y_0\end{equation*}
+Given two distinct points, there is one line which passes exactly through both.  Indeed, if the points are \((x_1,y_1), (x_2,y_2)\) then presuming the x-values are different gives the equation
+\begin{equation*} y = \frac{y_2 - y_1}{x_2 - x_2}(x - x_1) + y_1\end{equation*}
 is the linear function which passes through both points.  If the x's are equal then 
-\begin{equation*} x = x_0\end{equation*}
+\begin{equation*} x = x_1\end{equation*}
 is your linear equation. 
 However, once you collect three or more points it is likely that there is no line which exactly "interpolates" all of the points.
 %
@@ -1075,18 +1075,63 @@ and a general linear function
 \begin{equation*}f(x) = mx + b.\end{equation*}
 It is possible that each of the given data points are exactly "interpolated" by the linear function so that
 \begin{equation*}f(x_k) = y_k\end{equation*}
-for k = 1, 2, ... , n.  However, in general this is unlikely since even three points are not likely to be colinear. However, you may notice that the data points exhibit a linear tendency or that the underlying physics might suggest a linear model. If so, you may find it easier to predict values of y for given values of x using a linear approximation. Here you will investigate a method for doing so called "linear regression", "least-squares", or "best-fit line".
+for k = 1, 2, ... , n.  However, in general this is unlikely since even three points are not likely to be colinear. However, you may notice that the data points exhibit a linear tendency or that the underlying physics might suggest a linear model. If so, you may find it easier to predict values of y for given values of x using a linear approximation. Here you will investigate a method for doing so called "linear regression", "least-squares", or "best-fit line". 
 %
 \par
 
-To determine a best-fit line, you need to determine what is meant by the word "best". Here, we will derive the standard approach which interprets this to mean that the total vertical error between the line and the provided data points is minimized in some fashion.  Indeed, this vertical error would be of the form
+But why even bother creating a formula (a line here) to approximate data that does not satisfy that formula? Remember that you would expect collected data to vary slightly as one repeatedly collects that data in the same way that you would expect to make a slightly different score on repeated attempts at exams on the same material. Creating a forumla that is close to your data gives a well-defined way to predict a y value for a given x value. This predictive behavior is illustrated in the exercise below.
+%
+\begin{exercise}\label{exercise-5}
+
+		Consider using the following best-fit line for approximation.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/NAU/setStatistics/linear_regression1.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		So, these are simple calculations.
+		%
+\par
+\end{exercise}
+\par
+
+To determine the best-fit line, you need to determine what is meant by the word "best". Here, we will derive the standard approach which interprets this to mean that the total vertical error between the line and the provided data points is minimized in some fashion.  Indeed, this vertical error would be of the form
 \begin{equation*}e_k = f(x_k) - y_k\end{equation*}
 and would be zero if f(x) exactly interpolated at the given data point.  Note, some of these errors will be positive and some will be negative. To avoid any possible cancellation of errors, you can look at taking absolute values (which is tough to deal with algebraically) or by squaring the errors. This second option will be the approach taken here. This is similar to the approach taken earlier when developing formulas for the variance.
 %
 \par
 The best-fit line therefore will be the line \(f(x) = mx+b\) so that the "total squared error" is minimized. This total squared error is given by
-\begin{equation*}TSE(m,b) = \sum_{k=1}^n e_k^2 = \sum_{k=1}^n (f(x_k) - y_k)^2 = \sum_{k=0}^n (m x_k + b - y_k)^2.\end{equation*}
-To minimize this function of the two variables m and b, take partial derivatives and set them equal to zero to get the critical values:
+\begin{equation*}TSE(m,b) = \sum_{k=1}^n e_k^2 = \sum_{k=1}^n (f(x_k) - y_k)^2 = \sum_{k=1}^n (m x_k + b - y_k)^2.\end{equation*}
+%
+\par
+
+For the following interactive cell, consider for the given data points various values for the slope and y-intercept and see if you can make the total squared error as small as possible. In doing so, notice the vertical distances from the line to the given data points generally decreases as this error measure gets smaller. 
+%
+\begin{lstlisting}[style=sageinput]
+var('x')
+@interact
+def _(Points = input_box([(-1,1),(3,1),(4,3),(6,4)]), m = slider(-4,4,0.05,1),b = slider(-2,2,0.05,1)):   
+    G = points(Points,size=20)
+    xpt = []
+    ypt = []
+    f = m*x + b
+    TSE = 0
+    for k in range(len(Points)):
+        x0 = Points[k][0]
+        xpt.append(x0)
+        y0 = Points[k][1]
+        ypt.append(y0)
+        TSE += (f(x0) - y0)^2
+        G += line([(x0,f(x0)),(x0,y0)],color='orange')
+    G += plot(f,x,min(xpt),max(xpt),color='gray')
+    T = 'Total Squared Error = $%s$'%str(TSE)
+    G.show(title = T)
+\end{lstlisting}
+\par
+
+So that we don't have to guess the best values for slope and intercept, we can appeal to calculus. Indeed, to minimize this function of the two variables m and b take partial derivatives and set them equal to zero to get the critical values:
 \begin{equation*}TSE_m = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot x_k\end{equation*}
 and
 \begin{equation*}TSE_b = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot 1 .\end{equation*}
@@ -1096,10 +1141,97 @@ and
 \begin{equation*}m \sum_{k=1}^n x_k + b \sum_{k=1}^n 1 = \sum_{k=1}^n y_k.\end{equation*}
 Solving these for m and b gives the best fit line.
 %
+\begin{exercise}\label{exercise-6}
+
+		Ok.  Let's see if you can apply this to get a best fit line.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/ASU-topics/setStat/dueck4_2_4.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		So, these are simple calculations.
+		%
+\par
+\end{exercise}
 \typeout{************************************************}
-\typeout{Section 2.3 Higher Degree Regression}
+\typeout{Section 2.3 Correlation}
 \typeout{************************************************}
-\section[{Higher Degree Regression}]{Higher Degree Regression}\label{section-12}
+\section[{Correlation}]{Correlation}\label{section-12}
+
+You can plot points and plot the resulting best-fit line determined in the previous section but the question remains whether the line is any good. In particular, the real use of the line often is to subsequently predict y-values for a given x-value. However, it is very likely that the best-fit line does not even pass through any of the provided data points.  So, how can something that misses every marker still be considered a good fit. To quantify this, we first need to discuss a way to measure how well two variables vary with each other.
+%
+\begin{definition}[{Covariance}]\label{definition-14}
+Given paired data 
+\begin{equation*}(x_1,y_1), (x_2,y_2), ... , (x_n,y_n)\end{equation*}
+with corresponding means \(\overline{x}\) and \(\overline{y}\), the covariance is given by
+\begin{equation*}Cov(X,Y) = \sum_{k=1}^n (x_k-\overline{x})(y_k-\overline{y})/n.\end{equation*}
+%
+\end{definition}
+\par
+This general definition provides a general measure which is a second order term (like variance) but also maintains "units". To provide a unit-less metric, consider the following measure.
+\begin{definition}[{Correlation Coefficient}]\label{definition-15}
+Given a collection of data points, the correlation coefficient is given by
+\begin{equation*}r = \frac{Cov(X,Y)}{\sigma_x \sigma_y}\end{equation*}
+where \(\sigma_x\) is the standard deviation of the x-values only and \(\sigma_y\) is the standard deviation of the y-values only.
+%
+\end{definition}
+
+\begin{theorem}[{Interpretation of the Correlation Coefficient}]\label{theorem-3}
+If the points are collinear with a positive slope then r=1 and if the points are collinear with a negative slope then r=-1.\end{theorem}
+\begin{proof}\hypertarget{proof-3}{}
+
+Assume the data points are collinear with a positive slope. Then the 
+\(TSE(m_0,b_0) = 0\) for some \(m_0\) and \(b_0\). For this line notice that \(f(x_k) = y_k\) exactly for all data points. It is easy to show then that \(\overline{y} = m_0 \overline{x} + b_0\) and \(\sigma_y = | m_0 | \sigma_x\).
+
+Therefore,
+\begin{equation*}Cov(X,Y) = \sum_{k=1}^n (x_k-\overline{x})(m_0 x_k + b_0 - (m_0 \overline{x} + b_0))/n = m_0 \sigma_x^2\end{equation*}
+Putting these together gives correlation coefficient
+\begin{equation*}r = \frac{m_0 \sigma_x^2}{\sigma_x m_0 \sigma_x} = 1.\end{equation*} 
+A similar proof follows in the second case by noting that \(m_0 / | m_0 | = -1\).
+%
+\end{proof}
+
+
+\begin{exercise}\label{exercise-7}
+
+		Interpreting correlation coefficients.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		So, these are simple calculations.
+		%
+\par
+\end{exercise}
+
+
+\begin{exercise}\label{exercise-8}
+
+		Interpreting correlation coefficients.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		So, these are simple calculations.
+		%
+\par
+\end{exercise}
+
+
+
+%
+\typeout{************************************************}
+\typeout{Section 2.4 Higher Degree Regression}
+\typeout{************************************************}
+\section[{Higher Degree Regression}]{Higher Degree Regression}\label{section-13}
 
 Continuing in a similar fashion to the previous section, consider now an approximation using a quadratic function \(f(x) = ax^2 + bx + c\).  In this case, the total squared error would be of the form
 \begin{equation*}TSE(a,b,c) = \sum_{k=0}^n (a x_k^2 + b x_k + c - y_k)^2.\end{equation*}
@@ -1115,13 +1247,58 @@ Once again, setting equal to zero and solving gives the normal equations for the
 
 %
 \typeout{************************************************}
+\typeout{Section 2.5 Multi-variable Regression}
+\typeout{************************************************}
+\section[{Multi-variable Regression}]{Multi-variable Regression}\label{section-14}
+
+The regression models that we have looked at till now have always presumed a single independent variable. It is much more likely when investigating cause and effect relationships that there are perhaps many variables that contribute.  In this section, we briefly consider a two-variable model and an interesting example that illustrates the danger in using models beyond the relevant data that has been used to create the model.
+%
+\par
+
+Consider then a model of the form
+\begin{equation*}z = \alpha_1 x + \alpha_2 y + \beta\end{equation*}
+and the data points \begin{equation*}(x_1,y_1,z_1), (x_2,y_2,z_2), ... , (x_n,y_n,z_n), \end{equation*}.  Evaluating at these data points gives, in matrix form
+
+\begin{equation*}
+\begin{bmatrix}
+z_1
+\\ z_2
+\\ ...
+\\ z_n
+\end{bmatrix}
+=
+
+\begin{bmatrix}
+ x_1 \amp y_1 \\ 
+ x_2 \amp y_2 \\ 
+ ... \amp ... \\ 
+ x_n \amp y_n 
+\end{bmatrix} 
+
+\cdot 
+
+\begin{bmatrix}
+\alpha_1
+\\ 
+\alpha_2
+\end{bmatrix}
++
+\begin{bmatrix}
+ \beta \\ 
+ \beta \\ 
+ ... \\ 
+ \beta 
+\end{bmatrix}
+\end{equation*}
+%
+\typeout{************************************************}
 \typeout{Chapter 3 Counting and Combinatorics}
 \typeout{************************************************}
 \chapter[{Counting and Combinatorics}]{Counting and Combinatorics}\label{Combinatorics}
 \typeout{************************************************}
 \typeout{Section 3.1 Introduction}
 \typeout{************************************************}
-\section[{Introduction}]{Introduction}\label{section-13}
+\section[{Introduction}]{Introduction}\label{section-15}
 Discussion on the usefulness of having ways to count the number
 of elements in a set without having to explicitly listing all elements.%
 \par
@@ -1167,7 +1344,7 @@ So, it is easy to see that these are all of the possible outcomes and that the t
 
 Notice how the list quickly grows when just adding one more choice. This illustrates how keeping track of the number of items in a set can quickly get impossible to keep up with and to count unless we can approach this problem using a more mathematical approach.
 %
-\begin{definition}[{Cardinality}]\label{definition-14}
+\begin{definition}[{Cardinality}]\label{definition-16}
 Given a set of elements A, the number of elements in the 
 		set is known as the sets cardinality and is denoted |A|. If the set has 
 		an infinite number of elements then we set |A| = \(\infty\).
@@ -1175,11 +1352,11 @@ Given a set of elements A, the number of elements in the
 \par
 In order to "count without counting" we establish the following 
 	foundational principle.%
-\begin{theorem}[{Multiplication Principle}]\label{theorem-3}
+\begin{theorem}[{Multiplication Principle}]\label{theorem-4}
 Given two successive events A and B, the number of ways 
 		to perform A and then B is |A||B|.
 		\end{theorem}
-\begin{proof}\hypertarget{proof-3}{}
+\begin{proof}\hypertarget{proof-4}{}
 If either of the events has infinite cardinality, then it is 
 			clear
 			that the number of ways to perform A and then B will also be 
@@ -1203,7 +1380,35 @@ B = \left \{  b_1, b_2, b_3, ... , b_{|B|} \right \}
 			second set has |A| |B| elements then the conclusion follows. 
 			coordinates.%
 \end{proof}
-\begin{definition}[{Factorial}]\label{definition-15}
+\begin{exercise}\label{exercise-9}
+
+		Let's apply the Multiplication Principle.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		So, these are simple calculations.
+		%
+\par
+\end{exercise}
+\begin{exercise}\label{exercise-10}
+
+		Let's apply the Multiplication Principle.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		So, these are simple calculations.
+		%
+\par
+\end{exercise}
+\begin{definition}[{Factorial}]\label{definition-17}
 For any natural number n, 
 		\begin{gather*}
 n! = n(n-1)(n-2) ... 3 \cdot 2 \cdot 1
@@ -1253,7 +1458,7 @@ Assuming these characters are used only once each, how many possible
 		characters are distinct. Since we have 9 characters provided, the we can
 		consider each character as an event with the first event as a choice
 		from the 9, the second event as a choice from the remaining 8, etc. This
-		gives \(9 \times 8 \ times ... \times 1 = 362880\) possible 
+		gives \(9 \times 8 \times ... \times 1 = 362880\) possible 
 		passphrases.
 		%
 \par
@@ -1294,11 +1499,11 @@ With this large collection of possible outcomes, how are the movie
 \typeout{************************************************}
 \typeout{Section 3.2 Permutations}
 \typeout{************************************************}
-\section[{Permutations}]{Permutations}\label{section-14}
+\section[{Permutations}]{Permutations}\label{section-16}
 When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.%
-\begin{theorem}[{Permutations of everything}]\label{theorem-4}
+\begin{theorem}[{Permutations of everything}]\label{theorem-5}
 The number of ways to arrange n distinct items is n!\end{theorem}
-\begin{proof}\hypertarget{proof-4}{}
+\begin{proof}\hypertarget{proof-5}{}
 Notice that if n=1, then there is only 1 item to arrange and 
 			that there is only one possible arrangment.%
 \par
@@ -1311,77 +1516,189 @@ Notice that if n=1, then there is only 1 item to arrange and
 			Notice that there are n+1 ways to choose 1 element from A and that in doing so leaves a set with n elements. Combining the induction hypothesis with the multiplication principle this gives (n+1)n! = (n+1)! possible outcomes.
 			%
 \end{proof}
-\begin{theorem}[{Permutations of a subset without replacement}]\label{theorem-5}
+\begin{theorem}[{Permutations of a subset without replacement}]\label{theorem-6}
  
 			The number of ways to arrange r items from a set of n distinct items 
 			is 
-			\begin{equation*} P_r^n = \frac{n!}{(n-r)!} \end{equation*}
+			\begin{equation*} _nP_r = \frac{n!}{(n-r)!} \end{equation*}
+			This is sometimes denoted also as P(n,r) or \(P_r^n\).
 			%
 \end{theorem}
-\begin{proof}\hypertarget{proof-5}{}
+\begin{proof}\hypertarget{proof-6}{}
 
 			If \(r \gt n\) or \(r \lt 0 \) then this is not possible and so the result would be no permuatations. Otherwise, apply the multiplication principle r times noting that there are 
 			n choices for the first selection, n-1 choices for the second
 			selection, and with n-r+1 choices for the rth selection. This gives
 			\begin{align*}
-P_r^n & = n(n-1) ... (n-r+1)\\
+_nP_r & = n(n-1) ... (n-r+1)\\
 & = n(n-1) ... (n-r+1)\frac{(n-r)!}{(n-r)!}\\
 & = \frac{n(n-1) ... (n-r+1)(n-r)!}{(n-r)!}\\
 & = \frac{n!}{(n-r)!}
 \end{align*}
 			%
 \end{proof}
-\begin{theorem}[{Permutations of a subset with replacement}]\label{theorem-6}
+\begin{exercise}\label{exercise-11}
+
+		Let's apply the the Permutation formula.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		So, these are simple calculations.
+		%
+\par
+\end{exercise}
+\begin{theorem}[{Permutations of a subset with replacement}]\label{theorem-7}
 The number of ways to obtain an arrangement of r choices from a group of size n is 
 		\begin{equation*}n^r\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-6}{}
+\begin{proof}\hypertarget{proof-7}{}
 
 			Use the multiplication principle r times and see that for each choice all n objects in the universe remain available.  That is, 
 			\begin{equation*}n \cdot n \cdot n ... n = n^r\end{equation*}
 			%
 \end{proof}
-\begin{theorem}[{Permutations when not all items are distinguishable (Multinomial Coefficients)}]\label{theorem-7}
+\begin{theorem}[{Permutations when not all items are distinguishable (Multinomial Coefficients)}]\label{theorem-8}
 
 If n items belong to s categories, \(n_1\) in first, \(n_2\) in second, ... , \(n_s\) in the last, the number of ways to pick all is
-		\begin{equation*}\frac{n!}{n_1! \cdot n_2! ... n_2!}\end{equation*}\end{theorem}
+		\begin{equation*}\frac{n!}{n_1! \cdot n_2! ... n_s!}\end{equation*}\end{theorem}
+\begin{exercise}\label{exercise-12}
+
+		Let's apply the this new Permutation formula.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/NAU/setCounting/RepeatedCombination1.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		Another one bites the dust.
+		%
+\par
+\end{exercise}
 \typeout{************************************************}
 \typeout{Section 3.3 Combinations}
 \typeout{************************************************}
-\section[{Combinations}]{Combinations}\label{section-15}
+\section[{Combinations}]{Combinations}\label{section-17}
 When counting various outcomes sometimes the order of things does not matter.
-In this case we count each different set of outcomes a combination. %
-\begin{theorem}[{Combinations of a subset without replacement}]\label{theorem-8}
+If so, each unique unordered outcome is called a combination. %
+\par
+
+For example, consider the permutations when you select three letters from {A, B, C, D}.
+\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-74}{}%
+\begin{itemize}[label=\textbullet]
+\item{}A,B,C%
+\item{}A,C,B%
+\item{}B,A,C%
+\item{}B,C,A%
+\item{}C,A,B%
+\item{}C,B,A%
+\end{itemize}
+%
+\item\hypertarget{li-81}{}%
+\begin{itemize}[label=\textbullet]
+\item{}A,B,D%
+\item{}A,D,B%
+\item{}B,A,D%
+\item{}B,D,A%
+\item{}D,A,B%
+\item{}D,B,A%
+\end{itemize}
+%
+\item\hypertarget{li-88}{}%
+\begin{itemize}[label=\textbullet]
+\item{}A,C,D%
+\item{}A,D,C%
+\item{}C,A,D%
+\item{}C,D,A%
+\item{}D,A,C%
+\item{}D,C,A%
+\end{itemize}
+%
+\item\hypertarget{li-95}{}%
+\begin{itemize}[label=\textbullet]
+\item{}B,C,D%
+\item{}B,D,C%
+\item{}C,B,D%
+\item{}C,D,B%
+\item{}D,B,C%
+\item{}D,C,B%
+\end{itemize}
+%
+\end{enumerate}
+
+
+Notice how these 24 permutations fall into only four distinct categories if the order does not matter. Therefore, from a group of size four you can pick an unordered subset of size three in only 4 ways rather than the original 24.
+%
+\par
+
+In general, it would be nice to have a direct formula to determine the number of such combinations without having to explicitly list them all out.
+%
+\begin{theorem}[{Combinations of a subset without replacement}]\label{theorem-9}
 
 			The number of ways to arrange r items from a set of n distinct items 
 			is 
-			\begin{equation*} C_r^n = \frac{n!}{r!(n-r)!} \end{equation*}
+			\begin{equation*} _nC_r = \frac{n!}{r!(n-r)!} \end{equation*}
+			This is sometimes denoted C(n,r) or \(C_r^n\) or \({n \choose r}\).
 			%
 \end{theorem}
-\begin{proof}\hypertarget{proof-7}{}
+\begin{proof}\hypertarget{proof-8}{}
 
 			Consider creating a permutation of r objects from a set of size n
 			by first picking an unordered subset of size r and then counting 
 			the number of ways to order that subset. Using our notation and the
 			multiplication principle,
 			\begin{gather*}
-P_r^n = C_r^n \cdot r!
+_nP_r =  _nC_r \cdot r!
 \end{gather*}
 			Solving give the result.
 			%
 \end{proof}
-\begin{theorem}[{Combinations of a subset with replacement}]\label{theorem-9}
+\begin{theorem}[{Combinations of a subset with replacement}]\label{theorem-10}
 
 			The number of ways to arrange r items from a set of n distinct items 
 			is 
-			\begin{equation*} C_r^{n+r-1} = \frac{(r+n-1)!}{r!(n-1)!} \end{equation*}
+			\begin{equation*} _{n+r-1}C_r = {{n+r-1} \choose r} = \frac{(r+n-1)!}{r!(n-1)!} \end{equation*}
 			%
 \end{theorem}
-\begin{proof}\hypertarget{proof-8}{}
+\begin{proof}\hypertarget{proof-9}{}
 
 			Label each item in your group in some defined order. Since order doesn't matter, as you repeatedly sample r times with replacement you can always write down your outcomes sorted from low to high placement. Finally, separate like values by some symbol, say "|", and consider each of the n distinct objects as indistinct *'s. There will be n-1 of these separators since there will be n to choose from. For example, if choosing r=6 times from the set {a, b, c, d}, then the outcome b, b, a, d, a, b could be collected as a, a, b, b, b, d and written in our code as **|***||* .  Notice that shuffling around the identical *'s would not change the code (and similarly for the identical |'s) but swapping a * with a | would be a different outcome. Therefore, we can consider this to be a multinomial coefficient and the number of ways to rearrange this code is
-			\begin{equation*}\frac{(r + n-1)}{r!(n-1)!}.\end{equation*}
+			\begin{equation*}\frac{(r + n-1)!}{r!(n-1)!}.\end{equation*}
 			%
 \end{proof}
+\begin{exercise}\label{exercise-13}
+
+		Let's apply the this new Permutation forumula.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		Another one bites the dust.
+		%
+\par
+\end{exercise}
+\begin{exercise}\label{exercise-14}
+
+		Let's apply the this new Permutation forumula.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/Rochester/setAlgebra38Counting/sw10_2_60.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		You can see that using the formulas can be easy and also can be part of a bigger problem pasted together using the multiplication principle.
+		%
+\par
+\end{exercise}
 \begin{example}[Ipad Security]\label{example-9}
 Revisiting your ipad's security, what happens if the order in which the digits are entered does not matter? If so, then you would be picking a combination of 4 digits without replacement from a group of 10 digits. Namely, 
 		\begin{align*}
@@ -1396,44 +1713,54 @@ Revisiting your ipad's security, what happens if the order in which the digits a
 
 		Note that if you were allowed to reuse the digits then the number of possible outcomes would be
 		\begin{align*}
-\frac{13!}{3!10!} & = \frac{13 \times 12 \times 11}{3 \times 2 \times 1} \\
- & = 286
+\frac{13!}{4!9!} & = \frac{13 \times 12 \times 11 \times 10}{4 \times 3 \times 2 \times 1} \\
+ & = 715
 \end{align*}
 		which once again is more since numbers are allowed to repeat.
 		%
 \end{example}
-\begin{definition}[{Binomial Coefficients}]\label{definition-16}
+\begin{definition}[{Binomial Coefficients}]\label{definition-18}
 
-		The value \(C_r^n\) is known as the binomial coefficient. It is
+		The value \(_nC_r\) is known as the binomial coefficient. It is
 		denoted by \({n \choose r}\) and is read "n choose k".
 		%
 \end{definition}
 \par
 Binomial coefficients have a number of interesting properties.  Many of these are very useful as well in probability calculations.  Several of these properties are collected below. In particular, these relationships verify that the binomial coefficients are the values found in Pascal's Triangle.%
-\begin{theorem}[{ Binomial Coefficient Formulas}]\label{theorem-10}
+\begin{lstlisting}[style=sageinput]
+@interact
+def _(n = slider(1,30,1,5)):
+    for row in range(n+1):
+        binoms = sorted(binomial_coefficients(row).items())
+        given_n = []
+        for k in range(row+1):
+            given_n.append(binoms[k][1])
+        pretty_print(html('%s'%given_n))
+\end{lstlisting}
+\begin{theorem}[{ Binomial Coefficient Formulas}]\label{theorem-11}
  For \( n \in \mathbb{N}\),
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-74}{}\(\binom{n}{0} = 1\)%
-\item\hypertarget{li-75}{}\(\binom{n}{n} = 1\)%
-\item\hypertarget{li-76}{}\(\binom{n}{1} = n\)%
-\item\hypertarget{li-77}{}\(\binom{n}{n-1} = n\)%
-\item\hypertarget{li-78}{}\(\binom{n}{r} = \binom{n}{n-r}\)%
-\item\hypertarget{li-79}{}\(\binom{n+1}{r+1} = \binom{n}{r} + \binom{n}{r+1}\)%
+\item\hypertarget{li-102}{}\(\binom{n}{0} = 1\)%
+\item\hypertarget{li-103}{}\(\binom{n}{n} = 1\)%
+\item\hypertarget{li-104}{}\(\binom{n}{1} = n\)%
+\item\hypertarget{li-105}{}\(\binom{n}{n-1} = n\)%
+\item\hypertarget{li-106}{}\(\binom{n}{r} = \binom{n}{n-r}\)%
+\item\hypertarget{li-107}{}\(\binom{n+1}{r+1} = \binom{n}{r} + \binom{n}{r+1}\)%
 \end{enumerate}
 
 	%
 \end{theorem}
-\begin{proof}\hypertarget{proof-9}{}
+\begin{proof}\hypertarget{proof-10}{}
 
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-80}{}\(\binom{n}{0} = \frac{n}{0!(n-0)!} = 1\)%
-\item\hypertarget{li-81}{}\(\binom{n}{n} = \frac{n}{n!(n-n)!} = 1\)%
-\item\hypertarget{li-82}{}\(\binom{n}{1} = \frac{n}{1!(n-1)!} = n\)%
-\item\hypertarget{li-83}{}\(\binom{n}{n-1} = \frac{n}{(n-1)!(n-(n-1))!} = n\)%
-\item\hypertarget{li-84}{}\(\binom{n}{r} = \frac{n}{r!(n-r)!} = \frac{n!}{(n-r)!(n-(n-r))!} = \binom{n}{n-r}\)%
-\item\hypertarget{li-85}{}
+\item\hypertarget{li-108}{}\(\binom{n}{0} = \frac{n!}{0!(n-0)!} = 1\)%
+\item\hypertarget{li-109}{}\(\binom{n}{n} = \frac{n!}{n!(n-n)!} = 1\)%
+\item\hypertarget{li-110}{}\(\binom{n}{1} = \frac{n!}{1!(n-1)!} = n\)%
+\item\hypertarget{li-111}{}\(\binom{n}{n-1} = \frac{n!}{(n-1)!(n-(n-1))!} = n\)%
+\item\hypertarget{li-112}{}\(\binom{n}{r} = \frac{n!}{r!(n-r)!} = \frac{n!}{(n-r)!(n-(n-r))!} = \binom{n}{n-r}\)%
+\item\hypertarget{li-113}{}
 		\begin{align*}
 \binom{n}{r} + \binom{n}{r+1} & = \frac{n!}{r!(n-r)!} + \frac{n!}{(r+1)!(n-(r+1))!}\\
  & = (r+1) \frac{n!}{(r+1)!(n-r)!} + (n-r) \frac{n!}{(r+1)!(n-r))!}\\
@@ -1446,10 +1773,56 @@ Binomial coefficients have a number of interesting properties.  Many of these ar
 
 	%
 \end{proof}
+\par
+Play with the following several times to investigate what you might expect to get when you repeatedly receive a "hand" of 5 standard playing cards. Compare this experiment to the numbers you find in the homework exercise that follows in the exercise below.
+%
+\begin{lstlisting}[style=sageinput]
+var('A C D H J K Q S') 
+
+suits = [S, D, C, H] 
+values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A] 
+
+full_deck = [(value, suit) for suit in suits for value in values]
+@interact
+def _(num_hands=slider[50..5000]):                  # Set up the number of hands to create
+    hands= []                    # Start with a blank list. 
+    for i in range(num_hands):   # This loops the following operation num_hands times. 
+        deck = copy(full_deck)   # start over
+        shuffle(deck)
+        hands.append([deck.pop() for card in range(5)])
+    freq_values = []
+    one_pair = 0
+    two_pair = 0
+    three_kind = 0
+    four_kind = 0
+    full_house = 0
+    for i in range(num_hands):
+        hand = hands[i]
+        hand_values = [hand[k][0] for k in range(5)]
+        freq_values = [hand_values.count(value) for value in set(values)]
+        freq_values.sort(reverse=True)
+        if freq_values[0]==4:
+            four_kind=four_kind+1
+        if freq_values[0]==3:
+            if freq_values[1]==2:
+                full_house=full_house+1
+            if freq_values[1]==1:
+                three_kind=three_kind+1
+        if freq_values[0]==2:
+            if freq_values[1]==2:
+                two_pair=two_pair+1
+            if freq_values[1]==1:
+                one_pair=one_pair+1
+    print "       One Pair frequency = ",one_pair," with relative frequency ",one_pair/num_hands
+    print "       Two Pair frequency = ",two_pair," with relative frequency ",two_pair/num_hands
+    print "Three of a Kind frequency = ",three_kind," with relative frequency ",three_kind/num_hands
+    print " Four of a Kind frequency = ",four_kind," with relative frequency ",four_kind/num_hands
+    print "     Full House frequency = ",full_house," with relative frequency ",full_house/num_hands
+\end{lstlisting}
 \typeout{************************************************}
 \typeout{Section 3.4 Exercises}
 \typeout{************************************************}
-\section[{Exercises}]{Exercises}\label{section-16}
+\section[{Exercises}]{Exercises}\label{section-18}
 Complete the online homework "Counting".%
 \par
 
@@ -1487,7 +1860,7 @@ Completely determine the number of possible passphrases for the National Treasur
 \typeout{************************************************}
 \typeout{Section 4.1 Introduction}
 \typeout{************************************************}
-\section[{Introduction}]{Introduction}\label{section-17}
+\section[{Introduction}]{Introduction}\label{section-19}
 This chapter uses relative frequency to motivate the definition of probability and then delves into the resulting consequences.%
 \par
 Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.%
@@ -1518,13 +1891,6 @@ When attempting to precisely measure uncertainty a few experiments are in order.
 To investigate these terms and to motivate our discussion of probability, consider flipping coins using the interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying number of trials selected by you as you move the slider bar. Results are displayed using a histogram.%
 \par
 
-	Question 1: What do you notice as the number of flips increases?
-	%
-\par
-
-	Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
-	that to happen?
-	%
 \begin{lstlisting}[style=sageinput]
 coin = ["Heads", "Tails"]
 @interact
@@ -1542,8 +1908,19 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	print("\nThe relative frequencies for Tails and Heads:"+str(rel))
 	show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
 \end{lstlisting}
+
+%
 \par
-Notice that as the number of flips increases, the relative frequency of Heads (and Tails)
+
+	Question 1: What do you notice as the number of flips increases?
+	%
+\par
+
+	Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
+	that to happen?
+	%
+\par
+You should have noticed that as the number of flips increases, the relative frequency of Heads (and Tails)
 	stabilized around 0.5. This makes sense intuitively since there are two options for each 
 	individual flip and 1/2 of those options are Heads while the other 1/2 is Tails.%
 \par
@@ -1552,28 +1929,8 @@ Notice that as the number of flips increases, the relative frequency of Heads (a
 	by doing a random experiment consisting of rolling a single die one time. Note that the sample space 
 	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
 	%
-\begin{exercise}\label{exercise-5}
-
-		Let's see if you understand the relationship between frequency and relative frequency.
-		%
-\par\medskip
-\mbox{}\\ % hack to move box after heading
-\begin{mdframed}
-{}\par\vspace*{2ex}%
-{\tiny\ttfamily\noindent\url{Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg}\\Seed: \hfill}\end{mdframed}
-\medskip\noindent 
-		So, these are simple calculations.
-		%
-\par
-\end{exercise}
 \par
 
-	Question 1: What do you notice as the number of rolls increases?
-	%
-\par
-
-	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
-	%
 \begin{lstlisting}[style=sageinput]
 @interact
 def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [4,6,8,12,20]):
@@ -1593,8 +1950,10 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [
 	print fs
 	show(bar_chart(freq,axes=False,ymin=0))
 \end{lstlisting}
+
+%
 \par
-Notice in this instance that there are a larger number of options (for example 6 on a regular
+Notice for a single die there are a larger number of options (for example 6 on a regular
 	die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die)
 	as the number of rolls increased.%
 \par
@@ -1604,6 +1963,8 @@ In general, this suggests a rule: if there are n outcomes and each one has the s
 	In general, if a number of outcomes are "equally likely" then this is a good model for measuring
 	the proportion of outcomes that would be expected to have any given outcome. However, it is not
 	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:%
+\par
+
 \begin{lstlisting}[style=sageinput]
 @interact
 def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
@@ -1623,6 +1984,16 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
     print "Relative Frequence of ",dice[0]," is about ",rel_freq[0].n(digits=4)
     print "Relative Frequence of ",dice[num_sides-1]," is about ",rel_freq[num_sides-1].n(digits=4)
 \end{lstlisting}
+
+%
+\par
+
+	Question 1: What do you notice as the number of rolls increases?
+	%
+\par
+
+	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
+	%
 \par
 Notice, not only are the answers not the same but they are not even close. To understand why this 
 	is different from the examples before, consider the possible outcomes from each pair of die. Since we
@@ -1631,10 +2002,16 @@ Notice, not only are the answers not the same but they are not even close. To un
 	a 7--namely from the pairs (1,6), (2,5), (3,4), (4,3), (5,2), and (6,1). So it might make some sense
 	that the likelihood of getting a 7 is 6 times larger than that of getting a 2. Check to see if that
 	is the case with your experiment above.%
+\begin{definition}[{Cumulative relative frequency}]\label{definition-19}
+For a collection of ordered events \(x_1 \lt x_2 \lt ... \lt x_s\) with corresponding frequencies \(f_1, f_2, ..., f_s\), the cumulative relative frequency is the function
+\begin{equation*}F(x) = \sum_{x_k \le x} f_{x_k}\end{equation*}\end{definition}
+\par
+Add a sage interact here where a student can enter a set of data and display the relative frequency histogram and the cumulative relative frequency graph.
+%
 \typeout{************************************************}
 \typeout{Section 4.3 Definition of Probability}
 \typeout{************************************************}
-\section[{Definition of Probability}]{Definition of Probability}\label{section-19}
+\section[{Definition of Probability}]{Definition of Probability}\label{section-21}
 \typeout{************************************************}
 \typeout{Introduction  }
 \typeout{************************************************}
@@ -1643,7 +2020,7 @@ Notice, not only are the answers not the same but they are not even close. To un
 		%
 Using the ideas from our examples above, consider how you might formally define a way
 	to measure the expectation from similar experiments.  Before doing so, we need a little notation:%
-\begin{definition}[{Pairwise Disjoint Sets}]\label{definition-17}
+\begin{definition}[{Pairwise Disjoint Sets}]\label{definition-20}
 
 	\( \{ A_1, A_2, ... , A_n \}\) are pairwise disjoint provided \(A_k \cap A_j = \emptyset\) so long as \(k \ne j\).
 	Disjoint sets as also often called mutually exclusive.
@@ -1672,9 +2049,9 @@ We are ready to now formally give a name to the theoretical measure of expectati
 	make our definition have the following basic properties:%
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-106}{}Relative frequency cannot be negative, since cardinality cannot be negative%
-\item\hypertarget{li-107}{}Relative frequencies for disjoint events should sum to one%
-\item\hypertarget{li-108}{}Relative frequencies for collections of disjoint outcomes should equal the sum of the
+\item\hypertarget{li-134}{}Relative frequency cannot be negative, since cardinality cannot be negative%
+\item\hypertarget{li-135}{}Relative frequencies for disjoint events should sum to one%
+\item\hypertarget{li-136}{}Relative frequencies for collections of disjoint outcomes should equal the sum of the
 	individual relative frequencies%
 \end{enumerate}
 \par
@@ -1683,13 +2060,13 @@ Based upon these we give the following:%
 The probability P(A) of a given outcome A is a set function which satisfies:
 		\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-109}{}(Nonnegativity) P(A) \(\ge 0\)%
-\item\hypertarget{li-110}{}(Totality) P(S) = 1%
-\item\hypertarget{li-111}{}(Subadditivity) If A \(\cap\) B = \(\emptyset\), then P(A \(\cup\) B) = P(A) + P(B).  
+\item\hypertarget{li-137}{}(Nonnegativity) P(A) \(\ge 0\)%
+\item\hypertarget{li-138}{}(Totality) P(S) = 1%
+\item\hypertarget{li-139}{}(Subadditivity) If A \(\cap\) B = \(\emptyset\), then P(A \(\cup\) B) = P(A) + P(B).  
 			In general, if {\(A_k\)} are pairwise disjoint then \(P( \cup_k A_k) = \sum_k P(A_k)\).%
 \end{enumerate}
 \end{definition}
-\begin{exercise}\label{exercise-6}
+\begin{exercise}\label{exercise-15}
 
 		Using the definition above determine the following probabilities.  (This one not available
 		in the PCC library for some reason.)
@@ -1709,13 +2086,13 @@ The probability P(A) of a given outcome A is a set function which satisfies:
 Based upon this definition we can immediately establish a number of results.%
 \begin{theorem}[{Probability of Complements}]\label{ProbabilityComplemnts}
  For any event A, \(P(A) + P(A^c) = 1\)\end{theorem}
-\begin{proof}\hypertarget{proof-10}{}
+\begin{proof}\hypertarget{proof-11}{}
 Let A be any event and note that \(A \cap A^c = \emptyset\).  But \(A \cup A^c = S\).
 			So, by subadditivity \(1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)\) as desired.%
 \end{proof}
 \begin{theorem}[{}]\label{ProbabilityEmptySet}
 \(P(\emptyset) = 0\)\end{theorem}
-\begin{proof}\hypertarget{proof-11}{}
+\begin{proof}\hypertarget{proof-12}{}
 Note that \(\emptyset^c = S\). So, by the theorem above, 
 			\(1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)\).
 			Cancelling the 1 on both sides gives \(P(\emptyset) = 0\). %
@@ -1723,7 +2100,7 @@ Note that \(\emptyset^c = S\). So, by the theorem above,
 \begin{theorem}[{}]\label{ProbabilityContainment}
 For events A and B with \( A \subset B, P(A) \le P(B)\).
 		\end{theorem}
-\begin{proof}\hypertarget{proof-12}{}
+\begin{proof}\hypertarget{proof-13}{}
 Assume sets A and B satisfy \( A \subset B\). Then, notice that
 			\(A \cap (B-A) = \emptyset\) and  \(B = A \cup (B-A)\). Therefore, by 
 			subadditivity and nonnegativity%
@@ -1734,12 +2111,12 @@ P(A) \le P(B)
 \end{gather*}\end{proof}
 \begin{theorem}[{}]\label{ProbabilityLessThanOne}
 For any event A, \(P(A) \le 1\)\end{theorem}
-\begin{proof}\hypertarget{proof-13}{}
+\begin{proof}\hypertarget{proof-14}{}
 Notice \(A \subset S\). By the theorem above \( P(A) \le P(S) = 1\)%
 \end{proof}
 \begin{theorem}[{}]\label{ProbabilityTwoUnions}
 For any sets A and B, \(P(A \cup B) = P(A) + P(B) - P(A \cap B)\)\end{theorem}
-\begin{proof}\hypertarget{proof-14}{}
+\begin{proof}\hypertarget{proof-15}{}
 Notice that we can write \(A \cup B\) as the disjoint union%
 \begin{gather*}
 A \cup B = (A-B) \cup (A \cap B) \cup (B-A).
@@ -1788,9 +2165,9 @@ It is important to notice that not all outcomes are equally likely--even in time
 
 	When items are equally likely (sometimes also called "randomly selected") then each individual event has the same chance of being selected as any other. In this instance, determining the probability of a collection of outcomes is relatively simple.
 	%
-\begin{theorem}[{Probability of Equally Likely Events}]\label{theorem-16}
+\begin{theorem}[{Probability of Equally Likely Events}]\label{theorem-17}
 If outcomes in S are equally likely, then for \(A \subset S, P(A) = \frac{|A|}{|S|}\)\end{theorem}
-\begin{proof}\hypertarget{proof-15}{}
+\begin{proof}\hypertarget{proof-16}{}
 
 	Enumerate S = {\(x_1, x_2, ..., x_{|S|}\)} and note \(P( \{ x_k \} ) = c\) for some constant c since each item is equally likely. However, using each outcome as a disjoint event and the definition of probability, 
 	\begin{align*}
@@ -1812,7 +2189,21 @@ P(A) & = P( \{ a_1 \} \cup \{ a_2 \} \cup ... \cup \{ a_{|A|} \} )\\
 	as desired.
 	%
 \end{proof}
-\begin{exercise}\label{exercise-7}
+\begin{exercise}\label{exercise-16}
+
+		Let's see if you understand the relationship between frequency and relative frequency. In this exercise, presume "Probabiity" to be the expected fraction of outcomes you might logically expect.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		So, these are simple calculations.
+		%
+\par
+\end{exercise}
+\begin{exercise}\label{exercise-17}
 This one is a little harder and uses the binomial coefficients from Combinatorics.
 		%
 \par\medskip
@@ -1827,14 +2218,138 @@ This one is a little harder and uses the binomial coefficients from Combinatoric
 \par
 \end{exercise}
 \typeout{************************************************}
+\typeout{Subsection 4.3.1 Exercises - Basic}
+\typeout{************************************************}
+\subsection[{Exercises - Basic}]{Exercises - Basic}\label{subsection-2}
+\begin{exercise}[{Poker}]\label{exercise-18}
+
+	Determine the probabilities associated with the various 5-card hands.
+	%
+\end{exercise}
+\begin{exercise}[{Dice}]\label{exercise-19}
+
+	Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
+	%
+\end{exercise}
+\begin{exercise}[{Skew Dice}]\label{exercise-20}
+
+	Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
+	%
+\end{exercise}
+\begin{exercise}[{Craps}]\label{exercise-21}
+
+	Analyze the game of
+	\href{http://mathworld.wolfram.com/Craps.html}{"craps"}.
+	%
+\end{exercise}
+\typeout{************************************************}
 \typeout{Section 4.4 Conditional Probability}
 \typeout{************************************************}
-\section[{Conditional Probability}]{Conditional Probability}\label{section-20}
+\section[{Conditional Probability}]{Conditional Probability}\label{section-22}
 \typeout{************************************************}
 \typeout{Introduction  }
 \typeout{************************************************}
 When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain than it the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
 	%
+\par
+Indeed, consider what happens when you keep on dealing a hand of five cards from a shuffled deck but without replacement...%
+\begin{lstlisting}[style=sageinput]
+print "Conditional Events - successively deal 5 cards w/o replacement" 
+
+var('Ace Clubs Diamonds Hearts Jack King Queen Spades') 
+
+suits = [Spades, Diamonds, Clubs, Hearts] 
+values = [2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace] 
+
+deck = [(value, suit) for suit in suits for value in values]
+full_deck = copy(deck)  # to save a copy of the original deck for later use.
+
+deck1 = copy(full_deck)
+history1=[]
+@interact
+def _(choice=['Hearts','Spades','Diamonds','Clubs','New Deck'],again=['Repeat Same Suit']):
+    global deck1, history1
+    shuffle(deck1)
+    if choice=='Hearts':
+        suit = Hearts
+    elif choice=='Spades':
+        suit = Spades
+    elif choice=='Diamonds':
+        suit = Diamonds
+    elif choice=='Clubs':
+        suit = Clubs
+    else:
+        deck1 = copy(full_deck)
+        shuffle(deck1)
+        history1=[]
+    if (Set(deck1).cardinality()<5):
+        print "Deck is too small...get a new deck"
+    elif choice<>'New Deck':
+        hand = [deck1.pop() for card in range(5)] 
+        print "Click on a desired suit above to deal out another 5 card hand.  The cards dealt:"
+        print hand
+        print "The remaining cards in the deck:"
+        print deck1
+        num = Set(deck1).cardinality()
+        print "\nThe number of remaining cards in the deck = %s"%str(num)
+        looking = []
+        for card in deck1:
+            if card[1]==suit:
+                looking.append(card)
+        prob = float(Set(looking).cardinality())/num
+        history1.append(prob)
+        print 'So, the remaining probability of getting a card from '+choice+' from the remaining cards is %s'%str(prob)
+    list_plot(history1).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))
+\end{lstlisting}
+\par
+Now, what happens when you put the cards back in, reshuffle, and then get 5 cards.%
+\begin{lstlisting}[style=sageinput]
+print "Independent Events - Successively deal 5 cards but WITH replacement"
+
+var('Ace Clubs Diamonds Hearts Jack King Queen Spades') 
+
+suits = [Spades, Diamonds, Clubs, Hearts] 
+values = [2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace] 
+
+deck = [(value, suit) for suit in suits for value in values]
+full_deck = copy(deck)  # to save a copy of the original deck for later use.
+deck1 = copy(full_deck)
+
+history2=[]
+@interact
+def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
+
+    if choice=='Hearts':
+        suit = Hearts
+    elif choice=='Spades':
+        suit = Spades
+    elif choice=='Diamonds':
+        suit = Diamonds
+    else:
+        suit = Clubs
+
+    deck1 = copy(full_deck)
+    shuffle(deck1) 
+    hand = [deck1.pop() for card in range(5)] 
+    print "The cards dealt:"
+    show(hand)
+    print "Replacing this hand and reshuffling gives the remaining cards in the deck:"
+    deck1 = copy(full_deck)
+    shuffle(deck1)
+    print(deck1)
+    
+    num = Set(deck1).cardinality()
+    pretty_print("\nThe number of remaining cards in the deck = %s"%str(num))
+    looking = []
+    for card in deck1:
+        if card[1]==suit:
+            looking.append(card)
+    prob = float(Set(looking).cardinality())/num
+    history2.append(prob)
+    
+    pretty_print('So, the remaining probability of getting a '+choice+' from the remaining cards is %s'%str(prob))
+    list_plot(history2).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))print 'Independent Events - Successively deal 5 cards but WITH replacement'
+\end{lstlisting}
   Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.%
 \par
 
@@ -1850,11 +2365,12 @@ When finding the probability of an event, sometimes you may need to consider pas
 	= (13 12) / (52 51) + (39 13) / (52 51) = 12 / (4 51) + (3 13) / ( 4 51) =  
 
 	%
-\begin{definition}[{Conditional Probability}]\label{definition-19}
-P(B | A) = P(A \(\cap\) B) / P(A), provided P(A)\(\gt 0\).\end{definition}
-\begin{theorem}[{}]\label{theorem-17}
+\begin{definition}[{Conditional Probability}]\label{definition-22}
+\begin{equation*}P(B | A) = \frac{P(A \cap B)}{ P(A) },\end{equation*}
+			 provided P(A)\(\gt 0\).\end{definition}
+\begin{theorem}[{}]\label{theorem-18}
 Conditional Probability satisfies all of the requirements of regular probability.\end{theorem}
-\begin{proof}\hypertarget{proof-16}{}
+\begin{proof}\hypertarget{proof-17}{}
 
 		By definition, for any event probability must be nonnegative. Therefore
 		\(P(A \cap B) \ge 0\).  Therefore, P(B | A) \(\ge 0\).
@@ -1864,14 +2380,14 @@ Conditional Probability satisfies all of the requirements of regular probability
 		Further, P (S | A) = P(A \(\cap\) S)/P(A) = P(A)/P(A) = 1.
 		%
 \end{proof}
-\begin{theorem}[{Multiplication Rule}]\label{theorem-18}
+\begin{theorem}[{Multiplication Rule}]\label{theorem-19}
 \begin{equation*}P(A \cap B) = P(A) P(B | A) = P(B) P(A | B)\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-17}{}
+\begin{proof}\hypertarget{proof-18}{}
 
 		Unravel the definition of conditional probably by taking the denominator to the other side. Also note that you can write \(A \cap B = B \cap A\).
 		%
 \end{proof}
-\begin{exercise}\label{exercise-8}
+\begin{exercise}\label{exercise-22}
 Conditional Probability sometimes makes you have to think carefully about the ways to get 
 		the desired outcome.
 		%
@@ -1886,21 +2402,214 @@ Conditional Probability sometimes makes you have to think carefully about the wa
 \par
 \end{exercise}
 \typeout{************************************************}
+\typeout{Subsection 4.4.1 Exercises - Conditional Probabilities}
+\typeout{************************************************}
+\subsection[{Exercises - Conditional Probabilities}]{Exercises - Conditional Probabilities}\label{subsection-3}
+\begin{exercise}[{Conditional Basic computation}]\label{exercise-23}
+
+	Given P(A) = 0.43, P(B) = 0.72, and \(P(A \cap B) = 0.29\), determine
+	\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-140}{}\(P(A \cup B)\)%
+\item\hypertarget{li-141}{}\(P(B | A)\)%
+\item\hypertarget{li-142}{}\(P(A | B)\)%
+\item\hypertarget{li-143}{}\(P(A^c \cap B^c)\)%
+\end{enumerate}
+
+	%
+\end{exercise}
+\begin{exercise}[{Gender vs University Major}]\label{exercise-24}
+
+	The table below classifies students at your university according to gender and according to major.
+
+	\leavevmode%
+\begin{table}
+\centering
+\begin{tabular}{rrrr}
+\multicolumn{1}{rB}{Enrollment}&Male&\multicolumn{1}{rB}{Female}&Totals\tabularnewline\hrulemedium
+\multicolumn{1}{rB}{STEM}&420&\multicolumn{1}{rB}{510}&930\tabularnewline[0pt]
+\multicolumn{1}{rB}{Business}&320&\multicolumn{1}{rB}{270}&590\tabularnewline[0pt]
+\multicolumn{1}{rB}{Other}&610&\multicolumn{1}{rB}{710}&1320\tabularnewline\hrulemedium
+\multicolumn{1}{rB}{Totals}&1350&\multicolumn{1}{rB}{1490}&2840
+\end{tabular}
+\end{table}
+
+
+	Determine the following:
+	\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-144}{}P( STEM major )%
+\item\hypertarget{li-145}{}P( STEM | Female )%
+\item\hypertarget{li-146}{}P( Female | STEM )%
+\item\hypertarget{li-147}{}P( Female | Not STEM)%
+\end{enumerate}
+
+	%
+\end{exercise}
+\begin{exercise}[{Mean Tough Teacher}]\label{exercise-25}
+
+	You are in a probability and statistics class with a teacher who has predetermined that only one student can make an A for the course. To be "fair", he places a number of slips of paper in a bowl equal to the number of students in the course with one of the slips having an A designation. Students in the course each can pick once randomly from the bowl and without replacement to see if they can get the lucky slip.  Determine the following:
+	\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-148}{}If there are 15 students in your course, determine the probabilities of getting an A in the course if you pick first and if you pick last.%
+\item\hypertarget{li-149}{}Since the teacher likes you the most, she will give you the option of deciding whether to pick at any position. If so, determine the position that would give you the best likelihood of getting the A slop.%
+\item\hypertarget{li-150}{}Suppose again that the teacher was feeling more generous and decided instead to allow for two A's. Determine how that changes your likelihood of winning and on what position you would like to choose.%
+\item\hypertarget{li-151}{}Continue as above except that only one slip does not have an A on it.%
+\item\hypertarget{li-152}{}Discuss how your choice is affected by the number of students in the course or the number of A slips included.%
+\end{enumerate}
+
+	%
+\par\smallskip
+\noindent\textbf{Solution.}\hypertarget{solution-4}{}\quad
+
+	Using the normal equally-likely definition, \(P(\text{first}) = \frac{1}{15}\).
+	%
+\par
+
+	To get the A on the last pick requires that all of the previous picks to be something else. You don't get the opportunity to pick the A if it has already been selected. So, if L stands for losing (not getting the A), then 
+	\begin{equation*} P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) \\ = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3  \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.\end{equation*}
+	Therefore, it is the same probability of getting the A whether you pick first or last.  In general, to win on the kth pick gives
+	\begin{equation*} P(\text{kth}) = P(\text{LL...LA}) \\ = \frac{14 \cdot 13 \cdot ... \cdot (15-k)  \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}\end{equation*}
+	Hence, it is the same probability regardless of when you get to pick.
+	%
+\par
+
+	If there are two A's possible, then the options for person k in include either receiving the first of the two slips or the second. The probability for determining the first of the two is computed in a manner similar to above except that there is one more A and one less other.
+	\begin{equation*} P(\text{kth as first}) = P(\text{LL...LA}) \\ = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}\end{equation*}
+
+	The probability of getting the second A means exactly one of the previous k-1 selections also picked the other A. There are k-1 ways that this could happen. Computing for one of the options and multiplying by k-1 gives
+	\begin{equation*} P(\text{kth as second}) = P(\text{LL...LAA}) \\ = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.\end{equation*}	
+	Adding these two together gives
+	\begin{equation*}P(\text{getting an A when there are two}) \\ = \frac{2 \cdot (15-k) + 2 \cdot (k-1)}{15 \cdot 14} = \frac{28}{15 \cdot 14} = \frac{2}{15}.\end{equation*}
+
+	For example, if k = 5,
+	\begin{equation*} P(\text{5th as first}) = P(\text{LLLLA}) \\ = \frac{13 \cdot 12 \cdot 11 \cdot 10  \cdot 2}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} = \frac{20}{15 \cdot 14}\end{equation*}
+	\begin{equation*} P(\text{5th as second}) = P(\text{LL...LAA}) \\ = 4 \cdot \frac{13 \cdot 12 \cdot \cdot 11 \cdot 2 \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} \\ = \frac{8}{15 \cdot 14}.\end{equation*}	
+	Adding these together yields the general result. So, once again, it doesn't matter which pick you use since the likelihood of getting an A is the same for all positions.
+	%
+\end{exercise}
+\begin{exercise}[{Shared Birthdays}]\label{exercise-26}
+
+	In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 equally likely days let r be the number of people in a sample and consider the following:
+	\leavevmode%
+\begin{enumerate}
+\item\hypertarget{li-153}{}Determine the number of different outcomes of birthdays when order matters and birthdays are allowed to be repeated.%
+\item\hypertarget{li-154}{}Determine the number of different outcomes when birthdays are not allowed to be repeated.%
+\item\hypertarget{li-155}{}Determine the probability that two or more of your r students have the same birthday.%
+\item\hypertarget{li-156}{}Prepare a spreadsheet with the probabilities found above from r=2 to r=50. Determine the value of r for which this probability is closest to 0.5.%
+\item\hypertarget{li-157}{}As best as you can, sample two groups of the size found above and gather birthday information. For each group, determine if there is a shared birthday or not.  Compare your results with others in the class to check whether the sampling validates that about half of the samples should have a shared birthday group.%
+\end{enumerate}
+
+	%
+\par\smallskip
+\noindent\textbf{Solution.}\hypertarget{solution-5}{}\quad
+
+	The correct sample size to get past a probability of 0.5 is 23 people. You should justify this numerically by justifying the following probabilities:
+\begin{verbatim}
+#	P(Match)	
+1	0
+2	0.0027
+3	0.0082
+4	0.0164
+5	0.0271
+6	0.0405
+7	0.0562
+8	0.0743
+9	0.0946
+10	0.1169
+11	0.1411
+12	0.1670
+13	0.1944
+14	0.2231
+15	0.2529
+16	0.2836
+17	0.3150
+18	0.3469
+19	0.3791
+20	0.4114
+21	0.4437
+22	0.4757
+23	0.5073
+24	0.5383
+25	0.5687
+26	0.5982
+27	0.6269
+28	0.6545
+29	0.6810
+30	0.7063
+\end{verbatim}
+
+	%
+\end{exercise}
+\begin{exercise}[{Internet meme solution}]\label{exercise-27}
+
+	This one is from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. Given that a 6 will be removed, determine the probability that the other die is a 6.
+	%
+\par\smallskip
+\noindent\textbf{Solution.}\hypertarget{solution-6}{}\quad
+
+	In this case, you are presented with an outcome where the possible choices consist of (1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).  Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
+	%
+\par
+
+	It is interesting to note that if the question instead was posed so that one of the dice was a 6 and it was removed, then the probability of the other dice showing a 6 would be 1/6.
+	%
+\end{exercise}
+\begin{exercise}[{100 people on an airplane with boarding pass issues}]\label{exercise-28}
+
+	This is a famous problem.  100 people are in line, boarding an airplane with 100 seats, one at a time. They are in no particular order. The first person has lost his boarding pass, so he sits in a random seat. The second person does the following:
+
+	\leavevmode%
+\begin{itemize}[label=\textbullet]
+\item{}Goes to his seat (the one it says to go to on the boarding pass). If unoccupied, sit in it.%
+\item{}If occupied, find a random seat to sit in.%
+\end{itemize}
+
+	Everyone else behind him does the same. What is the probability that the last person sits in his correct seat?
+	%
+\par\smallskip
+\noindent\textbf{Solution.}\hypertarget{solution-7}{}\quad
+
+	To get the idea, consider what happens with only 2 people, then only 3. Generalize. 
+	%
+\par
+
+	The answer is 1/2. To obtain this, you can define recursively the probability that the kth person sits in their own set as f(k).  Consider the first traveler's and your seats. Then you get the following cases:
+	\leavevmode%
+\begin{itemize}[label=\textbullet]
+\item{}P(first guy sits in his own seat and you sit in yours) = \frac{1}{k} \cdot 1%
+\item{}P(first guy sits in your seat and you do not sit in yours) = \frac{1}{k} \cdot 0%
+\item{}P(other k-2 travelers make their choices) = \((k-2) \frac{1}{k} f(k-1)\)%
+\end{itemize}
+
+	\begin{equation*}f(k) = 1/k + 0 + (k-2)/k f(k-1)\end{equation*}
+	with f(2) = 1/2.
+	%
+\par
+
+	For example,
+	f(3) = 1/3 + f(2)/3 = 1/3 + 1/6 = 1/2.   
+	f(4) = 1/4 + 2/4 f(3) = 1/4 + 1/2 1/2 = 1/2.
+	f(5) = 1/5 + 3/5 1/2 = 1/2.
+	f(6) = 1/6 + 4/6 1/2 = 1/2. Etc.
+	%
+\end{exercise}
+\typeout{************************************************}
 \typeout{Section 4.5 Bayes Theorem}
 \typeout{************************************************}
-\section[{Bayes Theorem}]{Bayes Theorem}\label{section-21}
+\section[{Bayes Theorem}]{Bayes Theorem}\label{section-23}
 \typeout{************************************************}
 \typeout{Introduction  }
 \typeout{************************************************}
 Conditional probabilities can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as \(P(A | B)\) but need \(P(B | A)\). The ability to "play around with history" by switching what has been presumed to occur leads to the following.
 	%
-\begin{theorem}[{Bayes Theorem}]\label{theorem-19}
+\begin{theorem}[{Bayes Theorem}]\label{theorem-20}
 Let \(S = \{ S_1, S_2, ... , S_m \}\) where the \(S_k\) are pairwise disjoint and \(S_1 \cup S_2 \cup ... \cup S_m = S\) (i.e. a partition of the space S).  Then for any \(A \subset S\)\begin{gather*}
 P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.
 \end{gather*}
 	The conditional probability \(P(S_j | A)\) is called the posterior probability of \(S_k\).
 	\end{theorem}
-\begin{proof}\hypertarget{proof-18}{}
+\begin{proof}\hypertarget{proof-19}{}
 
 	Notice, by the definition of conditional probability and the multiplication rule
 	\begin{equation*}P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.\end{equation*}
@@ -1918,9 +2627,9 @@ P(A) & = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )\\
 
 	To illustrate this result, from the web site \url{http://stattrek.com/probability/bayes-theorem.aspx} consider the following problem:
 	%
-\begin{exercise}\label{exercise-9}
+\begin{exercise}\label{exercise-29}
 \end{exercise}
-\begin{exercise}\label{exercise-10}
+\begin{exercise}\label{exercise-30}
 
 	Let's try a Bayes Theorem example...
 	%
@@ -1934,7 +2643,7 @@ P(A) & = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )\\
 	%
 \par
 \end{exercise}
-\begin{exercise}\label{exercise-11}
+\begin{exercise}\label{exercise-31}
 
 	Here is a more extensive Bayes Theorem example...
 	%
@@ -2046,275 +2755,11 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
             H.show(title='Venn diagram presuming A has occured')
 \end{lstlisting}
 \typeout{************************************************}
-\typeout{Section 4.6 Independence}
+\typeout{Subsection 4.5.1 Exercises - Bayes Theorem}
 \typeout{************************************************}
-\section[{Independence}]{Independence}\label{section-22}
-\typeout{************************************************}
-\typeout{Introduction  }
-\typeout{************************************************}
-You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
-	%
-\begin{definition}[{Independent Events}]\label{definition-20}
-Events A and B are independent provided 
-		\begin{equation*}P(A \cap B) = P(A) P(B)\end{equation*}\end{definition}
-\begin{corollary}[{Independence and Conditional Probability}]\label{corollary-3}
-
-			Given independent events A and B, 
-			\begin{equation*}P(B | A) = P(B)\end{equation*} and \begin{equation*}P(A | B) = P(A).\end{equation*}\end{corollary}
-\begin{proof}\hypertarget{proof-19}{}
-By the multiplication rule and the definition of independence, for any events A and B
-			\begin{equation*}P(A) \cdot P(B) = P(A \cap B) = P(A) \cdot P(B | A) .\end{equation*}
-			Therefore, if P(A) is non-zero, canceling yields the first result. Switching around notation provides the second.
-			%
-\end{proof}
-\begin{exercise}\label{exercise-12}
-
-		Independence makes combined probabilities VERY easy to compute.
-		%
-\par\medskip
-\mbox{}\\ % hack to move box after heading
-\begin{mdframed}
-{}\par\vspace*{2ex}%
-{\tiny\ttfamily\noindent\url{Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg}\\Seed: \hfill}\end{mdframed}
-\medskip\noindent 
-		Basically you just multiply individual probabilities together.  Independence is often
-		assumed since it makes computations easier. That said, you should remember to consider
-		each time whether independence should or should not be assumed.
-		%
-\par
-\end{exercise}
-\begin{corollary}[{Independence and Mutual Exclusivity}]\label{corollary-4}
-
-			If events A and B are both independent and mutually exclusive, then at least one of them has zero probability.
-		\end{corollary}
-\begin{proof}\hypertarget{proof-20}{}
-
-			By independence, \(P(A \cap B) = P(A) \cdot P(B)\). However, by mutually exclusivity, \(A \cap B = \emptyset \Rightarrow P(A \cap B) = 0\) gives
-			\begin{equation*}P(A) \cdot P(B) = 0.\end{equation*}
-			Hence, one or the other (or both) must be zero.
-			%
-\end{proof}
-\begin{corollary}[{Successive Independent Events}]\label{corollary-5}
-Given a sequence of independent events \(A_1, A_2, A_3, ...\),
-		\begin{equation*}P(\cap_{k \in R} A_k) = \prod_{k \in R} P(A_k)\end{equation*}\end{corollary}
-\typeout{************************************************}
-\typeout{Section 4.7 Exercises}
-\typeout{************************************************}
-\section[{Exercises}]{Exercises}\label{section-23}
-\begin{exercise}[{Poker}]\label{exercise-13}
-
-	Determine the probabilities associated with the various 5-card hands.
-	%
-\end{exercise}
-\begin{exercise}[{Dice}]\label{exercise-14}
-
-	Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
-	%
-\end{exercise}
-\begin{exercise}[{Skew Dice}]\label{exercise-15}
-
-	Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
-	%
-\end{exercise}
-\begin{exercise}[{Craps}]\label{exercise-16}
-
-	Analyze the game of
-	\href{http://mathworld.wolfram.com/Craps.html}{"craps"}.
-	%
-\end{exercise}
-Conditional Probabilities%
-\begin{exercise}[{Conditional Basic computation}]\label{exercise-17}
-
-	Given P(A) = 0.43, P(B) = 0.72, and \(P(A \cap B) = 0.29\), determine
-	\leavevmode%
-\begin{enumerate}
-\item\hypertarget{li-116}{}\(P(A \cup B)\)%
-\item\hypertarget{li-117}{}\(P(B | A)\)%
-\item\hypertarget{li-118}{}\(P(A | B)\)%
-\item\hypertarget{li-119}{}\(P(A^c \cap B^c)\)%
-\end{enumerate}
-
-	%
-\end{exercise}
-\begin{exercise}[{Gender vs University Major}]\label{exercise-18}
-
-	The table below classifies students at your university according to gender and according to major.
-
-	\leavevmode%
-\begin{table}
-\centering
-\begin{tabular}{rrrr}
-\multicolumn{1}{rB}{Enrollment}&Male&\multicolumn{1}{rB}{Female}&Totals\tabularnewline\hrulemedium
-\multicolumn{1}{rB}{STEM}&420&\multicolumn{1}{rB}{510}&930\tabularnewline[0pt]
-\multicolumn{1}{rB}{Business}&320&\multicolumn{1}{rB}{270}&590\tabularnewline[0pt]
-\multicolumn{1}{rB}{Other}&610&\multicolumn{1}{rB}{710}&1320\tabularnewline\hrulemedium
-\multicolumn{1}{rB}{Totals}&1350&\multicolumn{1}{rB}{1490}&2840
-\end{tabular}
-\end{table}
-
-
-	Determine the following:
-	\leavevmode%
-\begin{enumerate}
-\item\hypertarget{li-120}{}P( STEM major )%
-\item\hypertarget{li-121}{}P( STEM | Female )%
-\item\hypertarget{li-122}{}P( Female | STEM )%
-\item\hypertarget{li-123}{}P( Female | Not STEM)%
-\end{enumerate}
-
-	%
-\end{exercise}
-\begin{exercise}[{Mean Tough Teacher}]\label{exercise-19}
-
-	You are in a probability and statistics class with a teacher who has predetermined that only one student can make an A for the course. To be "fair", he places a number of slips of paper in a bowl equal to the number of students in the course with one of the slips having an A designation. Students in the course each can pick once randomly from the bowl and without replacement to see if they can get the lucky slip.  Determine the following:
-	\leavevmode%
-\begin{enumerate}
-\item\hypertarget{li-124}{}If there are 15 students in your course, determine the probabilities of getting an A in the course if you pick first and if you pick last.%
-\item\hypertarget{li-125}{}Since the teacher likes you the most, she will give you the option of deciding whether to pick at any position. If so, determine the position that would give you the best likelihood of getting the A slop.%
-\item\hypertarget{li-126}{}Suppose again that the teacher was feeling more generous and decided instead to allow for two A's. Determine how that changes your likelihood of winning and on what position you would like to choose.%
-\item\hypertarget{li-127}{}Continue as above except that only one slip does not have an A on it.%
-\item\hypertarget{li-128}{}Discuss how your choice is affected by the number of students in the course or the number of A slips included.%
-\end{enumerate}
-
-	%
-\par\smallskip
-\noindent\textbf{Solution.}\hypertarget{solution-4}{}\quad
-
-	Using the normal equally-likely definition, \(P(\text{first}) = \frac{1}{15}\).
-	%
-\par
-
-	To get the A on the last pick requires that all of the previous picks to be something else. You don't get the opportunity to pick the A if it has already been selected. So, if L stands for losing (not getting the A), then 
-	\begin{equation*} P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) \\ = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3  \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.\end{equation*}
-	Therefore, it is the same probability of getting the A whether you pick first or last.  In general, to win on the kth pick gives
-	\begin{equation*} P(\text{kth}) = P(\text{LL...LA}) \\ = \frac{14 \cdot 13 \cdot ... \cdot (15-k)  \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}\end{equation*}
-	Hence, it is the same probability regardless of when you get to pick.
-	%
-\par
-
-	If there are two A's possible, then the options for person k in include either receiving the first of the two slips or the second. The probability for determining the first of the two is computed in a manner similar to above except that there is one more A and one less other.
-	\begin{equation*} P(\text{kth as first}) = P(\text{LL...LA}) \\ = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}\end{equation*}
-
-	The probability of getting the second A means exactly one of the previous k-1 selections also picked the other A. There are k-1 ways that this could happen. Computing for one of the options and multiplying by k-1 gives
-	\begin{equation*} P(\text{kth as second}) = P(\text{LL...LAA}) \\ = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.\end{equation*}	
-	Adding these two together gives
-	\begin{equation*}P(\text{getting an A when there are two}) \\ = \frac{2 \cdot (15-k) + 2 \cdot (k-1)}{15 \cdot 14} = \frac{28}{15 \cdot 14} = \frac{2}{15}.\end{equation*}
-
-	For example, if k = 5,
-	\begin{equation*} P(\text{5th as first}) = P(\text{LLLLA}) \\ = \frac{13 \cdot 12 \cdot 11 \cdot 10  \cdot 2}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} = \frac{20}{15 \cdot 14}\end{equation*}
-	\begin{equation*} P(\text{5th as second}) = P(\text{LL...LAA}) \\ = 4 \cdot \frac{13 \cdot 12 \cdot \cdot 11 \cdot 2 \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} \\ = \frac{8}{15 \cdot 14}.\end{equation*}	
-	Adding these together yields the general result. So, once again, it doesn't matter which pick you use since the likelihood of getting an A is the same for all positions.
-	%
-\end{exercise}
-\begin{exercise}[{Shared Birthdays}]\label{exercise-20}
-
-	In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 equally likely days let r be the number of people in a sample and consider the following:
-	\leavevmode%
-\begin{enumerate}
-\item\hypertarget{li-129}{}Determine the number of different outcomes of birthdays when order matters and birthdays are allowed to be repeated.%
-\item\hypertarget{li-130}{}Determine the number of different outcomes when birthdays are not allowed to be repeated.%
-\item\hypertarget{li-131}{}Determine the probability that two or more of your r students have the same birthday.%
-\item\hypertarget{li-132}{}Prepare a spreadsheet with the probabilities found above from r=2 to r=50. Determine the value of r for which this probability is closest to 0.5.%
-\item\hypertarget{li-133}{}As best as you can, sample two groups of the size found above and gather birthday information. For each group, determine if there is a shared birthday or not.  Compare your results with others in the class to check whether the sampling validates that about half of the samples should have a shared birthday group.%
-\end{enumerate}
-
-	%
-\par\smallskip
-\noindent\textbf{Solution.}\hypertarget{solution-5}{}\quad
-
-	The correct sample size to get past a probability of 0.5 is 23 people. You should justify this numerically by justifying the following probabilities:
-\begin{verbatim}
-#	P(Match)	
-1	0
-2	0.0027
-3	0.0082
-4	0.0164
-5	0.0271
-6	0.0405
-7	0.0562
-8	0.0743
-9	0.0946
-10	0.1169
-11	0.1411
-12	0.1670
-13	0.1944
-14	0.2231
-15	0.2529
-16	0.2836
-17	0.3150
-18	0.3469
-19	0.3791
-20	0.4114
-21	0.4437
-22	0.4757
-23	0.5073
-24	0.5383
-25	0.5687
-26	0.5982
-27	0.6269
-28	0.6545
-29	0.6810
-30	0.7063
-\end{verbatim}
-
-	%
-\end{exercise}
-\begin{exercise}[{Internet meme solution}]\label{exercise-21}
-
-	This one is from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. Given that a 6 will be removed, determine the probability that the other die is a 6.
-	%
-\par\smallskip
-\noindent\textbf{Solution.}\hypertarget{solution-6}{}\quad
-
-	In this case, you are presented with an outcome where the possible choices consist of (1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).  Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
-	%
-\par
-
-	It is interesting to note that if the question instead was posed so that one of the dice was a 6 and it was removed, then the probability of the other dice showing a 6 would be 1/6.
-	%
-\end{exercise}
-\begin{exercise}[{100 people on an airplane with boarding pass issues}]\label{exercise-22}
-
-	This is a famous problem.  100 people are in line, boarding an airplane with 100 seats, one at a time. They are in no particular order. The first person has lost his boarding pass, so he sits in a random seat. The second person does the following:
-
-	\leavevmode%
-\begin{itemize}[label=\textbullet]
-\item{}Goes to his seat (the one it says to go to on the boarding pass). If unoccupied, sit in it.%
-\item{}If occupied, find a random seat to sit in.%
-\end{itemize}
-
-	Everyone else behind him does the same. What is the probability that the last person sits in his correct seat?
-	%
-\par\smallskip
-\noindent\textbf{Solution.}\hypertarget{solution-7}{}\quad
-
-	To get the idea, consider what happens with only 2 people, then only 3. Generalize. 
-	%
-\par
-
-	The answer is 1/2. To obtain this, you can define recursively the probability that the kth person sits in their own set as f(k).  Consider the first traveler's and your seats. Then you get the following cases:
-	\leavevmode%
-\begin{itemize}[label=\textbullet]
-\item{}P(first guy sits in his own seat and you sit in yours) = \frac{1}{k} \cdot 1%
-\item{}P(first guy sits in your seat and you do not sit in yours) = \frac{1}{k} \cdot 0%
-\item{}P(other k-2 travelers make their choices) = \((k-2) \frac{1}{k} f(k-1)\)%
-\end{itemize}
-
-	\begin{equation*}f(k) = 1/k + 0 + (k-2)/k f(k-1)\end{equation*}
-	with f(2) = 1/2.
-	%
-\par
-
-	For example,
-	f(3) = 1/3 + f(2)/3 = 1/3 + 1/6 = 1/2.   
-	f(4) = 1/4 + 2/4 f(3) = 1/4 + 1/2 1/2 = 1/2.
-	f(5) = 1/5 + 3/5 1/2 = 1/2.
-	f(6) = 1/6 + 4/6 1/2 = 1/2. Etc.
-	%
-\end{exercise}
-\par
+\subsection[{Exercises - Bayes Theorem}]{Exercises - Bayes Theorem}\label{subsection-4}
 Bayes Theorem%
-\begin{exercise}[{Insured vs Accident}]\label{exercise-23}
+\begin{exercise}[{Insured vs Accident}]\label{exercise-32}
 
 	Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
 
@@ -2335,14 +2780,14 @@ Bayes Theorem%
 	One of your family friends insured by this company has an accident. 
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-139}{}Determine the conditional probability that the driver was in the 16-20 age range.%
-\item\hypertarget{li-140}{}Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.%
-\item\hypertarget{li-141}{}Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.%
+\item\hypertarget{li-167}{}Determine the conditional probability that the driver was in the 16-20 age range.%
+\item\hypertarget{li-168}{}Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.%
+\item\hypertarget{li-169}{}Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.%
 \end{enumerate}
 
 	%
 \end{exercise}
-\begin{exercise}[{Spinal bifida odds}]\label{exercise-24}
+\begin{exercise}[{Spinal bifida odds}]\label{exercise-33}
 
 	Congratulations...your family is having a baby! As part of the prenatal care, some testing is part of the normal procedure including one for spinal bifida (which is a condition in which part of the spinal cord may be exposed.) Indeed, measurement of maternal serum AFP values is a standard tool used in obstetrical care to identify pregnancies that may have an increased risk for this disorder. You want to make plans for the new child's care and want to know how serious to take the test results. However, some times the test indicates that the child has the disorder when in actuality it does not (a false positive) and likewise may indicate that the child does not have the disorder when in fact it does (a false negative.) 
 	%
@@ -2356,57 +2801,111 @@ The combined accuracy rate for the screen to detect the chromosomal abnormalitie
 
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-144}{}Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.%
-\item\hypertarget{li-145}{}Given that your test came back negative, determine the likelihood that the child will not have spina bifida%
-\item\hypertarget{li-146}{}Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.%
+\item\hypertarget{li-172}{}Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.%
+\item\hypertarget{li-173}{}Given that your test came back negative, determine the likelihood that the child will not have spina bifida%
+\item\hypertarget{li-174}{}Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.%
 \end{enumerate}
 
 	%
 \end{exercise}
+\typeout{************************************************}
+\typeout{Section 4.6 Independence}
+\typeout{************************************************}
+\section[{Independence}]{Independence}\label{section-24}
+\typeout{************************************************}
+\typeout{Introduction  }
+\typeout{************************************************}
+You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
+	%
+\begin{definition}[{Independent Events}]\label{definition-23}
+Events A and B are independent provided 
+		\begin{equation*}P(A \cap B) = P(A) P(B)\end{equation*}\end{definition}
+\begin{corollary}[{Independence and Conditional Probability}]\label{corollary-3}
+
+			Given independent events A and B, 
+			\begin{equation*}P(B | A) = P(B)\end{equation*} and \begin{equation*}P(A | B) = P(A).\end{equation*}\end{corollary}
+\begin{proof}\hypertarget{proof-20}{}
+By the multiplication rule and the definition of independence, for any events A and B
+			\begin{equation*}P(A) \cdot P(B) = P(A \cap B) = P(A) \cdot P(B | A) .\end{equation*}
+			Therefore, if P(A) is non-zero, canceling yields the first result. Switching around notation provides the second.
+			%
+\end{proof}
+\begin{exercise}\label{exercise-34}
+
+		Independence makes combined probabilities VERY easy to compute.
+		%
+\par\medskip
+\mbox{}\\ % hack to move box after heading
+\begin{mdframed}
+{}\par\vspace*{2ex}%
+{\tiny\ttfamily\noindent\url{Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg}\\Seed: \hfill}\end{mdframed}
+\medskip\noindent 
+		Basically you just multiply individual probabilities together.  Independence is often
+		assumed since it makes computations easier. That said, you should remember to consider
+		each time whether independence should or should not be assumed.
+		%
 \par
-Independence%
-\begin{exercise}[{Basic Independence Calculations}]\label{exercise-25}
+\end{exercise}
+\begin{corollary}[{Independence and Mutual Exclusivity}]\label{corollary-4}
+
+			If events A and B are both independent and mutually exclusive, then at least one of them has zero probability.
+		\end{corollary}
+\begin{proof}\hypertarget{proof-21}{}
+
+			By independence, \(P(A \cap B) = P(A) \cdot P(B)\). However, by mutually exclusivity, \(A \cap B = \emptyset \Rightarrow P(A \cap B) = 0\) gives
+			\begin{equation*}P(A) \cdot P(B) = 0.\end{equation*}
+			Hence, one or the other (or both) must be zero.
+			%
+\end{proof}
+\begin{corollary}[{Successive Independent Events}]\label{corollary-5}
+Given a sequence of mutually independent events \(A_1, A_2, A_3, ...\),
+		\begin{equation*}P(\cap_{k \in R} A_k) = \prod_{k \in R} P(A_k)\end{equation*}\end{corollary}
+\typeout{************************************************}
+\typeout{Subsection 4.6.1 Exercises - Independence}
+\typeout{************************************************}
+\subsection[{Exercises - Independence}]{Exercises - Independence}\label{subsection-5}
+\begin{exercise}[{Basic Independence Calculations}]\label{exercise-35}
 
 	Given P(A) = 0.43, P(B) = 0.72, and \(P(A \cap B) = 0.29\), verify that A and B are not independent.
 	%
 \end{exercise}
-\begin{exercise}[{Compound events and Independence}]\label{exercise-26}
+\begin{exercise}[{Compound events and Independence}]\label{exercise-36}
 
 	Given A, B, and C are independent events, with P(A) = 2/5, P(B) = 3/4, and P(C) = 1/6, determine:
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-147}{}\(P(A \cap B \cap C)\)%
-\item\hypertarget{li-148}{}\(P(A^c \cap B^c \cap C)\)%
-\item\hypertarget{li-149}{}\(P(A \cup B \cup C)\)%
+\item\hypertarget{li-175}{}\(P(A \cap B \cap C)\)%
+\item\hypertarget{li-176}{}\(P(A^c \cap B^c \cap C)\)%
+\item\hypertarget{li-177}{}\(P(A \cup B \cup C)\)%
 \end{enumerate}
 
 	%
 \end{exercise}
-\begin{exercise}[{Rolling multiple dice}]\label{exercise-27}
+\begin{exercise}[{Rolling multiple dice}]\label{exercise-37}
 
 	Suppose for a pair of dice you want to consider the events A = {rolling a 7 or 11} and B = {otherwise}.  Rolling the dice 5 times, determine
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-150}{}P(AABBB)%
-\item\hypertarget{li-151}{}P(BBBAA)%
-\item\hypertarget{li-152}{}The probability of getting A on exactly two rolls of the dice.%
+\item\hypertarget{li-178}{}P(AABBB)%
+\item\hypertarget{li-179}{}P(BBBAA)%
+\item\hypertarget{li-180}{}The probability of getting A on exactly two rolls of the dice.%
 \end{enumerate}
 
 	%
 \end{exercise}
-\begin{exercise}[{Redundancy}]\label{exercise-28}
+\begin{exercise}[{Redundancy}]\label{exercise-38}
 
 	To help "insure" the success of a mission, you propose several redundant components so that the mission is a success if one or more succeed. Supposing that these separate components act independently of each other and that each component has a 75% chance of success, determine:
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-153}{}The probability of failure if you utilize 2 components.%
-\item\hypertarget{li-154}{}The probability of failure if you utilize 5 components.%
-\item\hypertarget{li-155}{}The number of components needed to insure that the probability of success is at least 99%.%
+\item\hypertarget{li-181}{}The probability of failure if you utilize 2 components.%
+\item\hypertarget{li-182}{}The probability of failure if you utilize 5 components.%
+\item\hypertarget{li-183}{}The number of components needed to insure that the probability of success is at least 99%.%
 \end{enumerate}
 
 	%
 \end{exercise}
-\begin{exercise}[{Internet Meme redux}]\label{exercise-29}
+\begin{exercise}[{Internet Meme redux}]\label{exercise-39}
 
 	Again, from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. A 6 is removed and you are presented with the other die.  Determine the probability that it is a 6.
 	%
@@ -2416,7 +2915,7 @@ Independence%
 	For this setting, notice that the outcomes from each of the two dice are independent of each other. Removing one of the dice, regardless of it's value, does not affect the other. The question in this case does not ask for a conditional probability.
 	%
 \end{exercise}
-\begin{exercise}[{Single Elimination Tounament}]\label{exercise-30}
+\begin{exercise}[{Single Elimination Tounament}]\label{exercise-40}
 
 	Consider a n=4 team single-elimination tournament where the teams are "seeded" from 1 (the best team) to 4 (the worst team).  For this tournament, team 1 plays team 4 and team 2 plays team 3. The winner of each play each other to determine the final winner. When teams j and k play, set P(j wins) = \(\frac{k}{j+k}\) and similarly for team k.  Assuming separate games are independent of each other, determine the probability that team 4 wins the tournament. What about with 8 teams? What about 64 teams?
 	%
@@ -2457,7 +2956,7 @@ Independence%
 \typeout{************************************************}
 \typeout{Section 5.1 Introduction}
 \typeout{************************************************}
-\section[{Introduction}]{Introduction}\label{section-24}
+\section[{Introduction}]{Introduction}\label{section-25}
 Each of the probability exercises thus far required you to utilize basic definitions and theorems to determine the answer. Starting a new problem meant starting over from scratch. This is burdensome.  However, you may have noticed that some of the ways you might have created solutions for some problems ending up looking very similar to the solutions for others. In this chapter, you will consider the framework needed for creating general solution techniques. These techniques will give a number of "distributions" which are general ways to solve a particular type of problem.
 	%
 \par
@@ -2467,13 +2966,13 @@ Each of the probability exercises thus far required you to utilize basic definit
 \typeout{************************************************}
 \typeout{Section 5.2 Random Variables}
 \typeout{************************************************}
-\section[{Random Variables}]{Random Variables}\label{section-25}
+\section[{Random Variables}]{Random Variables}\label{section-26}
 For a given set of events, we might have difficulty doing mathematics since the outcomes
 	are not numerical. In order to accomodate our desire to convert to numerical measures we want
 	to assign numerical values to all outcomes. The process of doing this creates what is known as a random
 	variable.
 	%
-\begin{definition}[{Random Variable}]\label{definition-21}
+\begin{definition}[{Random Variable}]\label{definition-24}
 Given a random experiment with sample space S, a function X mapping each 
 		element of S to a unique real number is called a random variable. 
 		For each element s from the sample space S, denote this function by
@@ -2514,7 +3013,7 @@ When rolling dice in a board game (like RISK), one might use
 	Then, R={1, 2, 3, 4, 5, 6}.
 	%
 \end{example}
-\begin{definition}[{}]\label{definition-22}
+\begin{definition}[{}]\label{definition-25}
 
 		R contains a countable number of points if either R is finite or there 
 		is a one to one correspondence between R and the positive integers. 
@@ -2523,26 +3022,24 @@ When rolling dice in a board game (like RISK), one might use
 		then we call X a continuous random variable. 
 		\end{definition}
 \typeout{************************************************}
-\typeout{Subsection 5.2.1 HOMEWORK}
+\typeout{Subsection 5.2.1 Exercises - Random Variables}
 \typeout{************************************************}
-\subsection[{HOMEWORK}]{HOMEWORK}\label{subsection-2}
-
-	A. You flip three coins and measure the number of heads obtained. Determine the space R for the corresponding random variable X. From the eight possible outcomes, determine all outcomes corresponding to X=2. Identify the random variable as discrete or continuous.
-	%
-\par
-
-	B. You flip one coin repeatedly until you get a second head. Determine the space R for the corresponding random variable X. From the possibilities, determine all outcomes corresponding to X=4. Identify the random variable as discrete or continuous.
-	%
-\par
-
-	C. Now you want to measure the time between accidents at a particular intersection in town. Determine the space R for the corresponding random variable X. Describe all outcomes corresponding to \(X \lt 1\). Be purposeful in the problem to describe the units you are using to measure time. Identify the random variable as discrete or continuous.
-	%
+\subsection[{Exercises - Random Variables}]{Exercises - Random Variables}\label{subsection-6}
+\begin{exercise}[{Flipping Fixed Number of Coins}]\label{exercise-41}
+\end{exercise}
+\begin{exercise}[{Flipping Coins till success}]\label{exercise-42}
+\end{exercise}
+\begin{exercise}[{Time between Accidents}]\label{exercise-43}
+\end{exercise}
 \typeout{************************************************}
 \typeout{Section 5.3 Probability Functions}
 \typeout{************************************************}
-\section[{Probability Functions}]{Probability Functions}\label{section-26}
+\section[{Probability Functions}]{Probability Functions}\label{section-27}
 In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)\( = f(X(s))\).  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.%
-\begin{definition}[{Probability "Mass" Function}]\label{definition-23}
+\par
+For example, consider a random variable which assigns a 1 when you roll a 1 on a six-sided die and 0 otherwise. Presuming each side is equally likely, 
+	%
+\begin{definition}[{Probability "Mass" Function}]\label{definition-26}
 Given a discrete random variable X on a space R, a probability mass function on X is given by a function \(f:R \rightarrow \mathbb{R}\) such that:
 		\begin{align*}
 & \forall x \in R , f(x) \gt 0\\
@@ -2551,7 +3048,7 @@ Given a discrete random variable X on a space R, a probability mass function on 
 \end{align*}
 		For \(x \not\in R\), you can use the convention f(x)=0.
 		\end{definition}
-\begin{definition}[{Probability "Density" Function}]\label{definition-24}
+\begin{definition}[{Probability "Density" Function}]\label{definition-27}
 Given a continuous random variable X on a space R, a probability density function on X is given by a function \(f:R \rightarrow \mathbb{R}\) such that:
 			\begin{align*}
 & \forall x \in R , f(x) \gt 0\\
@@ -2634,7 +3131,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	Therefore, f(x) is a probability density function over R provided   = 3.
 	%
 \end{example}
-\begin{definition}[{Distribution Function}]\label{definition-25}
+\begin{definition}[{Distribution Function}]\label{definition-28}
 Given a random variable X on a space R, a probability distribution function on X is given by a function 
 				   \(F:\mathbb{R} \rightarrow \mathbb{R}\) such that \(\displaystyle F(x)=P(X \le x)\)\end{definition}
 \begin{example}[Discrete Distribution Function]\label{example-15}
@@ -2678,25 +3175,25 @@ Using \(f(x) = x/10\) over R = {1,2,3,4} again, note that F(x) will only change 
 \end{example}
 \begin{theorem}[{}]\label{theorem-Fmin}
 \(F(x)=0, \forall x \lt \inf(R)\)\end{theorem}
-\begin{proof}\hypertarget{proof-21}{}
+\begin{proof}\hypertarget{proof-22}{}
 
-		Let a = inf(R). Then, for 
-		\begin{equation*}x \lt a, F(x) = P(X \le x) \le P(X \lt a) = 0\end{equation*} 
+		Let a = inf(R). Then, for \(x \lt a,\)
+		\begin{equation*}F(x) = P(X \le x) \le P(X \lt a) = 0\end{equation*} 
 		since none of the x-values in this range are in R.
 		%
 \end{proof}
 \begin{theorem}[{}]\label{theorem-Fmax}
 \(F(x)=1, \forall x \ge \sup(R)\)\end{theorem}
-\begin{proof}\hypertarget{proof-22}{}
+\begin{proof}\hypertarget{proof-23}{}
 
 		Let b = sup(R). Then, for 
-		\begin{equation*}x \ge b, F(x) = P(X \le x)  = P(X \le b) + P( b \lt X le x) = P(X le b) = 1\end{equation*} 
+		\begin{equation*}x \ge b, F(x) = P(X \le x)  = P(X \le b) + P( b \lt X \le x) = P(X \le b) = 1\end{equation*} 
 		since all of the x-values in this range are in R and therefore will either sum over or integrate over all of R.
 		%
 \end{proof}
-\begin{theorem}[{}]\label{theorem-22}
+\begin{theorem}[{}]\label{theorem-23}
 F is non-decreasing\end{theorem}
-\begin{proof}\hypertarget{proof-23}{}
+\begin{proof}\hypertarget{proof-24}{}
 Case 1: R discrete%
 \begin{align*}
 \forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2\\
@@ -2714,14 +3211,14 @@ F(x_2) & = \int_{-\infty}^{x_2} f(x) dx \\
 \end{align*}\end{proof}
 \begin{theorem}[{Using Discrete Distribution Function to compute probabilities}]\label{theorem-Fvsf-discrete}
 for \(x \in R, f(x) = F(x) - F(x-1)\)\end{theorem}
-\begin{proof}\hypertarget{proof-24}{}
+\begin{proof}\hypertarget{proof-25}{}
 Assume \(x \in R\) for some discrete R. Then,
 		\begin{equation*}F(x) - F(x-1) = \sum_{u \le x} f(u) - \sum_{u \lt x} f(u) = f(x)\end{equation*}
 		%
 \end{proof}
 \begin{theorem}[{Using Continuous Distribution function to compute probabilities}]\label{theorem-Fvsf-continuyous}
 for \(a \lt b, (a,b) \in R, P(a \lt X \le b) = F(b) - F(a)\)\end{theorem}
-\begin{proof}\hypertarget{proof-25}{}
+\begin{proof}\hypertarget{proof-26}{}
 
 		For a and b as noted, consider 
 		\begin{align*}
@@ -2733,19 +3230,19 @@ F(b) - F(a) & = \int_{-\infty}^b f(x) dx - \int_{-\infty}^a f(x) dx\\
 \end{proof}
 \begin{corollary}[{}]\label{corollary-ProbPointZero-continuous}
 For continuous distributions, P(X = a) = 0\end{corollary}
-\begin{proof}\hypertarget{proof-26}{}
+\begin{proof}\hypertarget{proof-27}{}
 
 		We will assume that F(x) is a continuous function. With that assumption, note
 		\begin{equation*}P(a-\epsilon \lt  x \le a)  = \int_{a-\epsilon}^a f(x) dx = F(a) - F(a-\epsilon)\end{equation*}
 		Take the limit as \( \epsilon \rightarrow 0^+\) to get the result noting that
 		%
 \end{proof}
-\begin{theorem}[{F(x) vs f(x), for continuous distributions}]\label{theorem-25}
+\begin{theorem}[{F(x) vs f(x), for continuous distributions}]\label{theorem-26}
 If X is a continuous random variable, f the corresponding probability function, and F the associated distribution function, then
 			\begin{equation*}f(x) = F'(x)\end{equation*}
 		%
 \end{theorem}
-\begin{proof}\hypertarget{proof-27}{}
+\begin{proof}\hypertarget{proof-28}{}
 Assume X is continuous and f and F as above. Notice, by the definition of f, \(\lim_{x \rightarrow \pm \infty} f(x) = 0\) since otherwise the integral over the entire space could not be finite.
 	%
 \par
@@ -2759,26 +3256,23 @@ F(x) & = \int_{-\infty}^x f(u) du\\
 	%
 \end{proof}
 \typeout{************************************************}
-\typeout{Subsection 5.3.1 HOMEWORK}
+\typeout{Subsection 5.3.1 Exercises - Probability Functions}
 \typeout{************************************************}
-\subsection[{HOMEWORK}]{HOMEWORK}\label{subsection-3}
-
-	A.  Consider the random variable from the previous section where you flip three coins and measure the number of heads obtained. Determine f(0), f(1), f(2), and f(3) and the corresponding distribution function F(x). These can be expressed in a table format. Generalize your answer to the case when you flip a n coins where n is a fixed natural number.
-	%
-\par
-
-	B.  
-	%
+\subsection[{Exercises - Probability Functions}]{Exercises - Probability Functions}\label{subsection-7}
+\begin{exercise}[{Flipping A Fixed Number of Coins}]\label{exercise-44}
+\end{exercise}
+\begin{exercise}[{Later}]\label{exercise-45}
+\end{exercise}
 \typeout{************************************************}
 \typeout{Section 5.4 Expected Value}
 \typeout{************************************************}
-\section[{Expected Value}]{Expected Value}\label{section-27}
+\section[{Expected Value}]{Expected Value}\label{section-28}
 Blaise Pascal was a 	17th century mathematician and philosopher who was accomplished in many areas but may likely be best known to you for his creation of what is now known as Pascal's Triangle. As part of his philosophical pursuits, he proposed what is known as "Pascal's wager". It suggests two  mutually exclusive outcomes: that God exists or that he does not. His argument is that a rational person should live as though God exists and seek to believe in God. If God does not actually exist, such a person will have only a finite loss (some pleasures, luxury, etc.), whereas they stand to receive infinite gains as represented by eternity in Heaven and avoid an infinite losses of eternity in Hell. This type of reasoning is part of what is known as "decision theory".
 	%
 \par
 You may not confront such dire payouts when making your daily decisions but we need a formal method for making these determinations precise. The procedure for doing so is what we call expected value.
 	%
-\begin{definition}[{Expected Value}]\label{definition-26}
+\begin{definition}[{Expected Value}]\label{definition-29}
 Given a random variable X over space R, corresponding probability function f(x) and "value function" u(x), the expected value of u(x) is given by
 	\begin{equation*}E = E[u(X)] = \sum_{x \in R} u(x) f(x)\end{equation*}
 	provided X is discrete, or
@@ -2786,18 +3280,18 @@ Given a random variable X over space R, corresponding probability function f(x) 
 	provided X is continuous.
 	%
 \end{definition}
-\begin{theorem}[{Expected Value is a Linear Operator}]\label{theorem-26}
+\begin{theorem}[{Expected Value is a Linear Operator}]\label{theorem-27}
 
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-156}{}E[c] = c%
-\item\hypertarget{li-157}{}E[c u(X)] = c E[u(X)]%
-\item\hypertarget{li-158}{}E[u(X) + v(X)] = E[u(X)] + E[v(X)]%
+\item\hypertarget{li-184}{}E[c] = c%
+\item\hypertarget{li-185}{}E[c u(X)] = c E[u(X)]%
+\item\hypertarget{li-186}{}E[u(X) + v(X)] = E[u(X)] + E[v(X)]%
 \end{enumerate}
 
 	%
 \end{theorem}
-\begin{proof}\hypertarget{proof-28}{}
+\begin{proof}\hypertarget{proof-29}{}
 Each of these follows by utilizing the corresponding linearity properties of the summation and integration operations. For example, to verify part three in the continuous case:
 	\begin{align*}
 E[u(X) + v(X)] & = \int_{x \in R} [u(x)+v(x)]f(x) dx\\
@@ -2818,31 +3312,31 @@ Consider \(f(x) = x/10\) over R = {1,2,3,4} where the payout is 10 euros if x=1,
 	\begin{equation*}E = \int_{-1}^2 (e^x-1) \cdot x^2/3 = -1/9 \cdot (e + 15) \cdot e^{-1} + 2/3 \cdot e^2 - 8/9 \approx 3.3129\end{equation*}
 	%
 \end{example}
-\begin{definition}[{Theoretical Measures}]\label{definition-27}
+\begin{definition}[{Theoretical Measures}]\label{definition-30}
 
 	Given a random variable with probability function f(x) over space R
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-159}{}The mean of X = \(\mu = E[x]\)%
-\item\hypertarget{li-160}{}The variance of X = \(\sigma^2 = E[(x-\mu)^2]\)%
-\item\hypertarget{li-161}{}The skewness of X = \(\gamma_1 = \frac{E[(x-\mu)^3]}{\sigma^3}\)%
-\item\hypertarget{li-162}{}The kurtosis of X = \(\gamma_2 = \frac{E[(x-\mu)^4]}{\sigma^4}\)%
+\item\hypertarget{li-187}{}The mean of X = \(\mu = E[x]\)%
+\item\hypertarget{li-188}{}The variance of X = \(\sigma^2 = E[(x-\mu)^2]\)%
+\item\hypertarget{li-189}{}The skewness of X = \(\gamma_1 = \frac{E[(x-\mu)^3]}{\sigma^3}\)%
+\item\hypertarget{li-190}{}The kurtosis of X = \(\gamma_2 = \frac{E[(x-\mu)^4]}{\sigma^4}\)%
 \end{enumerate}
 
 	%
 \end{definition}
-\begin{theorem}[{Alternate Formulas for Theoretical Measures}]\label{theorem-27}
+\begin{theorem}[{Alternate Formulas for Theoretical Measures}]\label{theorem-28}
 
 	\leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-163}{}\(\sigma^2 = E[x^2] - \mu^2 = E[X(x-1)] + \mu - \mu^2\)%
-\item\hypertarget{li-164}{}\(\gamma_1 = \frac{1}{\sigma^3} \cdot \left [ E[X^3] - 3 \mu E[X^2] + 2\mu^3 \right ]\)%
-\item\hypertarget{li-165}{}\(\gamma_2 = \frac{1}{\sigma^4} \cdot \left [ E[X^4] - 4 \mu E[X^3] + 6\mu^2 E[X^2] - 3 \mu^4 \right ]\)%
+\item\hypertarget{li-191}{}\(\sigma^2 = E[x^2] - \mu^2 = E[X(x-1)] + \mu - \mu^2\)%
+\item\hypertarget{li-192}{}\(\gamma_1 = \frac{1}{\sigma^3} \cdot \left [ E[X^3] - 3 \mu E[X^2] + 2\mu^3 \right ]\)%
+\item\hypertarget{li-193}{}\(\gamma_2 = \frac{1}{\sigma^4} \cdot \left [ E[X^4] - 4 \mu E[X^3] + 6\mu^2 E[X^2] - 3 \mu^4 \right ]\)%
 \end{enumerate}
 
 	%
 \end{theorem}
-\begin{proof}\hypertarget{proof-29}{}
+\begin{proof}\hypertarget{proof-30}{}
 
 		In each case, expand the binomial inside and use the linearity of expected value.
 		%
@@ -3031,7 +3525,7 @@ E[\text{belief}] & = u(2)f(2) + u(3)f(3)\\
 \typeout{************************************************}
 \typeout{Section 5.5 Standard Units}
 \typeout{************************************************}
-\section[{Standard Units}]{Standard Units}\label{section-28}
+\section[{Standard Units}]{Standard Units}\label{section-29}
 Any distribution variable can be converted to “standard units” using the linear translation 
 	\(\displaystyle z = \frac{x-\mu}{\sigma}\). In doing so, then values of z will always represent the number of
 	standard deviations x is from the mean and will provide “dimensionless” comparisons.%
@@ -3042,7 +3536,7 @@ Any distribution variable can be converted to “standard units” using the lin
 \typeout{************************************************}
 \typeout{Section 6.1 Introduction}
 \typeout{************************************************}
-\section[{Introduction}]{Introduction}\label{section-29}
+\section[{Introduction}]{Introduction}\label{section-30}
 
 	When motivating our definition of probability you may have noticed that we modeled our definition on the relative frequency of equally-likely outcomes. In this chapter you will develop the theoretical formulas which can be used to model equally-likely outcomes.
 	%
@@ -3051,16 +3545,16 @@ Any distribution variable can be converted to “standard units” using the lin
 In this chapter, you will investigate the following distributions:
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-166}{}Discrete Uniform - each of a finite collection of outcomes is equally likely and prescribed a "position" and X measures the position of an item selected randomly from the outcomes.%
-\item\hypertarget{li-167}{}Continuous Uniform - an interval of values is possible with sub-intervals of equal length having equal probabilities and X measures a location inside that interval.%
-\item\hypertarget{li-168}{}Hypergeometric - each of a finite collection of values are equally likely and grouped into two classes (successes vs failures) and a subset of that collection is extracted with X measuring the number of successes in the sample.%
+\item\hypertarget{li-194}{}Discrete Uniform - each of a finite collection of outcomes is equally likely and prescribed a "position" and X measures the position of an item selected randomly from the outcomes.%
+\item\hypertarget{li-195}{}Continuous Uniform - an interval of values is possible with sub-intervals of equal length having equal probabilities and X measures a location inside that interval.%
+\item\hypertarget{li-196}{}Hypergeometric - each of a finite collection of values are equally likely and grouped into two classes (successes vs failures) and a subset of that collection is extracted with X measuring the number of successes in the sample.%
 \end{enumerate}
 
 %
 \typeout{************************************************}
 \typeout{Section 6.2 Discrete Uniform Distribution}
 \typeout{************************************************}
-\section[{Discrete Uniform Distribution}]{Discrete Uniform Distribution}\label{section-30}
+\section[{Discrete Uniform Distribution}]{Discrete Uniform Distribution}\label{section-31}
 
 	Assume that you have a variable with space R = {1, 2, 3, ..., n} so that the likelihood of each value is equally likely. Then, the probability function satisfies \(f(x) = c\) for any \(x \in R\).  As before, since \(\sum_{x \in R} f(x) = 1\), then \begin{equation*}f(x) = \frac{1}{n}\end{equation*} is the probability function.
 	%
@@ -3078,24 +3572,24 @@ def _(n=slider(2,10,1,2)):
     for k in R:
         pretty_print(html('$f(%s'%k+') = %s'%f(x=k)+' \\approx %s$'%f(x=k).n(digits=5)))
 \end{lstlisting}
-\begin{theorem}[{Properties of the Discrete Uniform Probability Function}]\label{theorem-28}
+\begin{theorem}[{Properties of the Discrete Uniform Probability Function}]\label{theorem-29}
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-169}{}\(f(x) = \frac{1}{n}\) over R = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function%
-\item\hypertarget{li-170}{}\(\mu = \frac{1+n}{2}\)%
-\item\hypertarget{li-171}{}\(\sigma^2 = \frac{n^2-1}{12}\)%
-\item\hypertarget{li-172}{}\(\gamma_1 = 0\)%
-\item\hypertarget{li-173}{}\(\gamma_2 = \frac{6}{5}\frac{1+n^2}{1-n^2}\)%
-\item\hypertarget{li-174}{}Distribution function F(x) = frac{x}{n} for \(x \in R\).%
+\item\hypertarget{li-197}{}\(f(x) = \frac{1}{n}\) over R = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function%
+\item\hypertarget{li-198}{}\(\mu = \frac{1+n}{2}\)%
+\item\hypertarget{li-199}{}\(\sigma^2 = \frac{n^2-1}{12}\)%
+\item\hypertarget{li-200}{}\(\gamma_1 = 0\)%
+\item\hypertarget{li-201}{}\(\gamma_2 = \frac{6}{5}\frac{1+n^2}{1-n^2}\)%
+\item\hypertarget{li-202}{}Distribution function F(x) = frac{x}{n} for \(x \in R\).%
 \end{enumerate}
 \end{theorem}
-\begin{proof}\hypertarget{proof-30}{}
+\begin{proof}\hypertarget{proof-31}{}
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-175}{}Trivially, by construction you get \begin{equation*}\sum_{k=1}^n \frac{1}{n} = 1\end{equation*}
+\item\hypertarget{li-203}{}Trivially, by construction you get \begin{equation*}\sum_{k=1}^n \frac{1}{n} = 1\end{equation*}
 		Also, 1/n is positive for all x values.
 		%
-\item\hypertarget{li-176}{}To determine the mean,
+\item\hypertarget{li-204}{}To determine the mean,
 		\begin{align*}
 \mu & = \sum_{k=1}^n x \cdot \frac{1}{n}\\
  & = \frac{1}{n}\sum_{k=1}^n x \\
@@ -3103,7 +3597,7 @@ def _(n=slider(2,10,1,2)):
  & = \frac{1+n}{2}
 \end{align*}
 		%
-\item\hypertarget{li-177}{}To determine the variance,
+\item\hypertarget{li-205}{}To determine the variance,
 		\begin{align*}
 \sigma^2 & = \sum_{k=1}^n x^2 \cdot \frac{1}{n} - \mu^2\\
  & = \frac{1}{n}\sum_{k=1}^n x^2 - \left ( \frac{1+n}{2}\right )^2 \\
@@ -3113,16 +3607,16 @@ def _(n=slider(2,10,1,2)):
  & = \frac{(n^2-1)}{12}
 \end{align*}
 		%
-\item\hypertarget{li-178}{}For skewness,
+\item\hypertarget{li-206}{}For skewness,
 		\begin{align*}
 \gamma_1 = & \sum_{k=1}^n x^3 \cdot \frac{1}{n} - 3 \mu \sum_{k=1}^n x^2 \cdot \frac{1}{n}  + 2\mu^3\\
  & = \frac{n^2(n+1)^2}{4n} - 3\frac{(n(n+1))}{2} \frac{1+n}{2} + 2 \left ( \frac{1+n}{2}\right )^3 \\
  & = 
 \end{align*}
 		%
-\item\hypertarget{li-179}{}For Kurtosis, use the fourth moment and simplify...the algebra is performed using Sage in the active cell below this proof.
+\item\hypertarget{li-207}{}For Kurtosis, use the fourth moment and simplify...the algebra is performed using Sage in the active cell below this proof.
 		%
-\item\hypertarget{li-180}{}
+\item\hypertarget{li-208}{}
 
 		%
 \end{enumerate}
@@ -3155,7 +3649,7 @@ Further, the probability of getting an outcome in A={2,3} would be f(2)+f(3) = 1
 \typeout{************************************************}
 \typeout{Section 6.3 Continuous Uniform Distribution}
 \typeout{************************************************}
-\section[{Continuous Uniform Distribution}]{Continuous Uniform Distribution}\label{section-31}
+\section[{Continuous Uniform Distribution}]{Continuous Uniform Distribution}\label{section-32}
 
 	Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests \(P(u \lt X \lt v) = P(u + w \lt X \lt v + w)\).  In integral notation you obtain the following:
 	\begin{gather*}
@@ -3165,14 +3659,14 @@ F(u+w)-F(u) = F(v+w)-F(v)
 \end{gather*}
 	which is true regardless of w so long as you stay in the domain of interest. This only happens if F is linear and therefore f must be constant. Say, f(x)=c. In many situations, the space of X will be a single interval with \(R = [a,b]\). Unless otherwise noted, this will be our assumption as well.
 	%
-\begin{theorem}[{Properties of the Continuous Uniform Probability Function}]\label{theorem-29}
+\begin{theorem}[{Properties of the Continuous Uniform Probability Function}]\label{theorem-30}
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-181}{}\(f(x) = \frac{1}{b-a}\) satisfies the properties of a probability function over R = [a,b].%
-\item\hypertarget{li-182}{}\(\mu = \frac{a+b}{2}\)%
-\item\hypertarget{li-183}{}\(\sigma^2 = \frac{b^2-a^2}{12}\)%
-\item\hypertarget{li-184}{}\(\gamma_1 = 0\)%
-\item\hypertarget{li-185}{}\(\gamma_2 = \frac{9 \, {\left(a^{5} - 5 \, a^{4} b + 10 \, a^{3} b^{2} - 10 \, a^{2} b^{3} + 5 \, a b^{4} - b^{5}\right)} {\left(a - b\right)}}{5 \, {\left(a^{3} - 3 \, a^{2} b + 3 \, a b^{2} - b^{3}\right)}^{2}}\)
+\item\hypertarget{li-209}{}\(f(x) = \frac{1}{b-a}\) satisfies the properties of a probability function over R = [a,b].%
+\item\hypertarget{li-210}{}\(\mu = \frac{a+b}{2}\)%
+\item\hypertarget{li-211}{}\(\sigma^2 = \frac{b^2-a^2}{12}\)%
+\item\hypertarget{li-212}{}\(\gamma_1 = 0\)%
+\item\hypertarget{li-213}{}\(\gamma_2 = \frac{9 \, {\left(a^{5} - 5 \, a^{4} b + 10 \, a^{3} b^{2} - 10 \, a^{2} b^{3} + 5 \, a b^{4} - b^{5}\right)} {\left(a - b\right)}}{5 \, {\left(a^{3} - 3 \, a^{2} b + 3 \, a b^{2} - b^{3}\right)}^{2}}\)
 		%
 \end{enumerate}
 \end{theorem}
@@ -3214,9 +3708,9 @@ Suppose you know that only one person showed up at the counter of a local busine
 Further, the probability that the person arrived within the first 6 minutes would be \(\int_0^6 \frac{1}{30} dx = 0.2\).
 %
 \end{example}
-\begin{theorem}[{Distribution Function for Continuous Uniform}]\label{theorem-30}
+\begin{theorem}[{Distribution Function for Continuous Uniform}]\label{theorem-31}
  For \(x \in [a,b], F(x) = \frac{x-a}{b-a}\)\end{theorem}
-\begin{proof}\hypertarget{proof-31}{}
+\begin{proof}\hypertarget{proof-32}{}
 
 For x in this range, 
 \begin{equation*}F(x) = \int_a^x \frac{1}{b-a} du = \frac{u}{b-a} \big |_a^x = \frac{x-a}{b-a}.\end{equation*}
@@ -3225,7 +3719,7 @@ For x in this range,
 \typeout{************************************************}
 \typeout{Section 6.4 Hypergeometric Distribution}
 \typeout{************************************************}
-\section[{Hypergeometric Distribution}]{Hypergeometric Distribution}\label{section-32}
+\section[{Hypergeometric Distribution}]{Hypergeometric Distribution}\label{section-33}
 
 	For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.%
 \par
@@ -3241,20 +3735,20 @@ For x in this range,
 	So f(x) = P(X = x) = P(x from the sample are from the target group and the remainder are not). Breaking these up gives
 	\begin{equation*}f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}\end{equation*}
 	%
-\begin{theorem}[{Properties of the Hypergeometric Distribution}]\label{theorem-31}
+\begin{theorem}[{Properties of the Hypergeometric Distribution}]\label{theorem-32}
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-186}{}\(f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}\) satisfies the properties of a probability function.%
-\item\hypertarget{li-187}{}\(\mu = r \frac{n_1}{n}\)%
-\item\hypertarget{li-188}{}\(\sigma^2 = r \frac{n_1}{n} \frac{n_2}{n} \frac{n-r}{n-1}\)%
-\item\hypertarget{li-189}{}\(\gamma_1 = \frac{(n - 2 n_1)\sqrt{n-1}(n - 2r)}{r n_1 (n - n_1) \sqrt{n-r}(n-2)}\)%
-\item\hypertarget{li-190}{}\(\gamma_2 = \frac{n(n+1)-6n(n-r)}{n_1(n-n_1)} + \frac{3r(n-r)(n+6)}{n^2} - 6\)%
+\item\hypertarget{li-214}{}\(f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}\) satisfies the properties of a probability function.%
+\item\hypertarget{li-215}{}\(\mu = r \frac{n_1}{n}\)%
+\item\hypertarget{li-216}{}\(\sigma^2 = r \frac{n_1}{n} \frac{n_2}{n} \frac{n-r}{n-1}\)%
+\item\hypertarget{li-217}{}\(\gamma_1 = \frac{(n - 2 n_1)\sqrt{n-1}(n - 2r)}{r n_1 (n - n_1) \sqrt{n-r}(n-2)}\)%
+\item\hypertarget{li-218}{}\(\gamma_2 = \frac{n(n+1)-6n(n-r)}{n_1(n-n_1)} + \frac{3r(n-r)(n+6)}{n^2} - 6\)%
 \end{enumerate}
 \end{theorem}
-\begin{proof}\hypertarget{proof-32}{}
+\begin{proof}\hypertarget{proof-33}{}
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-191}{}		
+\item\hypertarget{li-219}{}		
 			\begin{align*}
 \sum_{x=0}^n \binom{n}{x} y^x & = (1+y)^n, \text{ by the Binomial Theorem}\\
 & = (1+y)^{n_1} \cdot (1+y)^{n_2} \\
@@ -3266,7 +3760,7 @@ For x in this range,
 			Dividing gives
 			\begin{equation*}1 = \sum_{x=0}^r f(x).\end{equation*}
 			%
-\item\hypertarget{li-192}{}For the mean
+\item\hypertarget{li-220}{}For the mean
 			\begin{align*}
 \sum_{x=0}^n x \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}} & = 
 \frac{1}{\binom{n}{r}} \sum_{x=1}^n  \frac{n_1(n_1-1)!}{(x-1)!(n_1-x)!}  \binom{n-n_1}{r-x}				
@@ -3290,7 +3784,7 @@ m = n-1
 			noting that the summation is in the same form as was show yields 1 above.
 
 		%
-\item\hypertarget{li-193}{}The proof of the variance formula is similar and uses E(X(X-1)+ μ - μ2. The proof of skewness and kurtosis are messy and we won’t bother with them for this distribution!
+\item\hypertarget{li-221}{}The proof of the variance formula is similar and uses E(X(X-1)+ μ - μ2. The proof of skewness and kurtosis are messy and we won’t bother with them for this distribution!
 		%
 \end{enumerate}
 \end{proof}
@@ -3325,8 +3819,8 @@ def _(N1=slider(1,40,1,10,label='$N_1$'),
 \typeout{************************************************}
 \typeout{Section 6.5 Exercises}
 \typeout{************************************************}
-\section[{Exercises}]{Exercises}\label{section-33}
-\begin{exercise}[{ - The Proverbial Urn Problem}]\label{exercise-31}
+\section[{Exercises}]{Exercises}\label{section-34}
+\begin{exercise}[{ - The Proverbial Urn Problem}]\label{exercise-46}
 
 You have an urn with 10 marbles of which \(n_1 = 6\) are red and \(N_2 = 4\) are blue. You select randomly r = 3 of the marbles without replacement and let X represent the number of red marbles in your sample. With R = {0, 1, 2, 3}, determine:
 \leavevmode%
@@ -3338,7 +3832,7 @@ You have an urn with 10 marbles of which \(n_1 = 6\) are red and \(N_2 = 4\) are
  
 %
 \end{exercise}
-\begin{exercise}[{ - Playing Cards}]\label{exercise-32}
+\begin{exercise}[{ - Playing Cards}]\label{exercise-47}
 
 You randomly select a hand of five cards without replacement from an ordinary deck of playing cards.  
 \leavevmode%
@@ -3349,7 +3843,7 @@ You randomly select a hand of five cards without replacement from an ordinary de
 
 %
 \end{exercise}
-\begin{exercise}[{ - Starting Seniors}]\label{exercise-33}
+\begin{exercise}[{ - Starting Seniors}]\label{exercise-48}
 
 You are picking an eleven member football starting team by picking randomly from a group with 15 seniors and 35 others.  Using a hypergeometric distribution, determine:
 \leavevmode%
@@ -3362,12 +3856,12 @@ You are picking an eleven member football starting team by picking randomly from
 
 %
 \end{exercise}
-\begin{exercise}[{ - Old Faithful}]\label{exercise-34}
+\begin{exercise}[{ - Old Faithful}]\label{exercise-49}
 
 Ole Faithful geyser in Yellowstone National Park erupts every 91 minutes. You show up at some random time in the eruption cycle and your tour bus plans to stay for 25 minutes. Determine the likelihood that you will be able to see it erupt.  Express your answer in terms of the continuous uniform distribution by giving f(x), F(x), and the specific answer to this question.
 %
 \end{exercise}
-\begin{exercise}[{ - Continuous Uniform Random Variable Scenarios}]\label{exercise-35}
+\begin{exercise}[{ - Continuous Uniform Random Variable Scenarios}]\label{exercise-50}
 
 Explain how the following situations can be modeled using a continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
 \leavevmode%
@@ -3379,7 +3873,7 @@ Explain how the following situations can be modeled using a continuous uniform d
 
 %
 \end{exercise}
-\begin{exercise}[{ - Continous Uniform on a different space}]\label{exercise-36}
+\begin{exercise}[{ - Continous Uniform on a different space}]\label{exercise-51}
 
 Determine an explicit formula for f(x) and the resulting mean and variance for a continuous uniform distribution over \(R = [-2,3] \cup [5,6] \cup [9,15]\).
 %
@@ -3412,7 +3906,7 @@ For the variance,
 \end{align*}
 %
 \end{exercise}
-\begin{exercise}[{ - Louisiana Mega Millions Lottery}]\label{exercise-37}
+\begin{exercise}[{ - Louisiana Mega Millions Lottery}]\label{exercise-52}
 
 To play the Mega Millions Louisiana Lottery consists of picking five numbers from 1 to 75 and one yellow Mega Ball number from 1 through 15. (You can play up to five different sets of numbers on each playslip but we will just assume one play per ticket to keep things straight.) Each play costs $1 and you can pay an additional $1 to apply a "multiplier" which multiplies any non-Jackpot prize by the Multiplier number (2, 3, 4, or 5) randomly selected at the time of the drawing.%
 \par
@@ -3509,7 +4003,7 @@ Therefore, the expect value of spending another dollar to get the multiplier eff
 \typeout{************************************************}
 \typeout{Section 7.1 Introduction}
 \typeout{************************************************}
-\section[{Introduction}]{Introduction}\label{section-34}
+\section[{Introduction}]{Introduction}\label{section-35}
 Many practical problems involve measuring simply whether something was a success or a failure. In these situations, "success" should not be interpreted as having any moral or subjective meaning but only construed to mean that something you are looking for actually occurs.%
 \par
 In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable X over the space \(R = \{0, 1 \}\) mapping X(success) = 1 and X(failure)=0. If p = P(success) then 
@@ -3528,16 +4022,16 @@ Notice that p=0 means that you will always get a failure and that p=1 means that
 In this chapter, you will investigate the following distributions:
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-224}{}Binomial - the number of trials is fixed and X measures the variable number of successes%
-\item\hypertarget{li-225}{}Geometric - the number of successes is fixed--at 1--and X measures the variable number of trials%
-\item\hypertarget{li-226}{}Negative Binomial - the number of successes is fixed and X measures the variable number of trials%
+\item\hypertarget{li-252}{}Binomial - the number of trials is fixed and X measures the variable number of successes%
+\item\hypertarget{li-253}{}Geometric - the number of successes is fixed--at 1--and X measures the variable number of trials%
+\item\hypertarget{li-254}{}Negative Binomial - the number of successes is fixed and X measures the variable number of trials%
 \end{enumerate}
 
 %
 \typeout{************************************************}
 \typeout{Section 7.2 Binomial Distribution}
 \typeout{************************************************}
-\section[{Binomial Distribution}]{Binomial Distribution}\label{section-35}
+\section[{Binomial Distribution}]{Binomial Distribution}\label{section-36}
 Consider a sequence  of n independent Bernoulli trials with the likelihood of a success p on each individual trial stays constant from trial to trial with \( 0 \lt p \lt 1 \). If we let the variable \(X\) measure the number of successes obtained when doing a fixed number of trials n with \(R = \{ 0, 1, ..., n \}\), then the resulting distribution of probabilities is called a Binomial Distribution.%
 \begin{lstlisting}[style=sageinput]
 # Binomial distribution over 0 .. n
@@ -3559,18 +4053,18 @@ def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
     for k in R:
         pretty_print(html('$f(%s'%k+') = %s'%latex(f(x=k))+' \\approx %s$'%f(x=k).n(digits=5)))
 \end{lstlisting}
-\begin{theorem}[{Derivation of Binomial Probability Function}]\label{theorem-32}
+\begin{theorem}[{Derivation of Binomial Probability Function}]\label{theorem-33}
  For R = {0, 1, ..., n},
 	\begin{equation*}f(x) = \binom{n}{x}p^x(1-p)^{n-x}\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-33}{}
+\begin{proof}\hypertarget{proof-34}{}
  Since successive trials are independent, then the probability of X successes occurring within n trials is given by 
 		\begin{equation*}P(X=x) = \binom{n}{x}P(SS...SFF...F) = 		
 						\binom{n}{x}p^x(1-p)^{n-x}\end{equation*}
 		%
 \end{proof}
-\begin{theorem}[{Verification of Binomial Distribution Formula}]\label{theorem-33}
+\begin{theorem}[{Verification of Binomial Distribution Formula}]\label{theorem-34}
 \begin{equation*}\sum_{x \in R} f(x) = \sum_{x=0}^n \binom{n}{x}p^x(1-p)^{n-x} = 1.\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-34}{}
+\begin{proof}\hypertarget{proof-35}{}
 
 		Using the Binomial Theorem with a = p and b = 1-p yields
 		\begin{equation*}\sum_{x=0}^n \binom{n}{x}p^x(1-p)^{n-x} = (p + (1-p))^n = 1\end{equation*}
@@ -3590,7 +4084,7 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
         acc = acc+prob
         pretty_print('f(%s) = '%k,' %.8f'%prob,' and F(%s) = '%k,' %.8f'%acc)
 \end{lstlisting}
-\begin{theorem}[{Binomial Distribution Statistics}]\label{theorem-34}
+\begin{theorem}[{Binomial Distribution Statistics}]\label{theorem-35}
 For the Binomial Distribution
 	\begin{equation*}\mu = np\end{equation*}
 	\begin{equation*}\sigma^2 = np(1-p)\end{equation*}
@@ -3598,7 +4092,7 @@ For the Binomial Distribution
 	\begin{equation*}\gamma_2 = \frac{1-6p(1-p)}{np(1-p)} + 3\end{equation*}
 	%
 \end{theorem}
-\begin{proof}\hypertarget{proof-35}{}
+\begin{proof}\hypertarget{proof-36}{}
 For the mean,
 		\begin{align*}
  \mu & = E[X] \\
@@ -3673,7 +4167,7 @@ Notice, the mean for this distribution is also 10 so one might expect 10 heads i
 \typeout{************************************************}
 \typeout{Section 7.3 Geometric Distribution}
 \typeout{************************************************}
-\section[{Geometric Distribution}]{Geometric Distribution}\label{section-36}
+\section[{Geometric Distribution}]{Geometric Distribution}\label{section-37}
 Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
 	stays constant from trial to trial. Call this likelihood the probably of
@@ -3690,9 +4184,9 @@ Consider the situation where one can observe a sequence  of independent
 	desired probability is given by 
 		\begin{equation*}f(x) = P(X = x) = P(FF...FS) = (1-p)^{x-1}p\end{equation*}
 	%
-\begin{theorem}[{Geometric Distribution sums to 1}]\label{theorem-35}
+\begin{theorem}[{Geometric Distribution sums to 1}]\label{theorem-36}
 \begin{equation*}f(x) = (1-p)^{x-1}p\end{equation*} sums to 1 over \(R = \{ 1, 2, ... \}\)\end{theorem}
-\begin{proof}\hypertarget{proof-36}{}
+\begin{proof}\hypertarget{proof-37}{}
 
 		\begin{gather*}
 \sum_{x=1}^{\infty} {f(x)} = \sum_{x=1}^{\infty} {(1-p)^{x-1} p} = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1
@@ -3718,10 +4212,10 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
         for k in R:
             pretty_print(html('$f(%s'%k+') = %s'%latex(f(x=k))+' \\approx %s$'%f(x=k).n(digits=5)))
 \end{lstlisting}
-\begin{theorem}[{Geometric Mean}]\label{theorem-36}
+\begin{theorem}[{Geometric Mean}]\label{theorem-37}
 For the geometric distribution, 
 			\begin{equation*}\mu = 1/p\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-37}{}
+\begin{proof}\hypertarget{proof-38}{}
  
 			\begin{align*}
 \mu & = E[X] = \sum_{k=0}^{\infty} {k(1-p)^{k-1}p}\\
@@ -3731,10 +4225,10 @@ For the geometric distribution,
 \end{align*}
 			%
 \end{proof}
-\begin{theorem}[{Geometric Variance}]\label{theorem-37}
+\begin{theorem}[{Geometric Variance}]\label{theorem-38}
 For the geometric distribution 
 				\begin{equation*}\sigma^2  = \frac{1-p}{p^2}\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-38}{}
+\begin{proof}\hypertarget{proof-39}{}
  
 			\begin{align*}
 \sigma^2 & = E[X(X-1)] + \mu - \mu^2 \\
@@ -3745,9 +4239,9 @@ For the geometric distribution
 \end{align*}
 			%
 \end{proof}
-\begin{theorem}[{Geometric Distribution Function}]\label{theorem-38}
+\begin{theorem}[{Geometric Distribution Function}]\label{theorem-39}
 \begin{equation*}F(x) =  1- (1-p)^{x}\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-39}{}
+\begin{proof}\hypertarget{proof-40}{}
  Consider the accumulated probabilities over a range of values...
 		\begin{align*}
  P(X \le x) & = 1 - P(X \gt x)\\
@@ -3757,7 +4251,7 @@ For the geometric distribution
 \end{align*}
 		%
 \end{proof}
-\begin{theorem}[{Statistics for Geometric Distribution}]\label{theorem-39}
+\begin{theorem}[{Statistics for Geometric Distribution}]\label{theorem-40}
 Mean, Variance, Skewness, Kurtosis computed by Sage.
 		
 \begin{lstlisting}[style=sageinput]
@@ -3782,12 +4276,12 @@ kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
 pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 \end{lstlisting}
 \end{theorem}
-\begin{theorem}[{The Geometric Distribution yields a memoryless model.}]\label{theorem-40}
+\begin{theorem}[{The Geometric Distribution yields a memoryless model.}]\label{theorem-41}
 If X has a geometric distribution and a and b are nonnegative integers, then
 	\begin{equation*}P( X > a + b | X > b ) = P( X > a)\end{equation*}
 	%
 \end{theorem}
-\begin{proof}\hypertarget{proof-40}{}
+\begin{proof}\hypertarget{proof-41}{}
 Using the definition of conditional probability,
 	\begin{align*}
 P( X > a + b | X > b ) & = P( X > a + b \cap X > b ) \ P( X > b)\\
@@ -3801,7 +4295,7 @@ P( X > a + b | X > b ) & = P( X > a + b \cap X > b ) \ P( X > b)\\
 \typeout{************************************************}
 \typeout{Section 7.4 Negative Binomial}
 \typeout{************************************************}
-\section[{Negative Binomial}]{Negative Binomial}\label{section-37}
+\section[{Negative Binomial}]{Negative Binomial}\label{section-38}
 Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
 	stays constant from trial to trial. Call this likelihood the probably of
@@ -3814,9 +4308,9 @@ Consider the situation where one can observe a sequence  of independent
 	Geometric Distribution.%
 \par
 Note that r=1 gives the Geometric Distribution.%
-\begin{theorem}[{Negative Binomial Series}]\label{theorem-41}
+\begin{theorem}[{Negative Binomial Series}]\label{theorem-42}
 \begin{equation*}\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-41}{}
+\begin{proof}\hypertarget{proof-42}{}
 First, convert the problem to a slightly different form:		
 			\( \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
 						 = \frac{1}{b^n} \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
@@ -3858,20 +4352,20 @@ Furthermore, to obtain an even power of x will require an even number of odd pow
 Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success on each individual trial \(p\) where 
 	\( 0 \lt p \lt 1 \).  
 	For a positive integer r, let the variable \(X\) measure the number of trials needed in order to obtain the rth success. Then the resulting distribution of probabilities is called a Negative Binomial Distribution.%
-\begin{theorem}[{Derivation of Negative Binomial Probability Function}]\label{theorem-42}
+\begin{theorem}[{Derivation of Negative Binomial Probability Function}]\label{theorem-43}
 \begin{equation*}f(x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r,\end{equation*}
 	for \(x \in R = \{r, r+1, ... \}\).
 	\end{theorem}
-\begin{proof}\hypertarget{proof-42}{}
+\begin{proof}\hypertarget{proof-43}{}
  Since successive trials are independent, then the probability of the rth success occurring on the x-th trial presumes that in the previous x-1 trials were r-1 successes and x-r failures. You can arrange these indistinguishable successes (and failures) in \(\binom{x-1}{r-1}\) unique ways. Therefore the desired probability is given by 
 			\begin{gather*}
 P(X=x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r
 \end{gather*}
 		%
 \end{proof}
-\begin{theorem}[{Negative Binomial Distribution Sums to 1}]\label{theorem-43}
+\begin{theorem}[{Negative Binomial Distribution Sums to 1}]\label{theorem-44}
 \begin{equation*}\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = 1\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-43}{}
+\begin{proof}\hypertarget{proof-44}{}
 
 		\begin{equation*}\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = p^r \sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}}\end{equation*}
 		and by using \(k = x-r\)%
@@ -3902,7 +4396,7 @@ def _(p=input_box(0.3,width=15),r=slider(1,10,1,2)):
 \end{lstlisting}
 
 %
-\begin{theorem}[{Statistics for Negative Binomial Distribution}]\label{theorem-44}
+\begin{theorem}[{Statistics for Negative Binomial Distribution}]\label{theorem-45}
 For the Negative Binomial Distribution, 
 		\begin{equation*}\mu = \frac{r}{p}\end{equation*}\begin{equation*}\sigma^2 = r \frac{1-p}{p^2}\end{equation*}\begin{equation*}\gamma_1 = \frac{2-p}{\sqrt{r(1-p)}}\end{equation*}\begin{equation*}\gamma_2 = \frac{p^2-6p+6}{r(1-p)} + 3\end{equation*}\begin{lstlisting}[style=sageinput]
 # Negative Binomial
@@ -3935,20 +4429,20 @@ def _(r=[2,5,10,15,alpha]):
 \typeout{************************************************}
 \typeout{Section 7.5 Exercises}
 \typeout{************************************************}
-\section[{Exercises}]{Exercises}\label{section-38}
-\begin{exercise}[{ - Gallup Consumer Confidence Polling}]\label{exercise-38}
+\section[{Exercises}]{Exercises}\label{section-39}
+\begin{exercise}[{ - Gallup Consumer Confidence Polling}]\label{exercise-53}
 \end{exercise}
-\begin{exercise}[{ - Rolling Dice}]\label{exercise-39}
+\begin{exercise}[{ - Rolling Dice}]\label{exercise-54}
 \end{exercise}
-\begin{exercise}[{ - Collecting Kids Meal Prizes}]\label{exercise-40}
+\begin{exercise}[{ - Collecting Kids Meal Prizes}]\label{exercise-55}
 \end{exercise}
-\begin{exercise}[{ - Rolling Dice}]\label{exercise-41}
+\begin{exercise}[{ - Rolling Dice}]\label{exercise-56}
 \end{exercise}
-\begin{exercise}[{ - Rolling Dice yet again}]\label{exercise-42}
+\begin{exercise}[{ - Rolling Dice yet again}]\label{exercise-57}
 \end{exercise}
-\begin{exercise}[{ - 2 standard deviations from the mean}]\label{exercise-43}
+\begin{exercise}[{ - 2 standard deviations from the mean}]\label{exercise-58}
 \end{exercise}
-\begin{exercise}[{Chapter Experiment}]\label{exercise-44}
+\begin{exercise}[{Chapter Experiment}]\label{exercise-59}
 \end{exercise}
 \typeout{************************************************}
 \typeout{Chapter 8 Distributions based upon Poisson Processes}
@@ -3957,17 +4451,17 @@ def _(r=[2,5,10,15,alpha]):
 \typeout{************************************************}
 \typeout{Section 8.1 Introduction}
 \typeout{************************************************}
-\section[{Introduction}]{Introduction}\label{section-39}
+\section[{Introduction}]{Introduction}\label{section-40}
 
 In this chapter, you will investigate the relationship between number of successes over some interval.  For each, one of these quantities will be fixed and the other one variable. First, consider the following:
 
-\begin{definition}[{Poisson Process}]\label{definition-28}
+\begin{definition}[{Poisson Process}]\label{definition-31}
 A Poisson process is a course of action in which:
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-257}{}Successes in non-overlapping subintervals are independent of each other.%
-\item\hypertarget{li-258}{}The probability of exactly one success in a sufficiently small interval of length h is proportional to h.  In notation, P(one success) = \(\lambda h\).%
-\item\hypertarget{li-259}{}The probability of two or more successes in a sufficiently small interval is essentially 0.%
+\item\hypertarget{li-285}{}Successes in non-overlapping subintervals are independent of each other.%
+\item\hypertarget{li-286}{}The probability of exactly one success in a sufficiently small interval of length h is proportional to h.  In notation, P(one success) = \(\lambda h\).%
+\item\hypertarget{li-287}{}The probability of two or more successes in a sufficiently small interval is essentially 0.%
 \end{enumerate}
 \end{definition}
 
@@ -3979,26 +4473,26 @@ You should presume these assumptions implicitly for the distributions discussed 
 In this chapter, you will investigate the following distributions:
 \leavevmode%
 \begin{enumerate}
-\item\hypertarget{li-260}{}Poisson - the interval is fixed and X measures the variable number of successes.%
-\item\hypertarget{li-261}{}Exponential - the number of successes is fixed--at 1--and X measures the variable interval length needed to get that success.%
-\item\hypertarget{li-262}{}Gamma - the number of successes is fixed and X measures the variable interval needed to get the desired number of successes.%
+\item\hypertarget{li-288}{}Poisson - the interval is fixed and X measures the variable number of successes.%
+\item\hypertarget{li-289}{}Exponential - the number of successes is fixed--at 1--and X measures the variable interval length needed to get that success.%
+\item\hypertarget{li-290}{}Gamma - the number of successes is fixed and X measures the variable interval needed to get the desired number of successes.%
 \end{enumerate}
 
 %
 \typeout{************************************************}
 \typeout{Section 8.2 Poisson Distribution}
 \typeout{************************************************}
-\section[{Poisson Distribution}]{Poisson Distribution}\label{section-40}
+\section[{Poisson Distribution}]{Poisson Distribution}\label{section-41}
 
 Consider a Poisson Process where you start with an interval of fixed length T and where X measures the variable number of successes, or changes, within a that interval. The resulting distribution of X will be called a Poisson distribution.
 
-\begin{theorem}[{Poisson Probability Function}]\label{theorem-45}
+\begin{theorem}[{Poisson Probability Function}]\label{theorem-46}
 Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
 \begin{equation*}f(x) = \frac{\mu^x e^{-\mu}}{x!}\end{equation*}
 for \(R = \{ 0, 1, 2, ... \}\).
 %
 \end{theorem}
-\begin{proof}\hypertarget{proof-44}{}
+\begin{proof}\hypertarget{proof-45}{}
 
 For a sufficiently large natural number n, break up the given interval [0,T] into n uniform parts each of width h = T/n.  Using the properties of Poisson processes, n very large implies h will be very small and eventually small enough so that 
 \begin{equation*}P(\text{exactly one success on a given interval}) = p = \lambda \frac{T}{n}.\end{equation*} 
@@ -4023,9 +4517,9 @@ f(x) & = P(\text{X changes in [0,T]}) \\
 \end{proof}
 
 
-\begin{theorem}[{Verify Poisson Probability Function}]\label{theorem-46}
+\begin{theorem}[{Verify Poisson Probability Function}]\label{theorem-47}
 \begin{equation*}\sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} e^{-\lambda T} = 1\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-45}{}
+\begin{proof}\hypertarget{proof-46}{}
 Using the Power Series expansion for the natural exponential,
 \begin{align*}
  \sum_{x=0}^{\infty} f(x) & = \sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} e^{-\lambda T} \\
@@ -4037,9 +4531,9 @@ Using the Power Series expansion for the natural exponential,
 \end{proof}
 
 
-\begin{theorem}[{Statistics for Poisson}]\label{theorem-47}
+\begin{theorem}[{Statistics for Poisson}]\label{theorem-48}
 \begin{equation*}\mu = \lambda T\end{equation*}\begin{equation*}\sigma^2 = \mu\end{equation*}\begin{equation*}\gamma_1 = \frac{1}{\sqrt{\mu}}\end{equation*}\begin{equation*}\gamma_2 = \frac{1}{\mu}+3\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-46}{}
+\begin{proof}\hypertarget{proof-47}{}
  Using the f(x) generated in the previous theorem
 \begin{align*}
 \mu & = E[X] \\
@@ -4099,7 +4593,7 @@ Approximation by binomial means you can also use Poisson to approximate Binomial
 \typeout{************************************************}
 \typeout{Section 8.3 Exponential Distribution}
 \typeout{************************************************}
-\section[{Exponential Distribution}]{Exponential Distribution}\label{section-41}
+\section[{Exponential Distribution}]{Exponential Distribution}\label{section-42}
 
 Once again, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain a first success with \(R = (0,\infty)\). The resulting distribution of X will be called an Exponential distribution.
 	%
@@ -4118,14 +4612,14 @@ F(x)&  = P(X \le x)\\
 where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. Using this distribution function and taking the derivative yields
 \begin{equation*}f(x) = F'(x) = \lambda e^{-\lambda x}.\end{equation*}
 %
-\begin{definition}[{Exponential Distribution Probability Function}]\label{definition-29}
+\begin{definition}[{Exponential Distribution Probability Function}]\label{definition-32}
 Given a Poisson process and a constant \(\mu\), suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
 		\begin{equation*}f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.\end{equation*}
 	%
 \end{definition}
-\begin{theorem}[{Verification of Exponential Probability Function}]\label{theorem-48}
+\begin{theorem}[{Verification of Exponential Probability Function}]\label{theorem-49}
 \begin{equation*}\int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx = 1\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-47}{}
+\begin{proof}\hypertarget{proof-48}{}
 
 		\begin{align*}
  & \int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx\\
@@ -4134,9 +4628,9 @@ Given a Poisson process and a constant \(\mu\), suppose X measures the variable 
 \end{align*}
 		%
 \end{proof}
-\begin{theorem}[{Distribution function for Exponential Distribution}]\label{theorem-49}
+\begin{theorem}[{Distribution function for Exponential Distribution}]\label{theorem-50}
 \begin{equation*}F(x) = 1 - e^{-\frac{x}{\mu}}\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-48}{}
+\begin{proof}\hypertarget{proof-49}{}
 
 	Using \(f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}\), note
 	\begin{align*}
@@ -4146,9 +4640,9 @@ F(x) & = \int_0^x \frac{1}{\mu} e^{-\frac{u}{\mu}} du\\
 \end{align*}
 	%
 \end{proof}
-\begin{theorem}[{Derivation of Statistics for Exponential Distribution and Plotting}]\label{theorem-50}
+\begin{theorem}[{Derivation of Statistics for Exponential Distribution and Plotting}]\label{theorem-51}
 \begin{equation*}\sigma^2 = \mu^2\end{equation*}\begin{equation*}\gamma_1 = 2\end{equation*}\begin{equation*}\gamma_2 = 9\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-49}{}
+\begin{proof}\hypertarget{proof-50}{}
 
 	For the mean, notice that
 	\begin{align*}
@@ -4192,12 +4686,12 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 \end{lstlisting}
 
 %
-\begin{theorem}[{The Exponential Distribution yields a continuous memoryless model.}]\label{theorem-51}
+\begin{theorem}[{The Exponential Distribution yields a continuous memoryless model.}]\label{theorem-52}
 If X has an exponential distribution and a and b are nonnegative integers, then
 	\begin{equation*}P( X > a + b | X > b ) = P( X > a)\end{equation*}
 	%
 \end{theorem}
-\begin{proof}\hypertarget{proof-50}{}
+\begin{proof}\hypertarget{proof-51}{}
 Using the definition of conditional probability,
 	\begin{align*}
 P( X > a + b | X > b ) & = P( X > a + b \cap X > b ) \ P( X > b)\\
@@ -4211,18 +4705,18 @@ P( X > a + b | X > b ) & = P( X > a + b \cap X > b ) \ P( X > b)\\
 \typeout{************************************************}
 \typeout{Section 8.4 Gamma Distribution}
 \typeout{************************************************}
-\section[{Gamma Distribution}]{Gamma Distribution}\label{section-42}
+\section[{Gamma Distribution}]{Gamma Distribution}\label{section-43}
 
 Extending the exponential distribution model developed above, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain the rth success for some natural number r. Then \(R = (0,\infty)\) and the resulting distribution of X will be called a Gamma distribution.
 %
-\begin{definition}[{Gamma Function}]\label{definition-30}
+\begin{definition}[{Gamma Function}]\label{definition-33}
 \begin{equation*}\Gamma(t) = \int_0^{\infty} u^{t-1} e^{-u} du\end{equation*}\end{definition}
-\begin{theorem}[{Gamma Function on the natural numbers}]\label{theorem-52}
+\begin{theorem}[{Gamma Function on the natural numbers}]\label{theorem-53}
 For \(n \in \mathbb{N}\),
 \begin{equation*}\Gamma(n+1) = n!\end{equation*}
 %
 \end{theorem}
-\begin{proof}\hypertarget{proof-51}{}
+\begin{proof}\hypertarget{proof-52}{}
 
 Letting n be a natural number and applying integration by parts one time gives
 \begin{align*}
@@ -4260,16 +4754,16 @@ Notice that for this random variable, \(\mu = \lambda T\) can be obtained for th
 %
 \par
 
-\begin{definition}[{Gamma Distribution Probability Function}]\label{definition-31}
+\begin{definition}[{Gamma Distribution Probability Function}]\label{definition-34}
 If X measures the interval until the rth success and \(\mu as the average interval until the 1st success\), then X with probability function
 \begin{equation*}f(x) =  \frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}\end{equation*}
 has a Gamma Distribution.
 \end{definition}
 
 
-\begin{theorem}[{Verify Gamma Probability function}]\label{theorem-53}
+\begin{theorem}[{Verify Gamma Probability function}]\label{theorem-54}
 \begin{equation*}\int_0^{\infty} \frac{x^{r-1} e^{-x/ \mu}}{\Gamma(r) \mu^r} dx = 1\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-52}{}
+\begin{proof}\hypertarget{proof-53}{}
 
 Evaluate the sage code below.
 %
@@ -4352,16 +4846,16 @@ def _(r=slider(1,10,1,2),mu = input_box(2,label="$\mu = $",width=10),b=input_box
 \typeout{************************************************}
 \typeout{Section 8.5 Exercises}
 \typeout{************************************************}
-\section[{Exercises}]{Exercises}\label{section-43}
-\begin{exercise}[{ - Home Sales}]\label{exercise-45}
+\section[{Exercises}]{Exercises}\label{section-44}
+\begin{exercise}[{ - Home Sales}]\label{exercise-60}
 \end{exercise}
-\begin{exercise}[{ - Customer arrivals - Total}]\label{exercise-46}
+\begin{exercise}[{ - Customer arrivals - Total}]\label{exercise-61}
 \end{exercise}
-\begin{exercise}[{ - Customer arrivals - First}]\label{exercise-47}
+\begin{exercise}[{ - Customer arrivals - First}]\label{exercise-62}
 \end{exercise}
-\begin{exercise}[{ - Customer arrivals - 10th}]\label{exercise-48}
+\begin{exercise}[{ - Customer arrivals - 10th}]\label{exercise-63}
 \end{exercise}
-\begin{exercise}[{ - Computer Network Data Traffic}]\label{exercise-49}
+\begin{exercise}[{ - Computer Network Data Traffic}]\label{exercise-64}
 \end{exercise}
 \typeout{************************************************}
 \typeout{Chapter 9 Normal Distributions}
@@ -4370,7 +4864,7 @@ def _(r=slider(1,10,1,2),mu = input_box(2,label="$\mu = $",width=10),b=input_box
 \typeout{************************************************}
 \typeout{Section 9.1 Introduction}
 \typeout{************************************************}
-\section[{Introduction}]{Introduction}\label{section-44}
+\section[{Introduction}]{Introduction}\label{section-45}
 
 You should have noticed by now that many distributions tend to have a bell-shaped graph as parameters are allowed to increase. Indeed, the formulas for skewness \(\gamma_1\) and kurtosis \(\gamma_2\) approach 0 and 3 respectively for the Hypergeometric, Binomial, Negative Binomial, Poisson, and Gamma Distributions. One might wonder if this is just a happy coincidence or is something more insidious at play. 
 %
@@ -4385,10 +4879,10 @@ We present the normal distribution by simply presenting it's probability functio
 \typeout{************************************************}
 \typeout{Section 9.2 The Normal Distribution}
 \typeout{************************************************}
-\section[{The Normal Distribution}]{The Normal Distribution}\label{section-45}
+\section[{The Normal Distribution}]{The Normal Distribution}\label{section-46}
 
 	
-	\begin{definition}[{The Normal Distribution}]\label{definition-32}
+	\begin{definition}[{The Normal Distribution}]\label{definition-35}
 Given two parameters \(\mu\) and \(\sigma\), a random variable X over \(R = (-\infty,\infty)\) has a normal distribution provided it has a probability function given by
 		\begin{equation*}
 		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
@@ -4415,25 +4909,25 @@ def _(m=slider(-10,10,1,0,label='$\mu$'),s=slider(1/5,5,1/10,1,label='$\sigma$')
 
 
 
-	\begin{theorem}[{}]\label{theorem-54}
+	\begin{theorem}[{}]\label{theorem-55}
 
 If \(\mu = 0\) and \(\sigma = 1\), then we say X has a standard normal distribution and often use Z as the variable name and will use \(\Phi(z)\) for the standard normal distribution function. In this case, the density function reduces to
 		\begin{equation*}f(z) = \frac{1}{\sqrt{2 \pi}} e^{ -z^2 / 2}\end{equation*}
 		%
 \end{theorem}
-\begin{proof}\hypertarget{proof-53}{}
+\begin{proof}\hypertarget{proof-54}{}
 Convert to "standard units" using the conversion 
 			\begin{equation*}z = \frac{x-\mu}{\sigma} = \frac{x-0}{1} = x.\end{equation*}
 		%
 \end{proof}
 
 
-	\begin{theorem}[{Verifying the normal probability function}]\label{theorem-55}
+	\begin{theorem}[{Verifying the normal probability function}]\label{theorem-56}
 
 		\begin{equation*}\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = 1\end{equation*}
 		%
 \end{theorem}
-\begin{proof}\hypertarget{proof-54}{}
+\begin{proof}\hypertarget{proof-55}{}
 Note that you can convert the integral above to standard units so that it is sufficient to show
 \begin{equation*}I = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{z^2}{2} } dz = 1\end{equation*}
 Toward this end, consider \(I^2\) and change the variables to get
@@ -4460,12 +4954,12 @@ as desired.
 	
 	
 	
-	\begin{theorem}[{Verifying the normal probability mean}]\label{theorem-56}
+	\begin{theorem}[{Verifying the normal probability mean}]\label{theorem-57}
 
 		\begin{equation*}E[X] = \int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \mu\end{equation*}
 		%
 \end{theorem}
-\begin{proof}\hypertarget{proof-55}{}
+\begin{proof}\hypertarget{proof-56}{}
 
 	\begin{equation*}z = \frac{x-\mu}{\sigma}\end{equation*}
 	implies by solving that
@@ -4487,11 +4981,11 @@ E[X] &= \int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \lef
 	
 	
 	
-	\begin{theorem}[{Verifying the normal probability variance}]\label{theorem-57}
+	\begin{theorem}[{Verifying the normal probability variance}]\label{theorem-58}
 
 		\begin{equation*}E[(X-\mu)^2] = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \sigma^2\end{equation*}
 		%
-\begin{proof}\hypertarget{proof-56}{}
+\begin{proof}\hypertarget{proof-57}{}
 
 	\begin{align*}
 E[(X-\mu)^2] & = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx\\
@@ -4507,15 +5001,15 @@ E[(X-\mu)^2] & = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2
 \end{theorem}
 
 	
-	\begin{theorem}[{Properties of the Normal Distribution}]\label{theorem-58}
+	\begin{theorem}[{Properties of the Normal Distribution}]\label{theorem-59}
 \end{theorem}
 
 	
-	\begin{theorem}[{Normal Distribution Maximum}]\label{theorem-59}
+	\begin{theorem}[{Normal Distribution Maximum}]\label{theorem-60}
 The maximum of the normal distribution probability function occurs when \(x = \mu\)
 	%
 \end{theorem}
-\begin{proof}\hypertarget{proof-57}{}
+\begin{proof}\hypertarget{proof-58}{}
 Take the derivative of the probability function to get 
 	\begin{equation*}\frac{\sqrt{2} {\left(\mu - x\right)} e^{\left(-\frac{{\left(\mu - x\right)}^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{3}}\end{equation*}
 	which is zero only when \(x = \mu\).  Easily by evaluating to the left and right of this value shows that this critical value yields a maximum.
@@ -4523,11 +5017,11 @@ Take the derivative of the probability function to get
 \end{proof}
 
 
-	\begin{theorem}[{Normal Distribution Points of Inflection}]\label{theorem-60}
+	\begin{theorem}[{Normal Distribution Points of Inflection}]\label{theorem-61}
 Points of Inflection for the normal distribution probability function occurs when \(x = \mu + \sigma\) and \(x = \mu - \sigma\).
 	%
 \end{theorem}
-\begin{proof}\hypertarget{proof-58}{}
+\begin{proof}\hypertarget{proof-59}{}
 Take the second derivative of the probability function to get 
 	\begin{equation*}\frac{\sqrt{2} {\left(\mu + \sigma - x\right)} {\left(\mu - \sigma - x\right)} e^{\left(-\frac{\mu^{2}}{2 \, \sigma^{2}} + \frac{\mu x}{\sigma^{2}} - \frac{x^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{5}}\end{equation*}
 	which is zero only when \(x = \mu \pm \sigma\).  Easily by evaluating to the left and right of this value shows that these critical values yield points of inflection.
@@ -4556,7 +5050,7 @@ def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = ')
 \typeout{************************************************}
 \typeout{Section 9.3 Chi-Square Distribution}
 \typeout{************************************************}
-\section[{Chi-Square Distribution}]{Chi-Square Distribution}\label{section-46}
+\section[{Chi-Square Distribution}]{Chi-Square Distribution}\label{section-47}
 The following distribution is related to both the Normal Distribution and to the Gamma Distribution. Initially, consider a gamma distribution with probability function
 	
 	\begin{equation*}\frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}.\end{equation*}
@@ -4570,7 +5064,7 @@ which is given a special name below.
 \par
 
 
-	\begin{definition}[{Chi-Square Probability Function}]\label{definition-33}
+	\begin{definition}[{Chi-Square Probability Function}]\label{definition-36}
 Given an natural number r, suppose X is a random variable over the space \(R = (0,\infty)\) with probability function given by
 	\begin{equation*}f(x) = \frac{x^{r/2-1} e^{-x/2} }{\Gamma(r/2) 2^{r/2}}.\end{equation*}
 	Then X has a Chi-Square distribution with r degrees of freedom. This is often denoted \(\chi^2(r)\).
@@ -4586,11 +5080,11 @@ def _(r=slider(1,20,1,3,label='r =')):
 \end{lstlisting}
 
 
-	\begin{theorem}[{\(\chi^2\) statistics}]\label{theorem-61}
+	\begin{theorem}[{\(\chi^2\) statistics}]\label{theorem-62}
 \begin{equation*}\mu = r\end{equation*}\begin{equation*}\sigma^2 = 2r\end{equation*}\begin{equation*}\gamma_1 = 2 \sqrt{2/r}\end{equation*}\begin{equation*}\gamma_2 = \frac{12}{r} + 3\end{equation*}\end{theorem}
 
 	
-	\begin{theorem}[{Relationship between Normal and \(\chi^2\)}]\label{theorem-62}
+	\begin{theorem}[{Relationship between Normal and \(\chi^2\)}]\label{theorem-63}
 
 	If \(Z_1, Z_2, ..., Z_r\) are r standard normal variables, then
 	\begin{equation*} X = \sum_{k=1}^r Z_k^2\end{equation*}
@@ -4614,7 +5108,7 @@ def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),
 \typeout{************************************************}
 \typeout{Section 9.4 Normal Distribution as a Limiting Distribution}
 \typeout{************************************************}
-\section[{Normal Distribution as a Limiting Distribution}]{Normal Distribution as a Limiting Distribution}\label{section-47}
+\section[{Normal Distribution as a Limiting Distribution}]{Normal Distribution as a Limiting Distribution}\label{section-48}
 Over the past several chapters you should have noticed that many distributions have skewness and kurtosis formulae which have limiting values of 0 and 3 respectively. This means that each of those distributions which can be approximated by the normal distribution for "large" parameter values.
 %
 \par
@@ -4798,7 +5292,7 @@ So, even with random data, if you are to consider the arrangement of the collect
 \typeout{************************************************}
 \typeout{Section 9.5 Central Limit Theorem}
 \typeout{************************************************}
-\section[{Central Limit Theorem}]{Central Limit Theorem}\label{section-48}
+\section[{Central Limit Theorem}]{Central Limit Theorem}\label{section-49}
 
 Often, when one wants to solve various scientific problems, several assumptions will be made regarding the nature of the underlying setting and base their conclusions on those assumptions.  Indeed, if one is going to use a Binomial Distribution or a Negative Binomial Distribution, an assumption on the value of p is necessary.  For Poisson and Exponential Distributions, one must know the mean.  For Normal Distributions, one must assume values for both the mean and the standard deviation.   Where do these values come from?  Often, one may perform a preliminary study and obtain a sample statistic...such as a sample mean or a relative frequency and use these values for μ or p.%
 \par
@@ -4807,7 +5301,7 @@ But what is the underlying distribution of these sample statistics?  The Central
 \par
 The results from the previous section illustrate the tendency for bell-shaped distributions. This tendency can be described more mathematically through the following theorem. It is presented here without proof.
 %
-\begin{theorem}[{Central Limit Theorem}]\label{theorem-63}
+\begin{theorem}[{Central Limit Theorem}]\label{theorem-64}
 
 	Presume X is a random variable from a distribution with known mean \(\mu\) and known variance \(\sigma_x^2\).  
 	For some natural number n, sample the distribution repeatedly creating a string of random variables denoted \(X_1, X_2, ... , X_n\) and set \(\overline{X} = \frac{\sum X_k}{n}\). 
@@ -4853,10 +5347,10 @@ Toward that end, for \(0 \lt p \lt 1\) consider a sequence of Bernoulli trials \
 \begin{equation*}X = \sum_{k=1}^n Y_k\end{equation*}
 is a Binomial variable.
 %
-\begin{theorem}[{Binomial as approximate Normal}]\label{theorem-64}
+\begin{theorem}[{Binomial as approximate Normal}]\label{theorem-65}
 Given a Binomial variable X with \(\mu = np\) and \(\sigma^2 = np(1-p)\), then X is approximately also normal with the same mean and variance so long as \(np \gt 5\) and \(n(1-p) \gt 5\).
 \end{theorem}
-\begin{proof}\hypertarget{proof-59}{}
+\begin{proof}\hypertarget{proof-60}{}
 
 Using the Bernoulli variables \(Y_k\) each with mean p and variance p(1-p), note that the Central Limit Theorem applied to \(\overline{X} = \frac{\sum Y_k}{n}\) gives that
 \begin{equation*}\frac{\overline{X}-p}{\sqrt{p(1-p)/n}}\end{equation*}
@@ -4883,7 +5377,7 @@ Notice that these are very close.
 \begin{corollary}[{Poisson as approximate Normal}]\label{corollary-7}
 Given a Poisson variable X with \(\mu\) and \(\sigma^2 = \mu\) given, then X is approximately also normal with the same mean and variance so long as \(\mu \gt 5\).
 \end{corollary}
-\begin{proof}\hypertarget{proof-60}{}
+\begin{proof}\hypertarget{proof-61}{}
 
 Note from before that the Poisson distribution function was derived by approximating with Binomial and letting n approach infinity. Therefore, by the previous theorem, the Poisson variable is also approximately Normal using the Poisson mean and variance rather than the binomial's. Indeed, in standard units
 \begin{equation*}\frac{Y - \mu}{\sqrt{\mu}}\end{equation*}
@@ -4905,7 +5399,7 @@ P( X = 19 ) & = P( 18.5 \lt X \lt 19.5) \\
 Again, these are very close.
 %
 \end{example}
-\begin{theorem}[{Gamma as approximate Normal}]\label{theorem-65}
+\begin{theorem}[{Gamma as approximate Normal}]\label{theorem-66}
 Given a Gamma variable X with mean \(r \mu\) and variance \( r BLOB\) given, then X is approximately also normal with the same mean and variance so long as CONDITION????.
 \end{theorem}
 \begin{example}[Gamma as Normal]\label{example-25}
@@ -4946,12 +5440,12 @@ The above theorems allow you to utilize the normal distribution to compute appro
 \typeout{************************************************}
 \typeout{Section 9.6 Exercises}
 \typeout{************************************************}
-\section[{Exercises}]{Exercises}\label{section-49}
-\begin{exercise}[{ - Computing basic standard normal probabilities}]\label{exercise-50}
+\section[{Exercises}]{Exercises}\label{section-50}
+\begin{exercise}[{ - Computing basic standard normal probabilities}]\label{exercise-65}
 \end{exercise}
-\begin{exercise}[{ - Computing basic normal probabilities}]\label{exercise-51}
+\begin{exercise}[{ - Computing basic normal probabilities}]\label{exercise-66}
 \end{exercise}
-\begin{exercise}[{ - IQ values}]\label{exercise-52}
+\begin{exercise}[{ - IQ values}]\label{exercise-67}
 \end{exercise}
 \typeout{************************************************}
 \typeout{Chapter 10 Estimation}
@@ -4960,7 +5454,7 @@ The above theorems allow you to utilize the normal distribution to compute appro
 \typeout{************************************************}
 \typeout{Section 10.1 Introduction}
 \typeout{************************************************}
-\section[{Introduction}]{Introduction}\label{section-50}
+\section[{Introduction}]{Introduction}\label{section-51}
 
 You should have noticed by now that repeatedly sampling from a given distribution will yield a variety of sample statistics such as \(\overline{x}\) as an estimate perhaps for the population mean \(\mu\) or \(\frac{Y}{n}\) as an estimate for the population likelihood of success p. In this section, you will see how these sample "point estimators" are actually the best possible choices.
 %
@@ -4975,16 +5469,16 @@ In this chapter we first discuss how to determine appropriate methods for estima
 \typeout{************************************************}
 \typeout{Section 10.2 Interval Estimates - Chebyshev}
 \typeout{************************************************}
-\section[{Interval Estimates - Chebyshev}]{Interval Estimates - Chebyshev}\label{section-51}
+\section[{Interval Estimates - Chebyshev}]{Interval Estimates - Chebyshev}\label{section-52}
 An interval centered on the mean in which at least a certain proportion
 	of the actual data must lie.
 	%
-\begin{theorem}[{Chebyshev's Theorem}]\label{theorem-66}
+\begin{theorem}[{Chebyshev's Theorem}]\label{theorem-67}
 
 	Given a random variable X with given mean \(\mu\) and standard deviation \(\sigma\), for \( a \in \mathbb{R}^+\) , 
 	
 	\begin{equation*}P( \big | X - \mu \big | \lt a ) \gt 1 - \frac{\sigma^2}{a^2}\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-61}{}
+\begin{proof}\hypertarget{proof-62}{}
 
 	Notice that the variance of a continuous variable X is given by
 	\begin{align*}
@@ -5006,7 +5500,7 @@ For positive k,
 \begin{corollary}[{Special Cases for Chebyshev's Theorem}]\label{corollary-9}
 For any distribution, it is not possible for f(x)=0 within one standard deviation of the mean. Aslo, at least 75% of the data for any distribution must lie within two standard deviations of the mean and at least 88% must lie within three.
 	\end{corollary}
-\begin{proof}\hypertarget{proof-62}{}
+\begin{proof}\hypertarget{proof-63}{}
 
 	Apply the Chebyshev Theorem with \(a = \sigma\) to get
 	\begin{equation*}P(\mu - \sigma \lt X \lt \mu + \sigma) \gt 1 - \frac{\sigma^2}{\sigma^2} = 0\end{equation*}
@@ -5023,7 +5517,7 @@ For any distribution, it is not possible for f(x)=0 within one standard deviatio
 \typeout{************************************************}
 \typeout{Section 10.3 Point Estimates}
 \typeout{************************************************}
-\section[{Point Estimates}]{Point Estimates}\label{section-52}
+\section[{Point Estimates}]{Point Estimates}\label{section-53}
 
 For Binomial, Geometric, what is p? For exponential, what is the mean?  For normal, what are the mean and standard deviation? Each of these parameters are necessary before you can compute any probability values from their respective formulas. Since they might not be given in a particular instance, they will need to be estimated in some manner. 
 %
@@ -5054,7 +5548,7 @@ to approximate the theoretical standard deviation.
 \typeout{************************************************}
 \typeout{Section 10.4 Interval Estimates - Confidence Interval for p}
 \typeout{************************************************}
-\section[{Interval Estimates - Confidence Interval for p}]{Interval Estimates - Confidence Interval for p}\label{section-53}
+\section[{Interval Estimates - Confidence Interval for p}]{Interval Estimates - Confidence Interval for p}\label{section-54}
 
 Sometimes selecting a value for p for a Binomial, Geometric, or Negative Binomial distribution problem can be done by using a theoretical value. Indeed, when flipping a coin it is reasonable to assume p = 1/2 is the probability of getting a head on one flip. Similarly, it is reasonable to assume p = 1/6 when you are looking for a particular side of a 6-sided die. However, many times you will want to deal with a problem in which it is not possible to determine exactly the precise value for the likelihood of success such as your true probability of making a free throw in basketball or knowing the true percentage of the electorate that will vote for your favorite candidate. 
 %
@@ -5062,7 +5556,7 @@ Sometimes selecting a value for p for a Binomial, Geometric, or Negative Binomia
 
 In these later situations, we found in the previous section that relative frequency \(\frac{Y}{n}\) is generally a good way to estimate p. In this section, you will investigate how to measure the closeness--and thereby assure some confidence in that estimate--regarding how well the point estimate approximates the actual value of p.
 %
-\begin{definition}[{Confidence Intervals for p}]\label{definition-34}
+\begin{definition}[{Confidence Intervals for p}]\label{definition-37}
 Given a point estimate \(\tilde{p}\) for p, a confidence interval for p is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form
 \begin{equation*}\tilde{p} - E_1 \lt p \lt \tilde{p} + E_2\end{equation*}
 with
@@ -5137,13 +5631,13 @@ Another more elaborate mechanism when n is relatively large is given by the Wils
 \par
 
 
-\begin{theorem}[{Wilson Score Confidence Interval for p}]\label{theorem-67}
+\begin{theorem}[{Wilson Score Confidence Interval for p}]\label{theorem-68}
 
 \begin{equation*}\frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} - z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}} \lt p \lt \frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} + z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}}
 \end{equation*}
 %
 \end{theorem}
-\begin{proof}\hypertarget{proof-63}{}
+\begin{proof}\hypertarget{proof-64}{}
 Again, noting that \(\tilde{p} = \frac{Y}{n}\), the expression above
 \begin{equation*} \big | p - \tilde{p} \big | = z_{\alpha /2} \sqrt{\frac{p(1-p)}{n}}\end{equation*}
 can be simplified by squaring both sides to get
@@ -5201,10 +5695,10 @@ which is slightly different than the first and slightly smaller than the second.
 
 
 %
-\begin{theorem}[{Determining Sample Size for proportions}]\label{theorem-68}
+\begin{theorem}[{Determining Sample Size for proportions}]\label{theorem-69}
 Given a margin of error E and preliminary relative frequency estimate \(\tilde{p_0}\) the sample size needed to create the corresponding confidence interval is given by 
 \begin{equation*}n \gt \left ( \frac{z_{\alpha /2}}{E} \right )^2 \tilde{p_0}(1-\tilde{p_0}).\end{equation*}\end{theorem}
-\begin{proof}\hypertarget{proof-64}{}
+\begin{proof}\hypertarget{proof-65}{}
 \end{proof}
 \begin{example}[Determining Sample Size for one proportion]\label{example-29}
 
@@ -5216,11 +5710,11 @@ or a sample size of at least 1683.
 \typeout{************************************************}
 \typeout{Section 10.5 Interval Estimates - Confidence Interval for \(\mu\)}
 \typeout{************************************************}
-\section[{Interval Estimates - Confidence Interval for \(\mu\)}]{Interval Estimates - Confidence Interval for \(\mu\)}\label{section-54}
+\section[{Interval Estimates - Confidence Interval for \(\mu\)}]{Interval Estimates - Confidence Interval for \(\mu\)}\label{section-55}
 
 As with the confidence intervals above for proportions, the Central Limit Theorem also allows you to create an interval centered on a sample mean for estimating the population mean \(\mu\).
 %
-\begin{definition}[{Confidence Interval for One Mean}]\label{definition-35}
+\begin{definition}[{Confidence Interval for One Mean}]\label{definition-38}
 
 Given a sample mean \(\overline{x}\), a two-sided confidence interval for the mean with confidence level \(1-\alpha\) is an interval 
 \begin{equation*}\overline{x} - E_1 \lt \mu \lt \overline{x} + E_2\end{equation*}
@@ -5256,13 +5750,13 @@ It should be noted that the use of the Central Limit Theorem makes the use of  I
 
 Additionally, this derivation assumes that \(\mu\) is not known...indeed the goal is to approximate that mean using \(\overline{x}\)...but that \(\sigma\) is known. This is often not the case. It can however be shown that if n is larger than 30, replacing \(\sigma\) with the sample standard deviation s gives an acceptable confidence interval.
 %
-\begin{theorem}[{Sample Size needed for \(\mu\) given Margin of Error}]\label{theorem-69}
+\begin{theorem}[{Sample Size needed for \(\mu\) given Margin of Error}]\label{theorem-70}
 
 Given confidence level \(1-\alpha\) and margin of error E, the sample size needed to determine an appropriate confidence interval satisfies
 \begin{equation*} n \gt \left ( z_{\alpha /2} \frac{\sigma}{E} \right )^2\end{equation*}
 %
 \end{theorem}
-\begin{proof}\hypertarget{proof-65}{}
+\begin{proof}\hypertarget{proof-66}{}
 
 Solve for n in the formula for E above. Notice that n must be an integer so you will need to round up. You will also need an estimate for the sample standard deviation s by using a preliminary sample. 
 %
@@ -5281,11 +5775,11 @@ or a sample size of at least 1537.
 \typeout{************************************************}
 \typeout{Section 10.6 Interval Estimates - Confidence Interval for \(\sigma^2\)}
 \typeout{************************************************}
-\section[{Interval Estimates - Confidence Interval for \(\sigma^2\)}]{Interval Estimates - Confidence Interval for \(\sigma^2\)}\label{section-55}
+\section[{Interval Estimates - Confidence Interval for \(\sigma^2\)}]{Interval Estimates - Confidence Interval for \(\sigma^2\)}\label{section-56}
 
 Once again, you may need to approximate the population variance or standard deviation but only have the sample values available. One difference from the previous sections is that you are not dealing with an average of values (such as \(\overline{x}\) or \(\tilde{p}\)) but with the average of the squares of values. The Central Limit Theorem does not directly help you in this case but the following result (presented without proof) provides a solution.
 %
-\begin{theorem}[{Relationship between Variance and \(\chi ^2\)}]\label{theorem-70}
+\begin{theorem}[{Relationship between Variance and \(\chi ^2\)}]\label{theorem-71}
 If \(S^2\) is a random variable of possible sample variance values from a sample of size n, then
 \begin{equation*}W = \frac{(n-1)S^2}{\sigma^2}\end{equation*}
 is approximately \(\chi ^2(n-1).\)
@@ -5473,25 +5967,25 @@ Finally, to determine a confidence interval for \(\sigma\), proceed using the pr
 \typeout{************************************************}
 \typeout{Section 10.7 Exercises}
 \typeout{************************************************}
-\section[{Exercises}]{Exercises}\label{section-56}
+\section[{Exercises}]{Exercises}\label{section-57}
 
-\begin{exercise}[{ - Basic Confidence interval for p}]\label{exercise-53}
+\begin{exercise}[{ - Basic Confidence interval for p}]\label{exercise-68}
 \end{exercise}
 
 
-\begin{exercise}[{ - Sample Size for confidence interval for p}]\label{exercise-54}
+\begin{exercise}[{ - Sample Size for confidence interval for p}]\label{exercise-69}
 \end{exercise}
 
 
-\begin{exercise}[{ - Voting projection}]\label{exercise-55}
+\begin{exercise}[{ - Voting projection}]\label{exercise-70}
 \end{exercise}
 
 
-\begin{exercise}[{ - Basic Confidence interval for the mean}]\label{exercise-56}
+\begin{exercise}[{ - Basic Confidence interval for the mean}]\label{exercise-71}
 \end{exercise}
 
 
-\begin{exercise}[{ - Confidence Interval Experiment}]\label{exercise-57}
+\begin{exercise}[{ - Confidence Interval Experiment}]\label{exercise-72}
 \end{exercise}
 
 Roll two regular pair of dice 35 times, recording the sum of the dots for each roll.  Using the data from your sample, determine the corresponding sample mean and sample variance.  Using this data, create a 95% confidence interval for the population mean and a 95% "centered" confidence interval for the standard deviation. Once complete, compare your results with what you know should be the correct population statistics an appropriate "hat" distribution. (You might want to use the chi-square calculator provided earlier in this text.)
@@ -5515,7 +6009,7 @@ This chapter is a review of power series results from Calculus.%
 \typeout{************************************************}
 \typeout{Section 11.1 Geometric Series}
 \typeout{************************************************}
-\section[{Geometric Series}]{Geometric Series}\label{section-57}
+\section[{Geometric Series}]{Geometric Series}\label{section-58}
 
 		  Knowledge of the use of power series is very important when dealing with both 
 		  probability functions. %
@@ -5530,10 +6024,10 @@ In this section, we review this series, develop its properties, and explore some
 \typeout{************************************************}
 \typeout{Subsection 11.1.1 Geometric Series}
 \typeout{************************************************}
-\subsection[{Geometric Series}]{Geometric Series}\label{subsection-4}
+\subsection[{Geometric Series}]{Geometric Series}\label{subsection-8}
 \begin{theorem}[{}]\label{theorem-GeomSeries}
 \( S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}\)\end{theorem}
-\begin{proof}\hypertarget{proof-66}{}
+\begin{proof}\hypertarget{proof-67}{}
 Consider the partial sum%
 \begin{gather*}
  S_n = \sum_{k=0}^{n} {x^k} = 1 + x + x^2 + ... + x^n \\
@@ -5563,10 +6057,10 @@ def _(n = slider(2,20,1,2)):
 \typeout{************************************************}
 \typeout{Subsection 11.1.2 Alternate Forms for the Geometric Series}
 \typeout{************************************************}
-\subsection[{Alternate Forms for the Geometric Series}]{Alternate Forms for the Geometric Series}\label{subsection-5}
-\begin{theorem}[{Generalized Geometric Series}]\label{theorem-72}
+\subsection[{Alternate Forms for the Geometric Series}]{Alternate Forms for the Geometric Series}\label{subsection-9}
+\begin{theorem}[{Generalized Geometric Series}]\label{theorem-73}
 For \(k \in \mathbb{N}, \sum_{k=M}^{\infty} {x^k} = \frac{x^M}{1-x}\)\end{theorem}
-\begin{proof}\hypertarget{proof-67}{}
+\begin{proof}\hypertarget{proof-68}{}
 \begin{align*}
 \sum_{k=M}^{\infty} {x^k} & = x^M \sum_{k=0}^{\infty} {x^k}\\
  & = x^M \frac{1}{1-x}\\
@@ -5612,7 +6106,7 @@ Certainly most students would agree that \( 0.333333... = \frac{1}{3} \). So, wh
 \typeout{************************************************}
 \typeout{Section 11.2 Binomial Sums}
 \typeout{************************************************}
-\section[{Binomial Sums}]{Binomial Sums}\label{section-58}
+\section[{Binomial Sums}]{Binomial Sums}\label{section-59}
 
   The binomial series is also foundational. It is technically not a series since the sum_if finite 
   but we won’t bother with that for now.  
@@ -5622,11 +6116,11 @@ B = \sum_{k=0}^{n} {\binom{n}{k} a^k b^{n-k}}
 \end{gather*}\typeout{************************************************}
 \typeout{Subsection 11.2.1 }
 \typeout{************************************************}
-\subsection[{}]{}\label{subsection-6}
+\subsection[{}]{}\label{subsection-10}
 \begin{theorem}[{Binomial Theorem}]\label{theorem-Binomial}
 For \( n \in \mathbb{N} \),  
 				\(\displaystyle {(a+b)^n = \sum_{k=0}^{n} {\binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
-\begin{proof}\hypertarget{proof-68}{}
+\begin{proof}\hypertarget{proof-69}{}
 By induction:%
 \par
 Basic Step: n = 1 is trivial%
@@ -5646,13 +6140,13 @@ Inductive Step:  Assume the statement is true as given for some \(n \ge 1\).
 \typeout{************************************************}
 \typeout{Subsection 11.2.2 Binomial Series}
 \typeout{************************************************}
-\subsection[{Binomial Series}]{Binomial Series}\label{subsection-7}
+\subsection[{Binomial Series}]{Binomial Series}\label{subsection-11}
 Consider \(B(a,b) = \sum_{k=0}^{n} {\binom{n}{k} a^k b^{n-k}}\).  
 		This finite sum_is known as the Binomial Series.%
 \typeout{************************************************}
 \typeout{Subsection 11.2.2.1 }
 \typeout{************************************************}
-\subsubsection[{}]{}\label{subsection-8}
+\subsubsection[{}]{}\label{subsection-12}
 Show that \(B(a,b) = (a+b)^n\)%
 \par
 Show that \(B(1,1) = 2^n\)%
@@ -5665,7 +6159,7 @@ Easily, \(B(x,1) = \sum_{k=0}^{n} {\binom{n}{k} a^k}\)%
 \typeout{************************************************}
 \typeout{Subsection 11.2.3 Trinomial Series}
 \typeout{************************************************}
-\subsection[{Trinomial Series}]{Trinomial Series}\label{subsection-9}
+\subsection[{Trinomial Series}]{Trinomial Series}\label{subsection-13}
 \begin{gather*}
 (a+b+c)^n = \sum_{k_1+k_2+k_3=n}^{} {\binom{n}{k_1,k_2,k_3} a^{k_1} b^{k_2} c^{k_3}} 
 \end{gather*}where \(\binom{n}{k_1,k_2,k_3} = \frac{n!}{k_1!k_2!k_3!}\). This can be generalized to any number 
@@ -5674,9 +6168,9 @@ Easily, \(B(x,1) = \sum_{k=0}^{n} {\binom{n}{k} a^k}\)%
 \typeout{************************************************}
 \typeout{Section 11.3 Negative Binomial Series}
 \typeout{************************************************}
-\section[{Negative Binomial Series}]{Negative Binomial Series}\label{section-59}
+\section[{Negative Binomial Series}]{Negative Binomial Series}\label{section-60}
 \((a+b)^{-n} = \sum_{k=0}^{\infty} {\binom{-n}{k} a^k b^{-n-k}}\)%
-\begin{theorem}[{Alternate Form for Negative Binomial Series}]\label{theorem-74}
+\begin{theorem}[{Alternate Form for Negative Binomial Series}]\label{theorem-75}
 \((a+b)^{-n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n+k-1}{k} a^k b^{-n-k}}\)%
 \end{theorem}
 \end{document}

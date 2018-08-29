@@ -37,15 +37,7 @@
 
 	<p>To investigate these terms and to motivate our discussion of probability, consider flipping coins using the interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying number of trials selected by you as you move the slider bar. Results are displayed using a histogram.</p>
 
-	<p>
-	Question 1: What do you notice as the number of flips increases?
-	</p>
-	<p>
-	Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
-	that to happen?
-	</p>
-	
-	
+<p>
 <sage>
 <input>
 coin = ["Heads", "Tails"]
@@ -65,9 +57,20 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
 </input>
 </sage>
+</p>
+
+	<p>
+	Question 1: What do you notice as the number of flips increases?
+	</p>
+	<p>
+	Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
+	that to happen?
+	</p>
+	
 
 
-	<p>Notice that as the number of flips increases, the relative frequency of Heads (and Tails)
+
+	<p>You should have noticed that as the number of flips increases, the relative frequency of Heads (and Tails)
 	stabilized around 0.5. This makes sense intuitively since there are two options for each 
 	individual flip and 1/2 of those options are Heads while the other 1/2 is Tails.</p>
 	<p>
@@ -76,50 +79,7 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
 	</p>
 
-
-<!--
-	<exercise>
-		<introduction>
-		<p>
-		Let's see if you understand the relationship between frequency and relative frequency.
-		</p>
-		</introduction>
-		<webwork source="local/relative_frequency1.pg">
-		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
-	</exercise>
--->
-
-
-
-	<exercise>
-		<introduction>
-		<p>
-		Let's see if you understand the relationship between frequency and relative frequency.
-		</p>
-		</introduction>
-		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg">
-		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
-	</exercise>
-
-
-	<p>
-	Question 1: What do you notice as the number of rolls increases?
-	</p>
-	<p>
-	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
-	</p>
-
-
+<p>
 <sage>
 <input>
 @interact
@@ -141,9 +101,9 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [
 	show(bar_chart(freq,axes=False,ymin=0)) 
 </input>
 </sage>
+</p>
 
-
-	<p>Notice in this instance that there are a larger number of options (for example 6 on a regular
+	<p>Notice for a single die there are a larger number of options (for example 6 on a regular
 	die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die)
 	as the number of rolls increased.</p>
 	<p>In general, this suggests a rule: if there are n outcomes and each one has the same
@@ -153,7 +113,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [
 	the proportion of outcomes that would be expected to have any given outcome. However, it is not
 	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:</p>
 
-
+<p>
 <sage>
 <title>Rolling Two Dice and Measuring their Sum</title>
 <input>
@@ -177,7 +137,33 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 
 </input>
 </sage>
+</p>
 
+
+<!--
+	<exercise>
+		<introduction>
+		<p>
+		Let's see if you understand the relationship between frequency and relative frequency.
+		</p>
+		</introduction>
+		<webwork source="local/relative_frequency1.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		So, these are simple calculations.
+		</p>
+		</conclusion>
+	</exercise>
+-->
+
+
+	<p>
+	Question 1: What do you notice as the number of rolls increases?
+	</p>
+	<p>
+	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
+	</p>
 
 	<p>Notice, not only are the answers not the same but they are not even close. To understand why this 
 	is different from the examples before, consider the possible outcomes from each pair of die. Since we
@@ -186,6 +172,16 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	a 7--namely from the pairs (1,6), (2,5), (3,4), (4,3), (5,2), and (6,1). So it might make some sense
 	that the likelihood of getting a 7 is 6 times larger than that of getting a 2. Check to see if that
 	is the case with your experiment above.</p>
+	
+<definition><title>Cumulative relative frequency</title> 
+<statement>For a collection of ordered events <m>x_1 \lt x_2 \lt ... \lt x_s</m> with corresponding frequencies <m>f_1, f_2, ..., f_s</m>, the cumulative relative frequency is the function
+<me>F(x) = \sum_{x_k \le x} f_{x_k}</me>
+</statement>
+</definition>
+
+<p>Add a sage interact here where a student can enter a set of data and display the relative frequency histogram and the cumulative relative frequency graph.
+</p>
+
 </section>
 
 
@@ -390,6 +386,20 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	</proof>
 	</theorem>
 	
+	<exercise>
+		<introduction>
+		<p>
+		Let's see if you understand the relationship between frequency and relative frequency. In this exercise, presume "Probabiity" to be the expected fraction of outcomes you might logically expect.
+		</p>
+		</introduction>
+		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		So, these are simple calculations.
+		</p>
+		</conclusion>
+	</exercise>
 
 	<exercise>
 		<introduction>
@@ -406,6 +416,44 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 		</conclusion>
 	</exercise>
 
+
+
+<subsection><title>Exercises - Basic</title>
+
+<exercise>
+	<title>Poker</title>
+	<statement><p>
+	Determine the probabilities associated with the various 5-card hands.
+	</p>
+	</statement>
+</exercise>
+
+<exercise><title>Dice</title>
+	<statement>
+	<p>
+	Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
+	</p>
+	</statement>
+</exercise>
+
+<exercise><title>Skew Dice</title>
+	<statement>
+	<p>
+	Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
+	</p>
+	</statement>
+</exercise>
+
+<exercise><title>Craps</title>
+	<statement><p>
+	Analyze the game of
+	<url href="http://mathworld.wolfram.com/Craps.html">"craps"</url>.
+	</p>
+	</statement>
+</exercise>
+</subsection>
+
+
 </section>
 
 <section>
@@ -413,6 +461,112 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	<introduction>
 	<p>When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain than it the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
 	</p>
+	<p>Indeed, consider what happens when you keep on dealing a hand of five cards from a shuffled deck but without replacement...</p>
+
+<sage>
+<input>
+print "Conditional Events - successively deal 5 cards w/o replacement" 
+
+var('Ace Clubs Diamonds Hearts Jack King Queen Spades') 
+
+suits = [Spades, Diamonds, Clubs, Hearts] 
+values = [2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace] 
+
+deck = [(value, suit) for suit in suits for value in values]
+full_deck = copy(deck)  # to save a copy of the original deck for later use.
+
+deck1 = copy(full_deck)
+history1=[]
+@interact
+def _(choice=['Hearts','Spades','Diamonds','Clubs','New Deck'],again=['Repeat Same Suit']):
+    global deck1, history1
+    shuffle(deck1)
+    if choice=='Hearts':
+        suit = Hearts
+    elif choice=='Spades':
+        suit = Spades
+    elif choice=='Diamonds':
+        suit = Diamonds
+    elif choice=='Clubs':
+        suit = Clubs
+    else:
+        deck1 = copy(full_deck)
+        shuffle(deck1)
+        history1=[]
+    if (Set(deck1).cardinality()&lt;5):
+        print "Deck is too small...get a new deck"
+    elif choice&lt;&gt;'New Deck':
+        hand = [deck1.pop() for card in range(5)] 
+        print "Click on a desired suit above to deal out another 5 card hand.  The cards dealt:"
+        print hand
+        print "The remaining cards in the deck:"
+        print deck1
+        num = Set(deck1).cardinality()
+        print "\nThe number of remaining cards in the deck = %s"%str(num)
+        looking = []
+        for card in deck1:
+            if card[1]==suit:
+                looking.append(card)
+        prob = float(Set(looking).cardinality())/num
+        history1.append(prob)
+        print 'So, the remaining probability of getting a card from '+choice+' from the remaining cards is %s'%str(prob)
+    list_plot(history1).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))
+
+</input>
+</sage>
+	
+<p>Now, what happens when you put the cards back in, reshuffle, and then get 5 cards.</p>
+<sage>
+<input>
+print "Independent Events - Successively deal 5 cards but WITH replacement"
+
+var('Ace Clubs Diamonds Hearts Jack King Queen Spades') 
+
+suits = [Spades, Diamonds, Clubs, Hearts] 
+values = [2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace] 
+
+deck = [(value, suit) for suit in suits for value in values]
+full_deck = copy(deck)  # to save a copy of the original deck for later use.
+deck1 = copy(full_deck)
+
+history2=[]
+@interact
+def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
+
+    if choice=='Hearts':
+        suit = Hearts
+    elif choice=='Spades':
+        suit = Spades
+    elif choice=='Diamonds':
+        suit = Diamonds
+    else:
+        suit = Clubs
+
+    deck1 = copy(full_deck)
+    shuffle(deck1) 
+    hand = [deck1.pop() for card in range(5)] 
+    print "The cards dealt:"
+    show(hand)
+    print "Replacing this hand and reshuffling gives the remaining cards in the deck:"
+    deck1 = copy(full_deck)
+    shuffle(deck1)
+    print(deck1)
+    
+    num = Set(deck1).cardinality()
+    pretty_print("\nThe number of remaining cards in the deck = %s"%str(num))
+    looking = []
+    for card in deck1:
+        if card[1]==suit:
+            looking.append(card)
+    prob = float(Set(looking).cardinality())/num
+    history2.append(prob)
+    
+    pretty_print('So, the remaining probability of getting a '+choice+' from the remaining cards is %s'%str(prob))
+    list_plot(history2).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))print 'Independent Events - Successively deal 5 cards but WITH replacement' 
+
+
+</input>
+</sage>
 	</introduction>
 	
 	<p><title>Changing Sample Space - Balls:</title>  Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.</p>
@@ -433,7 +587,9 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	
 	<definition>
 		<title>Conditional Probability</title>
-			<statement>P(B | A) = P(A <m>\cap</m> B) / P(A), provided P(A)<m>\gt 0</m>.</statement>
+			<statement>
+			<me>P(B | A) = \frac{P(A \cap B)}{ P(A) },</me>
+			 provided P(A)<m>\gt 0</m>.</statement>
 		</definition>
 		<theorem>
 		<statement>Conditional Probability satisfies all of the requirements of regular probability.</statement>
@@ -476,6 +632,204 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 		</p>
 		</conclusion>
 	</exercise>	
+
+
+<subsection><title>Exercises - Conditional Probabilities</title>
+
+<exercise><title>Conditional Basic computation</title>
+	<statement><p>
+	Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, determine
+	<ol>
+		<li><m>P(A \cup B)</m></li>
+		<li><m>P(B | A)</m></li>
+		<li><m>P(A | B)</m></li>
+		<li><m>P(A^c \cap B^c)</m></li>
+	</ol>
+	</p>
+	</statement>
+</exercise>
+
+<exercise><title>Gender vs University Major</title>
+	<statement><p>
+	The table below classifies students at your university according to gender and according to major.
+
+	<table halign="left">
+      	<tabular halign="right">
+      
+<row><cell bottom="medium" right="medium">Enrollment</cell><cell bottom="medium">Male</cell><cell bottom="medium" right="medium">Female</cell><cell bottom="medium">Totals</cell></row>      
+<row><cell right="medium">STEM</cell><cell>420</cell><cell right="medium">510</cell><cell>930</cell></row>
+<row><cell right="medium">Business</cell><cell>320</cell><cell right="medium">270</cell><cell>590</cell></row>
+<row><cell bottom="medium" right="medium">Other</cell><cell bottom="medium">610</cell><cell bottom="medium" right="medium">710</cell><cell bottom="medium">1320</cell></row>
+<row><cell right="medium">Totals</cell><cell>1350</cell><cell right="medium">1490</cell><cell>2840</cell></row>
+		</tabular>
+	</table>
+
+	Determine the following:
+	<ol>
+		<li>P( STEM major )</li>
+		<li>P( STEM | Female )</li>
+		<li>P( Female | STEM )</li>
+		<li>P( Female | Not STEM)</li>
+	</ol>
+	</p>
+	</statement>
+</exercise>
+	
+<exercise><title>Mean Tough Teacher</title>
+	<statement>	
+	<p>
+	You are in a probability and statistics class with a teacher who has predetermined that only one student can make an A for the course. To be "fair", he places a number of slips of paper in a bowl equal to the number of students in the course with one of the slips having an A designation. Students in the course each can pick once randomly from the bowl and without replacement to see if they can get the lucky slip.  Determine the following:
+	<ol>
+		<li>If there are 15 students in your course, determine the probabilities of getting an A in the course if you pick first and if you pick last.</li>
+		<li>Since the teacher likes you the most, she will give you the option of deciding whether to pick at any position. If so, determine the position that would give you the best likelihood of getting the A slop.</li>
+		<li>Suppose again that the teacher was feeling more generous and decided instead to allow for two A's. Determine how that changes your likelihood of winning and on what position you would like to choose.</li>
+		<li>Continue as above except that only one slip does not have an A on it.</li>
+		<li>Discuss how your choice is affected by the number of students in the course or the number of A slips included.</li>
+	</ol>
+	</p>
+	</statement>
+	
+	<solution>
+	<p>
+	Using the normal equally-likely definition, <m>P(\text{first}) = \frac{1}{15}</m>.
+	</p>
+	<p>
+	To get the A on the last pick requires that all of the previous picks to be something else. You don't get the opportunity to pick the A if it has already been selected. So, if L stands for losing (not getting the A), then 
+	<me> P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) \\ = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3  \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</me>
+	Therefore, it is the same probability of getting the A whether you pick first or last.  In general, to win on the kth pick gives
+	<me> P(\text{kth}) = P(\text{LL...LA}) \\ = \frac{14 \cdot 13 \cdot ... \cdot (15-k)  \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</me>
+	Hence, it is the same probability regardless of when you get to pick.
+	</p>
+	
+	
+	<p>
+	If there are two A's possible, then the options for person k in include either receiving the first of the two slips or the second. The probability for determining the first of the two is computed in a manner similar to above except that there is one more A and one less other.
+	<me> P(\text{kth as first}) = P(\text{LL...LA}) \\ = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</me>
+
+	The probability of getting the second A means exactly one of the previous k-1 selections also picked the other A. There are k-1 ways that this could happen. Computing for one of the options and multiplying by k-1 gives
+	<me> P(\text{kth as second}) = P(\text{LL...LAA}) \\ = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</me>	
+	Adding these two together gives
+	<me>P(\text{getting an A when there are two}) \\ = \frac{2 \cdot (15-k) + 2 \cdot (k-1)}{15 \cdot 14} = \frac{28}{15 \cdot 14} = \frac{2}{15}.</me>
+
+	For example, if k = 5,
+	<me> P(\text{5th as first}) = P(\text{LLLLA}) \\ = \frac{13 \cdot 12 \cdot 11 \cdot 10  \cdot 2}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} = \frac{20}{15 \cdot 14}</me>
+	<me> P(\text{5th as second}) = P(\text{LL...LAA}) \\ = 4 \cdot \frac{13 \cdot 12 \cdot \cdot 11 \cdot 2 \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} \\ = \frac{8}{15 \cdot 14}.</me>	
+	Adding these together yields the general result. So, once again, it doesn't matter which pick you use since the likelihood of getting an A is the same for all positions.
+	</p>
+	</solution>
+</exercise>
+
+<exercise><title>Shared Birthdays</title>
+	<statement>
+	<p>
+	In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 equally likely days let r be the number of people in a sample and consider the following:
+	<ol>
+		<li>Determine the number of different outcomes of birthdays when order matters and birthdays are allowed to be repeated.</li>
+		<li>Determine the number of different outcomes when birthdays are not allowed to be repeated.</li>
+		<li>Determine the probability that two or more of your r students have the same birthday.</li>
+		<li>Prepare a spreadsheet with the probabilities found above from r=2 to r=50. Determine the value of r for which this probability is closest to 0.5.</li>
+		<li>As best as you can, sample two groups of the size found above and gather birthday information. For each group, determine if there is a shared birthday or not.  Compare your results with others in the class to check whether the sampling validates that about half of the samples should have a shared birthday group.</li>
+	</ol>
+	</p>
+	</statement>
+	
+	<solution>
+	<p>
+	The correct sample size to get past a probability of 0.5 is 23 people. You should justify this numerically by justifying the following probabilities:
+<pre>
+#	P(Match)	
+1	0
+2	0.0027
+3	0.0082
+4	0.0164
+5	0.0271
+6	0.0405
+7	0.0562
+8	0.0743
+9	0.0946
+10	0.1169
+11	0.1411
+12	0.1670
+13	0.1944
+14	0.2231
+15	0.2529
+16	0.2836
+17	0.3150
+18	0.3469
+19	0.3791
+20	0.4114
+21	0.4437
+22	0.4757
+23	0.5073
+24	0.5383
+25	0.5687
+26	0.5982
+27	0.6269
+28	0.6545
+29	0.6810
+30	0.7063
+</pre>
+	</p>
+	</solution>
+</exercise>
+
+<exercise><title>Internet meme solution</title>	
+	<statement>	
+	<p>
+	This one is from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. Given that a 6 will be removed, determine the probability that the other die is a 6.
+	</p>
+	</statement>
+	
+	<solution>
+	<p>
+	In this case, you are presented with an outcome where the possible choices consist of (1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).  Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
+	</p>
+	<p>
+	It is interesting to note that if the question instead was posed so that one of the dice was a 6 and it was removed, then the probability of the other dice showing a 6 would be 1/6.
+	</p>
+	
+	</solution>
+</exercise>
+
+<exercise><title>100 people on an airplane with boarding pass issues</title>
+	<statement>
+	<p>
+	This is a famous problem.  100 people are in line, boarding an airplane with 100 seats, one at a time. They are in no particular order. The first person has lost his boarding pass, so he sits in a random seat. The second person does the following:
+
+	<ul>
+	<li>Goes to his seat (the one it says to go to on the boarding pass). If unoccupied, sit in it.</li>
+	<li>If occupied, find a random seat to sit in.</li>
+	</ul>
+	Everyone else behind him does the same. What is the probability that the last person sits in his correct seat?
+	</p>
+	</statement>
+
+	<solution>
+	<p>
+	To get the idea, consider what happens with only 2 people, then only 3. Generalize. 
+	</p>
+	<p>
+	The answer is 1/2. To obtain this, you can define recursively the probability that the kth person sits in their own set as f(k).  Consider the first traveler's and your seats. Then you get the following cases:
+	<ul>
+		<li>P(first guy sits in his own seat and you sit in yours) = \frac{1}{k} \cdot 1</li>
+		<li>P(first guy sits in your seat and you do not sit in yours) = \frac{1}{k} \cdot 0</li>
+		<li>P(other k-2 travelers make their choices) = <m>(k-2) \frac{1}{k} f(k-1)</m></li>
+	</ul>
+	<me>f(k) = 1/k + 0 + (k-2)/k f(k-1)</me>
+	with f(2) = 1/2.
+	</p>
+	<p>
+	For example,
+	f(3) = 1/3 + f(2)/3 = 1/3 + 1/6 = 1/2.   
+	f(4) = 1/4 + 2/4 f(3) = 1/4 + 1/2 1/2 = 1/2.
+	f(5) = 1/5 + 3/5 1/2 = 1/2.
+	f(6) = 1/6 + 4/6 1/2 = 1/2. Etc.
+	</p>
+	</solution>	
+</exercise>
+</subsection>
+
+
 
 </section>
 	
@@ -677,6 +1031,62 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 </sage>
 
 
+
+
+<subsection><title>Exercises - Bayes Theorem</title>
+
+<p>Bayes Theorem</p>
+
+
+<exercise><title>Insured vs Accident</title>
+	<statement>
+	<p>
+	Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
+
+	<table halign="left">
+      	<tabular halign="right">
+      
+<row><cell bottom="medium" right="medium">Age</cell><cell bottom="medium" right="medium">Proportion of Insured</cell><cell bottom="medium">Probability of Accident</cell></row>      
+<row><cell right="medium">16-20</cell><cell right="medium">0.05</cell><cell>0.08</cell></row>
+<row><cell right="medium">21-25</cell><cell right="medium">0.06</cell><cell>0.07</cell></row>
+<row><cell right="medium">26-55</cell><cell right="medium">0.49</cell><cell>0.02</cell></row>
+<row><cell right="medium">55-65</cell><cell right="medium">0.25</cell><cell>0.03</cell></row>
+<row><cell right="medium">over 65</cell><cell right="medium">0.15</cell><cell>0.04</cell></row>
+		</tabular>
+	</table>
+	
+	One of your family friends insured by this company has an accident. 
+	<ol>
+		<li>Determine the conditional probability that the driver was in the 16-20 age range.</li>
+		<li>Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.</li>
+		<li>Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.</li>
+	</ol>
+	</p>
+	</statement>
+</exercise>
+	
+<exercise><title>Spinal bifida odds</title>
+	<statement>
+	<p>
+	Congratulations...your family is having a baby! As part of the prenatal care, some testing is part of the normal procedure including one for spinal bifida (which is a condition in which part of the spinal cord may be exposed.) Indeed, measurement of maternal serum AFP values is a standard tool used in obstetrical care to identify pregnancies that may have an increased risk for this disorder. You want to make plans for the new child's care and want to know how serious to take the test results. However, some times the test indicates that the child has the disorder when in actuality it does not (a false positive) and likewise may indicate that the child does not have the disorder when in fact it does (a false negative.) 
+	</p>
+	<p>The combined accuracy rate for the screen to detect the chromosomal abnormalities mentioned above is approximately 85% with a false positive rate of 5%. This means that (from <url href="http://americanpregnancy.org/prenatal-testing/first-trimester-screen/">americanpregnancy.org</url>)
+	<ul>
+		<li>Approximately 85 out of every 100 babies affected by the abnormalities addressed by the screen will be identified. (Positive Positive)</li>
+		<li>Approximately 5% of all normal pregnancies will receive a positive result or an abnormal level. (False Positive)</li>
+	</ul>
+	<ol>
+		<li>Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.</li>
+		<li>Given that your test came back negative, determine the likelihood that the child will not have spina bifida</li>
+		<li>Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.</li>
+	</ol>
+	</p>
+	</statement>
+</exercise>
+
+</subsection>
+
+
 </section>
 
 
@@ -743,298 +1153,13 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 	</corollary>
 
 	<corollary><title>Successive Independent Events</title>
-		<statement>Given a sequence of independent events <m>A_1, A_2, A_3, ...</m>,
+		<statement>Given a sequence of mutually independent events <m>A_1, A_2, A_3, ...</m>,
 		<me>P(\cap_{k \in R} A_k) = \prod_{k \in R} P(A_k)</me>
 		</statement>
 	</corollary>
-		
-</section>
 
 
-
-
-<section><title>Exercises</title>
-
-<exercise>
-	<title>Poker</title>
-	<statement><p>
-	Determine the probabilities associated with the various 5-card hands.
-	</p>
-	</statement>
-</exercise>
-
-<exercise><title>Dice</title>
-	<statement>
-	<p>
-	Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
-	</p>
-	</statement>
-</exercise>
-
-<exercise><title>Skew Dice</title>
-	<statement>
-	<p>
-	Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
-	</p>
-	</statement>
-</exercise>
-
-<exercise><title>Craps</title>
-	<statement><p>
-	Analyze the game of
-	<url href="http://mathworld.wolfram.com/Craps.html">"craps"</url>.
-	</p>
-	</statement>
-</exercise>
-
-
-
-<p>Conditional Probabilities</p>
-
-<exercise><title>Conditional Basic computation</title>
-	<statement><p>
-	Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, determine
-	<ol>
-		<li><m>P(A \cup B)</m></li>
-		<li><m>P(B | A)</m></li>
-		<li><m>P(A | B)</m></li>
-		<li><m>P(A^c \cap B^c)</m></li>
-	</ol>
-	</p>
-	</statement>
-</exercise>
-
-<exercise><title>Gender vs University Major</title>
-	<statement><p>
-	The table below classifies students at your university according to gender and according to major.
-
-	<table halign="left">
-      	<tabular halign="right">
-      
-<row><cell bottom="medium" right="medium">Enrollment</cell><cell bottom="medium">Male</cell><cell bottom="medium" right="medium">Female</cell><cell bottom="medium">Totals</cell></row>      
-<row><cell right="medium">STEM</cell><cell>420</cell><cell right="medium">510</cell><cell>930</cell></row>
-<row><cell right="medium">Business</cell><cell>320</cell><cell right="medium">270</cell><cell>590</cell></row>
-<row><cell bottom="medium" right="medium">Other</cell><cell bottom="medium">610</cell><cell bottom="medium" right="medium">710</cell><cell bottom="medium">1320</cell></row>
-<row><cell right="medium">Totals</cell><cell>1350</cell><cell right="medium">1490</cell><cell>2840</cell></row>
-		</tabular>
-	</table>
-
-	Determine the following:
-	<ol>
-		<li>P( STEM major )</li>
-		<li>P( STEM | Female )</li>
-		<li>P( Female | STEM )</li>
-		<li>P( Female | Not STEM)</li>
-	</ol>
-	</p>
-	</statement>
-</exercise>
-	
-<exercise><title>Mean Tough Teacher</title>
-	<statement>	
-	<p>
-	You are in a probability and statistics class with a teacher who has predetermined that only one student can make an A for the course. To be "fair", he places a number of slips of paper in a bowl equal to the number of students in the course with one of the slips having an A designation. Students in the course each can pick once randomly from the bowl and without replacement to see if they can get the lucky slip.  Determine the following:
-	<ol>
-		<li>If there are 15 students in your course, determine the probabilities of getting an A in the course if you pick first and if you pick last.</li>
-		<li>Since the teacher likes you the most, she will give you the option of deciding whether to pick at any position. If so, determine the position that would give you the best likelihood of getting the A slop.</li>
-		<li>Suppose again that the teacher was feeling more generous and decided instead to allow for two A's. Determine how that changes your likelihood of winning and on what position you would like to choose.</li>
-		<li>Continue as above except that only one slip does not have an A on it.</li>
-		<li>Discuss how your choice is affected by the number of students in the course or the number of A slips included.</li>
-	</ol>
-	</p>
-	</statement>
-	
-	<solution>
-	<p>
-	Using the normal equally-likely definition, <m>P(\text{first}) = \frac{1}{15}</m>.
-	</p>
-	<p>
-	To get the A on the last pick requires that all of the previous picks to be something else. You don't get the opportunity to pick the A if it has already been selected. So, if L stands for losing (not getting the A), then 
-	<me> P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) \\ = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3  \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</me>
-	Therefore, it is the same probability of getting the A whether you pick first or last.  In general, to win on the kth pick gives
-	<me> P(\text{kth}) = P(\text{LL...LA}) \\ = \frac{14 \cdot 13 \cdot ... \cdot (15-k)  \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</me>
-	Hence, it is the same probability regardless of when you get to pick.
-	</p>
-	
-	
-	<p>
-	If there are two A's possible, then the options for person k in include either receiving the first of the two slips or the second. The probability for determining the first of the two is computed in a manner similar to above except that there is one more A and one less other.
-	<me> P(\text{kth as first}) = P(\text{LL...LA}) \\ = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</me>
-
-	The probability of getting the second A means exactly one of the previous k-1 selections also picked the other A. There are k-1 ways that this could happen. Computing for one of the options and multiplying by k-1 gives
-	<me> P(\text{kth as second}) = P(\text{LL...LAA}) \\ = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</me>	
-	Adding these two together gives
-	<me>P(\text{getting an A when there are two}) \\ = \frac{2 \cdot (15-k) + 2 \cdot (k-1)}{15 \cdot 14} = \frac{28}{15 \cdot 14} = \frac{2}{15}.</me>
-
-	For example, if k = 5,
-	<me> P(\text{5th as first}) = P(\text{LLLLA}) \\ = \frac{13 \cdot 12 \cdot 11 \cdot 10  \cdot 2}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} = \frac{20}{15 \cdot 14}</me>
-	<me> P(\text{5th as second}) = P(\text{LL...LAA}) \\ = 4 \cdot \frac{13 \cdot 12 \cdot \cdot 11 \cdot 2 \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} \\ = \frac{8}{15 \cdot 14}.</me>	
-	Adding these together yields the general result. So, once again, it doesn't matter which pick you use since the likelihood of getting an A is the same for all positions.
-	</p>
-	</solution>
-</exercise>
-
-<exercise><title>Shared Birthdays</title>
-	<statement>
-	<p>
-	In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 equally likely days let r be the number of people in a sample and consider the following:
-	<ol>
-		<li>Determine the number of different outcomes of birthdays when order matters and birthdays are allowed to be repeated.</li>
-		<li>Determine the number of different outcomes when birthdays are not allowed to be repeated.</li>
-		<li>Determine the probability that two or more of your r students have the same birthday.</li>
-		<li>Prepare a spreadsheet with the probabilities found above from r=2 to r=50. Determine the value of r for which this probability is closest to 0.5.</li>
-		<li>As best as you can, sample two groups of the size found above and gather birthday information. For each group, determine if there is a shared birthday or not.  Compare your results with others in the class to check whether the sampling validates that about half of the samples should have a shared birthday group.</li>
-	</ol>
-	</p>
-	</statement>
-	
-	<solution>
-	<p>
-	The correct sample size to get past a probability of 0.5 is 23 people. You should justify this numerically by justifying the following probabilities:
-<pre>
-#	P(Match)	
-1	0
-2	0.0027
-3	0.0082
-4	0.0164
-5	0.0271
-6	0.0405
-7	0.0562
-8	0.0743
-9	0.0946
-10	0.1169
-11	0.1411
-12	0.1670
-13	0.1944
-14	0.2231
-15	0.2529
-16	0.2836
-17	0.3150
-18	0.3469
-19	0.3791
-20	0.4114
-21	0.4437
-22	0.4757
-23	0.5073
-24	0.5383
-25	0.5687
-26	0.5982
-27	0.6269
-28	0.6545
-29	0.6810
-30	0.7063
-</pre>
-	</p>
-	</solution>
-</exercise>
-
-<exercise><title>Internet meme solution</title>	
-	<statement>	
-	<p>
-	This one is from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. Given that a 6 will be removed, determine the probability that the other die is a 6.
-	</p>
-	</statement>
-	
-	<solution>
-	<p>
-	In this case, you are presented with an outcome where the possible choices consist of (1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).  Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
-	</p>
-	<p>
-	It is interesting to note that if the question instead was posed so that one of the dice was a 6 and it was removed, then the probability of the other dice showing a 6 would be 1/6.
-	</p>
-	
-	</solution>
-</exercise>
-
-<exercise><title>100 people on an airplane with boarding pass issues</title>
-	<statement>
-	<p>
-	This is a famous problem.  100 people are in line, boarding an airplane with 100 seats, one at a time. They are in no particular order. The first person has lost his boarding pass, so he sits in a random seat. The second person does the following:
-
-	<ul>
-	<li>Goes to his seat (the one it says to go to on the boarding pass). If unoccupied, sit in it.</li>
-	<li>If occupied, find a random seat to sit in.</li>
-	</ul>
-	Everyone else behind him does the same. What is the probability that the last person sits in his correct seat?
-	</p>
-	</statement>
-
-	<solution>
-	<p>
-	To get the idea, consider what happens with only 2 people, then only 3. Generalize. 
-	</p>
-	<p>
-	The answer is 1/2. To obtain this, you can define recursively the probability that the kth person sits in their own set as f(k).  Consider the first traveler's and your seats. Then you get the following cases:
-	<ul>
-		<li>P(first guy sits in his own seat and you sit in yours) = \frac{1}{k} \cdot 1</li>
-		<li>P(first guy sits in your seat and you do not sit in yours) = \frac{1}{k} \cdot 0</li>
-		<li>P(other k-2 travelers make their choices) = <m>(k-2) \frac{1}{k} f(k-1)</m></li>
-	</ul>
-	<me>f(k) = 1/k + 0 + (k-2)/k f(k-1)</me>
-	with f(2) = 1/2.
-	</p>
-	<p>
-	For example,
-	f(3) = 1/3 + f(2)/3 = 1/3 + 1/6 = 1/2.   
-	f(4) = 1/4 + 2/4 f(3) = 1/4 + 1/2 1/2 = 1/2.
-	f(5) = 1/5 + 3/5 1/2 = 1/2.
-	f(6) = 1/6 + 4/6 1/2 = 1/2. Etc.
-	</p>
-	</solution>	
-</exercise>
-
-<p>Bayes Theorem</p>
-
-
-<exercise><title>Insured vs Accident</title>
-	<statement>
-	<p>
-	Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
-
-	<table halign="left">
-      	<tabular halign="right">
-      
-<row><cell bottom="medium" right="medium">Age</cell><cell bottom="medium" right="medium">Proportion of Insured</cell><cell bottom="medium">Probability of Accident</cell></row>      
-<row><cell right="medium">16-20</cell><cell right="medium">0.05</cell><cell>0.08</cell></row>
-<row><cell right="medium">21-25</cell><cell right="medium">0.06</cell><cell>0.07</cell></row>
-<row><cell right="medium">26-55</cell><cell right="medium">0.49</cell><cell>0.02</cell></row>
-<row><cell right="medium">55-65</cell><cell right="medium">0.25</cell><cell>0.03</cell></row>
-<row><cell right="medium">over 65</cell><cell right="medium">0.15</cell><cell>0.04</cell></row>
-		</tabular>
-	</table>
-	
-	One of your family friends insured by this company has an accident. 
-	<ol>
-		<li>Determine the conditional probability that the driver was in the 16-20 age range.</li>
-		<li>Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.</li>
-		<li>Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.</li>
-	</ol>
-	</p>
-	</statement>
-</exercise>
-	
-<exercise><title>Spinal bifida odds</title>
-	<statement>
-	<p>
-	Congratulations...your family is having a baby! As part of the prenatal care, some testing is part of the normal procedure including one for spinal bifida (which is a condition in which part of the spinal cord may be exposed.) Indeed, measurement of maternal serum AFP values is a standard tool used in obstetrical care to identify pregnancies that may have an increased risk for this disorder. You want to make plans for the new child's care and want to know how serious to take the test results. However, some times the test indicates that the child has the disorder when in actuality it does not (a false positive) and likewise may indicate that the child does not have the disorder when in fact it does (a false negative.) 
-	</p>
-	<p>The combined accuracy rate for the screen to detect the chromosomal abnormalities mentioned above is approximately 85% with a false positive rate of 5%. This means that (from <url href="http://americanpregnancy.org/prenatal-testing/first-trimester-screen/">americanpregnancy.org</url>)
-	<ul>
-		<li>Approximately 85 out of every 100 babies affected by the abnormalities addressed by the screen will be identified. (Positive Positive)</li>
-		<li>Approximately 5% of all normal pregnancies will receive a positive result or an abnormal level. (False Positive)</li>
-	</ul>
-	<ol>
-		<li>Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.</li>
-		<li>Given that your test came back negative, determine the likelihood that the child will not have spina bifida</li>
-		<li>Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.</li>
-	</ol>
-	</p>
-	</statement>
-</exercise>
-	
-<p>Independence</p>
-
-
+<subsection><title>Exercises - Independence</title>
 <exercise><title>Basic Independence Calculations</title>
 	<statement>
 	<p>
@@ -1125,10 +1250,11 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 	</p>
 	</solution>
 </exercise>
+</subsection>
 
-	
+
+
+		
 </section>
-
-
 
 </chapter>

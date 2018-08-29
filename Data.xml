@@ -121,11 +121,9 @@ The following categorizes several statistical measures which will be developed i
 </definition>
 	
 <example><title>Age of Presidents - order statistics</title>
-	<statement>
 	<p>
-	For example, the age at inauguration for presidents from 1981-2016 gives the data <m>x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47</m> (Reagan, Bush, Clinton, Bush, Obama). For this data, the order statistics are denoted <m>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69</m>.
+	The age at inauguration for presidents from 1981-2016 gives the data <m>x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47</m> (Reagan, Bush, Clinton, Bush, Obama). For this data, the order statistics are denoted <m>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69</m>.
 	</p>
-	</statement>
 </example>
 	
 	<p>
@@ -146,8 +144,12 @@ The following categorizes several statistical measures which will be developed i
 	</statement>
 </example>
 
-	<p>
-	Below, you will see how to determine a value which separates the ordered data into two groups with a desired percentage on each side. Note that many utilize approximate methods for computing "percentiles" including many graphing and scientific calculators. The definition below provides for a unique measure for each unique value of p.
+<p>
+A value that separates ordered data into two groups with a desired percentage on each side is called a percentile. There are multiple ways that have been created that achieve this goal. In this text we present two and will consistently use the first one presented below.
+</p>
+<p>
+The definition presented below provides for a unique measure for each unique value of p that corresponds to the PERCENTILE.EXC macro in Excel.  This version starts by computing <m>(n+1)p</m> where 
+<m>0 &lt; p &lt; 1</m> and using this to linearly interpolate between two adjacent entries in the sorted list.  Another option that corresponds to PERCENTILE.INC (and PERCENTILE) in Excel is to start with <m>(n-1)p+1</m> for determining how to pick the two adjacent entries and then proceeding with linear interpolation. Again, the definition below utilizes the first approach.
 	</p>
 	
 <definition><title>Percentiles</title>
@@ -166,6 +168,40 @@ The following categorizes several statistical measures which will be developed i
 </definition> 
 	
 <p>The formula for percentiles determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be averages of equal numbers and will then be the common value.</p>
+
+<p>Some special percentiles are provided special names...
+</p>
+
+<definition><title>Quartiles</title> 
+	<statement>
+	<p>Given a sorted data set, the first, second, and third quartiles are the values of 
+	<m>Q_1 = P^{0.25}, Q_2 = P^{0.5}</m> and <m>Q_3 = P^{0.75}</m>.
+	</p>
+	</statement>
+</definition>
+
+<p>
+It should be noted that many graphing calculators often compute quartiles using a straight average of two adjacent entries rather than by using the formula above. This causes some difficulty and especially so when n mod 4 = 2. 
+</p>
+
+<example><title><m>Q_1</m> and <m>Q_3</m> when n mode 4 = 2</title>
+<p>
+Suppose n = 22 = 5(4) + 2. Computing the first quartile as defined above gives (n+1)p = 23(0.25) = 5.75 = 5 + 0.75 = m + r.  Therefore,
+<me>Q_1 = 0.25 \times y_5 + 0.75 \times y_6</me>
+which is a value closer to <m>y_6</m>.  Many graphing calculators however quickly approximate this with
+<me>0.5 \times y_5 + 0.5 \times y_6</me>
+so you should be aware of this possible difference.  You should also notice that in this case p = 0.25 but r = 0.75 so these values are not required to be the same. 
+</p>
+</example>
+
+<definition><title>Deciles:</title>
+	<statement>
+	<p>Given a sorted data set, the first, second, ..., ninth deciles are the value of 
+	<m>D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}</m>
+	</p>
+	</statement>
+</definition>
+
 	
 <example><title>Small Example - Quartiles</title>
 	<statement>
@@ -197,24 +233,6 @@ Consider the following data set: {2,5,8,10}. The 50th percentile should be a num
 	</statement>
 </example>
 
-	<p>Some special percentiles are provided special names...
-	</p>
-
-<definition><title>Quartiles</title> 
-	<statement>
-	<p>Given a sorted data set, the first, second, and third quartiles are the values of 
-	<m>Q_1 = P^{0.25}, Q_2 = P^{0.5}</m> and <m>Q_3 = P^{0.75}</m>.
-	</p>
-	</statement>
-</definition>
-
-<definition><title>Deciles:</title>
-	<statement>
-	<p>Given a sorted data set, the first, second, ..., ninth deciles are the value of 
-	<m>D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}</m>
-	</p>
-	</statement>
-</definition>
 	
 	<p>
 	For your data set {2,5,8,10}, 
@@ -231,6 +249,22 @@ Consider the following data set: {2,5,8,10}. The 50th percentile should be a num
 	</p>
 	</statement>
 </definition>
+
+<p>
+You can compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org.  To make this work, you will need to pick "R" from the dropdown list before clicking on compute. You can also make the obvious changes in the data list if you want to use this to compute values for a different collection of numbers.
+</p>
+
+<sage language = 'r'>
+<input>
+data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
+paste("Quartiles:")
+quantile(data)
+paste("Specific Percentiles:")
+quantile(data, c(.32, .57, .98))   # find the 32nd, 57th and 98th percentiles
+paste("Box and Whisker Diagram:")
+boxplot(data, horizontal=TRUE) 
+</input>
+</sage>
 	
 <example><title>Small example - 5 number summary</title>
 	<statement>
@@ -304,6 +338,18 @@ if n is even.
 Mean utilizes all of the data values so each term is important. Utilizes them all even if some of the data values might suffer from collection errors.  Median ignores outliers (which might be a result of collection errors) but does not account for the relative differences between terms. Midrange is very easy to compute but ignores the relative differences for all terms but the two extremes.
 </p>
 
+<p>
+You can compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org.  To make this work, you will need to pick "R" from the dropdown list before clicking on compute. You can also make the obvious changes in the data list if you want to use this to compute values for a different collection of numbers.
+</p>
+<sage language = 'r'>
+<input>
+data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
+paste("Mean = ", mean(data))
+paste("Median =", median(data))
+</input>
+</sage>
+
+
 <example><title>Numerical Example of these Quantitative Measures</title>
 <p>The US Census Bureau reported the following state populations (in millions) for 2013:
 <url href="Data/USA_States_Populations_2014.xlsx">Spreadsheet</url>
@@ -369,7 +415,9 @@ Mean utilizes all of the data values so each term is important. Utilizes them al
       </table>
 
 Determine the minimum, maximim, midrange, and mean for this data.
-	<solution>
+</p>
+
+<solution>
 		<p>Notice that these are already in order so you can presume 
 		<m>y_1 = 0.6</m> million is the minimum and <m>y_{50} = 38.3</m> 
 		million is the maximum. Therefore, the midrange is given by
@@ -380,11 +428,9 @@ Determine the minimum, maximim, midrange, and mean for this data.
 		million residents. 
 		</p>
 		<p>
-		Since the number of states is odd, the median is found by looking at the 26th order statistics. In this case, that is the 4.6 million residents of Louisiana.
+		Since the number of states is odd, the median is found by looking at the 26th order statistics. In this case, that is the 4.4 million residents of Kentucky, i.e. <m>y_{26} = 4.4</m>.
 		</p>
-	</solution>
-
-</p>
+</solution>
 </example>
 
 </section>
@@ -435,8 +481,8 @@ which will always be non-negative but can be easily expanded using algebra. Sinc
 Using the average squared deviation from the mean, differences have been squared. Thus all values added are non-negative but very small ones have been made even smaller and larger ones have possibly been made much larger. To undo this scaling issue, one must take a square root to get things back into the right ball park. 
 </p>
 
-<p>The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>s^2</m>. Therefore
-	<me>s^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
+<p>The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>\sigma^2</m>. Therefore
+	<me>\sigma^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
 </p>
 <p>The standard deviation is the square root of the variance. If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by <m>\sigma</m>. Therefore
 <me> \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.</me>
@@ -467,15 +513,36 @@ and the sample standard deviation similarly as the square root of the sample var
 </md>
 </statement>
 <proof>
-TBA
+<p>
+	<md>
+	  <mrow>\sigma^2 &amp; = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}</mrow>
+	  <mrow> &amp; = \frac{\sum_{k=1}^n ( x_k^2 - 2x_k \mu + \mu^2 )}{n}</mrow>
+	  <mrow> &amp; = \frac{\sum_{k=1}^n x_k^2 - 2\mu \sum_{k=1}^n x_k  + n \mu^2 )}{n}</mrow>
+	  <mrow> &amp; = \left ( \frac{\sum_{k=1}^n x_k^2 }{n} \right ) - \mu^2</mrow>
+	</md>
+The second part is proved similarly.	
+</p>
 </proof>
 </theorem>
 
+<p>
+You can compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org.  To make this work, you will need to pick "R" from the dropdown list before clicking on compute. You can also make the obvious changes in the data list if you want to use this to compute values for a different collection of numbers.
+</p>
+<sage language = 'r'>
+<input>
+data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
+paste("Variance = ", var(data))
+paste("Standard Dev = ", sd(data))
+paste("Inter Quantile Range =",IQR(data))
+paste("Box and Whisker Diagram:")
+boxplot(data, horizontal=TRUE) 
+</input>
+</sage>
 
-<p>The Population of the individual USA states according to the 2013 Census 
-Consider the data set {}</p>
 
-<exercise><title>Numerical Example of these Quantitative Measures</title>
+<p>Once again, the Population of the individual USA states according to the 2013 Census is considered below. This data set will be used for several examples so it might be a good idea to pay attention to it now!</p>
+
+<exercise><title>USA State Population Measures of Variation</title>
 <p>The US Census Bureau reported the following state populations (in millions) for 2013:</p>
 <p>
 <table halign="left">
@@ -539,7 +606,9 @@ Consider the data set {}</p>
 </p>
 <p>
 Determine the range, quartiles, and variance for this sample data.
-	<solution> 
+</p>
+
+<solution> 
 	<p>Again, you should note that these are already in order so the range is quickly found to be 
 	<me>y_n - y_1 = 38.3 - 0.6 = 37.7</me> 
 	million residents.
@@ -573,9 +642,20 @@ Determine the range, quartiles, and variance for this sample data.
 	and a sample standard deviation of
 	<me>s \approx \sqrt{49.48} \approx 7.03</me> million residents.
 	</p>
-	</solution>
-</p>
+</solution>
 </exercise>
+
+<sage language = 'r'>
+<input>
+data &lt;- c (0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,1.4,1.6,1.9,1.9,2.1,2.8,2.9,2.9,3,3,3.1,3.6,3.9,3.9,4.4,4.6,4.8,4.8,5.3,5.4,5.7,5.9,6,6.5,6.6,6.6,6.7,7,8.3,8.9,9.8,9.9,10,11.6,12.8,12.9,19.6,19.7,26.4,38.3)
+paste("Variance = ", var(data))
+paste("Standard Dev = ", sd(data))
+paste("Inter Quantile Range =",IQR(data))
+paste("Box and Whisker Diagram:")
+boxplot(data, horizontal=TRUE)
+
+</input>
+</sage>
 
 </section>
 
@@ -626,13 +706,15 @@ Consider the following data set
 5}</p>
 <p>
 Create a frequency distribution and determine the sample mean and variance.
-	<solution>
+</p>
+
+<solution>
 	<p>
 	Collecting this data into a frequency distribution gives
 	<table halign="left">
 		  <tabular halign="right">
 	  
-			<row><cell bottom="medium">x</cell><cell bottom="medium">frequency</cell></row>      
+			<row><cell bottom="medium">x_k</cell><cell bottom="medium">f_k</cell></row>      
 			<row><cell>1</cell><cell>5</cell></row>
 			<row><cell>2</cell><cell>7</cell></row>
 			<row><cell>3</cell><cell>4</cell></row>
@@ -642,7 +724,8 @@ Create a frequency distribution and determine the sample mean and variance.
 	</table>
 	Therefore, 
 		<me>
-		\overline{x} = \frac{1 \times 5 + 2 \times 7 + 3 \times 4 + 4 \times 3 + 5 \times 6}{5+7+4+3+6} = \frac{5 + 14 + 12 + 12 + 30}{25} = \frac{43}{25}
+		\overline{x} = \frac{1 \times 5 + 2 \times 7 + 3 \times 4 + 4 \times 3 + 5 \times 6}{5+7+4+3+6} \\
+		= \frac{5 + 14 + 12 + 12 + 30}{25} = \frac{43}{25}
 		</me>
 	and 
 		<md>
@@ -653,8 +736,7 @@ Create a frequency distribution and determine the sample mean and variance.
 		</md>
 	and so <m>s^2 = \frac{25}{24} \frac{4826}{625} \approx 8.043</m>. 
 	</p>
-	</solution>
-</p>
+</solution>
 </exercise>
 
 </section>
@@ -734,14 +816,15 @@ and then divide by the fourth power of the standard deviation.  Note again that 
 <p>
 Also, probability mass functions for discrete variables can be graphed as a set of points but sometimes these points do not convey size very well. A visual representation of these functions needs to be addressed.
 </p>
-	<subsection><title>Histograms</title>
+
+<subsection><title>Histograms</title>
 		<p>Frequency Histograms - height matters</p>
 		<p>Consider the data set given by
 		
 <table halign="left">
       <tabular halign="right">
       
-<row><cell bottom="medium">k</cell><cell bottom="medium"><m>x_k</m></cell></row>      
+<row><cell bottom="medium">x_k</cell><cell bottom="medium"><m>f_k</m></cell></row>      
 <row><cell>1</cell><cell>8</cell></row>		
 <row><cell>2</cell><cell>12</cell></row>		
 <row><cell>3</cell><cell>6</cell></row>		
@@ -842,16 +925,27 @@ def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated b
     histogram( freq, range=[m-1/2,M+1/2], cumulative = "true", bins = bn, align="mid", linewidth=2, edgecolor="blue", color="yellow").show(ymax=top)
 </input>
 </sage>		
-		</p>
-		<p>Stem-and-Leaf Plot - Histogram with data. Using the state population data above, consider organizing the data but using a "two-pass sort" where you first roughly break data up into groups based upon ranges which relate to their first digit(s). In this case, let's break up into groups according to populations corresponding to 0-4 million, 5-9 million, 10-14 million, 15-19, million, 20-24 million, 25-29 million, 30-35 million, and 35-39 million. We can represent these classes by using the stems 0L, 0H, 1L, 1H, 2L, 2H, 3L, and 3H where the L and H represent the one's digits L in {0, 1, 2, 3, 4} and H in {5, 6, 7, 8, 9}.  Once we group the data into these smaller groups then we can write the remaining portion of the number horizontally as leaves (in this case with one decimal place for all values.) This gives a step-and-leaf plot. If we additionally sort the data in the leaves then this gives you an ordered stem-and-leaf plot. For the state population data, the ordered stem-and-leaf plot is given by
+</p>
+</subsection>
+
+<subsection><title>Stem-and-Leaf Plot</title>
+
+<p> - Histogram with data. Using the state population data above, consider organizing the data but using a "two-pass sort" where you first roughly break data up into groups based upon ranges which relate to their first digit(s). In this case, let's break up into groups according to populations corresponding to 0-4 million, 5-9 million, 10-14 million, 15-19, million, 20-24 million, 25-29 million, 30-35 million, and 35-39 million. We can represent these classes by using the stems 0L, 0H, 1L, 1H, 2L, 2H, 3L, and 3H where the L and H represent the one's digits L in {0, 1, 2, 3, 4} and H in {5, 6, 7, 8, 9}.  Once we group the data into these smaller groups then we can write the remaining portion of the number horizontally as leaves (in this case with one decimal place for all values.) This gives a step-and-leaf plot. If we additionally sort the data in the leaves then this gives you an ordered stem-and-leaf plot. For the state population data, the ordered stem-and-leaf plot is given by
 		
 	
 <image source="images/stemandleaf.png" />
 
 Notice how it is easy to now see that most state populations are relatively small and that there are relatively few states with larger population. Also, notice that you can use this plot to relatively easily identify minimum, maximum, and other order statistics.		
-		
-		</p>
-		<p>Box and Whisker Diagram - visual order statistics. This graphical display identifies the "5-number-summary" associated with the minimum, quartiles, and the maximum. That is, <m>y_1, Q_1, Q_2, Q_3, y_n</m>.  These values separate the data roughly into quarters. To distinguish these quarters connect <m>y_1</m> and <m>Q_1</m> with a straight line (a whisker) and do the same with <m>Q_3</m> and <m>y_n</m>. Use a box to connect <m>Q_1</m> with <m>Q_2</m> and the same to connect <m>Q_2</m> with <m>Q_3</m>. Then the boxed areas also identify the IQR.    
+</p>
+</subsection>
+
+<subsection><title>Box and Whisker Diagram (Box Plot)</title>
+
+<p>This graphical display identifies the "5-number-summary" associated with the minimum, quartiles, and the maximum. That is, <m>y_1, Q_1, Q_2, Q_3, y_n</m>.  These values separate the data roughly into quarters. To distinguish these quarters connect <m>y_1</m> and <m>Q_1</m> with a straight line (a whisker) and do the same with <m>Q_3</m> and <m>y_n</m>. Use a box to connect <m>Q_1</m> with <m>Q_2</m> and the same to connect <m>Q_2</m> with <m>Q_3</m>. Then the boxed areas also identify the IQR.  
+</p>
+<p>
+Earlier, we presented a box-and-whisker diagram (or box plot) using R. Below, one can produce something similar using Sage. Notice the different way that it is presented but the ideas are the same.
+</p>		  
 <sage>
 <input>
 from pylab import boxplot,savefig,close
@@ -862,9 +956,9 @@ def _(data = input_box([1,2,3,4,6,7,8,9,11,15,21],label="Enter Your Data:")):
     close()
 </input>
 </sage>
-		</p>
+
 		
-	</subsection>
+</subsection>
 </section>
 
 
@@ -872,7 +966,7 @@ def _(data = input_box([1,2,3,4,6,7,8,9,11,15,21],label="Enter Your Data:")):
 
 <section><title>Exercises</title>
 
-<p>Complete the online homework "Computational Measures".</p>
+<p>Complete the online WebWorK homework set "Computational Measures".</p>
 
 <exercise>
 	<statement>

@@ -98,6 +98,37 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		</proof>
 	</theorem>
 
+<exercise>
+		<introduction>
+		<p>
+		Let's apply the Multiplication Principle.
+		</p>
+		</introduction>
+		<webwork source="Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		So, these are simple calculations.
+		</p>
+		</conclusion>
+</exercise>
+
+<exercise>
+		<introduction>
+		<p>
+		Let's apply the Multiplication Principle.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		So, these are simple calculations.
+		</p>
+		</conclusion>
+</exercise>
+
+
 	<definition>
 	<title>Factorial</title>
 		<statement>
@@ -150,7 +181,7 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		characters are distinct. Since we have 9 characters provided, the we can
 		consider each character as an event with the first event as a choice
 		from the 9, the second event as a choice from the remaining 8, etc. This
-		gives <m>9 \times 8 \ times ... \times 1 = 362880</m> possible 
+		gives <m>9 \times 8 \times ... \times 1 = 362880</m> possible 
 		passphrases.
 		</p>
 		<p>Assuming that some of the characters could be used more than once, 
@@ -213,7 +244,8 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			<p> 
 			The number of ways to arrange r items from a set of n distinct items 
 			is 
-			<me> P_r^n = \frac{n!}{(n-r)!} </me>
+			<me> _nP_r = \frac{n!}{(n-r)!} </me>
+			This is sometimes denoted also as P(n,r) or <m>P_r^n</m>.
 			</p>
 		</statement>
 		<proof>
@@ -222,7 +254,7 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			n choices for the first selection, n-1 choices for the second
 			selection, and with n-r+1 choices for the rth selection. This gives
 			<md>
-				<mrow>P_r^n &amp; = n(n-1) ... (n-r+1)</mrow>
+				<mrow>_nP_r &amp; = n(n-1) ... (n-r+1)</mrow>
 				<mrow>&amp; = n(n-1) ... (n-r+1)\frac{(n-r)!}{(n-r)!}</mrow>
 				<mrow>&amp; = \frac{n(n-1) ... (n-r+1)(n-r)!}{(n-r)!}</mrow>
 				<mrow>&amp; = \frac{n!}{(n-r)!}</mrow>
@@ -231,7 +263,20 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		</proof>
 	</theorem>
 	
-	
+<exercise>
+		<introduction>
+		<p>
+		Let's apply the the Permutation formula.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		So, these are simple calculations.
+		</p>
+		</conclusion>
+</exercise>	
 	
 	<theorem>
 	<title>Permutations of a subset with replacement</title>
@@ -252,9 +297,25 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 	<title>Permutations when not all items are distinguishable (Multinomial Coefficients)</title>
 	<statement>
 If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ... , <m>n_s</m> in the last, the number of ways to pick all is
-		<me>\frac{n!}{n_1! \cdot n_2! ... n_2!}</me>	
+		<me>\frac{n!}{n_1! \cdot n_2! ... n_s!}</me>	
 	</statement>
 	</theorem>
+	
+<exercise>
+		<introduction>
+		<p>
+		Let's apply the this new Permutation formula.
+		</p>
+		</introduction>
+		<webwork source="Library/NAU/setCounting/RepeatedCombination1.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		Another one bites the dust.
+		</p>
+		</conclusion>
+</exercise>	
+	
 	
 </section>
 
@@ -263,14 +324,65 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 <section>
 <title>Combinations</title>
 <p>When counting various outcomes sometimes the order of things does not matter.
-In this case we count each different set of outcomes a combination. </p>
+If so, each unique unordered outcome is called a combination. </p>
+<p>
+For example, consider the permutations when you select three letters from {A, B, C, D}.
+<ol>
+<li>
+<ul>
+<li>A,B,C</li>
+<li>A,C,B</li>
+<li>B,A,C</li>
+<li>B,C,A</li>
+<li>C,A,B</li>
+<li>C,B,A</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>A,B,D</li>
+<li>A,D,B</li>
+<li>B,A,D</li>
+<li>B,D,A</li>
+<li>D,A,B</li>
+<li>D,B,A</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>A,C,D</li>
+<li>A,D,C</li>
+<li>C,A,D</li>
+<li>C,D,A</li>
+<li>D,A,C</li>
+<li>D,C,A</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>B,C,D</li>
+<li>B,D,C</li>
+<li>C,B,D</li>
+<li>C,D,B</li>
+<li>D,B,C</li>
+<li>D,C,B</li>
+</ul>
+</li>
+</ol>
+
+Notice how these 24 permutations fall into only four distinct categories if the order does not matter. Therefore, from a group of size four you can pick an unordered subset of size three in only 4 ways rather than the original 24.
+</p>
+<p>
+In general, it would be nice to have a direct formula to determine the number of such combinations without having to explicitly list them all out.
+</p>
 	<theorem>
 	<title>Combinations of a subset without replacement</title>
 		<statement>
 			<p>
 			The number of ways to arrange r items from a set of n distinct items 
 			is 
-			<me> C_r^n = \frac{n!}{r!(n-r)!} </me>
+			<me> _nC_r = \frac{n!}{r!(n-r)!} </me>
+			This is sometimes denoted C(n,r) or <m>C_r^n</m> or <m>{n \choose r}</m>.
 			</p>
 		</statement>
 		<proof>
@@ -280,7 +392,7 @@ In this case we count each different set of outcomes a combination. </p>
 			the number of ways to order that subset. Using our notation and the
 			multiplication principle,
 			<md>
-				<mrow>P_r^n = C_r^n \cdot r!</mrow>
+				<mrow>_nP_r =  _nC_r \cdot r!</mrow>
 			</md>
 			Solving give the result.
 			</p>
@@ -294,16 +406,46 @@ In this case we count each different set of outcomes a combination. </p>
 			<p>
 			The number of ways to arrange r items from a set of n distinct items 
 			is 
-			<me> C_r^{n+r-1} = \frac{(r+n-1)!}{r!(n-1)!} </me>
+			<me> _{n+r-1}C_r = {{n+r-1} \choose r} = \frac{(r+n-1)!}{r!(n-1)!} </me>
 			</p>
 		</statement>
 		<proof>
 			<p>
 			Label each item in your group in some defined order. Since order doesn't matter, as you repeatedly sample r times with replacement you can always write down your outcomes sorted from low to high placement. Finally, separate like values by some symbol, say "|", and consider each of the n distinct objects as indistinct *'s. There will be n-1 of these separators since there will be n to choose from. For example, if choosing r=6 times from the set {a, b, c, d}, then the outcome b, b, a, d, a, b could be collected as a, a, b, b, b, d and written in our code as **|***||* .  Notice that shuffling around the identical *'s would not change the code (and similarly for the identical |'s) but swapping a * with a | would be a different outcome. Therefore, we can consider this to be a multinomial coefficient and the number of ways to rearrange this code is
-			<me>\frac{(r + n-1)}{r!(n-1)!}.</me>
+			<me>\frac{(r + n-1)!}{r!(n-1)!}.</me>
 			</p>
 		</proof>
 	</theorem>
+
+<exercise>
+		<introduction>
+		<p>
+		Let's apply the this new Permutation forumula.
+		</p>
+		</introduction>
+		<webwork source="Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		Another one bites the dust.
+		</p>
+		</conclusion>
+</exercise>	
+
+<exercise>
+		<introduction>
+		<p>
+		Let's apply the this new Permutation forumula.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setAlgebra38Counting/sw10_2_60.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		You can see that using the formulas can be easy and also can be part of a bigger problem pasted together using the multiplication principle.
+		</p>
+		</conclusion>
+</exercise>	
 
 
 	<example><title>Ipad Security</title>
@@ -319,8 +461,8 @@ In this case we count each different set of outcomes a combination. </p>
 		<p>
 		Note that if you were allowed to reuse the digits then the number of possible outcomes would be
 		<md>
-			<mrow>\frac{13!}{3!10!} &amp; = \frac{13 \times 12 \times 11}{3 \times 2 \times 1} </mrow>
-			<mrow> &amp; = 286</mrow>
+			<mrow>\frac{13!}{4!9!} &amp; = \frac{13 \times 12 \times 11 \times 10}{4 \times 3 \times 2 \times 1} </mrow>
+			<mrow> &amp; = 715</mrow>
 		</md>
 		which once again is more since numbers are allowed to repeat.
 		</p>
@@ -332,7 +474,7 @@ In this case we count each different set of outcomes a combination. </p>
 	<title>Binomial Coefficients</title>
 		<statement>
 		<p>
-		The value <m>C_r^n</m> is known as the binomial coefficient. It is
+		The value <m>_nC_r</m> is known as the binomial coefficient. It is
 		denoted by <m>{n \choose r}</m> and is read "n choose k".
 		</p>
 		</statement>
@@ -340,6 +482,20 @@ In this case we count each different set of outcomes a combination. </p>
 	
 	
 	<p>Binomial coefficients have a number of interesting properties.  Many of these are very useful as well in probability calculations.  Several of these properties are collected below. In particular, these relationships verify that the binomial coefficients are the values found in Pascal's Triangle.</p>
+
+<sage>
+<title>Binomial Coefficients give Pascal's Triangle</title>
+<input>
+@interact
+def _(n = slider(1,30,1,5)):
+    for row in range(n+1):
+        binoms = sorted(binomial_coefficients(row).items())
+        given_n = []
+        for k in range(row+1):
+            given_n.append(binoms[k][1])
+        pretty_print(html('<center>%s</center>'%given_n))
+</input>
+</sage>
 
 	<theorem><title> Binomial Coefficient Formulas</title>
 	<statement><p> For <m> n \in \mathbb{N}</m>,
@@ -356,11 +512,11 @@ In this case we count each different set of outcomes a combination. </p>
 	<proof>
 	<p>
 	<ol>
-		<li><m>\binom{n}{0} = \frac{n}{0!(n-0)!} = 1</m></li>
-		<li><m>\binom{n}{n} = \frac{n}{n!(n-n)!} = 1</m></li>
-		<li><m>\binom{n}{1} = \frac{n}{1!(n-1)!} = n</m></li>
-		<li><m>\binom{n}{n-1} = \frac{n}{(n-1)!(n-(n-1))!} = n</m></li>
-		<li><m>\binom{n}{r} = \frac{n}{r!(n-r)!} = \frac{n!}{(n-r)!(n-(n-r))!} = \binom{n}{n-r}</m></li>
+		<li><m>\binom{n}{0} = \frac{n!}{0!(n-0)!} = 1</m></li>
+		<li><m>\binom{n}{n} = \frac{n!}{n!(n-n)!} = 1</m></li>
+		<li><m>\binom{n}{1} = \frac{n!}{1!(n-1)!} = n</m></li>
+		<li><m>\binom{n}{n-1} = \frac{n!}{(n-1)!(n-(n-1))!} = n</m></li>
+		<li><m>\binom{n}{r} = \frac{n!}{r!(n-r)!} = \frac{n!}{(n-r)!(n-(n-r))!} = \binom{n}{n-r}</m></li>
 		<li>
 		<md>
 			<mrow>\binom{n}{r} + \binom{n}{r+1} &amp; = \frac{n!}{r!(n-r)!} + \frac{n!}{(r+1)!(n-(r+1))!}</mrow>
@@ -374,6 +530,56 @@ In this case we count each different set of outcomes a combination. </p>
 	</p>
 	</proof>
 	</theorem>
+	
+<p>Play with the following several times to investigate what you might expect to get when you repeatedly receive a "hand" of 5 standard playing cards. Compare this experiment to the numbers you find in the homework exercise that follows in the exercise below.
+</p>
+
+<sage>
+<input>
+var('A C D H J K Q S') 
+
+suits = [S, D, C, H] 
+values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A] 
+
+full_deck = [(value, suit) for suit in suits for value in values]
+@interact
+def _(num_hands=slider[50..5000]):                  # Set up the number of hands to create
+    hands= []                    # Start with a blank list. 
+    for i in range(num_hands):   # This loops the following operation num_hands times. 
+        deck = copy(full_deck)   # start over
+        shuffle(deck)
+        hands.append([deck.pop() for card in range(5)])
+    freq_values = []
+    one_pair = 0
+    two_pair = 0
+    three_kind = 0
+    four_kind = 0
+    full_house = 0
+    for i in range(num_hands):
+        hand = hands[i]
+        hand_values = [hand[k][0] for k in range(5)]
+        freq_values = [hand_values.count(value) for value in set(values)]
+        freq_values.sort(reverse=True)
+        if freq_values[0]==4:
+            four_kind=four_kind+1
+        if freq_values[0]==3:
+            if freq_values[1]==2:
+                full_house=full_house+1
+            if freq_values[1]==1:
+                three_kind=three_kind+1
+        if freq_values[0]==2:
+            if freq_values[1]==2:
+                two_pair=two_pair+1
+            if freq_values[1]==1:
+                one_pair=one_pair+1
+    print "       One Pair frequency = ",one_pair," with relative frequency ",one_pair/num_hands
+    print "       Two Pair frequency = ",two_pair," with relative frequency ",two_pair/num_hands
+    print "Three of a Kind frequency = ",three_kind," with relative frequency ",three_kind/num_hands
+    print " Four of a Kind frequency = ",four_kind," with relative frequency ",four_kind/num_hands
+    print "     Full House frequency = ",full_house," with relative frequency ",full_house/num_hands
+</input>
+</sage>
+
 
 </section>
 

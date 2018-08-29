@@ -5,9 +5,9 @@
 
     <xi:include href="./bookinfo.xml" /> 
     
-	<book xml:id="Intro_Probability_And_Statistics">
-    	<title>Introduction to Mathematical Probability and Statistics</title>
-    	<subtitle>A Calculus-based Approach</subtitle>
+	<book xml:id="Essentials_Probability_And_Statistics">
+    	<title>Essentials of Mathematical Probability and Statistics</title>
+    	<subtitle>A First Course For the Mathematically Inclined</subtitle>
   	
 	  	<xi:include href="./frontmatter.xml" /> 
 
@@ -23,6 +23,7 @@
 
   		<xi:include href="./Normal.xml" /> 
   		<xi:include href="./Intervals.xml" /> 
+  		<xi:include href="./HypothesisTesting.xml" /> 
 
   		<xi:include href="./PowerSeriesReview.xml" /> 
 

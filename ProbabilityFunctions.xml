@@ -86,18 +86,25 @@
 		</statement>
 	</definition>
 	
-	<subsection><title>HOMEWORK</title>
+	<subsection><title>Exercises - Random Variables</title>
+	<exercise><title>Flipping Fixed Number of Coins</title>
 	<p>
-	A. You flip three coins and measure the number of heads obtained. Determine the space R for the corresponding random variable X. From the eight possible outcomes, determine all outcomes corresponding to X=2. Identify the random variable as discrete or continuous.
+	You flip three coins and measure the number of heads obtained. Determine the space R for the corresponding random variable X. From the eight possible outcomes, determine all outcomes corresponding to X=2. Identify the random variable as discrete or continuous.
 	</p>
+	</exercise>
 	
+	<exercise><title>Flipping Coins till success</title>
 	<p>
-	B. You flip one coin repeatedly until you get a second head. Determine the space R for the corresponding random variable X. From the possibilities, determine all outcomes corresponding to X=4. Identify the random variable as discrete or continuous.
+	You flip one coin repeatedly until you get a second head. Determine the space R for the corresponding random variable X. From the possibilities, determine all outcomes corresponding to X=4. Identify the random variable as discrete or continuous.
 	</p>
+	</exercise>
 	
+	<exercise><title>Time between Accidents</title>
 	<p>
-	C. Now you want to measure the time between accidents at a particular intersection in town. Determine the space R for the corresponding random variable X. Describe all outcomes corresponding to <m>X \lt 1</m>. Be purposeful in the problem to describe the units you are using to measure time. Identify the random variable as discrete or continuous.
+	Now you want to measure the time between accidents at a particular intersection in town. Determine the space R for the corresponding random variable X. Describe all outcomes corresponding to <m>X \lt 1</m>. Be purposeful in the problem to describe the units you are using to measure time. Identify the random variable as discrete or continuous.
 	</p>
+	</exercise>
+	
 	</subsection>
 
 </section>
@@ -105,6 +112,8 @@
 
 <section><title>Probability Functions</title>
 	<p>In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.</p>
+	<p>For example, consider a random variable which assigns a 1 when you roll a 1 on a six-sided die and 0 otherwise. Presuming each side is equally likely, 
+	</p>
 
 	<definition><title>Probability "Mass" Function</title>
 		<statement>Given a discrete random variable X on a space R, a probability mass function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
@@ -259,8 +268,8 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 		<statement><m>F(x)=0, \forall x \lt \inf(R)</m></statement>
 		<proof>
 		<p>
-		Let a = inf(R). Then, for 
-		<me>x \lt a, F(x) = P(X \le x) \le P(X \lt a) = 0</me> 
+		Let a = inf(R). Then, for <m>x \lt a,</m>
+		<me>F(x) = P(X \le x) \le P(X \lt a) = 0</me> 
 		since none of the x-values in this range are in R.
 		</p>
 		</proof>
@@ -271,7 +280,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 		<proof>
 		<p>
 		Let b = sup(R). Then, for 
-		<me>x \ge b, F(x) = P(X \le x)  = P(X \le b) + P( b \lt X le x) = P(X le b) = 1</me> 
+		<me>x \ge b, F(x) = P(X \le x)  = P(X \le b) + P( b \lt X \le x) = P(X \le b) = 1</me> 
 		since all of the x-values in this range are in R and therefore will either sum over or integrate over all of R.
 		</p>
 		
@@ -355,13 +364,20 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	</proof>
 	</theorem>
 	
-	<subsection><title>HOMEWORK</title>
+	<subsection><title>Exercises - Probability Functions</title>
+	
+	<exercise><title>Flipping A Fixed Number of Coins</title>
 	<p>
-	A.  Consider the random variable from the previous section where you flip three coins and measure the number of heads obtained. Determine f(0), f(1), f(2), and f(3) and the corresponding distribution function F(x). These can be expressed in a table format. Generalize your answer to the case when you flip a n coins where n is a fixed natural number.
+	Consider the random variable from the previous section where you flip three coins and measure the number of heads obtained. Determine f(0), f(1), f(2), and f(3) and the corresponding distribution function F(x). These can be expressed in a table format. Generalize your answer to the case when you flip a n coins where n is a fixed natural number.
 	</p>
+	</exercise>
+	
+	<exercise><title>Later</title>
 	<p>
 	B.  
 	</p>
+	</exercise>
+	
 	</subsection>
 		
 </section> 
