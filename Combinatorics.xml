@@ -237,6 +237,12 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			</p>
 		</proof>
 	</theorem>
+
+<p>
+One can interpret successive ordered selections as branching through a "tree" structure.  Indeed, starting with the set {A,B,C} one may pick any of the three but then a subsequent selection only has two possibilities for the next selection and so forth.
+</p>
+<image source="images/PermutationSmall.png" />
+
 	
 	<example><title>Arrangements</title>
 	<p>
