@@ -3,8 +3,7 @@
 
 <mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
 
-    <xi:include href="./bookinfo.xml" /> 
-    
+    <xi:include href="./bookinfo.xml" />   
 	<book xml:id="Essentials_Probability_And_Statistics">
     	<title>Essentials of Mathematical Probability and Statistics</title>
     	<subtitle>A First Course For the Mathematically Inclined</subtitle>

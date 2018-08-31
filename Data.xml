@@ -525,6 +525,29 @@ The second part is proved similarly.
 </proof>
 </theorem>
 
+<example><title>Computing means and variances by hand</title>
+<p>
+In the data table below, notice that the <m>x_k</m> column would be the given data values but the column for <m>x_k^2</m> you could easily compute.
+
+<table halign="left">
+      <tabular halign="right">
+      
+<row>
+<cell bottom="medium"><m>x_k</m></cell>
+<cell bottom="medium"><m>x_k^2</m></cell></row>      
+<row><cell>1</cell><cell>1</cell></row>		
+<row><cell>-1</cell><cell>1</cell></row>		
+<row><cell>0</cell><cell>0</cell></row>		
+<row><cell>2</cell><cell>4</cell></row>		
+<row><cell>2</cell><cell>4</cell></row>		
+<row><cell>5</cell><cell>25</cell></row>		
+
+      </tabular>
+</table>
+So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{x} = \frac{9}{6} = \frac{3}{2}</m> and <m>v = \frac{\Sigma x_k^2}{6} - (\overline{x})^2 = ( \frac{35}{6} - \frac{3}{2}^2 = \frac{70-18}{12} = \frac{26}{6}</m>.  Therfore, <m>s^2 = \frac{6}{5} \times v = \frac{26}{5}</m>.
+</p>
+</example>
+
 <p>
 You can compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org.  To make this work, you will need to pick "R" from the dropdown list before clicking on compute. You can also make the obvious changes in the data list if you want to use this to compute values for a different collection of numbers.
 </p>
@@ -651,8 +674,6 @@ data &lt;- c (0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,1.4,1.6,1.9,1.9,2.1,2.8,
 paste("Variance = ", var(data))
 paste("Standard Dev = ", sd(data))
 paste("Inter Quantile Range =",IQR(data))
-paste("Box and Whisker Diagram:")
-boxplot(data, horizontal=TRUE)
 
 </input>
 </sage>
@@ -714,7 +735,7 @@ Create a frequency distribution and determine the sample mean and variance.
 	<table halign="left">
 		  <tabular halign="right">
 	  
-			<row><cell bottom="medium">x_k</cell><cell bottom="medium">f_k</cell></row>      
+			<row><cell bottom="medium"><m>x_k</m></cell><cell bottom="medium"><m>f_k</m></cell></row>      
 			<row><cell>1</cell><cell>5</cell></row>
 			<row><cell>2</cell><cell>7</cell></row>
 			<row><cell>3</cell><cell>4</cell></row>
@@ -806,6 +827,42 @@ and then divide by the fourth power of the standard deviation.  Note again that 
 </statement>
 </theorem>
 
+<p>Going back to a previous example...</p>
+
+<example><title>Computing skewness and kurtosis by hand</title>
+<p>
+In the data table below, again notice that the <m>x_k</m> column would be the given data values but the other columns you could again easily compute.
+
+<table halign="left">
+      <tabular halign="right">
+      
+<row>
+<cell bottom="medium"><m>x_k</m></cell>
+<cell bottom="medium"><m>x_k^2</m></cell>
+<cell bottom="medium"><m>x_k^3</m></cell>
+<cell bottom="medium"><m>x_k^4</m></cell></row>      
+<row><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell></row>		
+<row><cell>-1</cell><cell>1</cell><cell>-1</cell><cell>1</cell></row>		
+<row><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell></row>		
+<row><cell>2</cell><cell>4</cell><cell>8</cell><cell>16</cell></row>		
+<row><cell>2</cell><cell>4</cell><cell>8</cell><cell>16</cell></row>		
+<row><cell>5</cell><cell>25</cell><cell>125</cell><cell>625</cell></row>		
+
+      </tabular>
+</table>
+
+So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m> as before and so
+<m>\overline{x} = \frac{3}{2}</m>, <m>v = \frac{26}{6}</m>, <m>s^2 = \frac{6}{5} \times v = \frac{26}{5}</m>, and so <m>s = \sqrt{\frac{26}{5}} = \sqrt{5.2}</m>.
+
+But also, <m>\Sigma x_k^3 = 141</m> and <m>\Sigma x_k^4 = 659</m>.  Use these in the formulas above to obtain skewness of
+<me>\left [ \frac{141}{6} - 3\frac{26}{5} \frac{3}{2} - (\frac{3}{2})^2 \right ] / s^3 = </me>
+and kurtosis of 
+<me>\left [ \frac{659}{6} - 4\frac{3}{2} \frac{141}{6} + 6 (\frac{3}{2})^2 \frac{26}{5} - 3 (\frac{3}{2})^4 \right ] / s^4 = .</me>
+</p>
+</example>
+
+
+
 </section>
 
 
@@ -824,7 +881,7 @@ Also, probability mass functions for discrete variables can be graphed as a set 
 <table halign="left">
       <tabular halign="right">
       
-<row><cell bottom="medium">x_k</cell><cell bottom="medium"><m>f_k</m></cell></row>      
+<row><cell bottom="medium"><m>x_k</m></cell><cell bottom="medium"><m>f_k</m></cell></row>      
 <row><cell>1</cell><cell>8</cell></row>		
 <row><cell>2</cell><cell>12</cell></row>		
 <row><cell>3</cell><cell>6</cell></row>		
@@ -943,14 +1000,25 @@ Notice how it is easy to now see that most state populations are relatively smal
 
 <p>This graphical display identifies the "5-number-summary" associated with the minimum, quartiles, and the maximum. That is, <m>y_1, Q_1, Q_2, Q_3, y_n</m>.  These values separate the data roughly into quarters. To distinguish these quarters connect <m>y_1</m> and <m>Q_1</m> with a straight line (a whisker) and do the same with <m>Q_3</m> and <m>y_n</m>. Use a box to connect <m>Q_1</m> with <m>Q_2</m> and the same to connect <m>Q_2</m> with <m>Q_3</m>. Then the boxed areas also identify the IQR.  
 </p>
+
+<sage language = 'r'>
+<input>
+data &lt;- c (0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,1.4,1.6,1.9,1.9,2.1,2.8,2.9,2.9,3,3,3.1,3.6,3.9,3.9,4.4,4.6,4.8,4.8,5.3,5.4,5.7,5.9,6,6.5,6.6,6.6,6.7,7,8.3,8.9,9.8,9.9,10,11.6,12.8,12.9,19.6,19.7,26.4,38.3)
+paste("Inter Quantile Range =",IQR(data))
+paste("Box and Whisker Diagram - Box Plot):")
+boxplot(data, horizontal=TRUE)
+</input>
+</sage>
+
 <p>
-Earlier, we presented a box-and-whisker diagram (or box plot) using R. Below, one can produce something similar using Sage. Notice the different way that it is presented but the ideas are the same.
-</p>		  
+You can produce something similar using Sage. Notice the different way that it is presented but the ideas are the same. For this one, once you evaluate the cell, you will need to click on "boxplot.png" to open up the actual box plot image as a file.
+</p>		 
+ 
 <sage>
 <input>
 from pylab import boxplot,savefig,close
 @interact
-def _(data = input_box([1,2,3,4,6,7,8,9,11,15,21],label="Enter Your Data:")):
+def _(data = input_box([0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,1.4,1.6,1.9,1.9,2.1,2.8,2.9,2.9,3,3,3.1,3.6,3.9,3.9,4.4,4.6,4.8,4.8,5.3,5.4,5.7,5.9,6,6.5,6.6,6.6,6.7,7,8.3,8.9,9.8,9.9,10,11.6,12.8,12.9,19.6,19.7,26.4,38.3],label="Enter Your Data:")):
     B = boxplot(data, notch=True, sym='x', vert=False)
     savefig("boxplot.png")
     close()

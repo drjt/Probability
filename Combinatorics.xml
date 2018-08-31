@@ -237,6 +237,21 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			</p>
 		</proof>
 	</theorem>
+	
+	<example><title>Arrangements</title>
+	<p>
+	How many ways can you order the letters A, B, C, and D? You can start by picking one of the four letters, say A, and then arranging B, C, and D.  Then, start with B and arrange A, C, and D and so on.  This gives:
+	</p>
+	<p>	ABCD, ABDC, ACBD, ACDB, ADBC, ADCB</p>
+	<p>	BACD, BADC, BCAD, BCAB, BDAC, BDCA</p>
+	<p>	CBAD, CBDA, CABD, CADB, CDBA, CDAB</p>
+	<p>	DBCA, DBAC, DCBA, DCAB, DABC, DACB</p>
+	<p>which is 24 different options or <m>4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24</m>.  This can be viewed using a tree structure where each decision creates a new branch.
+	
+<image source="images/PermutationAllTree.png" />
+
+	</p>
+	</example>
 
 	<theorem>
 	<title>Permutations of a subset without replacement</title>
@@ -262,7 +277,16 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			</p>
 		</proof>
 	</theorem>
-	
+
+<example><title>Order matters but not all are chosen</title>
+<p>
+Following the tree idea from above, continue for several steps but then stop once you have gone r steps in.  For example, it is easy to see that <m>_5P_2 = 20</m> using a tree.
+
+<image source="images/PermutationSubTree.png" />
+
+
+</p>
+</example>
 <exercise>
 		<introduction>
 		<p>

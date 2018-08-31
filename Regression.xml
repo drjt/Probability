@@ -288,9 +288,75 @@ v = a * u.^2 + b * u + c;
 plot(x,y,'o',u,v,'.')
 </input>
 </sage>
+
 <p>
-Cutting and pasting this code into perhaps http://octave-online.net gives a nice, non ASCII graph.
-</p>
+Cutting and pasting this code into perhaps http://octave-online.net gives a nice, non ASCII graph. Below, we do the same thing but using Sage.</p>
+
+<sage>
+<input>
+var('x')
+xpts = vector(RR,(-1, 0, 1, 3, 5, 5))
+ypts = vector(RR,(5, 3, 0, -1, 3, 6))
+ones = vector(RR,(1, 1, 1, 1, 1, 1))
+xpts2 = []     # accumulate the squares
+pts = []       # accumulate the (x,y) pairs for plotting purposes
+for k in range(len(xpts)):
+    xpts2.append(xpts[k]^2)
+    pts.append((xpts[k],ypts[k]))
+xpts2 = vector(xpts2)
+
+X = matrix(RR,[xpts2]).stack(xpts).stack(ones).transpose()  # create X
+Y = matrix(RR,ypts).transpose()
+Xt = X.transpose()
+A = (Xt*X).inverse()*Xt*Y
+[a,b,c] = [A[0][0], A[1][0], A[2][0]]
+f = a*x^2+b*x+c
+banner = "The quadratic interpolant is given by $%s$"%str(latex(f))
+G = points(pts,size=20)
+H = plot(f,x,min(xpts),max(xpts),title=banner)
+show(G+H)
+</input>
+</sage>
+
+<exercise><title>Cubic Interpolant</title>
+<statement>
+Modify the Sage code above to give a best-fit cubic interpolant.
+</statement>
+<solution>
+
+<pre>
+var('x')
+xpts = vector((-1, 0, 1, 3, 5, 5))
+ypts = vector((5, 3, 0, 4, 3, -1))
+ones = vector((1, 1, 1, 1, 1, 1))
+xpts3 = []
+xpts2 = []
+pts = []
+for k in range(len(xpts)):
+    xpts3.append(xpts[k]^3)
+    xpts2.append(xpts[k]^2)
+    pts.append((xpts[k],ypts[k]))
+xpts3 = vector(xpts3)
+xpts2 = vector(xpts2)
+
+X = matrix([xpts3]).stack(xpts2).stack(xpts).stack(ones).transpose()
+Y = matrix(ypts).transpose()
+Xt = X.transpose()
+
+A = (Xt*X).inverse()*Xt*Y
+[a,b,c,d] = [A[0][0],A[1][0],A[2][0],A[3][0]]
+
+
+f = a*x^3 + b*x^2 + c*x + d
+banner = "The cubic interpolant is given by $%s$"%str(latex(f))
+G = points(pts,size=20)
+H = plot(f,x,min(xpts),max(xpts),title=banner)
+show(G+H)
+</pre>
+
+
+</solution>
+</exercise>
 
 </section>
 
