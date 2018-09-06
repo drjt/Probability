@@ -47,7 +47,7 @@ It is possible but generally unlikely that each of the given data points are exa
 But why even bother creating a formula (a line here) to approximate data that does not satisfy that formula? Remember that you would expect collected data to vary slightly as one repeatedly collects that data in the same way that you would expect to make a slightly different score on repeated attempts at exams on the same material. Creating a formula that is close to your data gives a well-defined way to predict a y value for a given x value. This predictive behavior is illustrated in the exercise below.
 </p>
 
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Consider using the following best-fit line for approximation.
@@ -73,11 +73,13 @@ and would be zero if f(x) exactly interpolated at the given data point.  Note, s
 <p>
 For the following interactive cell, consider for the given data points various values for the slope and y-intercept and see if you can make the total squared error as small as possible. In doing so, notice the vertical distances from the line to the given data points generally decreases as this error measure gets smaller. 
 </p>
+
+
 <sage>
 <input>
 var('x')
 @interact
-def _(Points = input_box([(-1,1),(3,1),(4,3),(6,4)]), m = slider(-4,4,0.05,1),b = slider(-2,2,0.05,1)):   
+def _(Points = input_box([(-1,1),(3,1),(4,3),(6,4)]), m = slider(-4,4,1/50,1),b = slider(-2,2,1/50,1)):   
     G = points(Points,size=20)
     xpt = []
     ypt = []
@@ -91,10 +93,18 @@ def _(Points = input_box([(-1,1),(3,1),(4,3),(6,4)]), m = slider(-4,4,0.05,1),b 
         TSE += (f(x=x0) - y0)^2
         G += line([(x0,f(x=x0)),(x0,y0)],color='orange')
     G += plot(f,x,min(xpt),max(xpt),color='gray')
-    T = 'Total Squared Error = $%s$'%str(TSE)
+    T = 'Total Squared Error = $%s$'%str(n(TSE))
     G.show(title = T)
 </input>    
 </sage>
+
+<exercise><title>Non-functional data</title>
+<p>
+Experiment in the interative cell above using exactly two data points that have the same x-value.  Such as (1,1) and (1,2). 
+</p>
+</exercise>
+
+
 <p>
 So that we don't have to guess the best values for slope and intercept, we can appeal to calculus. Indeed, to minimize this function of the two variables m and b take partial derivatives and set them equal to zero to get the critical values:
 <me>TSE_m = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot x_k</me>
@@ -108,20 +118,22 @@ Solving these for m and b gives the best fit line.
 </p>
 <p>So, let's see how to graph points against the best-fit line using R
 </p>
+
+
 <sage language='r'>
 <input>
 x &lt;- c(1, 2, 3, 5, 5, 6)
 y &lt;- c(5, 4, 2, 2, 3, 1)
-cor(x,y)   # correlation coerfficient
+cor(x,y)   # correlation coefficient
 pts = data.frame(x, y)
 plot(pts,pch = 16, cex = 1.0, col = "blue", main = "Scatter Plot vs Best-Fit Line", xlab = "x", ylab = "y")
 # pch = 16 creates solid dots, while cex = 1.5 creates dots that are 1.5 times bigger than the default.
-lm(x ~ y)
-abline(lm(x ~ y))
+lm(y ~ x)
+abline(lm(y ~ x))
 </input>
 </sage>
 
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Ok.  Let's see if you can apply this to get a best fit line.
@@ -131,7 +143,7 @@ abline(lm(x ~ y))
 		</webwork>
 		<conclusion>
 		<p>
-		So, these are simple calculations.
+
 		</p>
 		</conclusion>
 </exercise>
@@ -143,7 +155,7 @@ abline(lm(x ~ y))
 You can plot points and plot the resulting best-fit line determined in the previous section but the question remains whether the line is any good. In particular, the real use of the line often is to subsequently predict y-values for a given x-value. However, it is very likely that the best-fit line does not even pass through any of the provided data points.  So, how can something that misses every marker still be considered a good fit. To quantify this, we first need to discuss a way to measure how well two variables vary with each other.
 </p>
 <definition><title>Covariance</title>
-<p>Given paired data 
+<p>Given paired (sample) data 
 <me>(x_0,y_0), (x_1,y_1), ... , (x_n,y_n)</me>
 with corresponding means <m>\overline{x}</m> and <m>\overline{y}</m>, the covariance is given by
 <me>Cov(X,Y) = \sum_{k=0}^n (x_k-\overline{x})(y_k-\overline{y})/n.</me>
@@ -152,8 +164,8 @@ with corresponding means <m>\overline{x}</m> and <m>\overline{y}</m>, the covari
 <p>This general definition provides a general measure which is a second order term (like variance) but also maintains "units". To provide a unit-less metric, consider the following measure.
 <definition><title>Correlation Coefficient</title>
 <p>Given a collection of data points, the correlation coefficient is given by
-<me>r = \frac{Cov(X,Y)}{\sigma_x \sigma_y}</me>
-where <m>\sigma_x</m> is the standard deviation of the x-values only and <m>\sigma_y</m> is the standard deviation of the y-values only.
+<me>r = \frac{Cov(X,Y)}{s_x s_y}</me>
+where <m>s_x</m> is the standard deviation of the x-values only and <m>s_y</m> is the standard deviation of the y-values only.
 </p>
 </definition>
 <theorem><title>Interpretation of the Correlation Coefficient</title>
@@ -161,18 +173,18 @@ where <m>\sigma_x</m> is the standard deviation of the x-values only and <m>\sig
 <proof>
 <p>
 Assume the data points are colinear with a positive slope. Then the 
-<m>TSE(m_0,b_0) = 0</m> for some <m>m_0</m> and <m>b_0</m>. For this line notice that <m>f(x_k) = y_k</m> exactly for all data points. It is easy to show then that <m>\overline{y} = m_0 \overline{x} + b_0</m> and <m>\sigma_y = | m_0 | \sigma_x</m>.
+<m>TSE(m_0,b_0) = 0</m> for some <m>m_0</m> and <m>b_0</m>. For this line notice that <m>f(x_k) = y_k</m> exactly for all data points. It is easy to show then that <m>\overline{y} = m_0 \overline{x} + b_0</m> and <m>s_y = | m_0 | s_x</m>.
 
 Therefore,
-<me>Cov(X,Y) = \sum_{k=0}^n (x_k-\overline{x})(m_0 x_k + b_0 - (m_0 \overline{x} + b_0))/n = m_0 \sigma_x^2</me>
+<me>Cov(X,Y) = \sum_{k=0}^n (x_k-\overline{x})(m_0 x_k + b_0 - (m_0 \overline{x} + b_0))/n = m_0 s_x^2</me>
 Putting these together gives correlation coefficient
-<me>r = \frac{m_0 \sigma_x^2}{\sigma_x m_0 \sigma_x} = 1.</me> 
+<me>r = \frac{m_0 s_x^2}{s_x m_0 s_x} = 1.</me> 
 A similar proof follows in the second case by noting that <m>m_0 / | m_0 | = -1</m>.
 </p>
 </proof>
 </theorem>
 
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Interpreting correlation coefficients.
@@ -182,12 +194,12 @@ A similar proof follows in the second case by noting that <m>m_0 / | m_0 | = -1<
 		</webwork>
 		<conclusion>
 		<p>
-		So, these are simple calculations.
+		
 		</p>
 		</conclusion>
 </exercise>
 
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Interpreting correlation coefficients.
@@ -197,9 +209,15 @@ A similar proof follows in the second case by noting that <m>m_0 / | m_0 | = -1<
 		</webwork>
 		<conclusion>
 		<p>
-		So, these are simple calculations.
+		
 		</p>
 		</conclusion>
+</exercise>
+
+<exercise><title>Correlation equaling 0</title>
+<p>
+Consider the data points (1,1), (1,2), (2,1), (2,2).  Plot these points and consider the nature of the best fit line. Show using software that the correlation coefficient is zero. Justify why TSE(m,b) = 1 must be the minimum.
+</p>
 </exercise>
 
 
@@ -358,6 +376,21 @@ show(G+H)
 </solution>
 </exercise>
 
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		Doing Cubic Regression...use your Sage work from above.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setStatistics6CorrelationRegression/ur_stt_6_10.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		This generalizes well.
+		</p>
+		</conclusion>
+</exercise>
+
 </section>
 
 
@@ -365,11 +398,13 @@ show(G+H)
 
 <section><title>Multi-variable Regression</title>
 <p>
-The regression models that we have looked at presumed a single independent variable. It is much more likely when investigating cause and effect relationships that there are perhaps many independent variables that contribute.  Let's briefly consider a model with two independent variables and then an interesting example that illustrates the limits when utilizing models.
+The regression models that we have looked at presumed a single independent variable. It is much more likely when investigating cause and effect relationships that there are perhaps many independent variables that contribute. 
 </p>
-<p>
-Toward that end, a basic two-variable linear model is of the form
+
+<p>Let's consider a linear model with two independent variables.
+Indeed, a basic two-variable linear model is of the form
 <me>z = \alpha_1 x + \alpha_2 y + \beta .</me>
+
 For data points <me>(x_0,y_0,z_0), (x_1,y_1,z_1), (x_2,y_2,z_2), ... , (x_n,y_n,z_n) , </me> 
 using a linear systems approach similar to the previous section, evaluating at these data points and appending an error term to each equation gives, in matrix form:
 
@@ -423,6 +458,19 @@ in general.  Evaluating this with X and Z as above gives the matrix
 </me>
 
 </p>
+
+<p>Let's first see how this is done automatically in R using one of the built-in data sets
+</p>
+
+<sage language='r'>
+<input>
+fit &lt;- lm(y ~ x1+x2+x3, data=mydata)
+summary(fit)             # basic results
+coefficients(fit)        # a,b,c, for y = a x1 + b x2 + c x3
+fitted(fit)              # predicted values
+residuals(fit)           # errors
+</input>
+</sage>
 
 <p>
 A good example of the usefulness and limitations of multi-variate regression is the calculation of the "Heat Index". This measure determines a measure of discomfort relative to the ambient temperature and the relative humidity. Indeed, in warm climates a high temperature is more difficult to bear if the humidity is also high. One reason is that with high humidity the body is less effective in shedding heat through evaporation of body sweat.

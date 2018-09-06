@@ -472,7 +472,7 @@ def _(auto_update=False):
 </input>
 </sage>
 	
-	<exercise>
+	<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Let's see if you understand the relationship between frequency and relative frequency. In this exercise, presume "Probabiity" to be the expected fraction of outcomes you might logically expect.
@@ -487,7 +487,7 @@ def _(auto_update=False):
 		</conclusion>
 	</exercise>
 
-	<exercise>
+	<exercise><title>WebWork</title>
 		<introduction>
 		<p>This one is a little harder and uses the binomial coefficients from Combinatorics.
 		</p>
@@ -704,7 +704,7 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 	
 
 
-	<exercise>
+	<exercise><title>WebWork</title>
 		<introduction>
 		<p>Conditional Probability sometimes makes you have to think carefully about the ways to get 
 		the desired outcome.
@@ -985,7 +985,7 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 </exercise>	
 
 
-<exercise>
+<exercise><title>WebWork</title>
 	<introduction>
 	<p>
 	Let's try a Bayes Theorem example...
@@ -1000,7 +1000,7 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 	</conclusion>
 </exercise>
 
-<exercise>
+<exercise><title>WebWork</title>
 	<introduction>
 	<p>
 	Here is a more extensive Bayes Theorem example...
@@ -1208,7 +1208,7 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 		</proof>
 	</corollary>
 
-	<exercise>
+	<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Independence makes combined probabilities VERY easy to compute.

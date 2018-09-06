@@ -61,7 +61,29 @@ def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
 </input>
 </sage>
 
-	<theorem><title>Derivation of Binomial Probability Function</title>
+<p>
+You can of course get specific values and graph the Binomial Distribution using R as well...
+</p>
+
+<sage language='r'>
+<input>
+n &lt;- 10
+p &lt;- 0.3
+
+paste('Probability Function')
+dbinom(0:n, n, p)   # gives the probability function
+paste('Distribution function')
+pbinom(0:n, n, p)   # gives the distribution function
+paste('A random sample')
+rbinom(15, n, p)    # gives a random sample of 15 items from b(n,p)
+
+x &lt;- dbinom(0:n, size=n, prob=p)
+barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
+
+</input>
+</sage>
+
+<theorem><title>Derivation of Binomial Probability Function</title>
 	<statement> For R = {0, 1, ..., n},
 	<me>f(x) = \binom{n}{x}p^x(1-p)^{n-x}</me>
 	</statement>
@@ -71,9 +93,9 @@ def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
 						\binom{n}{x}p^x(1-p)^{n-x}</me>
 		</p>
 		</proof>
-	</theorem>
+</theorem>
 
-	<theorem><title>Verification of Binomial Distribution Formula</title>
+<theorem><title>Verification of Binomial Distribution Formula</title>
 	<statement><me>\sum_{x \in R} f(x) = \sum_{x=0}^n \binom{n}{x}p^x(1-p)^{n-x} = 1.</me></statement>
 	<proof>
 	<p>
@@ -81,7 +103,7 @@ def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
 		<me>\sum_{x=0}^n \binom{n}{x}p^x(1-p)^{n-x} = (p + (1-p))^n = 1</me>
 	</p>
 	</proof>
-	</theorem>
+</theorem>
 	
 <p>Utilize the interactive cell below to compute f(x) and F(x) for the Binomial distribution</p>
 <sage>

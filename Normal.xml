@@ -291,6 +291,27 @@ Easily, note that
 Dividing by <m>\pi</m> gives the Cauchy probability function integrates to 1.
 </proof>
 </theorem>
+
+<sage language='r'>
+<input>
+n &amp;- 10
+p &amp;- 0.3
+
+paste('Probability Function')
+dcauchy(x, location = 0, scale = 1, log = FALSE)   # gives the probability function
+paste('Distribution function')
+pcauchy(q, location = 0, scale = 1, lower.tail = TRUE, log.p = FALSE)
+   # gives the distribution function
+paste('A random sample')
+rcauchy(n, location = 0, scale = 1)    # gives a random sample of 15 items from b(n,p)
+
+x=seq(-4,4,length=200)
+y=dcauchy(x,dcauchy(x, location = 0, scale = 1, log = FALSE))
+plot(x,y,type="l",lwd=2,col="red",ylab="p")
+
+</input>
+</sage>
+
 <p>
 Now that we have a probability function, it is important to determine its mean and variance. It should be obvious that when doing so using the Cauchy probability function, problems quickly arise.  Indeed,
 <me>\int_{-\infty}^{\infty} x \frac{1}{1+x^2} dx = (1/2) ( \ln( | \infty |) - \ln( | -\infty |)</me>
@@ -311,6 +332,31 @@ and if r>2
 </theorem>
 </p>
 
+
+<sage language='r'>
+<input>
+# Display the Student's t distributions with various
+# degrees of freedom and compare to the normal distribution
+# Copied from www.statmethods.net
+
+x &lt;- seq(-4, 4, length=100)
+hx &lt;- dnorm(x)
+
+degf &lt;- c(1, 3, 8, 30)
+colors &lt;- c("red", "blue", "darkgreen", "gold", "black")
+labels &lt;- c("df=1", "df=3", "df=8", "df=30", "normal")
+
+plot(x, hx, type="l", lty=2, xlab="x value",
+  ylab="Density", main="Comparison of t Distributions")
+
+for (i in 1:4){
+  lines(x, dt(x,degf[i]), lwd=2, col=colors[i])
+}
+
+legend("topright", inset=.05, title="Distributions",
+  labels, lwd=2, lty=c(1, 1, 1, 1, 2), col=colors)
+</input>
+</sage>
 
 </section>
 

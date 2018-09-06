@@ -53,8 +53,13 @@ So, it is easy to see that these are all of the possible outcomes and that the t
 	<li>Mary, Peter, Paul, Simone</li>
 	<li>Mary, Paul, Peter, Simone</li>
 </ul>
-Notice how the list quickly grows when just adding one more choice. This illustrates how keeping track of the number of items in a set can quickly get impossible to keep up with and to count unless we can approach this problem using a more mathematical approach.
+Notice how the list quickly grows when just adding one more choice. This illustrates how keeping track of the number of items in a set can quickly get impossible to keep up with and to count unless we can approach this problem using a more mathematical approach that allows you to count the number of possibilities without having to list them all.
 </p>
+
+</section>
+
+
+<section><title>General Counting Principles</title>
 	<definition>
 	<title>Cardinality</title>
 		<statement>Given a set of elements A, the number of elements in the 
@@ -98,7 +103,7 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		</proof>
 	</theorem>
 
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Let's apply the Multiplication Principle.
@@ -113,7 +118,7 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		</conclusion>
 </exercise>
 
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Let's apply the Multiplication Principle.
@@ -231,7 +236,7 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			By induction, assume that any set with n elements has n! arrangments 
 			and assume that 
 			<md>
-			<mrow>|A| = \left \{ a_1, a_2, ... , a_n, a_{n+1} \right \}.</mrow>
+			<mrow>A = \left \{ a_1, a_2, ... , a_n, a_{n+1} \right \}.</mrow>
 			</md>
 			Notice that there are n+1 ways to choose 1 element from A and that in doing so leaves a set with n elements. Combining the induction hypothesis with the multiplication principle this gives (n+1)n! = (n+1)! possible outcomes.
 			</p>
@@ -239,7 +244,7 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 	</theorem>
 
 <p>
-One can interpret successive ordered selections as branching through a "tree" structure.  Indeed, starting with the set {A,B,C} one may pick any of the three but then a subsequent selection only has two possibilities for the next selection and so forth.
+One can interpret successive ordered selections as branching through a "tree" structure.  Indeed, starting with the set {A,B,C} one may pick any of the three but then a subsequent selection only has two possibilities for the next selection and so forth. The tree below illustrates that there are six ways to order two items from a group of size three.
 </p>
 <image source="images/PermutationSmall.png" />
 
@@ -293,7 +298,7 @@ Following the tree idea from above, continue for several steps but then stop onc
 
 </p>
 </example>
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Let's apply the the Permutation formula.
@@ -331,7 +336,7 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 	</statement>
 	</theorem>
 	
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
 		Let's apply the this new Permutation formula.
@@ -356,7 +361,7 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 <p>When counting various outcomes sometimes the order of things does not matter.
 If so, each unique unordered outcome is called a combination. </p>
 <p>
-For example, consider the permutations when you select three letters from {A, B, C, D}.
+Once again, consider the permutations when selecting three letters from {A, B, C, D}.
 <ol>
 <li>
 <ul>
@@ -421,10 +426,10 @@ In general, it would be nice to have a direct formula to determine the number of
 			by first picking an unordered subset of size r and then counting 
 			the number of ways to order that subset. Using our notation and the
 			multiplication principle,
-			<md>
-				<mrow>_nP_r =  _nC_r \cdot r!</mrow>
-			</md>
-			Solving give the result.
+		
+				<me>_nP_r = _nC_r \cdot r!</me>
+	
+			Dividing by <m>r!</m> gives the result.
 			</p>
 		</proof>
 	</theorem>
@@ -447,32 +452,35 @@ In general, it would be nice to have a direct formula to determine the number of
 		</proof>
 	</theorem>
 
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
-		Let's apply the this new Permutation forumula.
+		Let's apply the this new Combination forumula.
 		</p>
 		</introduction>
 		<webwork source="Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg">
 		</webwork>
+		<solution>
+		A solution can be presented here.
+		</solution>
 		<conclusion>
 		<p>
-		Another one bites the dust.
+		Notice that to determine the number of outcomes required you to use the combination forumula several times and then multiply the results using the multiplication principle.
 		</p>
 		</conclusion>
 </exercise>	
 
-<exercise>
+<exercise><title>WebWork</title>
 		<introduction>
 		<p>
-		Let's apply the this new Permutation forumula.
+		Use the new Combination forumula again.
 		</p>
 		</introduction>
 		<webwork source="Library/Rochester/setAlgebra38Counting/sw10_2_60.pg">
 		</webwork>
 		<conclusion>
 		<p>
-		You can see that using the formulas can be easy and also can be part of a bigger problem pasted together using the multiplication principle.
+		Once again, you can see that using the formulas can be easy and also can be part of a bigger problem pasted together using the multiplication principle.
 		</p>
 		</conclusion>
 </exercise>	
