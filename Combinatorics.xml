@@ -10,10 +10,11 @@
 <chapter xml:id="Combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Counting and Combinatorics</title>
 
-<section>	
-	<title>Introduction</title>
-<p>Discussion on the usefulness of having ways to count the number
-of elements in a set without having to explicitly listing all elements.</p>
+<section><title>Introduction</title>
+<p>One of the earliest applications of mathematics you probably remember is how you could use number to count things. For many, this is what they think people do when they do mathematics. In this chapter, we will discover that it is possible to count items without actually listing them all.</p>
+
+<p>
+<example><title>Counting by actually listing out all possibilities</title>
 <p>Consider counting the number of ways one can arrange Peter, Paul, and Mary with the order important.  Listing the possibilities:
 <ul>
 	<li>Peter, Paul, Mary</li>
@@ -53,28 +54,39 @@ So, it is easy to see that these are all of the possible outcomes and that the t
 	<li>Mary, Peter, Paul, Simone</li>
 	<li>Mary, Paul, Peter, Simone</li>
 </ul>
-Notice how the list quickly grows when just adding one more choice. This illustrates how keeping track of the number of items in a set can quickly get impossible to keep up with and to count unless we can approach this problem using a more mathematical approach that allows you to count the number of possibilities without having to list them all.
+Notice how the list quickly grows when just one more choice is added. This example illustrates how keeping track of the number of items in a set can quickly get impossible to manage unless we can use a more mathematical approach that allows you to count the number of possibilities without having to list them all.
+</p>
+</example>
 </p>
 
 </section>
 
 
 <section><title>General Counting Principles</title>
-	<definition>
+	
+<p>
+<definition>
 	<title>Cardinality</title>
-		<statement>Given a set of elements A, the number of elements in the 
-		set is known as the sets cardinality and is denoted |A|. If the set has 
+		<statement>
+		<p>Given a set of elements A, the number of elements in the 
+		set is known as its cardinality and is denoted |A|. If the set has 
 		an infinite number of elements then we set |A| = <m>\infty</m>.
+		</p>
 		</statement>
-	</definition>
+</definition>
+</p>
 	
-	<p>In order to "count without counting" we establish the following 
-	foundational principle.</p>
-	
-	<theorem>
-		<title>Multiplication Principle</title>
-		<statement>Given two successive events A and B, the number of ways 
+<p>
+In order to "count without counting" we establish the following foundational principle:
+</p>
+
+<p>	
+<theorem xml:id="MultiplicationPrinciple"><title>Multiplication Principle</title>
+		<statement>
+		<p>
+		Given two successive events A and B, the number of ways 
 		to perform A and then B is |A||B|.
+		</p>
 		</statement>
 		<proof>
 			<p>If either of the events has infinite cardinality, then it is 
@@ -99,10 +111,13 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			</md> 
 			Since this
 			second set has |A| |B| elements then the conclusion follows. 
-			coordinates.</p>
+			coordinates.
+			</p>
 		</proof>
 	</theorem>
+</p>
 
+<p>
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
@@ -111,31 +126,22 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		</introduction>
 		<webwork source="Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
 </exercise>
+</p>
 
+<p>
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
-		Let's apply the Multiplication Principle.
 		</p>
 		</introduction>
 		<webwork source="Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
 </exercise>
+</p>
 
-
-	<definition>
-	<title>Factorial</title>
+<p>
+<definition xml:id="Factorial"><title>Factorial</title>
 		<statement>
 		<p>For any natural number n, 
 		<md>
@@ -144,34 +150,40 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		and by convention set 0! = 1.
 		</p>
 		</statement>
-	</definition>
-	
-	<example>
-		<title>iPad security code</title>
-		<p>Consider your ipad's security. To unlock the screen you need to enter your four digit pass code. How easy is it to guess this pass code?</p>
+</definition>
+</p>
+
+<p>	
+<example><title>iPad security code</title>
+		<p>Consider your ipad's security. To unlock the screen suppose you need to enter a four digit pass code. How easy is it to guess this pass code?</p>
 		<p>Using the standard 10 digit keypad, we first have two questions to consider?
 		<ol>
 			<li>Does the order in which the digits are entered matter?</li>
 			<li>Can you reuse a digit more than once?</li>
 		</ol>
-		For the ipad, the order does matter and you cannot reuse digits. In this case, the number of possible codes can be determined by considering each digit as a separate event with four such events in succession providing the right code. By successively applying the multiplication principle, you find that the number of possible codes is the number of remaining available digits at each step.  Namely, <m>10 \times 9 \times 8 \times 7 = 5040.</m>
+		For the ipad, if the order does matter and you cannot reuse digits, the number of possible codes can be determined by considering each digit as a separate event with four such events in succession providing the right code. By successively applying the multiplication principle, you find that the number of possible codes is the number of remaining available digits at each step.  Namely, <m>10 \times 9 \times 8 \times 7 = 5040.</m>
 		</p>
 		<p>
-		Note that if you were allowed to reuse the digits then the number of possible outcomes would be more since all 10 digits would be available for each event.  Namely, <m>10 \times 10 \times 10 \times 10 = 10000.</m>
+		On the other hand, if you were allowed to reuse the digits then the number of possible outcomes would be more since all 10 digits would be available for each event.  Namely, <m>10 \times 10 \times 10 \times 10 = 10000.</m>
 		</p>
-	</example>
-	
-	<example>
-		<title>iPad security code with greasy fingers</title>
+		<p>
+		Now, consider how this changes if you can use a 4 or 6 digit passcode. Determine the number of possible passcodes.
+		</p>
+</example>
+</p>
+
+<p>	
+<example><title>iPad security code with greasy fingers</title>
 		<p>Reconsider your ipad's security. In this case, you like to eat
 		chocolate bars and have greasy fingers. When you type in your passcode
 		your fingers leave a residue over the four numbers pressed. If someone
 		now tries to guess your passcode, how many possible attempts are necessary?</p>
 		<p>Since there are only four numbers to pick from with order important, the number of possible passcodes remaining is <m>4 \times 3 \times 2 \times 1 = 24</m></p>
-	</example>
-	
-	<example>
-		<title>National Treasure</title>
+</example>
+</p>
+
+<p>	
+<example><title>National Treasure</title>
 		<p>In the 2004 movie National Treasure, Ben and Riley are attempting 
 		to guess Abagail's password to enter the room with the Declaration. 
 		They are able
@@ -197,7 +209,7 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 		<ul>
 			<li><p>Using 9 characters: The answer was computed above.</p></li>
 			<li><p>Using 10 characters: In this case, 1 character can be used twice. To determine the number of possibilities, let's first pick which character can be doubled. There are 9 options for picking that character.  Next, if we consider the two instances of that letter as distinct values then we can just count the number of ways to arrange unique 10 characters which is 10! However, swapping the two characters (which are actually identical) would not give a new passphrase. Since these are counted twice, let's divide these out to give 10!/2.</p></li>
-			<li><p>Using 11 characters:In this situation we have two unique options:
+			<li><p>Using 11 characters: In this situation we have two unique options:
 				<ul>
 					<li><p>One character is used three times and the others just once.</p>
 					<p>Continuing as in the previous case, 11!/3!.</p>
@@ -217,7 +229,8 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			</p>
 		<p>With this large collection of possible outcomes, how are the movie
 		characters able to determine the correct "VALLEYFORGE" passphrase?</p>
-	</example>
+</example>
+</p>
 	
 </section>
 
@@ -225,10 +238,16 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 
 <section>
 <title>Permutations</title>
-<p>When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.</p>
+<p>
+When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.
+</p>
+
+<p>
 	<theorem>
 	<title>Permutations of everything</title>
-	<statement>The number of ways to arrange n distinct items is n!</statement>
+	<statement>
+	<p>The number of permutations of n distinct items is n!</p>
+	</statement>
 		<proof>
 			<p>Notice that if n=1, then there is only 1 item to arrange and 
 			that there is only one possible arrangment.</p>
@@ -242,16 +261,15 @@ Notice how the list quickly grows when just adding one more choice. This illustr
 			</p>
 		</proof>
 	</theorem>
+</p>
 
 <p>
 One can interpret successive ordered selections as branching through a "tree" structure.  Indeed, starting with the set {A,B,C} one may pick any of the three but then a subsequent selection only has two possibilities for the next selection and so forth. The tree below illustrates that there are six ways to order two items from a group of size three.
-</p>
 <image source="images/PermutationSmall.png" />
-
+</p>
 	
-	<example><title>Arrangements</title>
-	<p>
-	How many ways can you order the letters A, B, C, and D? You can start by picking one of the four letters, say A, and then arranging B, C, and D.  Then, start with B and arrange A, C, and D and so on.  This gives:
+<p>
+Going one step further, what about ordering the letters in {A, B, C, D}? You can start by picking one of the four letters, say A, and then arranging B, C, and D.  Then, start with B and arrange A, C, and D and so on.  This gives:
 	</p>
 	<p>	ABCD, ABDC, ACBD, ACDB, ADBC, ADCB</p>
 	<p>	BACD, BADC, BCAD, BCAB, BDAC, BDCA</p>
@@ -261,11 +279,10 @@ One can interpret successive ordered selections as branching through a "tree" st
 	
 <image source="images/PermutationAllTree.png" />
 
-	</p>
-	</example>
+</p>
 
-	<theorem>
-	<title>Permutations of a subset without replacement</title>
+<p>
+<theorem xml:id="PermutationWithoutReplacementDistinguishable"><title>Permutations of a subset without replacement</title>
 		<statement>
 			<p> 
 			The number of ways to arrange r items from a set of n distinct items 
@@ -288,8 +305,8 @@ One can interpret successive ordered selections as branching through a "tree" st
 			</p>
 		</proof>
 	</theorem>
+</p>
 
-<example><title>Order matters but not all are chosen</title>
 <p>
 Following the tree idea from above, continue for several steps but then stop once you have gone r steps in.  For example, it is easy to see that <m>_5P_2 = 20</m> using a tree.
 
@@ -297,7 +314,8 @@ Following the tree idea from above, continue for several steps but then stop onc
 
 
 </p>
-</example>
+
+<p>
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
@@ -312,11 +330,14 @@ Following the tree idea from above, continue for several steps but then stop onc
 		</p>
 		</conclusion>
 </exercise>	
-	
-	<theorem>
-	<title>Permutations of a subset with replacement</title>
-		<statement>The number of ways to obtain an arrangement of r choices from a group of size n is 
+</p>
+
+<p>	
+<theorem xml:id="PermutationWithReplacementDistinguishable"><title>Permutations of a subset with replacement</title>
+		<statement>
+		<p>The number of ways to obtain an arrangement of r choices from a group of size n is 
 		<me>n^r</me>
+		</p>
 		</statement>
 		<proof>
 			<p>
@@ -324,18 +345,30 @@ Following the tree idea from above, continue for several steps but then stop onc
 			<me>n \cdot n \cdot n ... n = n^r</me>
 			</p>
 		</proof>
-	</theorem>
+</theorem>
+</p>	
 	
-	
-	
-	<theorem>
+<p><theorem xml:id="MultinomialCoefficients">
 	<title>Permutations when not all items are distinguishable (Multinomial Coefficients)</title>
 	<statement>
+	<p>
 If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ... , <m>n_s</m> in the last, the number of ways to pick all is
 		<me>\frac{n!}{n_1! \cdot n_2! ... n_s!}</me>	
+	</p>
 	</statement>
-	</theorem>
-	
+	<proof>
+	<p>
+	Enumerate all of the n data items individually with the <m>n_1!</m> identical values first and the remaining groups in like manner to get the enumerated list 
+	<me>
+	  \left { x_{1,1}, ..., x_{1,n_1}, x_{2,1}, ..., x_{2,n_2}, ... , x_{s,1}, ..., x_{s,n_2}, \right }
+	</me>
+	In this order, there are <m>n_1!</m> ways to arrange the first group, <m>n_2!</m> ways to arrange the second, etc. There are <m>n_1! \times n_2! \times ... \times \n_s!</m> ways to arrange all of the categories together with groups in this order but none of those group reorders does anything since those data values are all the same. Dividing out those from the <m>n!</m> original permutations of all items leaves one with the multinomial coefficient. 
+	</p>
+	</proof>
+</theorem>
+</p>
+
+<p>	
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
@@ -350,14 +383,13 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 		</p>
 		</conclusion>
 </exercise>	
-	
+</p>	
 	
 </section>
 
 
 
-<section>
-<title>Combinations</title>
+<section><title>Combinations</title>
 <p>When counting various outcomes sometimes the order of things does not matter.
 If so, each unique unordered outcome is called a combination. </p>
 <p>
@@ -410,8 +442,9 @@ Notice how these 24 permutations fall into only four distinct categories if the 
 <p>
 In general, it would be nice to have a direct formula to determine the number of such combinations without having to explicitly list them all out.
 </p>
-	<theorem>
-	<title>Combinations of a subset without replacement</title>
+
+<p>
+<theorem xml:id="CombinationWithoutReplacementDistinguishable"><title>Combinations of a subset without replacement</title>
 		<statement>
 			<p>
 			The number of ways to arrange r items from a set of n distinct items 
@@ -432,11 +465,11 @@ In general, it would be nice to have a direct formula to determine the number of
 			Dividing by <m>r!</m> gives the result.
 			</p>
 		</proof>
-	</theorem>
+</theorem>
+</p>
 
-
-	<theorem>
-	<title>Combinations of a subset with replacement</title>
+<p>
+<theorem xml:id="CombinationWithReplacementDistinguishable"><title>Combinations of a subset with replacement</title>
 		<statement>
 			<p>
 			The number of ways to arrange r items from a set of n distinct items 
@@ -446,12 +479,14 @@ In general, it would be nice to have a direct formula to determine the number of
 		</statement>
 		<proof>
 			<p>
-			Label each item in your group in some defined order. Since order doesn't matter, as you repeatedly sample r times with replacement you can always write down your outcomes sorted from low to high placement. Finally, separate like values by some symbol, say "|", and consider each of the n distinct objects as indistinct *'s. There will be n-1 of these separators since there will be n to choose from. For example, if choosing r=6 times from the set {a, b, c, d}, then the outcome b, b, a, d, a, b could be collected as a, a, b, b, b, d and written in our code as **|***||* .  Notice that shuffling around the identical *'s would not change the code (and similarly for the identical |'s) but swapping a * with a | would be a different outcome. Therefore, we can consider this to be a multinomial coefficient and the number of ways to rearrange this code is
+			Label each item in your group in some defined order. Since order doesn't matter, as you repeatedly sample r times with replacement you can always write down your outcomes sorted from low to high placement. Finally, separate like values by some symbol, say "|", and consider each of the n distinct objects as indistinct *'s. There will be n-1 of these separators since there will be n to choose from. For example, if choosing r=6 times from the set {a, b, c, d}, then the outcome b, b, a, d, a, b could be collected as a, a, b, b, b, d and written in our code as **|***||* .  Notice that shuffling around the identical *'s would not change the code (and similarly for the identical |'s) but swapping a * with a | would be a different outcome. Therefore, we can consider this to be a <xref ref="MultinomialCoefficients">multinomial coefficient</xref> and the number of ways to rearrange this code is
 			<me>\frac{(r + n-1)!}{r!(n-1)!}.</me>
 			</p>
 		</proof>
-	</theorem>
+</theorem>
+</p>
 
+<p>
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
@@ -469,11 +504,13 @@ In general, it would be nice to have a direct formula to determine the number of
 		</p>
 		</conclusion>
 </exercise>	
+</p>
 
+<p>
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
-		Use the new Combination forumula again.
+		Use the new Combination formula again.
 		</p>
 		</introduction>
 		<webwork source="Library/Rochester/setAlgebra38Counting/sw10_2_60.pg">
@@ -484,9 +521,10 @@ In general, it would be nice to have a direct formula to determine the number of
 		</p>
 		</conclusion>
 </exercise>	
+</p>
 
-
-	<example><title>Ipad Security</title>
+<p>
+<example><title>Ipad Security</title>
 		<p>Revisiting your ipad's security, what happens if the order in which the digits are entered does not matter? If so, then you would be picking a combination of 4 digits without replacement from a group of 10 digits. Namely, 
 		<md>
 			<mrow>\frac{10!}{4!6!} &amp; = \frac{10 \times 9 \times 8 \times 7 \times 6!}{4 \times 3 \times 2 \times 1 \times 6!}</mrow>
@@ -504,12 +542,11 @@ In general, it would be nice to have a direct formula to determine the number of
 		</md>
 		which once again is more since numbers are allowed to repeat.
 		</p>
-	</example>
+</example>
+</p>	
 	
-	
-		
-	<definition>
-	<title>Binomial Coefficients</title>
+<p>		
+<definition xml:id="BinomialCoefficients"><title>Binomial Coefficients</title>
 		<statement>
 		<p>
 		The value <m>_nC_r</m> is known as the binomial coefficient. It is
@@ -517,25 +554,28 @@ In general, it would be nice to have a direct formula to determine the number of
 		</p>
 		</statement>
 	</definition>
+</p>	
 	
-	
-	<p>Binomial coefficients have a number of interesting properties.  Many of these are very useful as well in probability calculations.  Several of these properties are collected below. In particular, these relationships verify that the binomial coefficients are the values found in Pascal's Triangle.</p>
+<p>Binomial coefficients have a number of interesting properties.  Many of these are very useful as well in probability calculations.  Several of these properties are collected below. In particular, these relationships verify that the binomial coefficients are the values found in Pascal's Triangle.</p>
 
+<p>
 <sage>
 <title>Binomial Coefficients give Pascal's Triangle</title>
 <input>
 @interact
-def _(n = slider(1,30,1,5)):
+def _(n = slider(1,15,1,5)):
     for row in range(n+1):
         binoms = sorted(binomial_coefficients(row).items())
         given_n = []
         for k in range(row+1):
             given_n.append(binoms[k][1])
-        pretty_print(html('<center>%s</center>'%given_n))
+        pretty_print('%s'%given_n)
 </input>
 </sage>
+</p>
 
-	<theorem><title> Binomial Coefficient Formulas</title>
+<p>
+<theorem><title> Binomial Coefficient Formulas</title>
 	<statement><p> For <m> n \in \mathbb{N}</m>,
 	<ol>
 		<li><m>\binom{n}{0} = 1</m></li>
@@ -558,7 +598,7 @@ def _(n = slider(1,30,1,5)):
 		<li>
 		<md>
 			<mrow>\binom{n}{r} + \binom{n}{r+1} &amp; = \frac{n!}{r!(n-r)!} + \frac{n!}{(r+1)!(n-(r+1))!}</mrow>
-			<mrow> &amp; = (r+1) \frac{n!}{(r+1)!(n-r)!} + (n-r) \frac{n!}{(r+1)!(n-r))!}</mrow>
+			<mrow> &amp; = (r+1) \frac{n!}{(r+1)!(n-r)!} // + (n-r) \frac{n!}{(r+1)!(n-r))!}</mrow>
 			<mrow> &amp; = \frac{(r+1) n! + (n-r)n!}{(r+1)!(n-r)!}</mrow>
 			<mrow> &amp; = \frac{(n+1) n!}{(r+1)!((n+1)-(r+1))!}</mrow>
 			<mrow> &amp; = \binom{n+1}{r+1}</mrow>
@@ -567,57 +607,41 @@ def _(n = slider(1,30,1,5)):
 	</ol>
 	</p>
 	</proof>
-	</theorem>
-	
-<p>Play with the following several times to investigate what you might expect to get when you repeatedly receive a "hand" of 5 standard playing cards. Compare this experiment to the numbers you find in the homework exercise that follows in the exercise below.
+</theorem>
+</p>	
+</section>
+
+
+<section><title>Summary</title>
+<introduction>
+<p>
+Here are the important results from this chapter:
 </p>
-
-<sage>
-<input>
-var('A C D H J K Q S') 
-
-suits = [S, D, C, H] 
-values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A] 
-
-full_deck = [(value, suit) for suit in suits for value in values]
-@interact
-def _(num_hands=slider[50..5000]):                  # Set up the number of hands to create
-    hands= []                    # Start with a blank list. 
-    for i in range(num_hands):   # This loops the following operation num_hands times. 
-        deck = copy(full_deck)   # start over
-        shuffle(deck)
-        hands.append([deck.pop() for card in range(5)])
-    freq_values = []
-    one_pair = 0
-    two_pair = 0
-    three_kind = 0
-    four_kind = 0
-    full_house = 0
-    for i in range(num_hands):
-        hand = hands[i]
-        hand_values = [hand[k][0] for k in range(5)]
-        freq_values = [hand_values.count(value) for value in set(values)]
-        freq_values.sort(reverse=True)
-        if freq_values[0]==4:
-            four_kind=four_kind+1
-        if freq_values[0]==3:
-            if freq_values[1]==2:
-                full_house=full_house+1
-            if freq_values[1]==1:
-                three_kind=three_kind+1
-        if freq_values[0]==2:
-            if freq_values[1]==2:
-                two_pair=two_pair+1
-            if freq_values[1]==1:
-                one_pair=one_pair+1
-    print "       One Pair frequency = ",one_pair," with relative frequency ",one_pair/num_hands
-    print "       Two Pair frequency = ",two_pair," with relative frequency ",two_pair/num_hands
-    print "Three of a Kind frequency = ",three_kind," with relative frequency ",three_kind/num_hands
-    print " Four of a Kind frequency = ",four_kind," with relative frequency ",four_kind/num_hands
-    print "     Full House frequency = ",full_house," with relative frequency ",full_house/num_hands
-</input>
-</sage>
-
+</introduction>
+<p>
+<xref ref="MultiplicationPrinciple">Multiplication Principle</xref>
+</p>
+<p>
+<xref ref="Factorial">Factorial</xref>
+</p>
+<p>
+<xref ref="PermutationWithoutReplacementDistinguishable">Permutations without replacement</xref>
+</p>
+<p>
+<xref ref="PermutationWithReplacementDistinguishable">Permutations with replacement</xref>
+</p>
+<p>
+<xref ref="MultinomialCoefficients">Multinomial Coefficients</xref>
+</p>
+<p>
+<xref ref="CombinationWithoutReplacementDistinguishable">Combinations without replacement</xref>
+</p>
+<p>
+<xref ref="CombinationWithReplacementDistinguishable">Combinations with replacement</xref>
+</p>
+<p>
+<xref ref="BinomialCoefficients">Binomial Coefficients</xref>
+</p>
 
 </section>
 

@@ -1,0 +1,94 @@
+\BOOKMARK [0][-]{chapter*.1}{Preface}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Statistical Measures}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Measurement Scales}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Statistical Measures of Position}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Statistical Measures of the Middle}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.5}{Statistical Measures of Variation}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.6}{Adjusting Statistical Measures for Grouped Data}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.7}{Other Statistical Point Measures}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.8}{Visual Statistical Measures - Graphical Representation of Data}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.9}{Summary}{chapter.1}% 11
+\BOOKMARK [1][-]{section.1.10}{Exercises}{chapter.1}% 12
+\BOOKMARK [0][-]{chapter.2}{Regression}{}% 13
+\BOOKMARK [1][-]{section.2.1}{Introduction}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.2}{Linear Regression - Best Fit Line}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.3}{Correlation}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.4}{Higher Degree Linear Regression}{chapter.2}% 17
+\BOOKMARK [1][-]{section.2.5}{Multi-variable Linear Regression}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.6}{Summary}{chapter.2}% 19
+\BOOKMARK [0][-]{chapter.3}{Counting and Combinatorics}{}% 20
+\BOOKMARK [1][-]{section.3.1}{Introduction}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.2}{General Counting Principles}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.3}{Permutations}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.4}{Combinations}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.5}{Summary}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.6}{Exercises}{chapter.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Probability Theory}{}% 27
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.2}{Relative Frequency}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.3}{Definition of Probability}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.4}{Exercises}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.5}{Conditional Probability}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.6}{Bayes Theorem}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.7}{Independence}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.8}{Summary}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.9}{More Exercises}{chapter.4}% 36
+\BOOKMARK [0][-]{chapter.5}{Probability Functions}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{Random Variables}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.3}{Probability Functions}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.4}{Expected Value}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.5}{Standard Units}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.6}{Summary}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.7}{Exercises}{chapter.5}% 44
+\BOOKMARK [0][-]{chapter.6}{Distributions based upon Equally likely Outcomes}{}% 45
+\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.2}{Discrete Uniform Distribution}{chapter.6}% 47
+\BOOKMARK [1][-]{section.6.3}{Continuous Uniform Distribution}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.4}{Hypergeometric Distribution}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.5}{Summary}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.6}{Exercises}{chapter.6}% 51
+\BOOKMARK [0][-]{chapter.7}{Distributions based upon Bernoulli Trials}{}% 52
+\BOOKMARK [1][-]{section.7.1}{Introduction}{chapter.7}% 53
+\BOOKMARK [1][-]{section.7.2}{Binomial Distribution}{chapter.7}% 54
+\BOOKMARK [1][-]{section.7.3}{Geometric Distribution}{chapter.7}% 55
+\BOOKMARK [1][-]{section.7.4}{Negative Binomial}{chapter.7}% 56
+\BOOKMARK [1][-]{section.7.5}{Summary}{chapter.7}% 57
+\BOOKMARK [1][-]{section.7.6}{Exercises}{chapter.7}% 58
+\BOOKMARK [0][-]{chapter.8}{Distributions based upon Poisson Processes}{}% 59
+\BOOKMARK [1][-]{section.8.1}{Introduction}{chapter.8}% 60
+\BOOKMARK [1][-]{section.8.2}{Poisson Distribution}{chapter.8}% 61
+\BOOKMARK [1][-]{section.8.3}{Exponential Distribution}{chapter.8}% 62
+\BOOKMARK [1][-]{section.8.4}{Gamma Distribution}{chapter.8}% 63
+\BOOKMARK [1][-]{section.8.5}{Summary}{chapter.8}% 64
+\BOOKMARK [1][-]{section.8.6}{Exercises}{chapter.8}% 65
+\BOOKMARK [0][-]{chapter.9}{Normal Distributions}{}% 66
+\BOOKMARK [1][-]{section.9.1}{Introduction}{chapter.9}% 67
+\BOOKMARK [1][-]{section.9.2}{The Normal Distribution}{chapter.9}% 68
+\BOOKMARK [1][-]{section.9.3}{Chi-Square Distribution}{chapter.9}% 69
+\BOOKMARK [1][-]{section.9.4}{Other "Bell Shaped" distributions}{chapter.9}% 70
+\BOOKMARK [1][-]{section.9.5}{Normal Distribution as a Limiting Distribution}{chapter.9}% 71
+\BOOKMARK [1][-]{section.9.6}{Central Limit Theorem}{chapter.9}% 72
+\BOOKMARK [1][-]{section.9.7}{Summary}{chapter.9}% 73
+\BOOKMARK [1][-]{section.9.8}{Exercises}{chapter.9}% 74
+\BOOKMARK [0][-]{chapter.10}{Estimation}{}% 75
+\BOOKMARK [1][-]{section.10.1}{Introduction}{chapter.10}% 76
+\BOOKMARK [1][-]{section.10.2}{Interval Estimates - Chebyshev}{chapter.10}% 77
+\BOOKMARK [1][-]{section.10.3}{Point Estimates}{chapter.10}% 78
+\BOOKMARK [1][-]{section.10.4}{Interval Estimates - Confidence Interval for p}{chapter.10}% 79
+\BOOKMARK [1][-]{section.10.5}{Interval Estimates - Confidence Interval for }{chapter.10}% 80
+\BOOKMARK [1][-]{section.10.6}{Interval Estimates - Confidence Interval for 2}{chapter.10}% 81
+\BOOKMARK [1][-]{section.10.7}{Exercises}{chapter.10}% 82
+\BOOKMARK [0][-]{chapter.11}{Hypothesis Testing}{}% 83
+\BOOKMARK [1][-]{section.11.1}{Introduction}{chapter.11}% 84
+\BOOKMARK [1][-]{section.11.2}{Hypotheses and Errors}{chapter.11}% 85
+\BOOKMARK [1][-]{section.11.3}{Hypothesis Test for one proportion}{chapter.11}% 86
+\BOOKMARK [1][-]{section.11.4}{Hypothesis Test for one mean}{chapter.11}% 87
+\BOOKMARK [1][-]{section.11.5}{Hypothesis Test for one variance}{chapter.11}% 88
+\BOOKMARK [1][-]{section.11.6}{Summary}{chapter.11}% 89
+\BOOKMARK [1][-]{section.11.7}{Exercises}{chapter.11}% 90
+\BOOKMARK [0][-]{chapter.12}{Review of Calculus}{}% 91
+\BOOKMARK [1][-]{section.12.1}{Geometric Series}{chapter.12}% 92
+\BOOKMARK [1][-]{section.12.2}{Binomial SumsBinomial SeriesTrinomial Series}{chapter.12}% 93
+\BOOKMARK [1][-]{section.12.3}{Negative Binomial Series}{chapter.12}% 94

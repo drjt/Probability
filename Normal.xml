@@ -22,23 +22,26 @@ We present the normal distribution by simply presenting it's probability functio
 </p>
 </section>
 
-<section>	
-	<title>The Normal Distribution</title>
+<section><title>The Normal Distribution</title>
 	
+<p>
+<definition><title>The Normal Distribution</title>
+	<statement>
 	<p>
-	
-	<definition>
-	<title>The Normal Distribution</title>
-	<statement>Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution provided it has a probability function given by
+	Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution provided it has a probability function given by
 		<me>
 		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
-		</me>	
+		</me>
+	</p>	
 	</statement>
-	</definition>
+</definition>
+</p>
 
-	<p>
-	The normal distribution is also sometimes referred to as the Gaussian Distribution (often by Physicists) or the Bell Curve (often by social scientists).
-	</p>
+<p>
+The normal distribution is also sometimes referred to as the Gaussian Distribution (often by Physicists) or the Bell Curve (often by social scientists).
+</p>
+
+<p>
 <sage>
 	<input>
 var('x,mu,sigma')
@@ -54,31 +57,34 @@ def _(m=slider(-10,10,1,0,label='$\mu$'),s=slider(1/5,5,1/10,1,label='$\sigma$')
     show(G,figsize=(5,3),title=titletext,ymin=0,ymax=1,xmin=-15,xmax=15)
     </input>
 </sage>
+</p>
 
-
-	<theorem>
-	<statement>
-		<p>
+<p>
+<theorem>
+<statement>
+<p>
 If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal distribution and often use Z as the variable name and will use <m>\Phi(z)</m> for the standard normal distribution function. In this case, the density function reduces to
 		<me>f(z) = \frac{1}{\sqrt{2 \pi}} e^{ -z^2 / 2}</me>
-		</p>
-	</statement>
-	<proof>
+</p>
+</statement>
+<proof>
 		<p>Convert to "standard units" using the conversion 
 			<me>z = \frac{x-\mu}{\sigma} = \frac{x-0}{1} = x.</me>
 		</p>
-	</proof>
-	</theorem>
+</proof>
+</theorem>
+</p>
 
-	<theorem><title>Verifying the normal probability function</title>
+<p>
+<theorem><title>Verifying the normal probability function</title>
 	<statement>
 		<p>
 		<me>\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = 1</me>
 		</p>
 	</statement>
-	<proof>
-
-<p>Note that you can convert the integral above to standard units so that it is sufficient to show
+<proof>
+<p>
+Note that you can convert the integral above to <xref ref="StandardUnitConversion">standard units</xref> so that it is sufficient to show
 <me>I = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{z^2}{2} } dz = 1</me>
 Toward this end, consider <m>I^2</m> and change the variables to get
 <md>
@@ -97,20 +103,19 @@ gives
 </md>
 as desired.
 </p>
-	</proof>
-	</theorem>
+</proof>
+</theorem>
+</p>	
 	
 	
-	
-	
-	
-	<theorem><title>Verifying the normal probability mean</title>
-	<statement>
+<p>
+<theorem><title>Verifying the normal probability mean</title>
+<statement>
 		<p>
 		<me>E[X] = \int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \mu</me>
 		</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>
 	<me>z = \frac{x-\mu}{\sigma}</me>
 	implies by solving that
@@ -125,17 +130,18 @@ as desired.
 </md>
 	and therefore the use of <m>\mu</m> is warranted.
 	</p>
-	</proof>
-	</theorem>
+</proof>
+</theorem>
+</p>	
 	
 	
-	
-	
-	
-	<theorem><title>Verifying the normal probability variance</title>
-	<statement><p>
+<p>
+<theorem><title>Verifying the normal probability variance</title>
+	<statement>
+	<p>
 		<me>E[(X-\mu)^2] = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \sigma^2</me>
-		</p>
+	</p>
+	</statement>
 	<proof>
 	<p>
 	<md>
@@ -150,40 +156,47 @@ as desired.
 	using integration by parts and using the integration in the proof of the mean above.  So, the use of <m>\sigma</m> is warranted.
 	</p>
 	</proof>
-	</statement>
-	</theorem>
-	
-	<theorem><title>Properties of the Normal Distribution</title>
-	<statement>
-	
-	</statement>
-	</theorem>
-	
-	<theorem><title>Normal Distribution Maximum</title>
-	<statement>
+</theorem>
+</p>
+
+<p>	
+<theorem><title>Properties of the Normal Distribution</title>
+<statement>
+TBA	
+</statement>
+</theorem>
+</p>
+
+<p>
+<theorem><title>Normal Distribution Maximum</title>
+<statement>
 	<p>The maximum of the normal distribution probability function occurs when <m>x = \mu</m>
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>Take the derivative of the probability function to get 
 	<me>\frac{\sqrt{2} {\left(\mu - x\right)} e^{\left(-\frac{{\left(\mu - x\right)}^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{3}}</me>
 	which is zero only when <m>x = \mu</m>.  Easily by evaluating to the left and right of this value shows that this critical value yields a maximum.
 	</p>
-	</proof>
-	</theorem>
+</proof>
+</theorem>
+</p>
 
-	<theorem><title>Normal Distribution Points of Inflection</title>
-	<statement>
+<p>
+<theorem><title>Normal Distribution Points of Inflection</title>
+<statement>
 	<p>Points of Inflection for the normal distribution probability function occurs when <m>x = \mu + \sigma</m> and <m>x = \mu - \sigma</m>.
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>Take the second derivative of the probability function to get 
 	<me>\frac{\sqrt{2} {\left(\mu + \sigma - x\right)} {\left(\mu - \sigma - x\right)} e^{\left(-\frac{\mu^{2}}{2 \, \sigma^{2}} + \frac{\mu x}{\sigma^{2}} - \frac{x^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{5}}</me>
 	which is zero only when <m>x = \mu \pm \sigma</m>.  Easily by evaluating to the left and right of this value shows that these critical values yield points of inflection.
 	</p>
-	</proof>
-	</theorem>
+</proof>
+</theorem>
+</p>
+
 
 <p>
 Notice that the work needed to complete the integrals over the entire domain above was pretty serious. To determine probabilities for a given interval is however not possible in general and therefore approximations are needed. When using TI graphing calculators, you can use 
@@ -191,6 +204,7 @@ Notice that the work needed to complete the integrals over the entire domain abo
 Or you can use the calculator below.
 </p>
 	
+<p>
 <sage>
 	<input>
 @interact(layout=dict(top=[['a', 'b']],bottom=[['mu','sigma']]))
@@ -200,15 +214,14 @@ def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = ')
     print "P("+str(a)+" &lt; X &lt; "+str(b)+") ~= "+str(P)
 	</input>
 </sage>
-
 </p>
+
 </section>
 
 
 
-<section>	
-	<title>Chi-Square Distribution</title>
-	<p>The following distribution is related to both the Normal Distribution and to the Gamma Distribution. Initially, consider a gamma distribution with probability function
+<section><title>Chi-Square Distribution</title>
+<p>The following distribution is related to both the Normal Distribution and to the Gamma Distribution. Initially, consider a gamma distribution with probability function
 	
 	<me>\frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}.</me>
 
@@ -217,17 +230,18 @@ Replacing <m>\mu = 2</m> and r with r/2 gives
 	<me>\frac{x^{r/2-1} \cdot e^{-x/2}}{\Gamma(r/2) \cdot 2^{r/2}}</me>
 
 which is given a special name below.
-	</p>
+</p>
 	
-	<p>
-
-	<definition><title>Chi-Square Probability Function</title>
-	<statement>Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
+<p>
+<definition><title>Chi-Square Probability Function</title>
+<statement>Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
 	<me>f(x) = \frac{x^{r/2-1} e^{-x/2} }{\Gamma(r/2) 2^{r/2}}.</me>
 	Then X has a Chi-Square distribution with r degrees of freedom. This is often denoted <m>\chi^2(r)</m>.
-	</statement>
-	</definition>
+</statement>
+</definition>
+</p>
 
+<p>
 <sage>
 	<input>
 # Chi-Square Grapher
@@ -237,26 +251,34 @@ def _(r=slider(1,20,1,3,label='r =')):
     plot(f,x,0,20).show()
 	</input>
 </sage>
+</p>
 
-	<theorem><title><m>\chi^2</m> statistics</title>
-	<statement>
+<p>
+<theorem><title><m>\chi^2</m> statistics</title>
+<statement>
 		<me>\mu = r</me>
 		<me>\sigma^2 = 2r</me>
 		<me>\gamma_1 = 2 \sqrt{2/r}</me>
 		<me>\gamma_2 = \frac{12}{r} + 3</me>
-	</statement>
-	</theorem>
-	
-	<theorem><title>Relationship between Normal and <m>\chi^2</m></title>
-	<statement>
+</statement>
+</theorem>
+</p>
+
+<p>	
+<theorem><title>Relationship between Normal and <m>\chi^2</m></title>
+<statement>
 	If <m>Z_1, Z_2, ..., Z_r</m> are r standard normal variables, then
 	<me> X = \sum_{k=1}^r Z_k^2</me>
 	is <m>\chi^2(r)</m>.
-	</statement>
-	</theorem>
-	
-	It also can be difficult to compute Chi-Square probabilities manually so you will perhaps want to use a numerical approximation in this case as well. The TI graphing calculator can be used with <m>\chi ^2</m>cdf(a,b,r).  Or, you can use the calculator below.
+</statement>
+</theorem>
+</p>
 
+<p>	
+It also can be difficult to compute Chi-Square probabilities manually so you will perhaps want to use a numerical approximation in this case as well. The TI graphing calculator can be used with <m>\chi ^2</m>cdf(a,b,r).  Or, you can use the calculator below.
+</p>
+
+<p>
 <sage>
 	<input>
 # Chi-Square Calculator
@@ -267,8 +289,7 @@ def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),
     print "P("+str(a)+" &lt; X &lt; "+str(b)+") ~= "+str(P)
     </input>
 </sage>
-	
-	</p>
+</p>
 
 	
 </section>
@@ -276,11 +297,20 @@ def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),
 <section><title>Other "Bell Shaped" distributions</title>
 <p>The Normal distribution discussed above is very important when doing statistical analysis. It however is not the only distribution that is symmetrical about the mean and looks like a bell.  In this section, we consider two other options--one which is virtually useless and another which is very useful.
 </p>
-<p><title>The Cauchy Distribution</title>
-For a useless distribution, consider a continuous random variable on the real numbers defined by
+
+<p>
+<definition><title>The Cauchy Distribution</title>
+<statement>
+<p>
+Consider a continuous random variable on the real numbers defined by
 <me>f(x) = \frac{1/\pi}{1+x^2}.</me>
 A random variable with this probability function is said to be a Cauchy Distribution.
 </p>
+</statement>
+</definition>
+</p>
+
+
 <theorem><title>The Cauchy Distribution</title>
 <statement><me>f(x) = \frac{1/\pi}{1+x^2}</me>
 is a probability function on <m>(-\infty, \infty)</m>.
@@ -728,6 +758,19 @@ The above theorems allow you to utilize the normal distribution to compute appro
 </p>
 
 </section>
+
+
+<section><title>Summary</title>
+<introduction>
+<p>
+Here is a summary of the major points in this chapter:
+</p>
+</introduction>
+<p>
+TBA
+</p>
+</section>
+
 
 <section><title>Exercises</title>
 

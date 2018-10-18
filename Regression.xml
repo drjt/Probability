@@ -12,9 +12,16 @@
 
 <section><title>Introduction</title>
 <p>
-Given a set of data points <m>(x_0,y_0), (x_1,y_1), ... (x_n,y_n)</m>, it is often desirable to have a nice continuous formula <m>y = f(x)</m> that expresses the general nature of those data points. Such a formula "interpolates" the data points if <m>y_k = f(x_k)</m>, that is the formula gives a graph that exactly passes through each of the given data points.</p>
+When computing means, medians, variances, etc. in the previous chapter, you took given data and create measures that in some sense describe the data using a single value. These single values can be called "descriptive statistics" or perhaps "point estimates" that help understand the properties of the original data set.  In this chapter, you will instead take a data set and create a mathematical model that can be used to predict or infer properties of the underlying problem. Statistical procedures such as in this chapter that are used to predict are often lumped into the world of "inferential statistics".
+</p>
+<p> 
+So, given a set of data points <m>(x_0,y_0), (x_1,y_1), ... (x_n,y_n)</m>, it is often desirable to have a nice continuous formula <m>y = f(x)</m> that expresses the general nature of those data points. Such a formula "interpolates" the data points if 
+<me>y_k = f(x_k),</me> 
+that is the formula gives a graph that exactly passes through each of the given data points.</p>
 <p>
-On the other hand, sometimes the data points are known to be only approximate or the complexity of the formula needed to interpolate all of the data points exactly is too large. In this case, the formula may only be required to return values that are relatively close to the data points. Such a formula is said to "approximate" and gives <m>y_k \approx f(x_k)</m>. Below, we consider ways to create useful models that approximate the data points.
+On the other hand, sometimes the data points are known to be only approximate or the complexity of the formula needed to interpolate all of the data points exactly is too large. In this case, the formula may only be required to return values that are relatively close to the data points. Such a formula is said to "approximate" and gives 
+<me>y_k \approx f(x_k).</me>
+Let's consider ways to create useful models that approximate the data points.
 </p>
 <p>
 From basic algebra, if you are given two distinct points then there is one line which passes exactly through (i.e. interpolates) both. There are many ways to create this linear model but for points <m>(x_0,y_0), (x_1,y_1)</m>,
@@ -24,48 +31,59 @@ From basic algebra, if you are given two distinct points then there is one line 
 is the linear function which passes through both points if the x-values are distinct.  If the x's are equal then 
 <me> x = x_0</me>
 is linear and interpolates both data points. 
-However, once you collect three or more points it is likely that there is no line which exactly "interpolates" all of the points. So, if we desire a linear model then we must settle for a model that approximates. In this chapter, you will investigate how to create polynomial functions which in some manner approximate a collection of data point in some "best" manner.
+However, once you collect three or more points it is likely that there is no line which exactly "interpolates" all of the points. If we desire a linear model then we must settle for a model that approximates. In this chapter, you will investigate how to create polynomial functions which in some manner approximate a collection of data point in some "best" manner.
 </p>
-<exercise>
-<p>Verify that each of the formulas presented above interpolates when given exactly two data points.
-</p>
-</exercise>
+
 </section>
 
-<section><title>Linear Regression</title>
+
+<section><title>Linear Regression - Best Fit Line</title>
 <p>
-In this section, we will presume only one independent variable x and one dependent variable y.
-</p>
-<p>
-Consider a collection of data points 
+In the next few sections, we will presume only one independent variable x and one dependent variable y. Toward that end, consider a collection of data points 
 <me>(x_0,y_0), (x_1,y_1), ... , (x_n,y_n)</me>
 and a general linear function 
 <me>f(x) = mx + b.</me>
-It is possible but generally unlikely that each of the given data points are exactly interpolated by the linear function. However, you may notice that the data points exhibit a linear tendency or that the underlying physics might suggest a linear model. If so, you may find it easier to predict values of y for given values of x using a linear approximation. Here you will investigate a method for doing so called "linear regression", "least-squares", or "best-fit line". 
+It is possible but generally unlikely that each of the given data points will be interpolated exactly by the linear function. However, you may notice that the data points exhibit a linear tendency or that the underlying physics might suggest a linear model. A "scatter plot" of a example data set is created in teh interactive cell below and the provided data appears to indicate a linear trend. In general, if this is the case then you may find it easier to predict values of y for given values of x using a linear approximation. That is why this method for doing so is also often called a "best-fit line". 
 </p>
+
+<p>
+<sage>
+<input>
+var('x')
+@interact
+def _(Points = input_box([(-1,1),(3,2),(4,3),(6,4)])):   
+    G = points(Points,size=20)
+    G.show(title = "Scatter Plot")
+</input>    
+</sage>
+</p>
+
+
 <p>
 But why even bother creating a formula (a line here) to approximate data that does not satisfy that formula? Remember that you would expect collected data to vary slightly as one repeatedly collects that data in the same way that you would expect to make a slightly different score on repeated attempts at exams on the same material. Creating a formula that is close to your data gives a well-defined way to predict a y value for a given x value. This predictive behavior is illustrated in the exercise below.
 </p>
 
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		Consider using the following best-fit line for approximation.
-		</p>
-		</introduction>
-		<webwork source="Library/NAU/setStatistics/linear_regression1.pg">
-		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
+<p>
+<exercise><title>WebWork - Using an approximating line</title>
+  <webwork>
+      <statement>
+      <p>An airline has determined that the relationship between the number of passengers on a flight and the total weight of luggage stored in the baggage compartment can be estimated by the least squares regression equation 
+      <me>y = 127 + 28 x.</me> 
+Predict the weight of luggage for a flight with 121 passengers.</p>
+<p>Answer: <var name="'3515'" width="15" /> pounds</p>
+      </statement>
+      <solution>
+      Since x represents weight, choose x = 121 and evaluate the line at that value to get the estimated total luggage weight to be
+      <me>y = 127 + 28 (121) = 3515</me>
+      </solution>
+   </webwork>
 </exercise>
+</p>
 
 <p>
-To determine the best-fit line, you need to determine what is meant by the word "best". Here, we will derive the standard approach which interprets this to mean that the total vertical error between the line and the provided data points is minimized in some fashion.  Indeed, this vertical error would be of the form
+To determine this best-fit line, you need to determine what is meant by the word "best". For linear regression, to reach this goal consider the total of all vertical deviations between the desired line and the provided data points.  Indeed, this vertical error would be of the form
 <me>e_k = f(x_k) - y_k</me>
-and would be zero if f(x) exactly interpolated at the given data point.  Note, some of these errors will be positive and some will be negative. To avoid any possible cancellation of errors, you can look at taking absolute values (which is tough to deal with algebraically) or by squaring the errors. This second option will be the approach taken here. This is similar to the approach taken earlier when developing formulas for the variance.
+and would be zero if f(x) exactly interpolated at the given data point.  Note, some of these errors will be positive and some will be negative. To avoid any possible cancellation of errors, we could consider taking absolute values (which is tough to deal with algebraically) or perhaps squaring the errors. This second option is the standard approach. This approach is similar to the approach taken earlier when developing formulas for the variance.
 </p>
 <p>The best-fit line therefore will be the line <m>f(x) = mx+b</m> so that the "total squared error" is minimized. This total squared error is given by
 <me>TSE(m,b) = \sum_{k=1}^n e_k^2 = \sum_{k=1}^n (f(x_k) - y_k)^2 = \sum_{k=1}^n (m x_k + b - y_k)^2.</me>
@@ -74,7 +92,7 @@ and would be zero if f(x) exactly interpolated at the given data point.  Note, s
 For the following interactive cell, consider for the given data points various values for the slope and y-intercept and see if you can make the total squared error as small as possible. In doing so, notice the vertical distances from the line to the given data points generally decreases as this error measure gets smaller. 
 </p>
 
-
+<p>
 <sage>
 <input>
 var('x')
@@ -92,34 +110,37 @@ def _(Points = input_box([(-1,1),(3,1),(4,3),(6,4)]), m = slider(-4,4,1/50,1),b 
         ypt.append(y0)
         TSE += (f(x=x0) - y0)^2
         G += line([(x0,f(x=x0)),(x0,y0)],color='orange')
-    G += plot(f,x,min(xpt),max(xpt),color='gray')
+    G += plot(f,x,min(xpt)-0.2,max(xpt)+0.2,color='gray')
     T = 'Total Squared Error = $%s$'%str(n(TSE))
     G.show(title = T)
 </input>    
 </sage>
+</p>
 
+<p>
 <exercise><title>Non-functional data</title>
 <p>
-Experiment in the interative cell above using exactly two data points that have the same x-value.  Such as (1,1) and (1,2). 
+Experiment in the interactive cell above using exactly two data points that have the same x-value.  Such as (1,1) and (1,2). Next, add some additional data points in the same general vicinity as your original two points. What is the effect to your best-fit line of adding non-functional points?
 </p>
 </exercise>
-
+</p>
 
 <p>
 So that we don't have to guess the best values for slope and intercept, we can appeal to calculus. Indeed, to minimize this function of the two variables m and b take partial derivatives and set them equal to zero to get the critical values:
 <me>TSE_m = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot x_k</me>
 and
 <me>TSE_b = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot 1 .</me>
-Setting equal to zero and solving gives what is known as the "normal equations":
+Setting each of these equations equal to zero (using calculus!) and solving gives what is known as the "normal equations":
 <me>m \sum_{k=1}^n x_k^2 + b \sum_{k=1}^n x_k = \sum_{k=1}^n x_k y_k</me>
 and
 <me>m \sum_{k=1}^n x_k + b \sum_{k=1}^n 1 = \sum_{k=1}^n y_k.</me>
-Solving these for m and b gives the best fit line.
+Notice that these normal equations are a linear system of equations and (among perhaps other reasons) is why this is called linear regression. Solving these for m and b gives the best fit line.
 </p>
-<p>So, let's see how to graph points against the best-fit line using R
+<p>
+So, let's see how to graph points against the best-fit line using R
 </p>
 
-
+<p>
 <sage language='r'>
 <input>
 x &lt;- c(1, 2, 3, 5, 5, 6)
@@ -132,7 +153,9 @@ lm(y ~ x)
 abline(lm(y ~ x))
 </input>
 </sage>
+</p>
 
+<p>
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
@@ -147,29 +170,68 @@ abline(lm(y ~ x))
 		</p>
 		</conclusion>
 </exercise>
+</p>
 
 </section>
 
+
 <section><title>Correlation</title>
 <p>
-You can plot points and plot the resulting best-fit line determined in the previous section but the question remains whether the line is any good. In particular, the real use of the line often is to subsequently predict y-values for a given x-value. However, it is very likely that the best-fit line does not even pass through any of the provided data points.  So, how can something that misses every marker still be considered a good fit. To quantify this, we first need to discuss a way to measure how well two variables vary with each other.
+You can plot points and plot the resulting best-fit line determined in the previous section but the question remains whether the line is any good. In particular, the real use of the line often is to subsequently predict y-values for a given x-value. However, it is very likely that the best-fit line does not even pass through any of the provided data points.  So, how can something that misses every marker still be considered a good fit. To quantify this, we first need to discuss a way to measure how two variables might vary with each other.
 </p>
-<definition><title>Covariance</title>
+
+<p>
+<definition xml:id="Covariance"><title>Covariance</title>
+<statement>
 <p>Given paired (sample) data 
 <me>(x_0,y_0), (x_1,y_1), ... , (x_n,y_n)</me>
 with corresponding means <m>\overline{x}</m> and <m>\overline{y}</m>, the covariance is given by
-<me>Cov(X,Y) = \sum_{k=0}^n (x_k-\overline{x})(y_k-\overline{y})/n.</me>
+<me>Cov(X,Y) = \sum_{k=0}^n (x_k-\overline{x})(y_k-\overline{y})/n</me>
+and similarly if using population data in which you would use instead the mean of the x-values <m>\mu_x</m> and the mean of the y-values <m>\mu_y</m>. 
 </p>
+</statement>
 </definition>
+</p>
+
+<p>
+<theorem><title>Alternate Formula for Covariance</title>
+<statement>
+<me>Cov(X,Y) = \frac{\sum_{k=0}^n x_k y_k}{n} - \overline{x} \cdot \overline{y}</me>
+</statement>
+<proof>
+<p>
+<md>
+<mrow>Cov(X,Y) &amp; = \sum_{k=0}^n (x_k-\overline{x})(y_k-\overline{y})/n</mrow>
+<mrow> &amp; = \sum_{k=0}^n \left [ x_k y_k -\overline{x}  \cdot y_k-\overline{y} \cdot x_k + \overline{x} \cdot \overline{y} \right ]/n.</mrow>
+<mrow>&amp; = \sum_{k=0}^n x_k y_k /n - \overline{x}  \cdot \sum_{k=0}^n y_k /n - \overline{y} \cdot \sum_{k=0}^n x_k /n + \overline{x} \cdot \overline{y} </mrow>
+</md>
+which simplifies to the desired result using the definition of the mean.
+</p>
+</proof>
+</theorem>
+</p>
+
 <p>This general definition provides a general measure which is a second order term (like variance) but also maintains "units". To provide a unit-less metric, consider the following measure.
-<definition><title>Correlation Coefficient</title>
+</p>
+
+<p>
+<definition xml:id="CorrelationCoefficient"><title>Correlation Coefficient</title>
+<statement>
 <p>Given a collection of data points, the correlation coefficient is given by
 <me>r = \frac{Cov(X,Y)}{s_x s_y}</me>
-where <m>s_x</m> is the standard deviation of the x-values only and <m>s_y</m> is the standard deviation of the y-values only.
+where <m>s_x</m> is the standard deviation of the x-values only and <m>s_y</m> is the standard deviation of the y-values only. A similar statistics for population data would instead utilize <m>\sigma_x</m> and <m>\sigma_y</m> as the respective standard deviations of the x-values and y-values.
 </p>
+</statement>
 </definition>
-<theorem><title>Interpretation of the Correlation Coefficient</title>
-<statement>If the points are colinear with a positive slope then r=1 and if the points are collinear with a negative slope then r=-1.</statement>
+</p>
+
+<p>
+<theorem><title>Correlation Coefficient for Linear Data</title>
+<statement>
+<p>
+If the points are colinear with a positive slope then r=1 and if the points are collinear with a negative slope then r=-1.
+</p>
+</statement>
 <proof>
 <p>
 Assume the data points are colinear with a positive slope. Then the 
@@ -183,7 +245,21 @@ A similar proof follows in the second case by noting that <m>m_0 / | m_0 | = -1<
 </p>
 </proof>
 </theorem>
+</p>
 
+<p>
+<definition><title>Coefficient of Determination</title>
+<statement>
+<p>
+Given the correlation coefficient r, the coefficient of determination is given by <me>r^2.</me>
+This measure indicates the percentage of the variation in y that can be explained by the collection of x values. Note, if r=1 (or r=-1), then the theorem above indicates that the linear model explains the variability for all of the y-values.
+</p>
+</statement>
+</definition>
+</p>
+
+
+<p>
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
@@ -198,7 +274,9 @@ A similar proof follows in the second case by noting that <m>m_0 / | m_0 | = -1<
 		</p>
 		</conclusion>
 </exercise>
+</p>
 
+<p>
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
@@ -213,18 +291,20 @@ A similar proof follows in the second case by noting that <m>m_0 / | m_0 | = -1<
 		</p>
 		</conclusion>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Correlation equaling 0</title>
 <p>
 Consider the data points (1,1), (1,2), (2,1), (2,2).  Plot these points and consider the nature of the best fit line. Show using software that the correlation coefficient is zero. Justify why TSE(m,b) = 1 must be the minimum.
 </p>
 </exercise>
-
-
 </p>
+
 </section>
 
-<section><title>Higher Degree Regression</title>
+
+<section><title>Higher Degree Linear Regression</title>
 <p>
 Continuing in a similar fashion to the previous section, consider now an approximation using a quadratic function <m>f(x) = a x^2 + b x + c</m>.  In this case, the total squared error would be of the form
 <me>TSE(a,b,c) = \sum_{k=0}^n (a x_k^2 + b x_k + c - y_k)^2.</me>
@@ -238,7 +318,7 @@ Once again, setting equal to zero and solving gives the normal equations for the
 <me>a \sum_{k=0}^n x_k^2 + b \sum_{k=0}^n x_k + c \sum_{k=0}^n 1 = \sum_{k=0}^n y_k.</me>
 </p>
 
-<p>We can also approach the derivation of regression forumulas using a linear algebra approach. To do this, consider the equations generated by plugging in the data points <m>(x_0,y_0), (x_1, y_1), ... , (x_n, y_n)</m> into the quadratic model. This yields a (likely overdetermined) system of equations.  Appending an error term <m>\epsilon_k</m> for each equation gives the following matrix form: 
+<p>Notice that even though you are creating the best-fit quadratic, to find that quadratic boils down to solving a (slightly larger) linear system.  In other words, linear regression again. Indeed, we can also approach the derivation of regression forumulas directly using a linear algebra approach. To do this, consider the equations generated by plugging in the data points <m>(x_0,y_0), (x_1, y_1), ... , (x_n, y_n)</m> into the quadratic model. This yields a (likely overdetermined) system of equations.  Appending an error term <m>\epsilon_k</m> for each equation gives the following matrix form: 
 </p>
 <me>
 \begin{bmatrix}
@@ -286,6 +366,7 @@ with the matrix A containing the three unknowns a, b, and c.
 <p> We can also use Matlab (or the opensource alternative "octave") to compute this linear algebra for us. The graph here using the sagecell is a text graph and is very rudimentary but plugging this code into Matlab or a desktop version of octave should present a very nice graph.
 </p>
 
+<p>
 <sage language ='octave'>
 <input>
 x = [-1 0 1 3 5 5]
@@ -306,10 +387,13 @@ v = a * u.^2 + b * u + c;
 plot(x,y,'o',u,v,'.')
 </input>
 </sage>
+</p>
 
 <p>
-Cutting and pasting this code into perhaps http://octave-online.net gives a nice, non ASCII graph. Below, we do the same thing but using Sage.</p>
+Cutting and pasting this code into perhaps http://octave-online.net gives a nice, non ASCII graph. Below, we do the same thing but using Sage.
+</p>
 
+<p>
 <sage>
 <input>
 var('x')
@@ -329,16 +413,20 @@ Xt = X.transpose()
 A = (Xt*X).inverse()*Xt*Y
 [a,b,c] = [A[0][0], A[1][0], A[2][0]]
 f = a*x^2+b*x+c
-banner = "The quadratic interpolant is given by $%s$"%str(latex(f))
+banner = "The quadratic interpolant is given by \(%s\)"%str(latex(f))
 G = points(pts,size=20)
-H = plot(f,x,min(xpts),max(xpts),title=banner)
+H = plot(f,x,min(xpts)-0.2,max(xpts)+0.2,title=banner)
 show(G+H)
 </input>
 </sage>
+</p>
 
-<exercise><title>Cubic Interpolant</title>
+<p>
+<exercise><title>Creating a Cubic Linear Regression Interpolant</title>
 <statement>
+<p>
 Modify the Sage code above to give a best-fit cubic interpolant.
+</p>
 </statement>
 <solution>
 
@@ -368,46 +456,46 @@ A = (Xt*X).inverse()*Xt*Y
 f = a*x^3 + b*x^2 + c*x + d
 banner = "The cubic interpolant is given by $%s$"%str(latex(f))
 G = points(pts,size=20)
-H = plot(f,x,min(xpts),max(xpts),title=banner)
+H = plot(f,x,min(xpts)-0.2,max(xpts)+0.2,title=banner)
 show(G+H)
 </pre>
 
 
 </solution>
 </exercise>
+</p>
 
+<p>
 <exercise><title>WebWork</title>
 		<introduction>
 		<p>
-		Doing Cubic Regression...use your Sage work from above.
+		Doing Cubic Linear Regression...use your Sage work from above.
 		</p>
 		</introduction>
 		<webwork source="Library/Rochester/setStatistics6CorrelationRegression/ur_stt_6_10.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		This generalizes well.
-		</p>
-		</conclusion>
 </exercise>
+</p>
 
 </section>
 
 
 
 
-<section><title>Multi-variable Regression</title>
+<section><title>Multi-variable Linear Regression</title>
 <p>
 The regression models that we have looked at presumed a single independent variable. It is much more likely when investigating cause and effect relationships that there are perhaps many independent variables that contribute. 
 </p>
 
 <p>Let's consider a linear model with two independent variables.
-Indeed, a basic two-variable linear model is of the form
-<me>z = \alpha_1 x + \alpha_2 y + \beta .</me>
+Indeed, a basic two-variable linear model of the form
+<me>z = \alpha_1 x + \alpha_2 y + \beta</me>
 
-For data points <me>(x_0,y_0,z_0), (x_1,y_1,z_1), (x_2,y_2,z_2), ... , (x_n,y_n,z_n) , </me> 
-using a linear systems approach similar to the previous section, evaluating at these data points and appending an error term to each equation gives, in matrix form:
+can be used to approximate data points <me>(x_0,y_0,z_0), (x_1,y_1,z_1), (x_2,y_2,z_2), ... , (x_n,y_n,z_n) . </me> 
+Using a linear systems approach similar to the previous section by evaluating at these data points and appending an error term to each equation gives, in matrix form:
+</p>
 
+<p>
 <me>
 \begin{bmatrix}
 z_0
@@ -444,11 +532,14 @@ z_0
  \epsilon_n 
 \end{bmatrix}
 </me>
+</p>
+
+<p>
 where the <m>\epsilon_k</m> terms are the deviation between the exact data point and the approximation of that point on some plane. Symbolically
 <me>Z = XA + \epsilon.</me>
-If all of the points lie on the same plane (unlikely), then <m>\epsilon = 0</m>). Otherwise, once again applying a least squares solution approach is the same as minimizing <m> \epsilon^t \epsilon</m> and eventually gives
+If all of the points lie on the same plane (unlikely), then <m>\epsilon = 0</m>. Otherwise, once again applying a least squares solution approach is the same as minimizing <m> \epsilon^t \epsilon</m> and eventually gives
 <me>A = (X^t X)^{-1} X^t Z</me>
-in general.  Evaluating this with X and Z as above gives the matrix  
+in general.  Evaluating this with X and Z as above gives the needed coefficients  
  
 <me> A = \begin{bmatrix}
  \alpha_1 \\ 
@@ -462,51 +553,89 @@ in general.  Evaluating this with X and Z as above gives the matrix
 <p>Let's first see how this is done automatically in R using one of the built-in data sets
 </p>
 
+<p>
 <sage language='r'>
 <input>
-fit &lt;- lm(y ~ x1+x2+x3, data=mydata)
+x1 &amp;- c(1, 2, 3, 5, 5)
+x2 &amp;- c(1, 1, 2, 2, 3)
+y &amp;- c(5, 1, 4, 3, -1)
+fit &lt;- lm(y ~ x1+x2, data=(x,y,z))
 summary(fit)             # basic results
 coefficients(fit)        # a,b,c, for y = a x1 + b x2 + c x3
 fitted(fit)              # predicted values
 residuals(fit)           # errors
 </input>
 </sage>
+</p>
 
 <p>
-A good example of the usefulness and limitations of multi-variate regression is the calculation of the "Heat Index". This measure determines a measure of discomfort relative to the ambient temperature and the relative humidity. Indeed, in warm climates a high temperature is more difficult to bear if the humidity is also high. One reason is that with high humidity the body is less effective in shedding heat through evaporation of body sweat.
+A good example of the usefulness and limitations of multi-variate linear regression is the calculation of the "Heat Index". This measure determines a measure of discomfort relative to the ambient temperature and the relative humidity. Indeed, in warm climates a high temperature is more difficult to bear if the humidity is also high. One reason is that with high humidity the body is less effective in shedding heat through evaporation of body sweat.
 </p>
 <p>
 The National Weather Service in 1990 published the following multiple regression equation for Heat Index (HI) relative to the ambient temperature (T) and the relative humidity (RH)
-<me>H = -42.379 + 2.04901523 \cdot T + 10.14333127 \cdot R - 0.22475541 \cdot T \cdot R  \\
-- 6.83783 \cdot 10^{-3} \cdot T^2 - 5.481717 \cdot 10^{-2} \cdot R^2 + 1.22874 \cdot 10^{-3} \cdot T^2 \cdot R \\
-+ 8.5282 \cdot 10^{-4} \cdot T \cdot R^2-1.99 \cdot 10^{-6} \cdot T^2 \cdot R^2.</me>
-Notice, their model utilizes quadratic terms and therefore uses a generalization of the linear result presented above. Details on how this equation was determined and other details are available at https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml .
+<md>
+  <mrow>H &amp; = -42.379 + 2.04901523 \cdot T + 10.14333127 \cdot R - 0.22475541 \cdot T \cdot R </mrow>
+  <mrow> &amp; - 6.83783 \cdot 10^{-3} \cdot T^2 - 5.481717 \cdot 10^{-2} \cdot R^2 + 1.22874 \cdot 10^{-3} \cdot T^2 \cdot R </mrow>
+  <mrow> &amp; + 8.5282 \cdot 10^{-4} \cdot T \cdot R^2-1.99 \cdot 10^{-6} \cdot T^2 \cdot R^2.</mrow>
+</md>
+Since this model utilizes a linear combination of terms and it's derivation could also be generated using a generalization of the linear regression method presented above. Details on how this equation was determined and other details are available at https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml .
 </p>
 
+
+<p>
 <sage><title> Computing Heat Index Values</title>
 <input>
 @interact
 def _(T = (90),R = (95)):
-    H = -42.379+2.04901523*T+10.14333127*R-0.22475541*T*R-6.83783*10^(-3)*T^2-5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R+8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2
-    print "At temperature ",T," with ",R,"% relative humidity, the Heat Index =",H
+    H =-42.379+2.04901523*T+10.14333127*R \
+    -0.22475541*T*R-6.83783*10^(-3)*T^2 \
+    -5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R \
+    +8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2
+    print "For T = ",T," with humidity = ",R,"percent , Heat Index =",H
 </input>
 </sage>
+</p>
+
+
 <p>
 Below one can compute a table for various ambient Temperature readings given one value for relative humidity.  Notice what happens for a relatively high humidity and relatively high temperature.
 </p>
+
+
+<p>
 <sage><title> Computing Heat Index Table</title>
 <input>
 R = 95
 for T in range(80,121):
-    H = -42.379+2.04901523*T+10.14333127*R-0.22475541*T*R-6.83783*10^(-3)*T^2-5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R+8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2
-    print "At temperature ",T," with ",R,"% relative humidity, the Heat Index =",H
-	
+    H = -42.379+2.04901523*T+10.14333127*R \
+    -0.22475541*T*R-6.83783*10^(-3)*T^2 \
+    -5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R \
+    +8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2
+    print "For T = ",T," with humidity = ",R,"percent , Heat Index =",H	
 </input>
 </sage>
+</p>
+
+
 <p>
-Indeed, you cannot roast a turkey by simply turning the oven on 120 and pumping in a lot of humidity since the turkey is not trying to cool itself anymore. Any discomfort measured on the turkey's behalf would certainly be matched by the human since the bird would remain very much uncooked. The issue is that this model doesn't presume the possibility of 120F and 95% humidity. Often, in situations where the temperature is able to reach that level, such as a desert, then the relative humidity is correspondingly low. This idea of using a model to predict extreme values beyond the measured data is called extrapolation and should be utilized with care. Interpolation to estimate values within the confines of the measured data is however generally a safe bet.
+Indeed, you cannot roast a turkey by simply turning the oven on 120 and pumping in a lot of humidity since the turkey is not trying to cool itself anymore. Any discomfort measured on the turkey's behalf would certainly be matched by the human since the bird would be a rare bird and remain very much uncooked. The issue is that this model doesn't presume the possibility of 120F and 95% humidity. Often, in situations where the temperature is able to reach that level, such as a desert, then the relative humidity is correspondingly low. This idea of using a model to predict extreme values beyond the measured data is called extrapolation and should be utilized with care. Interpolation to estimate values within the confines of the measured data is however generally a safe bet.
 
 </p>
+
+
 </section>
+
+<section><title>Summary</title>
+<introduction>
+<p>
+Here are the important formulas from this section:
+</p>
+</introduction>
+<p>
+Later
+</p>
+</section>
+
+
 
 </chapter>

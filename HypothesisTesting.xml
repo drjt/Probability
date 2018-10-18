@@ -17,48 +17,201 @@ When creating confidence intervals, you started with a sample and used the sampl
 <p>
 The educated guess noted above is often called the "null hypothesis" and should be considered as a guess that one tries to disprove if possible by using a subsequent statistical sample.
 </p>
+</section>
 
+<section><title>Hypotheses and Errors</title>
 
 <p>
-Discussion on Type 1 and Type 2 errors.
+In formulating a hypothesis, you will be making a declarative statement (a proposition) that has an actual truth value. That is, it is either true or it is not true in real life. However, since we will assess that truth using a test sample then measuring that truth value will never be 100% certain in the same manner that confidence intervals can never include 100% of the possible choices for a particular statistic. Hence, it is possible for you to make an incorrect conclusion.
+</p>
+<p>
+In general, there are four different outcomes that are possible when testing a hypothesis:
+<ul>
+<li>Your hypothesis is true and you determine that it is true.</li>
+<li>Your hypothesis is false but you determine that it is true.</li>
+<li>Your hypothesis is true but you determine that it is false.</li>
+<li>Your hypothesis is false and you determine that it is false.</li>
+</ul>
+The first and last cases are "good" since you have accurately determined the truth of the hypothesis. The second and third are however bad since you either believe something that is not true or you don't believe something that is true. We would like to minimize the likelihood of allowing these last two possibilities.
+</p>
+<p>
+Toward that end, let's consider the case where the hypothesis is true but you determine (in error) that it is false. This is called a Type I error and we will designate the probability of this error by <m>\alpha</m>. To lower the risk of a Type I error, you will want to make <m>\alpha</m> smaller.  In general, <m>\alpha</m> is also called "the significance level" with <m>\alpha = 0.05</m> a common choice with 0.01 and 0.10 also sometimes used. In general, any value between 0 and 1 is ok but large values mean large likelihood for error so choosing a value closer to 0 is preferred.
+</p>
+<p>
+In a similar manner, consider the case where the hypothesis is false but you determine (in error) that it is true. This is called a Type II error and will be denote the probability of a Type II error by <m>\beta</m>. Again, your goal is to make the risk of a Type II error smaller and therefore want <m>\beta</m> to be as small as possible.
+</p>
+<p>
+In the following sections you will play around with minimizing Type I and Type II errors. Type I errors will be minimized by simply choosing a smaller value for <m>\alpha</m> when working through the formulas. Type II errors will be minimized by talking (if possible) a larger sample size when computing the needed sample statistics. 
+</p>
+<p>
+Toward that end, you will compose in each case a <em>Null Hypothesis</em> (denoted <m>N_0</m>). This statement is what you will test for truth. You will also compose an <em>Alternate Hypothesis</em> (denoted <m>N_a</m>) that is often the logical complement (but not always) of <m>N_0</m>. The null hypothesis is often a statement corresponding to the likelihood that observations occur purely by chance while the alternate hypothesis will often indicate that outcomes are not actually random but are influenced by some (possibly unknown) causes.  If our sample shows that the null hypothesis <m>N_0</m> is false, then we will accept the alternate <m>N_a</m>. If this is a bad decision then it will be true that the hypothesis is true but you will have determined that it is false...that is, made a Type I error. 
+</p>
+<p>
+To avoid ever making an Type II error, often often never "accepts" the null hypothesis <m>N_0</m> even if the sample does not conclude that it is false. In other words, if you do this then you will never allow yourself to determine that <m>N_0</m> is true.  Seems odd but this is one way to avoid ever worrying much about type II errors. The best way to avoid this blind spot is to use relatively large test samples and in doing so you will minimize the likelihood of type II.
+</p>
+<p>
+So, our plan of attack is to find some way to determine, from a sample, the amount of Type I error we might make. For a given problem, from the sample, you will create a specific estimate for Type I error...called a p-statistic...and compare to the chosen significance level <m>\alpha</m>. Sounds easy enough?
 </p>
 
+<p>Finally, you will notice in each of the instances presented that the form of the solution method will be very similar to the forms we used in creating confidence intervals. The difference is that for hypothesis testing we <em>assume</em> the value in the middle and test to see whether the sample statistic is in one of the tails so that we can reject rather than with confidence intervals we assume as sample statistic is in the middle and then use that sample to create boundaries within which the theoretical population statistic <em>must</em> like with high confidence.
+</p>
 
 
 </section>
 <section><title>Hypothesis Test for one proportion</title>
+<p>
+In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value p:
+<me> H_0 : p = p_0 \\ H_a : p \neq p_0</me>
+or
+<me> H_0 : p \le p_0 \\ H_a : p \gt p_0</me>
+or 
+<me> H_0 : p \ge p_0 \\ H_a : p \lt p_0.</me>
+For any given problem, we choose only one of these three options.
+The first is called a "two-tailed" test since the alternate hypothesis can not be equal if it is actually larger or smaller. The last two are called "one-tailed" tests since the alternate hypothesis only allows for being on one side.  Note that some people will write all of these null hypothesis options using equality but the alternate hypothesis determines the number of tails.
+</p>
+<p>
+From the Central Limit Theorem, you found that every interesting distribution eventually becomes approximately normal. This includes the binomial distribution with mean <m>\mu = n p_0</m> and variance <m>\sigma^2 = n p_0 (1-p_0)</m>. Hence, the <em>z-statistic</em>
+<me> Z = \frac{X - n p_0}{\sqrt{n p_0(1-p_0)}} = \frac{p - p_0}{\sqrt{p_0(1-p_0)/n}}</me>
+is approximately standard normal and so probabilities on this statistic can be computed as needed using the normal distribution.
+</p>
 
-	<p><m> H_0 : p = p_0</m>
-	vs  <m> H_a : p \neq p_0</m>
-	</p>
+<p>
+Let's look at an example for this by considering:
+<me>H_0: p = 0.20</me>
+vs
+<me>H_a: p \ne 0.20.</me>
+Tests like this are called <em>two-tailed</em> since there are two ways to reject the null hypothesis: we find that p should be less than 0.2 or we find that p should be greater than 0.2.
+</p>
 
-	<p><m> H_0 : p = p_0</m>
-	vs  <m> H_a : p \gt p_0</m>
-	</p>
+<p>
+To test our hypothesis, let's now chose a significance level of <m>\alpha = 0.05</m> and take a sample. Presuming we actually do this, let's assume that we find that out of n=100 sample values we get X = 27 successes. Hence, our actual test statistic is <m>p = \frac{27}{100} = 0.27</m>.
+</p>
 
-	<p><m> H_0 : p = p_0</m>
-	vs  <m> H_a : p \lt p_0</m>
-	</p>
-	
+<p>
+So, in this case we have
+<me> \sigma = \sqrt{\frac{p_0(1-p_0)}{n}} = \sqrt{\frac{0.2 \cdot 0.8}{100}} = 0.04</me>
+and the z-statistic (using the normal distribution) for the sample statistic of p = 0.27 is
+<me>z = \frac{0.27 - 0.2}{0.04} = 1.75.</me>
+Remember, the alternate hypothesis has two tails so to determine the P value we need to determine from the normal distribution 
+<me>P(Z \gt 1.75) + P(Z \lt -1.75)</me>
+and find that this has probability approximately 0.0392 + 0.0392 = 0.0784.  However, this P value is greater than our significance level <m>\alpha = 0.05</m> so we cannot reject the null hypothesis at the 5 percent significance level. However, if we had chosen initially to use a 10 percent significance level then we would have rejected the null hypothesis and accepted the alternate.
+</p>
+
+<p>
+One tailed test for p using a "real" example...
+</p>
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		Two-tailed test for p.
+		</p>
+		</introduction>
+		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg">
+		</webwork>
+</exercise>
+</p>
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		One-tailed test for p. Notice, in this case you will only compute z-score probability for one tail and not both tails.
+		</p>
+		</introduction>
+		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg">
+		</webwork>
+</exercise>
+</p>
+
 </section>
 
 <section><title>Hypothesis Test for one mean</title>
+<p>
+In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value <m>\mu</m>:
+<me> H_0 : \mu = \mu_0 \\ H_a: \mu \neq \mu_0</me>
+or
+<me> H_0 : \mu \le \mu_0 \\ H_a: \mu \gt \mu_0</me>
+or
+<me> H_0 : \mu \ge \mu_0 \\ H_a:\mu \lt \mu_0</me>
+Again, we choose only one of these three options and as before the first is called a "two-tailed" test and the last two are called "one-tailed" tests.  Note that some people will write all of these null hypothesis options using equality but the alternate hypothesis determines the number of tails.
 
-	<p><m> H_0 : \mu = \mu_0</m>
-	vs  <m> H_a : \mu \neq \mu_0</m>
-	</p>
+</p>
+<p>
+Once again, if the test sample size is sufficiently large and the standard deviation <m>\sigma</m> of the underlying distribution is known, one can use the normal distribution to compute probabilities. If the test sample size is relatively small or if <m>\sigma</m> is not known (and therefore is approximated by the sample standard deviation s), then the t-distribution can be utilized to compute probabilities. We will only consider using the t-distribution to compute p-values. 
+</p>
+<p>
+The Standard Error <m>\sigma_e</m> is given by
+<me>\sigma_e = \frac{s}{\sqrt{n}}</me>
+where s is the standard deviation of the sample. For this presentation, we will assume that the actual population is relatively large relative to the sample size. In cases where this is not true, an adjustment (not presented here) will need to be made when computing <m>\sigma_e</m>.
+</p>
+<p>
+To determine the p-value for a given sample with sample mean <m>\overline{x}</m>, 
+<me>t = \frac{\overline{x}-\mu}{\frac{s}{\sqrt{n}}}</me>
+is a t-variable with n-1 degrees of freedom. Therefore, probabilities on t can be computed using the t-distribution.
+</p>
 
-	<p><m> H_0 : \mu = \mu_0</m>
-	vs  <m> H_a : \mu \gt \mu_0</m>
-	</p>
 
-	<p><m> H_0 : \mu = \mu_0</m>
-	vs  <m> H_a : \mu \lt \mu_0</m>
-	</p>
-	
+<p>
+Consider a Two-tailed Hypothesis test for <m>\mu</m> using
+<me> H_0 : \mu = 200 \\ H_a: \mu \neq 200</me>
+using a sample of size n = 49 and with a resulting mean of <m>\overline{x} = 206</m>, a sample standard deviation of <m>s = 15</m>, and a significance level of <m>\alpha = 0.01</m>.
+</p>
+<p>
+The standard error for this test is
+<me>\sigma_e = \frac{15}{\sqrt{49}} = \frac{15}{7}</me>
+and so using the t-distribution with degrees of freedom n-1 = 48 yields a t-statistic of 
+<me>t = \frac{\overline{x} - 200}{\sigma_e} = \frac{206-200}{\frac{15}{7}} = \frac{14}{5} = 2.80.</me>
+To compute the p-value, 
+<me>P(t \gt 2.80) + P(t \lt 2.80) \approx 0.0037 + 0.0037 = 0.0074.</me>
+Since this p-value is less than our significance level <m>\alpha = 0.01</m> then you can reject the null hypothesis and accept the alternate.
+</p>
+
+<p>
+Consider One-tailed Hypothesis test for <m>\mu</m> using an interesting application:
+</p>
+<p>
+Suppose that a manufacturer bottling a delicious beverage and the label indicates that the bottle contains 16 fluid ounces. Since providing the customer too little product might cause a significant negative reaction relative to the modest additional cost of providing a little too much, consider the following hypothesis test:
+<me> H_0 : \mu = 16 \\ H_a: \mu \gt 200.</me>
+To test this hypothesis at significance level <m>\alpha = 0.05</m>, you randomly pull out 20 bottles from the production line and accurately measure the amount of produce in each bottle. If the resulting average of these measurements is <m>\overline{x} = 16.05</m> ounces with a standard deviation of <m>s = 0.08</m> ounces, determine if you can safely make it known that more product is actually delivered in general to each consumer.
+</p>
+<p>
+The standard error for this test is
+<me>\sigma_e = \frac{0.08}{\sqrt{20}} \approx 0.01789</me>
+and using the t-distribution with n-1 = 19 degrees of freedom yields a t-statistic of
+<me>t = \frac{\overline{x} - 16}{\sigma_e} = \frac{16.05-16}{0.01789} \approx 2.795.</me>
+To compute the p-value, 
+<me>P(t \gt 2.795) \approx 0.0058.</me>
+Since this p-value is less than our significance level <m>\alpha = 0.05</m> (by a lot) then you can reject the null hypothesis and accept the alternate. It is safe therefore to say that customers can expect at least 16 ounces! However, note that some folks will still be stiffed since the standard deviation of 0.08 certainly means that some bottles have less than 16.05-0.08 ounces of beverage.  
+</p>
 	
 </section>
 
+
+<section><title>Hypothesis Test for one variance</title>
+<p>
+Proceeding in a similar manner, we can also perform hypothesis testing on variances using the <m>\Chi^2</m>-distribution to determine probabilities.
+<me> H_0 : \sigma^2 = \sigma_0^2  \\ H_a: \sigma^2 \neq \sigma_0^2</me>
+or
+<me> H_0 : \sigma^2 \ge \sigma_0^2  \\ H_a: \sigma^2 \lt \sigma_0^2</me>
+or
+<me> H_0 : \sigma^2 \le \sigma_0^2  \\ H_a: \sigma^2 \gt \sigma_0^2</me>
+
+<me>test statistic = T = (n-1) \frac{s^2}{\sigma_0^2}</me> 
+
+For two-tailed, reject if 
+<me>T \gt \Chi_{1-\alpha/2,n-1}^2 \text{ or } T \lt \Chi_{\alpha/2,n-1}^2</me>
+and for one-tailed to the right if
+<me>T \gt \Chi_{1-\alpha,n-1}^2</me>
+and for one-tailed to the left if
+<me>T \lt \Chi_{\alpha,n-1}^2.</me>
+Technically, for the two-tailed test you could pick T-values so that the total probability sums to <m>\alpha</m> in any fashion but generally this probability is split evenly between the two tails as noted above.
+</p>	
+</section>
+
+
+<!--
 <section><title>Hypothesis Test for the difference of two means</title>
 
 	<p><m> H_0 : \mu_1 = \mu_2</m>
@@ -66,24 +219,17 @@ Discussion on Type 1 and Type 2 errors.
 	</p>	
 	
 </section>
+-->
 
-
-<section><title>Hypothesis Test for one variance</title>
-
-	<p><m> H_0 : \sigma^2 = \mu_0</m>
-	vs  <m> H_a : \sigma^2 \neq \mu_0</m>
-	</p>
-
-	<p><m> H_0 : \sigma^2 = \sigma_0^2</m>
-	vs  <m> H_a : \sigma^2 \gt \sigma_0^2</m>
-	</p>
-
-	<p><m> H_0 : \sigma^2 = \sigma_0^2</m>
-	vs  <m> H_a : \sigma^2 \lt \sigma_0^2</m>
-	</p>
-	
-	
+<section><title>Summary</title>
+<p>
+TBA
+</p>
 </section>
 
-
+<section><title>Exercises</title>
+<p>
+TBA
+</p>
+</section>
 </chapter>

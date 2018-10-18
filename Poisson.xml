@@ -13,17 +13,24 @@
 <section><title>Introduction</title>
 <p>
 In this chapter, you will investigate the relationship between number of successes over some interval.  For each, one of these quantities will be fixed and the other one variable. First, consider the following:
+</p>
 
+<p>
 <definition><title>Poisson Process</title>
-<statement>A Poisson process is a course of action in which:
+<statement>
+<p>
+A Poisson process is a course of action in which:
 <ol>
 	<li>Successes in non-overlapping subintervals are independent of each other.</li>
 	<li>The probability of exactly one success in a sufficiently small interval of length h is proportional to h.  In notation, P(one success) = <m>\lambda h</m>.</li>
 	<li>The probability of two or more successes in a sufficiently small interval is essentially 0.</li>
 </ol>
+</p>
 </statement>
 </definition>
+</p>
 
+<p>
 You should presume these assumptions implicitly for the distributions discussed in this chapter.
 </p>
 <p>
@@ -40,7 +47,9 @@ In this chapter, you will investigate the following distributions:
 <section><title>Poisson Distribution</title>
 <p>
 Consider a Poisson Process where you start with an interval of fixed length T and where X measures the variable number of successes, or changes, within a that interval. The resulting distribution of X will be called a Poisson distribution.
+</p>
 
+<p>
 <theorem><title>Poisson Probability Function</title>
 <statement>
 <p>Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
@@ -72,10 +81,14 @@ However, since there are a finite number of independent intervals each with prob
 </p>
 </proof>
 </theorem>
+</p>
 
+<p>
 <theorem><title>Verify Poisson Probability Function</title>
 <statement>
+<p>
 	<me>\sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} e^{-\lambda T} = 1</me>
+</p>
 </statement>
 <proof>
 <p>Using the Power Series expansion for the natural exponential,
@@ -88,13 +101,17 @@ However, since there are a finite number of independent intervals each with prob
 </p>
 </proof>
 </theorem>
+</p>
 
+<p>
 <theorem><title>Statistics for Poisson</title>
 <statement>
+<p>
 <me>\mu = \lambda T</me>
 <me>\sigma^2 = \mu</me>
 <me>\gamma_1 = \frac{1}{\sqrt{\mu}}</me>
 <me>\gamma_2 = \frac{1}{\mu}+3</me>
+</p>
 </statement>
 <proof>
 <p> Using the f(x) generated in the previous theorem
@@ -124,6 +141,7 @@ To derive the skewness and kurtosis, you can depend upon Sage...see the live cel
 
 </proof>
 </theorem>
+</p>
 
 <p>
 <sage>
@@ -151,6 +169,7 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</input>
 </sage>
 </p>
+<p>
 Approximation by binomial means you can also use Poisson to approximate Binomial for n sufficiently large.
 </p>	
 </section>
@@ -178,6 +197,7 @@ where the discrete Poisson Probability Function is used to answer the probabilit
 <me>f(x) = F'(x) = \lambda e^{-\lambda x}.</me>
 </p>
 
+<p>
 <definition><title>Exponential Distribution Probability Function</title>
 	<statement>
 	<p>Given a Poisson process and a constant <m>\mu</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
@@ -185,10 +205,14 @@ where the discrete Poisson Probability Function is used to answer the probabilit
 	</p>
 	</statement>
 </definition>
+</p>
 
+<p>
 <theorem><title>Verification of Exponential Probability Function</title>
 	<statement>
+	<p>
 		<me>\int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx = 1</me>
+	</p>
 	</statement>
 	<proof>
 		<p>
@@ -200,10 +224,14 @@ where the discrete Poisson Probability Function is used to answer the probabilit
 		</p>
 	</proof>
 </theorem>
+</p>
 
+<p>
 <theorem><title>Distribution function for Exponential Distribution</title>
 	<statement>
+	<p>
 		<me>F(x) = 1 - e^{-\frac{x}{\mu}}</me>
+	</p>
 	</statement>
 	<proof>
 	<p>
@@ -216,12 +244,16 @@ where the discrete Poisson Probability Function is used to answer the probabilit
 	</p>
 	</proof>
 </theorem>
+</p>
 
+<p>
 <theorem><title>Derivation of Statistics for Exponential Distribution and Plotting</title>
 <statement>
+	<p>
 	<me>\sigma^2 = \mu^2</me>
 	<me>\gamma_1 = 2</me>
 	<me>\gamma_2 = 9</me>
+	</p>
 </statement>
 <proof>
 	<p>
@@ -237,6 +269,7 @@ where the discrete Poisson Probability Function is used to answer the probabilit
 	</p>
 </proof>
 </theorem>
+</p>
 
 <p>
 <sage>
@@ -269,9 +302,11 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 </sage>
 </p>
 
+<p>
 <theorem><title>The Exponential Distribution yields a continuous memoryless model.</title>
 <statement>
-	<p>If X has an exponential distribution and a and b are nonnegative integers, then
+	<p>
+	If X has an exponential distribution and a and b are nonnegative integers, then
 	<me>P( X > a + b | X > b ) = P( X > a)</me>
 	</p>
 </statement>
@@ -287,6 +322,7 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 	</p>
 </proof>
 </theorem>
+</p>
 
 </section>
 
@@ -297,15 +333,21 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 Extending the exponential distribution model developed above, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain the rth success for some natural number r. Then <m>R = (0,\infty)</m> and the resulting distribution of X will be called a Gamma distribution.
 </p>
 
+<p>
 <definition><title>Gamma Function</title>
 <statement>
+	<p>
 	<me>\Gamma(t) = \int_0^{\infty} u^{t-1} e^{-u} du</me>
+	</p>
 </statement>
 </definition>
+</p>
 
+<p>
 <theorem><title>Gamma Function on the natural numbers</title>
 <statement>
-<p>For <m>n \in \mathbb{N}</m>,
+<p>
+For <m>n \in \mathbb{N}</m>,
 <me>\Gamma(n+1) = n!</me>
 </p>
 </statement>
@@ -321,7 +363,7 @@ Continuing using an inductive argument to obtain the final result.
 </p>
 </proof>
 </theorem>
-
+</p>
 
 
 <p>To find the probability function for the gamma distribution, once again focus on the development of F(x). Assuming r is a natural number greater than 1 and noting that X measures the interval length needed in order to achieve the rth success
@@ -352,22 +394,32 @@ Notice that for this random variable, <m>\mu = \lambda T</m> can be obtained for
 
 <p>
 <definition><title>Gamma Distribution Probability Function</title>
-<statement>If X measures the interval until the rth success and <m>\mu as the average interval until the 1st success</m>, then X with probability function
+<statement>
+<p>
+If X measures the interval until the rth success and <m>\mu as the average interval until the 1st success</m>, then X with probability function
 <me>f(x) =  \frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}</me>
 has a Gamma Distribution.
+</p>
 </statement>
 </definition>
+</p>
 
+<p>
 <theorem><title>Verify Gamma Probability function</title>
 <statement>
+<p>
 <me>\int_0^{\infty} \frac{x^{r-1} e^{-x/ \mu}}{\Gamma(r) \mu^r} dx = 1</me>
+</p>
 </statement>
-<proof><p>
+<proof>
+<p>
 Evaluate the sage code below.
 </p>
 </proof>
 </theorem>
+</p>
 
+<p>
 <sage>
 	<input>
 # Gamma Distribution
@@ -381,8 +433,9 @@ F = '$ \int_0^{\infty} \\frac{x^{r-1} e^{-x/ \mu}}{\Gamma(r) \mu^r} dx = %s$'%st
 html(F) 
 	</input>
 </sage>
+</p>
 
-
+<p>
 <sage>
 <input>
 # Gamma Distribution Graphing
@@ -397,6 +450,10 @@ def _(r=[2,3,6,12,24],mu=slider(1,12,1,5,label='mu')):
 </input>
 </sage>
 </p>
+
+
+
+
 
 <p>
 Derivation of mean, variance, skewness, and kurtosis. Pick "alpha" for the general formulas.
@@ -449,8 +506,20 @@ def _(r=slider(1,10,1,2),mu = input_box(2,label="$\mu = $",width=10),b=input_box
 </p>
 </section>
 
+<section><title>Summary</title>
+<introduction>
+<p>
+Here is a summary of the major points in this chapter:
+</p>
+</introduction>
+<p>
+TBA
+</p>
+</section>
+
 <section><title>Exercises</title>
 
+<p>
 <exercise><title> - Home Sales</title>
 <p>
 A local realty office sells on average 10 houses a week.  Let X measure the number of houses the sell in the next week.  Determine
@@ -463,7 +532,9 @@ A local realty office sells on average 10 houses a week.  Let X measure the numb
 </ol>
 </p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Customer arrivals - Total</title>
 <p>
 Customers arrive at your store on the average of 10 per hour.  Assuming that the arrival of customers satisfies the properties of a Poisson process, determine:
@@ -486,7 +557,9 @@ With <m>\mu_1 = 10</m>,
 </solution>
 </p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Customer arrivals - First</title>
 <p>
 Customers arrive at your store on the average of 10 per hour.  Assuming that the arrival of customers satisfies the properties of a Poisson process, determine:
@@ -505,7 +578,9 @@ With <m>\mu = 6</m> minutes,
 </solution>
 </p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Customer arrivals - 10th</title>
 <p>
 Customers arrive at your store on the average of 10 per hour.  Assuming that the arrival of customers satisfies the properties of a Poisson process, determine:
@@ -524,7 +599,9 @@ With <m>\mu = 18</m> minutes,
 </solution>
 </p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Computer Network Data Traffic</title>
 <p>
 Consider the arrival of requests on a server. Presume that the requests are considered as coming from an anonymous and large collection of users independently of each other on an average of 50 requests per second. If X measures the number of requests per second, determine
@@ -557,6 +634,7 @@ Finally, notice that the time interval has been adjusted. Since the mean formula
 </solution>
 </p>
 </exercise>
+</p>
 
 </section>
 

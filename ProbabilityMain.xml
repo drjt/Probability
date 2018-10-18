@@ -10,9 +10,10 @@
   	
 	  	<xi:include href="./frontmatter.xml" /> 
 
-  		<xi:include href="./Data.xml" /> 
+ 		<xi:include href="./Data.xml" /> 
   		<xi:include href="./Regression.xml" /> 
-  		<xi:include href="./Combinatorics.xml" />       
+   		<xi:include href="./Combinatorics.xml" />       
+
   		<xi:include href="./ProbabilityGeneralities.xml" /> 
 
   		<xi:include href="./ProbabilityFunctions.xml" /> 
@@ -25,6 +26,8 @@
   		<xi:include href="./HypothesisTesting.xml" /> 
 
   		<xi:include href="./PowerSeriesReview.xml" /> 
+<!--
+-->
 
 	</book>
 

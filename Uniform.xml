@@ -25,13 +25,30 @@ In this chapter, you will investigate the following distributions:
 </p>
 </section>	
 	
-<section>	
-	<title>Discrete Uniform Distribution</title>
+<section><title>Discrete Uniform Distribution</title>
+<p>
+In this section, you will investigate distributions that begin with individual outcomes that are equally likely and expand into more general settings.
+</p>
+
+<p>
+<theorem><title>Discrete Uniform Distribution</title>
+<statement>
+<p xml:id="DiscreteUniformFunction">
+Assume outcomes in R = {1, 2, 3, ..., n} are equally likely.  Then, the probability function for the discrete uniform variable X is
+<me>f(x) = \frac{1}{n}</me>
+for <m>x \in R</m>.
+</p>
+</statement>
+<proof>
 	<p>
-	Assume that you have a variable with space R = {1, 2, 3, ..., n} so that the likelihood of each value is equally likely. Then, the probability function satisfies <m>f(x) = c</m> for any <m>x \in R</m>.  As before, since <m>\sum_{x \in R} f(x) = 1</m>, then <me>f(x) = \frac{1}{n}</me> is the probability function.
+	Assume that you have a variable with space R = {1, 2, 3, ..., n} so that the likelihood of each value is equally likely. Then, the probability function satisfies <m>f(x) = c</m> for any <m>x \in R</m>.  As before, since <m>\sum_{x \in R} f(x) = 1</m>, then 
+	<me>f(x) = \frac{1}{n}.</me> 
 	</p>
-	
-	
+</proof>
+</theorem>
+</p>	
+
+<p>	
 <sage>
 <input>
 # Uniform distribution over 1 .. n
@@ -49,35 +66,39 @@ def _(n=slider(2,10,1,2)):
 
 </input>
 </sage>
+</p>
 
+<p>
 	<theorem><title>Properties of the Discrete Uniform Probability Function</title>
 	<statement>
+	<p xml:id="DiscreteUniformProperties">
+	<m>f(x) = \frac{1}{n}</m> over R = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function and
 	<ol>
-		<li><m>f(x) = \frac{1}{n}</m> over R = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function</li>
 		<li><m>\mu = \frac{1+n}{2}</m></li>
 		<li><m>\sigma^2 = \frac{n^2-1}{12}</m></li>
 		<li><m>\gamma_1 = 0</m></li>
 		<li><m>\gamma_2 = \frac{6}{5}\frac{1+n^2}{1-n^2}</m></li>
 		<li>Distribution function F(x) = frac{x}{n} for <m>x \in R</m>.</li>
 	</ol>
+	</p>
 	</statement>
 	<proof>
-	<ol>
-		<li>Trivially, by construction you get <me>\sum_{k=1}^n \frac{1}{n} = 1</me>
-		Also, 1/n is positive for all x values.
-		</li>
-		<li>
-		<p>To determine the mean,
+	<p>
+	Trivially, by construction you get 
+		<me>\sum_{k=1}^n \frac{1}{n} = 1</me>
+	Also, 1/n is positive for all x values.
+	</p>
+	
+	<p>To determine the mean,
 		<md>
 			<mrow>\mu &amp; = \sum_{k=1}^n x \cdot \frac{1}{n}</mrow>
 			<mrow> &amp; = \frac{1}{n}\sum_{k=1}^n x </mrow>
 			<mrow> &amp; = \frac{1}{n} \frac{n(n+1)}{2}</mrow>
 			<mrow> &amp; = \frac{1+n}{2}</mrow>
 		</md>
-		</p>
-		</li>
-		<li>
-		<p>To determine the variance,
+	</p>	
+	
+	<p>To determine the variance,
 		<md>
 			<mrow>\sigma^2 &amp; = \sum_{k=1}^n x^2 \cdot \frac{1}{n} - \mu^2</mrow>
 			<mrow> &amp; = \frac{1}{n}\sum_{k=1}^n x^2 - \left ( \frac{1+n}{2}\right )^2 </mrow>
@@ -86,31 +107,28 @@ def _(n=slider(2,10,1,2)):
 			<mrow> &amp; = \frac{(4n^2+6n+2)}{12} - \frac{3+6n+3n^2}{12}</mrow>
 			<mrow> &amp; = \frac{(n^2-1)}{12}</mrow>
 		</md>
-		</p>
-		</li>
-		
-		<li>
-		<p>For skewness,
+	</p>
+
+	<p>For skewness,
 		<md>
 			<mrow>\gamma_1 = &amp; \sum_{k=1}^n x^3 \cdot \frac{1}{n} - 3 \mu \sum_{k=1}^n x^2 \cdot \frac{1}{n}  + 2\mu^3</mrow>
 			<mrow> &amp; = \frac{n^2(n+1)^2}{4n} - 3\frac{(n(n+1))}{2} \frac{1+n}{2} + 2 \left ( \frac{1+n}{2}\right )^3 </mrow>
 			<mrow> &amp; = </mrow>
 		</md>
-		</p>
-		</li>
-		<li>
-		<p>For Kurtosis, use the fourth moment and simplify...the algebra is performed using Sage in the active cell below this proof.
-		</p>
-		</li>
-		<li>
-
-		</li>
-	</ol>
-	</proof>
-	</theorem>
-	<p>
-	Sage can also do the algebra for you to determine each of these measures. Notice, as n increases the Kurtosis approaches <m>\frac{6}{5}</m> which indicates that there is (obviously) no tend toward central tendency over time.
 	</p>
+
+	<p>For Kurtosis, 
+	use the fourth moment and simplify...the algebra is performed using Sage in the active cell below this proof.
+	</p>
+	</proof>
+</theorem>
+</p>
+
+<p>
+Sage can also do the algebra for you to determine each of these measures. Notice, as n increases the Kurtosis approaches <m>\frac{6}{5}</m> which indicates that there is (obviously) no tend toward central tendency over time.
+</p>
+
+<p>
 <sage>
 	<input>
 var('x,n')
@@ -126,7 +144,9 @@ kurt = sum((x-mu)^4*f, x, 1, n)/stand^4
 pretty_print('Kurtosis = ',(kurt-3).factor(),' + 3')
 	</input>
 </sage>
+</p>
 
+<p>
 <example><title>Rolling one die</title>
 <p>When you consider rolling a regular, fair, single 6-sided die, each side is equally likely. The sample space consists of the 6 sides, each with a unique number of physical dots. Let the random variable X correspond each side with the number corresponding to the number of dots. Then, R = {1, 2, 3, 4, 5, 6}.  Since each side is equally likely then f(x) = 1/6.
 </p>
@@ -134,24 +154,63 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),' + 3')
 Further, the probability of getting an outcome in A={2,3} would be f(2)+f(3) = 1/6 + 1/6 = 2/6.
 </p>
 </example>
-
+</p>
 
 </section>
 
-<section>	
-	<title>Continuous Uniform Distribution</title>
+<section><title>Continuous Uniform Distribution</title>
 	<p>
-	Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + w \lt X \lt v + w)</m>.  In integral notation you obtain the following:
+	Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + w \lt X \lt v + w)</m>.  We use this below...
+</p>
+	
+<p>
+<theorem>
+<statement>
+<p xml:id="ContinuousUniformFunction">For R = [a,b], with a &lt; b, the continuous uniform probability function is given by
+<me>f(x) = \frac{1}{b-a}.</me>
+</p>
+</statement>
+<proof>
+<p>From before, for X a continuous uniform variable, we get
 	<md>
 		<mrow>\int_u^v f(x) dx = \int_{u+w}^{v+w} f(x) dx</mrow>
 		<mrow>F(v)-F(u) = F(v+w)-F(u+w)</mrow>
 		<mrow>F(u+w)-F(u) = F(v+w)-F(v)</mrow>
 	</md>
-	which is true regardless of w so long as you stay in the domain of interest. This only happens if F is linear and therefore f must be constant. Say, f(x)=c. In many situations, the space of X will be a single interval with <m>R = [a,b]</m>. Unless otherwise noted, this will be our assumption as well.
-	</p>
-	
+	which is true regardless of w so long as you stay in the domain of interest. This only happens if F is linear and therefore f must be constant....say, f(x)=c. If the space of X is a single interval with <m>R = [a,b]</m> then
+	<me>1 = \int_a^b c dx = c(b-a)</me>
+	which yields c = \frac{1}{b-a} as desired. 
+</p>
+</proof>
+</theorem>
+</p>
+
+<p>
+<example><title>Basic Continuous Uniform</title>
+<p>
+On <m>R = [1,2 \pi]</m>,
+<me>f(x) = \frac{1}{2 \pi - 1}.</me>
+Then, if you want to compute something like <m>P(2 &lt; X &lt; 4.5)</m> integrate
+<me>P(2 &lt; X &lt; 4.5) = \int_2^{4.5} \frac{1}{2 \pi -1} dx = \frac{2.5}{2 \pi - 1}</me>
+</p>
+</example>
+</p>
+
+<p>
+<example><title>Continuous Uniform over two disjoint intervals</title>
+<p>
+Suppose <m>R = [0,2] \cup [5,7]</m>.  Then, as in the theorem proof
+<me>1 = \int_R c dx = \int_0^2 c dx + \int_5^7 c dx = 4.</me>
+Thus, <m> f(x) = \frac{1}{4}</m>.
+For computing probabilities, you will want to break up any resulting integrals in a similar manner.
+</p>
+</example>
+</p>
+
+<p>
 	<theorem><title>Properties of the Continuous Uniform Probability Function</title>
 	<statement>
+	<p xml:id="ContinuousUniformProperties">For the Continuous Uniform Distribution over <m>R = [a,b]</m>, with a &lt; b,
 	<ol>
 		<li><m>f(x) = \frac{1}{b-a}</m> satisfies the properties of a probability function over R = [a,b].</li>
 		<li><m>\mu = \frac{a+b}{2}</m></li>
@@ -160,9 +219,12 @@ Further, the probability of getting an outcome in A={2,3} would be f(2)+f(3) = 1
 		<li><m>\gamma_2 = \frac{9 \, {\left(a^{5} - 5 \, a^{4} b + 10 \, a^{3} b^{2} - 10 \, a^{2} b^{3} + 5 \, a b^{4} - b^{5}\right)} {\left(a - b\right)}}{5 \, {\left(a^{3} - 3 \, a^{2} b + 3 \, a b^{2} - b^{3}\right)}^{2}}</m>
 		</li>
 	</ol>
+	</p>
 	</statement>
 	</theorem>
-	
+</p>
+
+<p>
 <sage>
 <input>
 # Continous uniform distribution statistics derivation
@@ -194,7 +256,9 @@ for b1 in range(2,7):
     pretty_print('kurtosis = ',kurt(a=a1,b=b1))
 </input>
 </sage>
+</p>
 
+<p>
 <example><title>Occurence of exactly one event randomly in a given interval</title>
 <p>
 Suppose you know that only one person showed up at the counter of a local business in a given 30 minute interval of time. Then, R=[0,30] given f(x) = 1/30.
@@ -203,9 +267,15 @@ Suppose you know that only one person showed up at the counter of a local busine
 Further, the probability that the person arrived within the first 6 minutes would be <m>\int_0^6 \frac{1}{30} dx = 0.2</m>.
 </p>
 </example>
+</p>
 
+<p>
 <theorem><title>Distribution Function for Continuous Uniform</title>
-<statement> For <m>x \in [a,b], F(x) = \frac{x-a}{b-a}</m></statement>
+<statement>
+<p>
+For <m>x \in [a,b], F(x) = \frac{x-a}{b-a}</m>
+</p>
+</statement>
 <proof>
 <p>
 For x in this range, 
@@ -213,6 +283,7 @@ For x in this range,
 </p>
 </proof>
 </theorem>
+</p>
 
 </section>
 
@@ -221,10 +292,21 @@ For x in this range,
 	<title>Hypergeometric Distribution</title>
 	
 	<p>
-	For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.</p>
+	For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.
+	</p>
 	<p>
 	Indeed, consider a collection of n items from which you want to take a sample of size r without replacement. If <m>n_1</m> of the items are "desired" and the remainder are not, let the random variable X measure the number of items from the first group in your sample with <m>R = \{0, 1, ..., r \}</m>. The resulting collection of probabilities is called a Hypergeometric Distribution.
 	</p>
+	
+	
+<p>
+<theorem><title>Hypergeometric Probability Function</title>
+<statement>
+<p xml:id="HypergeometricFunction">For a Hypergeometric random variable with R = {0, 1, ..., r} and assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>,
+	<me>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</me>	
+</p>
+</statement>
+<proof>	
 	<p>
 	Since you are sampling without replacement and trying only measure the number of items from your desired group in the sample, then the space of X will include R = {0, 1, ..., r} assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>. In the case when r is too large for either of these, the formulas below will follow noting that binomial coefficients are zero if the top is smaller than the bottom or if the bottom is negative.
 	</p>
@@ -232,9 +314,14 @@ For x in this range,
 	So f(x) = P(X = x) = P(x from the sample are from the target group and the remainder are not). Breaking these up gives
 	<me>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</me>
 	</p>
-	
+</proof>
+</theorem>
+</p>
+
+<p>	
 	<theorem><title>Properties of the Hypergeometric Distribution</title>
 	<statement>
+	<p xml:id="HypergeometricProperties">
 	<ol>
 		<li><m>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</m> satisfies the properties of a probability function.</li>
 		<li><m>\mu = r \frac{n_1}{n}</m></li>
@@ -242,9 +329,10 @@ For x in this range,
 		<li><m>\gamma_1 = \frac{(n - 2 n_1)\sqrt{n-1}(n - 2r)}{r n_1 (n - n_1) \sqrt{n-r}(n-2)}</m></li>
 		<li><m>\gamma_2 = \frac{n(n+1)-6n(n-r)}{n_1(n-n_1)} + \frac{3r(n-r)(n+6)}{n^2} - 6</m></li>
 	</ol>
-
+	</p>
 	</statement>
 	<proof>
+	<p>
 	<ol>
 		<li>
 			<p>		
@@ -291,9 +379,10 @@ For x in this range,
 		</p>
 		</li>
 	</ol>
+	</p>
 	</proof>
 	</theorem>
-
+</p>
 
 	<p>
 	Note, if r=1 then you are back at a regular discrete uniform model. Indeed, <me>P(\text{desired item}) = 1 \cdot \frac{n_1}{n} = \mu .</me>
@@ -327,8 +416,40 @@ def _(N1=slider(1,40,1,10,label='$N_1$'),
 	
 </section>
 
+<section><title>Summary</title>
+<p>
+<introduction>
+<p>
+Here is a summary of the major formulas from this chapter:
+</p>
+</introduction>
+</p>
+
+<p>
+<xref ref="DiscreteUniformFunction">Discrete Uniform f(x)</xref>
+</p>
+<p>
+<xref ref="DiscreteUniformProperties">Discrete Uniform statistics</xref>
+</p>
+<p>
+<xref ref="ContinuousUniformFunction">Continuous Uniform f(x)</xref>
+</p>
+<p>
+<xref ref="ContinuousUniformProperties">Continuous Uniform statistics</xref>
+</p>
+<p>
+<xref ref="HypergeometricFunction">Hypergeometric f(x)</xref>
+</p>
+<p>
+<xref ref="HypergeometricProperties">Hypergeometric statistics</xref>
+</p>
+
+
+</section>
+
 <section><title>Exercises</title>
 
+<p>
 <exercise><title> - The Proverbial Urn Problem</title>
 <statement>
 <p>
@@ -341,7 +462,9 @@ You have an urn with 10 marbles of which <m>n_1 = 6</m> are red and <m>N_2 = 4</
 </p>
 </statement>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Playing Cards</title>
 <statement>
 <p>
@@ -353,7 +476,9 @@ You randomly select a hand of five cards without replacement from an ordinary de
 </p>
 </statement>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Starting Seniors</title>
 <statement>
 <p>
@@ -367,7 +492,9 @@ You are picking an eleven member football starting team by picking randomly from
 </p>
 </statement>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Old Faithful</title>
 <statement>
 <p>
@@ -375,9 +502,12 @@ Ole Faithful geyser in Yellowstone National Park erupts every 91 minutes. You sh
 </p>
 </statement>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Continuous Uniform Random Variable Scenarios</title>
-<statement><p>
+<statement>
+<p>
 Explain how the following situations can be modeled using a continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
 <ul>
 	<li>The location on a prize wheel where the spun wheel will stop.</li>
@@ -387,7 +517,9 @@ Explain how the following situations can be modeled using a continuous uniform d
 </p>
 </statement>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Continous Uniform on a different space</title>
 <statement>
 <p>
@@ -422,9 +554,10 @@ For the variance,
 	</md>
 </p>
 </solution>
-
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Louisiana Mega Millions Lottery</title>
 <statement>
 <p>
@@ -460,7 +593,6 @@ Verify the posted odds
 Determine the expected payout for each ticket purchased. Also, determine what the Jackpot would need to be in order for the game to be considered "fair" with an expected value of zero.
 </p>
 </statement>
-
 <solution>
 <p>
 Throughout these calculations, you can presume that the first five numbers are selected independently from the Mega Ball number. However, the first five numbers are selected without replacement so computing probabilities with those does not allow for independence. This part is hypergeometric with the <m>n_1 = 5</m> numbers you selected being the "desired" numbers and the Lottery Commission picking a subset of size r = 5 from the 75 possible numbers.  So, your likelihood of matching all five would be
@@ -471,8 +603,6 @@ To match only 5 means you also MUST miss the Mega Ball which has probability 14/
 <me>\frac{1}{17259390} \cdot \frac{14}{15} = \frac{1}{17259390 \cdot \frac{15}{14}} \approx \frac{1}{18492204}.</me>
 Continue in this manner to determine the other odds.
 </p>
-
-
 <p>
 For the expected earnings, first determine a value function corresponding to each outcome and apply the discrete expected value process. This gives
 <md>
@@ -484,8 +614,6 @@ For the expected earnings, first determine a value function corresponding to eac
 </md>
 So, the expected payout is approximately 30 cents. Subtracting the cost of playing ($1) indicates that the average winnings per play of the Louisiana Lottery would be -70 cents. So, you would be better off to take, say, 50 cents and just give it to the local school system every time you consider playing this game rather than actually playing.
 </p>
-
-
 <p>
 To determine the Jackpot A needed to make this a fair game means to solve the equation
 <md>
@@ -497,8 +625,6 @@ To determine the Jackpot A needed to make this a fair game means to solve the eq
 </md>
 for A.
 </p>
-
-
 <p>
 Finally, to deal with the multiplier, note that all but the Jackpot payouts would be increased by the multiplier m where <m>m \in \{1,2,3,4,5\}</m>.  For the cost of an extra $1 (total cost of $2 per bet) the expected payout increases as the multiplier increases but each of these decreases likelihood of winning that payout by a factor of 1/5.  In general, let x = 1, 2, ..., 9 indicate the various winning options in order listed above, f(x) the corresponding probabilities listed for each option, and  u(x) the listed payouts. Then the expected payout is given by
 <me> \$32600000 \cdot \frac{1}{258,890,850} + \sum_{m=1}^5
@@ -515,6 +641,7 @@ Therefore, the expect value of spending another dollar to get the multiplier eff
 
 </solution>
 </exercise>
+</p>
 
 </section>
 

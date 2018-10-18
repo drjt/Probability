@@ -21,7 +21,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
     <website>
         <title>math.mc.edu/travis</title>
-        <url>http://math.mc.edu/travis</url>
+        <url>math.mc.edu/travis</url>
     </website>
 
     <!-- Prefix to enhance Sage notebook contents -->

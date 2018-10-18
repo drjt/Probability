@@ -13,178 +13,169 @@
 
 <section><title>Introduction</title>
 <p>
-To compute your final grade in a class your teacher will first make several assignments and examinations for you to take. These assessments ultimately will be assigned some numerical score indicating your level of success. However, you final grade can only be one value and it would make sense that the grade be a reflection of your work on these tasks. But, it can only be a single value that represents the totality of your work in the course. 
+To compute your final grade in a class your teacher will likely consider the scores you have earned on various assignments and examinations completed during the duration of the course. However, she ultimately will likely be required to assign some numerical score indicating your level of success in the course. One grade to rule them all. This final grade can only be one value and it would make sense that the grade be a reflection of your work on these tasks. So, what is a fair way for your teacher to complete this task? 
 </p>
+
 <p>
-In this chapter, you will consider a number of ways to use point values to represent different aspects of a provided set of data. In doing so, you will also need to take into account whether that data set is the entire list of possibilities--known as the population--or just a subset of that population perhaps obtained by taking repeated measurements from that population--that is, a sample. Each of these values will be called a "statistical measure".
+Through this process, you will also often need to take into account whether that data set is the entire list of possibilities--known as the population--or just a subset of that population perhaps obtained by taking repeated measurements --that is, a sample. 
+</p>
+
+<p>
+In general, it is often useful to make decisions using quantitative data but making those decisions can be somewhat arbitrary without a mathematical basis supporting those decisions. In this chapter, you will consider a number of ways to use point values to represent a given set of data. Each of these quantitative metrics will be called a "statistical measure" and will, in some fashion, describe using one number some property of the entire data set. Such measures are part of what is known as "descriptive statistics".  Later, you will learn about how other metrics can be used to predict properties of the underlying situation. Doing this is part of what is known as "inferential statistics".
+</p>
+
+<p>
+So, let's go and hopefully you will in some measure enjoy the ride!
 </p>
 </section>
 
 
 
 <section><title>Measurement Scales</title>
-	<p>In creating statistical measures, you might want to consider one of the following general types.</p>
+<p>
+In creating statistical measures, you might want to consider one of the following general types.
+</p>
+<p>
 	<ul>
 		<li><p>Nominal measures - In this case, data falls into mutually exclusive and exhaustive categories for which the numerical value is only used for identification purposes. For example, assigning Male = 1, Female = -1.</p></li>
-		<li><p>Ordinal measures - In this case, data consists of discrete numerical values which can be ranked from lowest to highest or vice versa. For example, your grades in a class grades which are used to compute your GPA.</p></li>
+		<li><p>Ordinal measures - In this case, data consists of discrete numerical values which can be ranked from lowest to highest or vice versa. For example, your grades in a number of classes are used to compute your GPA--which is a single number.</p></li>
 		<li><p>Interval measures - In this case, data possesses an order and where the distance between data values is of significance. For example, heights and weights.</p></li>
 		<li><p>Ratio measures - In this case, data can be expressed as a position in some interval and where ratios between observations have meaning. For example, percentile rankings</p></li>
 	</ul>
-	<p>In the subsequent sections of this chapter, you will see that a number of different measures are available for most data sets. Determining which "correct" measure to use for describing any given data set will depend the actual situation surrounding the collection of the data.
-	</p>
-	
-<p>
-The following categorizes several statistical measures which will be developed in this chapter. Details on each are provided in subsequent sections.
 </p>
 
-<ul>
-	<li><p>Tabular Methods - 
-	based on the entire population yielding a global picture</p>
-		<ul>
-			<li><p>frequency distributions</p></li>
-			<li><p>relative frequency distributions</p></li>
-			<li><p>cummulative frequency distributions</p></li>
-			<li><p>Stem-and-Leaf Displays</p></li>
-			<li><p>Box-and-Whisker Diagrams</p></li>
-		</ul>
-	</li>
-	<li><p>Summary Methods</p>
-		<ul>
-			<li><p>Measures of the center</p>
-				<ol>
-				 <li><p>Mean</p></li>
-				 <li><p>Median</p></li>
-				 <li><p>Mode</p></li>
-				</ol>
-			</li>
-			<li><p>Measures of spread</p>
-				<ol>
-				 <li><p>Range</p></li>
-				 <li><p>Variance and Standard Deviation</p></li>
-				 <li><p>Interquartile Range</p></li>
-				 <li><p>Quantiles</p></li>
-				 </ol>
-			</li>
-			<li><p>Measures of Skewness
-			- indicates the level of symmetry of the data</p>
-				<ol>
-				 <li><p>Standard Skewness</p></li>
-				 <li><p>Pearson Coefficient</p></li>
-				</ol>
-			</li>
-			<li><p>Measures of Kurtosis 
-			- indicates flatness or roundedness of the peak of the data</p>
-				<ol>
-				 <li><p>Standard Kurtosis</p></li>
-				 <li><p>Coefficient of Kurtosis</p></li>
-				</ol>
-			</li>
-			<li><p>Detection of Outliers 
-			- indicates whether abnormally large or small data distorts other 
-			techniques</p>
-				<ol>
-				 <li><p>Z-scores</p></li>
-				 <li><p>Trimming</p></li>
-				 <li><p>Winsorizing</p></li>
-				</ol>
-			</li>
-			<li><p>Tests for Normality 
-			- indictes if the data is bell-shaped</p>
-				<ol>
-				 <li><p>Standard Percentages relative to standard deviations from the mean</p></li>
-				</ol>
-			</li>
-		</ul>
-	</li>
-
-</ul>
-
-<p>Remark: Many of these measures above are relative and some are absolute.</p>
+<p>In the subsequent sections of this chapter, you will see that a number of different measures are available for most data sets. Determining which "correct" measure to use for describing any given data set will depend the actual situation surrounding the collection of the data.
+</p>
 	
+
 </section>
 
 
 
 
 <section><title>Statistical Measures of Position</title>
-	<p>Given a collection of data, sorting the data may provide several useful descriptors. When sorting data, you can easily use something like a spreadsheet for larger data sets but in this section you will also see there are ways to perform a sort by hand. In either case, statistical measures of position generally involve very little computational work and take into account only the order of the data from lowest to highest.  To assist with notation, we will generally use x-values to represent the original raw data and y-values to represent that same data but now in order with the subscript indicating the positional placement.
+	<p>Given a collection of data, sorting the data may provide several useful descriptors. When sorting data, you can easily use something like a spreadsheet for larger data sets but in this section you will also see there are ways to perform a sort by hand. In either case, statistical measures of position generally involve very little computational work once the data is sorted and take into account only the order of the data from lowest to highest.  To assist with notation, we will generally use x-values to represent the original raw data and y-values to represent that same data when ordered with the subscript indicating the positional placement.
 	</p>
 	
-	
+<p>	
 <definition>
 	<title>Order Statistic</title>
 	<statement>
-	<p>From the data set <m>x_1, x_2, ... , x_n</m>, label the sorted data as <m>y_1, y_2, ..., y_n</m> where  
+	<p xml:id="OrderStatistics">From the data set <m>x_1, x_2, ... , x_n</m>, assume that when sorted it is denoted <m>y_1, y_2, ..., y_n</m> where  
 	<me> y_1 \le y_2 \le ... \le y_n.</me> 
-	Define <m>y_k</m> as the kth order statistic. </p>
+	Then, <m>y_k</m> is known as the kth order statistic. </p>
 	</statement>
 </definition>
-	
-<example><title>Age of Presidents - order statistics</title>
+</p>
+
+<p>	
+<example xml:id="PresidentAge"><title>Age of Presidents - order statistics</title>
 	<p>
-	The age at inauguration for presidents from 1981-2016 gives the data <m>x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47</m> (Reagan, Bush, Clinton, Bush, Obama). For this data, the order statistics are denoted <m>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69</m>.
+	The age at inauguration for presidents from 1981-2019 gives the data <m>x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47, x_6 = 70</m> (Reagan, Bush, Clinton, Bush, Obama, Trump). For this data, the order statistics are denoted <m>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69, y_6 = 71</m>.
 	</p>
 </example>
+</p>
 	
 	<p>
 	Once the data is sorted, it should be very easy for you to locate the smallest and largest values. 
 	</p>
 
+<p>
 <definition><title>Minimum/Maximum:</title>  
 	<statement>
-	<p>The smallest and largest values in the data set. Using the notation above, minimum = <m>y_1</m> and the maximum = <m>y_n</m></p>
+	<p xml:id="MaxMin">For a given data set, the smallest and largest values are known as the minimum and maximum, respectively. In our notation, minimum = <m>y_1</m> and the maximum = <m>y_n</m></p>
 	</statement>
 </definition>
-	
+</p>
+
+<p>	
 <example><title>Age of Presidents - Minimum/Maximum</title>
 	<statement>
 	<p>
-	Using the Presidential ages above, minimum = <m>y_1 = 46</m> and maximum = <m>y_5 = 69</m>.
+	Using the <xref ref="PresidentAge"> President inauguration data</xref>, minimum = <m>y_1 = 46</m> and maximum = <m>y_6 = 70</m>.
 	</p>
 	</statement>
 </example>
+</p>
 
 <p>
-A value that separates ordered data into two groups with a desired percentage on each side is called a percentile. There are multiple ways that have been created that achieve this goal. In this text we present two and will consistently use the first one presented below.
+A value that separates ordered data into two groups with a desired percentage on each side is called a percentile. There are multiple ways that have been created that achieve this goal. In this text we present two and will consistently use the first one presented below. For each, in general, a given percentile is a numerical value at which approximately a given percentage of the data is smaller. 
 </p>
 <p>
 The definition presented below provides for a unique measure for each unique value of p that corresponds to the PERCENTILE.EXC macro in Excel.  This version starts by computing <m>(n+1)p</m> where 
 <m>0 &lt; p &lt; 1</m> and using this to linearly interpolate between two adjacent entries in the sorted list.  Another option that corresponds to PERCENTILE.INC (and PERCENTILE) in Excel is to start with <m>(n-1)p+1</m> for determining how to pick the two adjacent entries and then proceeding with linear interpolation. Again, the definition below utilizes the first approach.
-	</p>
-	
-<definition><title>Percentiles</title>
+</p>
+
+<p>	
+<definition xml:id="PercentileDefn"><title>Percentiles</title>
 	<statement>
-	<p>A percentile is a numerical value <m>P^p</m> at which approximately 100p% of the given data is smaller.</p>
-	<p>To compute the percentile value with <m>0 \lt p \lt 1</m> for order statistics <m>y_1, y_2, ..., y_n</m> use the formula 
-		<me>P^{p} = (1-r)y_m + ry_{m+1}</me>
-	where m is the integer part of (n+1)p, namely 
-		<me>m = \left\lfloor (n+1)p \right\rfloor</me> 
+	<p xml:id="Percentiles">For <m>0 \lt s \lt 1</m> and for order statistics <m>y_1, y_2, ..., y_n</m> define the 100s-th percentile to be 
+		<me>P^{s} = (1-r)y_m + ry_{m+1}</me>
+	where m is the integer part of (n+1)s, namely 
+		<me>m = \left\lfloor (n+1)s \right\rfloor</me> 
 	and 
-		<me>r = (n+1)p - m,</me>
+		<me>r = (n+1)s - m,</me>
 	
-	the fractional part of (n+1)p. 
+	the fractional part of (n+1)s. 
 	</p>
 	</statement>
 </definition> 
-	
-<p>The formula for percentiles determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be averages of equal numbers and will then be the common value.</p>
-
-<p>Some special percentiles are provided special names...
 </p>
 
+<p><title>Computing Percentiles</title>
+<exercise>
+<introduction>
+		<p>
+		Compute the following percentile values.
+		</p>
+		</introduction>
+		<webwork source="Library/UVA-Stat/setStat212-Homework02/stat212-HW02-18.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		
+		</p>
+		</conclusion>
+</exercise>
+</p>
+
+<p>
+<example><title>Presidential Percentile</title>
+<p>To compute, say, the 42nd percentile for the 
+<xref ref="PresidentAge"> President inauguration data presented earlier </xref> consider s = 0.42. Since there are 6 numbers in our data set, then
+
+<me>(n+1)s = 7 \cdot 0.42 = 2.94</me>
+
+and so m = 2 and r = 0.94.  Thus, the percentile will lie between <m>y_2 = 47</m> and <m>y_3 = 54</m> and much closer to 54 than 47.  Numerically
+<me>P^{0.42} = 0.06 \cdot 47 + 0.94 \cdot 54 = 53.58.</me> 
+</p>
+</example>
+</p>
+	
+<p>
+The formula for percentiles determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be averages of equal numbers and will therefore be the common value.
+</p>
+
+<p>
+Some special percentiles are provided special names...
+</p>
+
+<p>
 <definition><title>Quartiles</title> 
 	<statement>
-	<p>Given a sorted data set, the first, second, and third quartiles are the values of 
+	<p xml:id="Quartiles">Given a sorted data set, the first, second, and third quartiles are the values of 
 	<m>Q_1 = P^{0.25}, Q_2 = P^{0.5}</m> and <m>Q_3 = P^{0.75}</m>.
 	</p>
 	</statement>
 </definition>
+</p>
 
 <p>
 It should be noted that many graphing calculators often compute quartiles using a straight average of two adjacent entries rather than by using the formula above. This causes some difficulty and especially so when n mod 4 = 2. 
 </p>
 
-<example><title><m>Q_1</m> and <m>Q_3</m> when n mode 4 = 2</title>
+<p>
+<example><title><m>Q_1</m> and <m>Q_3</m> when n mod 4 = 2</title>
 <p>
 Suppose n = 22 = 5(4) + 2. Computing the first quartile as defined above gives (n+1)p = 23(0.25) = 5.75 = 5 + 0.75 = m + r.  Therefore,
 <me>Q_1 = 0.25 \times y_5 + 0.75 \times y_6</me>
@@ -193,23 +184,26 @@ which is a value closer to <m>y_6</m>.  Many graphing calculators however quickl
 so you should be aware of this possible difference.  You should also notice that in this case p = 0.25 but r = 0.75 so these values are not required to be the same. 
 </p>
 </example>
+</p>
 
+<p>
 <definition><title>Deciles:</title>
 	<statement>
-	<p>Given a sorted data set, the first, second, ..., ninth deciles are the value of 
+	<p xml:id="Deciles">Given a sorted data set, the first, second, ..., ninth deciles are the value of 
 	<m>D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}</m>
 	</p>
 	</statement>
 </definition>
-
+</p>
 	
+<p>	
 <example><title>Small Example - Quartiles</title>
 	<statement>
 	<p>
 Consider the following data set: {2,5,8,10}. The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
 	</p>
 
-	<p>More precisely	, the 25th percentile is computed by considering 
+	<p>Using the <xref ref="PercentileDefn"> definition </xref>, the 25th percentile is computed by considering 
 	<me>(n+1)p = (4+1)0.25 = 5/4 = 1.25</me>.  
 	So, m = 1 and r = 0.25. Therefore 
 	<me>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</me> 
@@ -232,28 +226,41 @@ Consider the following data set: {2,5,8,10}. The 50th percentile should be a num
 	</p>
 	</statement>
 </example>
+</p>
 
+<p>
+<exercise>
+<p>
+In general, given a numerical value within the range of a given data set, one can determine the percentile ranking of that value by reversing the general formula for percentile and solving for p, given <m>P^s</m>.  Determine such a formula/process for doing this in general.
+</p>
+</exercise>
+</p>
 	
-	<p>
+<p>
 	For your data set {2,5,8,10}, 
 	<m>Q_1 = 2.75, Q_2 = 6.5,</m> and <m>Q_3 = 9.5</m>.
-	</p>
+</p>
 
-	<p>
+<p>
 	For a given data set, a summary of these statistics is often desired in order to give the user a quick overview of the more important order statistics.
-	</p>
+</p>
 
+<p>
 <definition><title>5-number summary</title>
 	<statement>
-	<p>Given a set of data, the 5-number summary is a vector of the order statistics given by <m>\lt</m> minimum, <m>Q_1</m>, <m>Q_2</m>, <m>Q_3</m>, maximum <m>\gt</m>. 
+	<p xml:id="FiveNumberSummary">Given a set of data, the 5-number summary is a vector of the order statistics given by 
+	
+	<me>\lt \text{minimum}, Q_1, Q_2, Q_3, \text{maximum} \gt .</me> 
 	</p>
 	</statement>
 </definition>
-
-<p>
-You can compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org.  To make this work, you will need to pick "R" from the dropdown list before clicking on compute. You can also make the obvious changes in the data list if you want to use this to compute values for a different collection of numbers.
 </p>
 
+<p>
+You can also compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org. You can change the data list if you want to use this to compute values for a different collections of numbers. The five-number-summary is displayed graphically using a "Box-Plot". Graphical representations of data will be discussed later in this chapter. You should compare the answers found using R with the values produced by our <xref ref="PercentileDefn"> definition </xref>
+</p>
+
+<p>
 <sage language = 'r'>
 <input>
 data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
@@ -265,15 +272,17 @@ paste("Box and Whisker Diagram:")
 boxplot(data, horizontal=TRUE) 
 </input>
 </sage>
-	
+</p>
+
+<p>	
 <example><title>Small example - 5 number summary</title>
 	<statement>
 	<p>Returning to our previous example, the five number summary would be
-	<m>\lt 2, 2.75, 6.5, 9.5, 10 \gt</m>
+	<me>\lt 2, 2.75, 6.5, 9.5, 10 \gt .</me>
 	</p>
 	</statement>
 </example>
-
+</p>
 
 </section>
 
@@ -284,13 +293,16 @@ boxplot(data, horizontal=TRUE)
 <title>Statistical Measures of the Middle</title>
 
 	<definition><title>Arithmetic Mean</title>
-	<p>Suppose X is a discrete random variable with range 
+	<statement>
+	<p xml:id="Mean">Suppose X is a discrete random variable with range 
 	<m>R = {x_1, x_2, ..., x_n}</m>. 
 	The arithmetic mean is given by
 		<me>
-		AM = \frac{x_1 + ... + x_n}{n} = \frac{\sum_{k=1}^n x_k}{n}.
+		\frac{x_1 + ... + x_n}{n} = \frac{\sum_{k=1}^n x_k}{n}.
 		</me>
-	If this data comes from sample data then we call it a sample mean and denote this value by <m>\overline{x}</m>. If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by <m>\mu</m>.  When presented with raw data, it might be good to generally presume that data comes from a sample and utilize <m>\overline{x}</m>.</p>
+	If this data comes from sample data then we call it a sample mean and denote this value by <m>\overline{x}</m>. If this data comes from the entire universe of possibilities then we call it a population mean and denote this value by <m>\mu</m>.  When presented with raw data, it might be good to generally presume that data comes from a sample and utilize <m>\overline{x}</m>.
+	</p>
+	</statement>
 	</definition>
 	
 	<p>
@@ -300,47 +312,120 @@ boxplot(data, horizontal=TRUE)
 	
 	<p>
 	The mean is often called the centroid in the sense that if the x values were locations of objects of equal weight, then the centroid
-	would be the point where this system of n masses would balance. 
+	would be the point where this system of n equal masses would balance. Play around with the interactive cell below by entering your own data values into the first list.
 	</p>
+	
+<p>
+<sage>
+<input>
+x = [2, 5, 8, 10, 11]     # Put your data values in this list
+x.sort()
+
+mu = mean(x)
+n = len(x)
+pts = [(x[0],0.05)]
+M = 0.2
+for k in range(1,n):
+    if x[k]==x[k-1]:
+        pts.append((x[k],pts[k-1][1]+0.1))
+        M += 0.1
+    else:
+        pts.append((x[k],0.05))
+G = points(pts,size=100,figsize=[10,2])
+G += polygon([(mu,0), (mu+0.2,-0.5), (mu-0.2,-0.5)],color='brown')
+G.show(ymin=-0.5, ymax = M)
+</input>
+</sage>
+</p>
+	
 	<p>
 	The values can all be provided with varying weights if desired and the result is called the weighted arithmetic mean and is given by
 		<me>
 		\frac{m_1 x_1 + ... + m_n x_n}{m_1 + ... + m_n} = \frac{\sum_{k=1}^n m_k x_k}{\sum_{k=1}^n m_k}.
 		</me>
+	This is often how your teacher will actually compute your final grade in a class where the <m>m_k</m> are the relative weights for each assignment grade.
 	</p>
 
+<p>
+<sage>
+<input>
+x = [2, 5, 8, 10]     # Put _unique_ data values in this list
+w = [1, 2.5, 2.5, 4]  # Scale to be at most 10 and not tiny for good image
+wsum = sum(w)
 
-<definition><title>Median:</title>
-<p>A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.</p>
-</definition>
+n = len(x)
+pts = [(x[0],0.05)]
+M = 0.2
+mu = 0
+for k in range(1,n):
+    mu += x[k]*w[k]
+    if x[k]==x[k-1]:
+        pts.append((x[k],pts[k-1][1]+0.1))
+        M += 0.2
+    else:
+        pts.append((x[k],0.05))
+mu = mu/wsum
+G = Graphics()
+for k in range(n):
+    G += point(pts[k],size=100*w[k]) 
+P = polygon([(mu,0), (mu+0.2,-0.5), (mu-0.2,-0.5)],color='brown')
+(G+P).show(ymin=-0.5, ymax = M)
+</input>
+</sage>
+</p>
+
 
 <p>
-For data sets with an odd number of values, this is the "middle" data value if one were to successively cross off pairs from the two ends of the sorted date. For data sets with an even number of values, this is a average of the two data values left after crossing off these pairs.  Using the order statistics, the median equals
+<example><title>Computing class final grade</title>
+<p>
+Suppose in a given class you have a daily grade of 92, exam 1 grade of 85, exam 2 grade of 87, and a final exam grade of 93.  IF the daily grade counts 10 percent, the first two exams count 25 percent each and the final counts 40 percent then your final grade would be
+<me>\frac{0.10 \cdot 92 + 0.25 \cdot 85 + 0.25 \cdot 87 + 0.40 \cdot 0.93}{0.10 + 0.25 + 0.25 + 0.40} = 89.4 .</me>
+It would then appear that you might want to do some bargaining with your teacher about how nice it would be to round that up.
+</p>
+</example>
+</p>
+
+<p>
+<definition><title>Median:</title>
+<statement>
+<p xml:id="Median">A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.
+</p>
+</statement>
+</definition>
+</p>
+
+<p>
+For data sets with an odd number of values, this is the "middle" data value if one were to successively cross off pairs from the two ends of the sorted data. For data sets with an even number of values, this is a average of the two data values left after crossing off all other pairs.  Using the order statistics, the median equals
 	<me>y_{\frac{n+1}{2}}</me>
 if n is odd and
 	<me>\frac{y_\frac{n}{2} + y_{\frac{n}{2}+1}}{2}</me>
 if n is even.
 </p>
 
-<p>From the Presidential data, note that you are considering an odd number of data values and so the median is given by 54. </p>
+<p>
+From the <xref ref="PresidentAge"> Presidential data </xref>, note that you are considering an even number of data values and so the median is given by (54+64)/2 = 59. 
+</p>
 
-
+<p>
 <definition><title>Midrange:</title>
-<p>A mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
+<statement>
+<p xml:id="Midrange">The midrange is a mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
 	<me>\frac{y_1+y_n}{2}</me>
 </p>
+</statement>
 </definition>
-
-<p>From the Presidential data, the maximum is 69 and the minimum is 46 so the midrange is 57.5, the average of these two. </p>
-
-<p>
-<title>Advantages and Disadvantages of Measures of the Middle</title>
-Mean utilizes all of the data values so each term is important. Utilizes them all even if some of the data values might suffer from collection errors.  Median ignores outliers (which might be a result of collection errors) but does not account for the relative differences between terms. Midrange is very easy to compute but ignores the relative differences for all terms but the two extremes.
 </p>
 
 <p>
-You can compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org.  To make this work, you will need to pick "R" from the dropdown list before clicking on compute. You can also make the obvious changes in the data list if you want to use this to compute values for a different collection of numbers.
+From the <xref ref="PresidentAge"> Presidential data </xref>, the maximum is 70 and the minimum is 46 so the midrange is 58, the average of these two. 
 </p>
+
+<p>
+There are several advantages and disadvantages associated with each of these measures. The mean utilizes all of the data values so each term is important. Utilizes them all even if some of the data values might suffer from collection errors. The median ignores outliers (which might be a result of collection errors) but does not account for the relative differences between terms. The midrange is very easy to compute but ignores the relative differences for all terms but the two extremes. A similar collection of features and drawbacks are associated with all descriptive statistics. 
+</p>
+
+<p>
+You can again compute many statistics automatically using R...
 <sage language = 'r'>
 <input>
 data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
@@ -348,14 +433,17 @@ paste("Mean = ", mean(data))
 paste("Median =", median(data))
 </input>
 </sage>
+</p>
 
-
-<example><title>Numerical Example of these Quantitative Measures</title>
+<p>
+<example xml:id="StatePopulations"><title>USA State Population Measures of the Middle</title>
+<statement>
 <p>The US Census Bureau reported the following state populations (in millions) for 2013:
 <url href="Data/USA_States_Populations_2014.xlsx">Spreadsheet</url>
 </p>
 <p>
 <table halign="left">
+    <caption>USA State Populations - 2014</caption>
       <tabular halign="right">
       
 <row><cell bottom="medium">State</cell><cell bottom="medium">Population</cell></row>      
@@ -416,22 +504,24 @@ paste("Median =", median(data))
 
 Determine the minimum, maximim, midrange, and mean for this data.
 </p>
+</statement>	
 
 <solution>
 		<p>Notice that these are already in order so you can presume 
 		<m>y_1 = 0.6</m> million is the minimum and <m>y_{50} = 38.3</m> 
 		million is the maximum. Therefore, the midrange is given by
-		<me>\frac{0.6+38.3}{2} = \frac{38.9}{2} = 19.45 \text{million}.</me>
+		<me>\frac{0.6+38.3}{2} = \frac{38.9}{2} = 19.45  \text{million}.</me>
 
-		Note, in this collection of "states" data the District of Columbia is included so that the number of data items is n=51. The mean of this data takes a bit of arithmetic but gives
+		In this collection of "states" data the District of Columbia is included so that the number of data items is n=51. The mean of this data takes a bit of arithmetic but gives
 		<me>\overline{x} = \frac{\sum_{k=1}^{51} y_k }{51} = \frac{316.1}{51} \approx 6.20</me>
 		million residents. 
 		</p>
 		<p>
-		Since the number of states is odd, the median is found by looking at the 26th order statistics. In this case, that is the 4.4 million residents of Kentucky, i.e. <m>y_{26} = 4.4</m>.
+		Since the number of states is odd, the median is found by looking at the 26th order statistic. In this case, that is the 4.4 million residents of Kentucky, i.e. <m>y_{26} = 4.4</m>.
 		</p>
 </solution>
 </example>
+</p>
 
 </section>
 
@@ -441,21 +531,33 @@ Determine the minimum, maximim, midrange, and mean for this data.
 
 <section>
 <title>Statistical Measures of Variation</title>
-<p>These measures provide some indication of how much the data set is "spread out".
+<p>These measures provide some indication of how much the data set is "spread out". Indeed, note that the data sets {-2,-1,0,1,2} and {-200,-100,0,100,200} have the same mean but one is much more spread out than the other. Measures of variation should catch this difference.
 </p>
 
+<p>
 <definition><title>Range:</title>
-<p>Using the order statistics, <me>y_n - y_1.</me>  
-Easy to compute. Ignores the spread of all the data in between.
+<statement>
+<p xml:id="Range">Using the order statistics, <me>y_n - y_1.</me>  
 </p>
+</statement>
 </definition>
+</p>
 
-<p>From the Presidential data, the maximum is 69 and the minimum is 46 so the range is 23, the difference of these two. </p>
+<p>
+It is trivial to note that the range is very easy to compute but it completely gnores all data values but the two ends.
+</p>
 
+<p>From the <xref ref="PresidentAge"> Presidential data </xref>, the maximum is 69 and the minimum is 46 so the range is 23, the difference of these two. </p>
+
+<p>
 <definition><title>Interquartile Range (IQR):</title>
-<p><m>P^{0.75} - P^{0.25}</m>. 
+<statement>
+<p xml:id="IQR">
+<me>IQR = P^{0.75} - P^{0.25}.</me> 
 </p>
+</statement>
 </definition>
+</p>
 
 <p>
 For the data set {2, 5, 8, 10}, you have found that <m>Q_1 = 2.75</m> and <m>Q_3 = 9.5</m>. Therefore, <me>IQR = 9.5 - 2.75 = 6.75.</me>
@@ -463,8 +565,8 @@ For the data set {2, 5, 8, 10}, you have found that <m>Q_1 = 2.75</m> and <m>Q_3
 
 <p>
 Average Deviation from the Mean (Population):  Given a population data set <m>x_1, x_2, ... , x_n</m> with mean <m>\mu</m> each term deviates from the mean by the value <m>x_k - \mu</m>. So, averaging these gives
-<me> \frac{\sum_{k=1}^n (x_k-\mu)}{n} = \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \mu}{n} = \mu - \mu = 0</me>
-which is always zero for any provided set of data. This cancellation makes this measure not useful. To avoid cancellation, perhaps removing negatives would help.
+<me> \frac{\sum_{k=1}^n (x_k-\mu)}{n} = \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \mu}{n} = \mu - \mu = 0.</me>
+This metric is therefore always zero for any provided set of data since cancellation makes this not useful. So, we need to determine ways to avoid cancellation.
 </p>
 
 <p>Average Absolute Deviation from the Mean (Population):  
@@ -474,18 +576,29 @@ which, although nicely stated, is difficult to deal with algebraically since the
 
 <p>Average Squared Deviation from the Mean (Population):
 <me> \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
-which will always be non-negative but can be easily expanded using algebra. Since this is a mouthful, this measure is generally called the variance. 
+which will always be non-negative but can be easily expanded using algebra. Since this is a mouthful, this measure is generally called the "variance". 
 </p>
 
 <p>
-Using the average squared deviation from the mean, differences have been squared. Thus all values added are non-negative but very small ones have been made even smaller and larger ones have possibly been made much larger. To undo this scaling issue, one must take a square root to get things back into the right ball park. 
+Using the average squared deviation from the mean, differences have been squared. Thus all of the squared differences added are non-negative but very small ones have been made even smaller and larger ones have been made relatively larger. To undo this scaling issue, one must take a square root to get things back into the right ball park. 
 </p>
 
-<p>The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>\sigma^2</m>. Therefore
+<p>
+<definition><title>Variance and Standard Deviation</title>
+<statement>
+<p xml:id="Variance">The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>\sigma^2</m>. Therefore
 	<me>\sigma^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
 </p>
 <p>The standard deviation is the square root of the variance. If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by <m>\sigma</m>. Therefore
 <me> \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.</me>
+</p>
+<p>
+If data comes from a sample of the population then we call it a sample variance and denote this value by v. Since sample data tends to reflect certain "biases" then we increase this value slightly by <m>\frac{n}{n-1}</m> to give the sample variance
+<me>s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n-1}.</me>
+and the sample standard deviation similarly as the square root of the sample variance.
+</p>
+</statement>
+</definition>
 </p>
 
 <p>From the data {2,5,8,10}, you have found that the mean is 6.25. Computing the variance then involves accumulating and averaging the squared differences of each data value and this mean. Then
@@ -500,12 +613,7 @@ Using the average squared deviation from the mean, differences have been squared
 </p>
 
 <p>
-If data comes from a sample of the population then we call it a sample variance and denote this value by v. Since sample data tends to reflect certain "biases" then we increase this value slightly by <m>\frac{n}{n-1}</m> to give the sample variance
-<me>s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n-1}.</me>
-and the sample standard deviation similarly as the square root of the sample variance.
-</p>
-
-<theorem><title>Alternate Forms for Variance</title>
+<theorem xml:id='AlternateVariance'><title>Alternate Forms for Variance</title>
 <statement>
 <md>
 <mrow>\sigma^2 &amp; = \left ( \frac{\sum_{k=1}^n x_k^2 }{n} \right ) - \mu^2 </mrow>
@@ -520,16 +628,28 @@ and the sample standard deviation similarly as the square root of the sample var
 	  <mrow> &amp; = \frac{\sum_{k=1}^n x_k^2 - 2\mu \sum_{k=1}^n x_k  + n \mu^2 )}{n}</mrow>
 	  <mrow> &amp; = \left ( \frac{\sum_{k=1}^n x_k^2 }{n} \right ) - \mu^2</mrow>
 	</md>
-The second part is proved similarly.	
+	
+</p>
+<p>
+The second part is proved similarly. Using the first part of the proof above,
+	<md>
+	  <mrow>\sigma^2 &amp; = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}</mrow>
+	  <mrow> &amp; = \left ( \frac{\sum_{k=1}^n x_k^2 }{n} \right ) - \mu^2</mrow>
+	  <mrow> &amp; = \left ( \frac{\sum_{k=1}^n x_k (x_k - 1) + x_k }{n} \right ) - \mu^2</mrow>
+	  <mrow> &amp; = \left ( \frac{\sum_{k=1}^n x_k (x_k - 1)}{n} \right ) + \mu - \mu^2</mrow>
+	</md>	
 </p>
 </proof>
 </theorem>
+</p>
 
+<p>
 <example><title>Computing means and variances by hand</title>
 <p>
 In the data table below, notice that the <m>x_k</m> column would be the given data values but the column for <m>x_k^2</m> you could easily compute.
 
 <table halign="left">
+<caption>Sample Grouped Data</caption>
       <tabular halign="right">
       
 <row>
@@ -544,16 +664,16 @@ In the data table below, notice that the <m>x_k</m> column would be the given da
 
       </tabular>
 </table>
-So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{x} = \frac{9}{6} = \frac{3}{2}</m> and <m>v = \frac{\Sigma x_k^2}{6} - (\overline{x})^2 = ( \frac{35}{6} - \frac{3}{2}^2 = \frac{70-18}{12} = \frac{26}{6}</m>.  Therfore, <m>s^2 = \frac{6}{5} \times v = \frac{26}{5}</m>.
+So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{x} = \frac{9}{6} = \frac{3}{2}</m> and <m>v = \frac{\Sigma x_k^2}{6} - (\overline{x})^2 = ( \frac{35}{6} - \frac{3}{2}^2 = \frac{70-18}{12} = \frac{26}{6}</m>.  Therefore, <m>s^2 = \frac{6}{5} \times v = \frac{26}{5}</m>.
 </p>
 </example>
+</p>
 
 <p>
-You can compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org.  To make this work, you will need to pick "R" from the dropdown list before clicking on compute. You can also make the obvious changes in the data list if you want to use this to compute values for a different collection of numbers.
-</p>
+Use R to compute these values...
 <sage language = 'r'>
 <input>
-data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
+data &lt;- c( 1, -1, 0, 2, 2, 5)   # concatenate the following items into a list
 paste("Variance = ", var(data))
 paste("Standard Dev = ", sd(data))
 paste("Inter Quantile Range =",IQR(data))
@@ -561,76 +681,15 @@ paste("Box and Whisker Diagram:")
 boxplot(data, horizontal=TRUE) 
 </input>
 </sage>
+</p>
 
+<p>Once again, the Population of the individual USA states according to the 2013 Census is considered below.</p>
 
-<p>Once again, the Population of the individual USA states according to the 2013 Census is considered below. This data set will be used for several examples so it might be a good idea to pay attention to it now!</p>
-
+<p>
 <exercise><title>USA State Population Measures of Variation</title>
-<p>The US Census Bureau reported the following state populations (in millions) for 2013:</p>
-<p>
-<table halign="left">
-      <tabular halign="right">
-      
-<row><cell bottom="medium">State</cell><cell bottom="medium">Population</cell></row>      
-<row><cell>Wyoming</cell><cell>0.6</cell></row>
-<row><cell>Vermont</cell><cell>0.6</cell></row>
-<row><cell>District of Columbia</cell><cell>0.6</cell></row>
-<row><cell>North Dakota</cell><cell>0.7</cell></row>
-<row><cell>Alaska</cell><cell>0.7</cell></row>
-<row><cell>South Dakota</cell><cell>0.8</cell></row>
-<row><cell>Delaware</cell><cell>0.9</cell></row>
-<row><cell>Montana</cell><cell>1</cell></row>
-<row><cell>Rhode Island</cell><cell>1.1</cell></row>
-<row><cell>New Hampshire</cell><cell>1.3</cell></row>
-<row><cell>Maine</cell><cell>1.3</cell></row>
-<row><cell>Hawaii</cell><cell>1.4</cell></row>
-<row><cell>Idaho</cell><cell>1.6</cell></row>
-<row><cell>West Virginia</cell><cell>1.9</cell></row>
-<row><cell>Nebraska</cell><cell>1.9</cell></row>
-<row><cell>New Mexico</cell><cell>2.1</cell></row>
-<row><cell>Nevada</cell><cell>2.8</cell></row>
-<row><cell>Kansas</cell><cell>2.9</cell></row>
-<row><cell>Utah</cell><cell>2.9</cell></row>
-<row><cell>Arkansas</cell><cell>3</cell></row>
-<row><cell>Mississippi</cell><cell>3</cell></row>
-<row><cell>Iowa</cell><cell>3.1</cell></row>
-<row><cell>Connecticut</cell><cell>3.6</cell></row>
-<row><cell>Oklahoma</cell><cell>3.9</cell></row>
-<row><cell>Oregon</cell><cell>3.9</cell></row>
-<row><cell>Kentucky</cell><cell>4.4</cell></row>
-<row><cell>Louisiana</cell><cell>4.6</cell></row>
-<row><cell>South Carolina</cell><cell>4.8</cell></row>
-<row><cell>Alabama</cell><cell>4.8</cell></row>
-<row><cell>Colorado</cell><cell>5.3</cell></row>
-<row><cell>Minnesota</cell><cell>5.4</cell></row>
-<row><cell>Wisconsin</cell><cell>5.7</cell></row>
-<row><cell>Maryland</cell><cell>5.9</cell></row>
-<row><cell>Missouri</cell><cell>6</cell></row>
-<row><cell>Tennessee</cell><cell>6.5</cell></row>
-<row><cell>Indiana</cell><cell>6.6</cell></row>
-<row><cell>Arizona</cell><cell>6.6</cell></row>
-<row><cell>Massachusetts</cell><cell>6.7</cell></row>
-<row><cell>Washington</cell><cell>7</cell></row>
-<row><cell>Virginia</cell><cell>8.3</cell></row>
-<row><cell>New Jersey</cell><cell>8.9</cell></row>
-<row><cell>North Carolina</cell><cell>9.8</cell></row>
-<row><cell>Michigan</cell><cell>9.9</cell></row>
-<row><cell>Georgia</cell><cell>10</cell></row>
-<row><cell>Ohio</cell><cell>11.6</cell></row>
-<row><cell>Pennsylvania</cell><cell>12.8</cell></row>
-<row><cell>Illinois</cell><cell>12.9</cell></row>
-<row><cell>Florida</cell><cell>19.6</cell></row>
-<row><cell>New York</cell><cell>19.7</cell></row>
-<row><cell>Texas</cell><cell>26.4</cell></row>
-<row><cell>California</cell><cell>38.3</cell></row>      
-      
-      </tabular>
-      </table>
+<p>Using the <xref ref="StatePopulations"> US Census Bureau state populations </xref> (in millions) for 2014 provided earlier, determine the range, quartiles, and variance for this sample data.
 </p>
 <p>
-Determine the range, quartiles, and variance for this sample data.
-</p>
-
 <solution> 
 	<p>Again, you should note that these are already in order so the range is quickly found to be 
 	<me>y_n - y_1 = 38.3 - 0.6 = 37.7</me> 
@@ -651,7 +710,7 @@ Determine the range, quartiles, and variance for this sample data.
 	</p>
 
 	<p>
-	From the computation before, again note that n=51 since the District of Columbia is included. The mean of this data found before was found to be approximately 6.20 million residents. So, to determine the variance you may find it easier to compute using the theorem above. 
+	From the computation before, again note that n=51 since the District of Columbia is included. The mean of this data found before was found to be approximately 6.20 million residents. So, to determine the variance you may find it easier to compute using the the alternate variance formulas <xref ref="AlternateVariance" />. 
 	<md>
 	<mrow> v &amp; = \left ( \frac{\sum_{k=1}^n y_k^2 }{n} \right ) - \mu^2
 	</mrow>
@@ -666,17 +725,25 @@ Determine the range, quartiles, and variance for this sample data.
 	<me>s \approx \sqrt{49.48} \approx 7.03</me> million residents.
 	</p>
 </solution>
+</p>
 </exercise>
+</p>
 
+<p>
+The state population data set has been entered for you in the R cell below...
 <sage language = 'r'>
 <input>
-data &lt;- c (0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,1.4,1.6,1.9,1.9,2.1,2.8,2.9,2.9,3,3,3.1,3.6,3.9,3.9,4.4,4.6,4.8,4.8,5.3,5.4,5.7,5.9,6,6.5,6.6,6.6,6.7,7,8.3,8.9,9.8,9.9,10,11.6,12.8,12.9,19.6,19.7,26.4,38.3)
+data &lt;- c (0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,1.4,1.6,
+1.9,1.9,2.1,2.8,2.9,2.9,3,3,3.1,3.6,3.9,3.9,4.4,4.6,
+4.8,4.8,5.3,5.4,5.7,5.9,6,6.5,6.6,6.6,6.7,7,8.3,
+8.9,9.8,9.9,10,11.6,12.8,12.9,19.6,19.7,26.4,38.3)
 paste("Variance = ", var(data))
 paste("Standard Dev = ", sd(data))
 paste("Inter Quantile Range =",IQR(data))
 
 </input>
 </sage>
+</p>
 
 </section>
 
@@ -684,9 +751,10 @@ paste("Inter Quantile Range =",IQR(data))
 
 
 <section><title>Adjusting Statistical Measures for Grouped Data</title>
-
-<p>As you considered the measures of the center and spread before, each data point was considered individually. Often, data may however be grouped into categories and perhaps expressed as a frequency distribution. 
+<introduction>
+<p>As you considered the measures of the center and spread before, each data point was considered individually. Often, data may however be grouped into categories. The number of data items in each category is called the "frequency" of that outcome and the collection of these frequencies for all outcomes is called a "frequency distribution". 
 </p>
+</introduction>
 
 <subsection><title>Data Grouped into Single-valued Categories</title>
 <p>In this case, rather than considering <m>x_k</m> to be the kth data value can take advantage of the grouping to perhaps save a bit on arithmetic.</p>
@@ -694,7 +762,7 @@ paste("Inter Quantile Range =",IQR(data))
 		<me>
 		\mu = \frac{x_1 f_1 + ... + x_m f_m}{f_1 + ... + f_m} = \frac{\sum_{k=1}^m x_k f_k}{\sum_{k=1}^m f_k}.
 		</me>
-and the following grouped data formula for the variance
+and the following grouped data formula for the variance (along with one equivalent form)
 		<me> 
 		\sigma^2 = \frac{\sum_{k=1}^m ( x_k-\mu )^2 f_k}{\sum_{k=1}^m f_k} = \frac{\sum_{k=1}^m x_k^2 f_k}{\sum_{k=1}^m f_k} - \mu^2
 		</me>
@@ -734,11 +802,12 @@ Consider the following data set
 <p>
 Create a frequency distribution and determine the sample mean and variance.
 </p>
-
+<p>
 <solution>
 	<p>
 	Collecting this data into a frequency distribution gives
 	<table halign="left">
+	<caption>Grouped Discrete Data</caption>
 		  <tabular halign="right">
 	  
 			<row><cell bottom="medium"><m>x_k</m></cell><cell bottom="medium"><m>f_k</m></cell></row>      
@@ -764,7 +833,9 @@ Create a frequency distribution and determine the sample mean and variance.
 	and so <m>s^2 = \frac{25}{24} \frac{4826}{625} \approx 8.043</m>. 
 	</p>
 </solution>
+</p>
 </exercise>
+
 </subsection>
 
 
@@ -782,11 +853,27 @@ Create a frequency distribution and determine the sample mean and variance.
 </ol>
 </p>
 
+<p>
 <example><title>Computing Median for Interval Grouped Data</title>
 <p>
-TBA
+	<table halign="left">
+	<caption>Interval Frequency Distribution</caption>
+		  <tabular halign="right">
+	  
+			<row><cell bottom="medium"><m>[a_k,b_k]</m></cell><cell bottom="medium"><m>f_k</m></cell></row>      
+			<row><cell>[0,5)</cell><cell>5</cell></row>
+			<row><cell>[5,10)</cell><cell>7</cell></row>
+			<row><cell>[10,20)</cell><cell>4</cell></row>
+			<row><cell>[20,23)</cell><cell>3</cell></row>
+			<row><cell>[23,30)</cell><cell>6</cell></row>
+		</tabular>
+	</table>
+The total cummulative frequency is 25 and so <m>m = \frac{25}{2} = 12.5</m> which lies in the k = 3 interval [10,20) and <m>F_2 = 12</m>.  Therefore
+<me>\text{median} = (20-10) \frac{12.5-12}{4} + 10 = 11.25</me>
 </p>
 </example>
+</p>
+
 </subsection>
 
 
@@ -796,29 +883,42 @@ TBA
 
 <section><title>Other Statistical Point Measures</title>
 
-<p>Beyond measures of the middle and of spread includes a way you can determine if data is heaped up to one side or the other of the mean. One such measure is the skewness.
+<p>Above, we have investigated statistical measures that help determine the middle and the spread of a given data set. There are however other metrics available that help describe the distribution of that data.  Skewness is one of those metrics and describes any lack of symmetry of the data set's distribution and whether data is stretched out to one side or the other.
 </p>
 
+<p>
 <definition><title>Skewness</title>
+<statement>
+<p xml:id="Skewness">For population data, the Skewness of <m>x_1, x_2, ..., x_n</m> is given by
+<me> \frac{1}{\sigma^3} \frac{\sum_{k=1}^n ( x_k-\mu )^3}{n}.</me>
+</p>
 <p>For sample data, the Skewness of <m>x_1, x_2, ..., x_n</m> is given by
-<me> \frac{1}{s^3} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}</me>
-and similarly for population data but using <m>\mu, \sigma</m>.</p>
+<me> \frac{1}{s^3} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}.</me>
+</p>
+</statement>
 </definition>
-
-<p>
-A positive skewness indicates that the positive <m>(x_k - \overline{x})^3</m> terms overwhelm the negative terms. Therefore, this indicates data which is strung out to the right. Likewise, a negative skewness indicates data which is strung out to the left.
 </p>
 
 <p>
-In addition to skewness, data might tend to be clustered around the mean and often in a "bell-shaped" manner. The kurtosis can be used o measure how closely data resembles a bell-shaped collection.
+A positive skewness indicates that the positive <m>(x_k - \mu)^3</m> terms (likewise <m>(x_k - \overline{x})^3</m> terms) overwhelm the negative terms. So, a positive skewness indicates that the data set is strung out to the right. Likewise, a negative skewness indicates a data set that is strung out to the left.
 </p>
 
+<p>
+Data might tend to be clustered around the mean. The "kurtosis" can be used to measure how closely data resembles a "bell-shaped" collection.
+</p>
+
+<p>
 <definition><title>Kurtosis</title>
-<p>The Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
-<me> \frac{1}{s^4} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}</me>
-and similarly for population data again using <m>\mu, \sigma</m>.
+<statement>
+<p xml:id="Kurtosis">For population data, the Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
+<me> \frac{1}{\sigma^4} \frac{\sum_{k=1}^n ( x_k-\mu )^4}{n}.</me>
 </p>
+<p>For sample data, the Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
+<me> \frac{1}{s^4} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}.</me>
+</p>
+</statement>
 </definition>
+</p>
 
 <p>
 A kurtosis of 3 indicates that the data is perfectly bell shaped (a "normal" distribution) whereas data further away from 3 indicates data that is less bell shaped.
@@ -827,10 +927,10 @@ A kurtosis of 3 indicates that the data is perfectly bell shaped (a "normal" dis
 <theorem><title>Alternate Formulas for Skewness and Kurtosis</title>
 <statement>
 Skewness = 
-<me>\frac{1}{s^3} 
+<me>\text{skewness} = \frac{1}{s^3} 
 \left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 v \overline{x} - \overline{x}^3 \right ]</me>
 and Kurtosis =
-<me>\frac{1}{s^4} 
+<me>\text{kurtosis} = \frac{1}{s^4} 
 \left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v - 3 \overline{x}^4  \right ]</me>
 <proof>
 <p>
@@ -859,9 +959,8 @@ and then divide by the fourth power of the standard deviation.  Note again that 
 
 <p>Going back to a previous example...</p>
 
-<example><title>Computing skewness and kurtosis by hand</title>
 <p>
-In the data table below, again notice that the <m>x_k</m> column would be the given data values but the other columns you could again easily compute.
+Computing skewness and kurtosis by hand can often be better organized using a table. Below, notice that the <m>x_k</m> column would be the given data values but the other columns you could again easily compute.
 
 <table halign="left">
       <tabular halign="right">
@@ -879,17 +978,20 @@ In the data table below, again notice that the <m>x_k</m> column would be the gi
 <row><cell>5</cell><cell>25</cell><cell>125</cell><cell>625</cell></row>		
 
       </tabular>
+      <caption>Computing data statistics by hand</caption>
 </table>
 
 So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m> as before and so
 <m>\overline{x} = \frac{3}{2}</m>, <m>v = \frac{26}{6}</m>, <m>s^2 = \frac{6}{5} \times v = \frac{26}{5}</m>, and so <m>s = \sqrt{\frac{26}{5}} = \sqrt{5.2}</m>.
 
 But also, <m>\Sigma x_k^3 = 141</m> and <m>\Sigma x_k^4 = 659</m>.  Use these in the formulas above to obtain skewness of
-<me>\left [ \frac{141}{6} - 3\frac{26}{5} \frac{3}{2} - (\frac{3}{2})^2 \right ] / s^3 = </me>
+
+<me>\left [ \frac{141}{6} - 3 \cdot \frac{26}{5} \cdot \frac{3}{2} - \left ( \frac{3}{2} \right )^2 \right ] / s^3 </me>
+
 and kurtosis of 
-<me>\left [ \frac{659}{6} - 4\frac{3}{2} \frac{141}{6} + 6 (\frac{3}{2})^2 \frac{26}{5} - 3 (\frac{3}{2})^4 \right ] / s^4 = .</me>
+
+<me>\left [ \frac{659}{6} - 4 \cdot \frac{3}{2} \cdot \frac{141}{6} + 6 \left ( \frac{3}{2} \right )^2  \cdot \frac{26}{5}  - 3 \cdot \left ( \frac{3}{2} \right )^4 \right ] / s^4.</me>
 </p>
-</example>
 
 
 
@@ -898,17 +1000,18 @@ and kurtosis of
 
 
 <section><title>Visual Statistical Measures - Graphical Representation of Data</title>
+<introduction>
 <p>Data sets can range from small to very large. Visual representations of these data sets often allow you to see trends and reveal a lot about the distribution of the data values.</p>
 
-<p>
-Also, probability mass functions for discrete variables can be graphed as a set of points but sometimes these points do not convey size very well. A visual representation of these functions needs to be addressed.
-</p>
+</introduction>
 
 <subsection><title>Histograms</title>
-		<p>Frequency Histograms - height matters</p>
-		<p>Consider the data set given by
+
+<p>Frequency Histograms - height matters</p>
+<p>Consider the data set given by
 		
 <table halign="left">
+   <caption>Basic Frequency Table</caption>
       <tabular halign="right">
       
 <row><cell bottom="medium"><m>x_k</m></cell><cell bottom="medium"><m>f_k</m></cell></row>      
@@ -922,61 +1025,15 @@ Also, probability mass functions for discrete variables can be graphed as a set 
       
       </tabular>
 </table>
-	
-A frequency histogram representing this data can be given by
-
-<image source="images/frequencyhistogram.png" />
-		
-<!--
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{pgfplots}
-
-\title{Histogram}
-\author{travis }
-\date{August 2016}
-
-\begin{document}
-
-\pgfplotsset{
-  compat=newest,
-  xlabel near ticks,
-  ylabel near ticks
-}
-
-\begin{document}
-  \begin{tikzpicture}[font=\small]
-    \begin{axis}[
-      ybar,
-      bar width=20pt,
-      xlabel={X},
-      ylabel={Frequency},
-      ymin=0,
-      ytick=\empty,
-      xtick=data,
-      axis x line=bottom,
-      axis y line=left,
-      enlarge x limits=0.2,
-      symbolic x coords={1,2,3,4,5,6},
-      xticklabel style={anchor=base,yshift=-\baselineskip},
-      nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
-    ]
-      \addplot[fill=white] coordinates {
-        (1,8)
-        (2,12)
-        (3,6)
-        (4,3)
-        (5,1)
-        (6,2)
-      };
-    \end{axis}
-  \end{tikzpicture}
-\end{document}
--->		
 </p>
 
-<p>Experiment with creating your own histogram by inputting your data into the interactive cell below.
+<p>	
+A frequency histogram representing this data looks like
+
+<image source="images/frequencyhistogram.png" />
+</p>
+
+<p>Experiment with creating your own histogram by inputting your data into the interactive Sage cell below.
 <sage>
 <input>
 #  This function is used to convert an input string into separate entries
@@ -993,9 +1050,12 @@ def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated b
 </input>
 </sage>
 
-		</p>
-		<p>Relative Frequency Histograms - In this case, area describes your data.  Notice in the interactive cell above that each bar is of width one. Therefore, frequency = area. In some instances where data may be grouped the total width of the interval may be different and so the height will need to be adjusted so that the total area of each bar corresponds to the relative frequency of that category.</p>
-		<p>Cummulative Histograms.  In these a running total is presented using all values from the given point and below.
+</p>
+<p>
+Relative Frequency Histograms - In this case, area describes relative frequency.  Notice in the interactive cell above that each bar is of width one. Therefore, frequency = area. In some instances where data may be grouped the total width of the interval may be different and so the height will need to be adjusted so that the total area of each bar corresponds to the relative frequency of that category.
+</p>
+
+<p>Cummulative Histograms.  In these a running total is presented using all values from the given point and below.
 <sage>
 <input>
 #  This function is used to convert an input string into separate entries
@@ -1015,15 +1075,70 @@ def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated b
 </p>
 </subsection>
 
-<subsection><title>Stem-and-Leaf Plot</title>
+<subsection><title>Stem and Leaf Plot</title>
 
-<p> - Histogram with data. Using the state population data above, consider organizing the data but using a "two-pass sort" where you first roughly break data up into groups based upon ranges which relate to their first digit(s). In this case, let's break up into groups according to populations corresponding to 0-4 million, 5-9 million, 10-14 million, 15-19, million, 20-24 million, 25-29 million, 30-35 million, and 35-39 million. We can represent these classes by using the stems 0L, 0H, 1L, 1H, 2L, 2H, 3L, and 3H where the L and H represent the one's digits L in {0, 1, 2, 3, 4} and H in {5, 6, 7, 8, 9}.  Once we group the data into these smaller groups then we can write the remaining portion of the number horizontally as leaves (in this case with one decimal place for all values.) This gives a step-and-leaf plot. If we additionally sort the data in the leaves then this gives you an ordered stem-and-leaf plot. For the state population data, the ordered stem-and-leaf plot is given by
+<p> 
+A Stem and Leaf Plot allows you to create a histogram of sorts but maintain the individual data values. To create one of these plots, you will need to consider your particular data set and create a two-step sieve for organizing the set.  The first part is to create "stems" that are often associated with the highest digit(s) of each data value and the "leaves" that are often associated with the remaining digit(s) of the data value.
+</p>
+<p>
+Once the data set is broken down into stems and leaves, it is often simple to sort the leaves under each stem to yield an "ordered Stem and Leaf Plot". Such as mechanism is a simple two-step procedure that allows you to sort a data set by hand.
+</p>
+
+<p>
+<example><title>Simple Stem and Leaf Plot</title>
+<p>
+Consider the data points 25, 3, 17, 12, 22, 34, 12, 11, 16, 42, 9, 12, 17.
+In this case we will consider the stems to be the tens digits and the leaves to be the ones digits. This gives
+</p>
+
+<p>
+<table halign="left">
+   <caption>Stem and Leaf Plot (unordered)</caption>
+      <tabular halign="right">
+      
+<row><cell bottom="medium">Stems</cell><cell bottom="medium">Leaves</cell></row>      
+<row><cell>0</cell><cell halign="left">3 9</cell></row>		
+<row><cell>1</cell><cell halign="left">7 2 2 1 6 2 7</cell></row>		
+<row><cell>2</cell><cell halign="left">5 2</cell></row>		
+<row><cell>3</cell><cell halign="left">4</cell></row>		
+<row><cell>4</cell><cell halign="left">2</cell></row>		      
+      </tabular>
+</table>
+Then, an ordered Stem and Leaf Plot would be
+
+<table halign="left">
+   <caption>Stem and Leaf Plot (ordered)</caption>
+      <tabular halign="right">
+      
+<row><cell bottom="medium">Stems</cell><cell bottom="medium">Leaves</cell></row>      
+<row><cell>0</cell><cell halign="left">3 9</cell></row>		
+<row><cell>1</cell><cell halign="left">1 2 2 2 6 7 7</cell></row>		
+<row><cell>2</cell><cell halign="left">2 5</cell></row>		
+<row><cell>3</cell><cell halign="left">4</cell></row>		
+<row><cell>4</cell><cell halign="left">2</cell></row>		      
+      </tabular>
+</table>
+</p>
+
+<p>
+Notice, in each case you can extract the original data values by recombining the stem with a corresponding leaf. Indeed, for these 13 data values the median should be be 7th in the sorted list or the value in the 10's stem with leaf 6...that is, 16.
+</p>
+</example>
+</p>
+
+<p>
+<example><title>Stem and Leaf Plot for State Populations</title>
+<p>
+Using the state population data above, consider organizing the data but using a "two-pass sort" where you first roughly break data up into groups based upon ranges which relate to their first digit(s). In this case, let's break up into groups according to populations corresponding to 0-4 million, 5-9 million, 10-14 million, 15-19, million, 20-24 million, 25-29 million, 30-35 million, and 35-39 million. We can represent these classes by using the stems 0L, 0H, 1L, 1H, 2L, 2H, 3L, and 3H where the L and H represent the one's digits L in {0, 1, 2, 3, 4} and H in {5, 6, 7, 8, 9}.  Once we group the data into these smaller groups then we can write the remaining portion of the number horizontally as leaves (in this case with one decimal place for all values.) This gives a step-and-leaf plot. If we additionally sort the data in the leaves then this gives you an ordered stem-and-leaf plot. For the state population data, the ordered stem-and-leaf plot is given by
 		
 	
 <image source="images/stemandleaf.png" />
 
 Notice how it is easy to now see that most state populations are relatively small and that there are relatively few states with larger population. Also, notice that you can use this plot to relatively easily identify minimum, maximum, and other order statistics.		
 </p>
+</example>
+</p>
+
 </subsection>
 
 <subsection><title>Box and Whisker Diagram (Box Plot)</title>
@@ -1031,30 +1146,37 @@ Notice how it is easy to now see that most state populations are relatively smal
 <p>This graphical display identifies the "5-number-summary" associated with the minimum, quartiles, and the maximum. That is, <m>y_1, Q_1, Q_2, Q_3, y_n</m>.  These values separate the data roughly into quarters. To distinguish these quarters connect <m>y_1</m> and <m>Q_1</m> with a straight line (a whisker) and do the same with <m>Q_3</m> and <m>y_n</m>. Use a box to connect <m>Q_1</m> with <m>Q_2</m> and the same to connect <m>Q_2</m> with <m>Q_3</m>. Then the boxed areas also identify the IQR.  
 </p>
 
+<p>
 <sage language = 'r'>
 <input>
-data &lt;- c (0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,1.4,1.6,1.9,1.9,2.1,2.8,2.9,2.9,3,3,3.1,3.6,3.9,3.9,4.4,4.6,4.8,4.8,5.3,5.4,5.7,5.9,6,6.5,6.6,6.6,6.7,7,8.3,8.9,9.8,9.9,10,11.6,12.8,12.9,19.6,19.7,26.4,38.3)
+data &lt;- c (0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,
+1.4,1.6,1.9,1.9,2.1,2.8,2.9,2.9,3,3,3.1,
+3.6,3.9,3.9,4.4,4.6,4.8,4.8,5.3,5.4,5.7,
+5.9,6,6.5,6.6,6.6,6.7,7,8.3,8.9,9.8,9.9,
+10,11.6,12.8,12.9,19.6,19.7,26.4,38.3)
 paste("Inter Quantile Range =",IQR(data))
 paste("Box and Whisker Diagram - Box Plot):")
 boxplot(data, horizontal=TRUE)
 </input>
 </sage>
+</p>
 
-<p>
-You can produce something similar using Sage. Notice the different way that it is presented but the ideas are the same. For this one, once you evaluate the cell, you will need to click on "boxplot.png" to open up the actual box plot image as a file.
-</p>		 
- 
-<sage>
-<input>
-from pylab import boxplot,savefig,close
-@interact
-def _(data = input_box([0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,1.4,1.6,1.9,1.9,2.1,2.8,2.9,2.9,3,3,3.1,3.6,3.9,3.9,4.4,4.6,4.8,4.8,5.3,5.4,5.7,5.9,6,6.5,6.6,6.6,6.7,7,8.3,8.9,9.8,9.9,10,11.6,12.8,12.9,19.6,19.7,26.4,38.3],label="Enter Your Data:")):
-    B = boxplot(data, notch=True, sym='x', vert=False)
-    savefig("boxplot.png")
-    close()
-</input>
-</sage>
-
+<p><title>Computing Percentiles</title>
+<exercise>
+<introduction>
+		<p>
+		Let's use a box plot to determine some order statistics.
+		</p>
+		</introduction>
+		<webwork source="Library/NAU/setStatistics/FiveNumFromPlot.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		
+		</p>
+		</conclusion>
+</exercise>
+</p>
 		
 </subsection>
 
@@ -1071,6 +1193,8 @@ plot(density(cars$speed), main="Density Plot: Speed", ylab="Frequency", sub=past
 
 </input>
 </sage>
+
+
 <p>
 www.machinelearningplus.com
 </p>
@@ -1078,6 +1202,27 @@ www.machinelearningplus.com
 </section>
 
 
+<section><title>Summary</title>
+<introduction>
+<p>
+Links to the main formulas related to descriptive statistics:
+</p>
+</introduction>
+<p><xref ref="OrderStatistics">Order Statistics</xref></p>
+<p><xref ref="MaxMin">Maximum and Minimum</xref></p>
+<p><xref ref="Percentiles">Percentiles</xref></p>
+<p><xref ref="Quartiles">Quartiles</xref></p>
+<p><xref ref="Deciles">Deciles</xref></p>
+<p><xref ref="FiveNumberSummary">5-number summary</xref></p>
+<p><xref ref="Mean">Mean</xref></p>
+<p><xref ref="Median">Median</xref></p>
+<p><xref ref="Midrange">Midrange</xref></p>
+<p><xref ref="Range">Range</xref></p>
+<p><xref ref="IQR">Inter Quartile Range</xref></p>
+<p><xref ref="Variance">Variance</xref></p>
+<p><xref ref="Skewness">Skewness</xref></p>
+<p><xref ref="Kurtosis">Kurtosis</xref></p>
+</section>
 
 
 <section><title>Exercises</title>

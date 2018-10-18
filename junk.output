@@ -1,0 +1,2872 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Essentials_Probability_And_Statistics.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/colortbl/colortbl.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/dvipsnam.def)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/svgnam.def))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+(/usr/local/texlive/2018/texmf-dist/tex/latex/ms/everyshi.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def)))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty)) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/environ/environ.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/trimspaces/trimspaces.sty)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '4.13'
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.13'
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '4.13'
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '4.13'
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tcolorbox/tcbxparse.code.tex
+Library (tcolorbox): 'tcbxparse.code.tex' version '4.13'
+(/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def))))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.112, 2017/01/04 Text macros for Inconsolata (msharpe)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex))))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/newfloat.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/enumitem/enumitem.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarybackgrounds.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryarrows.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarymatrix.code.tex)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarysnakes.code.tex
+
+Package pgf Warning: Snakes have been superseded by decorations. Please use the
+ decoration libraries instead of the snakes library on input line 14.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathmorphing.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathmorphing.code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.shapes.code.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.shapes.code.tex)))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/extpfeil/extpfeil.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathtools/mathtools.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/mathtools/mhsetup.sty))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty))
+(./Essentials_Probability_And_Statistics.aux)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+ABD: EveryShipout initializing macros
+(/usr/local/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./Essentials_Probability_And_Statistics.out)
+(./Essentials_Probability_And_Statistics.out) [1{/usr/local/texlive/2018/texmf-
+var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.381 {\Large }\\
+                 [0.5\baselineskip]
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.382 [3\baselineskip]
+                      
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.382 [3\baselineskip]
+                      
+[3] [4] (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 415--418
+
+[5] [6] (./Essentials_Probability_And_Statistics.toc [7]) [8]
+************************************************
+Chapter 1 Statistical Measures
+************************************************
+Chapter 1.
+************************************************
+Section 1.1 Introduction
+************************************************
+************************************************
+Section 1.2 Measurement Scales
+************************************************
+[1]
+************************************************
+Section 1.3 Statistical Measures of Position
+************************************************
+[2] [3]
+
+Package hyperref Warning: Suppressing link with empty target on input line 662.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty) [4]
+(/usr/local/texlive/2018/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+
+LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
+(Font)              using `T1/zi4/m/n' instead on input line 667.
+
+************************************************
+Section 1.4 Statistical Measures of the Middle
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.694 ...finition}{Arithmetic Mean.}{definition-7}
+                                                  %
+(/usr/local/texlive/2018/texmf-dist/tex/latex/inconsolata/ts1zi4.fd) [5]pdfTeX 
+warning (ext4): destination with the same identifier (name{cthm.2}) has been al
+ready used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.769 ...{Computing class final grade.}{example-7}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.780 \begin{definition}{Median:.}{definition-8}
+                                                % [6]pdfTeX warning (ext4): des
+tination with the same identifier (name{cthm.4}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.801 \begin{definition}{Midrange:.}{definition-9}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.827 ...easures of the Middle.}{StatePopulations}
+                                                  %
+Underfull \vbox (badness 10000) has occurred while \output is active [7]
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 907.
+
+[8]
+************************************************
+Section 1.5 Statistical Measures of Variation
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.920 \begin{definition}{Range:.}{definition-10}
+                                                %pdfTeX warning (ext4): destina
+tion with the same identifier (name{cthm.2}) has been already used, duplicate i
+gnored
+<to be read again> 
+                   \relax 
+l.937 ...terquartile Range (IQR):.}{definition-11}
+                                                  % [9]pdfTeX warning (ext4): d
+estination with the same identifier (name{cthm.3}) has been already used, dupli
+cate ignored
+<to be read again> 
+                   \relax 
+l.975 ...e and Standard Deviation.}{definition-12}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.1010 ...orms for Variance.}{}{AlternateVariance}
+                                                  % [10]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.5}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.1041 ...means and variances by hand.}{example-9}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.1076 ...tion Measures of Variation.}{exercise-2}
+                                                  % [11]
+************************************************
+Section 1.6 Adjusting Statistical Measures for Grouped Data
+************************************************
+************************************************
+Subsection 1.6.1 Data Grouped into Single-valued Categories
+************************************************
+
+Underfull \vbox (badness 10000) has occurred while \output is active [12]pdfTeX
+ warning (ext4): destination with the same identifier (name{cthm.1}) has been a
+lready used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1163 \begin{inlineexercise}{}{exercise-3}
+                                           %
+************************************************
+Subsection 1.6.2 Data Grouped into Continuous Intervals
+************************************************
+[13]pdfTeX warning (ext4): destination with the same identifier (name{cthm.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1228 ... for Interval Grouped Data.}{example-10}
+                                                  %
+************************************************
+Section 1.7 Other Statistical Point Measures
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1261 ...in{definition}{Skewness.}{definition-13}
+                                                  % [14]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.2}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.1285 ...in{definition}{Kurtosis.}{definition-14}
+                                                  %
+Underfull \hbox (badness 1137) in paragraph at lines 1285--1288
+[][]\T1/cmr/bx/n/10 Definition 1.7.2  Kur-to-sis. [][]\T1/cmr/m/n/10 For pop-u-
+la-tion data, the Kur-to-sis of
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1304 ...for Skewness and Kurtosis.}{}{theorem-2}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.1339 ...wness and kurtosis by hand.}{example-11}
+                                                  %
+! Missing \right. inserted.
+<inserted text> 
+                \right .
+l.1361 \end{equation*}
+                      
+[15]
+************************************************
+Section 1.8 Visual Statistical Measures - Graphical Representation of Data
+************************************************
+************************************************
+Subsection 1.8.1 Histograms
+************************************************
+[16]
+Overfull \hbox (69.59247pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/10 1.8.  VISUAL STATISTICAL MEASURES - GRAPHICAL REPRESENTATION OF
+ DATA \T1/cmr/m/n/10 17
+[17 <./images/frequencyhistogram.png>]
+************************************************
+Subsection 1.8.2 Stem and Leaf Plot
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1455 ...{Simple Stem and Leaf Plot.}{example-12}
+                                                  %
+Underfull \vbox (badness 10000) has occurred while \output is active [18]pdfTeX
+ warning (ext4): destination with the same identifier (name{cthm.5}) has been a
+lready used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1493 ...Plot for State Populations.}{example-13}
+                                                  %
+************************************************
+Subsection 1.8.3 Box and Whisker Diagram (Box Plot)
+************************************************
+************************************************
+Subsection 1.8.4 Density Plots
+************************************************
+
+Overfull \hbox (69.59247pt too wide) has occurred while \output is active
+\T1/cmr/m/sl/10 1.8.  VISUAL STATISTICAL MEASURES - GRAPHICAL REPRESENTATION OF
+ DATA \T1/cmr/m/n/10 19
+[19]
+************************************************
+Section 1.9 Exercises
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1547 \begin{inlineexercise}{}{exercise-4}
+                                           %pdfTeX warning (ext4): destination 
+with the same identifier (name{cthm.2}) has been already used, duplicate ignore
+d
+<to be read again> 
+                   \relax 
+l.1551 \begin{inlineexercise}{}{exercise-5}
+                                           %
+************************************************
+Chapter 2 Regression
+************************************************
+[20]
+
+! LaTeX Error: Float(s) lost.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1561 \chapter
+               [{Regression}]{Regression}\label{CurveEstimation}
+Chapter 2.
+************************************************
+Section 2.1 Introduction
+************************************************
+************************************************
+Section 2.2 Linear Regression - Best Fit Line
+************************************************
+[21]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1629 ...in{inlineexercise}{WebWork.}{exercise-6}
+                                                  % [22]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.2}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.1683 ...rcise}{Non-functional data.}{exercise-7}
+                                                  % [23]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.3}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.1726 ...in{inlineexercise}{WebWork.}{exercise-8}
+                                                  %
+************************************************
+Section 2.3 Correlation
+************************************************
+[24]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1779 ...{definition}{Covariance.}{definition-15}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.1794 ...te Formula for Covariance.}{}{theorem-3}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.1816 ...Correlation Coefficient.}{definition-16}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.1827 ...e Correlation Coefficient.}{}{theorem-4}
+                                                  % [25]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.5}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.1846 ...in{inlineexercise}{WebWork.}{exercise-9}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.1904 ...n{inlineexercise}{WebWork.}{exercise-10}
+                                                  % [26]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.7}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.1980 ...e}{Correlation equaling 0.}{exercise-11}
+                                                  %
+************************************************
+Section 2.4 Higher Degree Linear Regression
+************************************************
+[27] [28]pdfTeX warning (ext4): destination with the same identifier (name{cthm
+.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2126 ...ar Regression Interpolant.}{exercise-12}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2164 ...n{inlineexercise}{WebWork.}{exercise-13}
+                                                  %
+Underfull \vbox (badness 4647) has occurred while \output is active [29]
+************************************************
+Section 2.5 Multi-variable Linear Regression
+************************************************
+[30]
+Overfull \hbox (347.47401pt too wide) detected at line 2288
+\OML/cmm/m/it/10 H \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 42\OML
+/cmm/m/it/10 :\OT1/cmr/m/n/10 379 + 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 04901523
+ \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 T \OT1/cmr/m/n/10 + 10\OML/cmm/m/it/10 :
+\OT1/cmr/m/n/10 14333127 \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 R \OMS/cmsy/m/n/
+10 ^^@ \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 22475541 \OMS/cmsy/m/
+n/10 ^^A \OML/cmm/m/it/10 T \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 R[]  \OMS/cms
+y/m/n/10 ^^@ \OT1/cmr/m/n/10 6\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 83783 \OMS/cmsy
+/m/n/10 ^^A \OT1/cmr/m/n/10 10[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 T[] \OMS
+/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 481717 \OMS
+/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 10[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 R[]
+ \OT1/cmr/m/n/10 + 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 22874 \OMS/cmsy/m/n/10 ^^
+A \OT1/cmr/m/n/10 10[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 T[] \OMS/cmsy/m/n/
+10 ^^A \OML/cmm/m/it/10 R[]  \OT1/cmr/m/n/10 + 8\OML/cmm/m/it/10 :\OT1/cmr/m/n/
+10 5282 \OMS/cmsy/m/n/10 ^^A \OT1/cmr/m/n/10 10[] \OMS/cmsy/m/n/10 ^^A \OML/cmm
+/m/it/10 T \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 R[] \OMS/cmsy/m/n/10 ^^@ \OT1/
+cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 99 \OMS/cmsy/m/n/10 ^^A \OT1/cmr/
+m/n/10 10[] \OMS/cmsy/m/n/10 ^^A \OML/cmm/m/it/10 T[] \OMS/cmsy/m/n/10 ^^A \OML
+/cmm/m/it/10 R[]:
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2289 ...://www.wpc.ncep.noaa.gov/html/heatindex_
+                                                  equation.shtml .%
+! Missing $ inserted.
+<inserted text> 
+                $
+l.2290 \par
+           
+
+Overfull \hbox (10.18016pt too wide) in paragraph at lines 2288--2290
+\T1/cmr/m/n/10 are avail-able at https://www.wpc.ncep.noaa.gov/html/heatindex$[
+]\OML/cmm/m/it/10 quation:shtml:$ 
+************************************************
+Chapter 3 Counting and Combinatorics
+************************************************
+[31] [32]
+Chapter 3.
+************************************************
+Section 3.1 Introduction
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2340 ...ting out all possibilities.}{example-14}
+                                                  % [33]
+************************************************
+Section 3.2 General Counting Principles
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2389 ...definition}{Cardinality.}{definition-17}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2399 ...{Multiplication Principle.}{}{theorem-5}
+                                                  % [34]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.3}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.2421 ...n{inlineexercise}{WebWork.}{exercise-14}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2440 ...n{inlineexercise}{WebWork.}{exercise-15}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2462 ...n{definition}{Factorial.}{definition-18}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2473 ...xample}{iPad security code.}{example-15}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2494 ...y code with greasy fingers.}{example-16}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.8}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2504 ...example}{National Treasure.}{example-17}
+                                                  % [35]
+************************************************
+Section 3.3 Permutations
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2561 ...ermutations of everything.}{}{theorem-6}
+                                                  % [36]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.2}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.2577 ...egin{example}{Arrangements.}{example-18}
+                                                  %
+
+LaTeX Warning: Float too large for page by 37.85196pt on input line 2595.
+
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2597 ...ubset without replacement.}{}{theorem-7}
+                                                  % [37 <./images/PermutationSm
+all.png>]pdfTeX warning (ext4): destination with the same identifier (name{cthm
+.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2616 ...ers but not all are chosen.}{example-19}
+                                                  %
+
+LaTeX Warning: Float too large for page by 306.46411pt on input line 2619.
+
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2621 ...n{inlineexercise}{WebWork.}{exercise-16}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2649 ...a subset with replacement.}{}{theorem-8}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2663 ...Multinomial Coefficients).}{}{theorem-9}
+                                                  %
+! Missing delimiter (. inserted).
+<to be read again> 
+                   {
+l.2673 \left {
+               x_{1,1}, ..., x_{1,n_1}, x_{2,1}, ..., x_{2,n_2}, ... , x_{2,...
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.2673 ...}, ... , x_{2,1}, ..., x_{2,n_2}, \right
+                                                   }
+! Missing delimiter (. inserted).
+<to be read again> 
+                   }
+l.2673 ... ... , x_{2,1}, ..., x_{2,n_2}, \right }
+                                                  
+! Extra }, or forgotten $.
+<recently read> }
+                 
+l.2673 ... ... , x_{2,1}, ..., x_{2,n_2}, \right }
+                                                  
+! Undefined control sequence.
+l.2675 ... \(n_1! \times n_2! \times ... \times \n
+                                                  _s!\) ways to arrange all ...
+
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.8}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2677 ...n{inlineexercise}{WebWork.}{exercise-17}
+                                                  % [38]
+************************************************
+Section 3.4 Combinations
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2745 ...bset without replacement.}{}{theorem-10}
+                                                  %
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 2751.
+
+[39]pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.2761 ... subset with replacement.}{}{theorem-11}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2777 ...n{inlineexercise}{WebWork.}{exercise-18}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2790 ...n{inlineexercise}{WebWork.}{exercise-19}
+                                                  % [40]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.5}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.2810 \begin{example}{Ipad Security.}{example-20}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2829 ...}{Binomial Coefficients.}{definition-19}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.2845 ...ial Coefficient Formulas.}{}{theorem-12}
+                                                  % [41]
+************************************************
+Section 3.5 Exercises
+************************************************
+[42]
+************************************************
+Chapter 4 Probability Theory
+************************************************
+[43]
+
+! LaTeX Error: Float(s) lost.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2920 \chapter
+               [{Probability Theory}]{Probability Theory}\label{ProbabilityG...
+
+[44]
+Chapter 4.
+************************************************
+Section 4.1 Introduction
+************************************************
+************************************************
+Section 4.2 Relative Frequency
+************************************************
+[45] [46] [47] [48]pdfTeX warning (ext4): destination with the same identifier 
+(name{cthm.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3105 ...tive relative frequency.}{definition-20}
+                                                  %
+************************************************
+Section 4.3 Definition of Probability
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3128 ...{Pairwise Disjoint Sets.}{definition-21}
+                                                  % [49]
+Underfull \vbox (badness 2809) has occurred while \output is active [50]pdfTeX 
+warning (ext4): destination with the same identifier (name{cthm.2}) has been al
+ready used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3227 ...n}{Definition of Probability.}{DefnProb}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.3240 \begin{inlineexercise}{}{exercise-20}
+                                            %pdfTeX warning (ext4): destination
+ with the same identifier (name{cthm.4}) has been already used, duplicate ignor
+ed
+<to be read again> 
+                   \relax 
+l.3285 ...f Complements.}{}{ProbabilityComplemnts}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.3294 \begin{theorem}{}{}{ProbabilityEmptySet}
+                                               % [51]pdfTeX warning (ext4): des
+tination with the same identifier (name{cthm.6}) has been already used, duplica
+te ignored
+<to be read again> 
+                   \relax 
+l.3303 \begin{theorem}{}{}{ProbabilityContainment}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.3318 \begin{theorem}{}{}{ProbabilityLessThanOne}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.8}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.3327 \begin{theorem}{}{}{ProbabilityTwoUnions}
+                                                %pdfTeX warning (ext4): destina
+tion with the same identifier (name{cthm.9}) has been already used, duplicate i
+gnored
+<to be read again> 
+                   \relax 
+l.3359 ...n{corollary}{}{}{ProbabilityThreeUnions}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.10}) has been already used, duplicat
+e ignored
+<to be read again> 
+                   \relax 
+l.3370 ...in{corollary}{}{}{ProbabilityFourUnions}
+                                                  %
+Overfull \hbox (69.86491pt too wide) detected at line 3378
+[]
+[52]pdfTeX warning (ext4): destination with the same identifier (name{cthm.11})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3393 ...of Equally Likely Events.}{}{theorem-18}
+                                                  % [53]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.12}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.3465 ...n{inlineexercise}{WebWork.}{exercise-21}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.13}) has been already used, duplicat
+e ignored
+<to be read again> 
+                   \relax 
+l.3500 ...n{inlineexercise}{WebWork.}{exercise-22}
+                                                  %
+************************************************
+Section 4.4 Exercises - Basic
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3524 \begin{inlineexercise}{Poker.}{exercise-23}
+                                                  %
+Underfull \vbox (badness 10000) has occurred while \output is active [54]pdfTeX
+ warning (ext4): destination with the same identifier (name{cthm.2}) has been a
+lready used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3528 \begin{inlineexercise}{Dice.}{exercise-24}
+                                                 %pdfTeX warning (ext4): destin
+ation with the same identifier (name{cthm.3}) has been already used, duplicate 
+ignored
+<to be read again> 
+                   \relax 
+l.3532 ...inlineexercise}{Skew Dice.}{exercise-25}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.3536 \begin{inlineexercise}{Craps.}{exercise-26}
+                                                  %
+************************************************
+Section 4.5 Conditional Probability
+************************************************
+[55]
+Overfull \hbox (52.9039pt too wide) in paragraph at lines 3598--3599
+[][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (8.10324pt too wide) in paragraph at lines 3616--3618
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+[56]
+Overfull \hbox (85.30423pt too wide) in paragraph at lines 3647--3648
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3657 ...Conditional Probability.}{definition-23}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.3663 \begin{theorem}{}{}{theorem-19}
+                                      %pdfTeX warning (ext4): destination with 
+the same identifier (name{cthm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3672 ...rem}{Multiplication Rule.}{}{theorem-20}
+                                                  % [57]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.4}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.3682 ...n{inlineexercise}{WebWork.}{exercise-27}
+                                                  %
+************************************************
+Subsection 4.5.1 Exercises - Conditional Probabilities
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3711 ...itional Basic computation.}{exercise-28}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.3722 ...ender vs University Major.}{exercise-29}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.8}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.3745 ...rcise}{Mean Tough Teacher.}{exercise-30}
+                                                  %
+Overfull \hbox (52.62314pt too wide) detected at line 3765
+\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([]) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])
+[]  = [] = []\OML/cmm/m/it/10 :
+
+Overfull \hbox (11.35979pt too wide) detected at line 3776
+\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([]) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])
+[]  = [] = []
+
+Overfull \hbox (32.12607pt too wide) detected at line 3780
+\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([]) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])
+[]  = (\OML/cmm/m/it/10 k \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1) \OMS/cmsy/m/n
+/10 ^^A [] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 :
+
+Overfull \hbox (7.41525pt too wide) detected at line 3784
+\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 ([])[]  = [] = [] = []\OML/cmm/m/it/10 :
+[58]pdfTeX warning (ext4): destination with the same identifier (name{cthm.9}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3795 ...xercise}{Shared Birthdays.}{exercise-31}
+                                                  %
+Underfull \vbox (badness 10000) has occurred while \output is active [59]
+[60]pdfTeX warning (ext4): destination with the same identifier (name{cthm.10})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3844 ...e}{Internet meme solution.}{exercise-32}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.11}) has been already used, duplicat
+e ignored
+<to be read again> 
+                   \relax 
+l.3855 ...with boarding pass issues.}{exercise-33}
+                                                  %
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3871 ...seat and you sit in yours) = \frac{1}{k}
+                                                   \cdot 1%
+! Extra }, or forgotten $.
+\frac  #1#2->{\begingroup #1\endgroup \@@over #2}
+                                                 
+l.3871 ...seat and you sit in yours) = \frac{1}{k}
+                                                   \cdot 1%
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3872 \item
+            {}P(first guy sits in your seat and you do not sit in yours) = \...
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3872 \item{
+             }P(first guy sits in your seat and you do not sit in yours) = \...
+
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3872 \item{
+             }P(first guy sits in your seat and you do not sit in yours) = \...
+
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3873 \item
+            {}P(other k-2 travelers make their choices) = \((k-2) \frac{1}{k...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.3873 \item{
+             }P(other k-2 travelers make their choices) = \((k-2) \frac{1}{k...
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.3873 \item{
+             }P(other k-2 travelers make their choices) = \((k-2) \frac{1}{k...
+
+
+Underfull \hbox (badness 5519) in paragraph at lines 3871--3873
+[]\T1/cmr/m/n/10 P(first guy sits in his own seat and you sit in yours) =
+************************************************
+Section 4.6 Bayes Theorem
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.3893 ...n{theorem}{Bayes Theorem.}{}{theorem-21}
+                                                  % [61]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.2}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.3917 \begin{inlineexercise}{}{exercise-34}
+                                            % [62]pdfTeX warning (ext4): destin
+ation with the same identifier (name{cthm.3}) has been already used, duplicate 
+ignored
+<to be read again> 
+                   \relax 
+l.3946 ...n{inlineexercise}{WebWork.}{exercise-35}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.3959 ...n{inlineexercise}{WebWork.}{exercise-36}
+                                                  % [63]
+Overfull \hbox (132.3045pt too wide) in paragraph at lines 3997--3998
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (177.10516pt too wide) in paragraph at lines 3998--3999
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+
+Underfull \vbox (badness 10000) has occurred while \output is active [64]
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 4042--4043
+[][][][][][][][][][][][][]  
+
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 4045--4047
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+Overfull \hbox (62.10379pt too wide) in paragraph at lines 4056--4057
+[][][][][][][][][][][][][][][][][][][][] 
+
+Overfull \hbox (13.5033pt too wide) in paragraph at lines 4057--4059
+[][][][][][][][][][][][][][][][] 
+
+Overfull \hbox (18.90335pt too wide) in paragraph at lines 4070--4071
+[][][][][][][][][][][][][]  
+
+Overfull \hbox (126.90445pt too wide) in paragraph at lines 4071--4073
+[][][][][][][][][][][][][][][][][][][]  
+
+Underfull \vbox (badness 10000) has occurred while \output is active [65]
+Overfull \hbox (40.50357pt too wide) in paragraph at lines 4075--4077
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.5}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4087 ...cise}{Insured vs Accident.}{exercise-37}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4110 ...rcise}{Spinal bifida odds.}{exercise-38}
+                                                  % [66]
+************************************************
+Section 4.7 Independence
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4137 ...ion}{Independent Events.}{definition-24}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4143 ...Conditional Probability.}{}{corollary-3}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4161 ...n{inlineexercise}{WebWork.}{exercise-39}
+                                                  % [67]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.4}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.4192 ... and Mutual Exclusivity.}{}{corollary-4}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4202 ...sive Independent Events.}{}{corollary-5}
+                                                  %
+************************************************
+Subsection 4.7.1 Exercises - Independence
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.6}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4215 ...Independence Calculations.}{exercise-40}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4219 ...d events and Independence.}{exercise-41}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.8}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4229 ...se}{Rolling multiple dice.}{exercise-42}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.9}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4239 ...nlineexercise}{Redundancy.}{exercise-43}
+                                                  % [68]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.10}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.4249 ...cise}{Internet Meme redux.}{exercise-44}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.11}) has been already used, duplicat
+e ignored
+<to be read again> 
+                   \relax 
+l.4257 ...gle Elimination Tounament.}{exercise-45}
+                                                  %
+************************************************
+Chapter 5 Probability Functions
+************************************************
+[69] [70]
+Chapter 5.
+************************************************
+Section 5.1 Introduction
+************************************************
+************************************************
+Section 5.2 Random Variables
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4311 ...nition}{Random Variable.}{definition-25}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4316 ...xample}{Success vs Failure.}{example-21}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4329 ...ample}{Standard Dice Pairs.}{example-22}
+                                                  % [71]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.4}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.4341 ...xample}{Other Dice Options.}{example-23}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4353 \begin{definition}{}{definition-26}
+                                          %
+************************************************
+Section 5.3 Probability Functions
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4367 ...ability "Mass" Function.}{definition-27}
+                                                  % [72 <./images/randomvariabl
+e.png>]pdfTeX warning (ext4): destination with the same identifier (name{cthm.2
+}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4375 ...lity "Density" Function.}{definition-28}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4385 ...crete Probability Function.}{example-24}
+                                                  %
+Overfull \hbox (132.3045pt too wide) in paragraph at lines 4393--4394
+[][][][][][][][] 
+
+Overfull \hbox (2.70319pt too wide) in paragraph at lines 4409--4410
+[][][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (40.50357pt too wide) in paragraph at lines 4414--4416
+[][][][][][][][][][][][][][][][][][][][][]  
+[73]
+
+LaTeX Font Warning: Font shape `TS1/zi4/m/it' undefined
+(Font)              using `TS1/zi4/m/n' instead
+(Font)              for symbol `textquotesingle' on input line 4424.
+
+
+Overfull \hbox (13.5033pt too wide) in paragraph at lines 4441--4442
+[][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (186.30505pt too wide) in paragraph at lines 4442--4443
+[][][][][][][][][][][][][][][][][][][][][]  
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4445 ...nuous Probability Function.}{example-25}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4457 ...}{Distribution Function.}{definition-29}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4459 ...rete Distribution Function.}{example-26}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.8}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4475 ...uous Distribution Function.}{example-27}
+                                                  % [74]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.10}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.4493 \begin{theorem}{}{}{theorem-Fmin}
+                                        %pdfTeX warning (ext4): destination wit
+h the same identifier (name{cthm.11}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4503 \begin{theorem}{}{}{theorem-Fmax}
+                                        %pdfTeX warning (ext4): destination wit
+h the same identifier (name{cthm.12}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4513 \begin{theorem}{}{}{theorem-24}
+                                      %pdfTeX warning (ext4): destination with 
+the same identifier (name{cthm.13}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4536 ...probabilities.}{}{theorem-Fvsf-discrete}
+                                                  % [75]
+************************************************
+Section 5.4 Expected Value
+************************************************
+[76]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4600 ...inition}{Expected Value.}{definition-30}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4612 ...lue is a Linear Operator.}{}{theorem-28}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4632 ...e}{Discrete Expected Value.}{example-28}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4640 ...{Continuous Expected Value.}{example-29}
+                                                  % [77]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.5}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.4648 ...n}{Theoretical Measures.}{definition-31}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4659 ...for Theoretical Measures.}{}{theorem-29}
+                                                  % [78]
+Overfull \hbox (78.9008pt too wide) detected at line 4718
+[]
+
+Overfull \hbox (160.09514pt too wide) detected at line 4729
+[]
+[79 <./images/DiscreteHistogramExample.png>] [80 <./images/ContinuousDistributi
+onExample.png>]pdfTeX warning (ext4): destination with the same identifier (nam
+e{cthm.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4784 \begin{example}{Roulette.}{example-30}
+                                             %
+Underfull \vbox (badness 4024) has occurred while \output is active [81]
+Underfull \vbox (badness 10000) has occurred while \output is active [82]
+************************************************
+Section 5.5 Standard Units
+************************************************
+************************************************
+Section 5.6 Exercises - Probability Functions and Random Variables
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4867 ...g A Fixed Number of Coins.}{exercise-46}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4871 \begin{inlineexercise}{Later.}{exercise-47}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4875 ...ing Fixed Number of Coins.}{exercise-48}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4879 ...ipping Coins till success.}{exercise-49}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.4883 ...e}{Time between Accidents.}{exercise-50}
+                                                  % [83]
+************************************************
+Chapter 6 Distributions based upon Equally likely Outcomes
+************************************************
+[84]
+
+! LaTeX Error: Float(s) lost.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4893 \chapter
+               [{Distributions based upon Equally likely Outcomes}]{Distribu...
+
+Chapter 6.
+************************************************
+Section 6.1 Introduction
+************************************************
+************************************************
+Section 6.2 Discrete Uniform Distribution
+************************************************
+[85]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4939 ...orm Probability Function.}{}{theorem-30}
+                                                  %
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 86 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+[86]pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5006 ...n{example}{Rolling one die.}{example-31}
+                                                  %
+************************************************
+Section 6.3 Continuous Uniform Distribution
+************************************************
+[87]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5028 ...orm Probability Function.}{}{theorem-31}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5067 ...ndomly in a given interval.}{example-32}
+                                                  %
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 88 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+[88]pdfTeX warning (ext4): destination with the same identifier (name{cthm.3}) 
+has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5074 ...n for Continuous Uniform.}{}{theorem-32}
+                                                  %
+************************************************
+Section 6.4 Hypergeometric Distribution
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5106 ...ergeometric Distribution.}{}{theorem-33}
+                                                  % [89]
+
+! Package inputenc Error: Unicode character μ (U+3BC)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5158 ...formula is similar and uses E(X(X-1)+ μ
+                                                   - μ2. The proof of skewn...
+
+
+! Package inputenc Error: Unicode character μ (U+3BC)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5158 ...la is similar and uses E(X(X-1)+ μ - μ
+                                                  2. The proof of skewness a...
+
+
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 90 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+[90]
+************************************************
+Section 6.5 Exercises
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5197 ...he Proverbial Urn Problem.}{exercise-51}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5207 ...exercise}{- Playing Cards.}{exercise-52}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5216 ...rcise}{- Starting Seniors.}{exercise-53}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5227 ...eexercise}{- Old Faithful.}{exercise-54}
+                                                  % [91]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.5}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.5231 ...Random Variable Scenarios.}{exercise-55}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5241 ...form on a different space.}{exercise-56}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5275 ...ana Mega Millions Lottery.}{exercise-57}
+                                                  %
+Underfull \hbox (badness 10000) in paragraph at lines 5282--5283
+[]\T1/cmr/m/n/10 Match 5 plus Mega ball = Jack-pot of
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5284 \item
+            {}Match 4 plus Mega ball = $5,000%
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5284 \item{
+             }Match 4 plus Mega ball = $5,000%
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5284 \item{
+             }Match 4 plus Mega ball = $5,000%
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5286 \item
+            {}Match 3 plus Mega ball = $50%
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5286 \item{
+             }Match 3 plus Mega ball = $50%
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5286 \item{
+             }Match 3 plus Mega ball = $50%
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5288 \item
+            {}Match 2 plus Mega ball = $5%
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5288 \item{
+             }Match 2 plus Mega ball = $5%
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5288 \item{
+             }Match 2 plus Mega ball = $5%
+
+! LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5290 \item
+            {}Match only the Mega ball = $1%
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5290 \item{
+             }Match only the Mega ball = $1%
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5290 \item{
+             }Match only the Mega ball = $1%
+! Missing $ inserted.
+<inserted text> 
+                $
+l.5338 \par
+           
+
+Underfull \hbox (badness 10000) in paragraph at lines 5336--5338
+\T1/cmr/m/n/10 So, the ex-pected pay-out is ap-prox-i-mately
+
+Underfull \hbox (badness 10000) in paragraph at lines 5336--5338
+\T1/cmr/m/n/10 30 cents. Sub-tract-ing the cost of play-ing
+
+Overfull \hbox (2.59837pt too wide) in paragraph at lines 5336--5338
+\T1/cmr/m/n/10 ($\OT1/cmr/m/n/10 1)\OML/cmm/m/it/10 indicatesthattheaveragewinn
+ingsperplayoftheLouisianaLotterywouldbe \OMS/cmsy/m/n/10 ^^@
+
+Overfull \hbox (347.28316pt too wide) in paragraph at lines 5336--5338
+\OT1/cmr/m/n/10 70\OML/cmm/m/it/10 cents:So; youwouldbebetterofftotake; say; \O
+T1/cmr/m/n/10 50\OML/cmm/m/it/10 centsandjustgiveittothelocalschoolsystemeveryt
+imeyouconsiderplayingthisgameratherthanactuallyplaying:$ 
+
+Underfull \hbox (badness 10000) in paragraph at lines 5362--5364
+\T1/cmr/m/n/10 Therefore, the ex-pect value of spend-ing an-other
+
+Underfull \hbox (badness 10000) in paragraph at lines 5362--5364
+\T1/cmr/m/n/10 dol-lar to get the mul-ti-plier ef-fect is about -
+
+Overfull \hbox (125.3504pt too wide) in paragraph at lines 5362--5364
+\OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 35\OML/cmm/m/it/10 :Sincethi
+sisslightlylessthandoublingtheexpectedlossof\OT1/cmr/m/n/10 70\OML/cmm/m/it/10 
+centsforplayingwithoutthemultiplierwith$\T1/cmr/m/n/10 1,
+
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 92 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+[92] [93]
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 94 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+[94]
+************************************************
+Chapter 7 Distributions based upon Bernoulli Trials
+************************************************
+[95]
+Overfull \hbox (38.28177pt too wide) has occurred while \output is active
+\T1/cmr/m/n/10 96 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
+LIKELY OUTCOMES
+[96]
+Chapter 7.
+************************************************
+Section 7.1 Introduction
+************************************************
+************************************************
+Section 7.2 Binomial Distribution
+************************************************
+[97]
+Overfull \hbox (24.3034pt too wide) in paragraph at lines 5420--5421
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5448 ...ial Probability Function.}{}{theorem-34}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5463 ...ial Distribution Formula.}{}{theorem-35}
+                                                  % [98]pdfTeX warning (ext4): 
+destination with the same identifier (name{cthm.3}) has been already used, dupl
+icate ignored
+<to be read again> 
+                   \relax 
+l.5491 ... Distribution Statistics.}{}{theorem-36}
+                                                  %
+Overfull \hbox (23.81306pt too wide) detected at line 5534
+[]
+[99]
+************************************************
+Section 7.3 Geometric Distribution
+************************************************
+[100]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5602 ...c Distribution sums to 1.}{}{theorem-37}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5635 ...{theorem}{Geometric Mean.}{}{theorem-38}
+                                                  % [101]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.3}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.5652 ...orem}{Geometric Variance.}{}{theorem-39}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5670 ...ic Distribution Function.}{}{theorem-40}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5687 ...r Geometric Distribution.}{}{theorem-41}
+                                                  %
+
+LaTeX Font Warning: Font shape `T1/zi4/bx/it' undefined
+(Font)              using `T1/zi4/bx/n' instead on input line 5693.
+
+[102]pdfTeX warning (ext4): destination with the same identifier (name{cthm.6})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5711 ...elds a memoryless model..}{}{theorem-42}
+                                                  %
+************************************************
+Section 7.4 Negative Binomial
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5743 ...Negative Binomial Series.}{}{theorem-43}
+                                                  % [103]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.2}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.5781 ...ial Probability Function.}{}{theorem-44}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5795 ...l Distribution Sums to 1.}{}{theorem-45}
+                                                  % [104]
+Overfull \hbox (56.70374pt too wide) in paragraph at lines 5826--5827
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5834 ...ve Binomial Distribution.}{}{theorem-46}
+                                                  % [105]
+************************************************
+Section 7.5 Exercises
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.5886 ...nsumer Confidence Polling.}{exercise-58}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5905 ...eexercise}{- Rolling Dice.}{exercise-59}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5933 ...llecting Kids Meal Prizes.}{exercise-60}
+                                                  % [106]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.4}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.5959 ...eexercise}{- Rolling Dice.}{exercise-61}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.5970 ...{- Rolling Dice yet again.}{exercise-62}
+                                                  % [107]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.6}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.5981 ... deviations from the mean.}{exercise-63}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6014 ...rcise}{Chapter Experiment.}{exercise-64}
+                                                  %
+************************************************
+Chapter 8 Distributions based upon Poisson Processes
+************************************************
+[108]
+Chapter 8.
+************************************************
+Section 8.1 Introduction
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6033 ...nition}{Poisson Process.}{definition-32}
+                                                  %
+************************************************
+Section 8.2 Poisson Distribution
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6059 ...son Probability Function.}{}{theorem-47}
+                                                  % [109]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.2}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.6091 ...son Probability Function.}{}{theorem-48}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6108 ...}{Statistics for Poisson.}{}{theorem-49}
+                                                  % [110] [111]
+************************************************
+Section 8.3 Exponential Distribution
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6202 ...on Probability Function.}{definition-33}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6210 ...ial Probability Function.}{}{theorem-50}
+                                                  % [112]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.3}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.6226 ...Exponential Distribution.}{}{theorem-51}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6242 ...istribution and Plotting.}{}{theorem-52}
+                                                  % [113]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.5}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.6297 ...inuous memoryless model..}{}{theorem-53}
+                                                  %
+************************************************
+Section 8.4 Gamma Distribution
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6326 ...inition}{Gamma Function.}{definition-34}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6332 ...n on the natural numbers.}{}{theorem-54}
+                                                  % [114]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.3}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.6375 ...on Probability Function.}{definition-35}
+                                                  %
+Underfull \hbox (badness 4060) in paragraph at lines 6375--6377
+[][]\T1/cmr/bx/n/10 Definition 8.4.3  Gamma Dis-tri-bu-tion Prob-a-bil-ity Func
+-tion.
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.4}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6381 ...mma Probability function.}{}{theorem-55}
+                                                  % [115]
+************************************************
+Section 8.5 Exercises
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6465 ...ineexercise}{- Home Sales.}{exercise-65}
+                                                  % [116]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.2}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.6476 ...Customer arrivals - Total.}{exercise-66}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6497 ...Customer arrivals - First.}{exercise-67}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6516 ... Customer arrivals - 10th.}{exercise-68}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6535 ...uter Network Data Traffic.}{exercise-69}
+                                                  % [117]
+************************************************
+Chapter 9 Normal Distributions
+************************************************
+[118]
+Chapter 9.
+************************************************
+Section 9.1 Introduction
+************************************************
+************************************************
+Section 9.2 The Normal Distribution
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6601 ...The Normal Distribution.}{definition-36}
+                                                  %
+Overfull \hbox (110.70428pt too wide) in paragraph at lines 6613--6614
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (45.90363pt too wide) in paragraph at lines 6616--6617
+[][][][][][][][][][][][][][][][][][]  
+[119]
+Overfull \hbox (13.5033pt too wide) in paragraph at lines 6618--6619
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (13.5033pt too wide) in paragraph at lines 6619--6620
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (58.30396pt too wide) in paragraph at lines 6620--6621
+[][][][][][][][][][][][][][][][][][][][][][][]  
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6622  \begin{theorem}{}{}{theorem-56}
+                                       %pdfTeX warning (ext4): destination with
+ the same identifier (name{cthm.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6638 ...mal probability function.}{}{theorem-57}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6674 ... normal probability mean.}{}{theorem-58}
+                                                  % [120]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.5}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.6702 ...mal probability variance.}{}{theorem-59}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6723 ... the Normal Distribution.}{}{theorem-60}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6725 ...mal Distribution Maximum.}{}{theorem-61}
+                                                  % [121]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.8}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.6737 ...ion Points of Inflection.}{}{theorem-62}
+                                                  %
+************************************************
+Section 9.3 Chi-Square Distribution
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6782 ...re Probability Function.}{definition-37}
+                                                  % [122]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.2}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.6795 ...m}{\(\chi^2\) statistics.}{}{theorem-63}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.6813 ...en Normal and \(\chi^2\).}{}{theorem-64}
+                                                  %
+************************************************
+Section 9.4 Other "Bell Shaped" distributions
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6844 ...{The Cauchy Distribution.}{}{theorem-65}
+                                                  % [123]
+! Undefined control sequence.
+l.6884 ...standard normal variable and Y is \(\Chi
+                                                  ^2(r)\) with Y and Z indep...
+
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.6888 ...}{Student t-distribution.}{}{theorem-66}
+                                                  % [124]
+************************************************
+Section 9.5 Normal Distribution as a Limiting Distribution
+************************************************
+! Missing $ inserted.
+<inserted text> 
+                $
+l.6932 ...s a red circle.  If you check the "Show_
+                                                  Mean" box, the mean of the...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.6933 \par
+           
+
+Overfull \hbox (95.12189pt too wide) in paragraph at lines 6932--6933
+\T1/cmr/m/n/10 check the "Show$[]\OML/cmm/m/it/10 ean\OT1/cmr/m/n/10 "\OML/cmm/
+m/it/10 box; themeanofthesecirclesisindicatedbythegreenlineinthemiddleoftheplot
+:$ 
+[125]
+Overfull \hbox (191.70511pt too wide) in paragraph at lines 6973--6974
+[][][][][][][][][][][][][][][][][][][][][] 
+
+Overfull \hbox (132.3045pt too wide) in paragraph at lines 6974--6976
+[][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (8.10324pt too wide) in paragraph at lines 6976--6979
+[][][][][][][][][][][]  
+
+Overfull \hbox (94.50412pt too wide) in paragraph at lines 6987--6988
+[][][][][][][][][][][][][][][][][][][]  
+[126]
+Overfull \hbox (121.5044pt too wide) in paragraph at lines 6988--6989
+[][][][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (218.70538pt too wide) in paragraph at lines 7014--7015
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 7015--7017
+[][][][][][][][][][][][] 
+[127]
+Overfull \hbox (191.70511pt too wide) in paragraph at lines 7050--7051
+[][][][][][][][][][][][][][][][][][][][][] 
+
+Overfull \hbox (132.3045pt too wide) in paragraph at lines 7051--7053
+[][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (8.10324pt too wide) in paragraph at lines 7053--7056
+[][][][][][][][][][][]  
+
+Overfull \hbox (94.50412pt too wide) in paragraph at lines 7064--7065
+[][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (121.5044pt too wide) in paragraph at lines 7065--7066
+[][][][][][][][][][][][][][][][][][][][][][][][]  
+
+Underfull \vbox (badness 10000) has occurred while \output is active [128]
+Overfull \hbox (218.70538pt too wide) in paragraph at lines 7091--7092
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 7092--7094
+[][][][][][][][][][][][] 
+************************************************
+Section 9.6 Central Limit Theorem
+************************************************
+
+! Package inputenc Error: Unicode character μ (U+3BC)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7109 ...ve frequency and use these values for μ
+                                                   or p.%
+[129]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7116 ...m}{Central Limit Theorem.}{}{theorem-67}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7136 ...vs Normal \(\overline{X}\).}{example-33}
+                                                  % [130]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.3}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.7166 ...al as approximate Normal.}{}{theorem-68}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7180 ...xample}{Binomial as Normal.}{example-34}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7197 ...n as approximate Normal.}{}{corollary-7}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7207 ...example}{Poisson as Normal.}{example-35}
+                                                  % [131]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.7}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.7224 ...ma as approximate Normal.}{}{theorem-69}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.8}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7226 ...n{example}{Gamma as Normal.}{example-36}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.9}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7242 ...vs Normal \(\overline{X}\).}{example-37}
+                                                  %
+Overfull \hbox (32.10239pt too wide) detected at line 7257
+\OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (8 \OMS/cmsy/m/n/10 ^^T [] \OML/cmm/m/it/10 <
+ \OT1/cmr/m/n/10 12) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (7\OML/cmm/m/it/10 :\O
+T1/cmr/m/n/10 5 \OMS/cmsy/m/n/10 ^^T [] ^^T \OT1/cmr/m/n/10 11\OML/cmm/m/it/10 
+:\OT1/cmr/m/n/10 5) \OMS/cmsy/m/n/10 ^^Y \OML/cmm/m/it/10 normalcdf\OT1/cmr/m/n
+/10 (7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 11\
+OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 10\OML/cmm
+/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10
+ :\OT1/cmr/m/n/10 585750) \OMS/cmsy/m/n/10 ^^Y \OT1/cmr/m/n/10 0\OML/cmm/m/it/1
+0 :\OT1/cmr/m/n/10 9561\OML/cmm/m/it/10 :
+************************************************
+Section 9.7 Exercises
+************************************************
+[132]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7272 ...dard normal probabilities.}{exercise-70}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7319 ...asic normal probabilities.}{exercise-71}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7339 ...lineexercise}{- IQ values.}{exercise-72}
+                                                  %
+************************************************
+Chapter 10 Estimation
+************************************************
+[133] [134]
+Chapter 10.
+************************************************
+Section 10.1 Introduction
+************************************************
+************************************************
+Section 10.2 Interval Estimates - Chebyshev
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7374 ...rem}{Chebyshev's Theorem.}{}{theorem-70}
+                                                  % [135]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.2}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.7393 ...for Chebyshev's Theorem.}{}{corollary-8}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7401 ...for Chebyshev's Theorem.}{}{corollary-9}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7414 ... distribution to Chebyshev.}{example-38}
+                                                  %
+************************************************
+Section 10.3 Point Estimates
+************************************************
+[136]
+************************************************
+Section 10.4 Interval Estimates - Confidence Interval for p
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7470 ...fidence Intervals for p.}{definition-38}
+                                                  % [137] [138]pdfTeX warning (
+ext4): destination with the same identifier (name{cthm.2}) has been already use
+d, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7566 ...onfidence Interval for p.}{}{theorem-71}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7594 ...nce Interval methods for p.}{example-39}
+                                                  % [139]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.4}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.7648 ...ple Size for proportions.}{}{theorem-72}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7656 ...le Size for one proportion.}{example-40}
+                                                  %
+************************************************
+Section 10.5 Interval Estimates - Confidence Interval for \(\mu \)
+************************************************
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 7670.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\mu' on input line 7670.
+
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7673 ...e Interval for One Mean.}{definition-39}
+                                                  % [140]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.2}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.7717 ...\) given Margin of Error.}{}{theorem-73}
+                                                  % [141]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.3}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.7731 ...g Sample Size for one Mean.}{example-41}
+                                                  %
+************************************************
+Section 10.6 Interval Estimates - Confidence Interval for \(\sigma ^2\)
+************************************************
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 7745.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sigma' on input line 7745.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 7745.
+
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7748 ...Variance and \(\chi ^2\).}{}{theorem-74}
+                                                  % [142]
+Overfull \hbox (40.50357pt too wide) in paragraph at lines 7816--7817
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (51.30368pt too wide) in paragraph at lines 7819--7820
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+[143]
+Overfull \hbox (18.90335pt too wide) in paragraph at lines 7843--7844
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 7846--7847
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7849 ...(\sigma^2\) and \(\sigma\).}{example-42}
+                                                  % [144]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.3}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.7890 ...rd deviation with large n..}{example-43}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7929 ...intervals for \(\sigma^2\).}{example-44}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7936 ...e intervals for \(\sigma\).}{example-45}
+                                                  %
+************************************************
+Section 10.7 Exercises
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7949 ...Confidence interval for p.}{exercise-73}
+                                                  % [145]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.2}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.7964 ...confidence interval for p.}{exercise-74}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7975 ...cise}{- Voting projection.}{exercise-75}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7982 ...nce interval for the mean.}{exercise-76}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.5}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.7997 ...dence Interval Experiment.}{exercise-77}
+                                                  %
+************************************************
+Chapter 11 Hypothesis Testing
+************************************************
+[146]
+Chapter 11.
+************************************************
+Section 11.1 Introduction
+************************************************
+************************************************
+Section 11.2 Hypothesis Test for one proportion
+************************************************
+************************************************
+Section 11.3 Hypothesis Test for one mean
+************************************************
+************************************************
+Section 11.4 Hypothesis Test for the difference of two means
+************************************************
+************************************************
+Section 11.5 Hypothesis Test for one variance
+************************************************
+************************************************
+Chapter 12 Review of Calculus
+************************************************
+[147] [148]
+Chapter 12.
+************************************************
+Section 12.1 Geometric Series
+************************************************
+************************************************
+Subsection 12.1.1 Geometric Series
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8121 \begin{theorem}{}{}{theorem-GeomSeries}
+                                              %
+Overfull \hbox (36.76187pt too wide) detected at line 8131
+[]
+[149]
+************************************************
+Subsection 12.1.2 Alternate Forms for the Geometric Series
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8160 ...ralized Geometric Series.}{}{theorem-76}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.3}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.8170 ...ng to get new Power Series.}{example-46}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.8184 ...ple}{Playing with the base.}{example-47}
+                                                  % [150]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.5}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.8197 ...ecimals to fractional form.}{example-48}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.6}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.8213 ...nd with repeating decimals.}{example-49}
+                                                  %
+************************************************
+Section 12.2 Binomial SumsBinomial SeriesTrinomial Series
+************************************************
+
+Overfull \hbox (4.85043pt too wide) in paragraph at lines 8228--8228
+[]\T1/cmr/bx/n/14.4 Binomial Sums-Bi-no-mial Se-riesTri-no-mial Se-
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8230 ... technically not a series since the sum_
+                                                  if finite but we won’t b...
+
+
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 8230.
+
+
+
+! Package amsmath Error: \begin{gather*} allowed only in paragraph mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8232 \begin{gather*}
+                      
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8235 ...}{Binomial Theorem.}{}{theorem-Binomial}
+                                                  %
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@h@padding +\tcb@h@padtitle 
+                                           +\tcb@h@upper +\tcb@h@segment +\t...
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> ...ding +\tcb@h@padtitle +\tcb@h@upper 
+                                                  +\tcb@h@segment +\tcb@h@lo...
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> ...title +\tcb@h@upper +\tcb@h@segment 
+                                                  +\tcb@h@lower 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> ...upper +\tcb@h@segment +\tcb@h@lower 
+                                                  
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+\tcb@set@normal@unbroken@beforeafter ...b@nobreak 
+                                                  {\iftcb@ignorenobreak \els...
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@h@padtitle 
+                           +\kvtcb@top@rule +\kvtcb@bottom@rule +\kvtcb@boxs...
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> ...cb@top +\kvtcb@bottom +\tcb@h@upper 
+                                                  
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> ...\kvtcb@bottom@rule -\tcb@h@padtitle 
+                                                  
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \the \dimexpr \tcb@width 
+                                    +\kvtcb@bbright \relax 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@width 
+                      
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Undefined control sequence.
+<argument> \tcb@width 
+                      -\kvtcb@right@rule 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Missing number, treated as zero.
+<to be read again> 
+                   \tcb@footnote@cnt@i 
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+
+! LaTeX Error: \begin{document} ended by \end{theorem}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.8236 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+[151]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8259 ...m{n}{k} a^k b^{n-k}}\). This finite sum_
+                                                  is known as the Binomial S...
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8260 \par
+           
+
+Overfull \hbox (23.28604pt too wide) in paragraph at lines 8259--8260
+[]\T1/cmr/m/n/10 Consider $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
+a; b\OT1/cmr/m/n/10 ) = [][] []$\T1/cmr/m/n/10 . This fi-nite sum$[]\OML/cmm/m/
+it/10 sknownastheBinomialSeries:$ 
+************************************************
+Section 12.3 Negative Binomial Series
+************************************************
+pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8290 ...Negative Binomial Series.}{}{theorem-78}
+                                                  %
+! You can't use `\prevdepth' in horizontal mode.
+<recently read> \prevdepth 
+                           
+l.8293 \end{theorem}
+                    
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8293 \end{theorem}
+                    
+! Missing number, treated as zero.
+<to be read again> 
+                   \noindent 
+l.8293 \end{theorem}
+                    
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \noindent 
+l.8293 \end{theorem}
+                    
+! Missing $ inserted.
+<inserted text> 
+                $
+l.8293 \end{theorem}
+                    
+[152] (./Essentials_Probability_And_Statistics.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ )
+(see the transcript file for additional information){/usr/local/texlive/2018/te
+xmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2018/texm
+f-dist/fonts/enc/dvips/inconsolata/i4-ts1.enc}{/usr/local/texlive/2018/texmf-di
+st/fonts/enc/dvips/inconsolata/i4-t1-5.enc}{/usr/local/texlive/2018/texmf-dist/
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2018/texmf-dist/f
+onts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/201
+8/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
+pe1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
+public/cm-super/sfti1000.pfb>
+Output written on Essentials_Probability_And_Statistics.pdf (160 pages, 1105664
+ bytes).
+Transcript written on Essentials_Probability_And_Statistics.log.

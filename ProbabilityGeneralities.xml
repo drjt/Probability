@@ -11,31 +11,34 @@
 <title>Probability Theory</title>
 
 <section><title>Introduction</title>
-	<p>This chapter uses relative frequency to motivate the definition of probability and then delves into the resulting consequences.</p>
-	<p>Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.</p>
-	<p>People often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims. In this class, we will attempt to determine if such claims are reasonable by first introducing probability from a semi rigorous mathematical viewpoint using concepts developed in Calculus. We will use this framework to carefully discuss making such statistical inferences as above and in general to obtain accurate knowledge even when the known data is not complete. </p>
+
+<p>
+Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.
+</p>
+<p>Indeed, people often make claims about being the biggest, best, most often recommended, etc. One sometimes even believes these claims based upon subjective metrics. In this chapter, we will start by looking at relative frequency and notice several properties regarding relative frequencies as the number of trials increases. We will use these examples to motivate a definition for probability and investigate the resulting consequences of that definition.</p>
+
 </section>
 
 
 <section xml:id="RelativeFrequency"><title>Relative Frequency</title>
-	<p>When attempting to precisely measure uncertainty a few experiments are in order. When doing statistical experiments, a few terms and corresponding notation might be useful:</p>
+	<p>When attempting to precisely measure uncertainty one often resorts to examples or experiments that model the theoretical question of interest. Before we investigate statistical experiments, we need to create some notation that we will utilize throughout the rest of this text.</p>
 	<ul>
 		<li>S = Universal Set or Sample Space Experiment or Outcome Space. 
-		This is the collection of all possible outcomes.</li>
-		<li>Random Experiment. A random experiment is a repeatable activity which has more than one
+		This is the collection of all possiblilities.</li>
+		<li>Random Experiment. A random experiment is a repeatable activity that has more than one
 		possible outcome all of which can be specified in advance but can not be known in advance with certainty.</li>
 		<li>Trial. Performing a Random Experiment one time and measuring the result.</li> 
 		<li>A = Event. A collection of outcomes.  Generally denoted by an upper case letter such as A, B, C, etc.</li>
 		<li>Success/Failure. When recording the result of a trial, a success for event A occurs when the outcome
 		lies in A. If not, then the trial was a failure. There is no qualitative meaning to this term.</li>
-		<li>Mutually Exclusive Events. Two events which share no common outcomes. Also known as disjoint events.</li>
+		<li>Mutually Exclusive Events. Two events that share no common outcomes. Also known as disjoint events.</li>
 		<li>|A| = Frequency. In a sequence of n events, the frequency is the number of trials which resulted in 
 		a success for event A.</li>
 		<li>|A| / n = Relative Frequency. A proportion of successes to total number of trials.</li>
 		<li>Histogram. A bar chart representation of data where area corresponds to the value being described.</li>
 	</ul>
 
-	<p>To investigate these terms and to motivate our discussion of probability, consider flipping coins using the interactive cell below. Notice in this case, the sample space S = {Heads, Tails} and the random experiment consists of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying number of trials selected by you as you move the slider bar. Results are displayed using a histogram.</p>
+	<p>To investigate these terms and to motivate our discussion of probability, consider flipping coins using the interactive cell below. Notice in this case, the sample space S = \{ Heads, Tails \} and the random experiment consists of flipping a fair coin one time. Each trial results in either a Head or a Tail. Since we are measuring both Heads and Tails then we will not worry about which is a success or failure. Further, on each flip the outcomes of Heads or Tails are mutually exclusive events. We count the frequencies and compute the relative frequencies for a varying number of trials selected by you as you move the slider bar. Results are displayed using a histogram.</p>
 
 <p>
 <sage>
@@ -59,25 +62,25 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 </sage>
 </p>
 
-	<p>
+<p>
 	Question 1: What do you notice as the number of flips increases?
 	</p>
 	<p>
-	Question 2: Why do you rarely (if even) get exactly the same number of Heads and Tails? Would you not "expect"
+	Question 2: Why do you rarely (if ever) get exactly the same number of Heads and Tails? Would you not "expect"
 	that to happen?
-	</p>
+</p>
 	
 
 
 
-	<p>You should have noticed that as the number of flips increases, the relative frequency of Heads (and Tails)
+<p>You should have noticed that as the number of flips increases, the relative frequency of Heads (and Tails)
 	stabilized around 0.5. This makes sense intuitively since there are two options for each 
 	individual flip and 1/2 of those options are Heads while the other 1/2 is Tails.</p>
 	<p>
 	Let's try again
 	by doing a random experiment consisting of rolling a single die one time. Note that the sample space 
-	in this case will be the outcomes S = {1, 2, 3, 4, 5, 6}.
-	</p>
+	in this case will be the outcomes S = \{ 1, 2, 3, 4, 5, 6 \}.
+</p>
 
 <p>
 <sage>
@@ -103,17 +106,19 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [
 </sage>
 </p>
 
-	<p>Notice for a single die there are a larger number of options (for example 6 on a regular
-	die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die)
-	as the number of rolls increased.</p>
-	<p>In general, this suggests a rule: if there are n outcomes and each one has the same
+<p>
+Notice for a single die there are a larger number of options (for example 6 on a regular die) but once again the relative frequencies of each  outcome was close to 1/n (i.e. 1/6 for the regular die) as the number of rolls increased.</p>
+
+<p>
+In general, this suggests a rule: if there are n outcomes and each one has the same
 	chance of occurring on a given trial then on average on a large number of trials the relative
 	frequency of that outcome is 1/n.
 	In general, if a number of outcomes are "equally likely" then this is a good model for measuring
 	the proportion of outcomes that would be expected to have any given outcome. However, it is not
-	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:</p>
+	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:
+</p>
 
-<p>
+<p xml:id="TwoDiceSage">
 <sage>
 <title>Rolling Two Dice and Measuring their Sum</title>
 <input>
@@ -158,50 +163,145 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 -->
 
 
-	<p>
+<p>
 	Question 1: What do you notice as the number of rolls increases?
-	</p>
-	<p>
-	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
-	</p>
+</p>
 
-	<p>Notice, not only are the answers not the same but they are not even close. To understand why this 
+<p>
+	Question 2: What do you expect for the relative frequencies and why are they not all exactly the same?
+</p>
+
+<p>Notice, not only are the answers not the same but they are not even close. To understand why this 
 	is different from the examples before, consider the possible outcomes from each pair of die. Since we
 	are measuring the sum of the dice then (for a pair of standard 6-sided dice) the possible sums are from 
 	2 to 12. However, there is only one way to get a 2--namely from a (1,1) pair--while there are 6 ways to get
 	a 7--namely from the pairs (1,6), (2,5), (3,4), (4,3), (5,2), and (6,1). So it might make some sense
 	that the likelihood of getting a 7 is 6 times larger than that of getting a 2. Check to see if that
-	is the case with your experiment above.</p>
+	is the case with your experiment above.
+</p>
 	
+
+<p>Play with the following several times to investigate what you might expect to get when you repeatedly receive a "hand" of 5 standard playing cards. Can you imagine how you might possible enumerate the entire list of possible outcomes by hand? However, using this interactive cell, you can shuffle and deal 5-card hands over and over easily and then count the number of special poker outcomes. 
+</p>
+
+<p>
+<sage>
+<input>
+var('A C D H J K Q S') 
+
+suits = [S, D, C, H] 
+values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A] 
+
+full_deck = [(value, suit) for suit in suits for value in values]
+@interact
+def _(num_hands=slider[50..5000]):                  # Set up the number of hands to create
+    hands= []                    # Start with a blank list. 
+    for i in range(num_hands):   # This loops the following operation num_hands times. 
+        deck = copy(full_deck)   # start over
+        shuffle(deck)
+        hands.append([deck.pop() for card in range(5)])
+    freq_values = []
+    one_pair = 0
+    two_pair = 0
+    three_kind = 0
+    full_house = 0
+    four_kind = 0
+    for i in range(num_hands):
+        hand = hands[i]
+        hand_values = [hand[k][0] for k in range(5)]
+        freq_values = [hand_values.count(value) for value in set(values)]
+        freq_values.sort(reverse=True)
+        if freq_values[0]==4:
+            four_kind=four_kind+1
+        if freq_values[0]==3:
+            if freq_values[1]==2:
+                full_house=full_house+1
+            if freq_values[1]==1:
+                three_kind=three_kind+1
+        if freq_values[0]==2:
+            if freq_values[1]==2:
+                two_pair=two_pair+1
+            if freq_values[1]==1:
+                one_pair=one_pair+1
+    print "       One Pair frequency = ",one_pair," with relative frequency ",one_pair/num_hands
+    print "       Two Pair frequency = ",two_pair," with relative frequency ",two_pair/num_hands
+    print "Three of a Kind frequency = ",three_kind," with relative frequency ",three_kind/num_hands
+    print "     Full House frequency = ",full_house," with relative frequency ",full_house/num_hands
+    print " Four of a Kind frequency = ",four_kind," with relative frequency ",four_kind/num_hands
+</input>
+</sage>
+</p>
+
+<p>
+Sometimes you will find it useful to keep a running total of the relative frequencies. Such a cumulative approach is often called a distribution function.
+</p>
+
+<p>
 <definition><title>Cumulative relative frequency</title> 
-<statement>For a collection of ordered events <m>x_1 \lt x_2 \lt ... \lt x_s</m> with corresponding frequencies <m>f_1, f_2, ..., f_s</m>, the cumulative relative frequency is the function
+<statement>
+<p>
+For a collection of ordered events <m>x_1 \lt x_2 \lt ... \lt x_s</m> with corresponding frequencies <m>f_1, f_2, ..., f_s</m>, the cumulative relative frequency is the function
 <me>F(x) = \sum_{x_k \le x} f_{x_k}</me>
+</p>
 </statement>
 </definition>
+</p>
 
-<p>Add a sage interact here where a student can enter a set of data and display the relative frequency histogram and the cumulative relative frequency graph.
+<p>
+Let's consider the cumulative relative frequency with the sum of dice example seen at the beginning of this chapter.
+
+<p>
+<sage>
+<title>Two Dice Cumulative Relative Frequency</title>
+<input>
+@interact
+def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
+    die = list((1..num_sides))
+    dice = list((2..num_sides*2))
+    rolls = [(choice(die),choice(die)) for roll in range(num_rolls)]
+    sums = [sum(rolls[roll]) for roll in range(num_rolls)]
+    show(rolls)   
+
+    freq = [sums.count(outcome) for outcome in set(dice)]  # count the numbers for each outcome
+    n = len(freq)
+    CF = freq
+    for k in range(1,n):
+        CF[k] = freq[k] + CF[k-1]
+    
+    print 'The cumulative relative frequencies of each outcome:'
+    Crel_freq = [CF[outcome-2]/num_rolls for outcome in set(dice)]  # make frequencies relative
+    print Crel_freq        
+    show(bar_chart(CF,axes=False,ymin=0))     #  A histogram of the results
+    print "Cumulative Relative Frequence of ",dice[0]," is about ",Crel_freq[0].n(digits=4)
+    print "Cumulative Relative Frequence of ",dice[num_sides-1]," is about ",Crel_freq[num_sides-1].n(digits=4)
+</input>
+</sage>
+</p>
+
 </p>
 
 </section>
 
 
-
-
-
-
-
-
 <section><title>Definition of Probability</title>
-	<introduction>
-		<p>
-		Relative frequency gives a way to measure the proportion of "successful" outcomes when doing an experimental approach. From the interactive applications above, it appears that the relative frequency does jump around as the experiment is repeated but that the amount of variation decreases as the number of experiments increases. This is known to be true in general and leads to what is known as the "Law of Large Numbers". We would like to formalize what these relative frequencies seem to be approaching and will call this theoretical limit the "probability" of the outcome. In doing so, we will do our best to model our definition so that it follow the behavior of relative frequency.
-		</p>
-	</introduction>
-	<p>Using the ideas from our examples above, consider how you might formally define a way
-	to measure the expectation from similar experiments.  Before doing so, we need a little notation:</p>
 
+<p>	
+<introduction>
+<p>
+Relative frequency gives a way to measure the proportion of "successful" outcomes when doing an experimental approach. From the interactive applications above, it appears that the relative frequency does jump around as the experiment is repeated but that the amount of variation decreases as the number of experiments increases. This is known to be true in general and is known as the "Law of Large Numbers". 
+</p>
+<p>
+We would like to formalize what these relative frequencies are approaching and will call this theoretical limit the "probability" of the outcome. In doing so, we will do our best to model our definition so that it follow the behavior of relative frequency.
+</p>
+</introduction>
+</p>
 
-	<definition><title>Pairwise Disjoint Sets</title>
+<p>
+To generate a general definition for probability, we need to know what is is that we measuring. In general, we will be finding the probability of sets of possible outcomes...that is, a subset of the Sample Space S. Toward that end, it is important to briefly look at some properties of sets.
+</p>
+
+<p>
+<definition xml:id="DefnMutuallyExclusive"><title>Pairwise Disjoint Sets</title>
 	<statement>
 	<p>
 	<m> \{ A_1, A_2, ... , A_n \}</m> are pairwise disjoint provided <m>A_k \cap A_j = \emptyset</m> so long as <m>k \ne j</m>.
@@ -209,7 +309,12 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 	</p>
 	</statement>
 	</definition>
-	
+</p>
+
+<p>Play around with the interactive cell below by adding and removing items in each of the three sets. Find elements so that the intersection of all three sets is empty but at least one of the paired sets are not disjoint.  See if you can make all of the paired sets not disjoint but the intersection of all three disjoint. This is why we need to consider "pairwise" disjoint sets.
+</p>	
+
+<p>
 <sage><title>Playing around with intersections and unions of sets</title>
 <input>
 def f(s, braces=True): 
@@ -219,19 +324,30 @@ def f(s, braces=True):
 def g(s): return set(str(s).replace(',',' ').split())
 
 @interact
-def _(X='1,2,3,a', Y='2,a,3,4,apple', Z='a,b,10,apple'):
+def _(X='1,2,3', Y='2,a,3,4,apple', Z='a,b,10,apple'):
     S = [g(X), g(Y), g(Z)]
     X,Y,Z = S
     XY = X &amp; Y
     XZ = X &amp; Z
     YZ = Y &amp; Z
     XYZ = XY &amp; Z
-    pretty_print(html('<center>'))
-    pretty_print(html("$X \cap Y$ = %s"%f(XY)))
-    pretty_print(html("$X \cap Z$ = %s"%f(XZ)))
-    pretty_print(html("$Y \cap Z$ = %s"%f(YZ)))
-    pretty_print(html("$X \cap Y \cap Z$ = %s"%f(XYZ)))
-    pretty_print(html('</center>'))
+
+    Txy = " - NOT disjoint "
+    if Set(XY).is_empty():
+        Txy = ' - disjoint '
+    pretty_print(html("$X \cap Y$ = %s"%f(XY)+"%s"%Txy))
+    Txz = " - NOT disjoint "
+    if Set(XZ).is_empty():
+        Txz = ' - disjoint '
+    pretty_print(html("$X \cap Z$ = %s"%f(XZ)+"%s"%Txz))
+    Tyz = " - NOT disjoint "
+    if Set(YZ).is_empty():
+        Tyz = ' - disjoint ' 
+    pretty_print(html("$Y \cap Z$ = %s"%f(YZ)+"%s"%Tyz))
+    Txyz = " - NOT disjoint "
+    if Set(XYZ).is_empty():
+        Txyz = ' - disjoint ' 
+    pretty_print(html("$X \cap Y \cap Z$ = %s"%f(XYZ)+"%s"%Txyz))
     centers = [(cos(n*2*pi/3), sin(n*2*pi/3)) for n in [0,1,2]]
     scale = 1.7
     clr = ['yellow', 'blue', 'green']
@@ -263,52 +379,59 @@ def _(X='1,2,3,a', Y='2,a,3,4,apple', Z='a,b,10,apple'):
     G.show(aspect_ratio=1, axes=False)
 </input>
 </sage>
-	
+</p>	
 
-	<p>
-	To model the behavior above, consider how we might create a definition for our expectation
-	of a given outcome by following the ideas uncovered above. To do so, first consider a desired collection
-	of outcomes A. If each outcome in A is equally likely then we might follow the concept behind relative 
-	frequency and consider a measure of expectation be |A|/|S|. Indeed, on a standard 
-	6-sided die, the expectation of the outcome A={2} from the collection S = {1,2,3,4,5,6} should be
-	|A|/|S| = 1/6.</p>
-	<p>From the example where we take the sum of two die, the outcome A={4,5} from the
-	collection S = {2,3,4,...,12} would be</p>
+<p>
+Consider how we might create a definition for the expectation of a given outcome. To do so, first consider a desired collection of outcomes A. If each outcome in A is chosen randomly then we might consider using a formula similar to relative frequency and set a measure of expectation to be |A|/|S|. For example, on a standard 6-sided die, the expectation of the outcome A={2} from the collection S = {1,2,3,4,5,6} could be
+	|A|/|S| = 1/6.
+</p>
+
+<p>From our example where we take the sum of two die, the outcome A = \{ 4,5 \} from the
+	collection S = {2,3,4,...,12} would be
 	<md>
-		<mrow>|A| = | {(1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1)}| = 7</mrow>
-		<mrow>|S| = | {(1,1),...,(1,6),(2,1),...,(2,6),...,(6,1),...,(6,6)}| = 36</mrow>
+		<mrow>|A| = | \{ (1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1) \}| = 7</mrow>
+		<mrow>|S| = | \{ (1,1),...,(1,6),(2,1),...,(2,6),...,(6,1),...,(6,6) \}| = 36</mrow>
 	</md>
-	<p>and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
-	with the sum of the two outcomes from your experiment above.</p>
+	and so the expected relative frequency would be |A|/|S| = 7/36. Compare this theoretical value
+	with the sum of the two outcomes from your experiment above.
+</p>
 			
-	<p>We are ready to now formally give a name to the theoretical measure of expectation for
-	outcomes from an experiment. Taking our cue from the ideas related to equally likely outcomes, we 
-	make our definition have the following basic properties:</p>
-	<ol>
+<p>We are ready to now formally give a name to the theoretical measure of expectation for
+	outcomes from an experiment. Taking our cue from our examples, let's 
+	make our definition agree with the following relative frequency properties:
+<ol>
 		<li>Relative frequency cannot be negative, since cardinality cannot be negative</li>
 		<li>Relative frequencies for disjoint events should sum to one</li>
 		<li>Relative frequencies for collections of disjoint outcomes should equal the sum of the
 	individual relative frequencies</li>
-	</ol>
+</ol>
+</p>
 	
-	<p>Based upon these we give the following:</p>
-	<definition xml:id="DefnProb">
-		<statement>The probability P(A) of a given outcome A is a set function which satisfies:
+<p>which leads us to the following formal definition...</p>
+
+<p>
+<definition xml:id="DefnProb"><title>Probability</title>
+	<statement>
+	<p>
+	The probability P(A) of a given outcome A is a set function that satisfies:
+	</p>
+		<p>
 		<ol>
 			<li>(Nonnegativity) P(A) <m>\ge 0</m></li>
 			<li>(Totality) P(S) = 1</li>
 			<li>(Subadditivity) If A <m>\cap</m> B = <m>\emptyset</m>, then P(A <m>\cup</m> B) = P(A) + P(B).  
 			In general, if {<m>A_k</m>} are pairwise disjoint then <m>P( \cup_k A_k) = \sum_k P(A_k)</m>.</li>
 		</ol>
+		</p>
 		</statement>
 	</definition>	
-	
+</p>	
 
+<p>
 	<exercise>
 		<introduction>
 		<p>
-		Using the definition above determine the following probabilities.  (This one not available
-		in the PCC library for some reason.)
+		Using the definition above, determine the following probabilities.
 		</p>
 		</introduction>
 		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg">
@@ -320,39 +443,64 @@ def _(X='1,2,3,a', Y='2,a,3,4,apple', Z='a,b,10,apple'):
 		</p>
 		</conclusion>
 	</exercise>
+</p>
 
-	<p>Based upon this definition we can immediately establish a number of results.</p>
-	<theorem xml:id="ProbabilityComplemnts"><title>Probability of Complements</title>
+
+<p>
+Based upon this definition we can immediately establish a number of results.
+</p>
+
+<p>
+	<theorem xml:id="ProbabilityComplements"><title>Probability of Complements</title>
 		<statement> For any event A, <m>P(A) + P(A^c) = 1</m>
 		</statement>
 		<proof>
-			<p>Let A be any event and note that <m>A \cap A^c = \emptyset</m>.  But <m>A \cup A^c = S</m>.
-			So, by subadditivity <m>1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)</m> as desired.</p>
+			<p>Let A be any event and note that 
+			<me>A \cap A^c = \emptyset.</me>  
+			But <m>A \cup A^c = S</m>.
+			So, by subadditivity 
+			<me>1 = P(S) = P(A \cup A^c) = P(A) + P(A^c)</me> 
+			as desired.</p>
 		</proof>
 	</theorem>
+</p>
+
+<p>
 	<theorem xml:id="ProbabilityEmptySet">
-		<statement><m>P(\emptyset) = 0</m>
+		<statement>
+		<p>
+		<m>P(\emptyset) = 0</m>
+		</p>
 		</statement>
 		<proof>
 			<p>Note that <m>\emptyset^c = S</m>. So, by the theorem above, 
-			<m>1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset)</m>.
+			<me>1 = P(S) + P(\emptyset) \Rightarrow 1 = 1 + P(\emptyset).</me>
 			Cancelling the 1 on both sides gives <m>P(\emptyset) = 0</m>. </p>
 		</proof>
 	</theorem>
+</p>
+
+<p>
 	<theorem xml:id="ProbabilityContainment">
 		<statement>For events A and B with <m> A \subset B, P(A) \le P(B)</m>.
 		</statement>
 		<proof>
 			<p>Assume sets A and B satisfy <m> A \subset B</m>. Then, notice that
-			<m>A \cap (B-A) = \emptyset</m> and  <m>B = A \cup (B-A)</m>. Therefore, by 
-			subadditivity and nonnegativity</p>
+			<me>A \cap (B-A) = \emptyset</me> 
+			and  
+			<me>B = A \cup (B-A).</me> 
+			Therefore, by subadditivity and nonnegativity
 			<md>
 				<mrow>0 \le P(B-A)</mrow>
 				<mrow>P(A) \le P(A) + P(B-A) </mrow>
 				<mrow>P(A) \le P(B)</mrow>
 			</md>
+			</p>
 		</proof>
 	</theorem>
+</p>
+
+<p>
 	<theorem xml:id="ProbabilityLessThanOne">
 		<statement>For any event A, <m>P(A) \le 1</m> 
 		</statement>
@@ -360,63 +508,90 @@ def _(X='1,2,3,a', Y='2,a,3,4,apple', Z='a,b,10,apple'):
 			<p>Notice <m>A \subset S</m>. By the theorem above <m> P(A) \le P(S) = 1</m></p>
 		</proof>
 	</theorem>
+</p>
+
+<p>
 	<theorem xml:id="ProbabilityTwoUnions">
 		<statement>For any sets A and B, <m>P(A \cup B) = P(A) + P(B) - P(A \cap B)</m>
 		</statement>
 		<proof>
-			<p>Notice that we can write <m>A \cup B</m> as the disjoint union</p>
-			<md>
-				<mrow>A \cup B = (A-B) \cup (A \cap B) \cup (B-A).</mrow>
-			</md> 
-			<p>We can also write disjointly</p>
+			<p>Notice that we can write <m>A \cup B</m> as the disjoint union
+			<me>A \cup B = (A-B) \cup (A \cap B) \cup (B-A).</me>
+			We can also write disjointly
 			<md>
 				<mrow>A = (A-B) \cup (A \cap B)</mrow>
 				<mrow>B = (A \cap B) \cup (B-A)</mrow>
 			</md>
-			<p>Hence, </p>
+			Hence,
 			<md>
 				<mrow>P(A) &amp; + P(B) - P(A \cap B) </mrow>
-				<mrow>&amp; = [P(A-B) + P(A \cap B)] + [P(A \cap B) + P(B-A)] - P(A \cap B)</mrow>
+				<mrow>&amp; = [P(A-B) + P(A \cap B)] </mrow>
+				<mrow>&amp; + [P(A \cap B) + P(B-A)] - P(A \cap B)</mrow>
 				<mrow>&amp; = P(A-B) + P(A \cap B) + P(B-A)</mrow>
 				<mrow>&amp; = P(A \cup B)</mrow>
 			</md>
+			</p>
 		</proof>
 	</theorem>
-	<p>This result can be extended to more that two sets using a property known as inclusion-exclusion. The
-	following two theorems illustrate this property and are presented without proof.
-	</p>
-	<corollary xml:id="ProbabilityThreeUnions">
+</p>
+
+<p>
+This result can be extended to more that two sets using a property known as inclusion-exclusion. The following two theorems illustrate this property and are presented without proof.
+</p>
+
+<p>
+<corollary xml:id="ProbabilityThreeUnions">
 		<statement>
+		<p>
 			For any sets A, B and C, 
 			<md>
 				<mrow>P(A \cup B \cup C) &amp; = P(A) + P(B) + P(C)</mrow> 
 				<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(B \cap C) </mrow>
 				<mrow>&amp; + P(A \cap B \cap C)</mrow>
 			</md>
+		</p>
 		</statement>
 	</corollary>
+</p>
+
+<p>
 	<corollary xml:id="ProbabilityFourUnions">
 		<statement>
+		<p>
 			For any sets A, B, C and D, 
 			<md>
 				<mrow>P(A \cup B \cup C \cup D) &amp; = P(A) + P(B) + P(C) + P(D)</mrow>
-				<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(A \cap D)  - P(B \cap C) - P(B \cap D) - P(C \cap D)</mrow>
-				<mrow>&amp; + P(A \cap B \cap C) + P(A \cap B \cap D) + P(A \cap C \cap D) + P(B \cap C \cap D)</mrow>
+				<mrow>&amp; - P(A \cap B) - P(A \cap C) - P(A \cap D) </mrow>
+				<mrow>&amp; - P(B \cap C) - P(B \cap D) - P(C \cap D)</mrow>
+				<mrow>&amp; + P(A \cap B \cap C) + P(A \cap B \cap D) </mrow>
+				<mrow>&amp; + P(A \cap C \cap D) + P(B \cap C \cap D)</mrow>
 				<mrow>&amp; - P(A \cap B \cap C \cap D)</mrow>
 			</md>
+		</p>
 		</statement>
 	</corollary>
+</p>
 	
+<p>
+Many times, you will be dealing with making selections from a sample space where each item in the space has an equal chance of being selected. This may happen (for example) when items in the sample space are of equal size or when selecting a card from a completely shuffled deck or when coins are flipped or when a normal fair die is rolled. 
+</p>
+
+<p>
+It is important to notice that not all outcomes are equally likely--even in times when there are only two of them. Indeed, it is generally not an equally likely situation when picking the winner of a football game which pits, say, the New Orleans Saints professional football team with the New Orleans Home School Saints. Even though there are only two options the probability of the professional team winning in most years ought to be much greater than the chances that the high school will prevail. 
+</p>
+
+<p>
+When items are equally likely (sometimes also called "randomly selected") then each individual event has the same chance of being selected as any other. In this instance, determining the probability of a collection of outcomes is relatively simple.
+</p>
+
+<p>
+<theorem><title>Probability of Equally Likely Events</title>
+	<statement>
 	<p>
-	Many times, you will be dealing with making selections from a sample space where each item in the space has an equal chance of being selected. This may happen (for example) when items in the sample space are of equal size or when selecting a card from a completely shuffled deck or when coins are flipped or when a normal fair die is rolled. 
+	If outcomes in S are equally likely, then for <m>A \subset S,</m> 
+	<me>P(A) = \frac{|A|}{|S|}.</me> 
 	</p>
-	<p>It is important to notice that not all outcomes are equally likely--even in times when there are only two of them. Indeed, it is generally not an equally likely situation when picking the winner of a football game which pits, say, the New Orleans Saints professional football team with the New Orleans Home School Saints. Even though there are only two options the probability of the professional team winning is much greater than the chances that the high school will prevail. 
-	</p>
-	<p>
-	When items are equally likely (sometimes also called "randomly selected") then each individual event has the same chance of being selected as any other. In this instance, determining the probability of a collection of outcomes is relatively simple.
-	</p>
-	<theorem><title>Probability of Equally Likely Events</title>
-	<statement>If outcomes in S are equally likely, then for <m>A \subset S, P(A) = \frac{|A|}{|S|}</m> </statement>
+	</statement>
 	<proof>
 	<p>
 	Enumerate S = {<m>x_1, x_2, ..., x_{|S|}</m>} and note <m>P( \{ x_k \} ) = c</m> for some constant c since each item is equally likely. However, using each outcome as a disjoint event and the definition of probability, 
@@ -438,20 +613,32 @@ def _(X='1,2,3,a', Y='2,a,3,4,apple', Z='a,b,10,apple'):
 	as desired.
 	</p>
 	</proof>
-	</theorem>
+</theorem>
+</p>
 
+<p>
 <sage><title>Let's play around with cards</title>
 <input>
 var('A C D H J K Q S') 
 
+def L(str):
+    n = len(str)
+    m = int(n/5)
+    top = m+1
+    if m == n/5:
+        top = m
+    for k in range(top):
+        print str[5*k:5*k+5]
+        
 suits = [S, D, C, H] 
 values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A] 
 
 deck = [(value, suit) for suit in suits for value in values]
 full_deck = copy(deck)  # to save a copy of the original deck for later use.
-print deck
+
+L(deck)
 shuffle(deck)
-print deck
+L(deck)
 deck1 = copy(full_deck)
 shuffle(deck1)
 
@@ -464,14 +651,17 @@ def _(auto_update=False):
         deck1 = copy(full_deck)
     else:
         hand = [deck1.pop() for card in range(5)] 
-        print 'The cards dealt:'
-        show(hand)
-        print 'The remaining cards in the deck:'
-        print(deck1)
-        pretty_print(html("\nThe number of remaining cards in the deck = %s"%str(Set(deck1).cardinality())))
-</input>
+        print "The cards dealt:"
+        L(hand)
+        print
+        print " The remaining cards in the deck:"
+        L(deck1)
+        print
+        print(html("\n The number of remaining cards in the deck = %s"%str(Set(deck1).cardinality())))</input>
 </sage>
-	
+</p>
+
+<p>	
 	<exercise><title>WebWork</title>
 		<introduction>
 		<p>
@@ -486,7 +676,9 @@ def _(auto_update=False):
 		</p>
 		</conclusion>
 	</exercise>
+</p>
 
+<p>
 	<exercise><title>WebWork</title>
 		<introduction>
 		<p>This one is a little harder and uses the binomial coefficients from Combinatorics.
@@ -501,54 +693,96 @@ def _(auto_update=False):
 		</p>
 		</conclusion>
 	</exercise>
+</p>
+
+</section>
 
 
+<section><title>Exercises</title>
 
-<subsection><title>Exercises - Basic</title>
-
+<p>
 <exercise>
 	<title>Poker</title>
 	<statement><p>
-	Determine the probabilities associated with the various 5-card hands.
+	Determine the probabilities associated with the various 5-card hands. That is
+	<ol>
+		<li>P(one pair)</li>
+		<li>P(two pair)</li>
+		<li>P(three of a kind)</li>
+		<li>P(full house)</li>
+		<li>P(four of a kind</li>
+		<li>P(straight)</li>
+		<li>P(flush)</li>
+		<li>P(royal flush)</li>
+	</ol>
 	</p>
 	</statement>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Dice</title>
 	<statement>
 	<p>
 	Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
 	</p>
 	</statement>
+	<solution>
+	<p>
+	Remember, when using equally likely outcomes |A|/|S| assumes that the items counted for A are also in the sample space S.  In this case, for example, to determine the Probability of getting a sum of (say) 4 includes the rolls (1,3), (2,2), and (3,1). These three "successes" from the 36 possible ordered pairs gives P(4) = 3/36.  Similarly, P(5) = |dice rolls with a sum of 5|/36 = |(1,4), (2,3), (3,2), (4,1)| / 36 = 4/36.  Continue in this manner to determine the other possibilities and then compare to the experimental sage cell seen earlier for <xref ref="TwoDiceSage"> the sum of two dice </xref>.
+	</p>
+	</solution>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Skew Dice</title>
 	<statement>
 	<p>
 	Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
 	</p>
 	</statement>
+	<solution>
+	<p>
+	Consider the outcome space 
+	<me>S = {(1,1), (1,2), (1,3), (1,4), (1,4), (1,5), (1, 5), \\
+     (1,6), (1,6), (1,7), (1,8), (1,9), (2,1) ... (3,9)}</me>
+	Then P(5) = |(1,4), (1,4), (2,3), (3,2) |/36 = 4/36. Compare this to the exercise with regular dice performed above.  Similarly, compute the remaining probabilities.
+	</p>
+	</solution>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Craps</title>
 	<statement><p>
-	Analyze the game of
+	Analyze the dice game known as "craps": Roll a pair of dice and consider the sum. If that sum is 7 or 11, the one who rolls wins and can roll again. If the sum is 2, 3, or 12 -- known as craps -- the one who rolls loses but keeps the dice. For any other outcome (called the "point"), the one who rolls continues hoping to roll the point value again before rolling a 7. If successful, then the roller wins and starts the game anew. If a 7 appears first, the roller loses and the next person gets to be the roller.
+</p>
+<p>
+So, a win can be obtained in two ways: 7 or 11 on first roll or getting the point before the 7 thereafter. Therefore, determine the probability of a win and the probability of a loss.
+</p>
+</statement>
+<solution>
+    <p>
 	<url href="http://mathworld.wolfram.com/Craps.html">"craps"</url>.
 	</p>
-	</statement>
+</solution>
 </exercise>
-</subsection>
-
+</p>
 
 </section>
 
 <section>
 <title>Conditional Probability</title>
 	<introduction>
-	<p>When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain than it the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
+	<p>When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain then the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
 	</p>
-	<p>Indeed, consider what happens when you keep on dealing a hand of five cards from a shuffled deck but without replacement...</p>
+	</introduction>
 
+<p>Indeed, consider what happens when you keep on dealing a hand of five cards from a shuffled deck but without replacement.  Notice how the probability of the same thing (such as P(getting a Heart on the next card)) oscillates based upon what cards came out of the deck on previous hands.
+</p>
+
+<p>
 <sage>
 <input>
 print "Conditional Events - successively deal 5 cards w/o replacement" 
@@ -595,13 +829,17 @@ def _(choice=['Hearts','Spades','Diamonds','Clubs','New Deck'],again=['Repeat Sa
                 looking.append(card)
         prob = float(Set(looking).cardinality())/num
         history1.append(prob)
+        
         print 'So, the remaining probability of getting a card from '+choice+' from the remaining cards is %s'%str(prob)
     list_plot(history1).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))
 
 </input>
 </sage>
+</p>
 	
-<p>Now, what happens when you put the cards back in, reshuffle, and then get 5 cards.</p>
+<p>Now, consider the case when you put the cards back in, reshuffle, and then get 5 new cards...</p>
+
+<p>
 <sage>
 <input>
 print "Independent Events - Successively deal 5 cards but WITH replacement"
@@ -615,7 +853,7 @@ deck = [(value, suit) for suit in suits for value in values]
 full_deck = copy(deck)  # to save a copy of the original deck for later use.
 deck1 = copy(full_deck)
 
-history2=[]
+h2=[]
 @interact
 def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 
@@ -632,80 +870,114 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
     shuffle(deck1) 
     hand = [deck1.pop() for card in range(5)] 
     print "The cards dealt:"
-    show(hand)
+    print hand
     print "Replacing this hand and reshuffling gives the remaining cards in the deck:"
     deck1 = copy(full_deck)
     shuffle(deck1)
     print(deck1)
     
     num = Set(deck1).cardinality()
-    pretty_print("\nThe number of remaining cards in the deck = %s"%str(num))
+    print "\nThe number of remaining cards in the deck = %s"%str(num)
     looking = []
     for card in deck1:
         if card[1]==suit:
             looking.append(card)
     prob = float(Set(looking).cardinality())/num
-    history2.append(prob)
+    h2.append(prob)
     
-    pretty_print('So, the remaining probability of getting a '+choice+' from the remaining cards is %s'%str(prob))
-    list_plot(history2).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))print 'Independent Events - Successively deal 5 cards but WITH replacement' 
+    print 'So, the remaining probability of getting a '+choice+' from the remaining cards is %s'%str(prob)
+    list_plot(h2).show(xmin=0,xmax=15,ymin=0,ymax=1,figsize=(5,2))
+    
+    print 'Independent Events - Successively deal 5 cards but WITH replacement' 
 
 
 </input>
 </sage>
-	</introduction>
+</p>
 	
-	<p><title>Changing Sample Space - Balls:</title>  Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.</p>
+<p><em>Changing Sample Space - Balls:</em>  
+Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.
+</p>
 
 
-	<p><title>Changing Sample Space - Cards: </title>
-	Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. When extracting one card randomly, the probability	of that card being a Heart is then P(Heart) = 13/52. Now, assume that one card has already been extracted and setaside.  Now, prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second draw. To compute this probability correctly, one need to formulate the question so that subadditivity can  be utilized.</p>
-	<p>
-	To do this, consider 
-	P(Heart on 2nd draw) 
-	= P( [Heart on 1st draw <m>\cap</m> Heart on 2nd draw] <m>\cup</m> [Not Heart on 1st draw <m>\cap</m> Heart on 2nd draw] )
-	= P(Heart on 1st draw <m>\cap</m> Heart on 2nd draw ) + P(Not Heart on 1st draw <m>\cap</m> Heart on 2nd draw )
-	= | Heart on 1st draw <m>\cap</m> Heart on 2nd draw | / | Number of ways to get two cards |
-	+ | Not Heart on 1st draw <m>\cap</m> Heart on 2nd draw / | Number of ways to get two cards |
-	= (13 12) / (52 51) + (39 13) / (52 51) = 12 / (4 51) + (3 13) / ( 4 51) =  
-
-	</p>
+<p><em>Changing Sample Space - Cards: </em>
+Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. When extracting one card randomly, the probability	of that card being a Heart is P(Heart) = 13/52. Now, assume that one card has already been extracted and setaside.  Now, prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second draw. To compute this probability correctly, one need to formulate the question so that subadditivity can be utilized.
+</p>
+<p>
+Let <m>H_1</m> be the outcome Heart on 1st draw and <m>H_2</m> be the outcome Heart on 2nd draw. Then,
+<md>
+	<mrow>P(\text{Heart on 2nd draw}) &amp; = P( [ H_1 \cap H2 ] \cup [ H_1^c \cap H_2 ] )</mrow>
+	<mrow> &amp; = P( H_1 \cap H_2 ) + P( H_1^c \cap H_2 )</mrow>
+	<mrow> &amp; = \frac{ | H_1 \cap H_2 |}{| P( \text{Number of ways to get two cards} | }</mrow>
+	<mrow> &amp; + \frac{ | H_1^c \cap H_2 | }{ | \text{Number of ways to get two cards} | }</mrow>
+	<mrow> &amp; = \frac{13 12}{52 51} + \frac{39 13}{52 51} = \frac{12}{4 51} + \frac{3 13}{ 4 51}</mrow>  
+</md>
+</p>
 	
-	<definition>
+<p>
+<definition>
 		<title>Conditional Probability</title>
-			<statement>
+		<statement>
+		<p>For sets A and B,
 			<me>P(B | A) = \frac{P(A \cap B)}{ P(A) },</me>
-			 provided P(A)<m>\gt 0</m>.</statement>
-		</definition>
-		<theorem>
-		<statement>Conditional Probability satisfies all of the requirements of regular probability.</statement>
-		<proof>
+			 provided P(A)<m>\gt 0</m>.
+		 </p>
+		 </statement>
+</definition>
+</p>
+
+<p>
+You can read P(B|A) as "the probability of B given A".
+</p>
+
+<p>
+<theorem>
+	<statement>
+	<p>
+	Conditional Probability satisfies all of the requirements of regular probability.
+	</p>
+	</statement>
+	<proof>
 		<p>
 		By definition, for any event probability must be nonnegative. Therefore
-		<m>P(A \cap B) \ge 0</m>.  Therefore, P(B | A) <m>\ge 0</m>.
+		<me>P(A \cap B) \ge 0.</me> 
+		So,
+		<me>P(B | A) = \frac{\text{positive or zero}}{\text{positive}}\ge 0.</me>
 		</p>
 		<p>
-		Further, P (S | A) = P(A <m>\cap</m> S)/P(A) = P(A)/P(A) = 1.
+		Further, 
+		<me>P (S | A) = P(A \cap S)/P(A) = P(A)/P(A) = 1.</me>
+		For the third part, we will only consider the case when there are two disjoint sets B and C.  Then,
+		<md>
+   			<mrow>P(B \cup C | A) &amp; = \frac{P(A \cap (B \cup C)}{P(A)} </mrow>
+			<mrow> &amp; = \frac{P( (A \cap B) \cup (A \cap C) )}{P(A)}</mrow>
+			<mrow> &amp; = \frac{P(A \cap B)}{P(A)} + \frac{P(A \cap C)}{P(A)}</mrow>
+			<mrow> &amp; = P(B | A) + P(C | A).</mrow>
+		</md>
 		</p>
-		</proof>
-		</theorem>
-		
-		<theorem><title>Multiplication Rule</title>
-		<statement>
-			<me>P(A \cap B) = P(A) P(B | A) = P(B) P(A | B)</me>
-		</statement>
-		<proof>
+	</proof>
+</theorem>
+</p>
+
+<p>	
+<theorem><title>Multiplication Rule</title>
+	<statement>
+	<p> For any sets A and B,
+		<me>P(A \cap B) = P(A) P(B | A) = P(B) P(A | B)</me>
+	</p>
+	</statement>
+	<proof>
 		<p>
-		Unravel the definition of conditional probably by taking the denominator to the other side. Also note that you can write <m>A \cap B = B \cap A</m>.
+		If P(A)=0 or P(B)=0, then the result is trivial. Otherwise, unravel the definition of conditional probably by taking the denominator to the other side. Also note that you can write <m>A \cap B = B \cap A</m>.
 		</p>
-		</proof>
-		</theorem>
-	
+	</proof>
+</theorem>
+</p>
 	
 
-
-	<exercise><title>WebWork</title>
-		<introduction>
+<p>
+<exercise><title>WebWork</title>
+	<introduction>
 		<p>Conditional Probability sometimes makes you have to think carefully about the ways to get 
 		the desired outcome.
 		</p>
@@ -717,11 +989,367 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 		See how you had to break the given question up into two disjoint pieces.
 		</p>
 		</conclusion>
-	</exercise>	
+</exercise>	
+</p>
+</section>
+	
+	
+<section><title>Bayes Theorem</title>	
+	<introduction>
+	<p>Conditional probabilities can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to an important result known as Baye's Theorem.
+	</p>
+	</introduction>
+
+	<theorem>
+	<title>Bayes Theorem</title>
+	<statement>
+	<p>
+	Let <m>S = \{ S_1, S_2, ... , S_m \}</m> where the <m>S_k</m> are pairwise disjoint and <m>S_1 \cup S_2 \cup ... \cup S_m = S</m> (i.e. a partition of the space S).  Then for any <m>A \subset S</m>
+	
+	<me>P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.</me>
+	
+	The conditional probability <m>P(S_j | A)</m> is called the posterior probability of <m>S_k</m>.
+	</p>
+	</statement>
+	<proof>
+	<p>
+	Notice, by the definition of conditional probability and the multiplication rule
+	<me>P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.</me>
+	But using the disjointness of the partition 
+	<md>
+	<mrow>P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )</mrow>
+	<mrow>    &amp; = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)</mrow>
+	<mrow>    &amp; = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)</mrow>
+	<mrow>    &amp; = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)</mrow>
+	<mrow>    &amp; = \sum_{k=1}^m P(S_k)P(A | S_k)</mrow>
+	</md>
+	Put these two expansions together to obtain the desired result.
+	</p>
+	</proof>
+	</theorem>
+	
+	<p>
+	To illustrate this result, from the web site <url href="http://stattrek.com/probability/bayes-theorem.aspx"></url> consider the following problem:
+	</p>
+	<p>
+	Marie is getting married tomorrow, at an outdoor ceremony in the desert. In recent years, it has rained only 5 days each year. Unfortunately, the weatherman has predicted rain for tomorrow. When it actually rains, the weatherman correctly forecasts rain 90% of the time. When it doesn't rain, he incorrectly forecasts rain 10% of the time. What is the probability that it will rain on the day of Marie's wedding?
+	</p>
+	<p>
+	Notice, all days can be classified into one of two disjoint options:
+	<ul>
+		<li>Rainy, in which case we can deduce from the given info that P(Rain) = 5/365</li>
+		<li>Not Rainy, and since this is the complement of above, P(Not Rain) = 360/365</li>
+	</ul>
+	In the notation of Bayes Theorem, let A represent a forecast of Rain and note you have 
+	<me>P(\text{Rain}) = P(S_1) = \frac{5}{365}</me>
+	 and 
+	<me>P(\text{Not Rain}) = P(S_2) = \frac{360}{365}.</me> 
+	Further, you are given the conditional probabilities
+    <me>P(\text{ Forecast Rain | Rain}) = P( A | S_1) = 0.9</me>
+    <me>P(\text{ Forecast Rain | Not Rain}) = P( A | S_2) = 0.1</me>
+    
+    Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes Theorem allows you to turn this around...
+	<md>
+		<mrow>P(\text{Rain}) &amp;  = P(S_1) P( A | S_1) + P(S_2) P(A | S_2)</mrow>	
+		<mrow> &amp; = \frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1</mrow>
+	</md>
+	Hence, putting these together gives
+	<md>
+		<mrow>P(\text{Rain | Forecast Rain}) &amp; = \frac{\frac{5}{365} \cdot 0.9}{\frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1}</mrow>
+		<mrow> &amp; = \frac{5 \cdot 0.9}{5 \cdot 0.9 + 360 \cdot 0.1}</mrow>
+		<mrow> &amp; = \frac{45}{45+360} \approx 0.111</mrow>
+	</md>
+	So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
+</p>		
+
+<p>
+<exercise><title>WebWork</title>
+	<introduction>
+	<p>
+	Let's try a Bayes Theorem example...
+	</p>
+	</introduction>
+	<webwork source="Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg">
+	</webwork>
+	<conclusion>
+	<p>
+	You have to be careful to extract the conditional probabilities from the problem.
+	</p>
+	</conclusion>
+</exercise>
+
+<exercise><title>WebWork</title>
+	<introduction>
+	<p>
+	Here is a more extensive Bayes Theorem example...
+	</p>
+	</introduction>
+	<webwork source="Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg">
+	</webwork>
+	<conclusion>
+	<p>
+	Notice that having the data expressed in tabular form sometimes makes it easier to deal with.
+	</p>
+	</conclusion>
+</exercise>
+</p>
+
+<p>The interactive cell below can be used to easily compute all of the conditional probabilities associated with Bayes's Theorem. Notice how the relative size of the pie-shaped partition changes when you presume that an event in the space has already occurred.</p>
+
+<p xml:id="BayesSage">
+<sage>
+<input>
+
+#  This function is used to convert an input string into separate entries
+def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+
+@interact
+def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$ P(S_1),P(S_2),... $"),
+        Conditional_Probabilities=input_box('0.02,0.01,0.03',label='$ P(A|S_1),P(A|S_2),... $'),
+        print_numbers=checkbox(True,label='Numerical Results on Graphs?'),
+        auto_update=False):
+            
+    Partition_Probabilities = g(Partition_Probabilities)
+    Conditional_Probabilities = g(Conditional_Probabilities)
+    n = len(Partition_Probabilities)
+    n0 = len(Conditional_Probabilities)
+    
+    # below needs to be n not equal to n0 but mathbook xml will not let me get the other
+    if (n > n0):
+        pretty_print("You must have the same number of partition probabilities and conditional probabilities.")
+        
+    else:                               # input data streams now are the same size!
+        colors = rainbow(n)
+        accum = float(0)                # to test whether partition probs sum to one
+        ends = [0]                      # where the graphed partition sectors change in pie chart 
+        mid = []                        # middle of each pie chart sector used for placement of text
+        p_Sk_given_A = []               # P( S_k | A )
+        pA = 0                          # P(A)
+        PP=[]                           # array to hold the numerical Partition Probabilities 
+        CP=[]                           # array to hold the numerical Conditional Probabilities     
+        for k in range(n):
+            PP.append(float(Partition_Probabilities[k]))
+            CP.append(float(Conditional_Probabilities[k]))    
+            p_Sk_given_A.append(PP[k]*CP[k] )
+            pA += p_Sk_given_A[k]
+            accum = accum + PP[k]
+            ends.append(accum)
+            mid.append((ends[k]+accum)/2)
+#
+#  Marching along from 0 to 1, saving angles for each partition sector boundary.
+#  Later, we will multiple these by 2*pi to get actual sector boundary angles.
+#
+        if abs(accum-float(1))>0.0000001:     #  Due to roundoff issues, this should be close enough.                     
+            pretty_print("Sum of probabilities should equal 1.")
+        
+        else:                           # probability data is sensible
+ 
+#        
+#  Draw the Venn diagram by drawing sectors from the angles determined above
+#  First, create a circle of radius 1 to illustrate the the sample space S
+#  Then draw each sector with varying colors and print out their names on the edge
+#
+            G = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0.4,aspect_ratio=True,axes=False,thickness=5)
+            for k in range(n):
+                G += disk((0,0), 1, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                G += text('$S_'+str(k+1)+'$',(1.1*cos(mid[k]*2*pi), 1.1*sin(mid[k]*2*pi)), rgbcolor='black')
+                
+            G += circle((0,0), 0.6, facecolor='yellow', fill = True, alpha = 0.1, thickness=5,edgecolor='black') 
+    
+#  Print the probabilities corresponding to each particular region as a list and on the graphs
+            if print_numbers:               
+
+                html("$P(A) = %s$"%(str(pA),))
+                for k in range(n):
+                    html("$P(S_{%s} | A)$"%(str(k+1))+"$ = %s$"%str(p_Sk_given_A[k]/pA))
+                                        
+                    G += text(str(p_Sk_given_A[k]),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    G += text(str(PP[k] - p_Sk_given_A[k]),(0.8*cos(mid[k]*2*pi), 0.8*sin(mid[k]*2*pi)), rgbcolor='black')
+        
+#  This is essentially a repeat of some of the above code but focused only on creating the smaller inner circle dealing
+#  with the set A so that the sectors now correspond in area to the Bayes Theorem probabilities
 
 
-<subsection><title>Exercises - Conditional Probabilities</title>
+            accum = float(0)                        
+            ends = [0]                     # where the graphed partition sectors change in pie chart 
+            mid = []                       # middle of each pie chart sector used for placement of text
+            for k in range(n): 
+                accum += float(p_Sk_given_A[k]/pA) 
+                ends.append(accum)
+                mid.append((ends[k]+accum)/2)
+            H = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0,aspect_ratio=True,axes=False,thickness=0)
+            H += circle((0,0), 0.6, facecolor='yellow',fill=True, alpha=0.1,aspect_ratio=True,axes=False,thickness=5,edgecolor='black')
+            
+            for k in range(n):
+                H += disk((0,0), 0.6, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
+                H += text('$S_'+str(k+1)+'|A$',(0.7*cos(mid[k]*2*pi), 0.7*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+        #  Now, print out the bayesian probabilities using the smaller set A only
+    
+            if print_numbers:
+                for k in range(n):
+                    H += text(str( N(p_Sk_given_A[k]/pA,digits=4) ),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    
+            G.show(title='Venn diagram of partition with A in middle')
+            print
+            H.show(title='Venn diagram presuming A has occured')
+</input>
+</sage>
+</p>
 
+
+<p>
+<exercise><title>Insured vs Accident</title>
+	<statement>
+	<p>
+	Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
+
+	<table halign="left">
+		<caption>Age vs Accident Likelihood</caption>
+      	<tabular halign="right">
+      
+<row><cell bottom="medium" right="medium">Age</cell><cell bottom="medium" right="medium">Proportion of Insured</cell><cell bottom="medium">Probability of Accident</cell></row>      
+<row><cell right="medium">16-20</cell><cell right="medium">0.05</cell><cell>0.08</cell></row>
+<row><cell right="medium">21-25</cell><cell right="medium">0.06</cell><cell>0.07</cell></row>
+<row><cell right="medium">26-55</cell><cell right="medium">0.49</cell><cell>0.02</cell></row>
+<row><cell right="medium">55-65</cell><cell right="medium">0.25</cell><cell>0.03</cell></row>
+<row><cell right="medium">over 65</cell><cell right="medium">0.15</cell><cell>0.04</cell></row>
+		</tabular>
+	</table>
+	
+	One of your family friends insured by this company has an accident. 
+	<ol>
+		<li>Determine the conditional probability that the driver was in the 16-20 age range.</li>
+		<li>Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.</li>
+		<li>Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.</li>
+	</ol>
+	</p>
+	</statement>
+	<solution>
+	<p>
+	  Plug the middle column into the first input box and the right column into the second input box of the  <xref ref="BayesSage"> Bayes Sage Cell </xref>
+	</p>
+	</solution>
+</exercise>
+</p>
+
+<p>	
+<exercise><title>Spinal bifida odds</title>
+	<statement>
+	<p>
+	Congratulations...your family is having a baby! As part of the prenatal care, some testing is part of the normal procedure including one for spinal bifida (which is a condition in which part of the spinal cord may be exposed.) Indeed, measurement of maternal serum AFP values is a standard tool used in obstetrical care to identify pregnancies that may have an increased risk for this disorder. You want to make plans for the new child's care and want to know how serious to take the test results. However, some times the test indicates that the child has the disorder when in actuality it does not (a false positive) and likewise may indicate that the child does not have the disorder when in fact it does (a false negative.) 
+	</p>
+	<p>The combined accuracy rate for the screen to detect the chromosomal abnormalities mentioned above is approximately 85% with a false positive rate of 5%. This means that (from <url href="http://americanpregnancy.org/prenatal-testing/first-trimester-screen/">americanpregnancy.org</url>)
+	<ul>
+		<li>Approximately 85 out of every 100 babies affected by the abnormalities addressed by the screen will be identified. (Positive Positive)</li>
+		<li>Approximately 5% of all normal pregnancies will receive a positive result or an abnormal level. (False Positive)</li>
+	</ul>
+	<ol>
+		<li>Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.</li>
+		<li>Given that your test came back negative, determine the likelihood that the child will not have spina bifida</li>
+		<li>Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.</li>
+	</ol>
+	</p>
+	</statement>
+</exercise>
+</p>
+
+</section>
+
+
+
+<section><title>Independence</title>
+
+	<introduction>
+	<p>You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
+	</p>
+	</introduction>
+
+<p>	
+<definition xml:id="DefnIndependentEvents"><title>Independent Events</title>
+		<statement>
+		<p>Events A and B are independent provided 
+		<me>P(A \cap B) = P(A) P(B)</me>
+		</p>
+		</statement>
+</definition>
+</p>
+
+<p>	
+<corollary><title>Independence and Conditional Probability</title>
+	<statement>
+	<p>Given <xref ref="DefnIndependentEvents">independent events</xref> A and B, 
+			<me>P(B | A) = P(B)</me> and <me>P(A | B) = P(A).</me>
+	</p>
+	</statement>
+	<proof>
+			<p>By the multiplication rule and the definition of independence, for any events A and B
+			<me>P(A) \cdot P(B) = P(A \cap B) = P(A) \cdot P(B | A) .</me>
+			Therefore, if P(A) is non-zero, canceling yields the first result. Switching around notation provides the second.
+			</p>
+	</proof>
+</corollary>
+</p>
+
+<p>
+<exercise><title>WebWork</title>
+	<introduction>
+		<p>
+		Independence makes combined probabilities VERY easy to compute.
+		</p>
+	</introduction>
+		<webwork source="Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		Basically you just multiply individual probabilities together.  Independence is often
+		assumed since it makes computations easier. That said, you should remember to consider
+		each time whether independence should or should not be assumed.
+		</p>
+		</conclusion>
+</exercise>
+</p>
+
+<p>
+<corollary><title>Independence and Mutual Exclusivity</title>
+	<statement>
+	<p>If events A and B are both <xref ref="DefnIndependentEvents">independent</xref> and <xref ref="DefnMutuallyExclusive">mutually exclusive</xref>, then at least one of them has zero probability.
+	</p>
+	</statement>
+	<proof>
+			<p>
+			By independence, <m>P(A \cap B) = P(A) \cdot P(B)</m>. However, by mutually exclusivity, <m>A \cap B = \emptyset \Rightarrow P(A \cap B) = 0</m> gives
+			<me>P(A) \cdot P(B) = 0.</me>
+			Hence, one or the other (or both) must be zero.
+			</p>
+	</proof>
+</corollary>
+</p>
+
+<p>
+<corollary><title>Successive Independent Events</title>
+	<statement>
+	<p>Given a sequence of mutually independent events <m>A_1, A_2, A_3, ...</m>,
+		<me>P(\cap_{k \in R} A_k) = \prod_{k \in R} P(A_k)</me>	
+	</p>
+	</statement>
+</corollary>
+</p>
+</section>
+
+<section><title>Summary</title>
+<p>
+TBA
+</p>
+</section>
+
+<section><title>More Exercises</title>
+
+    <introduction>
+    
+    </introduction>
+
+<p>
 <exercise><title>Conditional Basic computation</title>
 	<statement><p>
 	Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, determine
@@ -734,12 +1362,15 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 	</p>
 	</statement>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Gender vs University Major</title>
 	<statement><p>
 	The table below classifies students at your university according to gender and according to major.
 
 	<table halign="left">
+		<caption>Gender vs Major</caption>
       	<tabular halign="right">
       
 <row><cell bottom="medium" right="medium">Enrollment</cell><cell bottom="medium">Male</cell><cell bottom="medium" right="medium">Female</cell><cell bottom="medium">Totals</cell></row>      
@@ -760,7 +1391,9 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 	</p>
 	</statement>
 </exercise>
-	
+</p>
+
+<p>	
 <exercise><title>Mean Tough Teacher</title>
 	<statement>	
 	<p>
@@ -781,30 +1414,49 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 	</p>
 	<p>
 	To get the A on the last pick requires that all of the previous picks to be something else. You don't get the opportunity to pick the A if it has already been selected. So, if L stands for losing (not getting the A), then 
-	<me> P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) \\ = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3  \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</me>
+	<md>
+	<mrow> P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3 \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</mrow>
+	</md>
 	Therefore, it is the same probability of getting the A whether you pick first or last.  In general, to win on the kth pick gives
-	<me> P(\text{kth}) = P(\text{LL...LA}) \\ = \frac{14 \cdot 13 \cdot ... \cdot (15-k)  \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</me>
+	<md>
+	<mrow> P(\text{kth}) = P(\text{LL...LA}) = \frac{14 \cdot 13 \cdot ... \cdot (15-k) \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</mrow>
+	</md>
 	Hence, it is the same probability regardless of when you get to pick.
 	</p>
 	
 	
 	<p>
 	If there are two A's possible, then the options for person k in include either receiving the first of the two slips or the second. The probability for determining the first of the two is computed in a manner similar to above except that there is one more A and one less other.
-	<me> P(\text{kth as first}) = P(\text{LL...LA}) \\ = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</me>
+	<md>
+	<mrow> P(\text{kth as first}) = P(\text{LL...LA}) = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</mrow>
+	</md>
 
 	The probability of getting the second A means exactly one of the previous k-1 selections also picked the other A. There are k-1 ways that this could happen. Computing for one of the options and multiplying by k-1 gives
-	<me> P(\text{kth as second}) = P(\text{LL...LAA}) \\ = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</me>	
+	<md>
+	<mrow> P(\text{kth as second}) = P(\text{LL...LAA}) = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</mrow>
+	</md>	
 	Adding these two together gives
-	<me>P(\text{getting an A when there are two}) \\ = \frac{2 \cdot (15-k) + 2 \cdot (k-1)}{15 \cdot 14} = \frac{28}{15 \cdot 14} = \frac{2}{15}.</me>
+	<md>
+	<mrow>P(\text{getting an A when there are two}) = \frac{2 \cdot (15-k) + 2 \cdot (k-1)}{15 \cdot 14}</mrow>
+	<mrow> = \frac{28}{15 \cdot 14} = \frac{2}{15}.</mrow>
+	</md>
 
 	For example, if k = 5,
-	<me> P(\text{5th as first}) = P(\text{LLLLA}) \\ = \frac{13 \cdot 12 \cdot 11 \cdot 10  \cdot 2}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} = \frac{20}{15 \cdot 14}</me>
-	<me> P(\text{5th as second}) = P(\text{LL...LAA}) \\ = 4 \cdot \frac{13 \cdot 12 \cdot \cdot 11 \cdot 2 \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} \\ = \frac{8}{15 \cdot 14}.</me>	
+	<md>
+	<mrow> P(\text{5th as first}) = P(\text{LLLLA}) </mrow>
+	<mrow> = \frac{13 \cdot 12 \cdot 11 \cdot 10  \cdot 2}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} = \frac{20}{15 \cdot 14}</mrow>
+	</md>
+	<md>
+	<mrow> P(\text{5th as second}) = P(\text{LL...LAA}) </mrow>
+	<mrow> = 4 \cdot \frac{13 \cdot 12 \cdot \cdot 11 \cdot 2 \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11} = \frac{8}{15 \cdot 14}.</mrow>
+	</md>	
 	Adding these together yields the general result. So, once again, it doesn't matter which pick you use since the likelihood of getting an A is the same for all positions.
 	</p>
 	</solution>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Shared Birthdays</title>
 	<statement>
 	<p>
@@ -858,7 +1510,9 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 	</p>
 	</solution>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Internet meme solution</title>	
 	<statement>	
 	<p>
@@ -876,7 +1530,9 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 	
 	</solution>
 </exercise>
+</p>
 
+<p>
 <exercise><title>100 people on an airplane with boarding pass issues</title>
 	<statement>
 	<p>
@@ -897,363 +1553,49 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 	<p>
 	The answer is 1/2. To obtain this, you can define recursively the probability that the kth person sits in their own set as f(k).  Consider the first traveler's and your seats. Then you get the following cases:
 	<ul>
-		<li>P(first guy sits in his own seat and you sit in yours) = \frac{1}{k} \cdot 1</li>
-		<li>P(first guy sits in your seat and you do not sit in yours) = \frac{1}{k} \cdot 0</li>
-		<li>P(other k-2 travelers make their choices) = <m>(k-2) \frac{1}{k} f(k-1)</m></li>
+		<li>P(first guy sits in his own seat and you sit in yours) = <m>\frac{1}{k} \cdot 1</m> </li>
+		<li>P(first guy sits in your seat and you do not sit in yours) = <m>\frac{1}{k} \cdot 0</m> </li>
+		<li>P(other k-2 travelers make their choices) = <m>(k-2) \frac{1}{k} f(k-1)</m> </li>
 	</ul>
 	<me>f(k) = 1/k + 0 + (k-2)/k f(k-1)</me>
 	with f(2) = 1/2.
 	</p>
 	<p>
 	For example,
-	f(3) = 1/3 + f(2)/3 = 1/3 + 1/6 = 1/2.   
-	f(4) = 1/4 + 2/4 f(3) = 1/4 + 1/2 1/2 = 1/2.
-	f(5) = 1/5 + 3/5 1/2 = 1/2.
-	f(6) = 1/6 + 4/6 1/2 = 1/2. Etc.
+	<ul>
+		<li>f(3) = 1/3 + f(2)/3 = 1/3 + 1/6 = 1/2. </li>
+		<li>f(4) = 1/4 + 2/4 f(3) = 1/4 + 1/2 1/2 = 1/2. </li>
+		<li>f(5) = 1/5 + 3/5 1/2 = 1/2. </li>
+		<li>f(6) = 1/6 + 4/6 1/2 = 1/2. </li>
+	</ul>
+	Etc.
 	</p>
 	</solution>	
 </exercise>
-</subsection>
+</p>
 
-
-
-</section>
-	
-<section><title>Bayes Theorem</title>	
-	<introduction>
-	<p>Conditional probabilities can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to the following.
-	</p>
-	</introduction>
-
-	<theorem>
-	<title>Bayes Theorem</title>
-	<statement>Let <m>S = \{ S_1, S_2, ... , S_m \}</m> where the <m>S_k</m> are pairwise disjoint and <m>S_1 \cup S_2 \cup ... \cup S_m = S</m> (i.e. a partition of the space S).  Then for any <m>A \subset S</m>
-	<md>
-		<mrow>P(S_j | A) = \frac{P(S_j)P(A | S_j)}{\sum_{k=1}^m P(S_k)P(A | S_k)}.</mrow>
-	</md>
-	The conditional probability <m>P(S_j | A)</m> is called the posterior probability of <m>S_k</m>.
-	</statement>
-	<proof>
-	<p>
-	Notice, by the definition of conditional probability and the multiplication rule
-	<me>P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.</me>
-	But using the disjointness of the partition 
-	<md>
-	<mrow>P(A) &amp; = P( (A \cap S_1) \cup (A \cup S_2) \cup ... \cup (A \cup S_m) )</mrow>
-	<mrow>    &amp; = P(A \cap S_1) + P(A \cup S_2) + ... + P(A \cup S_m)</mrow>
-	<mrow>    &amp; = P(S_1 \cap A) + P(S_2 \cup A) + ... + P(S_m \cup A)</mrow>
-	<mrow>    &amp; = P(S_1) P(A | S_1) + P(S_2)P(A | S_2) + ... + P(S_m)P(A | S_m)</mrow>
-	<mrow>    &amp; = \sum_{k=1}^m P(S_k)P(A | S_k)</mrow>
-	</md>
-	Put these two expansions together to obtain the desired result.
-	</p>
-	</proof>
-	</theorem>
-	
-	<p>
-	To illustrate this result, from the web site <url href="http://stattrek.com/probability/bayes-theorem.aspx"></url> consider the following problem:
-	</p>
-<exercise>
-	<p>
-	Marie is getting married tomorrow, at an outdoor ceremony in the desert. In recent years, it has rained only 5 days each year. Unfortunately, the weatherman has predicted rain for tomorrow. When it actually rains, the weatherman correctly forecasts rain 90% of the time. When it doesn't rain, he incorrectly forecasts rain 10% of the time. What is the probability that it will rain on the day of Marie's wedding?
-	</p>
-	<p>
-	Notice, all days can be classified into one of two disjoint options:
-	<ul>
-		<li>Rainy, in which case we can deduce from the given info that P(Rain) = 5/365</li>
-		<li>No Rainy, and since this is the complement of above, P(No Rain) = 360/365</li>
-	</ul>
-	In the notation of Bayes Theorem, let A represent a forecast of Rain and note you have <m>P(\text{Rain}) = P(S_1) = \frac{5}{365}</m> and <m>P(\text{No Rain}) = \frac{360}{365}</m>. Further, you are given the conditional probabilities
-	<ul>
-		<li><m>P(\text{Rain | Forecast Rain}) = P( A | S_1) = 0.9</m></li>
-		<li><m>P(\text{Rain | Forecast Rain}) = P( A | S_2) = 0.1</m></li>
-	</ul>
-	Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes Theorem allows you to turn this around...
-	<md>
-		<mrow>P(\text{Rain}) &amp;  = P(S_1) P( A | S_1) + P(S_2) P(A | S_2)</mrow>	
-		<mrow> &amp; = \frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1</mrow>
-		<mrow> &amp; = NUMBER </mrow>
-	</md>
-	Hence, putting these together gives
-	<md>
-		<mrow>P(\text{Rain | Forecast Rain}) &amp; = \frac{\frac{5}{365} \cdot 0.9}{\frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1}</mrow>
-		<mrow> &amp; = \frac{5 \cdot 0.9}{5 \cdot 0.9 + 360 \cdot 0.1}</mrow>
-		<mrow> &amp; = \frac{45}{45+360} \approx 0.111</mrow>
-	</md>
-	So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
-	</p>	
-</exercise>	
-
-
-<exercise><title>WebWork</title>
-	<introduction>
-	<p>
-	Let's try a Bayes Theorem example...
-	</p>
-	</introduction>
-	<webwork source="Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg">
-	</webwork>
-	<conclusion>
-	<p>
-	You have to be careful to extract the conditional probabilities from the problem.
-	</p>
-	</conclusion>
-</exercise>
-
-<exercise><title>WebWork</title>
-	<introduction>
-	<p>
-	Here is a more extensive Bayes Theorem example...
-	</p>
-	</introduction>
-	<webwork source="Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg">
-	</webwork>
-	<conclusion>
-	<p>
-	Notice that having the data expressed in tabular form sometimes makes it easier to deal with.
-	</p>
-	</conclusion>
-</exercise>
-
-
-<p>The interactive cell below can be used to easily compute all of the conditional probabilities associated with Bayes's Theorem. Notice how the relative size of the pie-shaped partition changes when you presume that an event in the space has already occurred.</p>
-<sage>
-<input>
-
-#  This function is used to convert an input string into separate entries
-def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
-
-@interact
-def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),...$"),
-        Conditional_Probabilities=input_box('0.02,0.01,0.03',label='$P(A|B_1),P(A|B_2),...$'),
-        print_numbers=checkbox(True,label='Numerical Results on Graphs?'),
-        auto_update=False):
-            
-    Partition_Probabilities = g(Partition_Probabilities)
-    Conditional_Probabilities = g(Conditional_Probabilities)
-    n = len(Partition_Probabilities)
-    n0 = len(Conditional_Probabilities)
-    
-    # below needs to be n not equal to n0 but mathbook xml will not let me get the other
-    if (n > n0):
-        pretty_print("You must have the same number of partition probabilities and conditional probabilities.")
-        
-    else:                               # input data streams now are the same size!
-        colors = rainbow(n)
-        accum = float(0)                # to test whether partition probs sum to one
-        ends = [0]                      # where the graphed partition sectors change in pie chart 
-        mid = []                        # middle of each pie chart sector used for placement of text
-        p_Bk_given_A = []               # P( B_k | A )
-        pA = 0                          # P(A)
-        PP=[]                           # array to hold the numerical Partition Probabilities 
-        CP=[]                           # array to hold the numerical Conditional Probabilities     
-        for k in range(n):
-            PP.append(float(Partition_Probabilities[k]))
-            CP.append(float(Conditional_Probabilities[k]))    
-            p_Bk_given_A.append(PP[k]*CP[k] )
-            pA += p_Bk_given_A[k]
-            accum = accum + PP[k]
-            ends.append(accum)
-            mid.append((ends[k]+accum)/2)
-#
-#  Marching along from 0 to 1, saving angles for each partition sector boundary.
-#  Later, we will multiple these by 2*pi to get actual sector boundary angles.
-#
-        if abs(accum-float(1))>0.0000001:     #  Due to roundoff issues, this should be close enough.                     
-            pretty_print("Sum of probabilities should equal 1.")
-        
-        else:                           # probability data is sensible
- 
-#        
-#  Draw the Venn diagram by drawing sectors from the angles determined above
-#  First, create a circle of radius 1 to illustrate the the sample space S
-#  Then draw each sector with varying colors and print out their names on the edge
-#
-            G = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0.4,aspect_ratio=True,axes=False,thickness=5)
-            for k in range(n):
-                G += disk((0,0), 1, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
-                G += text('$B_'+str(k+1)+'$',(1.1*cos(mid[k]*2*pi), 1.1*sin(mid[k]*2*pi)), rgbcolor='black')
-                
-            G += circle((0,0), 0.6, facecolor='yellow', fill = True, alpha = 0.1, thickness=5,edgecolor='black') 
-    
-#  Print the probabilities corresponding to each particular region as a list and on the graphs
-            if print_numbers:               
-
-                html("$P(A) = %s$"%(str(pA),))
-                for k in range(n):
-                    html("$P(B_{%s} | A)$"%(str(k+1))+"$ = %s$"%str(p_Bk_given_A[k]/pA))
-                                        
-                    G += text(str(p_Bk_given_A[k]),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
-                    G += text(str(PP[k] - p_Bk_given_A[k]),(0.8*cos(mid[k]*2*pi), 0.8*sin(mid[k]*2*pi)), rgbcolor='black')
-        
-#  This is essentially a repeat of some of the above code but focused only on creating the smaller inner circle dealing
-#  with the set A so that the sectors now correspond in area to the Bayes Theorem probabilities
-
-
-            accum = float(0)                        
-            ends = [0]                     # where the graphed partition sectors change in pie chart 
-            mid = []                       # middle of each pie chart sector used for placement of text
-            for k in range(n): 
-                accum += float(p_Bk_given_A[k]/pA) 
-                ends.append(accum)
-                mid.append((ends[k]+accum)/2)
-            H = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0,aspect_ratio=True,axes=False,thickness=0)
-            H += circle((0,0), 0.6, facecolor='yellow',fill=True, alpha=0.1,aspect_ratio=True,axes=False,thickness=5,edgecolor='black')
-            
-            for k in range(n):
-                H += disk((0,0), 0.6, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
-                H += text('$B_'+str(k+1)+'|A$',(0.7*cos(mid[k]*2*pi), 0.7*sin(mid[k]*2*pi)), rgbcolor='black')
-                    
-        #  Now, print out the bayesian probabilities using the smaller set A only
-    
-            if print_numbers:
-                for k in range(n):
-                    H += text(str( N(p_Bk_given_A[k]/pA,digits=4) ),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
-                    
-            G.show(title='Venn diagram of partition with A in middle')
-            print
-            H.show(title='Venn diagram presuming A has occured')
-</input>
-</sage>
-
-
-
-
-<subsection><title>Exercises - Bayes Theorem</title>
-
-<p>Bayes Theorem</p>
-
-
-<exercise><title>Insured vs Accident</title>
-	<statement>
-	<p>
-	Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
-
-	<table halign="left">
-      	<tabular halign="right">
-      
-<row><cell bottom="medium" right="medium">Age</cell><cell bottom="medium" right="medium">Proportion of Insured</cell><cell bottom="medium">Probability of Accident</cell></row>      
-<row><cell right="medium">16-20</cell><cell right="medium">0.05</cell><cell>0.08</cell></row>
-<row><cell right="medium">21-25</cell><cell right="medium">0.06</cell><cell>0.07</cell></row>
-<row><cell right="medium">26-55</cell><cell right="medium">0.49</cell><cell>0.02</cell></row>
-<row><cell right="medium">55-65</cell><cell right="medium">0.25</cell><cell>0.03</cell></row>
-<row><cell right="medium">over 65</cell><cell right="medium">0.15</cell><cell>0.04</cell></row>
-		</tabular>
-	</table>
-	
-	One of your family friends insured by this company has an accident. 
-	<ol>
-		<li>Determine the conditional probability that the driver was in the 16-20 age range.</li>
-		<li>Compare this to the probability that the driver was in the 18-20 age range. Discuss the difference.</li>
-		<li>Determine how much more the company should charge for someone in the 16-20 age range compared to someone in the 26-55 age range.</li>
-	</ol>
-	</p>
-	</statement>
-</exercise>
-	
-<exercise><title>Spinal bifida odds</title>
-	<statement>
-	<p>
-	Congratulations...your family is having a baby! As part of the prenatal care, some testing is part of the normal procedure including one for spinal bifida (which is a condition in which part of the spinal cord may be exposed.) Indeed, measurement of maternal serum AFP values is a standard tool used in obstetrical care to identify pregnancies that may have an increased risk for this disorder. You want to make plans for the new child's care and want to know how serious to take the test results. However, some times the test indicates that the child has the disorder when in actuality it does not (a false positive) and likewise may indicate that the child does not have the disorder when in fact it does (a false negative.) 
-	</p>
-	<p>The combined accuracy rate for the screen to detect the chromosomal abnormalities mentioned above is approximately 85% with a false positive rate of 5%. This means that (from <url href="http://americanpregnancy.org/prenatal-testing/first-trimester-screen/">americanpregnancy.org</url>)
-	<ul>
-		<li>Approximately 85 out of every 100 babies affected by the abnormalities addressed by the screen will be identified. (Positive Positive)</li>
-		<li>Approximately 5% of all normal pregnancies will receive a positive result or an abnormal level. (False Positive)</li>
-	</ul>
-	<ol>
-		<li>Given that your test came back negative, determine the likelihood that the child will actually have spinal bifida.</li>
-		<li>Given that your test came back negative, determine the likelihood that the child will not have spina bifida</li>
-		<li>Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.</li>
-	</ol>
-	</p>
-	</statement>
-</exercise>
-
-</subsection>
-
-
-</section>
-
-
-
-
-
-
-
-<section><title>Independence</title>
-
-	<introduction>
-	<p>You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
-	</p>
-	</introduction>
-	
-	<definition>
-	<title>Independent Events</title>
-		<statement>Events A and B are independent provided 
-		<me>P(A \cap B) = P(A) P(B)</me>
-		</statement>
-	</definition>
-	
-	<corollary><title>Independence and Conditional Probability</title>
-		<statement>
-			Given independent events A and B, 
-			<me>P(B | A) = P(B)</me> and <me>P(A | B) = P(A).</me>
-		</statement>
-		<proof>
-			<p>By the multiplication rule and the definition of independence, for any events A and B
-			<me>P(A) \cdot P(B) = P(A \cap B) = P(A) \cdot P(B | A) .</me>
-			Therefore, if P(A) is non-zero, canceling yields the first result. Switching around notation provides the second.
-			</p>
-		</proof>
-	</corollary>
-
-	<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		Independence makes combined probabilities VERY easy to compute.
-		</p>
-		</introduction>
-		<webwork source="Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg">
-		</webwork>
-		<conclusion>
-		<p>
-		Basically you just multiply individual probabilities together.  Independence is often
-		assumed since it makes computations easier. That said, you should remember to consider
-		each time whether independence should or should not be assumed.
-		</p>
-		</conclusion>
-	</exercise>
-
-	<corollary><title>Independence and Mutual Exclusivity</title>
-		<statement>
-			If events A and B are both independent and mutually exclusive, then at least one of them has zero probability.
-		</statement>
-		<proof>
-			<p>
-			By independence, <m>P(A \cap B) = P(A) \cdot P(B)</m>. However, by mutually exclusivity, <m>A \cap B = \emptyset \Rightarrow P(A \cap B) = 0</m> gives
-			<me>P(A) \cdot P(B) = 0.</me>
-			Hence, one or the other (or both) must be zero.
-			</p>
-			</proof>
-	</corollary>
-
-	<corollary><title>Successive Independent Events</title>
-		<statement>Given a sequence of mutually independent events <m>A_1, A_2, A_3, ...</m>,
-		<me>P(\cap_{k \in R} A_k) = \prod_{k \in R} P(A_k)</me>
-		</statement>
-	</corollary>
-
-
-<subsection><title>Exercises - Independence</title>
+<p>
 <exercise><title>Basic Independence Calculations</title>
 	<statement>
 	<p>
-	Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, verify that A and B are not independent.
+	Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.31</m>, verify that A and B are not independent.
 	</p>
 	</statement>
+	<solution>
+	<p>
+	A and B are <xref ref="DefnIndependentEvents">independent by definition</xref> provided 
+	<me>P(A \cap B) = P(A) P(B).</me>
+	Using the provided values, notice that
+	<me>P(A \cap B) = 0.31</me>
+	but
+	<me>P(A)P(B) = 0.43 \cdot 0.72 = 0.3096.</me>
+	Since these are not equal (regardless how close) then A and B are not independent.
+	</p>
+	</solution>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Compound events and Independence</title>
 	<statement>
 	<p>
@@ -1265,12 +1607,23 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 	</ol>
 	</p>
 	</statement>
+	<solution>
+	<p>
+	Extending the <xref ref="DefnIndependentEvents">definition of independent events</xref> gives
+	<me>P(A \cap B \cap C) = \frac{2}{5} \frac{3}{4} \frac{1}{6}.</me>
+	By the corollary for independent events, complements also maintain a similar independence. So
+	<me>P(A^c \cap B^c \cap C) \frac{3}{5} \frac{1}{4} \frac{1}{6} .</me>
+	To complete the third part, use the <xref ref="ProbabilityThreeUnions">inclusion/exclusion result</xref> for dealing with three sets.
+	</p>
+	</solution>
 </exercise>
-	
+</p>
+
+<p>	
 <exercise><title>Rolling multiple dice</title>
 	<statement>
 	<p>
-	Suppose for a pair of dice you want to consider the events A = {rolling a 7 or 11} and B = {otherwise}.  Rolling the dice 5 times, determine
+For a pair of dice you want to consider the events A = {rolling a 7 or 11} and B = {otherwise}...as in the first roll in the game of craps.  Further, for notation purposes let's take ABA (for example) to mean event A occurs on the first roll, event B occurs on the second roll, and event A occurs again on the third roll...in that order only. If you roll the dice 5 times, determine
 	<ol>
 		<li>P(AABBB)</li>
 		<li>P(BBBAA)</li>
@@ -1278,8 +1631,21 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 	</ol>
 	</p>
 	</statement>
+	<solution>
+	<p>
+	Successive rollings of a pair of dice are <xref ref="DefnIndependentEvents">independent events</xref>. Therefore, 
+	<me>P(AABBB) = P(A)P(A)P(B)P(B)P(B) = \frac{8}{36} \frac{8}{36} \frac{28}{36} \frac{28}{36} \frac{28}{36}</me>
+	Similarly for the second part.
+	</p>
+	<p>
+	For the third part, notice that there will be <m>\binom{5}{2}</m> ways to rearrange 2 A's and 3 B's but that each of these will have two 8/36's and three 28/36's but just in a different order. Therefore, you will get
+	<me>10 \cdot \frac{8}{36} \frac{8}{36} \frac{28}{36} \frac{28}{36} \frac{28}{36}</me>
+	</p>
+	</solution>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Redundancy</title>
 	<statement>	
 	<p>
@@ -1292,7 +1658,9 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 	</p>
 	</statement>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Internet Meme redux</title>
 	<statement>	
 	<p>
@@ -1305,7 +1673,9 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 	</p>
 	</solution>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Single Elimination Tounament</title>
 	<statement>
 	<p>
@@ -1336,11 +1706,7 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$P(B_1),P(B_2),.
 	</p>
 	</solution>
 </exercise>
-</subsection>
-
-
-
-		
+</p>	
 </section>
 
 </chapter>

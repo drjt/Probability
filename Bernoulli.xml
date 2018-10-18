@@ -12,13 +12,17 @@
 <title>Distributions based upon Bernoulli Trials</title>
 
 <section><title>Introduction</title>
-	<p>Many practical problems involve measuring simply whether something was a success or a failure. In these situations, "success" should not be interpreted as having any moral or subjective meaning but only construed to mean that something you are looking for actually occurs.</p>
+	<p>
+	Many practical problems involve measuring simply whether something was a success or a failure. In these situations, "success" should not be interpreted as having any moral or subjective meaning but only construed to mean that something you are looking for actually occurs.
+	</p>
 	
-	<p>In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable X over the space <m>R = \{0, 1 \}</m> mapping X(success) = 1 and X(failure)=0. If p = P(success) then 
+	<p>
+	In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable X over the space <m>R = \{0, 1 \}</m> mapping X(success) = 1 and X(failure)=0. If p = P(success) then 
 	<me>f(x) = p^x \cdot (1-p)^{1-x}</me>
 	would be a formula but which only related to two values P(failure) = f(0) = (1-p) and P(Success) = f(1) = p.  
 	</p>
-	<p>Notice that p=0 means that you will always get a failure and that p=1 means that you will always get a success. In these cases, X would no longer be a random variable since the outcome for X could be predicted with certainty. Therefore, we will always assume that <m>0 &lt; p &lt; 1</m>.
+	<p>
+	Notice that p=0 means that you will always get a failure and that p=1 means that you will always get a success. In these cases, X would no longer be a random variable since the outcome for X could be predicted with certainty. Therefore, we will always assume that <m>0 &lt; p &lt; 1</m>.
 	</p>
 	<p>
 	The Bernoulli distribution on its own is not extremely useful but serves as a starting point for several others that are useful.  Indeed, in this chapter you will investigate distributions that relate some number of successes in multiple trials to some number of independent trials. The difference between these distributions will be that one of these variables will be fixed and the other one will be variable.
@@ -37,7 +41,8 @@ In this chapter, you will investigate the following distributions:
 <section>
  	<title>Binomial Distribution</title>	
 	<p>Consider a sequence  of n independent Bernoulli trials with the likelihood of a success p on each individual trial stays constant from trial to trial with <m> 0 \lt p \lt 1 </m>. If we let the variable <m>X</m> measure the number of successes obtained when doing a fixed number of trials n with <m>R = \{ 0, 1, ..., n \}</m>, then the resulting distribution of probabilities is called a Binomial Distribution.</p>
-	
+
+<p>	
 <sage>
 <input>
 # Binomial distribution over 0 .. n
@@ -60,11 +65,13 @@ def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
         pretty_print(html('$f(%s'%k+') = %s'%latex(f(x=k))+' \\approx %s$'%f(x=k).n(digits=5)))
 </input>
 </sage>
+</p>
 
 <p>
 You can of course get specific values and graph the Binomial Distribution using R as well...
 </p>
 
+<p>
 <sage language='r'>
 <input>
 n &lt;- 10
@@ -82,10 +89,15 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 
 </input>
 </sage>
+</p>
 
-<theorem><title>Derivation of Binomial Probability Function</title>
-	<statement> For R = {0, 1, ..., n},
+<p>
+<theorem xml:id="BinomialProbabilityFunctionTheorem"><title>Derivation of Binomial Probability Function</title>
+	<statement>
+	<p xml:id="BinomialProbabilityFunction">
+	For R = {0, 1, ..., n},
 	<me>f(x) = \binom{n}{x}p^x(1-p)^{n-x}</me>
+	</p>
 	</statement>
 		<proof>
 		<p> Since successive trials are independent, then the probability of X successes occurring within n trials is given by 
@@ -94,9 +106,15 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 		</p>
 		</proof>
 </theorem>
+</p>
 
+<p>
 <theorem><title>Verification of Binomial Distribution Formula</title>
-	<statement><me>\sum_{x \in R} f(x) = \sum_{x=0}^n \binom{n}{x}p^x(1-p)^{n-x} = 1.</me></statement>
+	<statement>
+	<p>
+	<me>\sum_{x \in R} f(x) = \sum_{x=0}^n \binom{n}{x}p^x(1-p)^{n-x} = 1.</me>
+	</p>
+	</statement>
 	<proof>
 	<p>
 		Using the Binomial Theorem with a = p and b = 1-p yields
@@ -104,8 +122,13 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 	</p>
 	</proof>
 </theorem>
+</p>
 	
-<p>Utilize the interactive cell below to compute f(x) and F(x) for the Binomial distribution</p>
+<p>
+Utilize the interactive cell below to compute f(x) and F(x) for the Binomial distribution
+</p>
+
+<p>
 <sage>
 	<input>
 # Binomial calculator
@@ -120,9 +143,12 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
         pretty_print('f(%s) = '%k,' %.8f'%prob,' and F(%s) = '%k,' %.8f'%acc)
 	</input>
 </sage>
+</p>
 
-	<theorem><title>Binomial Distribution Statistics</title>
-	<statement><p>For the Binomial Distribution
+<p>
+	<theorem xml:id="BinomialStatisticsTheorem"><title>Binomial Distribution Statistics</title>
+	<statement>
+	<p xml:id="BinomialStatistics">For the Binomial Distribution
 	<me>\mu = np</me>
 	<me>\sigma^2 = np(1-p)</me>
 	<me>\gamma_1 = \frac{1-2p}{\sqrt{np(1-p)}}</me>
@@ -131,7 +157,8 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 	</statement>
 
 	<proof>
-		<p>For the mean,
+	<p>
+		For the mean,
 		<md>
 			<mrow> \mu &amp; = E[X] </mrow>
 			<mrow> &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow>
@@ -144,7 +171,7 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 			<mrow> &amp; = np \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}}</mrow>
 			<mrow> &amp; = np (p + (1-p))^m = np</mrow>
 		</md>
-		</p>
+	</p>
 
 	<p>For the variance,
 		<md>
@@ -154,6 +181,7 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 		<mrow> &amp; = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow>
 		</md>
 	</p>
+
 	<p>Using the change of variables <m>k=x-2</m> and <m>m = n-2</m> yields a binomial series
 	<md>
 		<mrow> &amp; = n(n-1)p^2  \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2</mrow>
@@ -167,10 +195,12 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 
 	</proof>
 	</theorem>
-
-
-<p>The following uses Sage to determine the general formulas for the Binomial distribution.
 </p>
+
+<p>The following uses Sage to symbolically confirm the general formulas for the Binomial distribution.
+</p>
+
+<p>
 <sage>
 	<input>
 var('x,n,p')
@@ -194,6 +224,7 @@ kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
 pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</input>
 </sage>
+</p>
 
 <p>Flipping Coins</p>
 <p>Suppose you flip a coin exactly 20 times. Determine the probability of getting exactly 10 heads and then determine the probability of getting 10 or fewer heads.
@@ -224,26 +255,41 @@ Notice, the mean for this distribution is also 10 so one might expect 10 heads i
 	then the resulting distribution of probabilities is called a 
 	Geometric Distribution.</p>
 
+	<p>
+	<theorem xml:id="GeometricProbabilityFunctionTheorem">
+	<statement>
+	<p xml:id="GeometricProbabilityFunction">For a Geometric variable X with <m>R = \{1, 2, 3, ... \}</m>,
+	<me>f(x) = (1-p)({x-1} \cdot p</me>
+	</p>
+	</statement>
+	<proof>
 	<p> Since successive trials are independent, then the probability 
 	of the first success occurring on the mth trial presumes that
 	the previous m-1 trials were all failures.  Therefore the 
 	desired probability is given by 
 		<me>f(x) = P(X = x) = P(FF...FS) = (1-p)^{x-1}p</me>
 	</p>
+	</proof>
+	</theorem>
+	</p>
 	
-	
+	<p>
 	<theorem><title>Geometric Distribution sums to 1</title>
-		<statement><me>f(x) = (1-p)^{x-1}p</me> sums to 1 over <m>R = \{ 1, 2, ... \}</m>
+		<statement>
+		<p>
+		<me>f(x) = (1-p)^{x-1}p</me> 
+		sums to 1 over <m>R = \{ 1, 2, ... \}</m>
+		</p>
 		</statement>
 		<proof>
 		<p>
-		<md>
-			<mrow>\sum_{x=1}^{\infty} {f(x)} = \sum_{x=1}^{\infty} {(1-p)^{x-1} p} = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1</mrow>
-		</md>
+		<me>\sum_{x=1}^{\infty} {f(x)} = \sum_{x=1}^{\infty} {(1-p)^{x-1} p} \\ = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1</me>
 		</p>
 		</proof>
 	</theorem>
+	</p>
 	
+<p>	
 <sage>
 <input>
 # Geometric distribution over 0 .. n
@@ -265,13 +311,22 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
             pretty_print(html('$f(%s'%k+') = %s'%latex(f(x=k))+' \\approx %s$'%f(x=k).n(digits=5)))
 </input>
 </sage>
-	
-	<theorem><title>Geometric Mean</title>
-		<statement>For the geometric distribution, 
+</p>
+
+<p>	
+	<theorem><title>Geometric Statistics Theorem</title>
+		<statement>
+		<p xml:id="GeometricStatistics">
+		For the geometric distribution, 
 			<me>\mu = 1/p</me>
+			<me>\sigma^2  = \frac{1-p}{p^2}</me>
+			<me>\gamma_1 = ADD</me>
+			<me>\gamma_2 = ADD + 3</me>
+
+		</p>
 		</statement>
 		<proof>
-			<p> 
+			<p> For the mean,
 			<md>
 				<mrow>\mu &amp; = E[X] = \sum_{k=0}^{\infty} {k(1-p)^{k-1}p}</mrow>
 				<mrow> &amp; = p \sum_{k=1}^{\infty} {k(1-p)^{k-1}}</mrow>
@@ -279,16 +334,8 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 				<mrow> &amp; = p \frac{1}{p^2} = \frac{1}{p}</mrow>
 			</md>
 			</p>
-		</proof>
-	</theorem> 
 
-	
-	<theorem><title>Geometric Variance</title>
-			<statement>For the geometric distribution 
-				<me>\sigma^2  = \frac{1-p}{p^2}</me>
-			</statement>
-			<proof>
-			<p> 
+			<p> For the variance,
 			<md>
 				<mrow>\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
 				<mrow> &amp; = \sum_{k=0}^{\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 </mrow>
@@ -299,12 +346,15 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 			</p>
 			</proof>
 	</theorem> 
-
+</p>
 	
+<p>
 	<theorem>
 		<title>Geometric Distribution Function</title>
 		<statement>
+		<p>
 			<me>F(x) =  1- (1-p)^{x}</me>
+		</p>
 		</statement>
 		<proof>
 		<p> Consider the accumulated probabilities over a range of values...
@@ -317,13 +367,17 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 		</p>
 		</proof>
 	</theorem> 
+</p>
 
-
-	
+<p>	
 	<theorem>
 		<title>Statistics for Geometric Distribution</title>
-		<statement>Mean, Variance, Skewness, Kurtosis computed by Sage.
-		
+		<statement>
+		<p>Mean, Variance, Skewness, Kurtosis computed by Sage.
+		</p>
+		</statement>
+<proof>
+<p>
 <sage>
 	<input>
 var('x,n,p')
@@ -347,21 +401,22 @@ kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
 pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</input>
 </sage>
+</p>
+</proof>
+</theorem>
+</p>
 
-		</statement>
-		
-	</theorem>
-
-
-
+<p>
 	<theorem><title>The Geometric Distribution yields a memoryless model.</title>
 	<statement>
-	<p>If X has a geometric distribution and a and b are nonnegative integers, then
+	<p>
+	If X has a geometric distribution and a and b are nonnegative integers, then
 	<me>P( X > a + b | X > b ) = P( X > a)</me>
 	</p>
 	</statement>
 	<proof>
-	<p>Using the definition of conditional probability,
+	<p>
+	Using the definition of conditional probability,
 	<md>
 		<mrow>P( X > a + b | X > b ) &amp; = P( X > a + b \cap X > b ) \ P( X > b)</mrow>
 		<mrow> &amp; = P( X > a + b ) / P( X > b)</mrow>
@@ -372,6 +427,7 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</p>
 	</proof>
 	</theorem>
+</p>
 
 </section>
 
@@ -387,10 +443,13 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	then the resulting distribution of probabilities is called a 
 	Geometric Distribution.</p>
 	<p>Note that r=1 gives the Geometric Distribution.</p>
-	
+
+<p>	
 	<theorem><title>Negative Binomial Series</title>
 		<statement> 
+		<p>
 			<me>\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}</me> 
+		</p>
 		</statement>
 		<proof>					
 			<p>First, convert the problem to a slightly different form:		
@@ -431,28 +490,37 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 
 		</proof>	
 	</theorem>	
+</p>
 			
 	<p>Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success on each individual trial <m>p</m> where 
 	<m> 0 \lt p \lt 1 </m>.  
 	For a positive integer r, let the variable <m>X</m> measure the number of trials needed in order to obtain the rth success. Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
 
-
-	<theorem><title>Derivation of Negative Binomial Probability Function</title>
-	<statement> <me>f(x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r,</me>
+<p>
+	<theorem><title>Negative Binomial Probability Function</title>
+	<statement>
+	<p xml:id="NegativeBinomialProbabilityFunction">
+	<me>f(x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r,</me>
 	for <m>x \in R = \{r, r+1, ... \}</m>.
+	</p>
 	</statement>
 	<proof>
-		<p> Since successive trials are independent, then the probability of the rth success occurring on the x-th trial presumes that in the previous x-1 trials were r-1 successes and x-r failures. You can arrange these indistinguishable successes (and failures) in <m>\binom{x-1}{r-1}</m> unique ways. Therefore the desired probability is given by 
+	<p> Since successive trials are independent, then the probability of the rth success occurring on the x-th trial presumes that in the previous x-1 trials were r-1 successes and x-r failures. You can arrange these indistinguishable successes (and failures) in <m>\binom{x-1}{r-1}</m> unique ways. Therefore the desired probability is given by 
 			<md><mrow>P(X=x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r</mrow></md>
-		</p>
+	</p>
 	</proof>
 	</theorem>
+</p>
 
+<p>
 	<theorem><title>Negative Binomial Distribution Sums to 1</title>
 	<statement>
+	<p>
 		<me>\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = 1</me>
+	</p>
 	</statement>
-	<proof><p>
+	<proof>
+	<p>
 		<me>\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = p^r \sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}}</me>
 		<p>and by using <m>k = x-r</m></p>
 		<md>
@@ -463,12 +531,13 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</p>
 	</proof>
 	</theorem>
-	
+</p>	
 
-<p>Utilize the interactive cell below to compute f(x) and F(x) for the negative binomial distribution.
+<p>Below, the interactive cell symbolically computes f(x) and F(x) for the negative binomial distribution.</p>
 
+<p>
 <sage>
-	<input>
+<input>
 # Negative Binomial calculator
 @interact
 def _(p=input_box(0.3,width=15),r=slider(1,10,1,2)):
@@ -481,19 +550,24 @@ def _(p=input_box(0.3,width=15),r=slider(1,10,1,2)):
         prob = f(x=k)
         acc = acc+prob
         pretty_print('f(%s) = '%k,' %.8f'%prob,' and F(%s) = '%k,' %.8f'%acc)
-	</input>
+</input>
 </sage>
 </p>
-	<theorem>
-		<title>Statistics for Negative Binomial Distribution</title>
-		<statement>For the Negative Binomial Distribution, 
+
+<p>
+<theorem><title>Statistics for Negative Binomial Distribution</title>
+<statement>
+	<p xml:id="NegativeBinomialStatistics">
+		For the Negative Binomial Distribution, 
 		<me>\mu = \frac{r}{p}</me>
 		<me>\sigma^2 = r \frac{1-p}{p^2}</me>
 		<me>\gamma_1 = \frac{2-p}{\sqrt{r(1-p)}}</me>
 		<me>\gamma_2 = \frac{p^2-6p+6}{r(1-p)} + 3</me>
-		
+	</p>
+</statement>
+<proof>	
 <sage>
-	<input>
+<input>
 # Negative Binomial
 var('x,n,p,r,alpha')
 assume(x,'integer')
@@ -519,18 +593,74 @@ def _(r=[2,5,10,15,alpha]):
     
     kurt = ((M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4)/v^2).full_simplify()
     pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
-    </input>
+</input>
+</sage>
+</proof>
+</theorem>
+</p>
+<p>
+This is the symbolic derivation component that should be the proof of the theorem above.
+</p>
+	
+<sage>
+<input>
+# Negative Binomial
+var('x,n,p,r,alpha')
+assume(x,'integer')
+assume(alpha,'integer')
+assume(alpha &gt; 2)
+assume(0 &lt; p &lt; 1)
+@interact
+def _(r=[2,5,10,15,alpha]):
+    f(x) = binomial(x-1,r-1)*p^r*(1-p)^(x-r)
+    mu = sum(x*f,x,r,oo).full_simplify()
+    M2 = sum(x^2*f,x,r,oo).full_simplify()
+    M3 = sum(x^3*f,x,r,oo).full_simplify()
+    M4 = sum(x^4*f,x,r,oo).full_simplify()
+        
+    pretty_print('Mean = ',mu)
+    
+    v = (M2-mu^2).full_simplify()
+    pretty_print('Variance = ',v)
+    stand = sqrt(v)
+    
+    sk = (((M3 - 3*M2*mu + 2*mu^3)).full_simplify()/stand^3).factor()
+    pretty_print('Skewness = ',sk)
+    
+    kurt = ((M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4)/v^2).full_simplify()
+    pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
+</input>
 </sage>
 
-		</statement>
-		
-	</theorem>
-	
+</section>
 
+<section><title>Summary</title>
+<introduction>
+Here is a summary of the major results dealing with Bernoulli-based variables:
+</introduction>
+<p>
+<xref ref="BinomialProbabilityFunction">Binomial Distribution</xref>
+</p>
+<p>
+<xref ref="BinomialStatistics">Binomial Distribution Statistics</xref>
+</p>
+<p>
+<xref ref="GeometricProbabilityFunction">Geometric Distribution</xref>
+</p>
+<p>
+<xref ref="GeometricStatistics">Geometric Distribution Statistics</xref>
+</p>
+<p>
+<xref ref="NegativeBinomialProbabilityFunction">Negative Binomial Distribution</xref>
+</p>
+<p>
+<xref ref="NegativeBinomialStatistics">Negative Binomial Distribution Statistics</xref>
+</p>
 </section>
 
 <section><title>Exercises</title>
 
+<p>
 <exercise><title> - Gallup Consumer Confidence Polling</title>
 <p>
 A January 2008 Gallup poll on consumer confidence asked the question "How would you rate economic conditions in this country today" and 22% responded "Excellent" or "Good", 45% responded "Only Fair", and 33% responded "Poor". If you pick a representative sample of 25 people and ask them the same question, if X measures the number of responses that are "Excellent" or "Good", determine
@@ -539,6 +669,7 @@ A January 2008 Gallup poll on consumer confidence asked the question "How would 
 	<li>P(X is at least 5).</li>
 	<li>the expected number of Excellent or Good responses.</li>
 </ul>
+</p>
 <solution>
 <p>
 This is a Binomial distribution with n=25 and p = 0.22.
@@ -550,9 +681,10 @@ This is a Binomial distribution with n=25 and p = 0.22.
 </ul>
 </p>
 </solution>
-</p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Rolling Dice</title>
 <p>
 You keep on rolling a pair of dice and let X be the number of rolls needed until you get a sum of 7 or 11 for the second time. Determine:
@@ -562,6 +694,7 @@ You keep on rolling a pair of dice and let X be the number of rolls needed until
 	<li>P(X = 12)</li>
 	<li><m>P(X \ge 4)</m></li>
 </ol>
+</p>
 <solution>
 <p> For this problem, use the Negative Binomial Distribution when looking for the number of trials till the 2nd success. p is determined in the first answer.
 <ol>
@@ -577,9 +710,10 @@ You keep on rolling a pair of dice and let X be the number of rolls needed until
 </ol>
 </p>
 </solution>
-</p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Collecting Kids Meal Prizes</title>
 <p>
 You love to eat at Chick-Fil-A with your kids and want to collect all of the five new book titles that come randomly included with each kids meal.  If the promotion with these books starts today, determine:
@@ -588,6 +722,7 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 	<li>The probability that you it takes more than four purchases in order to get a second title.</li>
 	<li>The expected total number of children's meals you would expect to purchase in order to get all five titles.</li>
 </ol>
+</p>
 <solution>
 <p>
 <ol>
@@ -604,9 +739,10 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 </ol>
 </p>
 </solution>
-</p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Rolling Dice</title>
 <p>Suppose you roll a standard pair of 6-sided dice 20 times and let X measure the number of outcomes which result in a sum of 7 or 11. Determine:
 <ol>
@@ -617,7 +753,9 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 </ol>
 </p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Rolling Dice yet again</title>
 <p>Suppose you roll a standard pair of 6-sided dice X times until you get a sum of 7 or 11 a third time. Determine:
 <ol>
@@ -628,7 +766,9 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 </ol>
 </p>
 </exercise>
+</p>
 
+<p>
 <exercise>
 <title> - 2 standard deviations from the mean</title>
 <p>Given p = 0.3 determine the following:
@@ -636,6 +776,7 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 	<li>For Binomial with n = 50, <m>P(\mu - 2\sigma \le X \le \mu + 2\sigma)</m></li>
 	<li>For Negative Binomial with r = 2, <m>P(\mu - 2\sigma \le X \le \mu + 2\sigma)</m></li>
 </ol>
+</p>
 <solution>
 <p>
 For Binomial with p = 0.3 and n = 50, <m>\mu = n \cdot p = 15</m> and <m>\sigma^2 = n \cdot p \cdot (1-p) = 10.5</m>.  So, <m>\sigma = \sqrt{10.5}</m>.  Therefore,
@@ -656,15 +797,16 @@ Then,
 	<me>F(16) \approx 0.973888</me>
 </p>
 </solution>
-</p>
 </exercise>
+</p>
 
+<p>
 <exercise><title>Chapter Experiment</title>
 <p>
-Take a die and roll it 200 times, keeping track on paper of the outcome for each roll. You can use a standard 6-sided die or find a more exotic one with more sides.
+Take a die and roll it 4 times, keeping track on paper each time you get a 6 (say).  Repeat this 100 times. (Actually, you can use a standard 6-sided die or find a more exotic one with more sides.)  You should have gotten anywhere from 0 of the rolls to be a 6 up to all of the rolls to be a 6.  Collect the relative frequencies of each of the possible outcomes in R= \{0,1,2, ..., 100\} and plot.  Compare several of the experimental relative frequencies with the theoretical value you would expect using the proper distribution from this chapter. Comment on how well you did. 
 </p>
 </exercise>
-
+</p>
 
 </section>
 

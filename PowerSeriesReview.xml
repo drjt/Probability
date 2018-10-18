@@ -16,6 +16,7 @@
 
 	<section>
 		<title>Geometric Series</title>
+		<introduction>
 		<p>
 		  Knowledge of the use of power series is very important when dealing with both 
 		  probability functions. </p>   
@@ -27,8 +28,9 @@
 			<mrow>NB = \sum_{k=0}^{\infty} (-1)^k \binom{-n + k - 1}{k} {x^k b^{-n-k}} = \frac{1}{(x+b)^n}</mrow>
 		</md>
 		<p>In this section, we review this series, develop its properties, and explore some of its extensions.</p>
+		</introduction>
 		
-	<subsection>
+		<subsection>
 			<title>Geometric Series</title>
 			<theorem xml:id="theorem-GeomSeries">
 			<statement> <m> S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}</m> </statement>
@@ -65,6 +67,10 @@ def _(n = slider(2,20,1,2)):
 </input>
 </sage>
 	</subsection>
+
+<introduction>
+
+</introduction>
 
 	<subsection>
 		<title>Alternate Forms for the Geometric Series</title>
@@ -138,7 +144,6 @@ def _(n = slider(2,20,1,2)):
 	<mrow>B = \sum_{k=0}^{n} {\binom{n}{k} a^k b^{n-k}}</mrow>
 </md> provided n is a natural number.  
 
-	<subsection>
 		<theorem xml:id="theorem-Binomial">
 			<title>Binomial Theorem</title>
 			<statement>For <m> n \in \mathbb{N} </m>,  
@@ -162,20 +167,22 @@ def _(n = slider(2,20,1,2)):
 
 			</proof>
 		</theorem>
-	</subsection>
-	<subsection>
+	
+
 		<title>Binomial Series</title>
+
+
 		<p>Consider <m>B(a,b) = \sum_{k=0}^{n} {\binom{n}{k} a^k b^{n-k}}</m>.  
 		This finite sum_is known as the Binomial Series.</p>
-		<subsection>
+
 			<p>Show that <m>B(a,b) = (a+b)^n</m></p>
 			<p>Show that <m>B(1,1) = 2^n</m></p>
 			<p>Show that <m>B(-1,1) = 0</m></p>
 			<p>Show that <m>B(p,1-p) = 1</m></p>
 			<p>Easily, <m>B(x,1) = \sum_{k=0}^{n} {\binom{n}{k} a^k}</m></p>
-		</subsection>
-	</subsection>
-	<subsection>
+
+
+
 		<title>Trinomial Series</title>
 		<md>
 			<mrow>(a+b+c)^n = \sum_{k_1+k_2+k_3=n}^{} {\binom{n}{k_1,k_2,k_3} a^{k_1} b^{k_2} c^{k_3}} </mrow>
@@ -183,7 +190,7 @@ def _(n = slider(2,20,1,2)):
 		<p>where <m>\binom{n}{k_1,k_2,k_3} = \frac{n!}{k_1!k_2!k_3!}</m>. This can be generalized to any number 
 		of terms to give what
 		is know as a multinomial series.</p>
-	</subsection>
+
 </section>
 
 
