@@ -191,21 +191,21 @@ Since this p-value is less than our significance level <m>\alpha = 0.05</m> (by 
 
 <section><title>Hypothesis Test for one variance</title>
 <p>
-Proceeding in a similar manner, we can also perform hypothesis testing on variances using the <m>\Chi^2</m>-distribution to determine probabilities.
+Proceeding in a similar manner, we can also perform hypothesis testing on variances using the <m>\chi^2</m>-distribution to determine probabilities.
 <me> H_0 : \sigma^2 = \sigma_0^2  \\ H_a: \sigma^2 \neq \sigma_0^2</me>
 or
 <me> H_0 : \sigma^2 \ge \sigma_0^2  \\ H_a: \sigma^2 \lt \sigma_0^2</me>
 or
 <me> H_0 : \sigma^2 \le \sigma_0^2  \\ H_a: \sigma^2 \gt \sigma_0^2</me>
 
-<me>test statistic = T = (n-1) \frac{s^2}{\sigma_0^2}</me> 
+<me>\text{test statistic} = T = (n-1) \frac{s^2}{\sigma_0^2}</me> 
 
 For two-tailed, reject if 
-<me>T \gt \Chi_{1-\alpha/2,n-1}^2 \text{ or } T \lt \Chi_{\alpha/2,n-1}^2</me>
+<me>T \gt \chi_{1-\alpha/2,n-1}^2 \text{ or } T \lt \chi_{\alpha/2,n-1}^2</me>
 and for one-tailed to the right if
-<me>T \gt \Chi_{1-\alpha,n-1}^2</me>
+<me>T \gt \chi_{1-\alpha,n-1}^2</me>
 and for one-tailed to the left if
-<me>T \lt \Chi_{\alpha,n-1}^2.</me>
+<me>T \lt \chi_{\alpha,n-1}^2.</me>
 Technically, for the two-tailed test you could pick T-values so that the total probability sums to <m>\alpha</m> in any fashion but generally this probability is split evenly between the two tails as noted above.
 </p>	
 </section>

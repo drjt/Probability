@@ -6,12 +6,13 @@
     <xi:include href="./bookinfo.xml" />   
 	<book xml:id="Essentials_Probability_And_Statistics">
     	<title>Essentials of Mathematical Probability and Statistics</title>
-    	<subtitle>A First Course For the Mathematically Inclined</subtitle>
-  	
+<!--    	<subtitle>A First Course For the Mathematically Inclined</subtitle>
+ --> 
+ 	
 	  	<xi:include href="./frontmatter.xml" /> 
 
  		<xi:include href="./Data.xml" /> 
-  		<xi:include href="./Regression.xml" /> 
+<!--  		<xi:include href="./Regression.xml" /> 
    		<xi:include href="./Combinatorics.xml" />       
 
   		<xi:include href="./ProbabilityGeneralities.xml" /> 
@@ -26,7 +27,7 @@
   		<xi:include href="./HypothesisTesting.xml" /> 
 
   		<xi:include href="./PowerSeriesReview.xml" /> 
-<!--
+
 -->
 
 	</book>

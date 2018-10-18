@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 OCT 2018 11:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 OCT 2018 11:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1322,7 +1322,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.381 {\Large }\\
+l.378 {\Large }\\
                  [0.5\baselineskip]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1331,7 +1331,7 @@ or  <return>  to continue without it.
 ! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.382 [3\baselineskip]
+l.379 [3\baselineskip]
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -1340,7 +1340,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.382 [3\baselineskip]
+l.379 [3\baselineskip]
                       
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -1354,20 +1354,20 @@ two letters. (See Chapter 27 of The TeXbook.)
 ] [4
 
 ]
-LaTeX Font Info:    Try loading font information for U+msa on input line 415.
+LaTeX Font Info:    Try loading font information for U+msa on input line 412.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 415.
+LaTeX Font Info:    Try loading font information for U+msb on input line 412.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 415.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 412.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-Underfull \hbox (badness 10000) in paragraph at lines 415--418
+Underfull \hbox (badness 10000) in paragraph at lines 412--415
 
  []
 
@@ -1402,19 +1402,19 @@ Section 1.3 Statistical Measures of Position
 [2] [3] [4] (/usr/local/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Try loading font information for T1+zi4 on input line 695.
+LaTeX Font Info:    Try loading font information for T1+zi4 on input line 692.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 695.
+(Font)              scaled to size 9.0pt on input line 692.
 
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
-(Font)              using `T1/zi4/m/n' instead on input line 696.
+(Font)              using `T1/zi4/m/n' instead on input line 693.
 
 LaTeX Font Info:    Font shape `T1/zi4/m/it' will be
-(Font)              scaled to size 9.0pt on input line 696.
+(Font)              scaled to size 9.0pt on input line 693.
 ************************************************
 Section 1.4 Statistical Measures of the Middle
 ************************************************
@@ -1422,51 +1422,51 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.723 ...finition}{Arithmetic Mean.}{definition-7}
+l.720 ...finition}{Arithmetic Mean.}{definition-7}
                                                   %
 LaTeX Font Info:    Font shape `T1/zi4/bx/n' in size <9> not available
-(Font)              Font shape `T1/zi4/b/n' tried instead on input line 748.
+(Font)              Font shape `T1/zi4/b/n' tried instead on input line 745.
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 9.0pt on input line 748.
+(Font)              scaled to size 9.0pt on input line 745.
  [5]
-LaTeX Font Info:    Try loading font information for TS1+zi4 on input line 758.
+LaTeX Font Info:    Try loading font information for TS1+zi4 on input line 755.
 
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/inconsolata/ts1zi4.fd
 File: ts1zi4.fd 2018/01/14 TS1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 758.
+(Font)              scaled to size 9.0pt on input line 755.
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.798 ...{Computing class final grade.}{example-7}
+l.795 ...{Computing class final grade.}{example-7}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.809 \begin{definition}{Median:.}{definition-8}
+l.806 \begin{definition}{Median:.}{definition-8}
                                                 % [6]pdfTeX warning (ext4): des
 tination with the same identifier (name{cthm.4}) has been already used, duplica
 te ignored
 <to be read again> 
                    \relax 
-l.830 \begin{definition}{Midrange:.}{definition-9}
+l.827 \begin{definition}{Midrange:.}{definition-9}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.856 ...easures of the Middle.}{StatePopulations}
+l.853 ...easures of the Middle.}{StatePopulations}
                                                   %
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7]
 
 Package tcolorbox Warning: The upper box part has become overfull on input line
- 936.
+ 933.
 
 [8]
 ************************************************
@@ -1476,37 +1476,37 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.949 \begin{definition}{Range:.}{definition-10}
+l.946 \begin{definition}{Range:.}{definition-10}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{cthm.2}) has been already used, duplicate i
 gnored
 <to be read again> 
                    \relax 
-l.966 ...terquartile Range (IQR):.}{definition-11}
+l.963 ...terquartile Range (IQR):.}{definition-11}
                                                   % [9]pdfTeX warning (ext4): d
 estination with the same identifier (name{cthm.3}) has been already used, dupli
 cate ignored
 <to be read again> 
                    \relax 
-l.1008 ... and Standard Deviation.}{definition-12}
+l.1005 ... and Standard Deviation.}{definition-12}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.1043 ...orms for Variance.}{}{AlternateVariance}
+l.1040 ...orms for Variance.}{}{AlternateVariance}
                                                   % [10]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.5}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.1074 ...means and variances by hand.}{example-9}
+l.1071 ...means and variances by hand.}{example-9}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.1109 ...tion Measures of Variation.}{exercise-3}
+l.1106 ...tion Measures of Variation.}{exercise-3}
                                                   % [11]
 ************************************************
 Section 1.6 Adjusting Statistical Measures for Grouped Data
@@ -1521,7 +1521,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1196 \begin{inlineexercise}{}{exercise-4}
+l.1193 \begin{inlineexercise}{}{exercise-4}
                                            %
 ************************************************
 Subsection 1.6.2 Data Grouped into Continuous Intervals
@@ -1530,7 +1530,7 @@ Subsection 1.6.2 Data Grouped into Continuous Intervals
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1261 ... for Interval Grouped Data.}{example-10}
+l.1258 ... for Interval Grouped Data.}{example-10}
                                                   %
 ************************************************
 Section 1.7 Other Statistical Point Measures
@@ -1539,15 +1539,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1294 ...in{definition}{Skewness.}{definition-13}
+l.1291 ...in{definition}{Skewness.}{definition-13}
                                                   % [14]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.2}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.1318 ...in{definition}{Kurtosis.}{definition-14}
+l.1315 ...in{definition}{Kurtosis.}{definition-14}
                                                   %
-Underfull \hbox (badness 1137) in paragraph at lines 1318--1321
+Underfull \hbox (badness 1137) in paragraph at lines 1315--1318
 [][]\T1/cmr/bx/n/10 Definition 1.7.2  Kur-to-sis. [][]\T1/cmr/m/n/10 For pop-u-
 la-tion data, the Kur-to-sis of
  []
@@ -1556,7 +1556,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1337 ...for Skewness and Kurtosis.}{}{theorem-2}
+l.1334 ...for Skewness and Kurtosis.}{}{theorem-2}
                                                   % [15]
 ************************************************
 Section 1.8 Visual Statistical Measures - Graphical Representation of Data
@@ -1564,10 +1564,10 @@ Section 1.8 Visual Statistical Measures - Graphical Representation of Data
 ************************************************
 Subsection 1.8.1 Histograms
 ************************************************
-<images/frequencyhistogram.png, id=872, 590.205pt x 541.02126pt>
+<images/frequencyhistogram.png, id=876, 590.205pt x 541.02126pt>
 File: images/frequencyhistogram.png Graphic file (type png)
 <use images/frequencyhistogram.png>
-Package pdftex.def Info: images/frequencyhistogram.png  used on input line 1433
+Package pdftex.def Info: images/frequencyhistogram.png  used on input line 1430
 .
 (pdftex.def)             Requested size: 340.0pt x 311.67093pt.
 [16]
@@ -1584,7 +1584,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1487 ...{Simple Stem and Leaf Plot.}{example-11}
+l.1484 ...{Simple Stem and Leaf Plot.}{example-11}
                                                   %
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1592,12 +1592,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1525 ...Plot for State Populations.}{example-12}
+l.1522 ...Plot for State Populations.}{example-12}
                                                   %
-<images/stemandleaf.png, id=932, 1155.31625pt x 298.11375pt>
+<images/stemandleaf.png, id=936, 1155.31625pt x 298.11375pt>
 File: images/stemandleaf.png Graphic file (type png)
 <use images/stemandleaf.png>
-Package pdftex.def Info: images/stemandleaf.png  used on input line 1527.
+Package pdftex.def Info: images/stemandleaf.png  used on input line 1524.
 (pdftex.def)             Requested size: 340.6pt x 87.88365pt.
 
 ************************************************
@@ -1607,10 +1607,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.6}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1556  \begin{inlineexercise}{}{exercise-5}
+l.1553  \begin{inlineexercise}{}{exercise-5}
                                             %
 
-LaTeX Warning: File `images/webwork-2-image-1.png' not found on input line 1564
+LaTeX Warning: File `images/webwork-2-image-1.png' not found on input line 1561
 .
 
 
@@ -1621,13 +1621,13 @@ See the pdftex.def package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1564 ...linewidth]{images/webwork-2-image-1.png}
+l.1561 ...linewidth]{images/webwork-2-image-1.png}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.0pt on input line 1564.
+(Font)              scaled to size 10.0pt on input line 1561.
 
 Overfull \hbox (69.59247pt too wide) has occurred while \output is active
 \T1/cmr/m/sl/10 1.8.  VISUAL STATISTICAL MEASURES - GRAPHICAL REPRESENTATION OF
@@ -1651,13 +1651,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1653 \begin{inlineexercise}{}{exercise-6}
+l.1650 \begin{inlineexercise}{}{exercise-6}
                                            %pdfTeX warning (ext4): destination 
 with the same identifier (name{cthm.2}) has been already used, duplicate ignore
 d
 <to be read again> 
                    \relax 
-l.1657 \begin{inlineexercise}{}{exercise-7}
+l.1654 \begin{inlineexercise}{}{exercise-7}
                                            %
 ************************************************
 Chapter 2 Regression
@@ -1670,7 +1670,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1667 \chapter
+l.1664 \chapter
                [{Regression}]{Regression}\label{CurveEstimation}
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1689,19 +1689,19 @@ Section 2.2 Linear Regression - Best Fit Line
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1735 ...sing an approximating line.}{exercise-8}
+l.1732 ...sing an approximating line.}{exercise-8}
                                                   % [24]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.2}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.1807 ...rcise}{Non-functional data.}{exercise-9}
+l.1804 ...rcise}{Non-functional data.}{exercise-9}
                                                   % [25]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.3}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.1850 ...n{inlineexercise}{WebWork.}{exercise-10}
+l.1847 ...n{inlineexercise}{WebWork.}{exercise-10}
                                                   %
 ************************************************
 Section 2.3 Correlation
@@ -1710,49 +1710,49 @@ Section 2.3 Correlation
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1903 \begin{definition}{Covariance.}{Covariance}
+l.1900 \begin{definition}{Covariance.}{Covariance}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.1918 ...te Formula for Covariance.}{}{theorem-3}
+l.1915 ...te Formula for Covariance.}{}{theorem-3}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.1940 ...on Coefficient.}{CorrelationCoefficient}
+l.1937 ...on Coefficient.}{CorrelationCoefficient}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.1951 ...efficient for Linear Data.}{}{theorem-4}
+l.1948 ...efficient for Linear Data.}{}{theorem-4}
                                                   % [27]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.5}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.1970 ...icient of Determination.}{definition-17}
+l.1967 ...icient of Determination.}{definition-17}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.1981 ...n{inlineexercise}{WebWork.}{exercise-11}
+l.1978 ...n{inlineexercise}{WebWork.}{exercise-11}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2039 ...n{inlineexercise}{WebWork.}{exercise-12}
+l.2036 ...n{inlineexercise}{WebWork.}{exercise-12}
                                                   % [28]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.8}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.2115 ...e}{Correlation equaling 0.}{exercise-13}
+l.2112 ...e}{Correlation equaling 0.}{exercise-13}
                                                   %
 ************************************************
 Section 2.4 Higher Degree Linear Regression
@@ -1761,15 +1761,15 @@ Section 2.4 Higher Degree Linear Regression
 .1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2261 ...ar Regression Interpolant.}{exercise-14}
+l.2258 ...ar Regression Interpolant.}{exercise-14}
                                                   %
 LaTeX Font Info:    Font shape `TS1/zi4/m/n' will be
-(Font)              scaled to size 10.0pt on input line 2267.
+(Font)              scaled to size 10.0pt on input line 2264.
  [31]pdfTeX warning (ext4): destination with the same identifier (name{cthm.2})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2299 ...n{inlineexercise}{WebWork.}{exercise-15}
+l.2296 ...n{inlineexercise}{WebWork.}{exercise-15}
                                                   %
 ************************************************
 Section 2.5 Multi-variable Linear Regression
@@ -1778,7 +1778,7 @@ Section 2.5 Multi-variable Linear Regression
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2424 ...://www.wpc.ncep.noaa.gov/html/heatindex_
+l.2421 ...://www.wpc.ncep.noaa.gov/html/heatindex_
                                                   equation.shtml .%
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1786,13 +1786,13 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2425 \par
+l.2422 \par
            
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (10.18016pt too wide) in paragraph at lines 2423--2425
+Overfull \hbox (10.18016pt too wide) in paragraph at lines 2420--2422
 \T1/cmr/m/n/10 are avail-able at https://www.wpc.ncep.noaa.gov/html/heatindex$[
 ]\OML/cmm/m/it/10 quation:shtml:$ 
  []
@@ -1813,7 +1813,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2486 ...ting out all possibilities.}{example-13}
+l.2483 ...ting out all possibilities.}{example-13}
                                                   % [35
 
 ]
@@ -1824,49 +1824,49 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2535 ...definition}{Cardinality.}{definition-18}
+l.2532 ...definition}{Cardinality.}{definition-18}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2545 ...n Principle.}{}{MultiplicationPrinciple}
+l.2542 ...n Principle.}{}{MultiplicationPrinciple}
                                                   % [36]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.3}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.2569 ...n{inlineexercise}{WebWork.}{exercise-16}
+l.2566 ...n{inlineexercise}{WebWork.}{exercise-16}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2588 ...n{inlineexercise}{WebWork.}{exercise-17}
+l.2585 ...n{inlineexercise}{WebWork.}{exercise-17}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2610 \begin{definition}{Factorial.}{Factorial}
+l.2607 \begin{definition}{Factorial.}{Factorial}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{cthm.6}) has been already used, duplicate i
 gnored
 <to be read again> 
                    \relax 
-l.2621 ...xample}{iPad security code.}{example-14}
+l.2618 ...xample}{iPad security code.}{example-14}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2642 ...y code with greasy fingers.}{example-15}
+l.2639 ...y code with greasy fingers.}{example-15}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.8}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2652 ...example}{National Treasure.}{example-16}
+l.2649 ...example}{National Treasure.}{example-16}
                                                   % [37]
 ************************************************
 Section 3.3 Permutations
@@ -1875,62 +1875,62 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2711 ...ermutations of everything.}{}{theorem-6}
+l.2708 ...ermutations of everything.}{}{theorem-6}
                                                   % [38]
-<images/PermutationSmall.png, id=1359, 712.6625pt x 640.3925pt>
+<images/PermutationSmall.png, id=1363, 712.6625pt x 640.3925pt>
 File: images/PermutationSmall.png Graphic file (type png)
 <use images/PermutationSmall.png>
-Package pdftex.def Info: images/PermutationSmall.png  used on input line 2729.
+Package pdftex.def Info: images/PermutationSmall.png  used on input line 2726.
 (pdftex.def)             Requested size: 340.0pt x 305.51852pt.
-<images/PermutationAllTree.png, id=1360, 386.44376pt x 780.9175pt>
+<images/PermutationAllTree.png, id=1364, 386.44376pt x 780.9175pt>
 File: images/PermutationAllTree.png Graphic file (type png)
 <use images/PermutationAllTree.png>
-Package pdftex.def Info: images/PermutationAllTree.png  used on input line 2748
+Package pdftex.def Info: images/PermutationAllTree.png  used on input line 2745
 .
 (pdftex.def)             Requested size: 340.0pt x 687.06653pt.
 
 
-LaTeX Warning: Float too large for page by 36.63654pt on input line 2749.
+LaTeX Warning: Float too large for page by 36.63654pt on input line 2746.
 
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2752 ...tationWithoutReplacementDistinguishable}
+l.2749 ...tationWithoutReplacementDistinguishable}
                                                   % [39 <./images/PermutationSm
 all.png>] [40 <./images/PermutationAllTree.png>]
-<images/PermutationSubTree.png, id=1384, 279.0425pt x 783.92876pt>
+<images/PermutationSubTree.png, id=1388, 279.0425pt x 783.92876pt>
 File: images/PermutationSubTree.png Graphic file (type png)
 <use images/PermutationSubTree.png>
-Package pdftex.def Info: images/PermutationSubTree.png  used on input line 2774
+Package pdftex.def Info: images/PermutationSubTree.png  used on input line 2771
 .
 (pdftex.def)             Requested size: 340.0pt x 955.20749pt.
 
 
-LaTeX Warning: Float too large for page by 304.7775pt on input line 2775.
+LaTeX Warning: Float too large for page by 304.7775pt on input line 2772.
 
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2778 ...n{inlineexercise}{WebWork.}{exercise-18}
+l.2775 ...n{inlineexercise}{WebWork.}{exercise-18}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2809 ...rmutationWithReplacementDistinguishable}
+l.2806 ...rmutationWithReplacementDistinguishable}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2828 ...efficients).}{}{MultinomialCoefficients}
+l.2825 ...efficients).}{}{MultinomialCoefficients}
                                                   %
 ! Missing delimiter (. inserted).
 <to be read again> 
                    {
-l.2840 \left {
+l.2837 \left {
                x_{1,1}, ..., x_{1,n_1}, x_{2,1}, ..., x_{2,n_2}, ... , x_{s,...
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1942,7 +1942,7 @@ nonnegative, or you can use `\delimiter <delimiter code>'.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.2840 ...}, ... , x_{s,1}, ..., x_{s,n_2}, \right
+l.2837 ...}, ... , x_{s,1}, ..., x_{s,n_2}, \right
                                                    }
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1953,7 +1953,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing delimiter (. inserted).
 <to be read again> 
                    }
-l.2840 ... ... , x_{s,1}, ..., x_{s,n_2}, \right }
+l.2837 ... ... , x_{s,1}, ..., x_{s,n_2}, \right }
                                                   
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1965,7 +1965,7 @@ nonnegative, or you can use `\delimiter <delimiter code>'.
 ! Extra }, or forgotten $.
 <recently read> }
                  
-l.2840 ... ... , x_{s,1}, ..., x_{s,n_2}, \right }
+l.2837 ... ... , x_{s,1}, ..., x_{s,n_2}, \right }
                                                   
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1974,7 +1974,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.2842 ... \(n_1! \times n_2! \times ... \times \n
+l.2839 ... \(n_1! \times n_2! \times ... \times \n
                                                   _s!\) ways to arrange all ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1986,7 +1986,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.6}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2847 ...n{inlineexercise}{WebWork.}{exercise-19}
+l.2844 ...n{inlineexercise}{WebWork.}{exercise-19}
                                                   % [41] [42 <./images/Permutat
 ionSubTree.png>]
 ************************************************
@@ -1996,48 +1996,48 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2918 ...nationWithoutReplacementDistinguishable}
+l.2915 ...nationWithoutReplacementDistinguishable}
                                                   %
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 2924.
+(amsmath)                 on input line 2921.
 
 [43]pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) 
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.2937 ...mbinationWithReplacementDistinguishable}
+l.2934 ...mbinationWithReplacementDistinguishable}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2956 ...n{inlineexercise}{WebWork.}{exercise-20}
+l.2953 ...n{inlineexercise}{WebWork.}{exercise-20}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.2972 ...n{inlineexercise}{WebWork.}{exercise-21}
+l.2969 ...n{inlineexercise}{WebWork.}{exercise-21}
                                                   % [44]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.5}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.2995 \begin{example}{Ipad Security.}{example-17}
+l.2992 \begin{example}{Ipad Security.}{example-17}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.3017 ...ial Coefficients.}{BinomialCoefficients}
+l.3014 ...ial Coefficients.}{BinomialCoefficients}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.3041 ...ial Coefficient Formulas.}{}{theorem-12}
+l.3038 ...ial Coefficient Formulas.}{}{theorem-12}
                                                   % [45]
 ************************************************
 Section 3.5 Summary
@@ -2063,7 +2063,7 @@ Section 4.2 Relative Frequency
 (name{cthm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3334 ...tive relative frequency.}{definition-21}
+l.3331 ...tive relative frequency.}{definition-21}
                                                   %
 ************************************************
 Section 4.3 Definition of Probability
@@ -2072,79 +2072,79 @@ Section 4.3 Definition of Probability
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3390 ...e Disjoint Sets.}{DefnMutuallyExclusive}
+l.3387 ...e Disjoint Sets.}{DefnMutuallyExclusive}
                                                   % [54]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.2}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.3489 \begin{definition}{Probability.}{DefnProb}
+l.3486 \begin{definition}{Probability.}{DefnProb}
                                                  % [55]pdfTeX warning (ext4): d
 estination with the same identifier (name{cthm.3}) has been already used, dupli
 cate ignored
 <to be read again> 
                    \relax 
-l.3505 \begin{inlineexercise}{}{exercise-22}
+l.3502 \begin{inlineexercise}{}{exercise-22}
                                             %pdfTeX warning (ext4): destination
  with the same identifier (name{cthm.4}) has been already used, duplicate ignor
 ed
 <to be read again> 
                    \relax 
-l.3550 ... Complements.}{}{ProbabilityComplements}
+l.3547 ... Complements.}{}{ProbabilityComplements}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.3567 \begin{theorem}{}{}{ProbabilityEmptySet}
+l.3564 \begin{theorem}{}{}{ProbabilityEmptySet}
                                                %pdfTeX warning (ext4): destinat
 ion with the same identifier (name{cthm.6}) has been already used, duplicate ig
 nored
 <to be read again> 
                    \relax 
-l.3582 \begin{theorem}{}{}{ProbabilityContainment}
+l.3579 \begin{theorem}{}{}{ProbabilityContainment}
                                                   % [56]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.7}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.3605 \begin{theorem}{}{}{ProbabilityLessThanOne}
+l.3602 \begin{theorem}{}{}{ProbabilityLessThanOne}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.8}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.3614 \begin{theorem}{}{}{ProbabilityTwoUnions}
+l.3611 \begin{theorem}{}{}{ProbabilityTwoUnions}
                                                 %pdfTeX warning (ext4): destina
 tion with the same identifier (name{cthm.9}) has been already used, duplicate i
 gnored
 <to be read again> 
                    \relax 
-l.3643 ...n{corollary}{}{}{ProbabilityThreeUnions}
+l.3640 ...n{corollary}{}{}{ProbabilityThreeUnions}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.10}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.3656 ...in{corollary}{}{}{ProbabilityFourUnions}
+l.3653 ...in{corollary}{}{}{ProbabilityFourUnions}
                                                   % [57]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.11}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.3681 ...of Equally Likely Events.}{}{theorem-18}
+l.3678 ...of Equally Likely Events.}{}{theorem-18}
                                                   % [58]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.12}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.3757 ...n{inlineexercise}{WebWork.}{exercise-23}
+l.3754 ...n{inlineexercise}{WebWork.}{exercise-23}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.13}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.3792 ...n{inlineexercise}{WebWork.}{exercise-24}
+l.3789 ...n{inlineexercise}{WebWork.}{exercise-24}
                                                   %
 ************************************************
 Section 4.4 Exercises
@@ -2153,7 +2153,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3817 \begin{inlineexercise}{Poker.}{exercise-25}
+l.3814 \begin{inlineexercise}{Poker.}{exercise-25}
                                                   %
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2161,15 +2161,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3835 \begin{inlineexercise}{Dice.}{exercise-26}
+l.3832 \begin{inlineexercise}{Dice.}{exercise-26}
                                                  %pdfTeX warning (ext4): destin
 ation with the same identifier (name{cthm.3}) has been already used, duplicate 
 ignored
 <to be read again> 
                    \relax 
-l.3846 ...inlineexercise}{Skew Dice.}{exercise-27}
+l.3843 ...inlineexercise}{Skew Dice.}{exercise-27}
                                                   %
-Overfull \hbox (52.21925pt too wide) detected at line 3856
+Overfull \hbox (52.21925pt too wide) detected at line 3853
 \OML/cmm/m/it/10 S \OT1/cmr/m/n/10 = []
  []
 
@@ -2177,23 +2177,23 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3862 \begin{inlineexercise}{Craps.}{exercise-28}
+l.3859 \begin{inlineexercise}{Craps.}{exercise-28}
                                                   %
 ************************************************
 Section 4.5 Conditional Probability
 ************************************************
 [60] [61]
-Overfull \hbox (52.9039pt too wide) in paragraph at lines 3935--3936
+Overfull \hbox (52.9039pt too wide) in paragraph at lines 3932--3933
 [][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (8.10324pt too wide) in paragraph at lines 3958--3960
+Overfull \hbox (8.10324pt too wide) in paragraph at lines 3955--3957
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [62]
-Overfull \hbox (25.90363pt too wide) in paragraph at lines 3989--3991
+Overfull \hbox (25.90363pt too wide) in paragraph at lines 3986--3988
 [][][][][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -2201,25 +2201,25 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4013 ...Conditional Probability.}{definition-24}
+l.4010 ...Conditional Probability.}{definition-24}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4027 \begin{theorem}{}{}{theorem-19}
+l.4024 \begin{theorem}{}{}{theorem-19}
                                       % [63]pdfTeX warning (ext4): destination 
 with the same identifier (name{cthm.3}) has been already used, duplicate ignore
 d
 <to be read again> 
                    \relax 
-l.4060 ...rem}{Multiplication Rule.}{}{theorem-20}
+l.4057 ...rem}{Multiplication Rule.}{}{theorem-20}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4075 ...n{inlineexercise}{WebWork.}{exercise-29}
+l.4072 ...n{inlineexercise}{WebWork.}{exercise-29}
                                                   %
 ************************************************
 Section 4.6 Bayes Theorem
@@ -2228,26 +2228,26 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4107 ...n{theorem}{Bayes Theorem.}{}{theorem-21}
+l.4104 ...n{theorem}{Bayes Theorem.}{}{theorem-21}
                                                   % [64] [65]pdfTeX warning (ex
 t4): destination with the same identifier (name{cthm.2}) has been already used,
  duplicate ignored
 <to be read again> 
                    \relax 
-l.4173 ...n{inlineexercise}{WebWork.}{exercise-30}
+l.4170 ...n{inlineexercise}{WebWork.}{exercise-30}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4186 ...n{inlineexercise}{WebWork.}{exercise-31}
+l.4183 ...n{inlineexercise}{WebWork.}{exercise-31}
                                                   % [66]
-Overfull \hbox (24.3034pt too wide) in paragraph at lines 4229--4230
+Overfull \hbox (24.3034pt too wide) in paragraph at lines 4226--4227
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (47.50385pt too wide) in paragraph at lines 4230--4231
+Overfull \hbox (47.50385pt too wide) in paragraph at lines 4227--4228
 [][][][][][][][][][][][][][][][][] 
  []
 
@@ -2255,27 +2255,27 @@ Overfull \hbox (47.50385pt too wide) in paragraph at lines 4230--4231
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [67]
-Overfull \hbox (29.70346pt too wide) in paragraph at lines 4274--4275
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 4271--4272
 [][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (29.70346pt too wide) in paragraph at lines 4277--4279
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 4274--4276
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (62.10379pt too wide) in paragraph at lines 4288--4289
+Overfull \hbox (62.10379pt too wide) in paragraph at lines 4285--4286
 [][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (13.5033pt too wide) in paragraph at lines 4289--4291
+Overfull \hbox (13.5033pt too wide) in paragraph at lines 4286--4288
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (18.90335pt too wide) in paragraph at lines 4302--4303
+Overfull \hbox (18.90335pt too wide) in paragraph at lines 4299--4300
 [][][][][][][][][][][][][]  
  []
 
@@ -2283,12 +2283,12 @@ Overfull \hbox (18.90335pt too wide) in paragraph at lines 4302--4303
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [68]
-Overfull \hbox (126.90445pt too wide) in paragraph at lines 4303--4305
+Overfull \hbox (126.90445pt too wide) in paragraph at lines 4300--4302
 [][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (40.50357pt too wide) in paragraph at lines 4307--4309
+Overfull \hbox (40.50357pt too wide) in paragraph at lines 4304--4306
 [][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -2296,7 +2296,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4322 ...cise}{Insured vs Accident.}{exercise-32}
+l.4319 ...cise}{Insured vs Accident.}{exercise-32}
                                                   %
 Underfull \vbox (badness 3098) has occurred while \output is active []
 
@@ -2304,7 +2304,7 @@ Underfull \vbox (badness 3098) has occurred while \output is active []
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4352 ...rcise}{Spinal bifida odds.}{exercise-33}
+l.4349 ...rcise}{Spinal bifida odds.}{exercise-33}
                                                   %
 ************************************************
 Section 4.7 Independence
@@ -2313,31 +2313,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4381 ...ependent Events.}{DefnIndependentEvents}
+l.4378 ...ependent Events.}{DefnIndependentEvents}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4392 ...Conditional Probability.}{}{corollary-3}
+l.4389 ...Conditional Probability.}{}{corollary-3}
                                                   % [70]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.3}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.4415 ...n{inlineexercise}{WebWork.}{exercise-34}
+l.4412 ...n{inlineexercise}{WebWork.}{exercise-34}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4449 ... and Mutual Exclusivity.}{}{corollary-4}
+l.4446 ... and Mutual Exclusivity.}{}{corollary-4}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4464 ...sive Independent Events.}{}{corollary-5}
+l.4461 ...sive Independent Events.}{}{corollary-5}
                                                   %
 ************************************************
 Section 4.8 Summary
@@ -2349,31 +2349,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4490 ...itional Basic computation.}{exercise-35}
+l.4487 ...itional Basic computation.}{exercise-35}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4504 ...ender vs University Major.}{exercise-36}
+l.4501 ...ender vs University Major.}{exercise-36}
                                                   % [71]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.4}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.4530 ...rcise}{Mean Tough Teacher.}{exercise-37}
+l.4527 ...rcise}{Mean Tough Teacher.}{exercise-37}
                                                   %
-Overfull \hbox (52.62314pt too wide) detected at line 4550
+Overfull \hbox (52.62314pt too wide) detected at line 4547
 []
  []
 
 
-Overfull \hbox (11.35979pt too wide) detected at line 4561
+Overfull \hbox (11.35979pt too wide) detected at line 4558
 []
  []
 
 
-Overfull \hbox (41.01474pt too wide) detected at line 4565
+Overfull \hbox (41.01474pt too wide) detected at line 4562
 []
  []
 
@@ -2384,55 +2384,55 @@ Underfull \vbox (badness 1087) has occurred while \output is active []
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4586 ...xercise}{Shared Birthdays.}{exercise-38}
+l.4583 ...xercise}{Shared Birthdays.}{exercise-38}
                                                   % [73]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.6}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.4638 ...e}{Internet meme solution.}{exercise-39}
+l.4635 ...e}{Internet meme solution.}{exercise-39}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4652 ...with boarding pass issues.}{exercise-40}
+l.4649 ...with boarding pass issues.}{exercise-40}
                                                   % [74]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.8}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.4691 ...Independence Calculations.}{exercise-41}
+l.4688 ...Independence Calculations.}{exercise-41}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.9}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4714 ...d events and Independence.}{exercise-42}
+l.4711 ...d events and Independence.}{exercise-42}
                                                   % [75]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.10}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.4739 ...se}{Rolling multiple dice.}{exercise-43}
+l.4736 ...se}{Rolling multiple dice.}{exercise-43}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.11}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.4767 ...nlineexercise}{Redundancy.}{exercise-44}
+l.4764 ...nlineexercise}{Redundancy.}{exercise-44}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.12}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.4780 ...cise}{Internet Meme redux.}{exercise-45}
+l.4777 ...cise}{Internet Meme redux.}{exercise-45}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.13}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.4791 ...gle Elimination Tounament.}{exercise-46}
+l.4788 ...gle Elimination Tounament.}{exercise-46}
                                                   % [76]
 ************************************************
 Chapter 5 Probability Functions
@@ -2451,36 +2451,36 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4848 ...nition}{Random Variable.}{definition-26}
+l.4845 ...nition}{Random Variable.}{definition-26}
                                                   %
-<images/randomvariable.png, id=2457, 322.20375pt x 162.6075pt>
+<images/randomvariable.png, id=2461, 322.20375pt x 162.6075pt>
 File: images/randomvariable.png Graphic file (type png)
 <use images/randomvariable.png>
-Package pdftex.def Info: images/randomvariable.png  used on input line 4861.
+Package pdftex.def Info: images/randomvariable.png  used on input line 4858.
 (pdftex.def)             Requested size: 340.0pt x 171.59644pt.
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4866 ...xample}{Success vs Failure.}{example-18}
+l.4863 ...xample}{Success vs Failure.}{example-18}
                                                   % [79]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.3}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.4882 ...ample}{Standard Dice Pairs.}{example-19}
+l.4879 ...ample}{Standard Dice Pairs.}{example-19}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4897 ...xample}{Other Dice Options.}{example-20}
+l.4894 ...xample}{Other Dice Options.}{example-20}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4912 ...le and Uncountable Sets.}{definition-27}
+l.4909 ...le and Uncountable Sets.}{definition-27}
                                                   %
 ************************************************
 Section 5.3 Probability Functions
@@ -2489,46 +2489,46 @@ Section 5.3 Probability Functions
 ame identifier (name{cthm.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4931 ...ability "Mass" Function.}{definition-28}
+l.4928 ...ability "Mass" Function.}{definition-28}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4944 ...lity "Density" Function.}{definition-29}
+l.4941 ...lity "Density" Function.}{definition-29}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.4960 ...crete Probability Function.}{example-21}
+l.4957 ...crete Probability Function.}{example-21}
                                                   %
-Overfull \hbox (132.3045pt too wide) in paragraph at lines 4976--4977
+Overfull \hbox (132.3045pt too wide) in paragraph at lines 4973--4974
 [][][][][][][][] 
  []
 
 [81]
-Overfull \hbox (2.70319pt too wide) in paragraph at lines 4992--4993
+Overfull \hbox (2.70319pt too wide) in paragraph at lines 4989--4990
 [][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (40.50357pt too wide) in paragraph at lines 4997--4999
+Overfull \hbox (40.50357pt too wide) in paragraph at lines 4994--4996
 [][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
 LaTeX Font Warning: Font shape `TS1/zi4/m/it' undefined
 (Font)              using `TS1/zi4/m/n' instead
-(Font)              for symbol `textquotesingle' on input line 5007.
+(Font)              for symbol `textquotesingle' on input line 5004.
 
 
-Overfull \hbox (13.5033pt too wide) in paragraph at lines 5024--5025
+Overfull \hbox (13.5033pt too wide) in paragraph at lines 5021--5022
 [][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (186.30505pt too wide) in paragraph at lines 5025--5026
+Overfull \hbox (186.30505pt too wide) in paragraph at lines 5022--5023
 [][][][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -2536,7 +2536,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5031 ...nuous Probability Function.}{example-22}
+l.5028 ...nuous Probability Function.}{example-22}
                                                   %
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -2544,47 +2544,47 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5046 ...}{Distribution Function.}{definition-30}
+l.5043 ...}{Distribution Function.}{definition-30}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5057 ...rete Distribution Function.}{example-23}
+l.5054 ...rete Distribution Function.}{example-23}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.8}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5076 ...uous Distribution Function.}{example-24}
+l.5073 ...uous Distribution Function.}{example-24}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.10}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.5097 \begin{theorem}{}{}{theorem-Fmin}
+l.5094 \begin{theorem}{}{}{theorem-Fmin}
                                         %pdfTeX warning (ext4): destination wit
 h the same identifier (name{cthm.11}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5112 \begin{theorem}{}{}{theorem-Fmax}
+l.5109 \begin{theorem}{}{}{theorem-Fmax}
                                         % [83]pdfTeX warning (ext4): destinatio
 n with the same identifier (name{cthm.12}) has been already used, duplicate ign
 ored
 <to be read again> 
                    \relax 
-l.5127 \begin{theorem}{}{}{theorem-24}
+l.5124 \begin{theorem}{}{}{theorem-24}
                                       %pdfTeX warning (ext4): destination with 
 the same identifier (name{cthm.13}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5156 ...probabilities.}{}{theorem-Fvsf-discrete}
+l.5153 ...probabilities.}{}{theorem-Fvsf-discrete}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.14}) has been already used, duplicat
 e ignored
 <to be read again> 
                    \relax 
-l.5171 ...babilities.}{}{theorem-Fvsf-continuyous}
+l.5168 ...babilities.}{}{theorem-Fvsf-continuyous}
                                                   % [84] [85]
 ************************************************
 Section 5.4 Expected Value
@@ -2593,72 +2593,72 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5286 ...inition}{Expected Value.}{definition-32}
+l.5283 ...inition}{Expected Value.}{definition-32}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5301 ...lue is a Linear Operator.}{}{theorem-28}
+l.5298 ...lue is a Linear Operator.}{}{theorem-28}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5324 ...e}{Discrete Expected Value.}{example-27}
+l.5321 ...e}{Discrete Expected Value.}{example-27}
                                                   % [86]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.4}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.5339 ...s Expected Value.}{ContinuousEV-example}
+l.5336 ...s Expected Value.}{ContinuousEV-example}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5350 ...oretical Measures.}{TheoreticalMeasures}
+l.5347 ...oretical Measures.}{TheoreticalMeasures}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5364 ...sures.}{}{TheoreticalMeasuresAlternates}
+l.5361 ...sures.}{}{TheoreticalMeasuresAlternates}
                                                   %
-<images/DiscreteHistogramExample.png, id=2642, 399.4925pt x 354.32375pt>
+<images/DiscreteHistogramExample.png, id=2646, 399.4925pt x 354.32375pt>
 File: images/DiscreteHistogramExample.png Graphic file (type png)
 <use images/DiscreteHistogramExample.png>
 Package pdftex.def Info: images/DiscreteHistogramExample.png  used on input lin
-e 5394.
+e 5391.
 (pdftex.def)             Requested size: 340.0pt x 301.57127pt.
  [87]
-Overfull \hbox (78.9008pt too wide) detected at line 5425
+Overfull \hbox (78.9008pt too wide) detected at line 5422
 []
  []
 
 
-Overfull \hbox (160.09514pt too wide) detected at line 5436
+Overfull \hbox (160.09514pt too wide) detected at line 5433
 []
  []
 
 [88 <./images/DiscreteHistogramExample.png>]
-<images/ContinuousDistributionExample.png, id=2682, 566.5968pt x 422.0568pt>
+<images/ContinuousDistributionExample.png, id=2686, 566.5968pt x 422.0568pt>
 File: images/ContinuousDistributionExample.png Graphic file (type png)
 <use images/ContinuousDistributionExample.png>
 Package pdftex.def Info: images/ContinuousDistributionExample.png  used on inpu
-t line 5440.
+t line 5437.
 (pdftex.def)             Requested size: 340.0pt x 253.26178pt.
  [89 <./images/ContinuousDistributionExample.png>]pdfTeX warning (ext4): destin
 ation with the same identifier (name{cthm.8}) has been already used, duplicate 
 ignored
 <to be read again> 
                    \relax 
-l.5493 \begin{example}{}{example-29}
+l.5490 \begin{example}{}{example-29}
                                     %
 ! Missing delimiter (. inserted).
 <to be read again> 
                    \let 
-l.5506 \end{align*}
+l.5503 \end{align*}
                    
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -2670,7 +2670,7 @@ nonnegative, or you can use `\delimiter <delimiter code>'.
 ! Missing delimiter (. inserted).
 <to be read again> 
                    \let 
-l.5506 \end{align*}
+l.5503 \end{align*}
                    
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -2683,13 +2683,13 @@ nonnegative, or you can use `\delimiter <delimiter code>'.
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5538 \begin{example}{Roulette.}{example-30}
+l.5535 \begin{example}{Roulette.}{example-30}
                                              %
-<images/6-1-American-Roulette-1024x463.png, id=2708, 1027.84pt x 464.73625pt>
+<images/6-1-American-Roulette-1024x463.png, id=2712, 1027.84pt x 464.73625pt>
 File: images/6-1-American-Roulette-1024x463.png Graphic file (type png)
 <use images/6-1-American-Roulette-1024x463.png>
 Package pdftex.def Info: images/6-1-American-Roulette-1024x463.png  used on inp
-ut line 5543.
+ut line 5540.
 (pdftex.def)             Requested size: 340.6pt x 154.00165pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2703,7 +2703,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5629 \begin{example}{}{example-31}
+l.5626 \begin{example}{}{example-31}
                                     %
 ************************************************
 Section 5.6 Summary
@@ -2715,35 +2715,35 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5654 ...g A Fixed Number of Coins.}{exercise-47}
+l.5651 ...g A Fixed Number of Coins.}{exercise-47}
                                                   % [93]
 
 Package tcolorbox Warning: Using nobreak failed. Try to enlarge `lines before b
-reak' or set page breaks manually on input line 5657.
+reak' or set page breaks manually on input line 5654.
 
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5658 \begin{inlineexercise}{Later.}{exercise-48}
+l.5655 \begin{inlineexercise}{Later.}{exercise-48}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5662 ...ing Fixed Number of Coins.}{exercise-49}
+l.5659 ...ing Fixed Number of Coins.}{exercise-49}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5666 ...ipping Coins till success.}{exercise-50}
+l.5663 ...ipping Coins till success.}{exercise-50}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5670 ...e}{Time between Accidents.}{exercise-51}
+l.5667 ...e}{Time between Accidents.}{exercise-51}
                                                   %
 ************************************************
 Chapter 6 Distributions based upon Equally likely Outcomes
@@ -2756,7 +2756,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5680 \chapter
+l.5677 \chapter
                [{Distributions based upon Equally likely Outcomes}]{Distribu...
 
 You've lost some text.  Try typing  <return>  to proceed.
@@ -2773,14 +2773,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5710 ...ete Uniform Distribution.}{}{theorem-30}
+l.5707 ...ete Uniform Distribution.}{}{theorem-30}
                                                   % [95
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5747 ...orm Probability Function.}{}{theorem-31}
+l.5744 ...orm Probability Function.}{}{theorem-31}
                                                   %
 Overfull \hbox (38.28177pt too wide) has occurred while \output is active
 \T1/cmr/m/n/10 96 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
@@ -2791,7 +2791,7 @@ LIKELY OUTCOMES
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5824 ...n{example}{Rolling one die.}{example-32}
+l.5821 ...n{example}{Rolling one die.}{example-32}
                                                   %
 ************************************************
 Section 6.3 Continuous Uniform Distribution
@@ -2800,12 +2800,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5843 \begin{theorem}{}{}{theorem-32}
+l.5840 \begin{theorem}{}{}{theorem-32}
                                       % [97]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.5863 which yields c = \frac{1}{b-a}
+l.5860 which yields c = \frac{1}{b-a}
                                       as desired.%
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2813,7 +2813,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 \frac  #1#2->{\begingroup #1\endgroup \@@over #2}
                                                  
-l.5863 which yields c = \frac{1}{b-a}
+l.5860 which yields c = \frac{1}{b-a}
                                       as desired.%
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2828,7 +2828,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5864 \end{proof}
+l.5861 \end{proof}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2840,7 +2840,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5864 \end{proof}
+l.5861 \end{proof}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2852,7 +2852,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5864 \end{proof}
+l.5861 \end{proof}
                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2860,7 +2860,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.5864 \end{proof}
+l.5861 \end{proof}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2871,7 +2871,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.5864 \end{proof}
+l.5861 \end{proof}
                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -2883,19 +2883,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5868 ...}{Basic Continuous Uniform.}{example-33}
+l.5865 ...}{Basic Continuous Uniform.}{example-33}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5883 ...ver two disjoint intervals.}{example-34}
+l.5880 ...ver two disjoint intervals.}{example-34}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5894 ...orm Probability Function.}{}{theorem-33}
+l.5891 ...orm Probability Function.}{}{theorem-33}
                                                   %
 Overfull \hbox (38.28177pt too wide) has occurred while \output is active
 \T1/cmr/m/n/10 98 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY 
@@ -2906,13 +2906,13 @@ LIKELY OUTCOMES
 has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5942 ...ndomly in a given interval.}{example-35}
+l.5939 ...ndomly in a given interval.}{example-35}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.5952 ...n for Continuous Uniform.}{}{theorem-34}
+l.5949 ...n for Continuous Uniform.}{}{theorem-34}
                                                   %
 ************************************************
 Section 6.4 Hypergeometric Distribution
@@ -2921,13 +2921,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.5979 ...ric Probability Function.}{}{theorem-35}
+l.5976 ...ric Probability Function.}{}{theorem-35}
                                                   % [99]pdfTeX warning (ext4): 
 destination with the same identifier (name{cthm.2}) has been already used, dupl
 icate ignored
 <to be read again> 
                    \relax 
-l.6001 ...ergeometric Distribution.}{}{theorem-36}
+l.5998 ...ergeometric Distribution.}{}{theorem-36}
                                                   %
 Overfull \hbox (43.28055pt too wide) has occurred while \output is active
 \T1/cmr/m/n/10 100 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY
@@ -2943,7 +2943,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6056 ...formula is similar and uses E(X(X-1)+ μ
+l.6053 ...formula is similar and uses E(X(X-1)+ μ
                                                    - μ2. The proof of skewn...
 
 You may provide a definition with
@@ -2957,7 +2957,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6056 ...la is similar and uses E(X(X-1)+ μ - μ
+l.6053 ...la is similar and uses E(X(X-1)+ μ - μ
                                                   2. The proof of skewness a...
 
 You may provide a definition with
@@ -2974,25 +2974,25 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.6128 ...he Proverbial Urn Problem.}{exercise-52}
+l.6125 ...he Proverbial Urn Problem.}{exercise-52}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.6141 ...exercise}{- Playing Cards.}{exercise-53}
+l.6138 ...exercise}{- Playing Cards.}{exercise-53}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.6153 ...rcise}{- Starting Seniors.}{exercise-54}
+l.6150 ...rcise}{- Starting Seniors.}{exercise-54}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.6167 ...eexercise}{- Old Faithful.}{exercise-55}
+l.6164 ...eexercise}{- Old Faithful.}{exercise-55}
                                                   %
 Overfull \hbox (43.28055pt too wide) has occurred while \output is active
 \T1/cmr/m/n/10 102 \T1/cmr/m/sl/10 CHAPTER 6.  DISTRIBUTIONS BASED UPON EQUALLY
@@ -3003,21 +3003,21 @@ Overfull \hbox (43.28055pt too wide) has occurred while \output is active
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.6174 ...Random Variable Scenarios.}{exercise-56}
+l.6171 ...Random Variable Scenarios.}{exercise-56}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.6187 ...form on a different space.}{exercise-57}
+l.6184 ...form on a different space.}{exercise-57}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.6224 ...ana Mega Millions Lottery.}{exercise-58}
+l.6221 ...ana Mega Millions Lottery.}{exercise-58}
                                                   %
-Underfull \hbox (badness 10000) in paragraph at lines 6231--6232
+Underfull \hbox (badness 10000) in paragraph at lines 6228--6229
 []\T1/cmr/m/n/10 Match 5 plus Mega ball = Jack-pot of
  []
 
@@ -3028,7 +3028,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6233 \item
+l.6230 \item
             {}Match 4 plus Mega ball = $5,000%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3040,7 +3040,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6233 \item{
+l.6230 \item{
              }Match 4 plus Mega ball = $5,000%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3052,7 +3052,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6233 \item{
+l.6230 \item{
              }Match 4 plus Mega ball = $5,000%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3064,7 +3064,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6235 \item
+l.6232 \item
             {}Match 3 plus Mega ball = $50%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3076,7 +3076,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6235 \item{
+l.6232 \item{
              }Match 3 plus Mega ball = $50%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3088,7 +3088,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6235 \item{
+l.6232 \item{
              }Match 3 plus Mega ball = $50%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3100,7 +3100,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6237 \item
+l.6234 \item
             {}Match 2 plus Mega ball = $5%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3112,7 +3112,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6237 \item{
+l.6234 \item{
              }Match 2 plus Mega ball = $5%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3124,7 +3124,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6237 \item{
+l.6234 \item{
              }Match 2 plus Mega ball = $5%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3136,7 +3136,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6239 \item
+l.6236 \item
             {}Match only the Mega ball = $1%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3148,7 +3148,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6239 \item{
+l.6236 \item{
              }Match only the Mega ball = $1%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3160,7 +3160,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6239 \item{
+l.6236 \item{
              }Match only the Mega ball = $1%
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3168,46 +3168,46 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.6287 \par
+l.6284 \par
            
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6285--6287
+Underfull \hbox (badness 10000) in paragraph at lines 6282--6284
 \T1/cmr/m/n/10 So, the ex-pected pay-out is ap-prox-i-mately
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6285--6287
+Underfull \hbox (badness 10000) in paragraph at lines 6282--6284
 \T1/cmr/m/n/10 30 cents. Sub-tract-ing the cost of play-ing
  []
 
 
-Overfull \hbox (2.59837pt too wide) in paragraph at lines 6285--6287
+Overfull \hbox (2.59837pt too wide) in paragraph at lines 6282--6284
 \T1/cmr/m/n/10 ($\OT1/cmr/m/n/10 1)\OML/cmm/m/it/10 indicatesthattheaveragewinn
 ingsperplayoftheLouisianaLotterywouldbe \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (347.28316pt too wide) in paragraph at lines 6285--6287
+Overfull \hbox (347.28316pt too wide) in paragraph at lines 6282--6284
 \OT1/cmr/m/n/10 70\OML/cmm/m/it/10 cents:So; youwouldbebetterofftotake; say; \O
 T1/cmr/m/n/10 50\OML/cmm/m/it/10 centsandjustgiveittothelocalschoolsystemeveryt
 imeyouconsiderplayingthisgameratherthanactuallyplaying:$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6311--6313
+Underfull \hbox (badness 10000) in paragraph at lines 6308--6310
 \T1/cmr/m/n/10 Therefore, the ex-pect value of spend-ing an-other
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6311--6313
+Underfull \hbox (badness 10000) in paragraph at lines 6308--6310
 \T1/cmr/m/n/10 dol-lar to get the mul-ti-plier ef-fect is about -
  []
 
 
-Overfull \hbox (125.3504pt too wide) in paragraph at lines 6311--6313
+Overfull \hbox (125.3504pt too wide) in paragraph at lines 6308--6310
 \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 35\OML/cmm/m/it/10 :Sincethi
 sisslightlylessthandoublingtheexpectedlossof\OT1/cmr/m/n/10 70\OML/cmm/m/it/10 
 centsforplayingwithoutthemultiplierwith$\T1/cmr/m/n/10 1,
@@ -3240,7 +3240,7 @@ Section 7.2 Binomial Distribution
 [107
 
 ]
-Overfull \hbox (24.3034pt too wide) in paragraph at lines 6373--6374
+Overfull \hbox (24.3034pt too wide) in paragraph at lines 6370--6371
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -3248,21 +3248,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.6409 ....}{}{BinomialProbabilityFunctionTheorem}
+l.6406 ....}{}{BinomialProbabilityFunctionTheorem}
                                                   % [108]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.2}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.6429 ...ial Distribution Formula.}{}{theorem-38}
+l.6426 ...ial Distribution Formula.}{}{theorem-38}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.6467 ...tatistics.}{}{BinomialStatisticsTheorem}
+l.6464 ...tatistics.}{}{BinomialStatisticsTheorem}
                                                   % [109]
-Overfull \hbox (23.81306pt too wide) detected at line 6510
+Overfull \hbox (23.81306pt too wide) detected at line 6507
 []
  []
 
@@ -3273,37 +3273,37 @@ Section 7.3 Geometric Distribution
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.6580 ...}{}{GeometricProbabilityFunctionTheorem}
+l.6577 ...}{}{GeometricProbabilityFunctionTheorem}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.6599 ...c Distribution sums to 1.}{}{theorem-41}
+l.6596 ...c Distribution sums to 1.}{}{theorem-41}
                                                   % [111]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.6641 ...etric Statistics Theorem.}{}{theorem-42}
+l.6638 ...etric Statistics Theorem.}{}{theorem-42}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.6686 ...ic Distribution Function.}{}{theorem-43}
+l.6683 ...ic Distribution Function.}{}{theorem-43}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.6708 ...r Geometric Distribution.}{}{theorem-44}
+l.6705 ...r Geometric Distribution.}{}{theorem-44}
                                                   % [112]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.6}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.6741 ...elds a memoryless model..}{}{theorem-45}
+l.6738 ...elds a memoryless model..}{}{theorem-45}
                                                   %
 ************************************************
 Section 7.4 Negative Binomial
@@ -3312,21 +3312,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.6776 ...Negative Binomial Series.}{}{theorem-46}
+l.6773 ...Negative Binomial Series.}{}{theorem-46}
                                                   % [113]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.2}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.6820 ...ial Probability Function.}{}{theorem-47}
+l.6817 ...ial Probability Function.}{}{theorem-47}
                                                   % [114]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.6839 ...l Distribution Sums to 1.}{}{theorem-48}
+l.6836 ...l Distribution Sums to 1.}{}{theorem-48}
                                                   %
-Overfull \hbox (56.70374pt too wide) in paragraph at lines 6877--6878
+Overfull \hbox (56.70374pt too wide) in paragraph at lines 6874--6875
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -3334,7 +3334,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.6887 ...ve Binomial Distribution.}{}{theorem-49}
+l.6884 ...ve Binomial Distribution.}{}{theorem-49}
                                                   % [115] [116]
 ************************************************
 Section 7.5 Summary
@@ -3346,43 +3346,43 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7000 ...nsumer Confidence Polling.}{exercise-59}
+l.6997 ...nsumer Confidence Polling.}{exercise-59}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7022 ...eexercise}{- Rolling Dice.}{exercise-60}
+l.7019 ...eexercise}{- Rolling Dice.}{exercise-60}
                                                   % [117]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7053 ...llecting Kids Meal Prizes.}{exercise-61}
+l.7050 ...llecting Kids Meal Prizes.}{exercise-61}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7082 ...eexercise}{- Rolling Dice.}{exercise-62}
+l.7079 ...eexercise}{- Rolling Dice.}{exercise-62}
                                                   % [118]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.5}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7096 ...{- Rolling Dice yet again.}{exercise-63}
+l.7093 ...{- Rolling Dice yet again.}{exercise-63}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7110 ... deviations from the mean.}{exercise-64}
+l.7107 ... deviations from the mean.}{exercise-64}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7146 ...rcise}{Chapter Experiment.}{exercise-65}
+l.7143 ...rcise}{Chapter Experiment.}{exercise-65}
                                                   %
 ************************************************
 Chapter 8 Distributions based upon Poisson Processes
@@ -3398,7 +3398,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7169 ...nition}{Poisson Process.}{definition-34}
+l.7166 ...nition}{Poisson Process.}{definition-34}
                                                   %
 ************************************************
 Section 8.2 Poisson Distribution
@@ -3407,19 +3407,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7203 ...son Probability Function.}{}{theorem-50}
+l.7200 ...son Probability Function.}{}{theorem-50}
                                                   % [121]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.2}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7238 ...son Probability Function.}{}{theorem-51}
+l.7235 ...son Probability Function.}{}{theorem-51}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7260 ...}{Statistics for Poisson.}{}{theorem-52}
+l.7257 ...}{Statistics for Poisson.}{}{theorem-52}
                                                   % [122] [123]
 ************************************************
 Section 8.3 Exponential Distribution
@@ -3428,31 +3428,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7362 ...on Probability Function.}{definition-35}
+l.7359 ...on Probability Function.}{definition-35}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7373 ...ial Probability Function.}{}{theorem-53}
+l.7370 ...ial Probability Function.}{}{theorem-53}
                                                   % [124]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7394 ...Exponential Distribution.}{}{theorem-54}
+l.7391 ...Exponential Distribution.}{}{theorem-54}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7415 ...istribution and Plotting.}{}{theorem-55}
+l.7412 ...istribution and Plotting.}{}{theorem-55}
                                                   % [125]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.5}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7476 ...inuous memoryless model..}{}{theorem-56}
+l.7473 ...inuous memoryless model..}{}{theorem-56}
                                                   %
 ************************************************
 Section 8.4 Gamma Distribution
@@ -3461,33 +3461,33 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7508 ...inition}{Gamma Function.}{definition-36}
+l.7505 ...inition}{Gamma Function.}{definition-36}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7519 ...n on the natural numbers.}{}{theorem-57}
+l.7516 ...n on the natural numbers.}{}{theorem-57}
                                                   % [126]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7564 ...on Probability Function.}{definition-37}
+l.7561 ...on Probability Function.}{definition-37}
                                                   %
-Underfull \hbox (badness 10000) in paragraph at lines 7564--7567
+Underfull \hbox (badness 10000) in paragraph at lines 7561--7564
 [][]\T1/cmr/bx/n/10 Definition 8.4.3  Gamma Dis-tri-bu-tion Prob-a-bil-ity Func
 -
  []
 
 
-Underfull \hbox (badness 7558) in paragraph at lines 7564--7567
+Underfull \hbox (badness 7558) in paragraph at lines 7561--7564
 \T1/cmr/bx/n/10 tion. [][]\T1/cmr/m/n/10 If X mea-sures the in-ter-val un-til t
 he rth suc-cess and
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 7564--7567
+Underfull \hbox (badness 1472) in paragraph at lines 7561--7564
 \OML/cmm/m/it/10 ^^Vastheaverageintervaluntilthe\OT1/cmr/m/n/10 1\OML/cmm/m/it/
 10 stsuccess$\T1/cmr/m/n/10 , then X with prob-a-bil-ity func-
  []
@@ -3496,7 +3496,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.4}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7575 ...mma Probability function.}{}{theorem-58}
+l.7572 ...mma Probability function.}{}{theorem-58}
                                                   % [127]
 ************************************************
 Section 8.5 Summary
@@ -3508,31 +3508,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7681 ...ineexercise}{- Home Sales.}{exercise-66}
+l.7678 ...ineexercise}{- Home Sales.}{exercise-66}
                                                   % [128]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.2}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7695 ...Customer arrivals - Total.}{exercise-67}
+l.7692 ...Customer arrivals - Total.}{exercise-67}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7719 ...Customer arrivals - First.}{exercise-68}
+l.7716 ...Customer arrivals - First.}{exercise-68}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7741 ... Customer arrivals - 10th.}{exercise-69}
+l.7738 ... Customer arrivals - 10th.}{exercise-69}
                                                   % [129]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.5}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7763 ...uter Network Data Traffic.}{exercise-70}
+l.7760 ...uter Network Data Traffic.}{exercise-70}
                                                   %
 ************************************************
 Chapter 9 Normal Distributions
@@ -3549,31 +3549,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7830 ...The Normal Distribution.}{definition-38}
+l.7827 ...The Normal Distribution.}{definition-38}
                                                   %
-Overfull \hbox (110.70428pt too wide) in paragraph at lines 7849--7850
+Overfull \hbox (110.70428pt too wide) in paragraph at lines 7846--7847
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 [131
 
 ]
-Overfull \hbox (45.90363pt too wide) in paragraph at lines 7852--7853
+Overfull \hbox (45.90363pt too wide) in paragraph at lines 7849--7850
 [][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (13.5033pt too wide) in paragraph at lines 7854--7855
+Overfull \hbox (13.5033pt too wide) in paragraph at lines 7851--7852
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (13.5033pt too wide) in paragraph at lines 7855--7856
+Overfull \hbox (13.5033pt too wide) in paragraph at lines 7852--7853
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (58.30396pt too wide) in paragraph at lines 7856--7857
+Overfull \hbox (58.30396pt too wide) in paragraph at lines 7853--7854
 [][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -3581,46 +3581,46 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7861 \begin{theorem}{}{}{theorem-59}
+l.7858 \begin{theorem}{}{}{theorem-59}
                                       %pdfTeX warning (ext4): destination with 
 the same identifier (name{cthm.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7880 ...mal probability function.}{}{theorem-60}
+l.7877 ...mal probability function.}{}{theorem-60}
                                                   %
 
-Package hyperref Warning: Suppressing link with empty target on input line 7890
+Package hyperref Warning: Suppressing link with empty target on input line 7887
 .
 
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.4}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.7919 ... normal probability mean.}{}{theorem-61}
+l.7916 ... normal probability mean.}{}{theorem-61}
                                                   % [132]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.5}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7950 ...mal probability variance.}{}{theorem-62}
+l.7947 ...mal probability variance.}{}{theorem-62}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7974 ... the Normal Distribution.}{}{theorem-63}
+l.7971 ... the Normal Distribution.}{}{theorem-63}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.7979 ...mal Distribution Maximum.}{}{theorem-64}
+l.7976 ...mal Distribution Maximum.}{}{theorem-64}
                                                   % [133]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.8}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.7994 ...ion Points of Inflection.}{}{theorem-65}
+l.7991 ...ion Points of Inflection.}{}{theorem-65}
                                                   %
 ************************************************
 Section 9.3 Chi-Square Distribution
@@ -3629,19 +3629,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8044 ...re Probability Function.}{definition-39}
+l.8041 ...re Probability Function.}{definition-39}
                                                   % [134]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.2}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.8064 ...m}{\(\chi^2\) statistics.}{}{theorem-66}
+l.8061 ...m}{\(\chi^2\) statistics.}{}{theorem-66}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8085 ...en Normal and \(\chi^2\).}{}{theorem-67}
+l.8082 ...en Normal and \(\chi^2\).}{}{theorem-67}
                                                   %
 ************************************************
 Section 9.4 Other "Bell Shaped" distributions
@@ -3650,16 +3650,16 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8118 ...The Cauchy Distribution.}{definition-40}
+l.8115 ...The Cauchy Distribution.}{definition-40}
                                                   % [135]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.2}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.8127 ...{The Cauchy Distribution.}{}{theorem-68}
+l.8124 ...{The Cauchy Distribution.}{}{theorem-68}
                                                   %
 ! Undefined control sequence.
-l.8167 ...standard normal variable and Y is \(\Chi
+l.8164 ...standard normal variable and Y is \(\Chi
                                                   ^2(r)\) with Y and Z indep...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3671,10 +3671,10 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8171 ...}{Student t-distribution.}{}{theorem-69}
+l.8168 ...}{Student t-distribution.}{}{theorem-69}
                                                   % [136]
 LaTeX Font Info:    Font shape `TS1/zi4/m/it' will be
-(Font)              scaled to size 9.0pt on input line 8183.
+(Font)              scaled to size 9.0pt on input line 8180.
 
 ************************************************
 Section 9.5 Normal Distribution as a Limiting Distribution
@@ -3682,7 +3682,7 @@ Section 9.5 Normal Distribution as a Limiting Distribution
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.8215 ...s a red circle.  If you check the "Show_
+l.8212 ...s a red circle.  If you check the "Show_
                                                   Mean" box, the mean of the...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -3690,50 +3690,50 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.8216 \par
+l.8213 \par
            
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (95.12189pt too wide) in paragraph at lines 8215--8216
+Overfull \hbox (95.12189pt too wide) in paragraph at lines 8212--8213
 \T1/cmr/m/n/10 check the "Show$[]\OML/cmm/m/it/10 ean\OT1/cmr/m/n/10 "\OML/cmm/
 m/it/10 box; themeanofthesecirclesisindicatedbythegreenlineinthemiddleoftheplot
 :$ 
  []
 
 [137]
-Overfull \hbox (191.70511pt too wide) in paragraph at lines 8256--8257
+Overfull \hbox (191.70511pt too wide) in paragraph at lines 8253--8254
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (132.3045pt too wide) in paragraph at lines 8257--8259
+Overfull \hbox (132.3045pt too wide) in paragraph at lines 8254--8256
 [][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (8.10324pt too wide) in paragraph at lines 8259--8262
+Overfull \hbox (8.10324pt too wide) in paragraph at lines 8256--8259
 [][][][][][][][][][][]  
  []
 
 [138]
-Overfull \hbox (94.50412pt too wide) in paragraph at lines 8270--8271
+Overfull \hbox (94.50412pt too wide) in paragraph at lines 8267--8268
 [][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (121.5044pt too wide) in paragraph at lines 8271--8272
+Overfull \hbox (121.5044pt too wide) in paragraph at lines 8268--8269
 [][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (218.70538pt too wide) in paragraph at lines 8297--8298
+Overfull \hbox (218.70538pt too wide) in paragraph at lines 8294--8295
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (29.70346pt too wide) in paragraph at lines 8298--8300
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 8295--8297
 [][][][][][][][][][][][] 
  []
 
@@ -3741,37 +3741,37 @@ Overfull \hbox (29.70346pt too wide) in paragraph at lines 8298--8300
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [139]
-Overfull \hbox (191.70511pt too wide) in paragraph at lines 8333--8334
+Overfull \hbox (191.70511pt too wide) in paragraph at lines 8330--8331
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (132.3045pt too wide) in paragraph at lines 8334--8336
+Overfull \hbox (132.3045pt too wide) in paragraph at lines 8331--8333
 [][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (8.10324pt too wide) in paragraph at lines 8336--8339
+Overfull \hbox (8.10324pt too wide) in paragraph at lines 8333--8336
 [][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (94.50412pt too wide) in paragraph at lines 8347--8348
+Overfull \hbox (94.50412pt too wide) in paragraph at lines 8344--8345
 [][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (121.5044pt too wide) in paragraph at lines 8348--8349
+Overfull \hbox (121.5044pt too wide) in paragraph at lines 8345--8346
 [][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 [140]
-Overfull \hbox (218.70538pt too wide) in paragraph at lines 8374--8375
+Overfull \hbox (218.70538pt too wide) in paragraph at lines 8371--8372
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (29.70346pt too wide) in paragraph at lines 8375--8377
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 8372--8374
 [][][][][][][][][][][][] 
  []
 
@@ -3786,7 +3786,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.8392 ...ve frequency and use these values for μ
+l.8389 ...ve frequency and use these values for μ
                                                    or p.%
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -3795,57 +3795,57 @@ You may provide a definition with
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8399 ...m}{Central Limit Theorem.}{}{theorem-70}
+l.8396 ...m}{Central Limit Theorem.}{}{theorem-70}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8419 ...vs Normal \(\overline{X}\).}{example-36}
+l.8416 ...vs Normal \(\overline{X}\).}{example-36}
                                                   % [142]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.8449 ...al as approximate Normal.}{}{theorem-71}
+l.8446 ...al as approximate Normal.}{}{theorem-71}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8463 ...xample}{Binomial as Normal.}{example-37}
+l.8460 ...xample}{Binomial as Normal.}{example-37}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8480 ...n as approximate Normal.}{}{corollary-7}
+l.8477 ...n as approximate Normal.}{}{corollary-7}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8490 ...example}{Poisson as Normal.}{example-38}
+l.8487 ...example}{Poisson as Normal.}{example-38}
                                                   % [143]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.7}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.8507 ...ma as approximate Normal.}{}{theorem-72}
+l.8504 ...ma as approximate Normal.}{}{theorem-72}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.8}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8509 ...n{example}{Gamma as Normal.}{example-39}
+l.8506 ...n{example}{Gamma as Normal.}{example-39}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.9}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8525 ...vs Normal \(\overline{X}\).}{example-40}
+l.8522 ...vs Normal \(\overline{X}\).}{example-40}
                                                   %
-Overfull \hbox (32.10239pt too wide) detected at line 8540
+Overfull \hbox (32.10239pt too wide) detected at line 8537
 \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (8 \OMS/cmsy/m/n/10 ^^T [] \OML/cmm/m/it/10 <
  \OT1/cmr/m/n/10 12) = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 (7\OML/cmm/m/it/10 :\O
 T1/cmr/m/n/10 5 \OMS/cmsy/m/n/10 ^^T [] ^^T \OT1/cmr/m/n/10 11\OML/cmm/m/it/10 
@@ -3868,19 +3868,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8566 ...dard normal probabilities.}{exercise-71}
+l.8563 ...dard normal probabilities.}{exercise-71}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8613 ...asic normal probabilities.}{exercise-72}
+l.8610 ...asic normal probabilities.}{exercise-72}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8633 ...lineexercise}{- IQ values.}{exercise-73}
+l.8630 ...lineexercise}{- IQ values.}{exercise-73}
                                                   % [145]
 ************************************************
 Chapter 10 Estimation
@@ -3897,26 +3897,26 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8668 ...rem}{Chebyshev's Theorem.}{}{theorem-73}
+l.8665 ...rem}{Chebyshev's Theorem.}{}{theorem-73}
                                                   % [147
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8687 ...for Chebyshev's Theorem.}{}{corollary-8}
+l.8684 ...for Chebyshev's Theorem.}{}{corollary-8}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8695 ...for Chebyshev's Theorem.}{}{corollary-9}
+l.8692 ...for Chebyshev's Theorem.}{}{corollary-9}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8708 ... distribution to Chebyshev.}{example-41}
+l.8705 ... distribution to Chebyshev.}{example-41}
                                                   %
 ************************************************
 Section 10.3 Point Estimates
@@ -3929,98 +3929,98 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8764 ...fidence Intervals for p.}{definition-41}
+l.8761 ...fidence Intervals for p.}{definition-41}
                                                   % [149] [150]pdfTeX warning (
 ext4): destination with the same identifier (name{cthm.2}) has been already use
 d, duplicate ignored
 <to be read again> 
                    \relax 
-l.8860 ...onfidence Interval for p.}{}{theorem-74}
+l.8857 ...onfidence Interval for p.}{}{theorem-74}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8888 ...nce Interval methods for p.}{example-42}
+l.8885 ...nce Interval methods for p.}{example-42}
                                                   % [151]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.4}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.8942 ...ple Size for proportions.}{}{theorem-75}
+l.8939 ...ple Size for proportions.}{}{theorem-75}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8950 ...le Size for one proportion.}{example-43}
+l.8947 ...le Size for one proportion.}{example-43}
                                                   %
 ************************************************
 Section 10.5 Interval Estimates - Confidence Interval for \(\mu \)
 ************************************************
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 8964.
+(hyperref)                removing `math shift' on input line 8961.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 8964.
+(hyperref)                removing `\mu' on input line 8961.
 
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.8967 ...e Interval for One Mean.}{definition-42}
+l.8964 ...e Interval for One Mean.}{definition-42}
                                                   % [152]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.2}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.9011 ...\) given Margin of Error.}{}{theorem-76}
+l.9008 ...\) given Margin of Error.}{}{theorem-76}
                                                   % [153]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.9025 ...g Sample Size for one Mean.}{example-44}
+l.9022 ...g Sample Size for one Mean.}{example-44}
                                                   %
 ************************************************
 Section 10.6 Interval Estimates - Confidence Interval for \(\sigma ^2\)
 ************************************************
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 9039.
+(hyperref)                removing `math shift' on input line 9036.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sigma' on input line 9039.
+(hyperref)                removing `\sigma' on input line 9036.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 9039.
+(hyperref)                removing `superscript' on input line 9036.
 
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9042 ...Variance and \(\chi ^2\).}{}{theorem-77}
+l.9039 ...Variance and \(\chi ^2\).}{}{theorem-77}
                                                   % [154]
-Overfull \hbox (40.50357pt too wide) in paragraph at lines 9110--9111
+Overfull \hbox (40.50357pt too wide) in paragraph at lines 9107--9108
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (51.30368pt too wide) in paragraph at lines 9113--9114
+Overfull \hbox (51.30368pt too wide) in paragraph at lines 9110--9111
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 [155]
-Overfull \hbox (18.90335pt too wide) in paragraph at lines 9137--9138
+Overfull \hbox (18.90335pt too wide) in paragraph at lines 9134--9135
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (29.70346pt too wide) in paragraph at lines 9140--9141
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 9137--9138
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -4028,25 +4028,25 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9143 ...(\sigma^2\) and \(\sigma\).}{example-45}
+l.9140 ...(\sigma^2\) and \(\sigma\).}{example-45}
                                                   % [156]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.9184 ...rd deviation with large n..}{example-46}
+l.9181 ...rd deviation with large n..}{example-46}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9223 ...intervals for \(\sigma^2\).}{example-47}
+l.9220 ...intervals for \(\sigma^2\).}{example-47}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9230 ...e intervals for \(\sigma\).}{example-48}
+l.9227 ...e intervals for \(\sigma\).}{example-48}
                                                   %
 ************************************************
 Section 10.7 Exercises
@@ -4055,31 +4055,31 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9243 ...Confidence interval for p.}{exercise-74}
+l.9240 ...Confidence interval for p.}{exercise-74}
                                                   % [157]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.2}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.9258 ...confidence interval for p.}{exercise-75}
+l.9255 ...confidence interval for p.}{exercise-75}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9269 ...cise}{- Voting projection.}{exercise-76}
+l.9266 ...cise}{- Voting projection.}{exercise-76}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9276 ...nce interval for the mean.}{exercise-77}
+l.9273 ...nce interval for the mean.}{exercise-77}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9291 ...dence Interval Experiment.}{exercise-78}
+l.9288 ...dence Interval Experiment.}{exercise-78}
                                                   %
 ************************************************
 Chapter 11 Hypothesis Testing
@@ -4102,13 +4102,13 @@ Section 11.3 Hypothesis Test for one proportion
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9423 ...n{inlineexercise}{WebWork.}{exercise-79}
+l.9420 ...n{inlineexercise}{WebWork.}{exercise-79}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9449 ...n{inlineexercise}{WebWork.}{exercise-80}
+l.9446 ...n{inlineexercise}{WebWork.}{exercise-80}
                                                   % [161]
 ************************************************
 Section 11.4 Hypothesis Test for one mean
@@ -4118,7 +4118,7 @@ Section 11.4 Hypothesis Test for one mean
 Section 11.5 Hypothesis Test for one variance
 ************************************************
 ! Undefined control sequence.
-l.9565 ...is testing on variances using the \(\Chi
+l.9562 ...is testing on variances using the \(\Chi
                                                   ^2\)-distribution to deter...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4128,7 +4128,7 @@ and I'll forget about whatever was undefined.
 
 [163]
 ! Undefined control sequence.
-l.9583 T \gt \Chi
+l.9580 T \gt \Chi
                  _{1-\alpha/2,n-1}^2 \text{ or } T \lt \Chi_{\alpha/2,n-1}^2
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4137,7 +4137,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.9583 ...1-\alpha/2,n-1}^2 \text{ or } T \lt \Chi
+l.9580 ...1-\alpha/2,n-1}^2 \text{ or } T \lt \Chi
                                                   _{\alpha/2,n-1}^2
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4146,7 +4146,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.9587 T \gt \Chi
+l.9584 T \gt \Chi
                  _{1-\alpha,n-1}^2
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4155,7 +4155,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.9591 T \lt \Chi
+l.9588 T \lt \Chi
                  _{\alpha,n-1}^2.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4184,9 +4184,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9649 \begin{theorem}{}{}{theorem-GeomSeries}
+l.9646 \begin{theorem}{}{}{theorem-GeomSeries}
                                               %
-Overfull \hbox (36.76187pt too wide) detected at line 9659
+Overfull \hbox (36.76187pt too wide) detected at line 9656
 []
  []
 
@@ -4200,50 +4200,50 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9688 ...ralized Geometric Series.}{}{theorem-79}
+l.9685 ...ralized Geometric Series.}{}{theorem-79}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9698 ...ng to get new Power Series.}{example-49}
+l.9695 ...ng to get new Power Series.}{example-49}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9712 ...ple}{Playing with the base.}{example-50}
+l.9709 ...ple}{Playing with the base.}{example-50}
                                                   % [166]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.5}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.9725 ...ecimals to fractional form.}{example-51}
+l.9722 ...ecimals to fractional form.}{example-51}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9741 ...nd with repeating decimals.}{example-52}
+l.9738 ...nd with repeating decimals.}{example-52}
                                                   %
 ************************************************
 Section 12.2 Binomial SumsBinomial SeriesTrinomial Series
 ************************************************
 
-Overfull \hbox (4.85043pt too wide) in paragraph at lines 9756--9756
+Overfull \hbox (4.85043pt too wide) in paragraph at lines 9753--9753
 []\T1/cmr/bx/n/14.4 Binomial Sums-Bi-no-mial Se-riesTri-no-mial Se-
  []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.9758 ... technically not a series since the sum_
+l.9755 ... technically not a series since the sum_
                                                   if finite but we won’t b...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 9758.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 9755.
 
 
 
@@ -4253,7 +4253,7 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9760 \begin{gather*}
+l.9757 \begin{gather*}
                       
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4262,12 +4262,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9763 ...}{Binomial Theorem.}{}{theorem-Binomial}
+l.9760 ...}{Binomial Theorem.}{}{theorem-Binomial}
                                                   %
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -4275,7 +4275,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -4286,7 +4286,7 @@ my insertion and my current dilemma will both disappear.
 ! Undefined control sequence.
 <argument> \tcb@h@padding +\tcb@h@padtitle 
                                            +\tcb@h@upper +\tcb@h@segment +\t...
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4297,7 +4297,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...ding +\tcb@h@padtitle +\tcb@h@upper 
                                                   +\tcb@h@segment +\tcb@h@lo...
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4308,7 +4308,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...title +\tcb@h@upper +\tcb@h@segment 
                                                   +\tcb@h@lower 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4319,7 +4319,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...upper +\tcb@h@segment +\tcb@h@lower 
                                                   
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4330,7 +4330,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4339,7 +4339,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4351,7 +4351,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \tcb@set@normal@unbroken@beforeafter ...b@nobreak 
                                                   {\iftcb@ignorenobreak \els...
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4362,7 +4362,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@h@padtitle 
                            +\kvtcb@top@rule +\kvtcb@bottom@rule +\kvtcb@boxs...
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4373,7 +4373,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...cb@top +\kvtcb@bottom +\tcb@h@upper 
                                                   
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4384,7 +4384,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4393,7 +4393,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4405,7 +4405,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 <argument> ...\kvtcb@bottom@rule -\tcb@h@padtitle 
                                                   
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4416,7 +4416,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4425,7 +4425,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4437,7 +4437,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 <argument> \the \dimexpr \tcb@width 
                                     +\kvtcb@bbright \relax 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4448,7 +4448,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@width 
                       
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4459,7 +4459,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4468,7 +4468,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4480,7 +4480,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4492,7 +4492,7 @@ Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4503,30 +4503,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no = in font nullfont!
-! Undefined control sequence.
-<argument> \tcb@outer@arc 
-                          
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \tcb@outer@arc 
-                          
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4538,7 +4515,7 @@ Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4549,7 +4526,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4561,7 +4538,30 @@ Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no = in font nullfont!
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4572,7 +4572,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@width 
                       -\kvtcb@right@rule 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4583,7 +4583,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \tcb@footnote@cnt@i 
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4596,7 +4596,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -4605,7 +4605,7 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.9764 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.9761 ...binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Things are pretty mixed up, but I think the worst is over.
 
@@ -4613,7 +4613,7 @@ Things are pretty mixed up, but I think the worst is over.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.9787 ...m{n}{k} a^k b^{n-k}}\). This finite sum_
+l.9784 ...m{n}{k} a^k b^{n-k}}\). This finite sum_
                                                   is known as the Binomial S...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -4621,13 +4621,13 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.9788 \par
+l.9785 \par
            
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (23.28604pt too wide) in paragraph at lines 9787--9788
+Overfull \hbox (23.28604pt too wide) in paragraph at lines 9784--9785
 []\T1/cmr/m/n/10 Consider $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 a; b\OT1/cmr/m/n/10 ) = [][] []$\T1/cmr/m/n/10 . This fi-nite sum$[]\OML/cmm/m/
 it/10 sknownastheBinomialSeries:$ 
@@ -4640,12 +4640,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9818 ...Negative Binomial Series.}{}{theorem-81}
+l.9815 ...Negative Binomial Series.}{}{theorem-81}
                                                   %
 ! You can't use `\prevdepth' in horizontal mode.
 <recently read> \prevdepth 
                            
-l.9821 \end{theorem}
+l.9818 \end{theorem}
                     
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -4655,7 +4655,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.9821 \end{theorem}
+l.9818 \end{theorem}
                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -4663,7 +4663,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing number, treated as zero.
 <to be read again> 
                    \noindent 
-l.9821 \end{theorem}
+l.9818 \end{theorem}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4672,7 +4672,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \noindent 
-l.9821 \end{theorem}
+l.9818 \end{theorem}
                     
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -4684,43 +4684,33 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.9821 \end{theorem}
+l.9818 \end{theorem}
                     
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 Missing character: There is no � in font cmex10!
 [168]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 9822.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 9822.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 9819.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 9819.
  (./Essentials_Probability_And_Statistics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 9822.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 9822.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 9819.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 9819.
 
+Package rerunfilecheck Info: File `Essentials_Probability_And_Statistics.out' h
+as not changed.
+(rerunfilecheck)             Checksum: 9C592069F4C00EC9AEF51738935A1E71;6218.
 
-
-Package rerunfilecheck Warning: File `Essentials_Probability_And_Statistics.out
-' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Essentials_Probability_And_Statisti
-cs.out':
-(rerunfilecheck)             Before: 3D29678AB3E7BD9091A26399BFA9D647;6200
-(rerunfilecheck)             After:  9C592069F4C00EC9AEF51738935A1E71;6218.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 39586 strings out of 492649
- 748483 string characters out of 6129622
+ 39585 strings out of 492649
+ 748473 string characters out of 6129622
  898883 words of memory out of 5000000
  39703 multiletter control sequences out of 15000+600000
- 553321 words of font info for 78 fonts, out of 8000000 for 9000
+ 552553 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,13n,95p,10446b,2104s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -4750,15 +4740,14 @@ sr/local/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr
 ocal/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/loc
 al/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local
 /texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/t
-exlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on Essentials_Probability_And_Statistics.pdf (178 pages, 1271026
+exlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on Essentials_Probability_And_Statistics.pdf (178 pages, 1259186
  bytes).
 PDF statistics:
  5130 PDF objects out of 5155 (max. 8388607)
- 4858 compressed objects within 49 object streams
+ 4859 compressed objects within 49 object streams
  3248 named destinations out of 3580 (max. 500000)
- 802 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 810 words of extra memory for PDF output out of 10000 (max. 10000000)
 
