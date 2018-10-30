@@ -226,6 +226,32 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 </sage>
 </p>
 
+
+<p>
+<sage language='r'>
+<input>
+n = 10
+p = 0.3
+X = 0:n    # the space R of the random variable 
+mu = n*p      # the formula for mean of the Binomial Distributions
+sdev = sqrt(n*p*(1-p))  # the formula for the standard deviation
+dbinom( X, n, p )   # let's print out a bunch of actual probs
+
+Pbinom = dbinom(X, n, p )  # create the probability function over X
+
+Psample = rbinom(10^6, n, p)  # to create a histogram, sample a lot
+Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
+hist(Psample, prob=TRUE, br=(-1:Xtop)+0.5, col="skyblue2", xlab="X", 
+  main="Binomial Probability Function vs Approximating 'Bell Curve'")
+
+points(X, Pbinom, pch=19, col="darkgreen")  # to create actual (x,f(x))
+
+Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)}   # to overlap a bell curve
+curve(Pnormal, col="red", lwd=2, add=TRUE) 
+</input>
+</sage>
+</p>
+
 <p>Flipping Coins</p>
 <p>Suppose you flip a coin exactly 20 times. Determine the probability of getting exactly 10 heads and then determine the probability of getting 10 or fewer heads.
 </p>

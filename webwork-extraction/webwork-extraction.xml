@@ -30,6 +30,346 @@
 
   </webwork-reps>
 
+  <webwork-reps xml:id="extracted-webwork-10" ww-id="webwork-10">
+    <pg source="Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg" />
+
+      
+    <static source="Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg" seed="10">
+      <statement>
+      <p>In how many ways can 3 different
+      novels, 4 different mathematics books, and 1 biology book be arranged on a bookshelf if</p>
+      <p>(a) the books can be arranged in any order?</p>
+      <p>Answer: <fillin name="AnSwEr0001" characters="20" /></p>
+      <p>(b) the mathematics books must be together and the novels must be together?</p>
+      <p>Answer: <fillin name="AnSwEr0002" characters="20" /></p>
+      <p>(c) the novels must be together but the other books can be arranged in any order?</p>
+      <p>Answer: <fillin name="AnSwEr0003" characters="20" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=10&amp;sourceFilePath=Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=10&amp;sourceFilePath=Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=10&amp;sourceFilePath=Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=10&amp;sourceFilePath=Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-11" ww-id="webwork-11">
+    <pg source="Library/NAU/setCounting/RepeatedCombination1.pg" />
+
+      
+    <static source="Library/NAU/setCounting/RepeatedCombination1.pg" seed="11">
+      <statement>
+      <p>How many anagrams can be created from the word 'accommodate' if the new words do not need to be meaningful?
+      <fillin name="AnSwEr0001" characters="35" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=11&amp;sourceFilePath=Library/NAU/setCounting/RepeatedCombination1.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=11&amp;sourceFilePath=Library/NAU/setCounting/RepeatedCombination1.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=11&amp;sourceFilePath=Library/NAU/setCounting/RepeatedCombination1.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=11&amp;sourceFilePath=Library/NAU/setCounting/RepeatedCombination1.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-12" ww-id="webwork-12">
+    <pg source="Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg" />
+
+      
+    <static source="Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg" seed="12">
+      <statement>
+      <p>A standard deck of cards consists of four suits (clubs, diamonds, hearts, and spades), with each suit containing 13 cards (ace, two through ten, jack, queen, and king) for a total of 52 cards in all.</p>
+      <p>How many 7-card hands will consist of exactly 4 hearts and 3 clubs?</p>
+      <p><fillin name="AnSwEr0001" characters="20" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=12&amp;sourceFilePath=Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=12&amp;sourceFilePath=Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=12&amp;sourceFilePath=Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=12&amp;sourceFilePath=Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-13" ww-id="webwork-13">
+    <pg source="Library/Rochester/setAlgebra38Counting/sw10_2_60.pg" />
+
+      
+    <static source="Library/Rochester/setAlgebra38Counting/sw10_2_60.pg" seed="13">
+      <statement>
+      <p>A school dance committee is to consist of 2 freshmen, 3 sophomores, 4
+      juniors, and 5 seniors. If 6 freshmen, 8 sophomores, 7 juniors,
+      and 8 seniors are eligible to be on the committee, in how many ways can
+      the committee be chosen?</p>
+      <p>Your answer is : <fillin name="AnSwEr0001" characters="25" /></p>
+      </statement>
+      
+      <solution>
+      
+      There are <m>{6 \choose 2}</m> ways to choose 2 freshmen for the committee, 
+      <m>{8 \choose 3}</m> ways to choose 3 sophomores for the committee, 
+      <m>{7 \choose 4}</m> ways to choose 4 juniors for the committee, and 
+      <m>{8 \choose 5}</m> ways to choose 5 seniors for the committee.  
+      So by the generalized basic principle of counting, there are a total of 
+      <me>{6 \choose 2} \cdot {8 \choose 3} \cdot {7 \choose 4} \cdot {8 \choose 5}
+      = \frac{6 !}{2!4 !} \cdot \frac{8 !}{3! 5 !} \cdot \frac{7 !}{4! 3 !} \cdot \frac{8 !}{5! 3 !} = 1646400</me>
+      different possible committees.
+      
+      
+      
+      </solution>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=13&amp;sourceFilePath=Library/Rochester/setAlgebra38Counting/sw10_2_60.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=13&amp;sourceFilePath=Library/Rochester/setAlgebra38Counting/sw10_2_60.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=13&amp;sourceFilePath=Library/Rochester/setAlgebra38Counting/sw10_2_60.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=13&amp;sourceFilePath=Library/Rochester/setAlgebra38Counting/sw10_2_60.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-14" ww-id="webwork-14">
+    <pg source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg" />
+
+      
+    <static source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg" seed="14">
+      <statement>
+      <p>Suppose you select a letter at random from the word MISSISSIPPI.</p>
+      <p>The probability of selecting the letter S is <fillin name="AnSwEr0001" characters="4" /></p>
+      <p>The probability of selecting the letter M is <fillin name="AnSwEr0002" characters="4" /></p>
+      <p>The probability of selecting the letters P or I is <fillin name="AnSwEr0003" characters="4" /></p>
+      <p>The probability of not selecting the letter I is <fillin name="AnSwEr0004" characters="4" /></p>
+      </statement>
+      
+      <hint>
+      <p>Count the number of letters in the word.  When computing each probability, this is the number that goes on the bottom.</p>
+      </hint>
+      
+      <solution>
+      <p>The probability of 'M's is 1/11.</p>
+      <p>The probability of 'I's is 4/11.</p>
+      <p>The probability of 'S's is 4/11.</p>
+      <p>The probability of 'P's is 2/11.</p>
+      </solution>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=14&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=14&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=14&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=14&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-15" ww-id="webwork-15">
+    <pg source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg" />
+
+      
+    <static source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg" seed="15">
+      <statement>
+      <p>A fun size bag of M<m>\\amp </m>Ms has about 18 candies.  You open one of the bags and discover:</p>
+      <p>3 Blues, 4 Yellows, 5 Browns, 2 Reds and 4 Greens.</p>
+      <p>The probability of choosing a brown is <fillin name="AnSwEr0001" characters="4" />.</p>
+      <p>The odds in favor of choosing a yellow is <fillin name="AnSwEr0002" characters="4" /></p>
+      <p>The probability of choosing either a blue or a red is <fillin name="AnSwEr0003" characters="4" /></p>
+      <p>The odds against a green being chosen is <fillin name="AnSwEr0004" characters="4" /></p>
+      </statement>
+      
+      <hint>
+      <p>Odds in favor of an event = number of favorable outcomes / number of unfavorable outcomes.</p>
+      <p>Odds against an event = number of unfavorable outcomes / number of favorable outcomes.</p>
+      </hint>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=15&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=15&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=15&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=15&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-16" ww-id="webwork-16">
+    <pg source="Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg" />
+
+      
+    <static source="Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg" seed="16">
+      <statement>
+      
+      <p>(a) <m></m> Count the number of ways to arrange a sample of <m>5</m> elements from a population of
+      <m>10</m> elements. NOTE: Order is not important.</p>
+      <p>answer: <fillin name="AnSwEr0001" characters="10" /></p>
+      <p>(b) <m></m> If random sampling is to be employed, the probability that any particular sample will
+      be selected is <fillin name="AnSwEr0002" characters="10" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=16&amp;sourceFilePath=Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=16&amp;sourceFilePath=Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=16&amp;sourceFilePath=Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=16&amp;sourceFilePath=Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-17" ww-id="webwork-17">
+    <pg source="Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg" />
+
+      
+    <static source="Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg" seed="17">
+      <statement>
+      <p>A bag contains <m>6</m> red marbles and <m>7</m> white marbles.  Two marbles are drawn in succession without replacement.  Find the probabilities of the following events:</p>
+      <p><em> 1. </em> The first marble drawn is red and the second is white.</p>
+      <p>Answer: <fillin name="AnSwEr0001" characters="20" /></p>
+      <p><em> 2. </em> Both marbles drawn are red.</p>
+      <p>Answer: <fillin name="AnSwEr0002" characters="20" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=17&amp;sourceFilePath=Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=17&amp;sourceFilePath=Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=17&amp;sourceFilePath=Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=17&amp;sourceFilePath=Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-18" ww-id="webwork-18">
+    <pg source="Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg" />
+
+      
+    <static source="Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg" seed="18">
+      <statement>
+      <p>A biomedical research company produces <m>50 \lt percent /></m> of its insulin at a plant in Kansas City, and the remainder is produced at a plant in Jefferson City.  Quality control has shown that <m>1.25 \lt percent /></m> of the insulin produced at the plant in Kansas City is defective, while <m>0.7 \lt percent /></m> of the insulin produced at the plant in Jefferson City is defective.  What is the probability that a randomly chosen unit of insulin came from the plant in Jefferson City given that it is defective?</p>
+      <p><fillin name="AnSwEr0001" characters="20" /></p>
+      <p>(<em>Hint:</em> Draw a tree diagram first)</p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=18&amp;sourceFilePath=Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=18&amp;sourceFilePath=Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=18&amp;sourceFilePath=Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=18&amp;sourceFilePath=Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-19" ww-id="webwork-19">
+    <pg source="Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg" />
+
+      
+    <static source="Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg" seed="19">
+      <statement>
+      
+      <p>Data from Office on Smoking and Health, Centers for 
+      Disease Control and Prevention, indicate that 
+      36<percent /> of adults who did not finish high school, 
+      33<percent /> of high school graduates, 26<percent /> of 
+      adults who completed some college, and 15<percent /> of 
+      college graduates smoke.  Suppose that one individual 
+      is selected at random and it is discovered that the 
+      individual smokes.  Use the probabilities in the 
+      following table to calculate the probability that 
+      the individual is a college graduate.</p>
+      <sidebyside>
+      <tabular top="medium" bottom="medium" left="medium" right="medium">
+      <row>
+      <cell>Education</cell>
+      <cell>Employed</cell>
+      <cell>Unemployed</cell>
+      </row>
+      <row>
+      <cell>Not a high school graduate</cell>
+      <cell>0.0975</cell>
+      <cell>0.0080</cell>
+      </row>
+      <row>
+      <cell>High school graduate</cell>
+      <cell>0.3108</cell>
+      <cell>0.0128</cell>
+      </row>
+      <row>
+      <cell>Some college, no degree</cell>
+      <cell>0.1785</cell>
+      <cell>0.0062</cell>
+      </row>
+      <row>
+      <cell>Associate Degree</cell>
+      <cell>0.0849</cell>
+      <cell>0.0023</cell>
+      </row>
+      <row>
+      <cell>Bachelor Degree</cell>
+      <cell>0.1959</cell>
+      <cell>0.0041</cell>
+      </row>
+      <row>
+      <cell>Advanced Degree</cell>
+      <cell>0.0975</cell>
+      <cell>0.0015</cell>
+      </row>
+      </tabular>
+      </sidebyside>
+      <p>Probability =  <fillin name="AnSwEr0001" characters="15" /></p>
+      <p>Hints: This problem has all the information you need, but not in
+      the typical ready-to-use form.  The table above can tell you the 
+      proportion of people with various levels of education in the population.
+      Keep in mind that any degree (Associate, Bachelor, or Advanced) counts 
+      as graduating from college.</p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=19&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=19&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=19&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=19&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg</server-url>
+
+  </webwork-reps>
+
   <webwork-reps xml:id="extracted-webwork-2" ww-id="webwork-2">
     <pg source="Library/NAU/setStatistics/FiveNumFromPlot.pg" />
 
@@ -55,6 +395,530 @@
     <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=2&amp;sourceFilePath=Library/NAU/setStatistics/FiveNumFromPlot.pg</server-url>
 
     <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=2&amp;sourceFilePath=Library/NAU/setStatistics/FiveNumFromPlot.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-20" ww-id="webwork-20">
+    <pg source="Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg" />
+
+      
+    <static source="Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg" seed="20">
+      <statement>
+      
+      <p>For two events <m>A</m> and <m>B</m>, <m>P(A) = 0.3</m> and <m>P(B) = 0.1</m>.</p>
+      <p>(a)<m></m> If <m>A</m> and <m>B</m> are independent, then</p>
+      <p><m>P(A|B)</m> <m>=</m> <fillin name="AnSwEr0001" characters="10" /></p>
+      <p><m>P(A \cup B)</m> <m>=</m> <fillin name="AnSwEr0002" characters="10" /></p>
+      <p><m>P(A \cap B)</m> <m>=</m> <fillin name="AnSwEr0003" characters="10" /></p>
+      <p>(b)<m></m> If <m>A</m> and <m>B</m> are dependent and <m>P(A|B) = 0.1</m>, then</p>
+      <p><m>P(A \cap B)</m> <m>=</m> <fillin name="AnSwEr0004" characters="10" /></p>
+      <p><m>P(B|A)</m> <m>=</m> <fillin name="AnSwEr0005" characters="10" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=20&amp;sourceFilePath=Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=20&amp;sourceFilePath=Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=20&amp;sourceFilePath=Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=20&amp;sourceFilePath=Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-21" ww-id="webwork-21">
+    <pg source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg" />
+
+      
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg" seed="21">
+      <statement>
+      <p>An article in the Washington Post on March 16, 1993 stated that nearly 45 
+      percent of  all Americans have brown eyes.  A random sample of <m>n = 
+      78</m> C of I 
+      students found 30 with brown eyes.</p>
+      <p>We test</p>
+      <p><m>H_0: p = .45</m></p>
+      <p><m>H_a: p \neq .45</m></p>
+      <p>(a) What is the <m>z</m>-statistic for this test? <m></m>
+      <fillin name="AnSwEr0001" characters="10" /></p>
+      <p>(b) What is the P-value of the test?  <m></m>
+      <fillin name="AnSwEr0002" characters="10" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=21&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=21&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=21&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=21&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-22" ww-id="webwork-22">
+    <pg source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg" />
+
+      
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg" seed="22">
+      <statement>
+      <p>A noted psychic was tested for ESP.  The psychic was presented with 
+      220 cards face down and was asked to determine if the card was one of 
+      5 symbols: a star, cross, circle, square, or three wavy lines.  The psychic 
+      was correct in 52 cases.  Let <m>p</m> represent the probability that 
+      the psychic correctly identifies the symbol on the card in a random trial.  
+      Assume the 220 trials can be treated as an SRS from the population of 
+      all guesses.</p>
+      <p>To see if there is evidence that the psychic is doing better than just 
+      guessing, we test</p>
+      <p><m>H_0: p = .2</m></p>
+      <p><m>H_a: p > .2</m></p>
+      <p>(a) What is the <m>z</m>-statistic for this test? <m></m>
+      <fillin name="AnSwEr0001" characters="10" /></p>
+      <p>(b) What is the P-value of the test?  <m></m>
+      <fillin name="AnSwEr0002" characters="10" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=22&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=22&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=22&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=22&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-3" ww-id="webwork-3">
+    <authored>
+      
+        <statement>
+          <p>An airline has determined that the relationship between the number of passengers on a flight and the total weight of luggage stored in the baggage compartment can be estimated by the least squares regression equation 
+            <me>y = 127 + 28 x.</me> 
+      Predict the weight of luggage for a flight with 121 passengers.</p>
+          <p>Answer: <var name="'3515'" width="15"/> pounds</p>
+        </statement>
+        <solution>
+            Since x represents weight, choose x = 121 and evaluate the line at that value to get the estimated total luggage weight to be
+            <me>y = 127 + 28 (121) = 3515</me></solution>
+      
+    </authored>
+
+    <pg>
+      #######################################
+      ###    Generated from PreTeXt source   
+      ###    on 2018-10-30T16:03:46-05:00    
+      ###                                    
+      ###   http://mathbook.pugetsound.edu   
+      ###                                    
+      #######################################
+      ## DBsubject()
+      ## DBchapter()
+      ## DBsection()
+      ## Level()
+      ## KEYWORDS()
+      ## TitleText1(Essentials of Mathematical Probability and Statistics)
+      ## EditionText1()
+      ## AuthorText1(John Travis)
+      ## Section1(not reported)
+      ## Problem1(2.2.1)
+      ## Author()
+      ## Institution()
+      ## Language(en-US)
+      
+      DOCUMENT();
+      
+      ############################################################
+      # Load Macros
+      ############################################################
+      loadMacros(
+        "PGstandard.pl",
+        "MathObjects.pl",
+        "PGML.pl",
+        "AnswerFormatHelp.pl",
+        "PGcourse.pl",
+      );
+      
+      ############################################################
+      # Header
+      ############################################################
+      COMMENT('Authored in PreTeXt');
+      TEXT(beginproblem());
+      
+      ############################################################
+      # PG Setup
+      ############################################################
+      Context('Numeric');
+      
+      ############################################################
+      # Body
+      ############################################################
+      
+      BEGIN_PGML
+      An airline has determined that the relationship between the number of passengers on a flight and the total weight of luggage stored in the baggage compartment can be estimated by the least squares regression equation
+      
+      [```y = 127 + 28 x.```]
+      
+      Predict the weight of luggage for a flight with 121 passengers.
+      
+      Answer: [__]{'3515'}{width =&gt; 15} pounds
+      
+      END_PGML
+      
+      ############################################################
+      # Solution
+      ############################################################
+      
+      BEGIN_PGML_SOLUTION
+      Since x represents weight, choose x = 121 and evaluate the line at that value to get the estimated total luggage weight to be
+      
+      [```y = 127 + 28 (121) = 3515```]
+      
+      END_PGML_SOLUTION
+      
+      ############################################################
+      # End Problem
+      ############################################################
+      
+      ENDDOCUMENT();
+      
+    </pg>
+
+      
+    <static seed="3">
+      <statement>
+      <p>An airline has determined that the relationship between the number of passengers on a flight and the total weight of luggage stored in the baggage compartment can be estimated by the least squares regression equation</p>
+      <p><me>y = 127 + 28 x.</me></p>
+      <p>Predict the weight of luggage for a flight with 121 passengers.</p>
+      <p>Answer: <fillin name="AnSwEr0001" characters="15" /> pounds</p>
+      </statement>
+      
+      <solution>
+      <p>Since x represents weight, choose x = 121 and evaluate the line at that value to get the estimated total luggage weight to be</p>
+      <p><me>y = 127 + 28 (121) = 3515</me></p>
+      </solution>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=3&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkFuIGFpcmxpbmUgaGFzIGRldGVybWluZWQgdGhhdCB0aGUgcmVsYXRpb25zaGlwIGJldHdlZW4gdGhlIG51bWJlciBvZiBwYXNzZW5nZXJzIG9uIGEgZmxpZ2h0IGFuZCB0aGUgdG90YWwgd2VpZ2h0IG9mIGx1Z2dhZ2Ugc3RvcmVkIGluIHRoZSBiYWdnYWdlIGNvbXBhcnRtZW50IGNhbiBiZSBlc3RpbWF0ZWQgYnkgdGhlIGxlYXN0IHNxdWFyZXMgcmVncmVzc2lvbiBlcXVhdGlvbgoKW2BgYHkgPSAxMjcgKyAyOCB4LmBgYF0KClByZWRpY3QgdGhlIHdlaWdodCBvZiBsdWdnYWdlIGZvciBhIGZsaWdodCB3aXRoIDEyMSBwYXNzZW5nZXJzLgoKQW5zd2VyOiBbX117JzM1MTUnfXt3aWR0aD0%2BMTV9IHBvdW5kcwoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClNpbmNlIHggcmVwcmVzZW50cyB3ZWlnaHQsIGNob29zZSB4ID0gMTIxIGFuZCBldmFsdWF0ZSB0aGUgbGluZSBhdCB0aGF0IHZhbHVlIHRvIGdldCB0aGUgZXN0aW1hdGVkIHRvdGFsIGx1Z2dhZ2Ugd2VpZ2h0IHRvIGJlCgpbYGBgeSA9IDEyNyArIDI4ICgxMjEpID0gMzUxNWBgYF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs%3D</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=3&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkFuIGFpcmxpbmUgaGFzIGRldGVybWluZWQgdGhhdCB0aGUgcmVsYXRpb25zaGlwIGJldHdlZW4gdGhlIG51bWJlciBvZiBwYXNzZW5nZXJzIG9uIGEgZmxpZ2h0IGFuZCB0aGUgdG90YWwgd2VpZ2h0IG9mIGx1Z2dhZ2Ugc3RvcmVkIGluIHRoZSBiYWdnYWdlIGNvbXBhcnRtZW50IGNhbiBiZSBlc3RpbWF0ZWQgYnkgdGhlIGxlYXN0IHNxdWFyZXMgcmVncmVzc2lvbiBlcXVhdGlvbgoKW2BgYHkgPSAxMjcgKyAyOCB4LmBgYF0KClByZWRpY3QgdGhlIHdlaWdodCBvZiBsdWdnYWdlIGZvciBhIGZsaWdodCB3aXRoIDEyMSBwYXNzZW5nZXJzLgoKQW5zd2VyOiBbX117JzM1MTUnfXt3aWR0aD0%2BMTV9IHBvdW5kcwoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=3&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkFuIGFpcmxpbmUgaGFzIGRldGVybWluZWQgdGhhdCB0aGUgcmVsYXRpb25zaGlwIGJldHdlZW4gdGhlIG51bWJlciBvZiBwYXNzZW5nZXJzIG9uIGEgZmxpZ2h0IGFuZCB0aGUgdG90YWwgd2VpZ2h0IG9mIGx1Z2dhZ2Ugc3RvcmVkIGluIHRoZSBiYWdnYWdlIGNvbXBhcnRtZW50IGNhbiBiZSBlc3RpbWF0ZWQgYnkgdGhlIGxlYXN0IHNxdWFyZXMgcmVncmVzc2lvbiBlcXVhdGlvbgoKW2BgYHkgPSAxMjcgKyAyOCB4LmBgYF0KClByZWRpY3QgdGhlIHdlaWdodCBvZiBsdWdnYWdlIGZvciBhIGZsaWdodCB3aXRoIDEyMSBwYXNzZW5nZXJzLgoKQW5zd2VyOiBbX117JzM1MTUnfXt3aWR0aD0%2BMTV9IHBvdW5kcwoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClNpbmNlIHggcmVwcmVzZW50cyB3ZWlnaHQsIGNob29zZSB4ID0gMTIxIGFuZCBldmFsdWF0ZSB0aGUgbGluZSBhdCB0aGF0IHZhbHVlIHRvIGdldCB0aGUgZXN0aW1hdGVkIHRvdGFsIGx1Z2dhZ2Ugd2VpZ2h0IHRvIGJlCgpbYGBgeSA9IDEyNyArIDI4ICgxMjEpID0gMzUxNWBgYF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs%3D</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=3&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkFuIGFpcmxpbmUgaGFzIGRldGVybWluZWQgdGhhdCB0aGUgcmVsYXRpb25zaGlwIGJldHdlZW4gdGhlIG51bWJlciBvZiBwYXNzZW5nZXJzIG9uIGEgZmxpZ2h0IGFuZCB0aGUgdG90YWwgd2VpZ2h0IG9mIGx1Z2dhZ2Ugc3RvcmVkIGluIHRoZSBiYWdnYWdlIGNvbXBhcnRtZW50IGNhbiBiZSBlc3RpbWF0ZWQgYnkgdGhlIGxlYXN0IHNxdWFyZXMgcmVncmVzc2lvbiBlcXVhdGlvbgoKW2BgYHkgPSAxMjcgKyAyOCB4LmBgYF0KClByZWRpY3QgdGhlIHdlaWdodCBvZiBsdWdnYWdlIGZvciBhIGZsaWdodCB3aXRoIDEyMSBwYXNzZW5nZXJzLgoKQW5zd2VyOiBbX117JzM1MTUnfXt3aWR0aD0%2BMTV9IHBvdW5kcwoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-4" ww-id="webwork-4">
+    <pg source="Library/ASU-topics/setStat/dueck4_2_4.pg" />
+
+      
+    <static source="Library/ASU-topics/setStat/dueck4_2_4.pg" seed="4">
+      <statement>
+      <p>A study was conducted to detemine whether a the final grade of a student in an introductory psychology
+      course is linearly related to his or her performance on the verbal ability test administered before
+      college entrance.  The verbal scores and final grades for <m>10</m> students are shown in the table below.</p>
+      <sidebyside>
+      <tabular top="medium" bottom="medium" left="medium" right="medium">
+      <row>
+      <cell>Student</cell>
+      <cell>Verbal Score <m>x</m></cell>
+      <cell>Final Grade <m>y</m></cell>
+      </row>
+      <row>
+      <cell><m>1</m></cell>
+      <cell><m>49</m></cell>
+      <cell><m>60</m></cell>
+      </row>
+      <row>
+      <cell><m>2</m></cell>
+      <cell><m>49</m></cell>
+      <cell><m>54</m></cell>
+      </row>
+      <row>
+      <cell><m>3</m></cell>
+      <cell><m>72</m></cell>
+      <cell><m>89</m></cell>
+      </row>
+      <row>
+      <cell><m>4</m></cell>
+      <cell><m>66</m></cell>
+      <cell><m>75</m></cell>
+      </row>
+      <row>
+      <cell><m>5</m></cell>
+      <cell><m>30</m></cell>
+      <cell><m>40</m></cell>
+      </row>
+      <row>
+      <cell><m>6</m></cell>
+      <cell><m>33</m></cell>
+      <cell><m>36</m></cell>
+      </row>
+      <row>
+      <cell><m>7</m></cell>
+      <cell><m>70</m></cell>
+      <cell><m>82</m></cell>
+      </row>
+      <row>
+      <cell><m>8</m></cell>
+      <cell><m>57</m></cell>
+      <cell><m>68</m></cell>
+      </row>
+      <row>
+      <cell><m>9</m></cell>
+      <cell><m>79</m></cell>
+      <cell><m>95</m></cell>
+      </row>
+      <row>
+      <cell><m>10</m></cell>
+      <cell><m>65</m></cell>
+      <cell><m>79</m></cell>
+      </row>
+      </tabular>
+      </sidebyside>
+      <p>Find the least squares line.</p>
+      <p><m>\hat{y} =</m> <fillin name="AnSwEr0001" characters="10" /> <m>+</m> <fillin name="AnSwEr0002" characters="10" /> <m>x</m></p>
+      <p>Should the regression be used to predict the final grade of a student with a verbal score of 100?</p>
+      <p>answer: <fillin name="AnSwEr0003" characters="10" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=4&amp;sourceFilePath=Library/ASU-topics/setStat/dueck4_2_4.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=4&amp;sourceFilePath=Library/ASU-topics/setStat/dueck4_2_4.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=4&amp;sourceFilePath=Library/ASU-topics/setStat/dueck4_2_4.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=4&amp;sourceFilePath=Library/ASU-topics/setStat/dueck4_2_4.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-5" ww-id="webwork-5">
+    <pg source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg" />
+
+      
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg" seed="5">
+      <statement>
+      <p>For each problem, select the best response.</p>
+      <p>(a) A study found a correlation of <em> r</em> = -0.61 between the gender of a worker and his or her income.  You may correctly conclude</p>
+      <p><var form="buttons">
+      <li>
+      <p>an arithmetic mistake was made.  Correlation must be positive.</p>
+      </li>
+      <li>
+      <p>women earn more than men on average.</p>
+      </li>
+      <li>
+      <p>women earn less than men on average.</p>
+      </li>
+      <li>
+      <p>this is incorrect because <em> r</em> makes no sense here.</p>
+      </li>
+      <li>
+      <p>None of the above.</p>
+      </li>
+      </var></p>
+      <p>(b) For a biology project, you measure the weight in grams and the tail length in millimeters of a group of mice. The correlation is <em> r</em> = 0.8. If you had measured tail length in centimeters instead of millimeters, what would be the correlation? (There are 10 millimeters in a centimeter.)</p>
+      <p><var form="buttons">
+      <li>
+      <p>0.8/10 = 0.08</p>
+      </li>
+      <li>
+      <p>(0.8)(10) = 8</p>
+      </li>
+      <li>
+      <p>0.8</p>
+      </li>
+      <li>
+      <p>None of the above.</p>
+      </li>
+      </var></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=5&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=5&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=5&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=5&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-6" ww-id="webwork-6">
+    <pg source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg" />
+
+      
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg" seed="6">
+      <statement>
+      <p>For each problem, select the best response.</p>
+      <p>(a)   What are all the values that a correlation <em> r</em> can possibly take?</p>
+      <p><var form="buttons">
+      <li>
+      <p>0 <m>\le</m> <em> r </em> <m>\le</m> 1</p>
+      </li>
+      <li>
+      <p><em> r </em> <m>\ge</m> 0</p>
+      </li>
+      <li>
+      <p>-1  <m>\le</m> <em> r </em> <m>\le</m> 1</p>
+      </li>
+      <li>
+      <p>None of the above.</p>
+      </li>
+      </var></p>
+      <p>(b)   You have data for many years on the average price of a barrel of oil and the average retail price of a gallon of unleaded regular gasoline. When you make a scatterplot, the explanatory variable on the <em> x </em> -axis</p>
+      <p><var form="buttons">
+      <li>
+      <p>can be either oil price or gasoline price.</p>
+      </li>
+      <li>
+      <p>is the price of gasoline.</p>
+      </li>
+      <li>
+      <p>is the price of oil.</p>
+      </li>
+      <li>
+      <p>None of the above.</p>
+      </li>
+      </var></p>
+      <p>(c)   In a scatterplot of the average price of a barrel of oil and the average retail price of a gallon of gasoline, you expect to see</p>
+      <p><var form="buttons">
+      <li>
+      <p>a positive association.</p>
+      </li>
+      <li>
+      <p>a negative association.</p>
+      </li>
+      <li>
+      <p>very little association.</p>
+      </li>
+      <li>
+      <p>None of the above.</p>
+      </li>
+      </var></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=6&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=6&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=6&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=6&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-7" ww-id="webwork-7">
+    <pg source="Library/Rochester/setStatistics6CorrelationRegression/ur_stt_6_10.pg" />
+
+      
+    <static source="Library/Rochester/setStatistics6CorrelationRegression/ur_stt_6_10.pg" seed="7">
+      <statement>
+      <p>In some cases, the best-fitting multiple regression equation is of the form 
+      <m>\hat{y} = b_0 + b_1 x + b_2 x^2 + b_3 x^3.</m> The graph of such an equation is called 
+      a cubic. Using the data set given below, and letting <m>x_1 = x,</m> <m>x_2 = x^2,</m> and 
+      <m>x_3 = x^3,</m> find the multiple regression equation for the cubic that best fits the
+      given data.</p>
+      </statement>
+      
+      <statement>
+      <p><me>\begin{array}{c|ccccccc}
+      x \amp  -8 \amp  -5 \amp  -2 \amp  -1 \amp  4 \amp  6 \amp  8 \cr
+      \hline
+      y \amp  36.2 \amp  14.7 \amp  2 \amp  -0.9 \amp  -19.9 \amp  -37.4 \amp  -61.7
+      \end{array}</me></p>
+      <p>The equation is <m>\hat{y} =</m> <fillin name="AnSwEr0001" characters="10" /> <m>+</m> <fillin name="AnSwEr0002" characters="10" /> <m>x+</m>  
+      <fillin name="AnSwEr0003" characters="10" /> <m>x^2 +</m> <fillin name="AnSwEr0004" characters="10" /> <m>x^3.</m></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=7&amp;sourceFilePath=Library/Rochester/setStatistics6CorrelationRegression/ur_stt_6_10.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=7&amp;sourceFilePath=Library/Rochester/setStatistics6CorrelationRegression/ur_stt_6_10.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=7&amp;sourceFilePath=Library/Rochester/setStatistics6CorrelationRegression/ur_stt_6_10.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=7&amp;sourceFilePath=Library/Rochester/setStatistics6CorrelationRegression/ur_stt_6_10.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-8" ww-id="webwork-8">
+    <pg source="Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg" />
+
+      
+    <static source="Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg" seed="8">
+      <statement>
+      <p>A fair <m>6</m>-sided die is rolled <m>10</m> times and the resulting sequence of <m>10</m> numbers is recorded.</p>
+      <p>How many different sequences are possible?  <fillin name="AnSwEr0001" characters="20" /></p>
+      <p>How many different sequences consist entirely of even numbers? <fillin name="AnSwEr0002" characters="20" /></p>
+      <p>How many different sequences are possible if the first, third, and fourth numbers must be the same? <fillin name="AnSwEr0003" characters="20" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=8&amp;sourceFilePath=Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=8&amp;sourceFilePath=Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=8&amp;sourceFilePath=Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=8&amp;sourceFilePath=Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-9" ww-id="webwork-9">
+    <pg source="Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg" />
+
+      
+    <static source="Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg" seed="9">
+      <statement>
+      <p>Find how many positive integers with exactly four decimal digits, that
+      is, positive integers between 1000 and 9999 inclusive, have the
+      following properties:</p>
+      <p>(a) are not divisible by either 5
+      or 7.</p>
+      <p><fillin name="AnSwEr0001" characters="30" /></p>
+      <p>(b) are divisible by 5 but not by 7.</p>
+      <p><fillin name="AnSwEr0002" characters="30" /></p>
+      <p>(c) are
+      divisible by 7.</p>
+      <p><fillin name="AnSwEr0003" characters="30" /></p>
+      <p>(d) are divisible by 5 and by 7.</p>
+      <p><fillin name="AnSwEr0004" characters="30" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=9&amp;sourceFilePath=Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=9&amp;sourceFilePath=Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=9&amp;sourceFilePath=Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=9&amp;sourceFilePath=Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg</server-url>
 
   </webwork-reps>
 

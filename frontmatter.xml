@@ -16,37 +16,63 @@
 
     </titlepage>
  
- 
     <colophon>
    	   <copyright>
-            <year>2016<ndash />today</year>
+            <year>2015 <ndash />today</year>
             <holder>John Travis</holder>
             <shortlicense>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license is included in the appendix entitled <q>GNU Free Documentation License.</q></shortlicense>
         </copyright>
     </colophon>
     
-    <biography>
-        <p>John Travis grew up in Mississippi and had his graduate work at the University of Tennessee and Mississippi State University. As a numerical analyst, since 1988 he has been a professor of mathematics at his undergraduate alma mater Mississippi College where he currently serves as Professor and Chair of Mathematics.</p>
-        <p>You can find him playing racquetball or guitar but not generally at the same time. He is also an active supporter and organizer for the opensouce online homework system WeBWorK.</p>
-    </biography>
+<biography>
+<p>
+John Travis grew up in Mississippi and had his graduate work at the University of Tennessee and Mississippi State University. As a numerical analyst, since 1988 he has been a professor of mathematics at his undergraduate alma mater Mississippi College where he currently serves as Professor of Mathematics.
+</p>
+    	
+<p>
+John is married to Ruth Page Travis and together they have three unique daughters who all are good at mathematics.
+</p>
 
-    <preface>
+<p>You can find him playing racquetball or guitar but not generally at the same time. He is also an active supporter and organizer for the opensouce online homework system WeBWorK.
+</p>
+</biography>
 
-        <p>This text is intended for a one-semester calculus-based undergraduate course in probability and statistics .</p>
+<preface>
 
+<p>
+This text is intended for a one-semester course in probability and statistics that presumes calculus knowledge up to integration techniques. It is perhaps helpful if a student has already been exposed to sequences and series but much of what is needed is reviewed in the text.
+</p>
+        
+<p>An interactive version of this text is available at 
+<url href="http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.html">http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.html</url>
 
-        <p>A collection of WeBWorK online homework problems are available to correlate with the material in this text. Copies of these sets of problems are available by contacting the author.</p>
+and an pdf version with active links is available at
+
+<url href="http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf">http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf</url>. 
+</p>
+
+<p>
+A collection of WeBWorK online homework problems are available to correlate with the material in this text. Copies of these sets of problems are available by contacting the author. These exercises are considered an integral part when using this text although a static version of these is included in the appendix.
+</p>
+        
+<p>
+To successfully utilize this text, a student should review the requisite material and perhaps review the proofs and derivations if appropriate. While moving through the text, the student should review each of the examples and then attempt each of the interactive WeBWorK exercises. Whenever an interactive cell comes up, the student should play around with the cell and perhaps change the input data as appropriate to experiment. When a section is completed, a student should work the WeBWorK exercises (not part of this text) or some other exercises provided by the instructor and attempt the exercises provided in this text...many of which are famous examples or exercises that might have special significance.  Some are (of course) just easy and most of the textbook exercises have solutions provided.
+</p>
 		
-		<p>        
-        WeBWorK (<url href="http://webwork.maa.org">webwork.maa.org</url>) is an open-source online homework system for math and science courses. WeBWorK is supported by the MAA and the NSF and comes with a Open Problem Library (OPL) of over 35,000 homework problems. Problems in the OPL target most lower division undergraduate math courses and some advanced courses. Supported courses include college algebra, discrete mathematics, probability and statistics, single and multivariable calculus, differential equations, linear algebra and complex analysis.</p>
+<p>        
+WeBWorK (<url href="http://webwork.maa.org">webwork.maa.org</url>) is an open-source online homework system for math and science courses. WeBWorK is supported by the MAA and the NSF and comes with a Open Problem Library (OPL) of over 35,000 homework problems. Problems in the OPL target most lower division undergraduate math courses and some advanced courses. Supported courses include college algebra, discrete mathematics, probability and statistics, single and multivariable calculus, differential equations, linear algebra and complex analysis.
+</p>
 
-        <p>Sage (<url href="http://sagemath.org">sagemath.org</url>) is a free, open source, software system for advanced mathematics, which is ideal for assisting with a study of abstract algebra. Sage can be used either on your own computer, a local server, or on SageMathCloud (<url href="https://cloud.sagemath.com">https://cloud.sagemath.com</url>). </p>
-
+<p>
+Sage (<url href="http://sagemath.org">sagemath.org</url>) is a free, open-source, software system for advanced mathematics, which is ideal for assisting with a study of abstract algebra. Sage can be used either on your own computer, a local server, or on SageMathCloud (<url href="https://cloud.sagemath.com">https://cloud.sagemath.com</url>).  In this text, the sage cell is used also for interactive computations related to R and octave, as needed.
+</p>     
+        
+                
         <attribution>
             <line>John Travis</line>
-            <line>Clinton, Mississippi  2015</line>
+            <line>Clinton, Mississippi 2015-2019</line>
         </attribution>
 
-    </preface>
+</preface> 
 
 </frontmatter>

@@ -84,15 +84,15 @@ def _(n=slider(2,10,1,2)):
 	</statement>
 	<proof>
 	<p>
-	Trivially, by construction you get 
-		<me>\sum_{k=1}^n \frac{1}{n} = 1</me>
+	Trivially, by construction you get by summing over <m>R = \{1, 2, ... , n \}</m>
+		<me>\sum_{x=1}^n \frac{1}{n} = 1</me>
 	Also, 1/n is positive for all x values.
 	</p>
 	
 	<p>To determine the mean,
 		<md>
-			<mrow>\mu &amp; = \sum_{k=1}^n x \cdot \frac{1}{n}</mrow>
-			<mrow> &amp; = \frac{1}{n}\sum_{k=1}^n x </mrow>
+			<mrow>\mu &amp; = \sum_{x=1}^n x \cdot \frac{1}{n}</mrow>
+			<mrow> &amp; = \frac{1}{n}\sum_{x=1}^n x </mrow>
 			<mrow> &amp; = \frac{1}{n} \frac{n(n+1)}{2}</mrow>
 			<mrow> &amp; = \frac{1+n}{2}</mrow>
 		</md>
@@ -100,8 +100,8 @@ def _(n=slider(2,10,1,2)):
 	
 	<p>To determine the variance,
 		<md>
-			<mrow>\sigma^2 &amp; = \sum_{k=1}^n x^2 \cdot \frac{1}{n} - \mu^2</mrow>
-			<mrow> &amp; = \frac{1}{n}\sum_{k=1}^n x^2 - \left ( \frac{1+n}{2}\right )^2 </mrow>
+			<mrow>\sigma^2 &amp; = \sum_{x=1}^n x^2 \cdot \frac{1}{n} - \mu^2</mrow>
+			<mrow> &amp; = \frac{1}{n}\sum_{x=1}^n x^2 - \left ( \frac{1+n}{2}\right )^2 </mrow>
 			<mrow> &amp; = \frac{1}{n} \frac{n(n+1)(2n+1)}{6} - \frac{1+2n+n^2}{4}</mrow>
 			<mrow> &amp; = \frac{(2n^2+3n+1)}{6} - \frac{1+2n+n^2}{4}</mrow>
 			<mrow> &amp; = \frac{(4n^2+6n+2)}{12} - \frac{3+6n+3n^2}{12}</mrow>
@@ -111,14 +111,18 @@ def _(n=slider(2,10,1,2)):
 
 	<p>For skewness,
 		<md>
-			<mrow>\gamma_1 = &amp; \sum_{k=1}^n x^3 \cdot \frac{1}{n} - 3 \mu \sum_{k=1}^n x^2 \cdot \frac{1}{n}  + 2\mu^3</mrow>
-			<mrow> &amp; = \frac{n^2(n+1)^2}{4n} - 3\frac{(n(n+1))}{2} \frac{1+n}{2} + 2 \left ( \frac{1+n}{2}\right )^3 </mrow>
-			<mrow> &amp; = </mrow>
+			<mrow>\gamma_1 = &amp; \sum_{x=1}^n x^3 \cdot \frac{1}{n} - 3 \mu \sum_{x=1}^n x^2 \cdot \frac{1}{n}  + 2\mu^3</mrow>
+			<mrow> &amp; = \frac{n^2(n+1)^2}{4n} - 3\frac{(n(n+1)(2n+1))}{2n} \frac{1+n}{2} + 2 \left ( \frac{1+n}{2}\right )^3 </mrow>
+			<mrow> &amp; = \frac{n^2(n+1)^2}{4n} - \frac{(n+1)^2 (n(2n+1)}{4n} + \frac{(n+1)^3}{4}</mrow>
+			<mrow> &amp; = \frac{(n+1)^2}{4} \left [ n - 2n -1 + (n+1) \right ]</mrow>
+			<mrow> &amp; = 0</mrow>
 		</md>
+	which should be obvious since the histogram for this distribution is constantly flat.
 	</p>
 
 	<p>For Kurtosis, 
-	use the fourth moment and simplify...the algebra is performed using Sage in the active cell below this proof.
+	use the fourth moment and simplify.  This this is tedious, the algebra is performed using Sage in the active cell below this proof. However, you might want to supply the remainder of this proof using the fact that
+	<me>\sum_{x=1}^n x^4 = \frac{6n^5 + 15n^4 + 10n^3 - n}{30}.</me>
 	</p>
 	</proof>
 </theorem>
@@ -160,7 +164,7 @@ Further, the probability of getting an outcome in A={2,3} would be f(2)+f(3) = 1
 
 <section><title>Continuous Uniform Distribution</title>
 	<p>
-	Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + w \lt X \lt v + w)</m>.  We use this below...
+	Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + \Delta \lt X \lt v + \Delta)</m> for reasonable values of <m>\Delta</m> so that the interval remains inside R.
 </p>
 	
 <p>
@@ -173,13 +177,18 @@ Further, the probability of getting an outcome in A={2,3} would be f(2)+f(3) = 1
 <proof>
 <p>From before, for X a continuous uniform variable, we get
 	<md>
-		<mrow>\int_u^v f(x) dx = \int_{u+w}^{v+w} f(x) dx</mrow>
-		<mrow>F(v)-F(u) = F(v+w)-F(u+w)</mrow>
-		<mrow>F(u+w)-F(u) = F(v+w)-F(v)</mrow>
+		<mrow>\int_u^v f(x) dx = \int_{u+\Delta}^{v+\Delta} f(x) dx</mrow>
+		<mrow>F(v)-F(u) = F(v+\Delta)-F(u+\Delta)</mrow>
+		<mrow>F(u+\Delta)-F(u) = F(v+\Delta)-F(v)</mrow>
+		<mrow>frac{F(u+\Delta)-F(u)}{\Delta} = \frac{F(v+\Delta)-F(v)}{\Delta}</mrow>
 	</md>
-	which is true regardless of w so long as you stay in the domain of interest. This only happens if F is linear and therefore f must be constant....say, f(x)=c. If the space of X is a single interval with <m>R = [a,b]</m> then
+	which is true regardless of \Delta so long as you stay in the domain of interest. Letting <m>\Delta \rightarrow 0</m> gives
+	<me>F'(u) = F'(v)</me>
+but since F is an antiderivative of the probability function,
+	<me>f(u) = f(v)</me>
+for all u and v in R. This only happens if f is constant...say, f(x)=c. If the space of X is a single interval with <m>R = [a,b]</m> then
 	<me>1 = \int_a^b c dx = c(b-a)</me>
-	which yields c = \frac{1}{b-a} as desired. 
+	which yields <m>c = \frac{1}{b-a}</m> as desired. 
 </p>
 </proof>
 </theorem>
@@ -200,7 +209,7 @@ Then, if you want to compute something like <m>P(2 &lt; X &lt; 4.5)</m> integrat
 <example><title>Continuous Uniform over two disjoint intervals</title>
 <p>
 Suppose <m>R = [0,2] \cup [5,7]</m>.  Then, as in the theorem proof
-<me>1 = \int_R c dx = \int_0^2 c dx + \int_5^7 c dx = 4.</me>
+<me>1 = \int_R c dx = \int_0^2 c dx + \int_5^7 c dx = 4c.</me>
 Thus, <m> f(x) = \frac{1}{4}</m>.
 For computing probabilities, you will want to break up any resulting integrals in a similar manner.
 </p>
@@ -295,9 +304,12 @@ For x in this range,
 	For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.
 	</p>
 	<p>
-	Indeed, consider a collection of n items from which you want to take a sample of size r without replacement. If <m>n_1</m> of the items are "desired" and the remainder are not, let the random variable X measure the number of items from the first group in your sample with <m>R = \{0, 1, ..., r \}</m>. The resulting collection of probabilities is called a Hypergeometric Distribution.
+	Indeed, consider a collection of n items from which you want to take a sample of size r without replacement. If <m>n_1</m> of the items are "desired" and the remaining <m>n_2 = n - n_1</m> are not, let the random variable X measure the number of items from the first group in your sample with <m>R = \{0, 1, ..., min {r,n_1} \}</m>. The resulting collection of probabilities is called a Hypergeometric Distribution.
 	</p>
-	
+
+<p>
+<image source="images/HypergeometricBucket.png" width = "60%"/>
+</p>	
 	
 <p>
 <theorem><title>Hypergeometric Probability Function</title>
@@ -308,7 +320,7 @@ For x in this range,
 </statement>
 <proof>	
 	<p>
-	Since you are sampling without replacement and trying only measure the number of items from your desired group in the sample, then the space of X will include R = {0, 1, ..., r} assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>. In the case when r is too large for either of these, the formulas below will follow noting that binomial coefficients are zero if the top is smaller than the bottom or if the bottom is negative.
+For the following, we will presume thatSince you are sampling without replacement and trying only measure the number of items from your desired group in the sample, then the space of X will include R = {0, 1, ..., r} assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>. In the case when r is too large for either of these, the formulas below will follow noting that binomial coefficients are zero if the top is smaller than the bottom or if the bottom is negative.
 	</p>
 	<p>
 	So f(x) = P(X = x) = P(x from the sample are from the target group and the remainder are not). Breaking these up gives
@@ -316,6 +328,19 @@ For x in this range,
 	</p>
 </proof>
 </theorem>
+</p>
+
+<p>
+For example, suppose that you have a bag of assorted candies but you really prefer the little dark chocolate bars. Because you are obsessive, you first empty the whole bag onto your desk and discover that the bag contains 33 equally-sized candy bars of which 6 of them are your delightful dark chocolate bars. Putting the bars randomly back into the bag, you find that a friend's friend's friend walks into the room and grabs a handful of 5 candy bars from your bag. You are shocked and would like to know the probability that this person got 2 or more of your dark chocolate candy bars. 
+</p>
+<p>
+As a good prob/stats student you recognize that this situation fits the requirements of the hypergeometric distribution with <m>n_1 = 6, n_2 = 27, r=5</m> and you want <m>P(X \ge 2)</m>.  You determine that it would be easier to compute the complement 
+<me>1 - P(X \le 1) = 1 - f(0) - f(1).</me>  
+Therefore, 
+<me> P (X \ge 2) = 1 - \frac{\binom{6}{0} \binom{27}{5}}{\binom{33}{5}} - \frac{\binom{6}{1} \binom{27}{4}}{\binom{33}{5}}</me>
+or after some simplification
+<me>P (X \ge 2) = 1 - \frac{13455}{39556} - \frac{8775}{19778} \approx 0.21617</me>
+Therefore, you have about 1 chance out of 5 that the friend got 2 or more of your bars. You can be somewhat confident that plenty of dark chocolate bars remain hoarded for yourself.
 </p>
 
 <p>	
@@ -375,6 +400,34 @@ For x in this range,
 		</p>
 		</li>
 		<li>
+		<p>
+For variance, we will use an alternate form of the definition that is useful when looking for cancellation options with the numerous factorials in the hypergeometric probability function. Indeed, you can easily notice that
+<me>\sigma^2 = E[X^2] - \mu^2 = E[X^2-X]+E[X] -\mu^2 = E[X(X-1)] + \mu - \mu^2.</me>
+Since we have <m>\mu = r \frac{n_1}{n}</m> from above then let's focus on the first term only and use the substitutions
+			<md>
+				<mrow>y = x-2</mrow>
+				<mrow>n_3 = n_1-2</mrow>
+				<mrow>s = r-2</mrow>
+				<mrow>m = n-2</mrow>
+			</md>
+to get
+<md>
+<mrow>E[X(X-1)] &amp; = \sum_{x=0}^n x(x-1) \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
+<mrow> &amp; = \sum_{x=2}^n x(x-1) \frac{\frac{n_1!}{x(x-1)(x-2)!(n_1-x)! } \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
+<mrow> &amp; = \sum_{x=2}^n \frac{\frac{n_1!}{(x-2)!(n_1-x)! } \frac{n_2!}{(r-x)!(n_2-r+x)!}}{\binom{n}{r}}</mrow>
+<mrow> &amp; = n_1 \cdot (n_1-1) \sum_{x=2}^n \frac{\frac{(n_3)!}{(x-2)!(n_3 -(x-2))! } \frac{n_2!}{((r-2)-(x-2))!(n_2-(r-2)+(x-2))!}}{\binom{n}{r}}</mrow>
+<mrow> &amp; = n_1 \cdot (n_1-1) \sum_{y=0}^{m} \frac{\frac{(n_3)!}{y!(n_3 -y)! } \frac{n_2!}{(s-y)!(n_2-s+y)!}}{\binom{n}{r}}</mrow>
+<mrow> &amp; = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} \sum_{y=0}^{m} \frac{\binom{(n_3)}{y} \binom{n_2}{s-y}}{\binom{m}{s}}</mrow>
+<mrow> &amp; = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} </mrow>
+</md>
+where we have used the summation formula above that showed that f(x) was a probability function.  
+</p>
+<p>
+Putting this together with the earlier formula gives
+<me>\sigma^2 = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} + r \frac{n_1}{n} - \left ( r \frac{n_1}{n} \right )^2.</me> 
+		</p>
+		</li>
+		<li>
 		<p>The proof of the variance formula is similar and uses E(X(X-1)+ μ - μ2. The proof of skewness and kurtosis are messy and we won’t bother with them for this distribution!
 		</p>
 		</li>
@@ -389,28 +442,64 @@ For x in this range,
 	which is indeed what you might expect when selecting once.
 	</p>
 
-<p>Consider the Hypergeometric distribution for various values of <m>n_1, n_2,</m> and r using the interactive cell below. Notice what happens when you start with relatively small values of <m>n_1, n_2,</m> and r (say, start with <m>n_1 = 5, n_2 = 8,</m> and r = 4 and then doubling then all again and again. Consider the likely skewness and kurtosis of the graph as the values get larger.
+<p>
+<sage language='r'>
+<input>
+N1 = 10
+N2 = 16
+n = N1+N2
+r = 5
+
+X = 0:r        # the space R of the random variable 
+mu = r*N1/n      # the formula for mean of the Binomial Distributions
+sdev = sqrt(mu*(N2/n)*(n-r)/(n-1))  # the formula for the standard deviation
+dhyper( X, N1, N2, r )   # let's print out a bunch of actual probs
+
+Phyper = dhyper(X, N1, N2, r )  # create the probability function over X
+
+Psample = rhyper(10^6, N1, N2, r)  # to create a histogram, sample a lot
+Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
+hist(Psample, prob=TRUE, br=(-1:Xtop)+0.5, col="skyblue2", xlab="X", 
+  main="Hypergeometric Probability Function vs Approximating 'Bell Curve'")
+
+points(X, Phyper, pch=19, col="darkgreen")  # to create actual (x,f(x))
+
+Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)}   # to overlap a bell curve
+curve(Pnormal, col="red", lwd=2, add=TRUE) 
+</input>
+</sage>
+</p>
+
+
+<p>Consider the Hypergeometric distribution for various values of <m>n_1, n_2,</m> and r using the interactive cell above. Notice what happens when you start with relatively small values of <m>n_1, n_2,</m> and r (say, start with <m>n_1 = 5, n_2 = 8,</m> and r = 4 and then doubling then all again and again. Consider the likely skewness and kurtosis of the graph as the values get larger.
 </p>	
+<p>
+In the interactive cell below, notice how many items are in each portion of the "Venn Bucket" when you change the size of the number extracted--denoted by what is inside the circle.
+</p>
 <sage>
 	<input>
 # Hypergeometric distribution over 0 .. N
 # Size of classes N1 and N2 must be given as well as subset size r
 var('x')
-@interact
-def _(N1=slider(1,40,1,10,label='$N_1$'),
-    N2=slider(1,40,1,10,label='$N_2$'),
-    r=slider(1,40,1,10,label='$r$')):
-    N = N1 + N1
-    R = range(r+1)
-    if (r &gt; N1)|(r &gt; N2):
-        pretty_print('When r is bigger than N1 or N2, special consideration must be made')
-    else:
-        f(x) = binomial(N1,x)*binomial(N2,r-x)/binomial(N,r)
-        pretty_print(html('Density Function: $f(x) =%s$'%str(latex(f(x)))))
-        pretty_print(html('over the space $R = %s$'%str(R)))
-        points((k,f(x=k)) for k in R).show()
-        for k in R:
-           print (html('$f(%s'%k+') = %s'%latex(f(x=k))+' \\approx %s$'%f(x=k).n(digits=5)))
+@interact(layout=dict(top=[['N1','N2','r']]))
+def _(N1=input_box(10,width=5,label='\( N_1 \)'),
+    N2=input_box(10,width=5,label='\( N_2 \)'),
+    r=input_box(5,width=5,label='\( r \)')):
+    N = N1 + N2
+    f = binomial(N1,x)*binomial(N2,r-x)/binomial(N,r)
+    @interact
+    def __(X = slider(0,min(r,N1),1)):
+        Px = f(x=X)
+        Pxapprox = Px.n(digits=8)
+        formula = "\\frac{\\binom{%s}"%str(N1)+"{%s}"%str(X)+" \\binom{%s}"%str(N2)+"{%s}}"%str(r-X)+"{ \\binom{%s}"%str(N)+"{%s}}"%str(r)
+        pretty_print(html("P(X = %s"%str(X)+") = \( %s \)"%str(formula)+" = \( %s \)"%str(latex(Px))+"\( \\approx %s \)"%str(Pxapprox)))
+        G = polygon([(0,0), (1,0), (1.2,1), (-.2,1)],color='lightblue')
+        G += line([(0.5,0),(0.5,1)],thickness=2)
+        G += circle((0.5,0.3),0.25,fill=True,facecolor='yellow',alpha=0.5,zorder=2)
+        G += text("Things I want",(0.2,0.9))+text("Everything else",(0.8,0.9))
+        G += text("%s"%X,(0.4,0.3),fontsize=30) + text("%s"%(r-X),(0.6,0.3),fontsize=30)
+        G += text("%s"%(N1-X),(0.1,0.5),fontsize=30) + text("%s"%(N2-(r-X)),(0.9,0.5),fontsize=30)
+        show(G, axes=0, figsize=(4,4) )
 	</input>
 </sage>
 	
@@ -424,7 +513,6 @@ Here is a summary of the major formulas from this chapter:
 </p>
 </introduction>
 </p>
-
 <p>
 <xref ref="DiscreteUniformFunction">Discrete Uniform f(x)</xref>
 </p>
@@ -461,6 +549,12 @@ You have an urn with 10 marbles of which <m>n_1 = 6</m> are red and <m>N_2 = 4</
 </ul> 
 </p>
 </statement>
+<hint>
+<p>
+This is hypergeometric using  
+<me>f(x) = \frac{\binom{6}{x} \binom{4}{3-x}}{\binom{10}{3}}.</me>
+</p>
+</hint>
 </exercise>
 </p>
 
@@ -475,6 +569,11 @@ You randomly select a hand of five cards without replacement from an ordinary de
 </ul>
 </p>
 </statement>
+<hint>
+<p>
+This exercise is actually two different hypergeometric distributions: the first is the 13 spades vs the 39 other cards and the second is the 12 face cards vs the 40 other cards.
+</p>
+</hint>
 </exercise>
 </p>
 
@@ -482,7 +581,7 @@ You randomly select a hand of five cards without replacement from an ordinary de
 <exercise><title> - Starting Seniors</title>
 <statement>
 <p>
-You are picking an eleven member football starting team by picking randomly from a group with 15 seniors and 35 others.  Using a hypergeometric distribution, determine:
+You are picking an eleven member football starting team by picking randomly from a group with 15 seniors and 35 others. Determine:
 <ul>
 	<li>P(all seniors)</li>
 	<li>P(exactly 6 seniors)</li>
@@ -491,6 +590,11 @@ You are picking an eleven member football starting team by picking randomly from
 </ul>
 </p>
 </statement>
+<hint>
+<p>
+This is a hypergeometric distribution with <m>n_1 = 15, n_2 = 35, r = 11</m>.
+</p>
+</hint>
 </exercise>
 </p>
 
@@ -498,14 +602,19 @@ You are picking an eleven member football starting team by picking randomly from
 <exercise><title> - Old Faithful</title>
 <statement>
 <p>
-Ole Faithful geyser in Yellowstone National Park erupts every 91 minutes. You show up at some random time in the eruption cycle and your tour bus plans to stay for 25 minutes. Determine the likelihood that you will be able to see it erupt.  Express your answer in terms of the continuous uniform distribution by giving f(x), F(x), and the specific answer to this question.
+Ole Faithful geyser in Yellowstone National Park erupts every 91 minutes. You show up at some random time in the eruption cycle and your tour bus plans to stay for 25 minutes. Determine the likelihood that you will be able to see it erupt.  Express your answer by giving correct formulas for f(x) and F(x) and then determine the specific answer to this question.
 </p>
 </statement>
+<hint>
+<p>
+This is the continuous uniform distribution over R = [0, 91].
+</p>
+</hint>
 </exercise>
 </p>
 
 <p>
-<exercise><title> - Continuous Uniform Random Variable Scenarios</title>
+<exercise><title> - Uniform Scenarios</title>
 <statement>
 <p>
 Explain how the following situations can be modeled using a continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
@@ -523,7 +632,7 @@ Explain how the following situations can be modeled using a continuous uniform d
 <exercise><title> - Continous Uniform on a different space</title>
 <statement>
 <p>
-Determine an explicit formula for f(x) and the resulting mean and variance for a continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
+Determine an explicit formula for f(x) and the mean and variance for a continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
 </p>
 </statement>
 <solution>
@@ -642,6 +751,7 @@ Therefore, the expect value of spending another dollar to get the multiplier eff
 </solution>
 </exercise>
 </p>
+
 
 </section>
 
