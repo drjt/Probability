@@ -310,7 +310,7 @@ Going one step further, what about ordering the letters in {A, B, C, D}? You can
 <p>
 Following the tree idea from above, continue for several steps but then stop once you have gone r steps in.  For example, it is easy to see that <m>_5P_2 = 20</m> using a tree.
 
-<image source="images/PermutationSubTree.png" />
+<image source="images/PermutationSubTree.png" width="50%"/>
 
 
 </p>

@@ -46,7 +46,7 @@ In this chapter, you will investigate the following distributions:
 
 <section><title>Poisson Distribution</title>
 <p>
-Consider a Poisson Process where you start with an interval of fixed length T and where X measures the variable number of successes, or changes, within a that interval. The resulting distribution of X will be called a Poisson distribution.
+Consider a Poisson Process where you start with an interval of fixed length T and where X measures the variable number of successes, or changes, within that interval. The resulting distribution of X will be called a Poisson distribution.
 </p>
 
 <p>
@@ -64,9 +64,9 @@ For a sufficiently large natural number n, break up the given interval [0,T] int
 
 However, since there are a finite number of independent intervals each with probability p of containing a success then you can use a Binomial distribution to evaluate the corresponding probabilities so long as n is finite. Doing so yields and taking the limit as n approaches infinity gives:
 <md>
-	<mrow>f(x) &amp; = P(\text{X changes in [0,T]}) </mrow>
+	<mrow>f(x) &amp; = P(\text{x changes in [0,T]}) </mrow>
 	<mrow> &amp; = \lim_{n \rightarrow \infty} \binom{n}{x} p^x (1-p)^{n-x}</mrow>
-	<mrow> &amp; = \lim_{n \rightarrow \infty} \binom{n}{x} (\frac{\lambda T}{n})^x (1-\lambda \frac{T}{n})^{n-x}</mrow>
+	<mrow> &amp; = \lim_{n \rightarrow \infty} \binom{n}{x} (\frac{\lambda T}{n})^x (1-\frac{\lambda T}{n})^{n-x}</mrow>
 	<mrow> &amp; = \lim_{n \rightarrow \infty} \frac{n(n-1)...(n-x+1)}{x!} ( \frac{\lambda T}{n})^x (1- \frac{\lambda T}{n})^{n-x}</mrow>
 	<mrow> &amp; = \frac{(\lambda T)^x}{x!} \lim_{n \rightarrow \infty} \frac{n(n-1)...(n-x+1)}{n \cdot n \cdot ... \cdot n} (1-\lambda \frac{T}{n})^{n}(1-\lambda \frac{T}{n})^{-x}</mrow>
 	<mrow> &amp; = \frac{(\lambda T)^x}{x!} \lim_{n \rightarrow \infty} (1-\frac{1}{n})...(1-\frac{x-1}{n})  (1- \frac{\lambda T}{n})^{n}(1- \frac{\lambda T}{n})^{-x}</mrow>
@@ -102,6 +102,37 @@ However, since there are a finite number of independent intervals each with prob
 </proof>
 </theorem>
 </p>
+
+<p>
+<example><title>Router Requests</title>
+<p>
+Everyone using the internet utilizes a series of "routers" who spend their time waiting for someone to show up and ask for something to be done. Let's consider one such router which, over time, has been shown to receive on average 1000 such requests in any given 10 minute period during regular working hours. In general, a Poisson process with mean 1000 would seem to fit and therefore the Poisson distribution would be a good model. We will find out below that <m>\lambda T = \mu = 1000</m> and will use that here to get 
+<me> f(x) = \frac{1000^x}{x!} e^{-1000}.</me>
+</p>
+<p>
+So, suppose we would like to know the likelihood of receiving exactly 1020 requests in a 10 minute time interval.  This means we need
+<me>P(X = 1020) = f(1020) = \frac{1000^{1020}}{1020!} e^{-1000}</me>
+which might be totally impossible to compute directly using a regular calculator. However, many graphing calculators have a built-in function where f(x) = poissonpdf(mu,x) and F(x) = poissoncdf(mu,x). To answer our question,
+<me> f(1020) = \text{poissonpdf(1000,1020)} \approx 0.01024.</me>
+
+On the other hand, suppose the question is to ask whether 1020 or fewer requests wil be made in the 10 minute interval. If so, then
+<me> F(1020) = \text{poissoncdf(1000,1020)} \approx 0.74258.</me> 
+</p>
+</example>
+</p>
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		This one uses the poisson distribution.
+		</p>
+		</introduction>
+		<webwork source="Library/UBC/STAT/STAT302/HW06/HW06-03.pg">
+		</webwork>
+</exercise>
+</p>
+
 
 <p>
 <theorem><title>Statistics for Poisson</title>
@@ -168,10 +199,34 @@ kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
 pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</input>
 </sage>
-</p>
-<p>
-Approximation by binomial means you can also use Poisson to approximate Binomial for n sufficiently large.
 </p>	
+
+<p>
+<sage language='r'>
+<input>
+mu = 3           # the mean must be given
+sdev = sqrt(mu)  # the formula for the standard deviation
+
+M = mu*6   # the space is infinite but we just go out 6 standard deviations
+X = 0:M    # part of the space R of the random variable 
+if(M &lt; 101){
+dpois( X, mu, log = FALSE )   # let's print out a bunch of actual probs if M reasonable
+}
+
+Ppois = dpois(X, mu )  # create the probability function over X
+
+Psample = rpois(10^6, mu)  # to create a histogram, sample a lot
+Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
+hist(Psample, prob=TRUE, br=(-1:Xtop)+0.5, col="skyblue2", xlab="X", 
+  main="Poisson Probability Function vs Approximating 'Bell Curve'")
+
+points(X, Ppois, pch=19, col="darkgreen")  # to create actual (x,f(x))
+
+Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)}   # to overlap a bell curve
+curve(Pnormal, col="red", lwd=2, add=TRUE) 
+</input>
+</sage>
+</p>
 </section>
 
 
@@ -205,6 +260,33 @@ where the discrete Poisson Probability Function is used to answer the probabilit
 	</p>
 	</statement>
 </definition>
+</p>
+
+<p>
+<example><title>Router Requests Revisited</title>
+<p>
+Once again, let's consider a router which, over time, has been shown to receive on average 1000 such requests in any given 10 minute period during regular working hours. This would mean that, on average, it would take <m>\mu = \frac{10}{1000} = \frac{1}{100} = 0.01</m> minutes (i.e., less than a second) to receive the first request. If X were to measure the time interval until the first actual request comes in, then the Exponential distribution would be a good model using 
+<me> f(x) = \frac{1}{0.01} e^{-\frac{x}{0.01}}.</me>
+</p>
+<p>
+Let's determine the probability that a first request arrives in the next two seconds. First, note that since X is a continuous variable that f(x) is NOT the probability of exactly X minutes but you must integrate to compute all probabilities. Also, the next 2 seconds is actually the next <m>\frac{2}{60} = \frac{1}{30}</m> of a minute. Therefore, F(x) is what you need in general and you find
+<me>P(X \le \frac{1}{30}) = F(\frac{1}{30}) = 1 - e^{-\frac{\frac{1}{30}}{0.01}} \approx 0.96433.</me> 
+</p>
+</example>
+</p>
+
+
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		This one uses the exponential distribution.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setProbability14ExponentialDist/ur_pb_14_1.pg">
+		</webwork>
+</exercise>
 </p>
 
 <p>
@@ -305,23 +387,24 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 <p>
 <sage language = 'r'>
 <input>
-X = 0:20    # the space to use for calculations. Should be R 
-            # but since R is infinite just stop at a large enough value
-mu = 3      # the required parameter for Poisson Distributions
+r=1                # the number of successes desired
+            # the mean till first must be given
+mu = 3
 sdev = sqrt(mu)  # the formula for the standard deviation
-dpois( X, lambda=mu )   # let's print out a bunch of actual probs
 
-Ppoisson = dpois(X, mu)  # create the probability function over X
+M = mu*3   # the space is infinite but we just go out 3 standard deviations
+X = 0:M    # quantiles for the space R of the random variable 
 
-Psample = rpois(10^6, mu)  # to create a histogram, sample a lot
-Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
-hist(Psample, prob=TRUE, br=(-1:Xtop)+0.5, col="skyblue2", xlab="X", 
-  main="Poisson Probability Function vs Approximating 'Bell Curve'")
+Pexp &lt;- function(x){dexp(x, mu )}  # create the probability function over X
 
-points(X, Ppoisson, pch=19, col="darkgreen")  # to create actual (x,f(x))
-
+curve(Pexp, from=0, to=M, xlab="X", col="blue", lwd=3,
+ main="Gamma Sampling vs Gamma Curve vs Approximating 'Bell Curve'") 
 Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)}   # to overlap a bell curve
 curve(Pnormal, col="red", lwd=2, add=TRUE) 
+
+Psample = rexp(10^6, mu)  # to create a histogram, sample a lot
+# Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
+hist(Psample, prob=TRUE, add=TRUE)
 </input>
 </sage>
 </p>
@@ -347,6 +430,60 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </proof>
 </theorem>
 </p>
+
+<!--
+Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
+-->
+<p>
+<exercise>
+<webwork>
+<setup>
+    <pg-code>
+    </pg-code>
+</setup>
+<statement>
+<p>
+It can be presumed that the life span in years of a certain brand of lightbulbs follows the Poisson process assumptions.  Suppose that the mean life span till failure is known to be 0.7 years. A tester makes random observations of the life times of this particular brand of lightbulbs and records them one by one as either a success if the life time exceeds 1 year, or as a failure otherwise.
+</p>
+<p>
+Determine the probability that a randomly tested bulb lasts more than 1 year:
+<var name="0.2397" width="10" />
+</p>
+
+<p>
+Determine probability that the first success occurs in the fifth observation: <var name="0.0801" width="10" />
+</p>
+<p>  
+Determine the probability that the second success occurs in the 8th observation given that the first success occurred in the 3rd observation:  <var name="0.0801" width="10" />
+</p>
+<p>
+Determine the probability that the first success occurs in an odd-numbered observation: <var name="0.5681" width="10" />
+</p>
+</statement>
+
+<hint>
+<p>
+Use the exponential distribution to get the first answer. Use the geometric to get the remainder.
+</p>
+</hint>
+<solution>
+<p>Using the exponential distribution, 
+<me>p = P(X \gt 1) = 1 - F(1) = 1 - (1-e^{-\frac{1}{0.7}}) \approx 0.2397.</me>
+</p>
+<p>
+Now, use the geometric distribution with <m>p = 0.2397</m>...
+<me>P(X = 5) = f(5) = (1-0.2397)^4 \cdot 0.2397 \approx 0.0801.</me>
+<me>P(\text{2nd success on 8} | \text{1st success on 3}) = P(X = 5) \approx 0.0801</me>
+<me>P(\text{1st success on an odd trial}) = f(1) + f(3) + f(5) + ... \\ 
+  = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
+  = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k = p \frac{1}{1-(1-p)^2} \approx 0.5681</me>
+</p>
+</solution>
+</webwork>
+</exercise>
+</p>
+
+
 
 </section>
 
@@ -420,13 +557,76 @@ Notice that for this random variable, <m>\mu = \lambda T</m> can be obtained for
 <definition><title>Gamma Distribution Probability Function</title>
 <statement>
 <p>
-If X measures the interval until the rth success and <m>\mu as the average interval until the 1st success</m>, then X with probability function
-<me>f(x) =  \frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}</me>
+If X measures the interval until the rth success and <m>\mu</m> as the average interval until the 1st success, then X with probability function
+<me>f(x) =  \frac{x^{r-1} \cdot e^{-\frac{x}{\mu}}}{\Gamma(r) \cdot \mu^r}</me>
 has a Gamma Distribution.
 </p>
 </statement>
 </definition>
 </p>
+
+<p>
+<exercise>
+<webwork>
+<setup>
+    <pg-code>
+    </pg-code>
+</setup>
+<statement>
+<p>
+It can be presumed that the life span in years of a certain brand of lightbulbs follows the Poisson process assumptions.  Suppose that the mean life span till failure is known to be 0.7 years. To do long-term study, a series of light bulbs are arranged so that when the first one fails, the next one comes on, etc.
+</p>
+<p>
+Determine the probability that it takes at most 3.5 years before the 4th bulb fails:
+<var name="0.73497" width="10" />
+</p>
+</statement>
+<solution>
+<p>
+This is a gamma distribution with r = 4 and
+<me>F(x) = 1 - \sum_{k=0}^3 \frac{ (x/0.7)^k e^{-x/0.7}}{k!}</me>
+So, 
+<md>
+<mrow>P(X \lt 3.5) &amp; = F(3.5)</mrow>
+<mrow> &amp; = 1 - \frac{ (3.5/0.7)^0 e^{-3.5/0.7}}{0!} \\ - \frac{ (3.5/0.7)^1 e^{-3.5/0.7}}{1!} \\ - \frac{ (3.5/0.7)^2 e^{-3.5/0.7}}{2!} - \frac{ (3.5/0.7)^3 e^{-3.5/0.7}}{3!}</mrow>
+<mrow> &amp; = 1 - e^{-5} - 5 \cdot e^{-5} - \frac{25}{2} \cdot e^{-5} - \frac{125}{6} \cdot e^{-5}</mrow>
+<mrow> &amp; = 1 - e^{-5} \left ( 1 + 5 + 25/2 + 125/6 \right ) \approx 0.73497.</mrow>
+</md>
+</p>
+</solution>
+</webwork>
+</exercise>
+</p>
+
+<p>
+<example><title>Router Requests Revisited Again</title>
+<p>
+For the third time, let's consider a router which, over time, has been shown to receive on average 1000 requests in any given 10 minute period during regular working hours and you want to know the likelihood that it takes more than 4 seconds in order to receive the 5th request. As you have already seen, it takes on average <m>\frac{10}{1000} = \frac{1}{100} = 0.01</m> minutes to receive the first request so we use that again here. If X were to measure the time interval until the fifth actual request comes in, then the Gamma distribution would be a good model using 
+<me>f(x) =  \frac{x^{5-1} \cdot e^{- \frac{x}{0.01}}}{\Gamma(5) \cdot 0.01^5}</me>
+</p>
+<p>
+The question above asks for
+<me>P(X \gt 4 \text{seconds}) = P(X \gt \frac{4}{60} ) = 1 - F(\frac{4}{60}).</me>
+
+Again, since X is a continuous variable you must integrate to compute probabilities. This will require integration by parts or you can use the F(x) from the derivation above. Here, let's just let Sage do the integration for us noting that <m>\Gamma(5) = 4! = 24</m>. You can compute the needed integral using the interactive cell immediately below.
+</p>
+</example>
+</p>
+<p>
+Therefore
+<me>P(X \gt 4 \text{seconds}) = 1 - F(\frac{4}{60}) \approx 0.205627.</me>
+</p>
+<p>
+<sage>
+<input>
+var('x')
+f = x^4*e^(-x/0.01)/(24*0.01^5)
+prob_complement = integrate(f,x,0,4/60)
+print n(1-prob_complement)
+</input>
+</sage>
+</p>
+
 
 <p>
 <theorem><title>Verify Gamma Probability function</title>
@@ -512,7 +712,7 @@ def _(r=[2,3,6,9,alpha]):
 </p>
 
 
-<p>Finally, the interactive cell below can be used to compute the distribution function for the gamma distribution for various input values. If you desire to let r get bigger than the slider allows, feel free to edit the cell above and evaluate again.
+<p>The interactive cell below can be used to compute the distribution function for the gamma distribution for various input values. If you desire to let r get bigger than the slider allows, feel free to edit the cell above and evaluate again.
 
 <sage>
 	<input>
@@ -528,6 +728,35 @@ def _(r=slider(1,10,1,2),mu = input_box(2,label="$\mu = $",width=10),b=input_box
 	</input>
 </sage>
 </p>
+
+<p>
+<sage language='r'>
+<input>
+r=3                # the number of successes desired
+mu1 = 3            # the mean till first must be given
+mu = mu1*r
+sdev = sqrt(r)*mu1  # the formula for the standard deviation
+
+M = mu*3   # the space is infinite but we just go out 3 standard deviations
+X = 0:M    # quantiles for the space R of the random variable 
+
+Ppois &lt;- function(x){dgamma(x, shape=r, scale=mu1 )}  # create the probability function over X
+
+curve(Ppois, from=0, to=M, xlab="X", col="blue", lwd=3,
+ main="Gamma Sampling vs Gamma Curve vs Approximating 'Bell Curve'") 
+Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)}   # to overlap a bell curve
+curve(Pnormal, col="red", lwd=2, add=TRUE) 
+
+Psample = rgamma(10^6, shape=r, scale=mu1)  # to create a histogram, sample a lot
+# Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
+hist(Psample, prob=TRUE, add=TRUE)
+
+
+
+</input>
+</sage>
+</p>
+
 </section>
 
 <section><title>Summary</title>
@@ -622,6 +851,29 @@ With <m>\mu = 18</m> minutes,
 </p>
 </solution>
 </p>
+</exercise>
+</p>
+
+<p>
+<exercise><title>Approximating Binomial with Poisson</title>
+In our derivation above, we used the limit of a Binomial probability function to create the Poisson's probability function. Therefore, for large n the two should be computationally very close.  Use this fact to approximate P(X &gt; 10000) for a Binomial distribution with n = 40000 and p = 1/4 by converting to a Poisson probability function. 
+<hint>
+<p>
+First determine the mean <m>\mu</m> for the binomial. Use this mean as the input for the Poisson distribution function.
+</p>
+</hint>
+<solution>
+<p>
+From the formula, <m>\mu = np = 40000 \cdot \frac{1}{4} = 10000</m>. So, using Poisson's probability function
+<me>f_{\text{Poisson}} = \frac{10000^{x}}{x!}e^{-10000}</me>
+would require you to compute 
+<me>e^{-10000} \sum_{x=10000}^{\infty} \frac{10000^{x}}{x!}</me>
+which is also a mess. However with a computational resource such as a graphing calculator, just compare 1 - binomcdf(40000,0.25,9999) to 1-poissoncdf(10000,9999) noting that the complement of the given question is from X from 0 to 9999. The two values should be relatively close
+</p>
+<p>
+This approximation method is not completely satisfactory since both being discrete distributions with no nice distribution function formulas require summations to accumulate. We have seen however that both the Poisson and the Binomial probability functions start to have a bell-shape as <m>\mu</m> increases for the Poisson and as n increases (i.e. and therefore <m>\mu</m> increases) for the Binomial. Hence, we will eventually approximate with each of these using the (continuous) bell-shaped distribution--the normal distribution discussed later--for which instead of accumulating probability function values we integrate them.  
+</p>
+</solution>
 </exercise>
 </p>
 

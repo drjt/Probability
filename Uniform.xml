@@ -11,9 +11,9 @@
     <title>Distributions based upon Equally likely Outcomes</title>
 
 <section><title>Introduction</title>
-	<p>
-	When motivating our definition of probability you may have noticed that we modeled our definition on the relative frequency of equally-likely outcomes. In this chapter you will develop the theoretical formulas which can be used to model equally-likely outcomes.
-	</p>
+<p>
+When motivating our definition of probability you may have noticed that we modeled our definition on the relative frequency of equally-likely outcomes. In this chapter you will develop the theoretical formulas which can be used to model equally-likely outcomes.
+</p>
 	
 <p>
 In this chapter, you will investigate the following distributions:
@@ -69,8 +69,8 @@ def _(n=slider(2,10,1,2)):
 </p>
 
 <p>
-	<theorem><title>Properties of the Discrete Uniform Probability Function</title>
-	<statement>
+<theorem><title>Properties of the Discrete Uniform Probability Function</title>
+<statement>
 	<p xml:id="DiscreteUniformProperties">
 	<m>f(x) = \frac{1}{n}</m> over R = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function and
 	<ol>
@@ -81,11 +81,11 @@ def _(n=slider(2,10,1,2)):
 		<li>Distribution function F(x) = frac{x}{n} for <m>x \in R</m>.</li>
 	</ol>
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>
 	Trivially, by construction you get by summing over <m>R = \{1, 2, ... , n \}</m>
-		<me>\sum_{x=1}^n \frac{1}{n} = 1</me>
+	<me>\sum_{x=1}^n \frac{1}{n} = 1</me>
 	Also, 1/n is positive for all x values.
 	</p>
 	
@@ -124,7 +124,7 @@ def _(n=slider(2,10,1,2)):
 	use the fourth moment and simplify.  This this is tedious, the algebra is performed using Sage in the active cell below this proof. However, you might want to supply the remainder of this proof using the fact that
 	<me>\sum_{x=1}^n x^4 = \frac{6n^5 + 15n^4 + 10n^3 - n}{30}.</me>
 	</p>
-	</proof>
+</proof>
 </theorem>
 </p>
 
@@ -134,7 +134,7 @@ Sage can also do the algebra for you to determine each of these measures. Notice
 
 <p>
 <sage>
-	<input>
+<input>
 var('x,n')
 f = 1/n
 mu = sum(x*f,x,1,n).factor()
@@ -146,7 +146,7 @@ stand = sqrt(v)
 pretty_print('Skewness =  ',(sum((x-mu)^3*f, x, 1, n)/stand^3))
 kurt = sum((x-mu)^4*f, x, 1, n)/stand^4
 pretty_print('Kurtosis = ',(kurt-3).factor(),' + 3')
-	</input>
+</input>
 </sage>
 </p>
 
@@ -163,19 +163,19 @@ Further, the probability of getting an outcome in A={2,3} would be f(2)+f(3) = 1
 </section>
 
 <section><title>Continuous Uniform Distribution</title>
-	<p>
-	Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + \Delta \lt X \lt v + \Delta)</m> for reasonable values of <m>\Delta</m> so that the interval remains inside R.
+<p>
+Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + \Delta \lt X \lt v + \Delta)</m> for reasonable values of <m>\Delta</m> so that the interval remains inside R.
 </p>
 	
 <p>
-<theorem>
+<theorem><title>Continuous Uniform Probability Function</title>
 <statement>
 <p xml:id="ContinuousUniformFunction">For R = [a,b], with a &lt; b, the continuous uniform probability function is given by
-<me>f(x) = \frac{1}{b-a}.</me>
+	<me>f(x) = \frac{1}{b-a}.</me>
 </p>
 </statement>
 <proof>
-<p>From before, for X a continuous uniform variable, we get
+	<p>From before, for X a continuous uniform variable, we get
 	<md>
 		<mrow>\int_u^v f(x) dx = \int_{u+\Delta}^{v+\Delta} f(x) dx</mrow>
 		<mrow>F(v)-F(u) = F(v+\Delta)-F(u+\Delta)</mrow>
@@ -189,7 +189,7 @@ but since F is an antiderivative of the probability function,
 for all u and v in R. This only happens if f is constant...say, f(x)=c. If the space of X is a single interval with <m>R = [a,b]</m> then
 	<me>1 = \int_a^b c dx = c(b-a)</me>
 	which yields <m>c = \frac{1}{b-a}</m> as desired. 
-</p>
+	</p>
 </proof>
 </theorem>
 </p>
@@ -206,6 +206,19 @@ Then, if you want to compute something like <m>P(2 &lt; X &lt; 4.5)</m> integrat
 </p>
 
 <p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		This one uses the continuous uniform distribution.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setProbability16JointDist/ur_pb_16_3.pg">
+		</webwork>
+</exercise>
+</p>
+
+
+<p>
 <example><title>Continuous Uniform over two disjoint intervals</title>
 <p>
 Suppose <m>R = [0,2] \cup [5,7]</m>.  Then, as in the theorem proof
@@ -217,8 +230,8 @@ For computing probabilities, you will want to break up any resulting integrals i
 </p>
 
 <p>
-	<theorem><title>Properties of the Continuous Uniform Probability Function</title>
-	<statement>
+<theorem><title>Properties of the Continuous Uniform Probability Function</title>
+<statement>
 	<p xml:id="ContinuousUniformProperties">For the Continuous Uniform Distribution over <m>R = [a,b]</m>, with a &lt; b,
 	<ol>
 		<li><m>f(x) = \frac{1}{b-a}</m> satisfies the properties of a probability function over R = [a,b].</li>
@@ -229,8 +242,8 @@ For computing probabilities, you will want to break up any resulting integrals i
 		</li>
 	</ol>
 	</p>
-	</statement>
-	</theorem>
+</statement>
+</theorem>
 </p>
 
 <p>
@@ -239,19 +252,17 @@ For computing probabilities, you will want to break up any resulting integrals i
 # Continous uniform distribution statistics derivation
 reset()
 var('x,a,b')
-
-
 f = 1/(b-a)
-
 mu = integrate(x*f,x,a,b).factor()
 pretty_print('Mean = ',mu)
 
 v = integrate((x-mu)^2*f, x, a, b)
-
 pretty_print('Variance = ',v.factor())
 stand = sqrt(v)
+
 sk = (integrate((x-mu)^3*f, x, a, b)/stand^3)
 pretty_print('Skewness =  ',sk)
+
 kurt = (integrate((x-mu)^4*f, x, a, b)/stand^4)
 pretty_print('Kurtosis = ',kurt)
 
@@ -297,15 +308,14 @@ For x in this range,
 </section>
 
 
-<section>	
-	<title>Hypergeometric Distribution</title>
-	
-	<p>
-	For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.
-	</p>
-	<p>
-	Indeed, consider a collection of n items from which you want to take a sample of size r without replacement. If <m>n_1</m> of the items are "desired" and the remaining <m>n_2 = n - n_1</m> are not, let the random variable X measure the number of items from the first group in your sample with <m>R = \{0, 1, ..., min {r,n_1} \}</m>. The resulting collection of probabilities is called a Hypergeometric Distribution.
-	</p>
+<section><title>Hypergeometric Distribution</title>
+<p>
+For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.
+</p>
+
+<p>
+Indeed, consider a collection of n items from which you want to take a sample of size r without replacement. If <m>n_1</m> of the items are "desired" and the remaining <m>n_2 = n - n_1</m> are not, let the random variable X measure the number of items from the first group in your sample with <m>R = \{0, 1, ..., min {r,n_1} \}</m>. The resulting collection of probabilities is called a Hypergeometric Distribution.
+</p>
 
 <p>
 <image source="images/HypergeometricBucket.png" width = "60%"/>
@@ -319,13 +329,13 @@ For x in this range,
 </p>
 </statement>
 <proof>	
-	<p>
+<p>
 For the following, we will presume thatSince you are sampling without replacement and trying only measure the number of items from your desired group in the sample, then the space of X will include R = {0, 1, ..., r} assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>. In the case when r is too large for either of these, the formulas below will follow noting that binomial coefficients are zero if the top is smaller than the bottom or if the bottom is negative.
-	</p>
-	<p>
-	So f(x) = P(X = x) = P(x from the sample are from the target group and the remainder are not). Breaking these up gives
+</p>
+<p>
+So f(x) = P(X = x) = P(x from the sample are from the target group and the remainder are not). Breaking these up gives
 	<me>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</me>
-	</p>
+</p>
 </proof>
 </theorem>
 </p>
@@ -428,7 +438,7 @@ Putting this together with the earlier formula gives
 		</p>
 		</li>
 		<li>
-		<p>The proof of the variance formula is similar and uses E(X(X-1)+ μ - μ2. The proof of skewness and kurtosis are messy and we won’t bother with them for this distribution!
+		<p>The proof of kurtosis is even more messy and we won’t bother with proving it for this distribution!
 		</p>
 		</li>
 	</ol>
@@ -470,6 +480,18 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </sage>
 </p>
 
+<!--
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		This one uses the hypergeometric distribution.
+		</p>
+		</introduction>
+<webwork source="Library/Misc/hypergeometric.pg"></webwork>
+</exercise>
+</p>
+-->
 
 <p>Consider the Hypergeometric distribution for various values of <m>n_1, n_2,</m> and r using the interactive cell above. Notice what happens when you start with relatively small values of <m>n_1, n_2,</m> and r (say, start with <m>n_1 = 5, n_2 = 8,</m> and r = 4 and then doubling then all again and again. Consider the likely skewness and kurtosis of the graph as the values get larger.
 </p>	

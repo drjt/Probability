@@ -74,8 +74,23 @@ In this chapter we first discuss how to determine appropriate methods for estima
 	</proof>
 	</corollary>
 	
-	<example><title> - Comparing known distribution to Chebyshev</title>
-	<p>
+	
+<p>
+<example><title>WebWork</title>
+<webwork source="Library/NAU/setStatistics/cheby2.pg">
+</webwork>
+</example>
+</p>
+
+<p>
+<example><title>WebWork</title>
+<webwork source="Library/NAU/setStatistics/cheby1.pg">
+</webwork>
+</example>
+</p>
+
+<example><title> - Comparing known distribution to Chebyshev</title>
+	<p>TBA
 	</p>
 	</example>
 </section>
@@ -257,6 +272,14 @@ which is slightly different than the first and slightly smaller than the second.
 </p>
 
 
+<p>
+<exercise><title>WebWork</title>
+<webwork source="Library/ASU-topics/setStat/kolossa49.pg">
+</webwork>
+</exercise>
+</p>
+
+
 <theorem><title>Determining Sample Size for proportions</title>
 <statement>Given a margin of error E and preliminary relative frequency estimate <m>\tilde{p_0}</m> the sample size needed to create the corresponding confidence interval is given by 
 <me>n \gt \left ( \frac{z_{\alpha /2}}{E} \right )^2 \tilde{p_0}(1-\tilde{p_0}).</me>
@@ -274,6 +297,12 @@ or a sample size of at least 1683.
 </p>
 </example>
 
+<p>
+<exercise><title>WebWork</title>
+<webwork source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg">
+</webwork>
+</exercise>
+</p>
 
 </section>
 
@@ -315,7 +344,22 @@ with confidence level <m>1-\alpha</m> and margin of error
 </p>
 
 <p>
-It should be noted that the use of the Central Limit Theorem makes the use of  InvNorm an approximation. It can be shown that so long as n is larger than 30 then generally this approximation is reasonable.
+<exercise><title>WebWork</title>
+<webwork source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg">
+</webwork>
+</exercise>
+</p>
+
+
+<p>
+It should be noted that the use of the Central Limit Theorem makes the use of  InvNorm an approximation. It can be shown that so long as n is larger than 30 then generally this approximation is reasonable. If not, then use replace the z-score with a corresponding value from the t-distribution.
+</p>
+
+<p>
+<exercise><title>WebWork with t-scores</title>
+<webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg">
+</webwork>
+</exercise>
 </p>
 
 
@@ -506,7 +550,12 @@ print 'P( X &lt; ',b,') = ',b1
 
 <example><title> - Two-sided Confidence interval for the variance and standard deviation with large n.</title>
 
-
+<p>
+<exercise><title>WebWork</title>
+<webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg">
+</webwork>
+</exercise>
+</p>
 
 <p>Continuing the previous example, suppose now that you have n=400 data values and suppose you have computed from those a sample variance of <m>s^2 = 479.5</m>.  Then, the only change in the calculation is the two chi-square statistic values. For 95% but now with 399 degrees of freedom
 <m>\chi_{0.025}^2 = 345.55</m> and <m>\chi_{0.975}^2 = 456.24</m>.  
@@ -539,6 +588,16 @@ can be determined using
 <p>
 </p>
 </example>
+</p>
+
+<p>You can, of course, use the formula to work out the sample size needed in order to have a sufficiently narrow confidence interval
+</p>
+
+<p>
+<exercise><title>WebWork</title>
+<webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg">
+</webwork>
+</exercise>
 </p>
 
 <p>

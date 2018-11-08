@@ -281,6 +281,19 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 </example>
 </p>
 
+<!--
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		</p>
+		</introduction>
+<webwork source="Library/UBC/STAT/STAT241_251/setAssignment-02/HW02-01/HW02-01a.pg">
+		</webwork>
+</exercise>
+</p>
+-->
+
 <p>		
 <theorem xml:id="theorem-Fmin">
 	<statement>
@@ -499,6 +512,21 @@ TBA, using one of the table examples from above.
 </theorem>
 </p>
 	
+
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		Use algebra and the theorem above.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setProbability17Expectation/ur_pb_17_4.pg">
+		</webwork>
+</exercise>
+</p>
+
+
 	<p>
 	<example><title>Discrete Expected Value</title>
 	<p>Consider <m>f(x) = x/10</m> over R = {1,2,3,4} where the payout is 10 euros if x=1, 5 euros if x=2, 2 euros if x=3 and -7 euros if x = 4.  Then your value function would be 
@@ -614,7 +642,45 @@ TBA, using one of the table examples from above.
 	</md>
 	which yields a kurtosis of <m>\gamma_2 = 51.75 / \sigma^4 \approx 3.93</m> which also notes that the data appears to have a modestly bell-shaped distribution.
 	</p>
+
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		.
+		</p>
+		</introduction>
+		<webwork source="Library/Mizzou/Finite_Math/Probability_Random_Variables/EV1.pg">
+		</webwork>
+</exercise>
+</p>
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setProbability7RandomVariables/ur_pb_7_6.pg">
+		</webwork>
+</exercise>
+</p>
 	
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		.
+		</p>
+		</introduction>
+		<webwork source="Library/UBC/STAT/STAT241_251/setAssignment-01/HW01-01.pg">
+		</webwork>
+</exercise>
+</p>
+
+
 	<p>
 	Consider the following example when computing these statistics for a continuous variable. 
 	Let <m>f(x) = \frac{3}{4} \cdot (1-x^2)</m> over R = [-1,1].  

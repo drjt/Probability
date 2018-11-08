@@ -1291,6 +1291,9 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$ P(S_1),P(S_2),
 </corollary>
 </p>
 
+
+
+<!--
 <p>
 <exercise><title>WebWork</title>
 	<introduction>
@@ -1298,17 +1301,17 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$ P(S_1),P(S_2),
 		Independence makes combined probabilities VERY easy to compute.
 		</p>
 	</introduction>
-		<webwork source="Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg">
-		</webwork>
-		<conclusion>
+	<webwork source="Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg"></webwork>
+	<conclusion>
 		<p>
 		Basically you just multiply individual probabilities together.  Independence is often
 		assumed since it makes computations easier. That said, you should remember to consider
 		each time whether independence should or should not be assumed.
 		</p>
-		</conclusion>
+	</conclusion>
 </exercise>
 </p>
+-->
 
 <p>
 <corollary><title>Independence and Mutual Exclusivity</title>
@@ -1676,7 +1679,7 @@ For a pair of dice you want to consider the events A = {rolling a 7 or 11} and B
 </p>
 
 <p>
-<exercise><title>Single Elimination Tounament</title>
+<exercise><title>Single Elimination Tournament</title>
 	<statement>
 	<p>
 	Consider a n=4 team single-elimination tournament where the teams are "seeded" from 1 (the best team) to 4 (the worst team).  For this tournament, team 1 plays team 4 and team 2 plays team 3. The winner of each play each other to determine the final winner. When teams j and k play, set P(j wins) = <m>\frac{k}{j+k}</m> and similarly for team k.  Assuming separate games are independent of each other, determine the probability that team 4 wins the tournament. What about with 8 teams? What about 64 teams?

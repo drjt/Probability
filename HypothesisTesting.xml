@@ -97,12 +97,9 @@ Remember, the alternate hypothesis has two tails so to determine the P value we 
 and find that this has probability approximately 0.0392 + 0.0392 = 0.0784.  However, this P value is greater than our significance level <m>\alpha = 0.05</m> so we cannot reject the null hypothesis at the 5 percent significance level. However, if we had chosen initially to use a 10 percent significance level then we would have rejected the null hypothesis and accepted the alternate.
 </p>
 
-<p>
-One tailed test for p using a "real" example...
-</p>
 
 <p>
-<exercise><title>WebWork</title>
+<exercise><title>WebWork - two tailed test</title>
 		<introduction>
 		<p>
 		Two-tailed test for p.
@@ -169,6 +166,54 @@ Since this p-value is less than our significance level <m>\alpha = 0.01</m> then
 </p>
 
 <p>
+<exercise>
+<webwork>
+<setup>
+    <pg-code>
+    
+    </pg-code>
+</setup>
+<statement>
+<p>
+A random sample of 10 observations was drawn from a large normally distributed population. The data is below.
+</p>
+<p>
+22 20 22 20 25 18 22 23 19 18
+</p>
+<p>
+To determine if you can infer at the 4% significance level that the population mean is not equal to 22, complete the steps below:
+</p>
+<p>
+The value of the standardized test statistic: <var name="-1.52379841858" width="10" />
+</p>
+<p>
+Using interval notation with <m>\infty</m> written as "infty" and <m>\cup</m> written as "U" (capital u), determine each of the following: 
+</p>
+<p>
+The rejection region for the standardized test statistic: <var name="(-infty,-2.39844)U(2.39844,infty)" width="30" />
+</p>
+<p>
+The p-value is <var name="0.161894" width="10" /> 
+</p>
+<p>
+Your decision for the hypothesis test therefore would be to not reject the null hypothesis <m>H_0</m>.
+</p>
+</statement>
+<solution>
+</solution>
+</webwork>
+</exercise>
+</p>
+
+
+<p>This is a repeat of the previous exercise but using the OPL
+<exercise><title>WebWorK - two tailed test</title>
+<webwork source="Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg">
+</webwork>
+</exercise>
+</p>
+
+<p>
 Consider One-tailed Hypothesis test for <m>\mu</m> using an interesting application:
 </p>
 <p>
@@ -184,6 +229,13 @@ and using the t-distribution with n-1 = 19 degrees of freedom yields a t-statist
 To compute the p-value, 
 <me>P(t \gt 2.795) \approx 0.0058.</me>
 Since this p-value is less than our significance level <m>\alpha = 0.05</m> (by a lot) then you can reject the null hypothesis and accept the alternate. It is safe therefore to say that customers can expect at least 16 ounces! However, note that some folks will still be stiffed since the standard deviation of 0.08 certainly means that some bottles have less than 16.05-0.08 ounces of beverage.  
+</p>
+
+<p>
+<exercise><title>WebWorK - one tailed test</title>
+<webwork source="Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg">
+</webwork>
+</exercise>
 </p>
 	
 </section>
@@ -208,6 +260,16 @@ and for one-tailed to the left if
 <me>T \lt \chi_{\alpha,n-1}^2.</me>
 Technically, for the two-tailed test you could pick T-values so that the total probability sums to <m>\alpha</m> in any fashion but generally this probability is split evenly between the two tails as noted above.
 </p>	
+
+<p>
+<exercise><title>WebWorK</title>
+<webwork source="Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg">
+</webwork>
+</exercise>
+</p>
+
+
+
 </section>
 
 

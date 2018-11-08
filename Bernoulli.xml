@@ -42,55 +42,9 @@ In this chapter, you will investigate the following distributions:
  	<title>Binomial Distribution</title>	
 	<p>Consider a sequence  of n independent Bernoulli trials with the likelihood of a success p on each individual trial stays constant from trial to trial with <m> 0 \lt p \lt 1 </m>. If we let the variable <m>X</m> measure the number of successes obtained when doing a fixed number of trials n with <m>R = \{ 0, 1, ..., n \}</m>, then the resulting distribution of probabilities is called a Binomial Distribution.</p>
 
-<p>	
-<sage>
-<input>
-# Binomial distribution over 0 .. n
-# Probability of success on one independent trial = p must also be given
-var('x')
-@interact
-def _(n=slider(3,50,1,3),p=slider(1/20,19/20,1/20,1/2)):
-    np1 = n+1
-    R = range(np1)
-    f(x) = factorial(n)/(factorial(x)*factorial(n-x))*p^x*(1-p)^(n-x)
-    pretty_print(html('Density Function: $f(x) =%s$'%str(latex(f(x)))))
-    pretty_print(html('over the space $R = %s$'%str(R)))
-    G = points((k,f(x=k)) for k in R)
-    G.show()
-    R = [k for k in R]
-    probs = [f(x=k) for k in R]
-#    H = histogram( R, weights = probs, align="mid", linewidth=2, edgecolor="blue", color="yellow")
-#    H.show()
-    for k in R:
-        pretty_print(html('$f(%s'%k+') = %s'%latex(f(x=k))+' \\approx %s$'%f(x=k).n(digits=5)))
-</input>
-</sage>
-</p>
-
 <p>
-You can of course get specific values and graph the Binomial Distribution using R as well...
+Now, let's determine the actual probability function for this distribution.
 </p>
-
-<p>
-<sage language='r'>
-<input>
-n &lt;- 10
-p &lt;- 0.3
-
-paste('Probability Function')
-dbinom(0:n, n, p)   # gives the probability function
-paste('Distribution function')
-pbinom(0:n, n, p)   # gives the distribution function
-paste('A random sample')
-rbinom(15, n, p)    # gives a random sample of 15 items from b(n,p)
-
-x &lt;- dbinom(0:n, size=n, prob=p)
-barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
-
-</input>
-</sage>
-</p>
-
 <p>
 <theorem xml:id="BinomialProbabilityFunctionTheorem"><title>Derivation of Binomial Probability Function</title>
 	<statement>
@@ -123,6 +77,88 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 	</proof>
 </theorem>
 </p>
+
+<p>
+The following interactive cell illustrates the range of choices for a Binomial setup with fixed N and fixed p:
+</p>
+<p>
+<sage>
+<input>
+# Binomial distribution over 0 .. N
+# N and p need to be given
+var('x')
+@interact(layout=dict(top=[['N','p']]))
+def _(N=input_box(10,width=5,label='\( N \)'),
+    p=input_box(3/10,width=5,label='\( p \)')):
+    f = binomial(N,x)*p^x*(1-p)^(N-x)
+    @interact
+    def __(X = slider(0,N,1)):
+        Px = f(x=X)
+        Pxapprox = Px.n(digits=8)
+        formula = "\\binom{%s}"%str(N)+"{%s}"%str(X)+"({%s})"%str(p)+"^{%s}"%str(X)+"(1-{%s})"%str(p)+"^{%s}"%str(N-X)
+        pretty_print(html("P(X = %s"%str(X)+") = \( %s \)"%str(formula)+" = \( %s \)"%str(latex(Px))+"\( \\approx %s \)"%str(Pxapprox)))
+        G = polygon([(0,0), (1,0), (1,1), (0,1)],thickness=10,color='blue',alpha=0.7,zorder=1)
+
+        if X &gt; 0:
+            R =[j for j in range(N)] 
+            selected = sample(R, X)
+            for k in selected:
+                xk = sqrt(k)*cos(k)/N^(4/5)+0.5
+                yk = sqrt(k)*sin(k)/N^(4/5)+0.5
+                G += circle((xk,yk),0.05,fill=True,facecolor='red',zorder=3) 
+                G += text('p',(xk,yk))
+
+        for k in range(N):
+            xk = sqrt(k)*cos(k)/N^(4/5)+0.5
+            yk = sqrt(k)*sin(k)/N^(4/5)+0.5
+            G += circle((xk,yk),0.05,zorder=2,fill=True, facecolor="white")
+   
+        show(G, axes=0, figsize=(4,4) )
+</input>
+</sage>
+</p>
+
+<example><title>Flipping a coin a fixed number of times</title>
+<p>Let's consider a simple example for flipping coins. Indeed, suppose you flip a coin exactly 20 times and need to determine the probability of getting exactly 10 heads.
+</p>
+
+<p>
+This is binomial with n = 20, p = 1/2 and you are looking for f(10). With these values
+<me>f(10) = \binom{20}{10} \cdot \left ( \frac{1}{2} \right )^{10} \cdot \left ( \frac{1}{2} \right 	)^{20-10} = \frac{46189}{262144} \approx 0.176</me>
+
+Note that the mean for this distribution is also 10 so one might expect 10 heads in general
+</p>
+
+<p>
+If you rather would prefer to determine the probability of getting 10 or fewer heads requires F(10) = f(0) + f(1) + ... + f(10). There is no "nice" formula for F but this calculation can be performed using a graphing calculator, such as the TI-84 with F(x) = binomcdf(n,p,x). In this case, F(10) = binomcdf(20,1/2,10) = 0.588.
+</p>
+</example>
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		This one uses the binomial distribution.
+		</p>
+		</introduction>
+		<webwork source="Library/Mizzou/Finite_Math/Probability_Introduction/Coin.pg">
+		</webwork>
+</exercise>
+</p>
+
+
+<example><title>Testing critical components</title>
+<p>
+Often one will test a critical system components for failure and toward that end collect a sample of 100 of these components from the manufacturer. Suppose the component is listed as having a p=0.01 probability of breaking and you want to know the likelihood that at most 1 of the tested components actually fails when tested. You find it reasonable to presume that different components succeed or fail independently of each other. So, you can model this situation with a binomial distribution. 
+</p>
+<p>
+If X measures the number of components that fail when tested, the specific probability function is given by
+<me>f(x) = \binom{100}{x} 0.01^x 0.99^{100-x}.</me>
+The probability that at most one component fails is then given by
+<me>F(1) = f(0) + f(1) = \binom{100}{0} 0.01^0 0.99^{100} + \binom{100}{1} 0.01^1 0.99^99 \\ = 0.99^{100} + 100 \cdot 0.01 \cdot 0.99^{99} = 0.99^{99}(0.99 + 100 \cdot 0.01 \\ = 0.99^{99} \cdot 1.99 \approx 0.73576.</me>
+</p>
+</example>
+
 	
 <p>
 Utilize the interactive cell below to compute f(x) and F(x) for the Binomial distribution
@@ -133,10 +169,11 @@ Utilize the interactive cell below to compute f(x) and F(x) for the Binomial dis
 	<input>
 # Binomial calculator
 @interact
-def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
+def _(p=input_box(3/10,width=15),n=input_box(10,width=15)):
     R = range(n+1)
     f(x) = binomial(n,x)*p^x*(1-p)^(n-x)
     acc = 0
+    pretty_print("Binomial Calculator")
     for k in R:
         prob = f(x=k)
         acc = acc+prob
@@ -146,7 +183,7 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 </p>
 
 <p>
-	<theorem xml:id="BinomialStatisticsTheorem"><title>Binomial Distribution Statistics</title>
+<theorem xml:id="BinomialStatisticsTheorem"><title>Binomial Distribution Statistics</title>
 	<statement>
 	<p xml:id="BinomialStatistics">For the Binomial Distribution
 	<me>\mu = np</me>
@@ -156,7 +193,7 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 	</p>
 	</statement>
 
-	<proof>
+<proof>
 	<p>
 		For the mean,
 		<md>
@@ -193,8 +230,8 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 	<p>The skewness and kurtosis can be found similarly using formulas involving E[X(X-1)(X-2)] and E[X(X-1)(X-2)(X-3)]. The complete determination is performed using Sage below.
 	</p>
 
-	</proof>
-	</theorem>
+</proof>
+</theorem>
 </p>
 
 <p>The following uses Sage to symbolically confirm the general formulas for the Binomial distribution.
@@ -202,7 +239,7 @@ def _(p=input_box(0.3,width=15),n=input_box(10,width=15)):
 
 <p>
 <sage>
-	<input>
+<input>
 var('x,n,p')
 assume(x,'integer')
 f(x) = binomial(n,x)*p^x*(1-p)^(n-x)
@@ -222,10 +259,22 @@ pretty_print('Skewness = ',sk)
 
 kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
 pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
-	</input>
+</input>
 </sage>
 </p>
 
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		This one uses the binomial distribution.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setProbability8BinomialDist/ur_pb_8_6.pg">
+		</webwork>
+</exercise>
+</p>
 
 <p>
 <sage language='r'>
@@ -235,7 +284,9 @@ p = 0.3
 X = 0:n    # the space R of the random variable 
 mu = n*p      # the formula for mean of the Binomial Distributions
 sdev = sqrt(n*p*(1-p))  # the formula for the standard deviation
-dbinom( X, n, p )   # let's print out a bunch of actual probs
+if(n &lt; 101){
+dbinom( X, n, p )   # let's print out a bunch of actual probs if N reasonable
+}
 
 Pbinom = dbinom(X, n, p )  # create the probability function over X
 
@@ -252,18 +303,29 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </sage>
 </p>
 
-<p>Flipping Coins</p>
-<p>Suppose you flip a coin exactly 20 times. Determine the probability of getting exactly 10 heads and then determine the probability of getting 10 or fewer heads.
-</p>
-<solution>
 <p>
-This is binomial with n = 20, p = 1/2 and you are looking for f(10). With these values
-<me>f(10) = \binom{20}{10} \cdot \left ( \frac{1}{2} \right )^{10} \cdot \left ( \frac{1}{2} \right 	)^{20-10} = \frac{46189}{262144} \approx 0.176</me>
+You can of course get specific values and graph the Binomial Distribution using R as well...
 </p>
+
 <p>
-Notice, the mean for this distribution is also 10 so one might expect 10 heads in general.  Next, to determine the probability for 10 or fewer heads requires F(10) = f(0) + f(1) + ... + f(10). There is no "nice" formula for F but this calculation can be performed using a graphing calculator, such as the TI-84 with F(x) = binomcdf(n,p,x). In this case, F(10) = binomcdf(20,1/2,10) = 0.588.
+<sage language='r'>
+<input>
+n &lt;- 10
+p &lt;- 0.3
+
+paste('Probability Function')
+dbinom(0:n, n, p)   # gives the probability function
+paste('Distribution function')
+pbinom(0:n, n, p)   # gives the distribution function
+paste('A random sample')
+rbinom(15, n, p)    # gives a random sample of 15 items from b(n,p)
+
+x &lt;- dbinom(0:n, size=n, prob=p)
+barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
+
+</input>
+</sage>
 </p>
-</solution>
 
 </section>
 
@@ -285,7 +347,7 @@ Notice, the mean for this distribution is also 10 so one might expect 10 heads i
 	<theorem xml:id="GeometricProbabilityFunctionTheorem">
 	<statement>
 	<p xml:id="GeometricProbabilityFunction">For a Geometric variable X with <m>R = \{1, 2, 3, ... \}</m>,
-	<me>f(x) = (1-p)({x-1} \cdot p</me>
+	<me>f(x) = (1-p)^{x-1} \cdot p</me>
 	</p>
 	</statement>
 	<proof>
@@ -298,22 +360,50 @@ Notice, the mean for this distribution is also 10 so one might expect 10 heads i
 	</proof>
 	</theorem>
 	</p>
+
+<example><title>Flipping a die until getting a success</title>
+<p>Let's consider a simple example for rolling a 24-sided die until you get a multiple of 9...that is, either a 9 or an 18. Successive rolls of a die would appear to be independent events and the probability of getting a 9 or 18 on any given roll is <m>p = \frac{1}{12}</m>. What is then the likelihood that it takes more than three rolls in order for you to get your first success?
+</p>
+
+<p>
+This is easily modeled by a geometric distribution and you are looking for 
+<me>P(X > 3) = 1 - P(X \le 3) = 1 - F(3) = 1 - f(1) - f(2) - f(3) \\
+1 - \frac{1}{12} - \frac{11}{12} \cdot \frac{1}{12} - (\frac{11}{12})^2 \frac{1}{12} \approx 0.77025.</me> 
+</p>
+</example>
+
+<example><title>Testing a critical component until failure</title>	
+<p>
+Often one will test a critical system component until it fails to see how long the component works. Suppose you have a particular component that on any given trial has a p=0.01 probability of breaking. You also might find it reasonable to presume that succesive trials are independent which could be the case if the component shows no wear from trial to trial. So, you can model this situation with a geometric distribution and the probability that the component fails on the x-th trial is given by
+<me>f(x) = 0.99^{x-1} \cdot 0.01.</me>
+For some reason, you might be interested in whether the component fails on the 5th trial. The probability of this outcome is given by
+<me>f(5) = 0.99^4 \cdot 0.01 \approx 0.0096</me>
+so it is unlikely that the component will fail on exactly the 5th trial. However, what about failing on one of the first five trials? Then, you would need
+<me>F(5) = f(1)+f(2)+f(3)+f(4)+f(5) \\ = 0.01 + 0.99 \cdot 0.01 + 0.99^2 \cdot 0.01 + 0.99^3 \cdot 0.01 + 0.99^4 \cdot 0.01 \approx 0.049</me>
+which is still relatively small. Indeed, with such a small probability of failure, you might expect the component to last for some time. Indeed, we will uncover a formula below for the number of trials, on average, you might expect before failure.
+</p>
+</example>
+
+<p>
+Let's go ahead and verify this probability function and investigate some of the geometric distribution's properties.
+</p>
 	
-	<p>
-	<theorem><title>Geometric Distribution sums to 1</title>
-		<statement>
+<p>
+<theorem><title>Geometric Distribution sums to 1</title>
+<statement>
 		<p>
 		<me>f(x) = (1-p)^{x-1}p</me> 
 		sums to 1 over <m>R = \{ 1, 2, ... \}</m>
 		</p>
-		</statement>
-		<proof>
+</statement>
+<proof>
 		<p>
 		<me>\sum_{x=1}^{\infty} {f(x)} = \sum_{x=1}^{\infty} {(1-p)^{x-1} p} \\ = p \sum_{j=0}^{\infty} {(1-p)^j} = p \frac{1}{1-(1-p)} = 1</me>
+		using a change of variables j = x-1 and the known value for the sum of the geometric series.
 		</p>
-		</proof>
-	</theorem>
-	</p>
+</proof>
+</theorem>
+</p>
 	
 <p>	
 <sage>
@@ -346,16 +436,16 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 		For the geometric distribution, 
 			<me>\mu = 1/p</me>
 			<me>\sigma^2  = \frac{1-p}{p^2}</me>
-			<me>\gamma_1 = ADD</me>
-			<me>\gamma_2 = ADD + 3</me>
+			<me>\gamma_1 = \frac{2-p}{\sqrt{1-p}}</me>
+			<me>\gamma_2 = \frac{p^2-6p+6}{1-p} + 3</me>
 
 		</p>
 		</statement>
 		<proof>
 			<p> For the mean,
 			<md>
-				<mrow>\mu &amp; = E[X] = \sum_{k=0}^{\infty} {k(1-p)^{k-1}p}</mrow>
-				<mrow> &amp; = p \sum_{k=1}^{\infty} {k(1-p)^{k-1}}</mrow>
+				<mrow>\mu &amp; = E[X] = \sum_{x=1}^{\infty} {x(1-p)^{x-1}p}</mrow>
+				<mrow> &amp; = p \sum_{x=1}^{\infty} {x(1-p)^{x-1}}</mrow>
 				<mrow> &amp; = p \frac{1}{(1-(1-p))^2}</mrow>
 				<mrow> &amp; = p \frac{1}{p^2} = \frac{1}{p}</mrow>
 			</md>
@@ -364,8 +454,8 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 			<p> For the variance,
 			<md>
 				<mrow>\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
-				<mrow> &amp; = \sum_{k=0}^{\infty} {k(k-1)(1-p)^{k-1}p} + \mu - \mu^2 </mrow>
-				<mrow> &amp; = (1-p)p \sum_{k=2}^{\infty} {k(k-1)(1-p)^{k-2}} + \frac{1}{p} - \frac{1}{p^2}</mrow>
+				<mrow> &amp; = \sum_{x=1}^{\infty} {x(x-1)(1-p)^{x-1}p} + \mu - \mu^2 </mrow>
+				<mrow> &amp; = (1-p)p \sum_{x=2}^{\infty} {x(x-1)(1-p)^{x-2}} + \frac{1}{p} - \frac{1}{p^2}</mrow>
 				<mrow> &amp; = (1-p)p \frac{2}{(1-(1-p))^3} + \frac{1}{p} - \frac{1}{p^2}</mrow>
 				<mrow> &amp; = \frac{1-p}{p^2}</mrow>
 			</md>
@@ -404,6 +494,10 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 		</statement>
 <proof>
 <p>
+See the interactive Sage cell below...
+</p>
+</proof>
+</theorem>
 <sage>
 	<input>
 var('x,n,p')
@@ -428,27 +522,26 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</input>
 </sage>
 </p>
-</proof>
-</theorem>
-</p>
+
+
 
 <p>
 	<theorem><title>The Geometric Distribution yields a memoryless model.</title>
 	<statement>
 	<p>
 	If X has a geometric distribution and a and b are nonnegative integers, then
-	<me>P( X > a + b | X > b ) = P( X > a)</me>
+	<me>P( X &gt; a + b | X &gt; b ) = P( X &gt; a)</me>
 	</p>
 	</statement>
 	<proof>
 	<p>
 	Using the definition of conditional probability,
 	<md>
-		<mrow>P( X > a + b | X > b ) &amp; = P( X > a + b \cap X > b ) \ P( X > b)</mrow>
-		<mrow> &amp; = P( X > a + b ) / P( X > b)</mrow>
-		<mrow> &amp; = (1-p)^{a+b} / (1-p)^b</mrow>
+		<mrow>P( X &gt; a + b | X &gt; b ) &amp; = \frac{P( X &gt; a + b \cap X &gt; b )}{P( X &gt; b)}</mrow>
+		<mrow> &amp; = \frac{P( X &gt; a + b )}{P( X &gt; b)}</mrow>
+		<mrow> &amp; = \frac{(1-p)^{a+b}}{(1-p)^b}</mrow>
 		<mrow> &amp; = (1-p)^a</mrow>
-		<mrow> &amp; = P(X > a)</mrow>
+		<mrow> &amp; = P(X &gt; a)</mrow>
 	</md>
 	</p>
 	</proof>
@@ -471,92 +564,106 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	<p>Note that r=1 gives the Geometric Distribution.</p>
 
 <p>	
-	<theorem><title>Negative Binomial Series</title>
-		<statement> 
+<theorem><title>Negative Binomial Series</title>
+	<statement> 
 		<p>
 			<me>\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}</me> 
 		</p>
-		</statement>
-		<proof>					
-			<p>First, convert the problem to a slightly different form:		
-			<m> \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
-						 = \frac{1}{b^n} \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
-			</m>
-			</p>
+	</statement>
+	<proof>					
+		<p>First, convert the problem to a slightly different form:		
+		<m> \frac{1}{(a+b)^n} = \frac{1}{b^n} \frac{1}{(\frac{a}{b}+1)^n} 
+					 = \frac{1}{b^n} \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} \left ( \frac{a}{b} \right ) ^k}
+		</m>
+		</p>
 
-			<p>So, let's replace <m>\frac{a}{b} = x</m> and ignore for a while the term factored out. Then, we only need to show 
-			<md>
-				<mrow>\sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k} = \left ( \frac{1}{1+x} \right )^n </mrow>
-			</md>
-			However
-			<md>
-				<mrow> \left ( \frac{1}{1+x} \right )^n &amp; = \left ( \frac{1}{1 - (-x)} \right )^n </mrow>
-				<mrow> &amp; = \left ( \sum_{k=0}^{\infty} {(-1)^k x^k} \right )^n</mrow>
-			</md>
-			</p>
-			<p>This infinite sum raised to a power can be expanded by distributing terms in the standard way. 
-			In doing so, the various powers of x multiplied together
-			will create a series in powers of x involving <m>x^0, x^1, x^2, ...</m>.  
-			To detemine the final coefficients notice that the number of time <m>m^k</m> will 
-			appear in this product depends upon the number of ways one can write k as a sum of nonnegative integers.</p>
-			
-			<p>For example, the coefficient of <m>x^3</m> will come from the n ways of multiplying the coefficients 
-			<m>x^3, x^0, ..., x^0</m> and <m>x^2, x^1, x^0, ..., x^0</m>
-			 and <m>x^1, x^1, x^1, x^0,..., x^0</m>. This is equivalent to finding the number of ways to write the number k as a sum of nonnegative integers. The possible set of nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  For example, if k = 3 then *||** means 
-			 <m>x^1 x^0 x^2 = x^3</m>. Similarly for k = 5 and |**|*|**| implies <m> x^0 x^2 x^1 x^2 x^0 = x^5</m>. 
-			 The number of ways to interchange the identical *'s among the idential |'s is <m>\binom{n+k-1}{k}</m>. </p>
-			 
-			 <p>Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x will require an odd number of odd powers. So, the coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,
-			<md>	
-				<mrow> \left ( \frac{1}{1+x} \right )^n = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k}</mrow>
-			</md>	
-			Similarly,
-			<m> \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}</m>
-			</p>
-
-		</proof>	
-	</theorem>	
+<p>So, let's replace <m>\frac{a}{b} = x</m> and ignore for a while the term factored out. Then, we only need to show 
+	<me>\sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k} = \left ( \frac{1}{1+x} \right )^n </me>
+However
+	<md>
+	<mrow> \left ( \frac{1}{1+x} \right )^n &amp; = \left ( \frac{1}{1 - (-x)} \right )^n </mrow>
+	<mrow> &amp; = \left ( \sum_{k=0}^{\infty} {(-1)^k x^k} \right )^n</mrow>
+	</md>
+</p>
+<p>This infinite sum raised to a power can be expanded by distributing terms in the standard way. In doing so, the various powers of x multiplied together
+will create a series in powers of x involving <m>x^0, x^1, x^2, ...</m>.  
+To detemine the final coefficients notice that the number of time <m>m^k</m> will appear in this product depends upon the number of ways one can write k as a sum of nonnegative integers.
 </p>
 			
-	<p>Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success on each individual trial <m>p</m> where 
+<p>For example, the coefficient of <m>x^3</m> will come from the n ways of multiplying the coefficients 
+<m>x^3, x^0, ..., x^0</m> and <m>x^2, x^1, x^0, ..., x^0</m>
+and <m>x^1, x^1, x^1, x^0,..., x^0</m>. This is equivalent to finding the number of ways to write the number k as a sum of nonnegative integers. The possible set of nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  For example, if k = 3 then *||** means 
+<m>x^1 x^0 x^2 = x^3</m>. Similarly for k = 5 and |**|*|**| implies <m> x^0 x^2 x^1 x^2 x^0 = x^5</m>.  The number of ways to interchange the identical *'s among the idential |'s is <m>\binom{n+k-1}{k}</m>. </p>
+			 
+<p>Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x will require an odd number of odd powers. So, the coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,	
+<me> \left ( \frac{1}{1+x} \right )^n = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} x^k}</me>	
+Similarly,
+<me> \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}</me>
+</p>
+
+</proof>	
+</theorem>	
+</p>
+			
+<p>Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success on each individual trial <m>p</m> where 
 	<m> 0 \lt p \lt 1 </m>.  
-	For a positive integer r, let the variable <m>X</m> measure the number of trials needed in order to obtain the rth success. Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
+For a positive integer r, let the variable <m>X</m> measure the number of trials needed in order to obtain the rth success. Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
 
 <p>
-	<theorem><title>Negative Binomial Probability Function</title>
-	<statement>
+<theorem><title>Negative Binomial Probability Function</title>
+<statement>
 	<p xml:id="NegativeBinomialProbabilityFunction">
 	<me>f(x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r,</me>
 	for <m>x \in R = \{r, r+1, ... \}</m>.
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p> Since successive trials are independent, then the probability of the rth success occurring on the x-th trial presumes that in the previous x-1 trials were r-1 successes and x-r failures. You can arrange these indistinguishable successes (and failures) in <m>\binom{x-1}{r-1}</m> unique ways. Therefore the desired probability is given by 
-			<md><mrow>P(X=x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r</mrow></md>
+			<me>P(X=x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r</me>
 	</p>
-	</proof>
-	</theorem>
+</proof>
+</theorem>
 </p>
 
+<example><title>Flipping a die until getting a third success</title>
+<p>Once again, consider rolling our 24-sided die until you get a multiple of 9...that is, either a 9 or an 18...for the third time. Once again, the probability of getting a 9 or 18 on any given roll is <m>p = \frac{1}{12}</m> but since we will continue rolling until we get a success for the third time, this is modeled by a negative binomial distribution and you are looking for 
+<me>f(x) = \binom{x-1}{2}(\frac{11}{12})^{x-3} (\frac{1}{12})^3  \\
+= \frac{(x-1)(x-2)}{2}(\frac{11}{12})^{x-3} (\frac{1}{12})^3</me>  
+</p>
 <p>
-	<theorem><title>Negative Binomial Distribution Sums to 1</title>
-	<statement>
+Computing f(x) for any given x is relatively painless but computing F(x) could take some effort. There is generally not a graphing calculator distribution option for negative binomial but the interactive cells below can be utilized to help with the tedious computations. For example, if you were interested in <m>P(X \lt 20) = P(X \le 19 ) = F(19)</m> then the interactive calculator below using r=3 and <m>p = \frac{1}{12}</m> gives <m>F(19) \approx 0.20737.</m> 
+</p>
+</example>
+
+<example><title>Testing a critical component until failure</title>	
+<p>
+Let's once again test a series of critical system components until you find two that fail. Again, suppose a particular component has a p=0.01 probability of breaking on any given trial. Since you will stop when you encounter the third failure, you can model this situation with a negative binomial distribution and the probability that the 2nd component fails on the x-th trial is given by
+<me>f(x) = \binom{x-1}{2-1} 0.99^{x-2} \cdot 0.01^2 = (x-1) \cdot 0.99^{x-2} \cdot 0.01^2.</me>
+Once again, let's compute the likelihood that you get the second failure on one of the first five trials. Then, 
+<me>F(5) = f(2)+f(3)+f(4)+f(5) \\ = 0.01^2 + 2 \cdot 0.99 \cdot 0.01^2 + 3 \cdot 0.99^2 \cdot 0.01^2 + 4 \cdot 0.99^3 \cdot 0.01^2 \approx some nice number</me>
+which is still relatively small. 
+</p>
+</example>
+
+<p>
+<theorem><title>Negative Binomial Distribution Sums to 1</title>
+<statement>
 	<p>
 		<me>\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = 1</me>
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>
-		<me>\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = p^r \sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}}</me>
+	<me>\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = p^r \sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}}</me>
 		<p>and by using <m>k = x-r</m></p>
-		<md>
-			<mrow> &amp; = p^r \sum_{k=0}^{\infty} {\binom{r + k - 1}{k}(1-p)^k}</mrow>
-			<mrow> &amp; = p^r \frac{1}{(1-(1-p))^r}</mrow>
-			<mrow> &amp; = 1</mrow>
-		</md>
+	<md>
+		<mrow> &amp; = p^r \sum_{k=0}^{\infty} {\binom{r + k - 1}{k}(1-p)^k}</mrow>
+		<mrow> &amp; = p^r \frac{1}{(1-(1-p))^r}</mrow>
+		<mrow> &amp; = 1</mrow>
+	</md>
 	</p>
-	</proof>
-	</theorem>
+</proof>
+</theorem>
 </p>	
 
 <p>Below, the interactive cell symbolically computes f(x) and F(x) for the negative binomial distribution.</p>
@@ -566,7 +673,7 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 <input>
 # Negative Binomial calculator
 @interact
-def _(p=input_box(0.3,width=15),r=slider(1,10,1,2)):
+def _(p=input_box(1/12,width=15),r=slider(1,10,1,2)):
     n = 4*(floor(r/p)+1)
     np1 = n+1
     R = range(r,np1)
@@ -580,6 +687,46 @@ def _(p=input_box(0.3,width=15),r=slider(1,10,1,2)):
 </sage>
 </p>
 
+
+<!-- Based upon
+<webwork source="Library/UBC/STAT/STAT302/HW06/HW06-02.pg">
+-->
+<exercise>
+<webwork>
+<setup>
+    <pg-code>
+    </pg-code>
+</setup>
+<statement>
+<p>
+A telephone saleswoman arranges a sequence of interviews of potential customers in order to sell them an insurance policy. She believes that her success rate in completing a sale in any interview is 11 %. Provide answers to at least 3 decimal places.
+</p>
+<p>Determine the probability that she fails to make a sale on the first five interviews:  <var name="0.558" width="10" />
+</p>
+
+<p>
+Determine the probability that she makes her first sale on the fourth interview: <var name="0.078" width="10" />
+</p>
+
+<p>
+Determine the probability that the second sale is made on the sixth interview: <var name="0.04209" width="10" />
+</p>
+</statement>
+<solution>
+<p>Using geometric,
+<me>P(X \gt 5) = 1 - F(5) = (1-p)^5 = 0.89^5 \approx 0.558</me>
+</p>
+<p>Using geometric,
+<me>P(X = 4) = f(4) = (1-p)^3 \cdot p = 0.89^3 \cdot 0.11 \approx 0.078</me>
+</p>
+<p>Using negative binomial with r=2,
+<me>P(X = 6) = f(6) = 5 (1-p)^4 \cdot p^2 = 5 \cdot 0.89^4 \cdot 0.11^2 \approx 0.04209</me>
+</p>
+
+</solution>
+</webwork>
+</exercise>
+
 <p>
 <theorem><title>Statistics for Negative Binomial Distribution</title>
 <statement>
@@ -592,42 +739,11 @@ def _(p=input_box(0.3,width=15),r=slider(1,10,1,2)):
 	</p>
 </statement>
 <proof>	
-<sage>
-<input>
-# Negative Binomial
-var('x,n,p,r,alpha')
-assume(x,'integer')
-assume(alpha,'integer')
-assume(alpha &gt; 2)
-assume(0 &lt; p &lt; 1)
-@interact
-def _(r=[2,5,10,15,alpha]):
-    f(x) = binomial(x-1,r-1)*p^r*(1-p)^(x-r)
-    mu = sum(x*f,x,r,oo).full_simplify()
-    M2 = sum(x^2*f,x,r,oo).full_simplify()
-    M3 = sum(x^3*f,x,r,oo).full_simplify()
-    M4 = sum(x^4*f,x,r,oo).full_simplify()
-        
-    pretty_print('Mean = ',mu)
-    
-    v = (M2-mu^2).full_simplify()
-    pretty_print('Variance = ',v)
-    stand = sqrt(v)
-    
-    sk = (((M3 - 3*M2*mu + 2*mu^3)).full_simplify()/stand^3).factor()
-    pretty_print('Skewness = ',sk)
-    
-    kurt = ((M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4)/v^2).full_simplify()
-    pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
-</input>
-</sage>
+See interactive cell below...
 </proof>
 </theorem>
 </p>
 <p>
-This is the symbolic derivation component that should be the proof of the theorem above.
-</p>
-	
 <sage>
 <input>
 # Negative Binomial
@@ -657,6 +773,41 @@ def _(r=[2,5,10,15,alpha]):
     pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 </input>
 </sage>
+</p>
+
+
+<p>
+<sage language='r'>
+<input>
+r = 3
+p = 0.4
+M = 20*r
+X = r:M    # the space R of the random variable should be infinite 
+Xshift = 0:(M-r)   # because this is the way r does dbinom, etc. by letting
+                   # x measure the number of failures rather than the number
+                   # of total trials.  So, our x=r would be 0 failures and so
+                   # r would count that as x=0.
+mu = r/p      # the formula for mean of the Binomial Distributions
+sdev = sqrt(r*(1-p)/p^2)  # the formula for the standard deviation
+if(M &lt; 101){
+dnbinom( Xshift, r, p )   # let's print out a bunch of actual probs
+}
+Pnbinom = dnbinom(Xshift, r, p )  # create the probability function over X
+
+Psample = rnbinom(10^6, r, p)  # to create a histogram, sample a lot
+
+Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
+hist(Psample, prob=TRUE, br=(-1:Xtop)+0.5, col="skyblue2", xlab="X - r", 
+  main="Negative Binomial Probability Function vs Approximating 'Bell Curve'")
+
+points(Xshift, Pnbinom, pch=19, col="darkgreen")  # to create actual (x,f(x))
+
+Pnormal &lt;- function(X){dnorm(X, mean=mu-r, sd=sdev)}   
+# to overlap a bell curve, shifting our mean by r in order to fit the r protocol
+curve(Pnormal, col="red", lwd=2, add=TRUE)
+</input>
+</sage>
+</p>
 
 </section>
 
