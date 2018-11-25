@@ -60,10 +60,10 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
       </colophon>
       <biography>
         <p>
-John Travis grew up in Mississippi and had his graduate work at the University of Tennessee and Mississippi State University. As a numerical analyst, since 1988 he has been a professor of mathematics at his undergraduate alma mater Mississippi College where he currently serves as Professor of Mathematics.
+John Travis grew up in Mississippi and did his graduate work at the University of Tennessee and Mississippi State University. As a numerical analyst, since 1988 he has been a professor of mathematics at his undergraduate alma mater Mississippi College where he currently serves as Professor of Mathematics.
 </p>
         <p>
-John is married to Ruth Page Travis and together they have three unique daughters who all are good at mathematics.
+John is married to Ruth Page Travis and together they have three unique daughters.  All are good at mathematics.
 </p>
         <p>You can find him playing racquetball or guitar but not generally at the same time. He is also an active supporter and organizer for the opensouce online homework system WeBWorK.
 </p>
@@ -72,12 +72,18 @@ John is married to Ruth Page Travis and together they have three unique daughter
         <p>
 This text is intended for a one-semester course in probability and statistics that presumes calculus knowledge up to integration techniques. It is perhaps helpful if a student has already been exposed to sequences and series but much of what is needed is reviewed in the text.
 </p>
-        <p>An interactive version of this text is available at 
+        <p>
+An interactive version of this text is available at 
+</p>
+        <p>
 <url href="http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.html">http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.html</url>
-
+http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.html
+</p>
+        <p>
 and an pdf version with active links is available at
-
-<url href="http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf">http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf</url>. 
+</p>
+        <p>
+<url href="http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf">http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf</url> http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf . 
 </p>
         <p>
 A collection of WeBWorK online homework problems are available to correlate with the material in this text. Copies of these sets of problems are available by contacting the author. These exercises are considered an integral part when using this text although a static version of these is included in the appendix.
@@ -89,7 +95,10 @@ To successfully utilize this text, a student should review the requisite materia
 WeBWorK (<url href="http://webwork.maa.org">webwork.maa.org</url>) is an open-source online homework system for math and science courses. WeBWorK is supported by the MAA and the NSF and comes with a Open Problem Library (OPL) of over 35,000 homework problems. Problems in the OPL target most lower division undergraduate math courses and some advanced courses. Supported courses include college algebra, discrete mathematics, probability and statistics, single and multivariable calculus, differential equations, linear algebra and complex analysis.
 </p>
         <p>
-Sage (<url href="http://sagemath.org">sagemath.org</url>) is a free, open-source, software system for advanced mathematics, which is ideal for assisting with a study of abstract algebra. Sage can be used either on your own computer, a local server, or on SageMathCloud (<url href="https://cloud.sagemath.com">https://cloud.sagemath.com</url>).  In this text, the sage cell is used also for interactive computations related to R and octave, as needed.
+Sage (<url href="http://sagemath.org">sagemath.org</url>) is a free, open-source, software system for advanced mathematics, which is ideal for assisting with a study of abstract algebra. Sage can be used either on your own computer, a local server, or on SageMathCloud (<url href="https://cloud.sagemath.com">https://cloud.sagemath.com</url>).  
+</p>
+        <p>
+R (<url href="https://www.r-project.org/">https://www.r-project.org/</url>) is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. The R language is widely used among statisticians and data miners for developing statistical software and data analysis. In this text, the sage cell is used also for interactive computations related to R.
 </p>
         <attribution>
             <line>John Travis</line>
@@ -982,7 +991,7 @@ But why even bother creating a formula (a line here) to approximate data that do
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -4166,9 +4175,18 @@ For computing probabilities, you will want to break up any resulting integrals i
 </p>
         <p>
 <theorem><title>Properties of the Continuous Uniform Probability Function</title><statement><p xml:id="ContinuousUniformProperties">For the Continuous Uniform Distribution over <m>R = [a,b]</m>, with a &lt; b,
-	<ol><li><m>f(x) = \frac{1}{b-a}</m> satisfies the properties of a probability function over R = [a,b].</li><li><m>\mu = \frac{a+b}{2}</m></li><li><m>\sigma^2 = \frac{b^2-a^2}{12}</m></li><li><m>\gamma_1 = 0</m></li><li><m>\gamma_2 = \frac{9 \, {\left(a^{5} - 5 \, a^{4} b + 10 \, a^{3} b^{2} - 10 \, a^{2} b^{3} + 5 \, a b^{4} - b^{5}\right)} {\left(a - b\right)}}{5 \, {\left(a^{3} - 3 \, a^{2} b + 3 \, a b^{2} - b^{3}\right)}^{2}}</m>
+	<ol><li><m>f(x) = \frac{1}{b-a}</m> satisfies the properties of a probability function over R = [a,b].</li><li><m>\mu = \frac{a+b}{2}</m></li><li><m>\sigma^2 = \frac{(b-a)^2}{12}</m></li><li><m>\gamma_1 = 0</m></li><li><m>\gamma_2 = \frac{9 \, {\left(a^{5} - 5 \, a^{4} b + 10 \, a^{3} b^{2} - 10 \, a^{2} b^{3} + 5 \, a b^{4} - b^{5}\right)} {\left(a - b\right)}}{5 \, {\left(a^{3} - 3 \, a^{2} b + 3 \, a b^{2} - b^{3}\right)}^{2}}</m>
 		</li></ol>
 	</p></statement></theorem>
+<proof><p>We can verify most of these here but you can also determine these using Sage below.
+</p><p>For the mean,
+<md><mrow> \mu &amp; = E[X] = \int_a^b x \frac{1}{b-a} dx</mrow><mrow> &amp; = \frac{x^2}{2(b-a)} right |_a^b</mrow><mrow> &amp; = \frac{b^2-a^2}{2(b-a)} = \frac{b+a}{2}.</mrow></md>
+</p><p>For the variance,
+<md><mrow> \sigma^2 &amp; = E[X^2] - \mu^2 = \int_a^b x^2 \frac{1}{b-a} dx  - \mu^2</mrow><mrow> &amp; = \frac{x^3}{3(b-a)} right |_a^b - \left ( \frac{a+b}{2} \right )^2</mrow><mrow> &amp; = \frac{b^3-a^3}{3(b-a)} - \frac{a^2 + 2ab + b^2}{4}</mrow><mrow> &amp; = \frac{4 b^2 + 4 ab + 4 a^2 - 3a^2 - 6 ab - 3b^2}{12}</mrow><mrow> &amp; = \frac{b^2-2ab+a^2}{12} = \frac{(b-a)^2}{12}.</mrow></md>
+</p><p>For the skewness, 
+<md><mrow> \gamma_0 &amp; = E[X^3] - 3 \mu E[X^2] + 2 \mu^3</mrow><mrow> &amp; = \int_a^b x^3 \frac{1}{b-a} dx - 3 \mu \frac{b^3-a^3}{3(b-a)} + 2 \left ( \frac{a+b}{2} \right )^3</mrow><mrow> &amp; = \frac{x^4}{4(b-a)} right |_a^b - 3 \frac{a+b}{2} \cdot \frac{b^3-a^3}{3(b-a)} + 2 \frac{a^3 + 3a^2 b + 3a b^2 + b^3}{8} </mrow><mrow> &amp; = \text{a miracle of algebra}</mrow><mrow> &amp; = 0.</mrow></md>
+</p><p>The variance is more algebra like above. We will just let Sage do that part for us below.
+</p></proof>
 </p>
         <p>
 <sage><input>
@@ -4406,10 +4424,13 @@ This is hypergeometric using
         <p>
 <exercise><title> - Playing Cards</title><statement><p>
 You randomly select a hand of five cards without replacement from an ordinary deck of playing cards.  
-<ul><li>Determine the probability that four of the five are spades.</li><li>Determine the probability that three of the five are face cards (ie, Jacks, Queens, Kings, or Aces).</li></ul>
+<ul><li>Determine the probability that four of the five are spades.</li><li>Determine the probability that three of the five are face cards (ie, Jacks, Queens, Kings).</li></ul>
 </p></statement><hint><p>
 This exercise is actually two different hypergeometric distributions: the first is the 13 spades vs the 39 other cards and the second is the 12 face cards vs the 40 other cards.
-</p></hint></exercise>
+</p></hint><solution><p>
+<me>\frac{\binom{13}{4} \binom{39}{1}}{\binom{52}{5}}</me>
+<me>\frac{\binom{12}{3} \binom{40}{2}}{\binom{52}{5}}</me>
+</p></solution></exercise>
 </p>
         <p>
 <exercise><title> - Starting Seniors</title><statement><p>
@@ -4428,13 +4449,13 @@ This is the continuous uniform distribution over R = [0, 91].
 </p>
         <p>
 <exercise><title> - Uniform Scenarios</title><statement><p>
-Explain how the following situations can be modeled using a continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
+Explain how the following situations can be modeled using either a discrete or continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
 <ul><li>The location on a prize wheel where the spun wheel will stop.</li><li>Given a clock with only a minute hand, the current one second interval.</li><li>The location on a automobile tire where the next puncture will occur.</li></ul>
 </p></statement></exercise>
 </p>
         <p>
 <exercise><title> - Continous Uniform on a different space</title><statement><p>
-Determine an explicit formula for f(x) and the mean and variance for a continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
+Determine an explicit formula for f(x) and the mean and variance for an continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
 </p></statement><solution><p>
 Since you must have 
 <me>\int_{x \in R} f(x) dx = 1</me>
@@ -5016,7 +5037,7 @@ def _(p=input_box(1/12,width=15),r=slider(1,10,1,2)):
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -5446,13 +5467,79 @@ Once again, consider a Poisson Process where you start with an interval of varia
 To derive the probability function for this distribution, consider finding f(x) by first considering F(x). This gives
 
 <md><mrow>F(x)&amp;  = P(X \le x)</mrow><mrow> &amp; = 1 - P(X \gt x)</mrow><mrow> &amp; = 1 - P(\text{first change occurs after an interval of length x})</mrow><mrow> &amp; = 1 - P(\text{no changes in the interval [0,x]})</mrow><mrow> &amp; = 1 - \frac{(\lambda x)^0 e^{-\lambda x}}{0!}</mrow><mrow> &amp; = 1 - e^{-\lambda x}</mrow></md>
-where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. Using this distribution function and taking the derivative yields
+where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. 
+</p>
+        <p>
+Using this distribution function and taking the derivative yields
 <me>f(x) = F'(x) = \lambda e^{-\lambda x}.</me>
 </p>
         <p>
-<definition><title>Exponential Distribution Probability Function</title><statement><p>Given a Poisson process and a constant <m>\mu</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
+We found that if <m>\lambda</m> is the parameter for the Poisson process, then the Poisson distribution had mean <m>\lambda T</m> or if one presumed that T=1, then for that distribution, the mean is just <m>\lambda</m>.  We will find out below that the mean for the exponential distribution will be <m>\frac{1}{\lambda}</m>. Therefore, we will eventually present this formula using the exponental mean <m>\mu = \frac{1}{\lambda}</m> rather than using <m>\lambda</m> in the actual formula. 
+</p>
+        <p>
+You will also often find that exercises in other textbooks and in online WeBWorK will just provide <m>\lambda</m> for the underlying Poisson process and that the time interval T will be presumed to be T=1.  For those problems, if the exercise asks for a Poisson probability, use <m>\mu = \lambda</m> while if the exercise asks for an Exponential probability, use <m>\mu = \frac{1}{\lambda}</m>.
+</p>
+        <p>
+<theorem><title>Verification of Exponential Probability Function</title><statement><p>
+		<me>\int_0^{\infty} \lambda e^{-\lambda x} dx = 1</me>
+	</p></statement><proof><p>
+		<md><mrow> &amp; \int_0^{\infty} \lambda e^{-\lambda x} dx</mrow><mrow> &amp; = \int_0^{\infty} e^{-u} du</mrow><mrow> &amp; = -e^{-u} \big |_0^{\infty} = 1</mrow></md>
+		where we used the substitution <m>u = \lambda x</m>.
+		</p></proof></theorem>
+</p>
+        <p>
+<theorem><title>Derivation of Statistics for Exponential Distribution and Plotting</title><statement><p>
+	<me>\sigma^2 = \mu^2</me>
+	<me>\gamma_1 = 2</me>
+	<me>\gamma_2 = 9</me>
+	</p></statement><proof><p>
+	For the mean, use integration by parts with <m>u = x</m> and <m>dv = \lambda e^{-\lambda \cdot x}</m> to get (eventually)
+	<md><mrow>\text{Mean} = \mu &amp; = \int_0^{\infty} x \cdot \lambda  e^{-\lambda \mu} </mrow><mrow> &amp; = \left [ -(x+\frac{1}{\lambda}) e^{-\lambda \cdot x} \right ] \big |_0^{\infty} </mrow><mrow> &amp; = \frac{1}{\lambda}.</mrow></md>
+	and so the use of <m>\lambda = \frac{1}{\mu}</m> in f(x) is warranted.
+	</p><p>
+	The remaining statistics are derived similarly using repeated integration by parts. The interactive Sage cell below calculates those for you automatically.
+	</p></proof></theorem>
+</p>
+        <p>
+<sage><input>
+# Exponential Distribution
+var('x,mu')
+assume(mu&gt;0)
+
+f(x) =e^(-x/mu)/mu
+mu = integral(x*f,x,0,oo).factor()
+M2 = integral(x^2*f,x,0,oo).factor()
+M3 = integral(x^3*f,x,0,oo).factor()
+M4 = integral(x^4*f,x,0,oo).factor()
+
+pretty_print('Mean = ',mu)
+
+v = (M2-mu^2).factor()
+pretty_print('Variance = ',v)
+stand = sqrt(v)
+
+sk = (((M3 - 3*M2*mu + 2*mu^3))/stand^3).simplify()
+pretty_print('Skewness = ',sk)
+
+kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
+pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
+@interact
+def _(m = slider(1,12,1/2,2,label='mu')):
+    plot(f(mu=m),x,0,30).show(ymax=1)
+	</input></sage>
+</p>
+        <p>
+<definition><title>Alternate Form for the Exponential Distribution Probability Function</title><statement><p>Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
 		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
 	</p></statement></definition>
+</p>
+        <p>
+<theorem><title>Distribution function for Exponential Distribution</title><statement><p>
+		<me>F(x) = 1 - e^{-\frac{x}{\mu}}</me>
+	</p></statement><proof><p>
+	Using <m>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}</m>, note
+	<md><mrow>F(x) &amp; = \int_0^x \frac{1}{\mu} e^{-\frac{u}{\mu}} du</mrow><mrow> &amp; =  - e^{-\frac{u}{\mu}} \big |_0^x</mrow><mrow> &amp; = 1 - e^{-\frac{x}{\mu}}</mrow></md>
+	</p></proof></theorem>
 </p>
         <p>
 <example><title>Router Requests Revisited</title><p>
@@ -5487,62 +5574,6 @@ Let's determine the probability that a first request arrives in the next two sec
     <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=29&amp;sourceFilePath=Library/Rochester/setProbability14ExponentialDist/ur_pb_14_1.pg</server-url>
 
   </webwork-reps></exercise>
-</p>
-        <p>
-<theorem><title>Verification of Exponential Probability Function</title><statement><p>
-		<me>\int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx = 1</me>
-	</p></statement><proof><p>
-		<md><mrow> &amp; \int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx</mrow><mrow> &amp; = \int_0^{\infty} e^{-u} dx</mrow><mrow> &amp; = -e^{-u} \big |_0^{\infty} = 1</mrow></md>
-		</p></proof></theorem>
-</p>
-        <p>
-<theorem><title>Distribution function for Exponential Distribution</title><statement><p>
-		<me>F(x) = 1 - e^{-\frac{x}{\mu}}</me>
-	</p></statement><proof><p>
-	Using <m>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}</m>, note
-	<md><mrow>F(x) &amp; = \int_0^x \frac{1}{\mu} e^{-\frac{u}{\mu}} du</mrow><mrow> &amp; =  - e^{-\frac{u}{\mu}} \big |_0^x</mrow><mrow> &amp; = 1 - e^{-\frac{x}{\mu}}</mrow></md>
-	</p></proof></theorem>
-</p>
-        <p>
-<theorem><title>Derivation of Statistics for Exponential Distribution and Plotting</title><statement><p>
-	<me>\sigma^2 = \mu^2</me>
-	<me>\gamma_1 = 2</me>
-	<me>\gamma_2 = 9</me>
-	</p></statement><proof><p>
-	For the mean, notice that
-	<md><mrow>\text{Mean} &amp; = \int_0^{\infty} x \cdot \frac{1}{\mu} e^{-\frac{x}{\mu}} </mrow><mrow> &amp; = [ (1-x) e^{-\frac{x}{\mu}} ] \big |_0^{\infty} = \mu</mrow></md>
-	and so the use of <m>\mu</m> in f(x) is warranted.
-	</p><p>
-	The remaining statistics are derived similarly using repeated integration by parts. The interactive Sage cell below calculates those for you automatically.
-	</p></proof></theorem>
-</p>
-        <p>
-<sage><input>
-# Exponential Distribution
-var('x,mu')
-assume(mu&gt;0)
-
-f(x) =e^(-x/mu)/mu
-mu = integral(x*f,x,0,oo).factor()
-M2 = integral(x^2*f,x,0,oo).factor()
-M3 = integral(x^3*f,x,0,oo).factor()
-M4 = integral(x^4*f,x,0,oo).factor()
-
-pretty_print('Mean = ',mu)
-
-v = (M2-mu^2).factor()
-pretty_print('Variance = ',v)
-stand = sqrt(v)
-
-sk = (((M3 - 3*M2*mu + 2*mu^3))/stand^3).simplify()
-pretty_print('Skewness = ',sk)
-
-kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
-pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
-@interact
-def _(m = slider(1,12,1/2,2,label='mu')):
-    plot(f(mu=m),x,0,30).show(ymax=1)
-	</input></sage>
 </p>
         <p>
 <sage language="r"><input>
@@ -5604,9 +5635,7 @@ Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
       Now, use the geometric distribution with <m>p = 0.2397</m>...
       <me>P(X = 5) = f(5) = (1-0.2397)^4 \cdot 0.2397 \approx 0.0801.</me>
       <me>P(\text{2nd success on 8} | \text{1st success on 3}) = P(X = 5) \approx 0.0801</me>
-      <me>P(\text{1st success on an odd trial}) = f(1) + f(3) + f(5) + ... \\ 
-        = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
-        = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k = p \frac{1}{1-(1-p)^2} \approx 0.5681</me>
+      <md><mrow> P(\text{1st success on an odd trial}) &amp; = f(1) + f(3) + f(5) + ...</mrow><mrow> &amp; = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... </mrow><mrow> &amp; = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k </mrow><mrow> &amp; = p \frac{1}{1-(1-p)^2} \approx 0.5681</mrow></md>
       </p></solution>
       
     </authored>
@@ -5614,7 +5643,7 @@ Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -5699,9 +5728,12 @@ Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
       
       [```P(\text{2nd success on 8} | \text{1st success on 3}) = P(X = 5) \approx 0.0801```]
       
-      [```P(\text{1st success on an odd trial}) = f(1) + f(3) + f(5) + ... \\ 
-        = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
-        = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k = p \frac{1}{1-(1-p)^2} \approx 0.5681```]
+      [```\begin{aligned}
+       P(\text{1st success on an odd trial}) &amp; = f(1) + f(3) + f(5) + ...\\
+       &amp; = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
+       &amp; = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k \\
+       &amp; = p \frac{1}{1-(1-p)^2} \approx 0.5681
+      \end{aligned}```]
       
       END_PGML_SOLUTION
       
@@ -5719,18 +5751,21 @@ Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
       
       <hint><p>Use the exponential distribution to get the first answer. Use the geometric to get the remainder.</p></hint>
       
-      <solution><p>Using the exponential distribution,</p><p><me>p = P(X \gt 1) = 1 - F(1) = 1 - (1-e^{-\frac{1}{0.7}}) \approx 0.2397.</me></p><p>Now, use the geometric distribution with <m>p = 0.2397\text{...}</m></p><p><me>P(X = 5) = f(5) = (1-0.2397)^4 \cdot 0.2397 \approx 0.0801.</me></p><p><me>P(\text{2nd success on 8} | \text{1st success on 3}) = P(X = 5) \approx 0.0801</me></p><p><me>P(\text{1st success on an odd trial}) = f(1) + f(3) + f(5) + ... \\ 
-        = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
-        = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k = p \frac{1}{1-(1-p)^2} \approx 0.5681</me></p></solution>
+      <solution><p>Using the exponential distribution,</p><p><me>p = P(X \gt 1) = 1 - F(1) = 1 - (1-e^{-\frac{1}{0.7}}) \approx 0.2397.</me></p><p>Now, use the geometric distribution with <m>p = 0.2397\text{...}</m></p><p><me>P(X = 5) = f(5) = (1-0.2397)^4 \cdot 0.2397 \approx 0.0801.</me></p><p><me>P(\text{2nd success on 8} | \text{1st success on 3}) = P(X = 5) \approx 0.0801</me></p><p><me>\begin{aligned}
+       P(\text{1st success on an odd trial}) \amp  = f(1) + f(3) + f(5) + ...\\
+       \amp  = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
+       \amp  = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k \\
+       \amp  = p \frac{1}{1-(1-p)^2} \approx 0.5681
+      \end{aligned}</me></p></solution>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVXNlIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24gdG8gZ2V0IHRoZSBmaXJzdCBhbnN3ZXIuIFVzZSB0aGUgZ2VvbWV0cmljIHRvIGdldCB0aGUgcmVtYWluZGVyLgoKCkVORF9QR01MX0hJTlQKCkJFR0lOX1BHTUxfU09MVVRJT04KVXNpbmcgdGhlIGV4cG9uZW50aWFsIGRpc3RyaWJ1dGlvbiwKCltgYGBwID0gUChYIFxndCAxKSA9IDEgLSBGKDEpID0gMSAtICgxLWVeey1cZnJhY3sxfXswLjd9fSkgXGFwcHJveCAwLjIzOTcuYGBgXQoKCgpOb3csIHVzZSB0aGUgZ2VvbWV0cmljIGRpc3RyaWJ1dGlvbiB3aXRoIFtgcCA9IDAuMjM5N1x0ZXh0ey4uLn1gXQoKW2BgYFAoWCA9IDUpID0gZig1KSA9ICgxLTAuMjM5NyleNCBcY2RvdCAwLjIzOTcgXGFwcHJveCAwLjA4MDEuYGBgXQoKCgpbYGBgUChcdGV4dHsybmQgc3VjY2VzcyBvbiA4fSB8IFx0ZXh0ezFzdCBzdWNjZXNzIG9uIDN9KSA9IFAoWCA9IDUpIFxhcHByb3ggMC4wODAxYGBgXQoKCgpbYGBgUChcdGV4dHsxc3Qgc3VjY2VzcyBvbiBhbiBvZGQgdHJpYWx9KSA9IGYoMSkgKyBmKDMpICsgZig1KSArIC4uLiBcXCAKICA9IHAgKyAoMS1wKV4yIFxjZG90IHAgKyAoMS1wKV40IFxjZG90IHAgKyAoMS1wKV42IFxjZG90IHAgKyAuLi4gXFwKICA9IHAgXHN1bV97eD0wfV57XGluZnR5fSBcbGVmdCAoICgxLXApXjIgXHJpZ2h0KV5rID0gcCBcZnJhY3sxfXsxLSgxLXApXjJ9IFxhcHByb3ggMC41NjgxYGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVXNlIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24gdG8gZ2V0IHRoZSBmaXJzdCBhbnN3ZXIuIFVzZSB0aGUgZ2VvbWV0cmljIHRvIGdldCB0aGUgcmVtYWluZGVyLgoKCkVORF9QR01MX0hJTlQKCkJFR0lOX1BHTUxfU09MVVRJT04KVXNpbmcgdGhlIGV4cG9uZW50aWFsIGRpc3RyaWJ1dGlvbiwKCltgYGBwID0gUChYIFxndCAxKSA9IDEgLSBGKDEpID0gMSAtICgxLWVeey1cZnJhY3sxfXswLjd9fSkgXGFwcHJveCAwLjIzOTcuYGBgXQoKCgpOb3csIHVzZSB0aGUgZ2VvbWV0cmljIGRpc3RyaWJ1dGlvbiB3aXRoIFtgcCA9IDAuMjM5N1x0ZXh0ey4uLn1gXQoKW2BgYFAoWCA9IDUpID0gZig1KSA9ICgxLTAuMjM5NyleNCBcY2RvdCAwLjIzOTcgXGFwcHJveCAwLjA4MDEuYGBgXQoKCgpbYGBgUChcdGV4dHsybmQgc3VjY2VzcyBvbiA4fSB8IFx0ZXh0ezFzdCBzdWNjZXNzIG9uIDN9KSA9IFAoWCA9IDUpIFxhcHByb3ggMC4wODAxYGBgXQoKCgpbYGBgXGJlZ2lue2FsaWduZWR9CiBQKFx0ZXh0ezFzdCBzdWNjZXNzIG9uIGFuIG9kZCB0cmlhbH0pICYgPSBmKDEpICsgZigzKSArIGYoNSkgKyAuLi5cXAogJiA9IHAgKyAoMS1wKV4yIFxjZG90IHAgKyAoMS1wKV40IFxjZG90IHAgKyAoMS1wKV42IFxjZG90IHAgKyAuLi4gXFwKICYgPSBwIFxzdW1fe3g9MH1ee1xpbmZ0eX0gXGxlZnQgKCAoMS1wKV4yIFxyaWdodCleayBcXAogJiA9IHAgXGZyYWN7MX17MS0oMS1wKV4yfSBcYXBwcm94IDAuNTY4MQpcZW5ke2FsaWduZWR9YGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7</server-url>
 
     <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVXNlIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24gdG8gZ2V0IHRoZSBmaXJzdCBhbnN3ZXIuIFVzZSB0aGUgZ2VvbWV0cmljIHRvIGdldCB0aGUgcmVtYWluZGVyLgoKCkVORF9QR01MX0hJTlQKCkVORERPQ1VNRU5UKCk7</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClVzaW5nIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24sCgpbYGBgcCA9IFAoWCBcZ3QgMSkgPSAxIC0gRigxKSA9IDEgLSAoMS1lXnstXGZyYWN7MX17MC43fX0pIFxhcHByb3ggMC4yMzk3LmBgYF0KCgoKTm93LCB1c2UgdGhlIGdlb21ldHJpYyBkaXN0cmlidXRpb24gd2l0aCBbYHAgPSAwLjIzOTdcdGV4dHsuLi59YF0KCltgYGBQKFggPSA1KSA9IGYoNSkgPSAoMS0wLjIzOTcpXjQgXGNkb3QgMC4yMzk3IFxhcHByb3ggMC4wODAxLmBgYF0KCgoKW2BgYFAoXHRleHR7Mm5kIHN1Y2Nlc3Mgb24gOH0gfCBcdGV4dHsxc3Qgc3VjY2VzcyBvbiAzfSkgPSBQKFggPSA1KSBcYXBwcm94IDAuMDgwMWBgYF0KCgoKW2BgYFAoXHRleHR7MXN0IHN1Y2Nlc3Mgb24gYW4gb2RkIHRyaWFsfSkgPSBmKDEpICsgZigzKSArIGYoNSkgKyAuLi4gXFwgCiAgPSBwICsgKDEtcCleMiBcY2RvdCBwICsgKDEtcCleNCBcY2RvdCBwICsgKDEtcCleNiBcY2RvdCBwICsgLi4uIFxcCiAgPSBwIFxzdW1fe3g9MH1ee1xpbmZ0eX0gXGxlZnQgKCAoMS1wKV4yIFxyaWdodCleayA9IHAgXGZyYWN7MX17MS0oMS1wKV4yfSBcYXBwcm94IDAuNTY4MWBgYF0KCgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClVzaW5nIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24sCgpbYGBgcCA9IFAoWCBcZ3QgMSkgPSAxIC0gRigxKSA9IDEgLSAoMS1lXnstXGZyYWN7MX17MC43fX0pIFxhcHByb3ggMC4yMzk3LmBgYF0KCgoKTm93LCB1c2UgdGhlIGdlb21ldHJpYyBkaXN0cmlidXRpb24gd2l0aCBbYHAgPSAwLjIzOTdcdGV4dHsuLi59YF0KCltgYGBQKFggPSA1KSA9IGYoNSkgPSAoMS0wLjIzOTcpXjQgXGNkb3QgMC4yMzk3IFxhcHByb3ggMC4wODAxLmBgYF0KCgoKW2BgYFAoXHRleHR7Mm5kIHN1Y2Nlc3Mgb24gOH0gfCBcdGV4dHsxc3Qgc3VjY2VzcyBvbiAzfSkgPSBQKFggPSA1KSBcYXBwcm94IDAuMDgwMWBgYF0KCgoKW2BgYFxiZWdpbnthbGlnbmVkfQogUChcdGV4dHsxc3Qgc3VjY2VzcyBvbiBhbiBvZGQgdHJpYWx9KSAmID0gZigxKSArIGYoMykgKyBmKDUpICsgLi4uXFwKICYgPSBwICsgKDEtcCleMiBcY2RvdCBwICsgKDEtcCleNCBcY2RvdCBwICsgKDEtcCleNiBcY2RvdCBwICsgLi4uIFxcCiAmID0gcCBcc3VtX3t4PTB9XntcaW5mdHl9IFxsZWZ0ICggKDEtcCleMiBccmlnaHQpXmsgXFwKICYgPSBwIFxmcmFjezF9ezEtKDEtcCleMn0gXGFwcHJveCAwLjU2ODEKXGVuZHthbGlnbmVkfWBgYF0KCgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
 
     <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
 
@@ -5797,7 +5832,7 @@ has a Gamma Distribution.
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -6043,7 +6078,7 @@ TBA
         <title>Exercises</title>
         <p>
 <exercise><title> - Home Sales</title><p>
-A local realty office sells on average 10 houses a week.  Let X measure the number of houses the sell in the next week.  Determine
+A local realty office sells on average 10 houses a week.  Let X measure the number of houses they will sell in the next week.  Determine
 <ol><li>the probability the realty office sells 12 houses next week.</li><li>the probability the realty office sells fewer than 10 houses next week.</li><li>the interval <m>\mu - 2\sigma \le X \le \mu + 2\sigma</m>.</li><li><m>P(\mu - 2\sigma \le X \le \mu + 2\sigma)</m>.</li></ol>
 </p></exercise>
 </p>
@@ -6178,6 +6213,32 @@ If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal dis
 		</p></proof></theorem>
 </p>
         <p>
+When in the standard normal distribution, you can use a graphing calculator's normalcdf(a,b) to approximate <m>P(a \le Z \le b)</m>.  Note that when no mean or standard deviation for normalcdf is provided, the calculator presumes standard normal.
+</p>
+        <p>
+<exercise><title>WebWork - Computing Standard Normal Probabilities</title><introduction><p>
+	You can use a graphing calculator's normalcdf(a,b) to compute these. 
+	</p></introduction><webwork-reps xml:id="extracted-webwork-32" ww-id="webwork-32">
+    <pg source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg"/>
+
+      
+    <static source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg" seed="32">
+      <statement><p>Find the value of the standard normal random variable <m>z</m>, called <m>z_0</m> such that:</p><p>(a) <m/> <m>P(z \leq z_0 ) = 0.7716</m></p><p><m>z_0 =</m> <fillin name="AnSwEr0001" characters="10"/></p><p>(b) <m/> <m>P(-z_0 \leq z \leq z_0 ) = 0.9856</m></p><p><m>z_0 =</m> <fillin name="AnSwEr0002" characters="10"/></p><p>(c) <m/> <m>P(-z_0 \leq z \leq z_0 ) = 0.1038</m></p><p><m>z_0 =</m> <fillin name="AnSwEr0003" characters="10"/></p><p>(d) <m/> <m>P(z \geq z_0 ) = 0.3436</m></p><p><m>z_0 =</m> <fillin name="AnSwEr0004" characters="10"/></p><p>(e) <m/> <m>P(-z_0 \leq z \leq 0 ) = 0.2428</m></p><p><m>z_0 =</m> <fillin name="AnSwEr0005" characters="10"/></p><p>(f) <m/> <m>P(-2 \leq z \leq z_0 ) = 0.8769</m></p><p><m>z_0 =</m> <fillin name="AnSwEr0006" characters="10"/></p></statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg</server-url>
+
+  </webwork-reps></exercise>
+</p>
+        <p>
 <theorem><title>Verifying the normal probability function</title><statement><p>
 		<me>\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = 1</me>
 		</p></statement><proof><p>
@@ -6213,10 +6274,56 @@ as desired.
 	using integration by parts and using the integration in the proof of the mean above.  So, the use of <m>\sigma</m> is warranted.
 	</p></proof></theorem>
 </p>
-        <p>	
-<theorem><title>Properties of the Normal Distribution</title><statement>
-TBA	
-</statement></theorem>
+        <p>
+Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compute general normal probabilities.  Pay attention to the the order of terms. For normal distributions, the calculator function always requires an interval. If you are looking for a one-sided probability, such as <m>P(X \gt 4)</m> for a problem with mean <m>\mu = 2</m> and <m>\sigma = 3</m>, you can replace the infinite upper limit with "large" finite endpoint. Providing something that is more than 10 standard deviations above the mean is for all practical purposes infinity with respect to calculations. So, in this case <m>P(X \gt 4)</m> can be approximated by normalcdf(4,32,2,3).  If you are brave, you can go even higher and use normalcdf(4,100000,2,3) if desired. 
+</p>
+        <p>
+<exercise><title>WebWork - Computing Regular Normal Probabilities</title><introduction><p>
+	This one requires normalcdf with mean and standard deviation.
+	</p></introduction><webwork-reps xml:id="extracted-webwork-33" ww-id="webwork-33">
+    <pg source="Library/NAU/setStatistics/normal_dist2.pg"/>
+
+      
+    <static source="Library/NAU/setStatistics/normal_dist2.pg" seed="33">
+      <statement><p>Fluorescent lighbulbs have lifetimes that  are normally distributed with a mean of 6 years and a standard deviation of 
+      1.6 years. The figure below shows the distribution of lifetimes of fluorescent lightbulbs. 
+      Calculate the shaded area under the curve.   <em> Express your answer in decimal form with at least two decimal place accuracy. </em></p><p>Answer: <fillin name="AnSwEr0001" characters="15"/></p><sidebyside widths="73.3333333333333%"><image source="images/webwork-33-image-1.png"/></sidebyside></statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/normal_dist2.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/normal_dist2.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/normal_dist2.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/normal_dist2.pg</server-url>
+
+  </webwork-reps></exercise>
+</p>
+        <p>
+<exercise><title>WebWork - Computing Regular Normal Probabilities</title><introduction><p>
+	While we are at it, can we "go backwards" and figure out the mean and variance if given some probabilities.
+	</p></introduction><webwork-reps xml:id="extracted-webwork-34" ww-id="webwork-34">
+    <pg source="Library/NAU/setStatistics/normprob4.pg"/>
+
+      
+    <static source="Library/NAU/setStatistics/normprob4.pg" seed="34">
+      <statement><p>Consider a normal distribution curve where the middle 75 <percent/> of the area under the curve lies above the interval ( 3 , 20 ). Use this information to find the mean,  <m>\mu</m> , and the standard deviation, <m>\sigma</m> , of the distribution.</p><p>a)  <m>\mu =</m> <fillin name="AnSwEr0001" characters="20"/></p><p>b)  <m>\sigma =</m> <fillin name="AnSwEr0002" characters="20"/></p></statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/NAU/setStatistics/normprob4.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/NAU/setStatistics/normprob4.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/NAU/setStatistics/normprob4.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/NAU/setStatistics/normprob4.pg</server-url>
+
+  </webwork-reps></exercise>
 </p>
         <p>
 <theorem><title>Normal Distribution Maximum</title><statement><p>The maximum of the normal distribution probability function occurs when <m>x = \mu</m>
@@ -6245,6 +6352,32 @@ def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = ')
     P = integral_numerical(f,a,b)[0]
     print "P("+str(a)+" &lt; X &lt; "+str(b)+") ~= "+str(P)
 	</input></sage>
+</p>
+        <p>
+<exercise><title>WebWork - Applying Normal Probabilities</title><introduction><p>
+	
+	</p></introduction><webwork-reps xml:id="extracted-webwork-35" ww-id="webwork-35">
+    <pg source="Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg"/>
+
+      
+    <static source="Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg" seed="35">
+      <statement><p>The physical fitness of an athlete is often measured by how much oxygen the athlete takes in (which is
+      recorded in milliliters per kilogram, ml/kg).  The mean maximum oxygen uptake for elite athletes has been found to
+      be <m>80</m> with a standard deviation of <m>9.8</m>.  Assume that the distribution is approximately normal.</p><p>(a) <m/> What is the probability that an elite athlete has a maximum oxygen uptake of at least <m>60</m> ml/kg?</p><p>answer: <fillin name="AnSwEr0001" characters="10"/></p><p>(b) <m/> What is the probability that an elite athlete has a maximum oxygen uptake of <m>65</m> ml/kg or lower?</p><p>answer: <fillin name="AnSwEr0002" characters="10"/></p><p>(c) <m/> Consider someone with a maximum oxygen uptake of <m>29</m> ml/kg.  Is it likely that this person is an elite athlete? 
+      Write "YES" or "NO."</p><p>answer: <fillin name="AnSwEr0003" characters="10"/></p></statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg</server-url>
+
+  </webwork-reps></exercise>
 </p>
       </section>
       <section>
@@ -6286,6 +6419,9 @@ def _(r=slider(1,20,1,3,label='r =')):
 </p>
         <p>	
 It also can be difficult to compute Chi-Square probabilities manually so you will perhaps want to use a numerical approximation in this case as well. The TI graphing calculator can be used with <m>\chi ^2</m>cdf(a,b,r).  Or, you can use the calculator below.
+</p>
+        <p>
+On your graphing calculator, you can use <m>P(a \le X \le b) \approx \Chi^2</m>cdf(a,b,r).
 </p>
         <p>
 <sage><input>
@@ -6346,17 +6482,31 @@ which is problematic.  Further, for the variance
 <me>\int_{-\infty}^{\infty} x^2 \frac{1}{1+x^2} dx </me>
 and note that the integrand does not converge to 0 at the endpoints and therefore the integral is automatically considered divergent.  Thus it is reasonable to note that the Cauchy distribution has no variance.
 </p>
-        <p>On the other hand, there is another bell-shaped distribution that is useful and its random variable can be created by using a mixture of a normal variable and a Cauchy variable. Indeed, suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
+        <p>On the other hand, there is another bell-shaped distribution that is useful and its random variable can be created by using a mixture of a normal variable and a <m>\Chi^2</m> variable. Indeed, suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
 <me>T = \frac{Z}{\sqrt(Y/r)}.</me>
 Then, T is said to have a (Student) t distribution.  The good news is that this distribution is useful and its statistics are presented below without proof.
 
-<theorem><title>Student t-distribution</title><statement>For the Student t variable T defined above, 
+<theorem><title>Student t-distribution</title><statement><p>
+For the Student t variable T defined above, 
 <me> \mu = 0</me>
 and if r&gt;2
-<me> \sigma^2 = \frac{r}{r-2}.</me></statement></theorem>
+<me> \sigma^2 = \frac{r}{r-2}</me>
+and if r&gt;3
+<me>\gamma_1 = 0</me>
+and if r&gt;4
+<me>\gamma_2 = \frac{6}{r-4} + 3.</me>
+</p></statement></theorem>
 </p>
-        <sage language="r">
-          <input>
+        <p>
+<example><title>Similarity between Normal and t-distributions for larger n</title><p>
+Consider the probabilities <m>P(-2 \le Z \le 2)</m> vs <m>P(-2 \le T \le 2)</m> for a t-distribution with r=30 degrees of freedom.
+</p><p>
+For normal, <me>P(-2 \le Z \le 2) = \Phi(2) - \Phi(-2) = 0.9545</me>
+while for t, <me>P(-2 \le T \le 2) = 0.9454.</me>
+</p></example>
+</p>
+        <p>
+<sage language="r"><input>
 # Display the Student's t distributions with various
 # degrees of freedom and compare to the normal distribution
 # Copied from www.statmethods.net
@@ -6377,8 +6527,8 @@ for (i in 1:4){
 
 legend("topright", inset=.05, title="Distributions",
   labels, lwd=2, lty=c(1, 1, 1, 1, 2), col=colors)
-</input>
-        </sage>
+</input></sage>
+</p>
       </section>
       <section>
         <title>Normal Distribution as a Limiting Distribution</title>
@@ -6395,8 +6545,8 @@ Consider each of the following:
 As N increases with single digit values of r, what appears to happen to the mean and range of the means?  How does increasing the data range from 1-100 to 1-200 or 1-300 affect these results?</li><li>As N increases (say, for a middle value of r), what appears to happen to the means?  How does increasing the data range from 1-100 to 1-200 or 1-300 affect these results?</li><li>As r increases (say, for a middle value of N), what appears to happen to the range of the averages?  Does your conclusion actually depend upon the value of N?  (Look at the graph and don't worry about the actual numerical values.)
 How does increasing N for the second graph affect the skewness and kurtosis of that graph?  Do things change significantly as r is increased?  </li></ul>
 </p>
-        <sage>
-          <input>
+        <p>
+<sage><input>
 var('n,k')
 from sage.finance.time_series import TimeSeries
 
@@ -6472,10 +6622,10 @@ def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),
     (SCAT+AVGS+avg_line+avg_text).show()
     pretty_print('Histogram of Sample Averages')
     T.show(figsize=(5,2))
-	</input>
-        </sage>
-        <sage>
-          <input>
+</input></sage>
+</p>
+        <p>
+<sage><input>
 var('n,k')
 from sage.finance.time_series import TimeSeries
 
@@ -6551,8 +6701,8 @@ def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),
     (SCAT+AVGS+avg_line+avg_text).show()
     pretty_print('Histogram of Sample Averages')
     T.show(figsize=(5,2))
-	</input>
-        </sage>
+</input></sage>
+</p>
         <p>
 So, even with random data, if you are to consider the arrangement of the collected means rather than the arrangement of the actual data then the means appear to have a bell-shaped distribution as well.
 </p>
@@ -6565,18 +6715,14 @@ Often, when one wants to solve various scientific problems, several assumptions 
 But what is the underlying distribution of these sample statistics?  The Central Limit Theorem gives the answer...</p>
         <p>The results from the previous section illustrate the tendency for bell-shaped distributions. This tendency can be described more mathematically through the following theorem. It is presented here without proof.
 </p>
-        <theorem>
-          <title>Central Limit Theorem</title>
-          <statement>
-            <p>
+        <p>
+<theorem><title>Central Limit Theorem</title><statement><p>
 	Presume X is a random variable from a distribution with known mean <m>\mu</m> and known variance <m>\sigma_x^2</m>.  
 	For some natural number n, sample the distribution repeatedly creating a string of random variables denoted <m>X_1, X_2, ... , X_n</m> and set <m>\overline{X} = \frac{\sum X_k}{n}</m>. 
-	</p>
-            <p> 
+	</p><p> 
 	Then, <m>\overline{X}</m> is approximately normally distributed with mean <m>\mu</m> and variance <m>\sigma^2 = \frac{\sigma_x^2}{n}</m>.
-	</p>
-          </statement>
-        </theorem>
+	</p></statement></theorem>
+</p>
         <p>
 Often the Central Limit Theorem is stated more formally using a conversion to standard units. Indeed, the theorem indicates that the random variable <m>\overline{X}</m> has variance <m>\frac{\sigma^2}{n}</m> which means as n grows this variance approaches 0. So, the limiting random variable has a zero variance and therefore is no longer a random variable. To avoid this issue, the Central Limit Theorem is often stated as:
 </p>
@@ -6586,18 +6732,39 @@ with corresponding distribution function <m>F_n(W_n)</m>,
 <me>\lim_{n \rightarrow \infty} F_n(c) = \int_{-\infty}^c \frac{1}{\sqrt{2 \pi}} e^{-z^2/2} dz = \Phi(c)</me>
 that is, the standard normal distribution function.
 </p>
-        <example>
-          <title>Exponential X vs Normal <m>\overline{X}</m></title>
-          <p>Consider an exponential variable X with mean time till first success of <m>\mu = 4</m>.  Then, <m>\sigma = 2</m> using the exponential formulas.
+        <p>
+<exercise><title>WebWork - Computing probabilities on <m>\overline{X}</m></title><introduction><p>
+	While we are at it, can we "go backwards" and figure out the mean and variance if given some probabilities.
+	</p></introduction><webwork-reps xml:id="extracted-webwork-36" ww-id="webwork-36">
+    <pg source="Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg"/>
+
+      
+    <static source="Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg" seed="36">
+      <statement><p>A sample of <m>n= 25</m> observations is drawn from a normal 
+      population with <m>\mu = 1020</m> and <m>\sigma = 230</m>.  Find each of the following:</p><p>A. <m>P(\bar{X} &gt; 1093)</m></p><p>Probability = <fillin name="AnSwEr0001" characters="15"/></p><p>B. <m>P(\bar{X} \lt  937)</m></p><p>Probability = <fillin name="AnSwEr0002" characters="15"/></p><p>C. <m>P(\bar{X} &gt; 969)</m></p><p>Probability = <fillin name="AnSwEr0003" characters="15"/></p></statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg</server-url>
+
+  </webwork-reps></exercise>
 </p>
-          <p>You can use the exponential probability function to compute probabilities dealing with X. Indeed,
+        <p>
+<example><title>Exponential X vs Normal <m>\overline{X}</m></title><p>Consider an exponential variable X with mean time till first success of <m>\mu = 4</m>.  Then, <m>\sigma = 2</m> using the exponential formulas.
+</p><p>You can use the exponential probability function to compute probabilities dealing with X. Indeed,
 <me>P(X \lt 3.9) = F(3.9) = 1 - e^{-3.9/4} \approx 0.6228 .</me>
-</p>
-          <p>
+</p><p>
 If instead you plan to sample from this distribution n=32 times, the Central Limit Theorem implies that you will get a random variable <m>\overline{X}</m> which has an approximate normal distribution with the same mean but with new variance <m>\sigma_{\overline{X}}^2 = \frac{4}{32} = \frac{1}{8}</m>.  Therefore
 <me>P( \overline{X} \lt 3.9 ) \approx normalcdf(0,3.9,4,sqrt(1/8)) = 0.2119 .</me>
+</p></example>
 </p>
-        </example>
         <p>When converting probability problems from continuous (such as exponential or uniform) then no adjustment to the question is needed since you are approximating one area with another area. However, when converting probability problems from discrete (such as binomial or geometric) then you need to consider how the interval would need to be adjusted so that histogram areas for the discrete problem would relate to areas under the normal curve. Generally, you will need to expand the stated interval each way by 1/2.
 </p>
         <p>
@@ -6609,8 +6776,11 @@ is a Binomial variable.
 </p>
         <theorem>
           <title>Binomial as approximate Normal</title>
-          <statement>Given a Binomial variable X with <m>\mu = np</m> and <m>\sigma^2 = np(1-p)</m>, then X is approximately also normal with the same mean and variance so long as <m>np \gt 5</m> and <m>n(1-p) \gt 5</m>.
-</statement>
+          <statement>
+            <p>
+Given a Binomial variable X with <m>\mu = np</m> and <m>\sigma^2 = np(1-p)</m>, then X is approximately also normal with the same mean and variance so long as <m>np \gt 5</m> and <m>n(1-p) \gt 5</m>.
+</p>
+          </statement>
           <proof>
             <p>
 Using the Bernoulli variables <m>Y_k</m> each with mean p and variance p(1-p), note that the Central Limit Theorem applied to <m>\overline{X} = \frac{\sum Y_k}{n}</m> gives that
@@ -6633,9 +6803,11 @@ Notice that these are very close.
 </p>
         </example>
         <corollary>
-          <title>Poisson as approximate Normal</title>
-          <statement>Given a Poisson variable X with <m>\mu</m> and <m>\sigma^2 = \mu</m> given, then X is approximately also normal with the same mean and variance so long as <m>\mu \gt 5</m>.
-</statement>
+          <statement>
+            <p>
+Given a Poisson variable X with <m>\mu</m> and <m>\sigma^2 = \mu</m> given, then X is approximately also normal with the same mean and variance so long as <m>\mu \gt 5</m>.
+</p>
+          </statement>
           <proof>
             <p>
 Note from before that the Poisson distribution function was derived by approximating with Binomial and letting n approach infinity. Therefore, by the previous theorem, the Poisson variable is also approximately Normal using the Poisson mean and variance rather than the binomial's. Indeed, in standard units
@@ -6657,8 +6829,11 @@ Again, these are very close.
         </example>
         <theorem>
           <title>Gamma as approximate Normal</title>
-          <statement>Given a Gamma variable X with mean <m>r \mu</m> and variance <m> r BLOB</m> given, then X is approximately also normal with the same mean and variance so long as CONDITION????.
-</statement>
+          <statement>
+            <p>
+Given a Gamma variable X with mean <m>r \mu</m> and variance <m> r BLOB</m> given, then X is approximately also normal with the same mean and variance so long as CONDITION????.
+</p>
+          </statement>
         </theorem>
         <example>
           <title>Gamma as Normal</title>
@@ -6792,48 +6967,48 @@ In this chapter we first discuss how to determine appropriate methods for estima
           </proof>
         </corollary>
         <p>
-<example><title>WebWork</title><webwork-reps xml:id="extracted-webwork-32" ww-id="webwork-32">
+<example><title>WebWork</title><webwork-reps xml:id="extracted-webwork-37" ww-id="webwork-37">
     <pg source="Library/NAU/setStatistics/cheby2.pg"/>
 
       
-    <static source="Library/NAU/setStatistics/cheby2.pg" seed="32">
-      <statement><p>A statistician uses Chebyshev's Theorem to estimate that at least 55 <percent/> of a population lies between 
-      the values 2 and 20.  Use this information to find the values of the population mean, <m>\mu</m> , and 
+    <static source="Library/NAU/setStatistics/cheby2.pg" seed="37">
+      <statement><p>A statistician uses Chebyshev's Theorem to estimate that at least 10 <percent/> of a population lies between 
+      the values 2 and 13.  Use this information to find the values of the population mean, <m>\mu</m> , and 
       the population standard deviation <m>\sigma</m>.</p><p>a)  <m>\mu =</m> <fillin name="AnSwEr0001" characters="20"/></p><p>b)  <m>\sigma =</m> <fillin name="AnSwEr0002" characters="20"/></p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
 
   </webwork-reps></example>
 </p>
         <p>
-<example><title>WebWork</title><webwork-reps xml:id="extracted-webwork-33" ww-id="webwork-33">
+<example><title>WebWork</title><webwork-reps xml:id="extracted-webwork-38" ww-id="webwork-38">
     <pg source="Library/NAU/setStatistics/cheby1.pg"/>
 
       
-    <static source="Library/NAU/setStatistics/cheby1.pg" seed="33">
+    <static source="Library/NAU/setStatistics/cheby1.pg" seed="38">
       <statement><p>Suppose that the blood pressure of the human inhabitants of a certain Pacific island is  distributed with 
-      mean, <m>\mu</m> = 101 mmHg and standard deviation , <m>\sigma</m> = 12 mmHg. According to Chebyshev's Theorem, 
-      at least what percentage of the islander's have blood pressure in the range from 68.6 mmHg to 133.4 mmHg ?</p><p>answer: <fillin name="AnSwEr0001" characters="20"/><percent/></p></statement>
+      mean, <m>\mu</m> = 76 mmHg and standard deviation , <m>\sigma</m> = 15 mmHg. According to Chebyshev's Theorem, 
+      at least what percentage of the islander's have blood pressure in the range from 32.5 mmHg to 119.5 mmHg ?</p><p>answer: <fillin name="AnSwEr0001" characters="20"/><percent/></p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
 
   </webwork-reps></example>
 </p>
@@ -6994,21 +7169,21 @@ which is slightly different than the first and slightly smaller than the second.
 
 </p>
         <p>
-<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-34" ww-id="webwork-34">
+<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-39" ww-id="webwork-39">
     <pg source="Library/ASU-topics/setStat/kolossa49.pg"/>
 
       
-    <static source="Library/ASU-topics/setStat/kolossa49.pg" seed="34">
-      <statement><p>A poll is taken in which <m>377</m> out of <m>525</m> randomly selected voters indicated their preference for a certain
+    <static source="Library/ASU-topics/setStat/kolossa49.pg" seed="39">
+      <statement><p>A poll is taken in which <m>332</m> out of <m>550</m> randomly selected voters indicated their preference for a certain
       candidate.</p><p>(a) Find a <m>99</m><percent/> confidence interval for <m>p</m>.</p><p><fillin name="AnSwEr0001" characters="20"/> <m>\leq p \leq</m> <fillin name="AnSwEr0002" characters="20"/></p><p>(b) Find the margin of error for this <m>99</m><percent/> confidence interval for <m>p</m>.</p><p><fillin name="AnSwEr0003" characters="20"/></p></statement>
       
       <statement><p>(c) Without doing any calculations, indicate whether the margin of error is larger or smaller or the same for an 80<percent/> confidence interval.
       <var form="buttons">
       <li>
-      <p>larger</p>
+      <p>smaller</p>
       </li>
       <li>
-      <p>smaller</p>
+      <p>larger</p>
       </li>
       <li>
       <p>same</p>
@@ -7018,13 +7193,13 @@ which is slightly different than the first and slightly smaller than the second.
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
 
   </webwork-reps></exercise>
 </p>
@@ -7045,25 +7220,25 @@ or a sample size of at least 1683.
 </p>
         </example>
         <p>
-<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-35" ww-id="webwork-35">
+<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-40" ww-id="webwork-40">
     <pg source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg"/>
 
       
-    <static source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg" seed="35">
-      <statement><p>Refer to the following scenario.</p><p>An epidemiologist is worried about the prevalence of the flu in East Vancouver and the potential shortage of vaccines for the area. She will need to provide a recommendation for how to allocate the vaccines appropriately across the city. She takes a simple random sample of 340 people living in East Vancouver and finds that 39 have recently had the flu.</p><p>Suppose that the epidemiologist wants to re-estimate the population proportion and wishes
+    <static source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg" seed="40">
+      <statement><p>Refer to the following scenario.</p><p>An epidemiologist is worried about the prevalence of the flu in East Vancouver and the potential shortage of vaccines for the area. She will need to provide a recommendation for how to allocate the vaccines appropriately across the city. She takes a simple random sample of 332 people living in East Vancouver and finds that 34 have recently had the flu.</p><p>Suppose that the epidemiologist wants to re-estimate the population proportion and wishes
       for her 95<percent/> confidence interval to have a margin of error no larger than 0.04.  How large 
       a sample should she take to achieve this? Please carry answers to at least six decimal places in intermediate steps.</p><p>Sample size = <fillin name="AnSwEr0001" characters="6"/></p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
 
   </webwork-reps></exercise>
 </p>
@@ -7104,28 +7279,28 @@ with confidence level <m>1-\alpha</m> and margin of error
 <me>E = z_{\alpha /2} \frac{\sigma}{\sqrt{n}}.</me>
 </p>
         <p>
-<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-36" ww-id="webwork-36">
+<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-41" ww-id="webwork-41">
     <pg source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg"/>
 
       
-    <static source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg" seed="36">
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg" seed="41">
       <statement><p>A random sample of <m>n</m> measurements was selected from a population with 
-      standard deviation <m>\sigma = 17.7</m> and unknown mean <m>\mu</m>.  
-      Calculate a <m>99</m> <percent/> confidence interval for <m>\mu</m> for each of the
-      following situations:</p><p>(a) <m>n = 70, \ \overline{x} = 90.8</m></p><p><fillin name="AnSwEr0001" characters="15"/> <m>\leq \mu \leq</m> <fillin name="AnSwEr0002" characters="15"/></p><p>(b)  <m>n = 85, \ \overline{x} = 90.8</m></p><p><fillin name="AnSwEr0003" characters="15"/> <m>\leq \mu \leq</m> <fillin name="AnSwEr0004" characters="15"/></p><p>(c)  <m>n = 105, \ \overline{x} = 90.8</m></p><p><fillin name="AnSwEr0005" characters="15"/> <m>\leq \mu \leq</m> <fillin name="AnSwEr0006" characters="15"/></p><p>(d)  In general, we can say that for the same confidence level, increasing the sample size <fillin name="AnSwEr0007" characters="20"/> the
+      standard deviation <m>\sigma = 18.6</m> and unknown mean <m>\mu</m>.  
+      Calculate a <m>90</m> <percent/> confidence interval for <m>\mu</m> for each of the
+      following situations:</p><p>(a) <m>n = 50, \ \overline{x} = 100</m></p><p><fillin name="AnSwEr0001" characters="15"/> <m>\leq \mu \leq</m> <fillin name="AnSwEr0002" characters="15"/></p><p>(b)  <m>n = 80, \ \overline{x} = 100</m></p><p><fillin name="AnSwEr0003" characters="15"/> <m>\leq \mu \leq</m> <fillin name="AnSwEr0004" characters="15"/></p><p>(c)  <m>n = 100, \ \overline{x} = 100</m></p><p><fillin name="AnSwEr0005" characters="15"/> <m>\leq \mu \leq</m> <fillin name="AnSwEr0006" characters="15"/></p><p>(d)  In general, we can say that for the same confidence level, increasing the sample size <fillin name="AnSwEr0007" characters="20"/> the
       margin of error (width) of the confidence interval.  (Enter: ''DECREASES'', ''DOES NOT CHANGE'' or
       ''INCREASES'', without the quotes.)</p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
 
   </webwork-reps></exercise>
 </p>
@@ -7133,24 +7308,24 @@ with confidence level <m>1-\alpha</m> and margin of error
 It should be noted that the use of the Central Limit Theorem makes the use of  InvNorm an approximation. It can be shown that so long as n is larger than 30 then generally this approximation is reasonable. If not, then use replace the z-score with a corresponding value from the t-distribution.
 </p>
         <p>
-<exercise><title>WebWork with t-scores</title><webwork-reps xml:id="extracted-webwork-37" ww-id="webwork-37">
+<exercise><title>WebWork with t-scores</title><webwork-reps xml:id="extracted-webwork-42" ww-id="webwork-42">
     <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg"/>
 
       
-    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg" seed="37">
+    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg" seed="42">
       <statement><p>Use the given data to find the 95<percent/> confidence interval estimate of the population 
-      mean <m>\mu</m>. Assume that the population has a normal distribution.</p><p>IQ scores of professional athletes:</p><p>Sample size <m>n = 10</m></p><p>Mean <m>\overline{x} = 103</m></p><p>Standard deviation <m>s  = 10</m></p><p><fillin name="AnSwEr0001" characters="20"/> <m>\lt  \mu \lt </m> <fillin name="AnSwEr0002" characters="20"/></p></statement>
+      mean <m>\mu</m>. Assume that the population has a normal distribution.</p><p>IQ scores of professional athletes:</p><p>Sample size <m>n = 25</m></p><p>Mean <m>\overline{x} = 105</m></p><p>Standard deviation <m>s  = 10</m></p><p><fillin name="AnSwEr0001" characters="20"/> <m>\lt  \mu \lt </m> <fillin name="AnSwEr0002" characters="20"/></p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
 
   </webwork-reps></exercise>
 </p>
@@ -7323,26 +7498,26 @@ print 'P( X &lt; ',b,') = ',b1
 
 
 <example><title> - Two-sided Confidence interval for the variance and standard deviation with large n.</title><p>
-<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-38" ww-id="webwork-38">
+<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-43" ww-id="webwork-43">
     <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg"/>
 
       
-    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg" seed="38">
+    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg" seed="43">
       <statement><p>Find the critical values <m>\chi_L^2 = \chi_{1-\alpha/2}^2</m> and 
-      <m>\chi_R^2 = \chi_{\alpha/2}^2</m> that correspond to <m>90</m><percent/> degree of 
-      confidence and the sample size <m>n = 28.</m></p><p><m>\chi_L^2 =</m> <fillin name="AnSwEr0001" characters="10"/> <m>\ \ \ \ </m>
+      <m>\chi_R^2 = \chi_{\alpha/2}^2</m> that correspond to <m>98</m><percent/> degree of 
+      confidence and the sample size <m>n = 9.</m></p><p><m>\chi_L^2 =</m> <fillin name="AnSwEr0001" characters="10"/> <m>\ \ \ \ </m>
       <m>\chi_R^2 =</m> <fillin name="AnSwEr0002" characters="10"/></p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
 
   </webwork-reps></exercise>
 </p><p>Continuing the previous example, suppose now that you have n=400 data values and suppose you have computed from those a sample variance of <m>s^2 = 479.5</m>.  Then, the only change in the calculation is the two chi-square statistic values. For 95% but now with 399 degrees of freedom
@@ -7376,24 +7551,24 @@ can be determined using
         <p>You can, of course, use the formula to work out the sample size needed in order to have a sufficiently narrow confidence interval
 </p>
         <p>
-<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-39" ww-id="webwork-39">
+<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-44" ww-id="webwork-44">
     <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg"/>
 
       
-    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg" seed="39">
-      <statement><p>Find the minimum sample size needed to be <m>95</m><percent/>  confident that the sample 
-      variance is within <m>20</m><percent/> of the population variance.</p><p><fillin name="AnSwEr0001" characters="6"/></p></statement>
+    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg" seed="44">
+      <statement><p>Find the minimum sample size needed to be <m>99</m><percent/>  confident that the sample 
+      variance is within <m>40</m><percent/> of the population variance.</p><p><fillin name="AnSwEr0001" characters="6"/></p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
 
   </webwork-reps></exercise>
 </p>
@@ -7542,45 +7717,45 @@ and find that this has probability approximately 0.0392 + 0.0392 = 0.0784.  Howe
         <p>
 <exercise><title>WebWork - two tailed test</title><introduction><p>
 		Two-tailed test for p.
-		</p></introduction><webwork-reps xml:id="extracted-webwork-40" ww-id="webwork-40">
+		</p></introduction><webwork-reps xml:id="extracted-webwork-45" ww-id="webwork-45">
     <pg source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg"/>
 
       
-    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg" seed="40">
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg" seed="45">
       <statement><p>An article in the Washington Post on March 16, 1993 stated that nearly 45 
       percent of  all Americans have brown eyes.  A random sample of <m>n = 
-      80</m> C of I 
-      students found 30 with brown eyes.</p><p>We test</p><p><m>H_0: p = .45</m></p><p><m>H_a: p \neq .45</m></p><p>(a) What is the <m>z</m>-statistic for this test? <m/>
+      84</m> C of I 
+      students found 31 with brown eyes.</p><p>We test</p><p><m>H_0: p = .45</m></p><p><m>H_a: p \neq .45</m></p><p>(a) What is the <m>z</m>-statistic for this test? <m/>
       <fillin name="AnSwEr0001" characters="10"/></p><p>(b) What is the P-value of the test?  <m/>
       <fillin name="AnSwEr0002" characters="10"/></p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
 
   </webwork-reps></exercise>
 </p>
         <p>
 <exercise><title>WebWork</title><introduction><p>
 		One-tailed test for p. Notice, in this case you will only compute z-score probability for one tail and not both tails.
-		</p></introduction><webwork-reps xml:id="extracted-webwork-41" ww-id="webwork-41">
+		</p></introduction><webwork-reps xml:id="extracted-webwork-46" ww-id="webwork-46">
     <pg source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg"/>
 
       
-    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg" seed="41">
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg" seed="46">
       <statement><p>A noted psychic was tested for ESP.  The psychic was presented with 
-      220 cards face down and was asked to determine if the card was one of 
+      180 cards face down and was asked to determine if the card was one of 
       5 symbols: a star, cross, circle, square, or three wavy lines.  The psychic 
-      was correct in 52 cases.  Let <m>p</m> represent the probability that 
+      was correct in 43 cases.  Let <m>p</m> represent the probability that 
       the psychic correctly identifies the symbol on the card in a random trial.  
-      Assume the 220 trials can be treated as an SRS from the population of 
+      Assume the 180 trials can be treated as an SRS from the population of 
       all guesses.</p><p>To see if there is evidence that the psychic is doing better than just 
       guessing, we test</p><p><m>H_0: p = .2</m></p><p><m>H_a: p &gt; .2</m></p><p>(a) What is the <m>z</m>-statistic for this test? <m/>
       <fillin name="AnSwEr0001" characters="10"/></p><p>(b) What is the P-value of the test?  <m/>
@@ -7589,13 +7764,13 @@ and find that this has probability approximately 0.0392 + 0.0392 = 0.0784.  Howe
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=46&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=46&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=46&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=46&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
 
   </webwork-reps></exercise>
 </p>
@@ -7640,7 +7815,7 @@ To compute the p-value,
 Since this p-value is less than our significance level <m>\alpha = 0.01</m> then you can reject the null hypothesis and accept the alternate.
 </p>
         <p>
-<exercise><webwork-reps xml:id="extracted-webwork-42" ww-id="webwork-42">
+<exercise><webwork-reps xml:id="extracted-webwork-47" ww-id="webwork-47">
     <authored>
       
         <setup><pg-code>
@@ -7670,7 +7845,7 @@ Since this p-value is less than our significance level <m>\alpha = 0.01</m> then
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -7753,33 +7928,33 @@ Since this p-value is less than our significance level <m>\alpha = 0.01</m> then
     </pg>
 
       
-    <static seed="42">
+    <static seed="47">
       <statement><p>A random sample of 10 observations was drawn from a large normally distributed population. The data is below.</p><p>22 20 22 20 25 18 22 23 19 18</p><p>To determine if you can infer at the 4<percent/> significance level that the population mean is not equal to 22, complete the steps below:</p><p>The value of the standardized test statistic: <fillin name="AnSwEr0001" characters="10"/></p><p>Using interval notation with <m>\infty</m> written as <lq/>infty<rq/> and <m>\cup</m> written as <lq/>U<rq/> (capital u), determine each of the following:</p><p>The rejection region for the standardized test statistic: <fillin name="AnSwEr0002" characters="30"/></p><p>The p-value is <fillin name="AnSwEr0003" characters="10"/></p><p>Your decision for the hypothesis test therefore would be to not reject the null hypothesis <m>H_0\text{.}</m></p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=47&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=47&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=47&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=47&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7</server-url>
 
   </webwork-reps></exercise>
 </p>
         <p>This is a repeat of the previous exercise but using the OPL
-<exercise><title>WebWorK - two tailed test</title><webwork-reps xml:id="extracted-webwork-43" ww-id="webwork-43">
+<exercise><title>WebWorK - two tailed test</title><webwork-reps xml:id="extracted-webwork-48" ww-id="webwork-48">
     <pg source="Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg"/>
 
       
-    <static source="Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg" seed="43">
+    <static source="Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg" seed="48">
       <statement><p>A random sample of 10 observations was drawn from a large normally 
       distributed population.  The data is below.</p><p><me>\begin{array}{ccccccccccc} 
-      19 \amp  25 \amp  20 \amp  21 \amp  20 \amp  20 \amp  28 \amp  28 \amp  25 \amp  26 
-      \end{array}</me></p><p>Test to determine if we can infer at the 4<percent/> significance level that the 
-      population mean is not equal to 23, filling in the requested 
+      17 \amp  21 \amp  22 \amp  16 \amp  21 \amp  20 \amp  23 \amp  17 \amp  23 \amp  22 
+      \end{array}</me></p><p>Test to determine if we can infer at the 2<percent/> significance level that the 
+      population mean is not equal to 18, filling in the requested 
       information below.</p><p>A. The value of the standardized test statistic: <fillin name="AnSwEr0001" characters="25"/></p><p><em> Note:</em> For the next part, your answer should use interval notation.  An
       answer of the form <m>(-\infty, a)</m> is expressed (-infty, a), an answer of the 
       form <m>(b, \infty)</m> is expressed (b, infty), and an answer of the 
@@ -7801,13 +7976,13 @@ Since this p-value is less than our significance level <m>\alpha = 0.01</m> then
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=48&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=48&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=48&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=48&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
 
   </webwork-reps></exercise>
 </p>
@@ -7829,15 +8004,15 @@ To compute the p-value,
 Since this p-value is less than our significance level <m>\alpha = 0.05</m> (by a lot) then you can reject the null hypothesis and accept the alternate. It is safe therefore to say that customers can expect at least 16 ounces! However, note that some folks will still be stiffed since the standard deviation of 0.08 certainly means that some bottles have less than 16.05-0.08 ounces of beverage.  
 </p>
         <p>
-<exercise><title>WebWorK - one tailed test</title><webwork-reps xml:id="extracted-webwork-44" ww-id="webwork-44">
+<exercise><title>WebWorK - one tailed test</title><webwork-reps xml:id="extracted-webwork-49" ww-id="webwork-49">
     <pg source="Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg"/>
 
       
-    <static source="Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg" seed="44">
-      <statement><p>Katie thinks that people living in a rural environment have a healthier lifestyle
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg" seed="49">
+      <statement><p>Lois thinks that people living in a rural environment have a healthier lifestyle
       than other people.  She believes the average lifespan in the USA is 77 years. A random 
-      sample of 20 obituaries from newspapers from rural towns in Idaho give <m>\bar{x} = 77.71</m> 
-      and <m>s = 2.54</m>.  Does this sample provide evidence that people living in rural Idaho communities live 
+      sample of 15 obituaries from newspapers from rural towns in Idaho give <m>\bar{x} = 78.11</m> 
+      and <m>s = 0.68</m>.  Does this sample provide evidence that people living in rural Idaho communities live 
       longer than 77 years?</p><p>(a) State the null and alternative hypotheses:  (Type "mu" for the symbol <m>\mu</m> , 
        e.g.  <em> mu <m>&gt;</m>1 </em> for the mean is greater than 1,  <em> mu <m>\lt </m> 1 </em> 
       for the mean is less than 1, <em> mu not = 1 </em> for the mean is not equal to 1)</p><p><m>H_0</m> : <fillin name="AnSwEr0001" characters="15"/></p><p><m>H_a</m> : <fillin name="AnSwEr0002" characters="15"/></p><p>(b) Find the test statistic, t =  <fillin name="AnSwEr0003" characters="10"/></p><p>(c) Answer the question: Does this sample provide evidence that people living in rural Idaho communities live 
@@ -7846,13 +8021,13 @@ Since this p-value is less than our significance level <m>\alpha = 0.05</m> (by 
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=49&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=49&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=49&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=49&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
 
   </webwork-reps></exercise>
 </p>
@@ -7878,33 +8053,33 @@ and for one-tailed to the left if
 Technically, for the two-tailed test you could pick T-values so that the total probability sums to <m>\alpha</m> in any fashion but generally this probability is split evenly between the two tails as noted above.
 </p>
         <p>
-<exercise><title>WebWorK</title><webwork-reps xml:id="extracted-webwork-45" ww-id="webwork-45">
+<exercise><title>WebWorK</title><webwork-reps xml:id="extracted-webwork-50" ww-id="webwork-50">
     <pg source="Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg"/>
 
       
-    <static source="Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg" seed="45">
-      <statement><p>Use a <m>\alpha = 0.01</m> significance level to test the claim that <m>\sigma = 20</m>
-      if the sample statistics include <m>n = 17,</m> <m>\overline{x} = 100,</m> and <m>s = 28.</m></p><p>The test statistic is <fillin name="AnSwEr0001" characters="15"/></p><p>The smaller critical number is <fillin name="AnSwEr0002" characters="15"/></p><p>The bigger critical number is <fillin name="AnSwEr0003" characters="15"/></p><p>What is your conclusion?</p><p><var form="buttons">
-      <li>
-      <p>There is sufficient evidence to warrant the rejection of the claim that
-               the population standard deviation is equal to 20</p>
-      </li>
+    <static source="Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg" seed="50">
+      <statement><p>Use a <m>\alpha = 0.01</m> significance level to test the claim that <m>\sigma = 15</m>
+      if the sample statistics include <m>n = 23,</m> <m>\overline{x} = 102,</m> and <m>s = 19.</m></p><p>The test statistic is <fillin name="AnSwEr0001" characters="15"/></p><p>The smaller critical number is <fillin name="AnSwEr0002" characters="15"/></p><p>The bigger critical number is <fillin name="AnSwEr0003" characters="15"/></p><p>What is your conclusion?</p><p><var form="buttons">
       <li>
       <p>There is not sufficient evidence to warrant the rejection of the claim that 
-               the population standard deviation is equal to 20</p>
+               the population standard deviation is equal to 15</p>
+      </li>
+      <li>
+      <p>There is sufficient evidence to warrant the rejection of the claim that
+               the population standard deviation is equal to 15</p>
       </li>
       </var></p></statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=50&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=50&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=50&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=50&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
 
   </webwork-reps></exercise>
 </p>

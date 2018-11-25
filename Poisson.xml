@@ -248,82 +248,36 @@ To derive the probability function for this distribution, consider finding f(x) 
 	<mrow> &amp; = 1 - \frac{(\lambda x)^0 e^{-\lambda x}}{0!}</mrow>
 	<mrow> &amp; = 1 - e^{-\lambda x}</mrow>
 </md>
-where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. Using this distribution function and taking the derivative yields
+where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. 
+</p>
+<p>
+Using this distribution function and taking the derivative yields
 <me>f(x) = F'(x) = \lambda e^{-\lambda x}.</me>
 </p>
 
 <p>
-<definition><title>Exponential Distribution Probability Function</title>
-	<statement>
-	<p>Given a Poisson process and a constant <m>\mu</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
-		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
-	</p>
-	</statement>
-</definition>
-</p>
-
-<p>
-<example><title>Router Requests Revisited</title>
-<p>
-Once again, let's consider a router which, over time, has been shown to receive on average 1000 such requests in any given 10 minute period during regular working hours. This would mean that, on average, it would take <m>\mu = \frac{10}{1000} = \frac{1}{100} = 0.01</m> minutes (i.e., less than a second) to receive the first request. If X were to measure the time interval until the first actual request comes in, then the Exponential distribution would be a good model using 
-<me> f(x) = \frac{1}{0.01} e^{-\frac{x}{0.01}}.</me>
+We found that if <m>\lambda</m> is the parameter for the Poisson process, then the Poisson distribution had mean <m>\lambda T</m> or if one presumed that T=1, then for that distribution, the mean is just <m>\lambda</m>.  We will find out below that the mean for the exponential distribution will be <m>\frac{1}{\lambda}</m>. Therefore, we will eventually present this formula using the exponental mean <m>\mu = \frac{1}{\lambda}</m> rather than using <m>\lambda</m> in the actual formula. 
 </p>
 <p>
-Let's determine the probability that a first request arrives in the next two seconds. First, note that since X is a continuous variable that f(x) is NOT the probability of exactly X minutes but you must integrate to compute all probabilities. Also, the next 2 seconds is actually the next <m>\frac{2}{60} = \frac{1}{30}</m> of a minute. Therefore, F(x) is what you need in general and you find
-<me>P(X \le \frac{1}{30}) = F(\frac{1}{30}) = 1 - e^{-\frac{\frac{1}{30}}{0.01}} \approx 0.96433.</me> 
-</p>
-</example>
-</p>
-
-
-
-<p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		This one uses the exponential distribution.
-		</p>
-		</introduction>
-		<webwork source="Library/Rochester/setProbability14ExponentialDist/ur_pb_14_1.pg">
-		</webwork>
-</exercise>
+You will also often find that exercises in other textbooks and in online WeBWorK will just provide <m>\lambda</m> for the underlying Poisson process and that the time interval T will be presumed to be T=1.  For those problems, if the exercise asks for a Poisson probability, use <m>\mu = \lambda</m> while if the exercise asks for an Exponential probability, use <m>\mu = \frac{1}{\lambda}</m>.
 </p>
 
 <p>
 <theorem><title>Verification of Exponential Probability Function</title>
 	<statement>
 	<p>
-		<me>\int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx = 1</me>
+		<me>\int_0^{\infty} \lambda e^{-\lambda x} dx = 1</me>
 	</p>
 	</statement>
 	<proof>
 		<p>
 		<md>
-			<mrow> &amp; \int_0^{\infty} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx</mrow>
-			<mrow> &amp; = \int_0^{\infty} e^{-u} dx</mrow>
+			<mrow> &amp; \int_0^{\infty} \lambda e^{-\lambda x} dx</mrow>
+			<mrow> &amp; = \int_0^{\infty} e^{-u} du</mrow>
 			<mrow> &amp; = -e^{-u} \big |_0^{\infty} = 1</mrow>
 		</md>
+		where we used the substitution <m>u = \lambda x</m>.
 		</p>
-	</proof>
-</theorem>
-</p>
-
-<p>
-<theorem><title>Distribution function for Exponential Distribution</title>
-	<statement>
-	<p>
-		<me>F(x) = 1 - e^{-\frac{x}{\mu}}</me>
-	</p>
-	</statement>
-	<proof>
-	<p>
-	Using <m>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}</m>, note
-	<md>
-		<mrow>F(x) &amp; = \int_0^x \frac{1}{\mu} e^{-\frac{u}{\mu}} du</mrow>
-		<mrow> &amp; =  - e^{-\frac{u}{\mu}} \big |_0^x</mrow>
-		<mrow> &amp; = 1 - e^{-\frac{x}{\mu}}</mrow>
-	</md>
-	</p>
 	</proof>
 </theorem>
 </p>
@@ -339,12 +293,13 @@ Let's determine the probability that a first request arrives in the next two sec
 </statement>
 <proof>
 	<p>
-	For the mean, notice that
+	For the mean, use integration by parts with <m>u = x</m> and <m>dv = \lambda e^{-\lambda \cdot x}</m> to get (eventually)
 	<md>
-		<mrow>\text{Mean} &amp; = \int_0^{\infty} x \cdot \frac{1}{\mu} e^{-\frac{x}{\mu}} </mrow>
-		<mrow> &amp; = [ (1-x) e^{-\frac{x}{\mu}} ] \big |_0^{\infty} = \mu</mrow>
+<mrow>\text{Mean} = \mu &amp; = \int_0^{\infty} x \cdot \lambda  e^{-\lambda \mu} </mrow>
+<mrow> &amp; = \left [ -(x+\frac{1}{\lambda}) e^{-\lambda \cdot x} \right ] \big |_0^{\infty} </mrow>
+<mrow> &amp; = \frac{1}{\lambda}.</mrow>
 	</md>
-	and so the use of <m>\mu</m> in f(x) is warranted.
+	and so the use of <m>\lambda = \frac{1}{\mu}</m> in f(x) is warranted.
 	</p>
 	<p>
 	The remaining statistics are derived similarly using repeated integration by parts. The interactive Sage cell below calculates those for you automatically.
@@ -383,6 +338,65 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 	</input>
 </sage>
 </p>
+
+
+<p>
+<definition><title>Alternate Form for the Exponential Distribution Probability Function</title>
+	<statement>
+	<p>Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
+		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
+	</p>
+	</statement>
+</definition>
+</p>
+
+
+<p>
+<theorem><title>Distribution function for Exponential Distribution</title>
+	<statement>
+	<p>
+		<me>F(x) = 1 - e^{-\frac{x}{\mu}}</me>
+	</p>
+	</statement>
+	<proof>
+	<p>
+	Using <m>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}</m>, note
+	<md>
+		<mrow>F(x) &amp; = \int_0^x \frac{1}{\mu} e^{-\frac{u}{\mu}} du</mrow>
+		<mrow> &amp; =  - e^{-\frac{u}{\mu}} \big |_0^x</mrow>
+		<mrow> &amp; = 1 - e^{-\frac{x}{\mu}}</mrow>
+	</md>
+	</p>
+	</proof>
+</theorem>
+</p>
+
+
+<p>
+<example><title>Router Requests Revisited</title>
+<p>
+Once again, let's consider a router which, over time, has been shown to receive on average 1000 such requests in any given 10 minute period during regular working hours. This would mean that, on average, it would take <m>\mu = \frac{10}{1000} = \frac{1}{100} = 0.01</m> minutes (i.e., less than a second) to receive the first request. If X were to measure the time interval until the first actual request comes in, then the Exponential distribution would be a good model using 
+<me> f(x) = \frac{1}{0.01} e^{-\frac{x}{0.01}}.</me>
+</p>
+<p>
+Let's determine the probability that a first request arrives in the next two seconds. First, note that since X is a continuous variable that f(x) is NOT the probability of exactly X minutes but you must integrate to compute all probabilities. Also, the next 2 seconds is actually the next <m>\frac{2}{60} = \frac{1}{30}</m> of a minute. Therefore, F(x) is what you need in general and you find
+<me>P(X \le \frac{1}{30}) = F(\frac{1}{30}) = 1 - e^{-\frac{\frac{1}{30}}{0.01}} \approx 0.96433.</me> 
+</p>
+</example>
+</p>
+
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		This one uses the exponential distribution.
+		</p>
+		</introduction>
+		<webwork source="Library/Rochester/setProbability14ExponentialDist/ur_pb_14_1.pg">
+		</webwork>
+</exercise>
+</p>
+
 
 <p>
 <sage language = 'r'>
@@ -474,9 +488,12 @@ Use the exponential distribution to get the first answer. Use the geometric to g
 Now, use the geometric distribution with <m>p = 0.2397</m>...
 <me>P(X = 5) = f(5) = (1-0.2397)^4 \cdot 0.2397 \approx 0.0801.</me>
 <me>P(\text{2nd success on 8} | \text{1st success on 3}) = P(X = 5) \approx 0.0801</me>
-<me>P(\text{1st success on an odd trial}) = f(1) + f(3) + f(5) + ... \\ 
-  = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
-  = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k = p \frac{1}{1-(1-p)^2} \approx 0.5681</me>
+<md>
+    <mrow> P(\text{1st success on an odd trial}) &amp; = f(1) + f(3) + f(5) + ...</mrow> 
+    <mrow> &amp; = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... </mrow>
+    <mrow> &amp; = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k </mrow>
+    <mrow> &amp; = p \frac{1}{1-(1-p)^2} \approx 0.5681</mrow>
+</md>
 </p>
 </solution>
 </webwork>
@@ -775,7 +792,7 @@ TBA
 <p>
 <exercise><title> - Home Sales</title>
 <p>
-A local realty office sells on average 10 houses a week.  Let X measure the number of houses the sell in the next week.  Determine
+A local realty office sells on average 10 houses a week.  Let X measure the number of houses they will sell in the next week.  Determine
 <ol>
 	<li>the probability the realty office sells 12 houses next week.</li>
 	<li>the probability the realty office sells fewer than 10 houses next week.</li>

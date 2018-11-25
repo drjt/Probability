@@ -53,51 +53,51 @@
 \contentsline {section}{\numberline {6.1}Introduction}{95}{section.6.1}
 \contentsline {section}{\numberline {6.2}Discrete Uniform Distribution}{95}{section.6.2}
 \contentsline {section}{\numberline {6.3}Continuous Uniform Distribution}{98}{section.6.3}
-\contentsline {section}{\numberline {6.4}Hypergeometric Distribution}{100}{section.6.4}
+\contentsline {section}{\numberline {6.4}Hypergeometric Distribution}{101}{section.6.4}
 \contentsline {section}{\numberline {6.5}Summary}{105}{section.6.5}
 \contentsline {section}{\numberline {6.6}Exercises}{105}{section.6.6}
-\contentsline {chapter}{\numberline {7}Distributions based upon Bernoulli Trials}{109}{chapter.7}
-\contentsline {section}{\numberline {7.1}Introduction}{109}{section.7.1}
-\contentsline {section}{\numberline {7.2}Binomial Distribution}{110}{section.7.2}
-\contentsline {section}{\numberline {7.3}Geometric Distribution}{114}{section.7.3}
-\contentsline {section}{\numberline {7.4}Negative Binomial}{118}{section.7.4}
-\contentsline {section}{\numberline {7.5}Summary}{122}{section.7.5}
-\contentsline {section}{\numberline {7.6}Exercises}{122}{section.7.6}
-\contentsline {chapter}{\numberline {8}Distributions based upon Poisson Processes}{127}{chapter.8}
-\contentsline {section}{\numberline {8.1}Introduction}{127}{section.8.1}
-\contentsline {section}{\numberline {8.2}Poisson Distribution}{127}{section.8.2}
-\contentsline {section}{\numberline {8.3}Exponential Distribution}{131}{section.8.3}
-\contentsline {section}{\numberline {8.4}Gamma Distribution}{135}{section.8.4}
-\contentsline {section}{\numberline {8.5}Summary}{139}{section.8.5}
-\contentsline {section}{\numberline {8.6}Exercises}{139}{section.8.6}
-\contentsline {chapter}{\numberline {9}Normal Distributions}{143}{chapter.9}
-\contentsline {section}{\numberline {9.1}Introduction}{143}{section.9.1}
-\contentsline {section}{\numberline {9.2}The Normal Distribution}{143}{section.9.2}
-\contentsline {section}{\numberline {9.3}Chi-Square Distribution}{146}{section.9.3}
-\contentsline {section}{\numberline {9.4}Other "Bell Shaped" distributions}{147}{section.9.4}
-\contentsline {section}{\numberline {9.5}Normal Distribution as a Limiting Distribution}{149}{section.9.5}
-\contentsline {section}{\numberline {9.6}Central Limit Theorem}{153}{section.9.6}
-\contentsline {section}{\numberline {9.7}Summary}{157}{section.9.7}
-\contentsline {section}{\numberline {9.8}Exercises}{157}{section.9.8}
-\contentsline {chapter}{\numberline {10}Estimation}{159}{chapter.10}
-\contentsline {section}{\numberline {10.1}Introduction}{159}{section.10.1}
-\contentsline {section}{\numberline {10.2}Interval Estimates - Chebyshev}{159}{section.10.2}
-\contentsline {section}{\numberline {10.3}Point Estimates}{161}{section.10.3}
-\contentsline {section}{\numberline {10.4}Interval Estimates - Confidence Interval for p}{162}{section.10.4}
-\contentsline {section}{\numberline {10.5}Interval Estimates - Confidence Interval for \(\mu \)}{166}{section.10.5}
-\contentsline {section}{\numberline {10.6}Interval Estimates - Confidence Interval for \(\sigma ^2\)}{168}{section.10.6}
-\contentsline {section}{\numberline {10.7}Exercises}{172}{section.10.7}
-\contentsline {chapter}{\numberline {11}Hypothesis Testing}{173}{chapter.11}
-\contentsline {section}{\numberline {11.1}Introduction}{173}{section.11.1}
-\contentsline {section}{\numberline {11.2}Hypotheses and Errors}{173}{section.11.2}
-\contentsline {section}{\numberline {11.3}Hypothesis Test for one proportion}{174}{section.11.3}
-\contentsline {section}{\numberline {11.4}Hypothesis Test for one mean}{176}{section.11.4}
-\contentsline {section}{\numberline {11.5}Hypothesis Test for one variance}{178}{section.11.5}
-\contentsline {section}{\numberline {11.6}Summary}{179}{section.11.6}
-\contentsline {section}{\numberline {11.7}Exercises}{179}{section.11.7}
-\contentsline {chapter}{\numberline {12}Review of Calculus}{181}{chapter.12}
-\contentsline {section}{\numberline {12.1}Geometric Series}{181}{section.12.1}
-\contentsline {subsection}{\numberline {12.1.1}Geometric Series}{181}{subsection.12.1.1}
-\contentsline {subsection}{\numberline {12.1.2}Alternate Forms for the Geometric Series}{182}{subsection.12.1.2}
-\contentsline {section}{\numberline {12.2}Binomial SumsBinomial SeriesTrinomial Series}{183}{section.12.2}
-\contentsline {section}{\numberline {12.3}Negative Binomial Series}{184}{section.12.3}
+\contentsline {chapter}{\numberline {7}Distributions based upon Bernoulli Trials}{111}{chapter.7}
+\contentsline {section}{\numberline {7.1}Introduction}{111}{section.7.1}
+\contentsline {section}{\numberline {7.2}Binomial Distribution}{112}{section.7.2}
+\contentsline {section}{\numberline {7.3}Geometric Distribution}{116}{section.7.3}
+\contentsline {section}{\numberline {7.4}Negative Binomial}{120}{section.7.4}
+\contentsline {section}{\numberline {7.5}Summary}{124}{section.7.5}
+\contentsline {section}{\numberline {7.6}Exercises}{124}{section.7.6}
+\contentsline {chapter}{\numberline {8}Distributions based upon Poisson Processes}{129}{chapter.8}
+\contentsline {section}{\numberline {8.1}Introduction}{129}{section.8.1}
+\contentsline {section}{\numberline {8.2}Poisson Distribution}{129}{section.8.2}
+\contentsline {section}{\numberline {8.3}Exponential Distribution}{133}{section.8.3}
+\contentsline {section}{\numberline {8.4}Gamma Distribution}{137}{section.8.4}
+\contentsline {section}{\numberline {8.5}Summary}{141}{section.8.5}
+\contentsline {section}{\numberline {8.6}Exercises}{141}{section.8.6}
+\contentsline {chapter}{\numberline {9}Normal Distributions}{145}{chapter.9}
+\contentsline {section}{\numberline {9.1}Introduction}{145}{section.9.1}
+\contentsline {section}{\numberline {9.2}The Normal Distribution}{145}{section.9.2}
+\contentsline {section}{\numberline {9.3}Chi-Square Distribution}{150}{section.9.3}
+\contentsline {section}{\numberline {9.4}Other "Bell Shaped" distributions}{151}{section.9.4}
+\contentsline {section}{\numberline {9.5}Normal Distribution as a Limiting Distribution}{153}{section.9.5}
+\contentsline {section}{\numberline {9.6}Central Limit Theorem}{157}{section.9.6}
+\contentsline {section}{\numberline {9.7}Summary}{161}{section.9.7}
+\contentsline {section}{\numberline {9.8}Exercises}{161}{section.9.8}
+\contentsline {chapter}{\numberline {10}Estimation}{163}{chapter.10}
+\contentsline {section}{\numberline {10.1}Introduction}{163}{section.10.1}
+\contentsline {section}{\numberline {10.2}Interval Estimates - Chebyshev}{163}{section.10.2}
+\contentsline {section}{\numberline {10.3}Point Estimates}{165}{section.10.3}
+\contentsline {section}{\numberline {10.4}Interval Estimates - Confidence Interval for p}{166}{section.10.4}
+\contentsline {section}{\numberline {10.5}Interval Estimates - Confidence Interval for \(\mu \)}{170}{section.10.5}
+\contentsline {section}{\numberline {10.6}Interval Estimates - Confidence Interval for \(\sigma ^2\)}{172}{section.10.6}
+\contentsline {section}{\numberline {10.7}Exercises}{176}{section.10.7}
+\contentsline {chapter}{\numberline {11}Hypothesis Testing}{177}{chapter.11}
+\contentsline {section}{\numberline {11.1}Introduction}{177}{section.11.1}
+\contentsline {section}{\numberline {11.2}Hypotheses and Errors}{177}{section.11.2}
+\contentsline {section}{\numberline {11.3}Hypothesis Test for one proportion}{178}{section.11.3}
+\contentsline {section}{\numberline {11.4}Hypothesis Test for one mean}{180}{section.11.4}
+\contentsline {section}{\numberline {11.5}Hypothesis Test for one variance}{182}{section.11.5}
+\contentsline {section}{\numberline {11.6}Summary}{183}{section.11.6}
+\contentsline {section}{\numberline {11.7}Exercises}{183}{section.11.7}
+\contentsline {chapter}{\numberline {12}Review of Calculus}{185}{chapter.12}
+\contentsline {section}{\numberline {12.1}Geometric Series}{185}{section.12.1}
+\contentsline {subsection}{\numberline {12.1.1}Geometric Series}{185}{subsection.12.1.1}
+\contentsline {subsection}{\numberline {12.1.2}Alternate Forms for the Geometric Series}{186}{subsection.12.1.2}
+\contentsline {section}{\numberline {12.2}Binomial SumsBinomial SeriesTrinomial Series}{187}{section.12.2}
+\contentsline {section}{\numberline {12.3}Negative Binomial Series}{188}{section.12.3}

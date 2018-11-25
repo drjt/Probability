@@ -236,7 +236,7 @@ For computing probabilities, you will want to break up any resulting integrals i
 	<ol>
 		<li><m>f(x) = \frac{1}{b-a}</m> satisfies the properties of a probability function over R = [a,b].</li>
 		<li><m>\mu = \frac{a+b}{2}</m></li>
-		<li><m>\sigma^2 = \frac{b^2-a^2}{12}</m></li>
+		<li><m>\sigma^2 = \frac{(b-a)^2}{12}</m></li>
 		<li><m>\gamma_1 = 0</m></li>
 		<li><m>\gamma_2 = \frac{9 \, {\left(a^{5} - 5 \, a^{4} b + 10 \, a^{3} b^{2} - 10 \, a^{2} b^{3} + 5 \, a b^{4} - b^{5}\right)} {\left(a - b\right)}}{5 \, {\left(a^{3} - 3 \, a^{2} b + 3 \, a b^{2} - b^{3}\right)}^{2}}</m>
 		</li>
@@ -244,6 +244,37 @@ For computing probabilities, you will want to break up any resulting integrals i
 	</p>
 </statement>
 </theorem>
+<proof>
+<p>We can verify most of these here but you can also determine these using Sage below.
+</p>
+<p>For the mean,
+<md>
+<mrow> \mu &amp; = E[X] = \int_a^b x \frac{1}{b-a} dx</mrow>
+<mrow> &amp; = \frac{x^2}{2(b-a)} right |_a^b</mrow>
+<mrow> &amp; = \frac{b^2-a^2}{2(b-a)} = \frac{b+a}{2}.</mrow>
+</md>
+</p>
+<p>For the variance,
+<md>
+<mrow> \sigma^2 &amp; = E[X^2] - \mu^2 = \int_a^b x^2 \frac{1}{b-a} dx  - \mu^2</mrow>
+<mrow> &amp; = \frac{x^3}{3(b-a)} right |_a^b - \left ( \frac{a+b}{2} \right )^2</mrow>
+<mrow> &amp; = \frac{b^3-a^3}{3(b-a)} - \frac{a^2 + 2ab + b^2}{4}</mrow>
+<mrow> &amp; = \frac{4 b^2 + 4 ab + 4 a^2 - 3a^2 - 6 ab - 3b^2}{12}</mrow>
+<mrow> &amp; = \frac{b^2-2ab+a^2}{12} = \frac{(b-a)^2}{12}.</mrow>
+</md>
+</p>
+<p>For the skewness, 
+<md>
+<mrow> \gamma_0 &amp; = E[X^3] - 3 \mu E[X^2] + 2 \mu^3</mrow>
+<mrow> &amp; = \int_a^b x^3 \frac{1}{b-a} dx - 3 \mu \frac{b^3-a^3}{3(b-a)} + 2 \left ( \frac{a+b}{2} \right )^3</mrow>
+<mrow> &amp; = \frac{x^4}{4(b-a)} right |_a^b - 3 \frac{a+b}{2} \cdot \frac{b^3-a^3}{3(b-a)} + 2 \frac{a^3 + 3a^2 b + 3a b^2 + b^3}{8} </mrow>
+<mrow> &amp; = \text{a miracle of algebra}</mrow>
+<mrow> &amp; = 0.</mrow>
+</md>
+</p>
+<p>The variance is more algebra like above. We will just let Sage do that part for us below.
+</p>
+</proof>
 </p>
 
 <p>
@@ -587,7 +618,7 @@ This is hypergeometric using
 You randomly select a hand of five cards without replacement from an ordinary deck of playing cards.  
 <ul>
 	<li>Determine the probability that four of the five are spades.</li>
-	<li>Determine the probability that three of the five are face cards (ie, Jacks, Queens, Kings, or Aces).</li>
+	<li>Determine the probability that three of the five are face cards (ie, Jacks, Queens, Kings).</li>
 </ul>
 </p>
 </statement>
@@ -596,6 +627,12 @@ You randomly select a hand of five cards without replacement from an ordinary de
 This exercise is actually two different hypergeometric distributions: the first is the 13 spades vs the 39 other cards and the second is the 12 face cards vs the 40 other cards.
 </p>
 </hint>
+<solution>
+<p>
+<me>\frac{\binom{13}{4} \binom{39}{1}}{\binom{52}{5}}</me>
+<me>\frac{\binom{12}{3} \binom{40}{2}}{\binom{52}{5}}</me>
+</p>
+</solution>
 </exercise>
 </p>
 
@@ -639,7 +676,7 @@ This is the continuous uniform distribution over R = [0, 91].
 <exercise><title> - Uniform Scenarios</title>
 <statement>
 <p>
-Explain how the following situations can be modeled using a continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
+Explain how the following situations can be modeled using either a discrete or continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
 <ul>
 	<li>The location on a prize wheel where the spun wheel will stop.</li>
 	<li>Given a clock with only a minute hand, the current one second interval.</li>
@@ -654,7 +691,7 @@ Explain how the following situations can be modeled using a continuous uniform d
 <exercise><title> - Continous Uniform on a different space</title>
 <statement>
 <p>
-Determine an explicit formula for f(x) and the mean and variance for a continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
+Determine an explicit formula for f(x) and the mean and variance for an continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
 </p>
 </statement>
 <solution>

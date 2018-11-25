@@ -755,7 +755,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -963,7 +963,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -1105,9 +1105,7 @@
       Now, use the geometric distribution with <m>p = 0.2397</m>...
       <me>P(X = 5) = f(5) = (1-0.2397)^4 \cdot 0.2397 \approx 0.0801.</me>
       <me>P(\text{2nd success on 8} | \text{1st success on 3}) = P(X = 5) \approx 0.0801</me>
-      <me>P(\text{1st success on an odd trial}) = f(1) + f(3) + f(5) + ... \\ 
-        = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
-        = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k = p \frac{1}{1-(1-p)^2} \approx 0.5681</me>
+      <md><mrow> P(\text{1st success on an odd trial}) &amp; = f(1) + f(3) + f(5) + ...</mrow><mrow> &amp; = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... </mrow><mrow> &amp; = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k </mrow><mrow> &amp; = p \frac{1}{1-(1-p)^2} \approx 0.5681</mrow></md>
       </p>
         </solution>
       
@@ -1116,7 +1114,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -1201,9 +1199,12 @@
       
       [```P(\text{2nd success on 8} | \text{1st success on 3}) = P(X = 5) \approx 0.0801```]
       
-      [```P(\text{1st success on an odd trial}) = f(1) + f(3) + f(5) + ... \\ 
-        = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
-        = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k = p \frac{1}{1-(1-p)^2} \approx 0.5681```]
+      [```\begin{aligned}
+       P(\text{1st success on an odd trial}) &amp; = f(1) + f(3) + f(5) + ...\\
+       &amp; = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
+       &amp; = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k \\
+       &amp; = p \frac{1}{1-(1-p)^2} \approx 0.5681
+      \end{aligned}```]
       
       END_PGML_SOLUTION
       
@@ -1235,19 +1236,22 @@
       <p>Now, use the geometric distribution with <m>p = 0.2397\text{...}</m></p>
       <p><me>P(X = 5) = f(5) = (1-0.2397)^4 \cdot 0.2397 \approx 0.0801.</me></p>
       <p><me>P(\text{2nd success on 8} | \text{1st success on 3}) = P(X = 5) \approx 0.0801</me></p>
-      <p><me>P(\text{1st success on an odd trial}) = f(1) + f(3) + f(5) + ... \\ 
-        = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
-        = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k = p \frac{1}{1-(1-p)^2} \approx 0.5681</me></p>
+      <p><me>\begin{aligned}
+       P(\text{1st success on an odd trial}) \amp  = f(1) + f(3) + f(5) + ...\\
+       \amp  = p + (1-p)^2 \cdot p + (1-p)^4 \cdot p + (1-p)^6 \cdot p + ... \\
+       \amp  = p \sum_{x=0}^{\infty} \left ( (1-p)^2 \right)^k \\
+       \amp  = p \frac{1}{1-(1-p)^2} \approx 0.5681
+      \end{aligned}</me></p>
       </solution>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVXNlIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24gdG8gZ2V0IHRoZSBmaXJzdCBhbnN3ZXIuIFVzZSB0aGUgZ2VvbWV0cmljIHRvIGdldCB0aGUgcmVtYWluZGVyLgoKCkVORF9QR01MX0hJTlQKCkJFR0lOX1BHTUxfU09MVVRJT04KVXNpbmcgdGhlIGV4cG9uZW50aWFsIGRpc3RyaWJ1dGlvbiwKCltgYGBwID0gUChYIFxndCAxKSA9IDEgLSBGKDEpID0gMSAtICgxLWVeey1cZnJhY3sxfXswLjd9fSkgXGFwcHJveCAwLjIzOTcuYGBgXQoKCgpOb3csIHVzZSB0aGUgZ2VvbWV0cmljIGRpc3RyaWJ1dGlvbiB3aXRoIFtgcCA9IDAuMjM5N1x0ZXh0ey4uLn1gXQoKW2BgYFAoWCA9IDUpID0gZig1KSA9ICgxLTAuMjM5NyleNCBcY2RvdCAwLjIzOTcgXGFwcHJveCAwLjA4MDEuYGBgXQoKCgpbYGBgUChcdGV4dHsybmQgc3VjY2VzcyBvbiA4fSB8IFx0ZXh0ezFzdCBzdWNjZXNzIG9uIDN9KSA9IFAoWCA9IDUpIFxhcHByb3ggMC4wODAxYGBgXQoKCgpbYGBgUChcdGV4dHsxc3Qgc3VjY2VzcyBvbiBhbiBvZGQgdHJpYWx9KSA9IGYoMSkgKyBmKDMpICsgZig1KSArIC4uLiBcXCAKICA9IHAgKyAoMS1wKV4yIFxjZG90IHAgKyAoMS1wKV40IFxjZG90IHAgKyAoMS1wKV42IFxjZG90IHAgKyAuLi4gXFwKICA9IHAgXHN1bV97eD0wfV57XGluZnR5fSBcbGVmdCAoICgxLXApXjIgXHJpZ2h0KV5rID0gcCBcZnJhY3sxfXsxLSgxLXApXjJ9IFxhcHByb3ggMC41NjgxYGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVXNlIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24gdG8gZ2V0IHRoZSBmaXJzdCBhbnN3ZXIuIFVzZSB0aGUgZ2VvbWV0cmljIHRvIGdldCB0aGUgcmVtYWluZGVyLgoKCkVORF9QR01MX0hJTlQKCkJFR0lOX1BHTUxfU09MVVRJT04KVXNpbmcgdGhlIGV4cG9uZW50aWFsIGRpc3RyaWJ1dGlvbiwKCltgYGBwID0gUChYIFxndCAxKSA9IDEgLSBGKDEpID0gMSAtICgxLWVeey1cZnJhY3sxfXswLjd9fSkgXGFwcHJveCAwLjIzOTcuYGBgXQoKCgpOb3csIHVzZSB0aGUgZ2VvbWV0cmljIGRpc3RyaWJ1dGlvbiB3aXRoIFtgcCA9IDAuMjM5N1x0ZXh0ey4uLn1gXQoKW2BgYFAoWCA9IDUpID0gZig1KSA9ICgxLTAuMjM5NyleNCBcY2RvdCAwLjIzOTcgXGFwcHJveCAwLjA4MDEuYGBgXQoKCgpbYGBgUChcdGV4dHsybmQgc3VjY2VzcyBvbiA4fSB8IFx0ZXh0ezFzdCBzdWNjZXNzIG9uIDN9KSA9IFAoWCA9IDUpIFxhcHByb3ggMC4wODAxYGBgXQoKCgpbYGBgXGJlZ2lue2FsaWduZWR9CiBQKFx0ZXh0ezFzdCBzdWNjZXNzIG9uIGFuIG9kZCB0cmlhbH0pICYgPSBmKDEpICsgZigzKSArIGYoNSkgKyAuLi5cXAogJiA9IHAgKyAoMS1wKV4yIFxjZG90IHAgKyAoMS1wKV40IFxjZG90IHAgKyAoMS1wKV42IFxjZG90IHAgKyAuLi4gXFwKICYgPSBwIFxzdW1fe3g9MH1ee1xpbmZ0eX0gXGxlZnQgKCAoMS1wKV4yIFxyaWdodCleayBcXAogJiA9IHAgXGZyYWN7MX17MS0oMS1wKV4yfSBcYXBwcm94IDAuNTY4MQpcZW5ke2FsaWduZWR9YGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7</server-url>
 
     <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVXNlIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24gdG8gZ2V0IHRoZSBmaXJzdCBhbnN3ZXIuIFVzZSB0aGUgZ2VvbWV0cmljIHRvIGdldCB0aGUgcmVtYWluZGVyLgoKCkVORF9QR01MX0hJTlQKCkVORERPQ1VNRU5UKCk7</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClVzaW5nIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24sCgpbYGBgcCA9IFAoWCBcZ3QgMSkgPSAxIC0gRigxKSA9IDEgLSAoMS1lXnstXGZyYWN7MX17MC43fX0pIFxhcHByb3ggMC4yMzk3LmBgYF0KCgoKTm93LCB1c2UgdGhlIGdlb21ldHJpYyBkaXN0cmlidXRpb24gd2l0aCBbYHAgPSAwLjIzOTdcdGV4dHsuLi59YF0KCltgYGBQKFggPSA1KSA9IGYoNSkgPSAoMS0wLjIzOTcpXjQgXGNkb3QgMC4yMzk3IFxhcHByb3ggMC4wODAxLmBgYF0KCgoKW2BgYFAoXHRleHR7Mm5kIHN1Y2Nlc3Mgb24gOH0gfCBcdGV4dHsxc3Qgc3VjY2VzcyBvbiAzfSkgPSBQKFggPSA1KSBcYXBwcm94IDAuMDgwMWBgYF0KCgoKW2BgYFAoXHRleHR7MXN0IHN1Y2Nlc3Mgb24gYW4gb2RkIHRyaWFsfSkgPSBmKDEpICsgZigzKSArIGYoNSkgKyAuLi4gXFwgCiAgPSBwICsgKDEtcCleMiBcY2RvdCBwICsgKDEtcCleNCBcY2RvdCBwICsgKDEtcCleNiBcY2RvdCBwICsgLi4uIFxcCiAgPSBwIFxzdW1fe3g9MH1ee1xpbmZ0eX0gXGxlZnQgKCAoMS1wKV4yIFxyaWdodCleayA9IHAgXGZyYWN7MX17MS0oMS1wKV4yfSBcYXBwcm94IDAuNTY4MWBgYF0KCgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClVzaW5nIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24sCgpbYGBgcCA9IFAoWCBcZ3QgMSkgPSAxIC0gRigxKSA9IDEgLSAoMS1lXnstXGZyYWN7MX17MC43fX0pIFxhcHByb3ggMC4yMzk3LmBgYF0KCgoKTm93LCB1c2UgdGhlIGdlb21ldHJpYyBkaXN0cmlidXRpb24gd2l0aCBbYHAgPSAwLjIzOTdcdGV4dHsuLi59YF0KCltgYGBQKFggPSA1KSA9IGYoNSkgPSAoMS0wLjIzOTcpXjQgXGNkb3QgMC4yMzk3IFxhcHByb3ggMC4wODAxLmBgYF0KCgoKW2BgYFAoXHRleHR7Mm5kIHN1Y2Nlc3Mgb24gOH0gfCBcdGV4dHsxc3Qgc3VjY2VzcyBvbiAzfSkgPSBQKFggPSA1KSBcYXBwcm94IDAuMDgwMWBgYF0KCgoKW2BgYFxiZWdpbnthbGlnbmVkfQogUChcdGV4dHsxc3Qgc3VjY2VzcyBvbiBhbiBvZGQgdHJpYWx9KSAmID0gZigxKSArIGYoMykgKyBmKDUpICsgLi4uXFwKICYgPSBwICsgKDEtcCleMiBcY2RvdCBwICsgKDEtcCleNCBcY2RvdCBwICsgKDEtcCleNiBcY2RvdCBwICsgLi4uIFxcCiAmID0gcCBcc3VtX3t4PTB9XntcaW5mdHl9IFxsZWZ0ICggKDEtcCleMiBccmlnaHQpXmsgXFwKICYgPSBwIFxmcmFjezF9ezEtKDEtcCleMn0gXGFwcHJveCAwLjU2ODEKXGVuZHthbGlnbmVkfWBgYF0KCgoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
 
     <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
 
@@ -1283,7 +1287,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -1398,13 +1402,159 @@
   </webwork-reps>
 
   <webwork-reps xml:id="extracted-webwork-32" ww-id="webwork-32">
+    <pg source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg" />
+
+      
+    <static source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg" seed="32">
+      <statement>
+      <p>Find the value of the standard normal random variable <m>z</m>, called <m>z_0</m> such that:</p>
+      <p>(a) <m></m> <m>P(z \leq z_0 ) = 0.7716</m></p>
+      <p><m>z_0 =</m> <fillin name="AnSwEr0001" characters="10" /></p>
+      <p>(b) <m></m> <m>P(-z_0 \leq z \leq z_0 ) = 0.9856</m></p>
+      <p><m>z_0 =</m> <fillin name="AnSwEr0002" characters="10" /></p>
+      <p>(c) <m></m> <m>P(-z_0 \leq z \leq z_0 ) = 0.1038</m></p>
+      <p><m>z_0 =</m> <fillin name="AnSwEr0003" characters="10" /></p>
+      <p>(d) <m></m> <m>P(z \geq z_0 ) = 0.3436</m></p>
+      <p><m>z_0 =</m> <fillin name="AnSwEr0004" characters="10" /></p>
+      <p>(e) <m></m> <m>P(-z_0 \leq z \leq 0 ) = 0.2428</m></p>
+      <p><m>z_0 =</m> <fillin name="AnSwEr0005" characters="10" /></p>
+      <p>(f) <m></m> <m>P(-2 \leq z \leq z_0 ) = 0.8769</m></p>
+      <p><m>z_0 =</m> <fillin name="AnSwEr0006" characters="10" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-33" ww-id="webwork-33">
+    <pg source="Library/NAU/setStatistics/normal_dist2.pg" />
+
+      
+    <static source="Library/NAU/setStatistics/normal_dist2.pg" seed="33">
+      <statement>
+      <p>Fluorescent lighbulbs have lifetimes that  are normally distributed with a mean of 6 years and a standard deviation of 
+      1.6 years. The figure below shows the distribution of lifetimes of fluorescent lightbulbs. 
+      Calculate the shaded area under the curve.   <em> Express your answer in decimal form with at least two decimal place accuracy. </em></p>
+      <p>Answer: <fillin name="AnSwEr0001" characters="15" /></p>
+      <sidebyside widths="73.3333333333333%">
+      <image source="images/webwork-33-image-1.png" />
+      </sidebyside>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/normal_dist2.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/normal_dist2.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/normal_dist2.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/normal_dist2.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-34" ww-id="webwork-34">
+    <pg source="Library/NAU/setStatistics/normprob4.pg" />
+
+      
+    <static source="Library/NAU/setStatistics/normprob4.pg" seed="34">
+      <statement>
+      <p>Consider a normal distribution curve where the middle 75 <percent /> of the area under the curve lies above the interval ( 3 , 20 ). Use this information to find the mean,  <m>\mu</m> , and the standard deviation, <m>\sigma</m> , of the distribution.</p>
+      <p>a)  <m>\mu =</m> <fillin name="AnSwEr0001" characters="20" /></p>
+      <p>b)  <m>\sigma =</m> <fillin name="AnSwEr0002" characters="20" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/NAU/setStatistics/normprob4.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/NAU/setStatistics/normprob4.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/NAU/setStatistics/normprob4.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/NAU/setStatistics/normprob4.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-35" ww-id="webwork-35">
+    <pg source="Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg" />
+
+      
+    <static source="Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg" seed="35">
+      <statement>
+      <p>The physical fitness of an athlete is often measured by how much oxygen the athlete takes in (which is
+      recorded in milliliters per kilogram, ml/kg).  The mean maximum oxygen uptake for elite athletes has been found to
+      be <m>80</m> with a standard deviation of <m>9.8</m>.  Assume that the distribution is approximately normal.</p>
+      <p>(a) <m></m> What is the probability that an elite athlete has a maximum oxygen uptake of at least <m>60</m> ml/kg?</p>
+      <p>answer: <fillin name="AnSwEr0001" characters="10" /></p>
+      <p>(b) <m></m> What is the probability that an elite athlete has a maximum oxygen uptake of <m>65</m> ml/kg or lower?</p>
+      <p>answer: <fillin name="AnSwEr0002" characters="10" /></p>
+      <p>(c) <m></m> Consider someone with a maximum oxygen uptake of <m>29</m> ml/kg.  Is it likely that this person is an elite athlete? 
+      Write "YES" or "NO."</p>
+      <p>answer: <fillin name="AnSwEr0003" characters="10" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-36" ww-id="webwork-36">
+    <pg source="Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg" />
+
+      
+    <static source="Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg" seed="36">
+      <statement>
+      <p>A sample of <m>n= 25</m> observations is drawn from a normal 
+      population with <m>\mu = 1020</m> and <m>\sigma = 230</m>.  Find each of the following:</p>
+      <p>A. <m>P(\bar{X} > 1093)</m></p>
+      <p>Probability = <fillin name="AnSwEr0001" characters="15" /></p>
+      <p>B. <m>P(\bar{X} \lt  937)</m></p>
+      <p>Probability = <fillin name="AnSwEr0002" characters="15" /></p>
+      <p>C. <m>P(\bar{X} > 969)</m></p>
+      <p>Probability = <fillin name="AnSwEr0003" characters="15" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-37" ww-id="webwork-37">
     <pg source="Library/NAU/setStatistics/cheby2.pg" />
 
       
-    <static source="Library/NAU/setStatistics/cheby2.pg" seed="32">
+    <static source="Library/NAU/setStatistics/cheby2.pg" seed="37">
       <statement>
-      <p>A statistician uses Chebyshev's Theorem to estimate that at least 55 <percent /> of a population lies between 
-      the values 2 and 20.  Use this information to find the values of the population mean, <m>\mu</m> , and 
+      <p>A statistician uses Chebyshev's Theorem to estimate that at least 10 <percent /> of a population lies between 
+      the values 2 and 13.  Use this information to find the values of the population mean, <m>\mu</m> , and 
       the population standard deviation <m>\sigma</m>.</p>
       <p>a)  <m>\mu =</m> <fillin name="AnSwEr0001" characters="20" /></p>
       <p>b)  <m>\sigma =</m> <fillin name="AnSwEr0002" characters="20" /></p>
@@ -1413,48 +1563,48 @@
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/NAU/setStatistics/cheby2.pg</server-url>
 
   </webwork-reps>
 
-  <webwork-reps xml:id="extracted-webwork-33" ww-id="webwork-33">
+  <webwork-reps xml:id="extracted-webwork-38" ww-id="webwork-38">
     <pg source="Library/NAU/setStatistics/cheby1.pg" />
 
       
-    <static source="Library/NAU/setStatistics/cheby1.pg" seed="33">
+    <static source="Library/NAU/setStatistics/cheby1.pg" seed="38">
       <statement>
       <p>Suppose that the blood pressure of the human inhabitants of a certain Pacific island is  distributed with 
-      mean, <m>\mu</m> = 101 mmHg and standard deviation , <m>\sigma</m> = 12 mmHg. According to Chebyshev's Theorem, 
-      at least what percentage of the islander's have blood pressure in the range from 68.6 mmHg to 133.4 mmHg ?</p>
+      mean, <m>\mu</m> = 76 mmHg and standard deviation , <m>\sigma</m> = 15 mmHg. According to Chebyshev's Theorem, 
+      at least what percentage of the islander's have blood pressure in the range from 32.5 mmHg to 119.5 mmHg ?</p>
       <p>answer: <fillin name="AnSwEr0001" characters="20" /><percent /></p>
       </statement>
       
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=33&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/NAU/setStatistics/cheby1.pg</server-url>
 
   </webwork-reps>
 
-  <webwork-reps xml:id="extracted-webwork-34" ww-id="webwork-34">
+  <webwork-reps xml:id="extracted-webwork-39" ww-id="webwork-39">
     <pg source="Library/ASU-topics/setStat/kolossa49.pg" />
 
       
-    <static source="Library/ASU-topics/setStat/kolossa49.pg" seed="34">
+    <static source="Library/ASU-topics/setStat/kolossa49.pg" seed="39">
       <statement>
-      <p>A poll is taken in which <m>377</m> out of <m>525</m> randomly selected voters indicated their preference for a certain
+      <p>A poll is taken in which <m>332</m> out of <m>550</m> randomly selected voters indicated their preference for a certain
       candidate.</p>
       <p>(a) Find a <m>99</m><percent /> confidence interval for <m>p</m>.</p>
       <p><fillin name="AnSwEr0001" characters="20" /> <m>\leq p \leq</m> <fillin name="AnSwEr0002" characters="20" /></p>
@@ -1466,10 +1616,10 @@
       <p>(c) Without doing any calculations, indicate whether the margin of error is larger or smaller or the same for an 80<percent /> confidence interval.
       <var form="buttons">
       <li>
-      <p>larger</p>
+      <p>smaller</p>
       </li>
       <li>
-      <p>smaller</p>
+      <p>larger</p>
       </li>
       <li>
       <p>same</p>
@@ -1480,153 +1630,13 @@
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=34&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
-
-  </webwork-reps>
-
-  <webwork-reps xml:id="extracted-webwork-35" ww-id="webwork-35">
-    <pg source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg" />
-
-      
-    <static source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg" seed="35">
-      <statement>
-      <p>Refer to the following scenario.</p>
-      <p>An epidemiologist is worried about the prevalence of the flu in East Vancouver and the potential shortage of vaccines for the area. She will need to provide a recommendation for how to allocate the vaccines appropriately across the city. She takes a simple random sample of 340 people living in East Vancouver and finds that 39 have recently had the flu.</p>
-      <p>Suppose that the epidemiologist wants to re-estimate the population proportion and wishes
-      for her 95<percent /> confidence interval to have a margin of error no larger than 0.04.  How large 
-      a sample should she take to achieve this? Please carry answers to at least six decimal places in intermediate steps.</p>
-      <p>Sample size = <fillin name="AnSwEr0001" characters="6" /></p>
-      </statement>
-      
-      
-    </static>
-      
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
-
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
-
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
-
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
-
-  </webwork-reps>
-
-  <webwork-reps xml:id="extracted-webwork-36" ww-id="webwork-36">
-    <pg source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg" />
-
-      
-    <static source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg" seed="36">
-      <statement>
-      <p>A random sample of <m>n</m> measurements was selected from a population with 
-      standard deviation <m>\sigma = 17.7</m> and unknown mean <m>\mu</m>.  
-      Calculate a <m>99</m> <percent /> confidence interval for <m>\mu</m> for each of the
-      following situations:</p>
-      <p>(a) <m>n = 70, \ \overline{x} = 90.8</m></p>
-      <p><fillin name="AnSwEr0001" characters="15" /> <m>\leq \mu \leq</m> <fillin name="AnSwEr0002" characters="15" /></p>
-      <p>(b)  <m>n = 85, \ \overline{x} = 90.8</m></p>
-      <p><fillin name="AnSwEr0003" characters="15" /> <m>\leq \mu \leq</m> <fillin name="AnSwEr0004" characters="15" /></p>
-      <p>(c)  <m>n = 105, \ \overline{x} = 90.8</m></p>
-      <p><fillin name="AnSwEr0005" characters="15" /> <m>\leq \mu \leq</m> <fillin name="AnSwEr0006" characters="15" /></p>
-      <p>(d)  In general, we can say that for the same confidence level, increasing the sample size <fillin name="AnSwEr0007" characters="20" /> the
-      margin of error (width) of the confidence interval.  (Enter: ''DECREASES'', ''DOES NOT CHANGE'' or
-      ''INCREASES'', without the quotes.)</p>
-      </statement>
-      
-      
-    </static>
-      
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
-
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
-
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
-
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
-
-  </webwork-reps>
-
-  <webwork-reps xml:id="extracted-webwork-37" ww-id="webwork-37">
-    <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg" />
-
-      
-    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg" seed="37">
-      <statement>
-      
-      <p>Use the given data to find the 95<percent /> confidence interval estimate of the population 
-      mean <m>\mu</m>. Assume that the population has a normal distribution.</p>
-      <p>IQ scores of professional athletes:</p>
-      <p>Sample size <m>n = 10</m></p>
-      <p>Mean <m>\overline{x} = 103</m></p>
-      <p>Standard deviation <m>s  = 10</m></p>
-      <p><fillin name="AnSwEr0001" characters="20" /> <m>\lt  \mu \lt </m> <fillin name="AnSwEr0002" characters="20" /></p>
-      </statement>
-      
-      
-    </static>
-      
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
-
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
-
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
-
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=37&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
-
-  </webwork-reps>
-
-  <webwork-reps xml:id="extracted-webwork-38" ww-id="webwork-38">
-    <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg" />
-
-      
-    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg" seed="38">
-      <statement>
-      <p>Find the critical values <m>\chi_L^2 = \chi_{1-\alpha/2}^2</m> and 
-      <m>\chi_R^2 = \chi_{\alpha/2}^2</m> that correspond to <m>90</m><percent /> degree of 
-      confidence and the sample size <m>n = 28.</m></p>
-      <p><m>\chi_L^2 =</m> <fillin name="AnSwEr0001" characters="10" /> <m>\ \ \ \ </m>
-      <m>\chi_R^2 =</m> <fillin name="AnSwEr0002" characters="10" /></p>
-      </statement>
-      
-      
-    </static>
-      
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
-
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
-
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
-
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=38&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
-
-  </webwork-reps>
-
-  <webwork-reps xml:id="extracted-webwork-39" ww-id="webwork-39">
-    <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg" />
-
-      
-    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg" seed="39">
-      <statement>
-      <p>Find the minimum sample size needed to be <m>95</m><percent />  confident that the sample 
-      variance is within <m>20</m><percent /> of the population variance.</p>
-      <p><fillin name="AnSwEr0001" characters="6" /></p>
-      </statement>
-      
-      
-    </static>
-      
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
-
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
-
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
-
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=39&amp;sourceFilePath=Library/ASU-topics/setStat/kolossa49.pg</server-url>
 
   </webwork-reps>
 
@@ -1718,15 +1728,155 @@
   </webwork-reps>
 
   <webwork-reps xml:id="extracted-webwork-40" ww-id="webwork-40">
+    <pg source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg" />
+
+      
+    <static source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg" seed="40">
+      <statement>
+      <p>Refer to the following scenario.</p>
+      <p>An epidemiologist is worried about the prevalence of the flu in East Vancouver and the potential shortage of vaccines for the area. She will need to provide a recommendation for how to allocate the vaccines appropriately across the city. She takes a simple random sample of 332 people living in East Vancouver and finds that 34 have recently had the flu.</p>
+      <p>Suppose that the epidemiologist wants to re-estimate the population proportion and wishes
+      for her 95<percent /> confidence interval to have a margin of error no larger than 0.04.  How large 
+      a sample should she take to achieve this? Please carry answers to at least six decimal places in intermediate steps.</p>
+      <p>Sample size = <fillin name="AnSwEr0001" characters="6" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-41" ww-id="webwork-41">
+    <pg source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg" />
+
+      
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg" seed="41">
+      <statement>
+      <p>A random sample of <m>n</m> measurements was selected from a population with 
+      standard deviation <m>\sigma = 18.6</m> and unknown mean <m>\mu</m>.  
+      Calculate a <m>90</m> <percent /> confidence interval for <m>\mu</m> for each of the
+      following situations:</p>
+      <p>(a) <m>n = 50, \ \overline{x} = 100</m></p>
+      <p><fillin name="AnSwEr0001" characters="15" /> <m>\leq \mu \leq</m> <fillin name="AnSwEr0002" characters="15" /></p>
+      <p>(b)  <m>n = 80, \ \overline{x} = 100</m></p>
+      <p><fillin name="AnSwEr0003" characters="15" /> <m>\leq \mu \leq</m> <fillin name="AnSwEr0004" characters="15" /></p>
+      <p>(c)  <m>n = 100, \ \overline{x} = 100</m></p>
+      <p><fillin name="AnSwEr0005" characters="15" /> <m>\leq \mu \leq</m> <fillin name="AnSwEr0006" characters="15" /></p>
+      <p>(d)  In general, we can say that for the same confidence level, increasing the sample size <fillin name="AnSwEr0007" characters="20" /> the
+      margin of error (width) of the confidence interval.  (Enter: ''DECREASES'', ''DOES NOT CHANGE'' or
+      ''INCREASES'', without the quotes.)</p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-42" ww-id="webwork-42">
+    <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg" />
+
+      
+    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg" seed="42">
+      <statement>
+      
+      <p>Use the given data to find the 95<percent /> confidence interval estimate of the population 
+      mean <m>\mu</m>. Assume that the population has a normal distribution.</p>
+      <p>IQ scores of professional athletes:</p>
+      <p>Sample size <m>n = 25</m></p>
+      <p>Mean <m>\overline{x} = 105</m></p>
+      <p>Standard deviation <m>s  = 10</m></p>
+      <p><fillin name="AnSwEr0001" characters="20" /> <m>\lt  \mu \lt </m> <fillin name="AnSwEr0002" characters="20" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-43" ww-id="webwork-43">
+    <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg" />
+
+      
+    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg" seed="43">
+      <statement>
+      <p>Find the critical values <m>\chi_L^2 = \chi_{1-\alpha/2}^2</m> and 
+      <m>\chi_R^2 = \chi_{\alpha/2}^2</m> that correspond to <m>98</m><percent /> degree of 
+      confidence and the sample size <m>n = 9.</m></p>
+      <p><m>\chi_L^2 =</m> <fillin name="AnSwEr0001" characters="10" /> <m>\ \ \ \ </m>
+      <m>\chi_R^2 =</m> <fillin name="AnSwEr0002" characters="10" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-44" ww-id="webwork-44">
+    <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg" />
+
+      
+    <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg" seed="44">
+      <statement>
+      <p>Find the minimum sample size needed to be <m>99</m><percent />  confident that the sample 
+      variance is within <m>40</m><percent /> of the population variance.</p>
+      <p><fillin name="AnSwEr0001" characters="6" /></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-45" ww-id="webwork-45">
     <pg source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg" />
 
       
-    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg" seed="40">
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg" seed="45">
       <statement>
       <p>An article in the Washington Post on March 16, 1993 stated that nearly 45 
       percent of  all Americans have brown eyes.  A random sample of <m>n = 
-      80</m> C of I 
-      students found 30 with brown eyes.</p>
+      84</m> C of I 
+      students found 31 with brown eyes.</p>
       <p>We test</p>
       <p><m>H_0: p = .45</m></p>
       <p><m>H_a: p \neq .45</m></p>
@@ -1739,28 +1889,28 @@
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=40&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg</server-url>
 
   </webwork-reps>
 
-  <webwork-reps xml:id="extracted-webwork-41" ww-id="webwork-41">
+  <webwork-reps xml:id="extracted-webwork-46" ww-id="webwork-46">
     <pg source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg" />
 
       
-    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg" seed="41">
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg" seed="46">
       <statement>
       <p>A noted psychic was tested for ESP.  The psychic was presented with 
-      220 cards face down and was asked to determine if the card was one of 
+      180 cards face down and was asked to determine if the card was one of 
       5 symbols: a star, cross, circle, square, or three wavy lines.  The psychic 
-      was correct in 52 cases.  Let <m>p</m> represent the probability that 
+      was correct in 43 cases.  Let <m>p</m> represent the probability that 
       the psychic correctly identifies the symbol on the card in a random trial.  
-      Assume the 220 trials can be treated as an SRS from the population of 
+      Assume the 180 trials can be treated as an SRS from the population of 
       all guesses.</p>
       <p>To see if there is evidence that the psychic is doing better than just 
       guessing, we test</p>
@@ -1775,17 +1925,17 @@
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=46&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=46&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=46&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=41&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=46&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg</server-url>
 
   </webwork-reps>
 
-  <webwork-reps xml:id="extracted-webwork-42" ww-id="webwork-42">
+  <webwork-reps xml:id="extracted-webwork-47" ww-id="webwork-47">
     <authored>
       
         <setup>
@@ -1826,7 +1976,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-07T13:06:50-06:00    
+      ###    on 2018-11-14T15:55:13-06:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -1909,7 +2059,7 @@
     </pg>
 
       
-    <static seed="42">
+    <static seed="47">
       <statement>
       <p>A random sample of 10 observations was drawn from a large normally distributed population. The data is below.</p>
       <p>22 20 22 20 25 18 22 23 19 18</p>
@@ -1924,29 +2074,29 @@
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=47&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=47&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=47&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw%3D%3D</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=42&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=47&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkEgcmFuZG9tIHNhbXBsZSBvZiAxMCBvYnNlcnZhdGlvbnMgd2FzIGRyYXduIGZyb20gYSBsYXJnZSBub3JtYWxseSBkaXN0cmlidXRlZCBwb3B1bGF0aW9uLiBUaGUgZGF0YSBpcyBiZWxvdy4KCjIyIDIwIDIyIDIwIDI1IDE4IDIyIDIzIDE5IDE4CgpUbyBkZXRlcm1pbmUgaWYgeW91IGNhbiBpbmZlciBhdCB0aGUgNCUgc2lnbmlmaWNhbmNlIGxldmVsIHRoYXQgdGhlIHBvcHVsYXRpb24gbWVhbiBpcyBub3QgZXF1YWwgdG8gMjIsIGNvbXBsZXRlIHRoZSBzdGVwcyBiZWxvdzoKClRoZSB2YWx1ZSBvZiB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX19fX19fX19fX117LTEuNTIzNzk4NDE4NTh9CgpVc2luZyBpbnRlcnZhbCBub3RhdGlvbiB3aXRoIFtgXGluZnR5YF0gd3JpdHRlbiBhcyAiaW5mdHkiIGFuZCBbYFxjdXBgXSB3cml0dGVuIGFzICJVIiAoY2FwaXRhbCB1KSwgZGV0ZXJtaW5lIGVhY2ggb2YgdGhlIGZvbGxvd2luZzoKClRoZSByZWplY3Rpb24gcmVnaW9uIGZvciB0aGUgc3RhbmRhcmRpemVkIHRlc3Qgc3RhdGlzdGljOiBbX117KC1pbmZ0eSwtMi4zOTg0NClVKDIuMzk4NDQsaW5mdHkpfXt3aWR0aD0%2BMzB9CgpUaGUgcC12YWx1ZSBpcyBbX19fX19fX19fX117MC4xNjE4OTR9CgpZb3VyIGRlY2lzaW9uIGZvciB0aGUgaHlwb3RoZXNpcyB0ZXN0IHRoZXJlZm9yZSB3b3VsZCBiZSB0byBub3QgcmVqZWN0IHRoZSBudWxsIGh5cG90aGVzaXMgW2BIXzBcdGV4dHsufWBdCgoKRU5EX1BHTUwKCkVORERPQ1VNRU5UKCk7</server-url>
 
   </webwork-reps>
 
-  <webwork-reps xml:id="extracted-webwork-43" ww-id="webwork-43">
+  <webwork-reps xml:id="extracted-webwork-48" ww-id="webwork-48">
     <pg source="Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg" />
 
       
-    <static source="Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg" seed="43">
+    <static source="Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg" seed="48">
       <statement>
       <p>A random sample of 10 observations was drawn from a large normally 
       distributed population.  The data is below.</p>
       <p><me>\begin{array}{ccccccccccc} 
-      19 \amp  25 \amp  20 \amp  21 \amp  20 \amp  20 \amp  28 \amp  28 \amp  25 \amp  26 
+      17 \amp  21 \amp  22 \amp  16 \amp  21 \amp  20 \amp  23 \amp  17 \amp  23 \amp  22 
       \end{array}</me></p>
-      <p>Test to determine if we can infer at the 4<percent /> significance level that the 
-      population mean is not equal to 23, filling in the requested 
+      <p>Test to determine if we can infer at the 2<percent /> significance level that the 
+      population mean is not equal to 18, filling in the requested 
       information below.</p>
       <p>A. The value of the standardized test statistic: <fillin name="AnSwEr0001" characters="25" /></p>
       <p><em> Note:</em> For the next part, your answer should use interval notation.  An
@@ -1975,26 +2125,26 @@
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=48&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=48&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=48&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=43&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=48&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg</server-url>
 
   </webwork-reps>
 
-  <webwork-reps xml:id="extracted-webwork-44" ww-id="webwork-44">
+  <webwork-reps xml:id="extracted-webwork-49" ww-id="webwork-49">
     <pg source="Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg" />
 
       
-    <static source="Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg" seed="44">
+    <static source="Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg" seed="49">
       <statement>
-      <p>Katie thinks that people living in a rural environment have a healthier lifestyle
+      <p>Lois thinks that people living in a rural environment have a healthier lifestyle
       than other people.  She believes the average lifespan in the USA is 77 years. A random 
-      sample of 20 obituaries from newspapers from rural towns in Idaho give <m>\bar{x} = 77.71</m> 
-      and <m>s = 2.54</m>.  Does this sample provide evidence that people living in rural Idaho communities live 
+      sample of 15 obituaries from newspapers from rural towns in Idaho give <m>\bar{x} = 78.11</m> 
+      and <m>s = 0.68</m>.  Does this sample provide evidence that people living in rural Idaho communities live 
       longer than 77 years?</p>
       <p>(a) State the null and alternative hypotheses:  (Type "mu" for the symbol <m>\mu</m> , 
        e.g.  <em> mu <m>></m>1 </em> for the mean is greater than 1,  <em> mu <m>\lt </m> 1 </em> 
@@ -2010,50 +2160,13 @@
       
     </static>
       
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=49&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
 
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=49&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
 
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=49&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
 
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=44&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
-
-  </webwork-reps>
-
-  <webwork-reps xml:id="extracted-webwork-45" ww-id="webwork-45">
-    <pg source="Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg" />
-
-      
-    <static source="Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg" seed="45">
-      <statement>
-      <p>Use a <m>\alpha = 0.01</m> significance level to test the claim that <m>\sigma = 20</m>
-      if the sample statistics include <m>n = 17,</m> <m>\overline{x} = 100,</m> and <m>s = 28.</m></p>
-      <p>The test statistic is <fillin name="AnSwEr0001" characters="15" /></p>
-      <p>The smaller critical number is <fillin name="AnSwEr0002" characters="15" /></p>
-      <p>The bigger critical number is <fillin name="AnSwEr0003" characters="15" /></p>
-      <p>What is your conclusion?</p>
-      <p><var form="buttons">
-      <li>
-      <p>There is sufficient evidence to warrant the rejection of the claim that
-               the population standard deviation is equal to 20</p>
-      </li>
-      <li>
-      <p>There is not sufficient evidence to warrant the rejection of the claim that 
-               the population standard deviation is equal to 20</p>
-      </li>
-      </var></p>
-      </statement>
-      
-      
-    </static>
-      
-    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
-
-    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
-
-    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
-
-    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=45&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=49&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg</server-url>
 
   </webwork-reps>
 
@@ -2109,6 +2222,43 @@
     <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=5&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg</server-url>
 
     <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=5&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg</server-url>
+
+  </webwork-reps>
+
+  <webwork-reps xml:id="extracted-webwork-50" ww-id="webwork-50">
+    <pg source="Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg" />
+
+      
+    <static source="Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg" seed="50">
+      <statement>
+      <p>Use a <m>\alpha = 0.01</m> significance level to test the claim that <m>\sigma = 15</m>
+      if the sample statistics include <m>n = 23,</m> <m>\overline{x} = 102,</m> and <m>s = 19.</m></p>
+      <p>The test statistic is <fillin name="AnSwEr0001" characters="15" /></p>
+      <p>The smaller critical number is <fillin name="AnSwEr0002" characters="15" /></p>
+      <p>The bigger critical number is <fillin name="AnSwEr0003" characters="15" /></p>
+      <p>What is your conclusion?</p>
+      <p><var form="buttons">
+      <li>
+      <p>There is not sufficient evidence to warrant the rejection of the claim that 
+               the population standard deviation is equal to 15</p>
+      </li>
+      <li>
+      <p>There is sufficient evidence to warrant the rejection of the claim that
+               the population standard deviation is equal to 15</p>
+      </li>
+      </var></p>
+      </statement>
+      
+      
+    </static>
+      
+    <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=50&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
+
+    <server-url hint="yes" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=50&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
+
+    <server-url hint="no" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=50&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
+
+    <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=50&amp;sourceFilePath=Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg</server-url>
 
   </webwork-reps>
 

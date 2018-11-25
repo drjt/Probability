@@ -26,11 +26,11 @@
     
 <biography>
 <p>
-John Travis grew up in Mississippi and had his graduate work at the University of Tennessee and Mississippi State University. As a numerical analyst, since 1988 he has been a professor of mathematics at his undergraduate alma mater Mississippi College where he currently serves as Professor of Mathematics.
+John Travis grew up in Mississippi and did his graduate work at the University of Tennessee and Mississippi State University. As a numerical analyst, since 1988 he has been a professor of mathematics at his undergraduate alma mater Mississippi College where he currently serves as Professor of Mathematics.
 </p>
     	
 <p>
-John is married to Ruth Page Travis and together they have three unique daughters who all are good at mathematics.
+John is married to Ruth Page Travis and together they have three unique daughters.  All are good at mathematics.
 </p>
 
 <p>You can find him playing racquetball or guitar but not generally at the same time. He is also an active supporter and organizer for the opensouce online homework system WeBWorK.
@@ -43,12 +43,21 @@ John is married to Ruth Page Travis and together they have three unique daughter
 This text is intended for a one-semester course in probability and statistics that presumes calculus knowledge up to integration techniques. It is perhaps helpful if a student has already been exposed to sequences and series but much of what is needed is reviewed in the text.
 </p>
         
-<p>An interactive version of this text is available at 
-<url href="http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.html">http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.html</url>
+<p>
+An interactive version of this text is available at 
+</p>
 
+<p>
+<url href="http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.html">http://math.mc.edu/travis/mathbook/Probability/Essentials&#95;Probability&#95;And&#95;Statistics.html</url>
+http://math.mc.edu/travis/mathbook/Probability/Essentials&#95;Probability&#95;And&#95;Statistics.html
+</p>
+
+<p>
 and an pdf version with active links is available at
+</p>
 
-<url href="http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf">http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf</url>. 
+<p>
+<url href="http://math.mc.edu/travis/mathbook/Probability/Essentials_Probability_And_Statistics.pdf">http://math.mc.edu/travis/mathbook/Probability/Essentials&#95;Probability&#95;And&#95;Statistics.pdf</url> http://math.mc.edu/travis/mathbook/Probability/Essentials&#95;Probability&#95;And&#95;Statistics.pdf . 
 </p>
 
 <p>
@@ -64,8 +73,12 @@ WeBWorK (<url href="http://webwork.maa.org">webwork.maa.org</url>) is an open-so
 </p>
 
 <p>
-Sage (<url href="http://sagemath.org">sagemath.org</url>) is a free, open-source, software system for advanced mathematics, which is ideal for assisting with a study of abstract algebra. Sage can be used either on your own computer, a local server, or on SageMathCloud (<url href="https://cloud.sagemath.com">https://cloud.sagemath.com</url>).  In this text, the sage cell is used also for interactive computations related to R and octave, as needed.
-</p>     
+Sage (<url href="http://sagemath.org">sagemath.org</url>) is a free, open-source, software system for advanced mathematics, which is ideal for assisting with a study of abstract algebra. Sage can be used either on your own computer, a local server, or on SageMathCloud (<url href="https://cloud.sagemath.com">https://cloud.sagemath.com</url>).  
+</p>  
+
+<p>
+R (<url href="https://www.r-project.org/">https://www.r-project.org/</url>) is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing. The R language is widely used among statisticians and data miners for developing statistical software and data analysis. In this text, the sage cell is used also for interactive computations related to R.
+</p>   
         
                 
         <attribution>
