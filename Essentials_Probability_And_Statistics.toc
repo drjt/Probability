@@ -87,17 +87,17 @@
 \contentsline {section}{\numberline {10.5}Interval Estimates - Confidence Interval for \(\mu \)}{170}{section.10.5}
 \contentsline {section}{\numberline {10.6}Interval Estimates - Confidence Interval for \(\sigma ^2\)}{172}{section.10.6}
 \contentsline {section}{\numberline {10.7}Exercises}{176}{section.10.7}
-\contentsline {chapter}{\numberline {11}Hypothesis Testing}{177}{chapter.11}
-\contentsline {section}{\numberline {11.1}Introduction}{177}{section.11.1}
-\contentsline {section}{\numberline {11.2}Hypotheses and Errors}{177}{section.11.2}
-\contentsline {section}{\numberline {11.3}Hypothesis Test for one proportion}{178}{section.11.3}
-\contentsline {section}{\numberline {11.4}Hypothesis Test for one mean}{180}{section.11.4}
-\contentsline {section}{\numberline {11.5}Hypothesis Test for one variance}{182}{section.11.5}
-\contentsline {section}{\numberline {11.6}Summary}{183}{section.11.6}
-\contentsline {section}{\numberline {11.7}Exercises}{183}{section.11.7}
-\contentsline {chapter}{\numberline {12}Review of Calculus}{185}{chapter.12}
-\contentsline {section}{\numberline {12.1}Geometric Series}{185}{section.12.1}
-\contentsline {subsection}{\numberline {12.1.1}Geometric Series}{185}{subsection.12.1.1}
-\contentsline {subsection}{\numberline {12.1.2}Alternate Forms for the Geometric Series}{186}{subsection.12.1.2}
-\contentsline {section}{\numberline {12.2}Binomial SumsBinomial SeriesTrinomial Series}{187}{section.12.2}
-\contentsline {section}{\numberline {12.3}Negative Binomial Series}{188}{section.12.3}
+\contentsline {chapter}{\numberline {11}Hypothesis Testing}{179}{chapter.11}
+\contentsline {section}{\numberline {11.1}Introduction}{179}{section.11.1}
+\contentsline {section}{\numberline {11.2}Hypotheses and Errors}{179}{section.11.2}
+\contentsline {section}{\numberline {11.3}Hypothesis Test for one proportion}{180}{section.11.3}
+\contentsline {section}{\numberline {11.4}Hypothesis Test for one mean}{182}{section.11.4}
+\contentsline {section}{\numberline {11.5}Hypothesis Test for one variance}{184}{section.11.5}
+\contentsline {section}{\numberline {11.6}Summary}{185}{section.11.6}
+\contentsline {section}{\numberline {11.7}Exercises}{185}{section.11.7}
+\contentsline {chapter}{\numberline {12}Review of Calculus}{187}{chapter.12}
+\contentsline {section}{\numberline {12.1}Geometric Series}{187}{section.12.1}
+\contentsline {subsection}{\numberline {12.1.1}Geometric Series}{187}{subsection.12.1.1}
+\contentsline {subsection}{\numberline {12.1.2}Alternate Forms for the Geometric Series}{188}{subsection.12.1.2}
+\contentsline {section}{\numberline {12.2}Binomial SumsBinomial SeriesTrinomial Series}{189}{section.12.2}
+\contentsline {section}{\numberline {12.3}Negative Binomial Series}{190}{section.12.3}

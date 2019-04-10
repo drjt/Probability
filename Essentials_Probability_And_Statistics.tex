@@ -1,6 +1,6 @@
 %**************************************%
 %*    Generated from PreTeXt source   *%
-%*    on 2018-11-14T15:42:12-06:00    *%
+%*    on 2018-11-29T11:18:58-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -377,7 +377,7 @@ breakatwhitespace=true,basicstyle=\small\ttfamily,columns=fixed,aboveskip=0pt}
 {\Large Mississippi College}\\[3\baselineskip]
 {\Large }\\[0.5\baselineskip]
 [3\baselineskip]
-{\Large November 14, 2018}\\}
+{\Large November 29, 2018}\\}
 \clearpage
 %% end:   title page
 %% begin: copyright-page
@@ -6499,7 +6499,7 @@ This is the continuous uniform distribution over R = [0, 91].%
 \hypertarget{p-877}{}%
 \begin{inlineexercise}{- Uniform Scenarios.}{exercise-60}%
 \hypertarget{p-878}{}%
-Explain how the following situations can be modeled using a continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation. \leavevmode%
+Explain how the following situations can be modeled using either a discrete or continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation. \leavevmode%
 \begin{itemize}[label=\textbullet]
 \item{}The location on a prize wheel where the spun wheel will stop.%
 \item{}Given a clock with only a minute hand, the current one second interval.%
@@ -6512,7 +6512,7 @@ Explain how the following situations can be modeled using a continuous uniform d
 \hypertarget{p-879}{}%
 \begin{inlineexercise}{- Continous Uniform on a different space.}{exercise-61}%
 \hypertarget{p-880}{}%
-Determine an explicit formula for f(x) and the mean and variance for a continuous uniform distribution over \(R = [-2,3] \cup [5,6] \cup [9,15]\).%
+Determine an explicit formula for f(x) and the mean and variance for an continuous uniform distribution over \(R = [-2,3] \cup [5,6] \cup [9,15]\).%
 \par\smallskip%
 \noindent\textbf{Solution}.\hypertarget{solution-26}{}\quad%
 \hypertarget{p-881}{}%
@@ -8006,7 +8006,7 @@ f(x) = F'(x) = \lambda e^{-\lambda x}.
 %
 \par
 \hypertarget{p-1079}{}%
-We found that if \(\lambda\) is the parameter for the Poisson process, then the Poisson distribution had mean \(\lambda T\) or if one presumed that T=1, then for that distribution, the mean is just \(\lambda\).  We will find out below that the mean for the exponential distribution will be \(\frac{1}{\lambda}\). Therefore, we will eventually present this formula using the exponental mean \(\mu =m \frac{1}{\lambda}\) rather than using \(\lambda\) in the actual formula.%
+We found that if \(\lambda\) is the parameter for the Poisson process, then the Poisson distribution had mean \(\lambda T\) or if one presumed that T=1, then for that distribution, the mean is just \(\lambda\).  We will find out below that the mean for the exponential distribution will be \(\frac{1}{\lambda}\). Therefore, we will eventually present this formula using the exponental mean \(\mu = \frac{1}{\lambda}\) rather than using \(\lambda\) in the actual formula.%
 \par
 \hypertarget{p-1080}{}%
 You will also often find that exercises in other textbooks and in online WeBWorK will just provide \(\lambda\) for the underlying Poisson process and that the time interval T will be presumed to be T=1.  For those problems, if the exercise asks for a Poisson probability, use \(\mu = \lambda\) while if the exercise asks for an Exponential probability, use \(\mu = \frac{1}{\lambda}\).%
@@ -8053,8 +8053,8 @@ where we used the substitution \(u = \lambda x\).%
 \hypertarget{p-1086}{}%
 For the mean, use integration by parts with \(u = x\) and \(dv = \lambda e^{-\lambda \cdot x}\) to get (eventually)%
 \begin{align*}
-\text{Mean} = \mu & = \int_0^{\infty} \lambda \cdot x  e^{-\lambda \mu} \\
-& = [ -(x+\frac{1}{\lambda}) e^{-\lambda \cdot x} ] \big |_0^{\infty} \\
+\text{Mean} = \mu & = \int_0^{\infty} x \cdot \lambda  e^{-\lambda \mu} \\
+& = \left [ -(x+\frac{1}{\lambda}) e^{-\lambda \cdot x} \right ] \big |_0^{\infty} \\
 & = \frac{1}{\lambda}.
 \end{align*}
 and so the use of \(\lambda = \frac{1}{\mu}\) in f(x) is warranted.%
@@ -8065,72 +8065,6 @@ The remaining statistics are derived similarly using repeated integration by par
 %
 \par
 \hypertarget{p-1088}{}%
-\begin{definition}{Alternate Form for the Exponential Distribution Probability Function.}{definition-35}%
-\hypertarget{p-1089}{}%
-Given a Poisson process and a constant \(\mu = \frac{1}{\lambda}\), suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function%
-\begin{equation*}
-f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.
-\end{equation*}
-%
-\end{definition}
-%
-\par
-\hypertarget{p-1090}{}%
-\begin{theorem}{Distribution function for Exponential Distribution.}{}{theorem-55}%
-\hypertarget{p-1091}{}%
-%
-\begin{equation*}
-F(x) = 1 - e^{-\frac{x}{\mu}}
-\end{equation*}
-%
-\end{theorem}
-\begin{proof}\hypertarget{proof-58}{}
-\hypertarget{p-1092}{}%
-Using \(f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}\), note%
-\begin{align*}
-F(x) & = \int_0^x \frac{1}{\mu} e^{-\frac{u}{\mu}} du\\
-& =  - e^{-\frac{u}{\mu}} \big |_0^x\\
-& = 1 - e^{-\frac{x}{\mu}}\qedhere
-\end{align*}
-%
-\end{proof}
-%
-\par
-\hypertarget{p-1093}{}%
-\begin{example}{Router Requests Revisited.}{example-43}%
-\hypertarget{p-1094}{}%
-Once again, let's consider a router which, over time, has been shown to receive on average 1000 such requests in any given 10 minute period during regular working hours. This would mean that, on average, it would take \(\mu = \frac{10}{1000} = \frac{1}{100} = 0.01\) minutes (i.e., less than a second) to receive the first request. If X were to measure the time interval until the first actual request comes in, then the Exponential distribution would be a good model using%
-\begin{equation*}
-f(x) = \frac{1}{0.01} e^{-\frac{x}{0.01}}.
-\end{equation*}
-%
-\par
-\hypertarget{p-1095}{}%
-Let's determine the probability that a first request arrives in the next two seconds. First, note that since X is a continuous variable that f(x) is NOT the probability of exactly X minutes but you must integrate to compute all probabilities. Also, the next 2 seconds is actually the next \(\frac{2}{60} = \frac{1}{30}\) of a minute. Therefore, F(x) is what you need in general and you find%
-\begin{equation*}
-P(X \le \frac{1}{30}) = F(\frac{1}{30}) = 1 - e^{-\frac{\frac{1}{30}}{0.01}} \approx 0.96433.
-\end{equation*}
-%
-\end{example}
-%
-\par
-\hypertarget{p-1096}{}%
-\begin{inlineexercise}{WebWork.}{exercise-74}%
-\hypertarget{p-1097}{}%
-This one uses the exponential distribution.%
-\par\medskip
-\hypertarget{p-1098}{}%
-Suppose that the time (in hours) required to repair a machine is an exponentially distributed random variable with parameter \(\lambda = 0.2\). What is%
-\par
-\hypertarget{p-1099}{}%
-(a) the probability that a repair takes less than \(3\) hours?  \fillin{20}%
-\par
-\hypertarget{p-1100}{}%
-(b) the conditional probability that a repair takes at least \(7\) hours, given that it takes more than \(4\) hours?  \fillin{20}%
-\end{inlineexercise}
-%
-\par
-\hypertarget{p-1101}{}%
 \leavevmode%
 \begin{sageinput}
 # Exponential Distribution
@@ -8158,6 +8092,72 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 def _(m = slider(1,12,1/2,2,label='mu')):
     plot(f(mu=m),x,0,30).show(ymax=1)
 \end{sageinput}
+%
+\par
+\hypertarget{p-1089}{}%
+\begin{definition}{Alternate Form for the Exponential Distribution Probability Function.}{definition-35}%
+\hypertarget{p-1090}{}%
+Given a Poisson process and a constant \(\mu = \frac{1}{\lambda}\), suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function%
+\begin{equation*}
+f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.
+\end{equation*}
+%
+\end{definition}
+%
+\par
+\hypertarget{p-1091}{}%
+\begin{theorem}{Distribution function for Exponential Distribution.}{}{theorem-55}%
+\hypertarget{p-1092}{}%
+%
+\begin{equation*}
+F(x) = 1 - e^{-\frac{x}{\mu}}
+\end{equation*}
+%
+\end{theorem}
+\begin{proof}\hypertarget{proof-58}{}
+\hypertarget{p-1093}{}%
+Using \(f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}\), note%
+\begin{align*}
+F(x) & = \int_0^x \frac{1}{\mu} e^{-\frac{u}{\mu}} du\\
+& =  - e^{-\frac{u}{\mu}} \big |_0^x\\
+& = 1 - e^{-\frac{x}{\mu}}\qedhere
+\end{align*}
+%
+\end{proof}
+%
+\par
+\hypertarget{p-1094}{}%
+\begin{example}{Router Requests Revisited.}{example-43}%
+\hypertarget{p-1095}{}%
+Once again, let's consider a router which, over time, has been shown to receive on average 1000 such requests in any given 10 minute period during regular working hours. This would mean that, on average, it would take \(\mu = \frac{10}{1000} = \frac{1}{100} = 0.01\) minutes (i.e., less than a second) to receive the first request. If X were to measure the time interval until the first actual request comes in, then the Exponential distribution would be a good model using%
+\begin{equation*}
+f(x) = \frac{1}{0.01} e^{-\frac{x}{0.01}}.
+\end{equation*}
+%
+\par
+\hypertarget{p-1096}{}%
+Let's determine the probability that a first request arrives in the next two seconds. First, note that since X is a continuous variable that f(x) is NOT the probability of exactly X minutes but you must integrate to compute all probabilities. Also, the next 2 seconds is actually the next \(\frac{2}{60} = \frac{1}{30}\) of a minute. Therefore, F(x) is what you need in general and you find%
+\begin{equation*}
+P(X \le \frac{1}{30}) = F(\frac{1}{30}) = 1 - e^{-\frac{\frac{1}{30}}{0.01}} \approx 0.96433.
+\end{equation*}
+%
+\end{example}
+%
+\par
+\hypertarget{p-1097}{}%
+\begin{inlineexercise}{WebWork.}{exercise-74}%
+\hypertarget{p-1098}{}%
+This one uses the exponential distribution.%
+\par\medskip
+\hypertarget{p-1099}{}%
+Suppose that the time (in hours) required to repair a machine is an exponentially distributed random variable with parameter \(\lambda = 0.2\). What is%
+\par
+\hypertarget{p-1100}{}%
+(a) the probability that a repair takes less than \(3\) hours?  \fillin{20}%
+\par
+\hypertarget{p-1101}{}%
+(b) the conditional probability that a repair takes at least \(7\) hours, given that it takes more than \(4\) hours?  \fillin{20}%
+\end{inlineexercise}
 %
 \par
 \hypertarget{p-1102}{}%
@@ -9766,8 +9766,8 @@ Notice that the variance of a continuous variable X is given by%
 & \ge \int_{-\infty}^{\mu-a} (x - \mu)^2 f(x) dx + \int_{\mu + a}^{\infty} (x - \mu)^2 f(x) dx\\
 & \ge \int_{-\infty}^{\mu-a} a^2 f(x) dx + \int_{\mu + a}^{\infty} a^2 f(x) dx\\
 & = a^2 \big ( \int_{-\infty}^{\mu-a} f(x) dx + \int_{\mu + a}^{\infty} f(x) dx \big )\\
-& = a^2 P( X \le \mu - a \text{or} X \ge \mu + a )\\
-& = a^2 P( \big | \mu - a \big | \ge a)
+& = a^2 P( X \le \mu - a \text{  or  } X \ge \mu + a )\\
+& = a^2 P( \big | X - \mu \big | \ge a)
 \end{align*}
 Dividing by \(a^2\) and taking the complement gives the result.%
 \end{proof}
@@ -9870,8 +9870,10 @@ Sometimes selecting a value for p for a Binomial, Geometric, or Negative Binomia
 \par
 \hypertarget{p-1340}{}%
 In these later situations, we found in the previous section that relative frequency \(\frac{Y}{n}\) is generally a good way to estimate p. In this section, you will investigate how to measure the closeness--and thereby assure some confidence in that estimate--regarding how well the point estimate approximates the actual value of p.%
-\begin{definition}{Confidence Intervals for p.}{definition-41}%
+\par
 \hypertarget{p-1341}{}%
+\begin{definition}{Confidence Intervals for p.}{definition-41}%
+\hypertarget{p-1342}{}%
 Given a point estimate \(\tilde{p}\) for p, a confidence interval for p is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form%
 \begin{equation*}
 \tilde{p} - E_1 \lt p \lt \tilde{p} + E_2
@@ -9890,14 +9892,16 @@ P(\tilde{p} - E_1 \lt p) = 1 - \alpha.
 \end{equation*}
 %
 \end{definition}
-\hypertarget{p-1342}{}%
+%
+\par
+\hypertarget{p-1343}{}%
 Generally, symmmetry is presumed when using a two-sided confidence interval so that \(E_1 = E_2 = E\) and therefore the interval looks like%
 \begin{equation*}
 P(\tilde{p} - E \lt p \lt \tilde{p} + E) = 1 - \alpha.
 \end{equation*}
 In this case, E is known as the margin of error.%
 \par
-\hypertarget{p-1343}{}%
+\hypertarget{p-1344}{}%
 To determine E carefully, note that from the central limit theorem%
 \begin{equation*}
 \frac{Y-np}{\sqrt{np(1-p}} = \frac{\tilde{p} - p}{\sqrt{p(1-p)/n}}
@@ -9920,14 +9924,14 @@ P( \tilde{p} - z_{ \alpha/2}\sqrt{\tilde{p}(1-\tilde{p})/n} \lt  p \lt \tilde{p}
 \end{equation*}
 Setting \(E = z_{ \alpha/2}\sqrt{\tilde{p}(1-\tilde{p})/n}\) gives a way to determine a confidence interval centered on \(\tilde{p} = \frac{Y}{n}\) for p with "confidence level" \(1-\alpha\).%
 \par
-\hypertarget{p-1344}{}%
+\hypertarget{p-1345}{}%
 To complete the interval, one needs a specific value for \(z_{ \alpha/2}\). Generally, one chooses confidence levels on the order of 90%, 95%, or 99% with 95% being the usual choice.  Fortunately this value is easily computed using graphing calculators or other automatic methods although your ancient teacher might have been required to use tables. On a TI calculator, use%
 \begin{equation*}
 z_{\alpha /2} = \text{InvNorm}( 1 - \frac{\alpha}{2} )
 \end{equation*}
 %
 \par
-\hypertarget{p-1345}{}%
+\hypertarget{p-1346}{}%
 For 90% confidence level, you need to find a z-value so that%
 \begin{equation*}
 P( -z_{ \alpha/2} \lt z \lt z_{ \alpha/2}) = 0.9 = 1 - 0.1 .
@@ -9938,36 +9942,36 @@ F(z_{ \frac{0.1}{2}}) = P( z \lt z_{ \frac{0.1}{2}}) = 0.95 = 1 - \frac{0.1}{2} 
 \end{equation*}
 Using the inverse of the standard normal distribution (on the TI calculator this is InvNorm(0.95)) gives \(z_{ 0.05} \approx 1.645\).%
 \par
-\hypertarget{p-1346}{}%
+\hypertarget{p-1347}{}%
 Similarly, for a 95 % confidence level, find where%
 \begin{equation*}
 F(z_{ \frac{0.05}{2}}) = P( z \lt z_{ \frac{0.05}{2}}) = 0.975 = 1 - \frac{0.05}{2} .
 \end{equation*}
 The calculators InvNorm(0.975) gives \(z_{ 0.025} \approx 1.960\).%
 \par
-\hypertarget{p-1347}{}%
+\hypertarget{p-1348}{}%
 For a 99 % confidence level, find where%
 \begin{equation*}
 F(z_{ \frac{0.01}{2}}) = P( z \lt z_{ \frac{0.01}{2}}) = 0.995 = 1 - \frac{0.01}{2} .
 \end{equation*}
 The calculators InvNorm(0.995) gives \(z_{ 0.005} \approx 2.576\).%
 \par
-\hypertarget{p-1348}{}%
+\hypertarget{p-1349}{}%
 Notice that when computing the confidence intervals above that we choose to just replace some of the p terms with \(\tilde{p}\) so that only one p term was left and could be isolated in the middle. There are other ways to deal with this. The easiest is to take the worst case scenario for the p terms in the denominator above. Indeed, the confidence interval is made wider (and therefore more likely to contain the actual p) if the square root term is as large as possible, using basic calculus it is easy to see that p(1-p) is maximized when p = 1/2. Therefore, a second alternative is to create your confidence interval using%
 \begin{equation*}
 z = \frac{\tilde{p} - p}{\frac{1}{2\sqrt{n}}}
 \end{equation*}
 and therefore \(E = \frac{z_{ \alpha/2}}{2\sqrt{n}}\). This method should be used only when trying to create the roughest and "safest" interval.%
 \par
-\hypertarget{p-1349}{}%
-The methods for determining a confidence interval for p above depend upon a good approximation with the Central Limit Theorem. This approximation will be fine if n is relatively large. To consider a confidence interval for p when n is small, note that the binomial random variable is discrete and so expanding the interval by a factor of \(\frac{1}{2n}\) might be in order.%
-\par
 \hypertarget{p-1350}{}%
-Another more elaborate mechanism when n is relatively large is given by the Wilson Score. This confidence interval is more complicated than just taking \(\tilde{p}\) and adding and subtracting E. This approach notes that the possible extreme values for p must satisfy (before replacing some of the p terms with \(\tilde{p}\))%
+The methods for determining a confidence interval for p above depend upon a good approximation with the Central Limit Theorem. This approximation will be fine if n is relatively large. To consider a confidence interval for p when n is small, note that the binomial random variable is discrete and so expanding the interval by a factor of \(\frac{1}{2n}\) might be in order. Indeed, replace \(z_{\alpha/2}\) by \(t_{\alpha/2}(n-1)\) and continue otherwise.%
 \par
 \hypertarget{p-1351}{}%
-\begin{theorem}{Wilson Score Confidence Interval for p.}{}{theorem-73}%
+Another more elaborate mechanism when n is relatively large is given by the Wilson Score. This confidence interval is more complicated than just taking \(\tilde{p}\) and adding and subtracting E. This approach notes that the possible extreme values for p must satisfy (before replacing some of the p terms with \(\tilde{p}\))%
+\par
 \hypertarget{p-1352}{}%
+\begin{theorem}{Wilson Score Confidence Interval for p.}{}{theorem-73}%
+\hypertarget{p-1353}{}%
 %
 \begin{equation*}
 \frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} - z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}} \lt p \lt \frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} + z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}}
@@ -9975,7 +9979,7 @@ Another more elaborate mechanism when n is relatively large is given by the Wils
 %
 \end{theorem}
 \begin{proof}\hypertarget{proof-73}{}
-\hypertarget{p-1353}{}%
+\hypertarget{p-1354}{}%
 Again, noting that \(\tilde{p} = \frac{Y}{n}\), the expression above%
 \begin{equation*}
 \big | p - \tilde{p} \big | = z_{\alpha /2} \sqrt{\frac{p(1-p)}{n}}
@@ -9994,11 +9998,14 @@ or by simplifying%
 \end{equation*}
 Solving for p using the quadratic formula and simplifying ultimately results in the described interval.%
 \end{proof}
- \begin{example}{Comparison of the three Confidence Interval methods for p.}{example-54}%
-\hypertarget{p-1354}{}%
-Presume that from a sample of size n = 400 you get Y = 144 successes.  Determine 95% two-sided confidence intervals for the actual p using all three of the methods above. Note that for each you will utilize \(z_{\alpha/2} = z_{0.025} = 1.960\) and \(\tilde{p} = \frac{144}{400} = 0.36\).%
+%
 \par
 \hypertarget{p-1355}{}%
+\begin{example}{Comparison of the three Confidence Interval methods for p.}{example-54}%
+\hypertarget{p-1356}{}%
+Presume that from a sample of size n = 400 you get Y = 144 successes.  Determine 95% two-sided confidence intervals for the actual p using all three of the methods above. Note that for each you will utilize \(z_{\alpha/2} = z_{0.025} = 1.960\) and \(\tilde{p} = \frac{144}{400} = 0.36\).%
+\par
+\hypertarget{p-1357}{}%
 Normal Interval:%
 \begin{equation*}
 P( 0.36 - 1.960 \sqrt{0.36 \cdot 0.64) / 400} \lt  p \lt 0.36 + 1.960 \sqrt{0.36 \cdot 0.64) / 400}) = 1 - \alpha.
@@ -10017,7 +10024,7 @@ P( 0.31296 \lt  p \lt 0.40704) = 0.95 .
 \end{equation*}
 So, there is a 95% chance that the actual value for p lies inside the interval \((0.31296 , 0.40704).\)%
 \par
-\hypertarget{p-1356}{}%
+\hypertarget{p-1358}{}%
 Maximal Interval:%
 \begin{equation*}
 P( 0.36 - 1.960 \frac{1}{2\sqrt{400}} \lt  p \lt 0.36 + 1.960 \frac{1}{2\sqrt{400}} ) = 1 - \alpha.
@@ -10032,7 +10039,7 @@ P( 0.311 \lt  p \lt 0.409 ) = 1 - \alpha.
 \end{equation*}
 Notice the interval is only slightly wider than when using \(\tilde{p}\) to estimate p in the first case.%
 \par
-\hypertarget{p-1357}{}%
+\hypertarget{p-1359}{}%
 Wilson Score Interval:  Let's do this on in parts...%
 \begin{equation*}
 z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}} = 1.96 \sqrt{ \frac{0.36 \cdot 0.64 + \frac{1.96^2}{1600}}{400}} \approx 0.04728
@@ -10049,63 +10056,93 @@ which is slightly different than the first and slightly smaller than the second.
 \end{example}
 %
 \par
-\hypertarget{p-1358}{}%
+\hypertarget{p-1360}{}%
 \begin{inlineexercise}{WebWork.}{exercise-91}%
-\hypertarget{p-1359}{}%
+\hypertarget{p-1361}{}%
 A poll is taken in which \(332\) out of \(550\) randomly selected voters indicated their preference for a certain candidate.%
 \par
-\hypertarget{p-1360}{}%
+\hypertarget{p-1362}{}%
 (a) Find a \(99\)\% confidence interval for \(p\).%
 \par
-\hypertarget{p-1361}{}%
+\hypertarget{p-1363}{}%
  \fillin{20} \(\leq p \leq\)  \fillin{20}%
 \par
-\hypertarget{p-1362}{}%
-(b) Find the margin of error for this \(99\)\% confidence interval for \(p\).%
 \hypertarget{p-1364}{}%
+(b) Find the margin of error for this \(99\)\% confidence interval for \(p\).%
+\hypertarget{p-1366}{}%
 (c) Without doing any calculations, indicate whether the margin of error is larger or smaller or the same for an 80\% confidence interval. \par
 \begin{itemize}[label=$\odot$,leftmargin=3em,]
-\item{}\hypertarget{p-1365}{}%
+\item{}\hypertarget{p-1367}{}%
 smaller%
 
-\item{}\hypertarget{p-1366}{}%
+\item{}\hypertarget{p-1368}{}%
 larger%
 
-\item{}\hypertarget{p-1367}{}%
+\item{}\hypertarget{p-1369}{}%
 same%
 
 \end{itemize}
 %
 \end{inlineexercise}
 %
-\begin{theorem}{Determining Sample Size for proportions.}{}{theorem-74}%
-\(\tilde{p_0}\)%
+\par
+\hypertarget{p-1370}{}%
+\begin{theorem}{Determining Sample Size for proportions with a preliminary estimate.}{}{theorem-74}%
+\hypertarget{p-1371}{}%
+Given a margin of error E and preliminary relative frequency estimate \(\tilde{p_0}\) the sample size needed to create the corresponding confidence interval is given by%
 \begin{equation*}
 n \gt \left ( \frac{z_{\alpha /2}}{E} \right )^2 \tilde{p_0}(1-\tilde{p_0}).
 \end{equation*}
+%
 \end{theorem}
 \begin{proof}\hypertarget{proof-74}{}
+\hypertarget{p-1372}{}%
+From the confidence interval%
+\begin{equation*}
+P( \tilde{p} - z_{ \alpha/2}\sqrt{\tilde{p}(1-\tilde{p})/n} \lt  p \lt \tilde{p} + z_{ \alpha/2}\sqrt{\tilde{p}(1-\tilde{p})/n}) = 1 - \alpha,
+\end{equation*}
+note that%
+\begin{equation*}
+E = z_{ \alpha/2}\sqrt{\tilde{p}(1-\tilde{p})/n}.
+\end{equation*}
+Presuming E is given and n is unknown, simply solve for n (noting that n is an integer and therefore you will likely need to replace the equality with an appropriate inequality).%
 \end{proof}
+%
+\par
+\hypertarget{p-1373}{}%
+\begin{theorem}{Determining Sample Size for proportions with no preliminary estimate.}{}{theorem-75}%
+\hypertarget{p-1374}{}%
+Given only a margin of error E, the sample size needed to create the corresponding confidence interval is given by%
+\begin{equation*}
+n \gt \left ( \frac{z_{\alpha /2}}{2 E} \right )^2 .
+\end{equation*}
+%
+\end{theorem}
+\begin{proof}\hypertarget{proof-75}{}
+\hypertarget{p-1375}{}%
+Note that the maximum for \(y = x(1-x) \) occurs at \(x = 1/2, y = 1/4.\) Therefore, replacing \(\tilde{p_0}(1-\tilde{p_0} \le \frac{1}{4}\) gives the result.%
+\end{proof}
+%
 \begin{example}{Determining Sample Size for one proportion.}{example-55}%
-\hypertarget{p-1368}{}%
+\hypertarget{p-1376}{}%
 Given a 99% confidence level, margin of error E=0.03, and preliminary estimate \(\tilde{p_0} = 0.35\), notice that \(z_{\alpha / 2} = 2.58\) gives%
 \begin{equation*}
 n \gt \left ( \frac{2.58}{0.03} \right )^2 0.35 \cdot 0.65 \approx 1682.59
 \end{equation*}
 or a sample size of at least 1683.%
 \end{example}
-\hypertarget{p-1369}{}%
+\hypertarget{p-1377}{}%
 \begin{inlineexercise}{WebWork.}{exercise-92}%
-\hypertarget{p-1370}{}%
+\hypertarget{p-1378}{}%
 Refer to the following scenario.%
 \par
-\hypertarget{p-1371}{}%
+\hypertarget{p-1379}{}%
 An epidemiologist is worried about the prevalence of the flu in East Vancouver and the potential shortage of vaccines for the area. She will need to provide a recommendation for how to allocate the vaccines appropriately across the city. She takes a simple random sample of 332 people living in East Vancouver and finds that 34 have recently had the flu.%
 \par
-\hypertarget{p-1372}{}%
+\hypertarget{p-1380}{}%
 Suppose that the epidemiologist wants to re-estimate the population proportion and wishes for her 95\% confidence interval to have a margin of error no larger than 0.04.  How large a sample should she take to achieve this? Please carry answers to at least six decimal places in intermediate steps.%
 \par
-\hypertarget{p-1373}{}%
+\hypertarget{p-1381}{}%
 Sample size =  \fillin{6}%
 \end{inlineexercise}
 %
@@ -10116,10 +10153,10 @@ Sample size =  \fillin{6}%
 \typeout{************************************************}
 %
 \section[{Interval Estimates - Confidence Interval for \(\mu\)}]{Interval Estimates - Confidence Interval for \(\mu\)}\label{section-69}
-\hypertarget{p-1374}{}%
+\hypertarget{p-1382}{}%
 As with the confidence intervals above for proportions, the Central Limit Theorem also allows you to create an interval centered on a sample mean for estimating the population mean \(\mu\).%
 \begin{definition}{Confidence Interval for One Mean.}{definition-42}%
-\hypertarget{p-1375}{}%
+\hypertarget{p-1383}{}%
 Given a sample mean \(\overline{x}\), a two-sided confidence interval for the mean with confidence level \(1-\alpha\) is an interval%
 \begin{equation*}
 \overline{x} - E_1 \lt \mu \lt \overline{x} + E_2
@@ -10130,7 +10167,7 @@ P(\overline{x} - E_1 \lt \mu \lt \overline{x} + E_2) = 1-\alpha.
 \end{equation*}
 Generally, the interval is symmetrical of the form \(\overline{x} \pm E\) with E again known as the margin of error.  One-sided confidence intervals can be determined in the same manner as in the previous section.%
 \end{definition}
-\hypertarget{p-1376}{}%
+\hypertarget{p-1384}{}%
 Once again, utilize the Central Limit Theorem.  Notice that the symmetrical confidence interval%
 \begin{equation*}
 P(\overline{x} - E \lt \mu \lt \overline{x} + E) = 1-\alpha.
@@ -10157,77 +10194,77 @@ E = z_{\alpha /2} \frac{\sigma}{\sqrt{n}}.
 \end{equation*}
 %
 \par
-\hypertarget{p-1377}{}%
+\hypertarget{p-1385}{}%
 \begin{inlineexercise}{WebWork.}{exercise-93}%
-\hypertarget{p-1378}{}%
+\hypertarget{p-1386}{}%
 A random sample of \(n\) measurements was selected from a population with standard deviation \(\sigma = 18.6\) and unknown mean \(\mu\). Calculate a \(90\) \% confidence interval for \(\mu\) for each of the following situations:%
 \par
-\hypertarget{p-1379}{}%
+\hypertarget{p-1387}{}%
 (a) \(n = 50, \ \overline{x} = 100\)%
 \par
-\hypertarget{p-1380}{}%
+\hypertarget{p-1388}{}%
  \fillin{15} \(\leq \mu \leq\)  \fillin{15}%
 \par
-\hypertarget{p-1381}{}%
+\hypertarget{p-1389}{}%
 (b)  \(n = 80, \ \overline{x} = 100\)%
 \par
-\hypertarget{p-1382}{}%
+\hypertarget{p-1390}{}%
  \fillin{15} \(\leq \mu \leq\)  \fillin{15}%
 \par
-\hypertarget{p-1383}{}%
+\hypertarget{p-1391}{}%
 (c)  \(n = 100, \ \overline{x} = 100\)%
 \par
-\hypertarget{p-1384}{}%
+\hypertarget{p-1392}{}%
  \fillin{15} \(\leq \mu \leq\)  \fillin{15}%
 \par
-\hypertarget{p-1385}{}%
+\hypertarget{p-1393}{}%
 (d)  In general, we can say that for the same confidence level, increasing the sample size  \fillin{20} the margin of error (width) of the confidence interval.  (Enter: ''DECREASES'', ''DOES NOT CHANGE'' or ''INCREASES'', without the quotes.)%
 \end{inlineexercise}
 %
 \par
-\hypertarget{p-1386}{}%
+\hypertarget{p-1394}{}%
 It should be noted that the use of the Central Limit Theorem makes the use of  InvNorm an approximation. It can be shown that so long as n is larger than 30 then generally this approximation is reasonable. If not, then use replace the z-score with a corresponding value from the t-distribution.%
 \par
-\hypertarget{p-1387}{}%
+\hypertarget{p-1395}{}%
 \begin{inlineexercise}{WebWork with t-scores.}{exercise-94}%
-\hypertarget{p-1388}{}%
+\hypertarget{p-1396}{}%
 Use the given data to find the 95\% confidence interval estimate of the population mean \(\mu\). Assume that the population has a normal distribution.%
 \par
-\hypertarget{p-1389}{}%
+\hypertarget{p-1397}{}%
 IQ scores of professional athletes:%
 \par
-\hypertarget{p-1390}{}%
+\hypertarget{p-1398}{}%
 Sample size \(n = 25\)%
 \par
-\hypertarget{p-1391}{}%
+\hypertarget{p-1399}{}%
 Mean \(\overline{x} = 105\)%
 \par
-\hypertarget{p-1392}{}%
+\hypertarget{p-1400}{}%
 Standard deviation \(s  = 10\)%
 \par
-\hypertarget{p-1393}{}%
+\hypertarget{p-1401}{}%
  \fillin{20} \(\lt  \mu \lt \)  \fillin{20}%
 \end{inlineexercise}
 %
 \par
-\hypertarget{p-1394}{}%
+\hypertarget{p-1402}{}%
 Additionally, this derivation assumes that \(\mu\) is not known...indeed the goal is to approximate that mean using \(\overline{x}\)...but that \(\sigma\) is known. This is often not the case. It can however be shown that if n is larger than 30, replacing \(\sigma\) with the sample standard deviation s gives an acceptable confidence interval.%
-\begin{theorem}{Sample Size needed for \(\mu\) given Margin of Error.}{}{theorem-75}%
-\hypertarget{p-1395}{}%
+\begin{theorem}{Sample Size needed for \(\mu\) given Margin of Error.}{}{theorem-76}%
+\hypertarget{p-1403}{}%
 Given confidence level \(1-\alpha\) and margin of error E, the sample size needed to determine an appropriate confidence interval satisfies%
 \begin{equation*}
 n \gt \left ( z_{\alpha /2} \frac{\sigma}{E} \right )^2
 \end{equation*}
 %
 \end{theorem}
-\begin{proof}\hypertarget{proof-75}{}
-\hypertarget{p-1396}{}%
+\begin{proof}\hypertarget{proof-76}{}
+\hypertarget{p-1404}{}%
 Solve for n in the formula for E above. Notice that n must be an integer so you will need to round up. You will also need an estimate for the sample standard deviation s by using a preliminary sample.%
 \end{proof}
-\hypertarget{p-1397}{}%
+\hypertarget{p-1405}{}%
 Notice, in practice you might want to take n to be a little larger than the absolute minimum value prescribed above since you are dealing with approximations (Central Limit Theorem and the use of an estimate for s rather than the actual \(\sigma\).)%
 \begin{example}{Determining Sample Size for one Mean.}{example-56}%
-\hypertarget{p-1398}{}%
+\hypertarget{p-1406}{}%
 Given a 95% confidence level, margin of error E=0.1, and preliminary sample with standard deviation s = 2, \(z_{\alpha / 2} = 1.96\) gives%
 \begin{equation*}
 n \gt \left ( 1.96 \cdot \frac{2}{0.1} \right )^2 \approx 1536.64
@@ -10241,17 +10278,17 @@ or a sample size of at least 1537.%
 \typeout{************************************************}
 %
 \section[{Interval Estimates - Confidence Interval for \(\sigma^2\)}]{Interval Estimates - Confidence Interval for \(\sigma^2\)}\label{section-70}
-\hypertarget{p-1399}{}%
+\hypertarget{p-1407}{}%
 Once again, you may need to approximate the population variance or standard deviation but only have the sample values available. One difference from the previous sections is that you are not dealing with an average of values (such as \(\overline{x}\) or \(\tilde{p}\)) but with the average of the squares of values. The Central Limit Theorem does not directly help you in this case but the following result (presented without proof) provides a solution.%
-\begin{theorem}{Relationship between Variance and \(\chi ^2\).}{}{theorem-76}%
-\hypertarget{p-1400}{}%
+\begin{theorem}{Relationship between Variance and \(\chi ^2\).}{}{theorem-77}%
+\hypertarget{p-1408}{}%
 If \(S^2\) is a random variable of possible sample variance values from a sample of size n, then%
 \begin{equation*}
 W = \frac{(n-1)S^2}{\sigma^2}
 \end{equation*}
 is approximately \(\chi ^2(n-1).\)%
 \end{theorem}
-\hypertarget{p-1401}{}%
+\hypertarget{p-1409}{}%
 To create a confidence interval for \(\sigma^2\) first consider an interval of the form%
 \begin{equation*}
 E_1 \lt \sigma^2 \lt E_2
@@ -10290,7 +10327,7 @@ E_2 = \frac{(n-1)S^2}{\chi^2_{\alpha/2}}
 \end{equation*}
 %
 \par
-\hypertarget{p-1402}{}%
+\hypertarget{p-1410}{}%
 To determine appropriate values for \(\chi^2_{\alpha/2} \) and \(\chi^2_{1-\alpha/2} \) with equal probabilities in each tail, consider using the interactive cell below:%
 \begin{sageinput}
 # Chi-Square Calculator for confidence intervals with equal alpha/2 tails
@@ -10317,8 +10354,8 @@ def _(c=input_box(0.95,width=10,label='Confidence Level = '),n=input_box(20,widt
     G += text(str(c.n(digits=5)),((a+b)/2,f(x=(a+b)/2)/3),color='green')
     G.show()
 \end{sageinput}
-\hypertarget{p-1403}{}%
-The example below uses the specific chi-square values given in the interactive cell below: \leavevmode%
+\hypertarget{p-1411}{}%
+You can simply type in your input values easily in the Sage cell below. \leavevmode%
 \begin{sageinput}
 # Chi-Square Calculator specifics
 var('t')
@@ -10344,11 +10381,12 @@ G += line([(b,0),(b,f(x=b))],color='green',thickness=3)
 G += text(str(c.n(digits=5)),((a+b)/2,f(x=(a+b)/2)/3),color='green')
 G.show()
 \end{sageinput}
- \begin{example}{- Two-sided Confidence interval for \(\sigma^2\) and \(\sigma\).}{example-57}%
-\hypertarget{p-1404}{}%
+ \hypertarget{p-1412}{}%
+\begin{example}{- Two-sided Confidence interval for \(\sigma^2\) and \(\sigma\).}{example-57}%
+\hypertarget{p-1413}{}%
 Given the data 570, 561, 546, 540, 609, 580, 550, 577, 585, determine a 95% confidence interval for \(\sigma^2\).%
 \par
-\hypertarget{p-1405}{}%
+\hypertarget{p-1414}{}%
 Using the computational forumaula (or your calculator) gives \(s^2 \approx 479.5\). Also, notice for n=9, the resulting interval will use a Chi-square variable with 8 degrees of freedom. Using the symmetric option, gives \(\chi_{0.025}^2 = 2.18\) and \(\chi_{0.975}^2 = 17.53\).  Therefore%
 \begin{equation*}
 E_1 = \frac{8 \cdot 479.5}{17.53} \approx 221.095
@@ -10367,7 +10405,11 @@ By taking square roots you get%
 \end{equation*}
 Notice, this interval is relatively wide which is a result both of the number of data values being relatively small (n=9) and the actual data values being relatively large and spread out.%
 \end{example}
- The example below uses the specific chi-square values given in the interactive cell below: \begin{sageinput}
+%
+ \par
+\hypertarget{p-1415}{}%
+\leavevmode%
+\begin{sageinput}
 # Chi-Square Calculator specifics
 var('t')
 c=0.95
@@ -10385,18 +10427,19 @@ print 'with'
 print 'P( X < ',a,') = ',a1
 print 'P( X < ',b,') = ',b1
 \end{sageinput}
+%
  \begin{example}{- Two-sided Confidence interval for the variance and standard deviation with large n..}{example-58}%
-\hypertarget{p-1406}{}%
+\hypertarget{p-1416}{}%
 \begin{inlineexercise}{WebWork.}{exercise-95}%
-\hypertarget{p-1407}{}%
+\hypertarget{p-1417}{}%
 Find the critical values \(\chi_L^2 = \chi_{1-\alpha/2}^2\) and \(\chi_R^2 = \chi_{\alpha/2}^2\) that correspond to \(98\)\% degree of confidence and the sample size \(n = 9.\)%
 \par
-\hypertarget{p-1408}{}%
+\hypertarget{p-1418}{}%
 \(\chi_L^2 =\)  \fillin{10} \(\ \ \ \ \) \(\chi_R^2 =\)  \fillin{10}%
 \end{inlineexercise}
 %
 \par
-\hypertarget{p-1409}{}%
+\hypertarget{p-1419}{}%
 Continuing the previous example, suppose now that you have n=400 data values and suppose you have computed from those a sample variance of \(s^2 = 479.5\).  Then, the only change in the calculation is the two chi-square statistic values. For 95% but now with 399 degrees of freedom \(\chi_{0.025}^2 = 345.55\) and \(\chi_{0.975}^2 = 456.24\). Therefore%
 \begin{equation*}
 E_1 = \frac{8 \cdot 479.5}{456.24} \approx 419.3
@@ -10417,7 +10460,7 @@ which is a relatively tight confidence interval.  Notice, these are also complet
 \end{example}
 %
 \par
-\hypertarget{p-1410}{}%
+\hypertarget{p-1420}{}%
 Similar to above, another choice to estimate \(\sigma ^2\) is to use a one sided confidence interval. If you want to find one of these, continue as described above but just leave one endpoint off.  Indeed,%
 \begin{equation*}
 \sigma^2 \lt E_2
@@ -10435,24 +10478,24 @@ can be determined using%
 F(\chi^2_{1-\alpha} ) = F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha.
 \end{equation*}
 \begin{example}{- One-sided Confidence intervals for \(\sigma^2\).}{example-59}%
-\hypertarget{p-1411}{}%
+\hypertarget{p-1421}{}%
 %
 \end{example}
 %
 \par
-\hypertarget{p-1412}{}%
+\hypertarget{p-1422}{}%
 You can, of course, use the formula to work out the sample size needed in order to have a sufficiently narrow confidence interval%
 \par
-\hypertarget{p-1413}{}%
+\hypertarget{p-1423}{}%
 \begin{inlineexercise}{WebWork.}{exercise-96}%
-\hypertarget{p-1414}{}%
+\hypertarget{p-1424}{}%
 Find the minimum sample size needed to be \(99\)\%  confident that the sample variance is within \(40\)\% of the population variance.%
 \end{inlineexercise}
 %
 \par
-\hypertarget{p-1416}{}%
+\hypertarget{p-1426}{}%
 Finally, to determine a confidence interval for \(\sigma\), proceed using the protocols described above and simply take the square root on the resulting interval. \begin{example}{- Confidence intervals for \(\sigma\).}{example-60}%
-\hypertarget{p-1417}{}%
+\hypertarget{p-1427}{}%
 %
 \end{example}
 %
@@ -10463,11 +10506,11 @@ Finally, to determine a confidence interval for \(\sigma\), proceed using the pr
 \typeout{************************************************}
 %
 \section[{Exercises}]{Exercises}\label{section-71}
-\hypertarget{p-1418}{}%
+\hypertarget{p-1428}{}%
 \begin{inlineexercise}{- Basic Confidence interval for p.}{exercise-97}%
-\hypertarget{p-1419}{}%
+\hypertarget{p-1429}{}%
 Given Y = 30 successes in n = 100 trials, determine a 90% confidence interval for the unknown value for p. \textbf{Solution}.\quad%
-\hypertarget{p-1420}{}%
+\hypertarget{p-1430}{}%
 \(\tilde{p} = 0.3\) and \(z_{0.05} = 1.645\) gives%
 \begin{equation*}
 0.3 - 1.645 \sqrt{\frac{0.3 \cdot 0.7}{100}} \lt p \lt 0.3 + 1.645 \sqrt{\frac{0.3 \cdot 0.7}{100}}
@@ -10480,9 +10523,9 @@ or%
 %
 \end{inlineexercise}
  \begin{inlineexercise}{- Sample Size for confidence interval for p.}{exercise-98}%
-\hypertarget{p-1421}{}%
+\hypertarget{p-1431}{}%
 Given a preliminary estimate \(\tilde{p_0} = 0.23\), determine the same size needed for determine a 95% confidence interval for p with margin of error 0.02. \textbf{Solution}.\quad%
-\hypertarget{p-1422}{}%
+\hypertarget{p-1432}{}%
 Using \(z_{0.025} = 1.96\),%
 \begin{equation*}
 n \gt \big ( \frac{1.96}{0.02} \big )^2 \cdot 0.23 \cdot 0.77 \approx 1700.87
@@ -10491,16 +10534,16 @@ and so pick at least 1701 as the sample size.%
 %
 \end{inlineexercise}
  \begin{inlineexercise}{- Voting projection.}{exercise-99}%
-\hypertarget{p-1423}{}%
+\hypertarget{p-1433}{}%
 Randomly polling 3200 eligible voters for governor in a particular state resulted in finding that 1590 favored your candidate. Determine an appropriate 95% confidence interval for the true proportion p of voters who favor your candidate. Noting that \(\tilde{p}\) in this instance is smaller than 50%, write a short paragraph regarding what you might conclude from this confidence interval regarding your candidate's chances in winning the election. \textbf{Solution}.\quad%
-\hypertarget{p-1424}{}%
+\hypertarget{p-1434}{}%
 Note that although the point estimate is below 50%, the confidence interval includes the possibility that the actual value for p is greater than 50%. So, you cannot conclude that your candidate will either win or lose.%
 %
 \end{inlineexercise}
  \begin{inlineexercise}{- Basic Confidence interval for the mean.}{exercise-100}%
-\hypertarget{p-1425}{}%
+\hypertarget{p-1435}{}%
 Given a sample mean of \(\overline{x} = 25.3\) with n = 121 and sample variance \(s^2 = 12.1\), determine a 99% confidence interval for the true mean \(\mu\). \textbf{Solution}.\quad%
-\hypertarget{p-1426}{}%
+\hypertarget{p-1436}{}%
 Using \(z_{0.005} = 2.576\) and \(s = \sqrt{12.1} \approx 3.4786\) gives a confidence interval%
 \begin{equation*}
 25.3 - 2.576 \cdot \frac{3.4786}{11} \lt \mu \lt 25.3 + 2.576 \cdot \frac{3.4786}{11}
@@ -10513,15 +10556,15 @@ or%
 %
 \end{inlineexercise}
  \begin{inlineexercise}{- Confidence Interval Experiment.}{exercise-101}%
-\hypertarget{p-1427}{}%
+\hypertarget{p-1437}{}%
 %
 \end{inlineexercise}
  Roll two regular pair of dice 35 times, recording the sum of the dots for each roll.  Using the data from your sample, determine the corresponding sample mean and sample variance.  Using this data, create a 95% confidence interval for the population mean and a 95% "centered" confidence interval for the standard deviation. Once complete, compare your results with what you know should be the correct population statistics an appropriate "hat" distribution. (You might want to use the chi-square calculator provided earlier in this text.)%
 \par
-\hypertarget{p-1428}{}%
+\hypertarget{p-1438}{}%
 Go back over your 35 rolls and count the number of 7's or 11's rolled. Determine a corresponding relative frequency for this outcome. Using this data, create a 95% confidence interval for the theoretical proportion of success p.  Compare your result with what you know should be the correct theoretical p.%
 \par
-\hypertarget{p-1429}{}%
+\hypertarget{p-1439}{}%
 Repeat this exercise but this time roll 105 times.  Notice how these differ from the confidence intervals created with the smaller set.  Write a paragraph describing how these compare and whether one is better or not than the other.%
 %
 %
@@ -10537,10 +10580,10 @@ Repeat this exercise but this time roll 105 times.  Notice how these differ from
 \typeout{************************************************}
 %
 \section[{Introduction}]{Introduction}\label{section-72}
-\hypertarget{p-1430}{}%
+\hypertarget{p-1440}{}%
 When creating confidence intervals, you started with a sample and used the sample statistic (sample mean, relative frequency, sample variance, etc.) to anchor an interval which (with high possibility) contains the corresponding population statistic \(\mu, p, \sigma^2\), etc. In this section, we instead start with an educated guess for one of the population statistics \(\mu, p, \sigma^2\) and then statistically compare that value with the subsequently collected sample statistic.%
 \par
-\hypertarget{p-1431}{}%
+\hypertarget{p-1441}{}%
 The educated guess noted above is often called the "null hypothesis" and should be considered as a guess that one tries to disprove if possible by using a subsequent statistical sample.%
 %
 %
@@ -10549,10 +10592,10 @@ The educated guess noted above is often called the "null hypothesis" and should 
 \typeout{************************************************}
 %
 \section[{Hypotheses and Errors}]{Hypotheses and Errors}\label{section-73}
-\hypertarget{p-1432}{}%
+\hypertarget{p-1442}{}%
 In formulating a hypothesis, you will be making a declarative statement (a proposition) that has an actual truth value. That is, it is either true or it is not true in real life. However, since we will assess that truth using a test sample then measuring that truth value will never be 100% certain in the same manner that confidence intervals can never include 100% of the possible choices for a particular statistic. Hence, it is possible for you to make an incorrect conclusion.%
 \par
-\hypertarget{p-1433}{}%
+\hypertarget{p-1443}{}%
 In general, there are four different outcomes that are possible when testing a hypothesis: \leavevmode%
 \begin{itemize}[label=\textbullet]
 \item{}Your hypothesis is true and you determine that it is true.%
@@ -10562,25 +10605,25 @@ In general, there are four different outcomes that are possible when testing a h
 \end{itemize}
  The first and last cases are "good" since you have accurately determined the truth of the hypothesis. The second and third are however bad since you either believe something that is not true or you don't believe something that is true. We would like to minimize the likelihood of allowing these last two possibilities.%
 \par
-\hypertarget{p-1434}{}%
+\hypertarget{p-1444}{}%
 Toward that end, let's consider the case where the hypothesis is true but you determine (in error) that it is false. This is called a Type I error and we will designate the probability of this error by \(\alpha\). To lower the risk of a Type I error, you will want to make \(\alpha\) smaller.  In general, \(\alpha\) is also called "the significance level" with \(\alpha = 0.05\) a common choice with 0.01 and 0.10 also sometimes used. In general, any value between 0 and 1 is ok but large values mean large likelihood for error so choosing a value closer to 0 is preferred.%
 \par
-\hypertarget{p-1435}{}%
+\hypertarget{p-1445}{}%
 In a similar manner, consider the case where the hypothesis is false but you determine (in error) that it is true. This is called a Type II error and will be denote the probability of a Type II error by \(\beta\). Again, your goal is to make the risk of a Type II error smaller and therefore want \(\beta\) to be as small as possible.%
 \par
-\hypertarget{p-1436}{}%
+\hypertarget{p-1446}{}%
 In the following sections you will play around with minimizing Type I and Type II errors. Type I errors will be minimized by simply choosing a smaller value for \(\alpha\) when working through the formulas. Type II errors will be minimized by talking (if possible) a larger sample size when computing the needed sample statistics.%
 \par
-\hypertarget{p-1437}{}%
+\hypertarget{p-1447}{}%
 Toward that end, you will compose in each case a \emph{Null Hypothesis} (denoted \(N_0\)). This statement is what you will test for truth. You will also compose an \emph{Alternate Hypothesis} (denoted \(N_a\)) that is often the logical complement (but not always) of \(N_0\). The null hypothesis is often a statement corresponding to the likelihood that observations occur purely by chance while the alternate hypothesis will often indicate that outcomes are not actually random but are influenced by some (possibly unknown) causes.  If our sample shows that the null hypothesis \(N_0\) is false, then we will accept the alternate \(N_a\). If this is a bad decision then it will be true that the hypothesis is true but you will have determined that it is false...that is, made a Type I error.%
 \par
-\hypertarget{p-1438}{}%
+\hypertarget{p-1448}{}%
 To avoid ever making an Type II error, often often never "accepts" the null hypothesis \(N_0\) even if the sample does not conclude that it is false. In other words, if you do this then you will never allow yourself to determine that \(N_0\) is true.  Seems odd but this is one way to avoid ever worrying much about type II errors. The best way to avoid this blind spot is to use relatively large test samples and in doing so you will minimize the likelihood of type II.%
 \par
-\hypertarget{p-1439}{}%
+\hypertarget{p-1449}{}%
 So, our plan of attack is to find some way to determine, from a sample, the amount of Type I error we might make. For a given problem, from the sample, you will create a specific estimate for Type I error...called a p-statistic...and compare to the chosen significance level \(\alpha\). Sounds easy enough?%
 \par
-\hypertarget{p-1440}{}%
+\hypertarget{p-1450}{}%
 Finally, you will notice in each of the instances presented that the form of the solution method will be very similar to the forms we used in creating confidence intervals. The difference is that for hypothesis testing we \emph{assume} the value in the middle and test to see whether the sample statistic is in one of the tails so that we can reject rather than with confidence intervals we assume as sample statistic is in the middle and then use that sample to create boundaries within which the theoretical population statistic \emph{must} like with high confidence.%
 %
 %
@@ -10589,7 +10632,7 @@ Finally, you will notice in each of the instances presented that the form of the
 \typeout{************************************************}
 %
 \section[{Hypothesis Test for one proportion}]{Hypothesis Test for one proportion}\label{section-74}
-\hypertarget{p-1441}{}%
+\hypertarget{p-1451}{}%
 In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value p:%
 \begin{equation*}
 H_0 : p = p_0 \\ H_a : p \neq p_0
@@ -10604,14 +10647,14 @@ H_0 : p \ge p_0 \\ H_a : p \lt p_0.
 \end{equation*}
 For any given problem, we choose only one of these three options. The first is called a "two-tailed" test since the alternate hypothesis can not be equal if it is actually larger or smaller. The last two are called "one-tailed" tests since the alternate hypothesis only allows for being on one side.  Note that some people will write all of these null hypothesis options using equality but the alternate hypothesis determines the number of tails.%
 \par
-\hypertarget{p-1442}{}%
+\hypertarget{p-1452}{}%
 From the Central Limit Theorem, you found that every interesting distribution eventually becomes approximately normal. This includes the binomial distribution with mean \(\mu = n p_0\) and variance \(\sigma^2 = n p_0 (1-p_0)\). Hence, the \emph{z-statistic}%
 \begin{equation*}
 Z = \frac{X - n p_0}{\sqrt{n p_0(1-p_0)}} = \frac{p - p_0}{\sqrt{p_0(1-p_0)/n}}
 \end{equation*}
 is approximately standard normal and so probabilities on this statistic can be computed as needed using the normal distribution.%
 \par
-\hypertarget{p-1443}{}%
+\hypertarget{p-1453}{}%
 Let's look at an example for this by considering:%
 \begin{equation*}
 H_0: p = 0.20
@@ -10622,10 +10665,10 @@ H_a: p \ne 0.20.
 \end{equation*}
 Tests like this are called \emph{two-tailed} since there are two ways to reject the null hypothesis: we find that p should be less than 0.2 or we find that p should be greater than 0.2.%
 \par
-\hypertarget{p-1444}{}%
+\hypertarget{p-1454}{}%
 To test our hypothesis, let's now chose a significance level of \(\alpha = 0.05\) and take a sample. Presuming we actually do this, let's assume that we find that out of n=100 sample values we get X = 27 successes. Hence, our actual test statistic is \(p = \frac{27}{100} = 0.27\).%
 \par
-\hypertarget{p-1445}{}%
+\hypertarget{p-1455}{}%
 So, in this case we have%
 \begin{equation*}
 \sigma = \sqrt{\frac{p_0(1-p_0)}{n}} = \sqrt{\frac{0.2 \cdot 0.8}{100}} = 0.04
@@ -10640,53 +10683,53 @@ P(Z \gt 1.75) + P(Z \lt -1.75)
 \end{equation*}
 and find that this has probability approximately 0.0392 + 0.0392 = 0.0784.  However, this P value is greater than our significance level \(\alpha = 0.05\) so we cannot reject the null hypothesis at the 5 percent significance level. However, if we had chosen initially to use a 10 percent significance level then we would have rejected the null hypothesis and accepted the alternate.%
 \par
-\hypertarget{p-1446}{}%
+\hypertarget{p-1456}{}%
 \begin{inlineexercise}{WebWork - two tailed test.}{exercise-102}%
-\hypertarget{p-1447}{}%
+\hypertarget{p-1457}{}%
 Two-tailed test for p.%
 \par\medskip
-\hypertarget{p-1448}{}%
+\hypertarget{p-1458}{}%
 An article in the Washington Post on March 16, 1993 stated that nearly 45 percent of  all Americans have brown eyes.  A random sample of \(n = 
 84\) C of I students found 31 with brown eyes.%
 \par
-\hypertarget{p-1449}{}%
+\hypertarget{p-1459}{}%
 We test%
 \par
-\hypertarget{p-1450}{}%
+\hypertarget{p-1460}{}%
 \(H_0: p = .45\)%
 \par
-\hypertarget{p-1451}{}%
+\hypertarget{p-1461}{}%
 \(H_a: p \neq .45\)%
 \par
-\hypertarget{p-1452}{}%
+\hypertarget{p-1462}{}%
 (a) What is the \(z\)-statistic for this test? \(\)  \fillin{10}%
 \par
-\hypertarget{p-1453}{}%
+\hypertarget{p-1463}{}%
 (b) What is the P-value of the test?  \(\)  \fillin{10}%
 \end{inlineexercise}
 %
 \par
-\hypertarget{p-1454}{}%
+\hypertarget{p-1464}{}%
 \begin{inlineexercise}{WebWork.}{exercise-103}%
-\hypertarget{p-1455}{}%
+\hypertarget{p-1465}{}%
 One-tailed test for p. Notice, in this case you will only compute z-score probability for one tail and not both tails.%
 \par\medskip
-\hypertarget{p-1456}{}%
+\hypertarget{p-1466}{}%
 A noted psychic was tested for ESP.  The psychic was presented with 180 cards face down and was asked to determine if the card was one of 5 symbols: a star, cross, circle, square, or three wavy lines.  The psychic was correct in 43 cases.  Let \(p\) represent the probability that the psychic correctly identifies the symbol on the card in a random trial. Assume the 180 trials can be treated as an SRS from the population of all guesses.%
 \par
-\hypertarget{p-1457}{}%
+\hypertarget{p-1467}{}%
 To see if there is evidence that the psychic is doing better than just guessing, we test%
 \par
-\hypertarget{p-1458}{}%
+\hypertarget{p-1468}{}%
 \(H_0: p = .2\)%
 \par
-\hypertarget{p-1459}{}%
+\hypertarget{p-1469}{}%
 \(H_a: p > .2\)%
 \par
-\hypertarget{p-1460}{}%
+\hypertarget{p-1470}{}%
 (a) What is the \(z\)-statistic for this test? \(\)  \fillin{10}%
 \par
-\hypertarget{p-1461}{}%
+\hypertarget{p-1471}{}%
 (b) What is the P-value of the test?  \(\)  \fillin{10}%
 \end{inlineexercise}
 %
@@ -10697,7 +10740,7 @@ To see if there is evidence that the psychic is doing better than just guessing,
 \typeout{************************************************}
 %
 \section[{Hypothesis Test for one mean}]{Hypothesis Test for one mean}\label{section-75}
-\hypertarget{p-1462}{}%
+\hypertarget{p-1472}{}%
 In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value \(\mu\):%
 \begin{equation*}
 H_0 : \mu = \mu_0 \\ H_a: \mu \neq \mu_0
@@ -10712,31 +10755,31 @@ H_0 : \mu \ge \mu_0 \\ H_a:\mu \lt \mu_0
 \end{equation*}
 Again, we choose only one of these three options and as before the first is called a "two-tailed" test and the last two are called "one-tailed" tests.  Note that some people will write all of these null hypothesis options using equality but the alternate hypothesis determines the number of tails.%
 \par
-\hypertarget{p-1463}{}%
+\hypertarget{p-1473}{}%
 Once again, if the test sample size is sufficiently large and the standard deviation \(\sigma\) of the underlying distribution is known, one can use the normal distribution to compute probabilities. If the test sample size is relatively small or if \(\sigma\) is not known (and therefore is approximated by the sample standard deviation s), then the t-distribution can be utilized to compute probabilities. We will only consider using the t-distribution to compute p-values.%
 \par
-\hypertarget{p-1464}{}%
+\hypertarget{p-1474}{}%
 The Standard Error \(\sigma_e\) is given by%
 \begin{equation*}
 \sigma_e = \frac{s}{\sqrt{n}}
 \end{equation*}
 where s is the standard deviation of the sample. For this presentation, we will assume that the actual population is relatively large relative to the sample size. In cases where this is not true, an adjustment (not presented here) will need to be made when computing \(\sigma_e\).%
 \par
-\hypertarget{p-1465}{}%
+\hypertarget{p-1475}{}%
 To determine the p-value for a given sample with sample mean \(\overline{x}\),%
 \begin{equation*}
 t = \frac{\overline{x}-\mu}{\frac{s}{\sqrt{n}}}
 \end{equation*}
 is a t-variable with n-1 degrees of freedom. Therefore, probabilities on t can be computed using the t-distribution.%
 \par
-\hypertarget{p-1466}{}%
+\hypertarget{p-1476}{}%
 Consider a Two-tailed Hypothesis test for \(\mu\) using%
 \begin{equation*}
 H_0 : \mu = 200 \\ H_a: \mu \neq 200
 \end{equation*}
 using a sample of size n = 49 and with a resulting mean of \(\overline{x} = 206\), a sample standard deviation of \(s = 15\), and a significance level of \(\alpha = 0.01\).%
 \par
-\hypertarget{p-1467}{}%
+\hypertarget{p-1477}{}%
 The standard error for this test is%
 \begin{equation*}
 \sigma_e = \frac{15}{\sqrt{49}} = \frac{15}{7}
@@ -10751,40 +10794,40 @@ P(t \gt 2.80) + P(t \lt 2.80) \approx 0.0037 + 0.0037 = 0.0074.
 \end{equation*}
 Since this p-value is less than our significance level \(\alpha = 0.01\) then you can reject the null hypothesis and accept the alternate.%
 \par
-\hypertarget{p-1468}{}%
+\hypertarget{p-1478}{}%
 \begin{inlineexercise}{}{exercise-104}%
-\hypertarget{p-1477}{}%
+\hypertarget{p-1487}{}%
 A random sample of 10 observations was drawn from a large normally distributed population. The data is below.%
 \par
-\hypertarget{p-1478}{}%
+\hypertarget{p-1488}{}%
 22 20 22 20 25 18 22 23 19 18%
 \par
-\hypertarget{p-1479}{}%
+\hypertarget{p-1489}{}%
 To determine if you can infer at the 4\% significance level that the population mean is not equal to 22, complete the steps below:%
 \par
-\hypertarget{p-1480}{}%
+\hypertarget{p-1490}{}%
 The value of the standardized test statistic:  \fillin{10}%
 \par
-\hypertarget{p-1481}{}%
+\hypertarget{p-1491}{}%
 Using interval notation with \(\infty\) written as ``infty'' and \(\cup\) written as ``U'' (capital u), determine each of the following:%
 \par
-\hypertarget{p-1482}{}%
+\hypertarget{p-1492}{}%
 The rejection region for the standardized test statistic:  \fillin{30}%
 \par
-\hypertarget{p-1483}{}%
+\hypertarget{p-1493}{}%
 The p-value is  \fillin{10}%
 \par
-\hypertarget{p-1484}{}%
+\hypertarget{p-1494}{}%
 Your decision for the hypothesis test therefore would be to not reject the null hypothesis \(H_0\text{.}\)%
 \end{inlineexercise}
 %
 \par
-\hypertarget{p-1485}{}%
+\hypertarget{p-1495}{}%
 This is a repeat of the previous exercise but using the OPL \begin{inlineexercise}{WebWorK - two tailed test.}{exercise-105}%
-\hypertarget{p-1486}{}%
+\hypertarget{p-1496}{}%
 A random sample of 10 observations was drawn from a large normally distributed population.  The data is below.%
 \par
-\hypertarget{p-1487}{}%
+\hypertarget{p-1497}{}%
 %
 \begin{equation*}
 \begin{array}{ccccccccccc} 
@@ -10793,37 +10836,37 @@ A random sample of 10 observations was drawn from a large normally distributed p
 \end{equation*}
 %
 \par
-\hypertarget{p-1488}{}%
+\hypertarget{p-1498}{}%
 Test to determine if we can infer at the 2\% significance level that the population mean is not equal to 18, filling in the requested information below.%
 \par
-\hypertarget{p-1489}{}%
+\hypertarget{p-1499}{}%
 A. The value of the standardized test statistic:  \fillin{25}%
 \par
-\hypertarget{p-1490}{}%
+\hypertarget{p-1500}{}%
 \emph{Note:} For the next part, your answer should use interval notation.  An answer of the form \((-\infty, a)\) is expressed (-infty, a), an answer of the form \((b, \infty)\) is expressed (b, infty), and an answer of the form \((-\infty, a) \cup (b, \infty)\) is expressed (-infty, a)U(b, infty).%
 \par
-\hypertarget{p-1491}{}%
+\hypertarget{p-1501}{}%
 B. The rejection region for the standardized test statistic:  \fillin{40}%
 \par
-\hypertarget{p-1492}{}%
+\hypertarget{p-1502}{}%
 C. The p-value is  \fillin{25}%
 \par
-\hypertarget{p-1493}{}%
+\hypertarget{p-1503}{}%
 D. Your decision for the hypothesis test:%
 \par
-\hypertarget{p-1494}{}%
+\hypertarget{p-1504}{}%
 \par
 \begin{itemize}[label=$\odot$,leftmargin=3em,]
-\item{}\hypertarget{p-1495}{}%
+\item{}\hypertarget{p-1505}{}%
 Do Not Reject \(H_0\).%
 
-\item{}\hypertarget{p-1496}{}%
+\item{}\hypertarget{p-1506}{}%
 Reject \(H_0\).%
 
-\item{}\hypertarget{p-1497}{}%
+\item{}\hypertarget{p-1507}{}%
 Do Not Reject \(H_1\).%
 
-\item{}\hypertarget{p-1498}{}%
+\item{}\hypertarget{p-1508}{}%
 Reject \(H_1\).%
 
 \end{itemize}
@@ -10831,17 +10874,17 @@ Reject \(H_1\).%
 \end{inlineexercise}
 %
 \par
-\hypertarget{p-1499}{}%
+\hypertarget{p-1509}{}%
 Consider One-tailed Hypothesis test for \(\mu\) using an interesting application:%
 \par
-\hypertarget{p-1500}{}%
+\hypertarget{p-1510}{}%
 Suppose that a manufacturer bottling a delicious beverage and the label indicates that the bottle contains 16 fluid ounces. Since providing the customer too little product might cause a significant negative reaction relative to the modest additional cost of providing a little too much, consider the following hypothesis test:%
 \begin{equation*}
 H_0 : \mu = 16 \\ H_a: \mu \gt 200.
 \end{equation*}
 To test this hypothesis at significance level \(\alpha = 0.05\), you randomly pull out 20 bottles from the production line and accurately measure the amount of produce in each bottle. If the resulting average of these measurements is \(\overline{x} = 16.05\) ounces with a standard deviation of \(s = 0.08\) ounces, determine if you can safely make it known that more product is actually delivered in general to each consumer.%
 \par
-\hypertarget{p-1501}{}%
+\hypertarget{p-1511}{}%
 The standard error for this test is%
 \begin{equation*}
 \sigma_e = \frac{0.08}{\sqrt{20}} \approx 0.01789
@@ -10856,27 +10899,27 @@ P(t \gt 2.795) \approx 0.0058.
 \end{equation*}
 Since this p-value is less than our significance level \(\alpha = 0.05\) (by a lot) then you can reject the null hypothesis and accept the alternate. It is safe therefore to say that customers can expect at least 16 ounces! However, note that some folks will still be stiffed since the standard deviation of 0.08 certainly means that some bottles have less than 16.05-0.08 ounces of beverage.%
 \par
-\hypertarget{p-1502}{}%
+\hypertarget{p-1512}{}%
 \begin{inlineexercise}{WebWorK - one tailed test.}{exercise-106}%
-\hypertarget{p-1503}{}%
+\hypertarget{p-1513}{}%
 Lois thinks that people living in a rural environment have a healthier lifestyle than other people.  She believes the average lifespan in the USA is 77 years. A random sample of 15 obituaries from newspapers from rural towns in Idaho give \(\bar{x} = 78.11\) and \(s = 0.68\).  Does this sample provide evidence that people living in rural Idaho communities live longer than 77 years?%
 \par
-\hypertarget{p-1504}{}%
+\hypertarget{p-1514}{}%
 (a) State the null and alternative hypotheses:  (Type "mu" for the symbol \(\mu\) , e.g.  \emph{mu \(>\)1} for the mean is greater than 1,  \emph{mu \(\lt \) 1} for the mean is less than 1, \emph{mu not = 1} for the mean is not equal to 1)%
 \par
-\hypertarget{p-1505}{}%
+\hypertarget{p-1515}{}%
 \(H_0\) :  \fillin{15}%
 \par
-\hypertarget{p-1506}{}%
+\hypertarget{p-1516}{}%
 \(H_a\) :  \fillin{15}%
 \par
-\hypertarget{p-1507}{}%
+\hypertarget{p-1517}{}%
 (b) Find the test statistic, t =   \fillin{10}%
 \par
-\hypertarget{p-1508}{}%
+\hypertarget{p-1518}{}%
 (c) Answer the question: Does this sample provide evidence that people living in rural Idaho communities live longer than 77 years? (Use a 10% level of significance)%
 \par
-\hypertarget{p-1509}{}%
+\hypertarget{p-1519}{}%
 (Type: Yes or No)  \fillin{10}%
 \end{inlineexercise}
 %
@@ -10887,7 +10930,7 @@ Lois thinks that people living in a rural environment have a healthier lifestyle
 \typeout{************************************************}
 %
 \section[{Hypothesis Test for one variance}]{Hypothesis Test for one variance}\label{section-76}
-\hypertarget{p-1510}{}%
+\hypertarget{p-1520}{}%
 Proceeding in a similar manner, we can also perform hypothesis testing on variances using the \(\chi^2\)-distribution to determine probabilities.%
 \begin{equation*}
 H_0 : \sigma^2 = \sigma_0^2  \\ H_a: \sigma^2 \neq \sigma_0^2
@@ -10918,30 +10961,30 @@ T \lt \chi_{\alpha,n-1}^2.
 \end{equation*}
 Technically, for the two-tailed test you could pick T-values so that the total probability sums to \(\alpha\) in any fashion but generally this probability is split evenly between the two tails as noted above.%
 \par
-\hypertarget{p-1511}{}%
+\hypertarget{p-1521}{}%
 \begin{inlineexercise}{WebWorK.}{exercise-107}%
-\hypertarget{p-1512}{}%
+\hypertarget{p-1522}{}%
 Use a \(\alpha = 0.01\) significance level to test the claim that \(\sigma = 15\) if the sample statistics include \(n = 23,\) \(\overline{x} = 102,\) and \(s = 19.\)%
 \par
-\hypertarget{p-1513}{}%
+\hypertarget{p-1523}{}%
 The test statistic is  \fillin{15}%
 \par
-\hypertarget{p-1514}{}%
+\hypertarget{p-1524}{}%
 The smaller critical number is  \fillin{15}%
 \par
-\hypertarget{p-1515}{}%
+\hypertarget{p-1525}{}%
 The bigger critical number is  \fillin{15}%
 \par
-\hypertarget{p-1516}{}%
+\hypertarget{p-1526}{}%
 What is your conclusion?%
 \par
-\hypertarget{p-1517}{}%
+\hypertarget{p-1527}{}%
 \par
 \begin{itemize}[label=$\odot$,leftmargin=3em,]
-\item{}\hypertarget{p-1518}{}%
+\item{}\hypertarget{p-1528}{}%
 There is not sufficient evidence to warrant the rejection of the claim that the population standard deviation is equal to 15%
 
-\item{}\hypertarget{p-1519}{}%
+\item{}\hypertarget{p-1529}{}%
 There is sufficient evidence to warrant the rejection of the claim that the population standard deviation is equal to 15%
 
 \end{itemize}
@@ -10955,7 +10998,7 @@ There is sufficient evidence to warrant the rejection of the claim that the popu
 \typeout{************************************************}
 %
 \section[{Summary}]{Summary}\label{section-77}
-\hypertarget{p-1520}{}%
+\hypertarget{p-1530}{}%
 TBA%
 %
 %
@@ -10964,7 +11007,7 @@ TBA%
 \typeout{************************************************}
 %
 \section[{Exercises}]{Exercises}\label{section-78}
-\hypertarget{p-1521}{}%
+\hypertarget{p-1531}{}%
 TBA%
 %
 %
@@ -10973,7 +11016,7 @@ TBA%
 \typeout{************************************************}
 %
 \chapter[{Review of Calculus}]{Review of Calculus}\label{PowerSeriesReview}
-\hypertarget{p-1522}{}%
+\hypertarget{p-1532}{}%
 This chapter is a review of power series results from Calculus.%
 %
 %
@@ -10982,19 +11025,19 @@ This chapter is a review of power series results from Calculus.%
 \typeout{************************************************}
 %
 \section[{Geometric Series}]{Geometric Series}\label{section-79}
-\hypertarget{p-1523}{}%
+\hypertarget{p-1533}{}%
 Knowledge of the use of power series is very important when dealing with both probability functions.%
 %
 \begin{gather*}
 S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}
 \end{gather*}
-\hypertarget{p-1524}{}%
+\hypertarget{p-1534}{}%
 as is its extension know as the negative binomial series \(( n \in \mathbb{N} )\).%
 %
 \begin{gather*}
 NB = \sum_{k=0}^{\infty} (-1)^k \binom{-n + k - 1}{k} {x^k b^{-n-k}} = \frac{1}{(x+b)^n}
 \end{gather*}
-\hypertarget{p-1525}{}%
+\hypertarget{p-1535}{}%
 In this section, we review this series, develop its properties, and explore some of its extensions.%
 %
 %
@@ -11005,8 +11048,8 @@ In this section, we review this series, develop its properties, and explore some
 \subsection[{Geometric Series}]{Geometric Series}\label{subsection-7}
 \begin{theorem}{}{}{theorem-GeomSeries}%
 \(S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}\)\end{theorem}
-\begin{proof}\hypertarget{proof-76}{}
-\hypertarget{p-1526}{}%
+\begin{proof}\hypertarget{proof-77}{}
+\hypertarget{p-1536}{}%
 Consider the partial sum%
 %
 \begin{gather*}
@@ -11014,14 +11057,14 @@ S_n = \sum_{k=0}^{n} {x^k} = 1 + x + x^2 + ... + x^n \\
 (1-x)S_n = S_n - x S_n = 1 + x + x^2 + ... + x^n - (x + x^2 + ... + x^n + x^{n+1}) = 1 - x^{n+1} \\
 \Rightarrow S_n = \frac{1-x^{n+1}}{1-x} 
 \end{gather*}
-\hypertarget{p-1527}{}%
+\hypertarget{p-1537}{}%
 and so as \(n \rightarrow \infty \),%
 %
 \begin{gather*}
 S_n \rightarrow S = \frac{1}{1-x} \qedhere
 \end{gather*}
 \end{proof}
-\hypertarget{p-1528}{}%
+\hypertarget{p-1538}{}%
 The interactive activity below shows how well the partial sums approximate \(\frac{1}{1-x}\) as the number of terms increases.%
 \begin{sageinput}
 var('x,n,k')
@@ -11042,9 +11085,9 @@ def _(n = slider(2,20,1,2)):
 \typeout{************************************************}
 %
 \subsection[{Alternate Forms for the Geometric Series}]{Alternate Forms for the Geometric Series}\label{subsection-8}
-\begin{theorem}{Generalized Geometric Series.}{}{theorem-78}%
+\begin{theorem}{Generalized Geometric Series.}{}{theorem-79}%
 \(k \in \mathbb{N}, \sum_{k=M}^{\infty} {x^k} = \frac{x^M}{1-x}\)\end{theorem}
-\begin{proof}\hypertarget{proof-77}{}
+\begin{proof}\hypertarget{proof-78}{}
 %
 \begin{align*}
 \sum_{k=M}^{\infty} {x^k} & = x^M \sum_{k=0}^{\infty} {x^k}\\
@@ -11053,10 +11096,10 @@ def _(n = slider(2,20,1,2)):
 \end{align*}
 \end{proof}
 \begin{example}{Integrating and Differentiating to get new Power Series.}{example-61}%
-\hypertarget{p-1529}{}%
+\hypertarget{p-1539}{}%
 The geometric power series is a nice function which is relatively easily differentiated and integrated. In doing so, one can obtain new power series which might also be very useful in their own right.  Here we develop a few which are of special interest.%
 \par
-\hypertarget{p-1530}{}%
+\hypertarget{p-1540}{}%
 Let \(f(x) = \sum_{k=0}^\infty x^k = \frac{1}{1-x}\).  Then,%
 %
 \begin{gather*}
@@ -11072,7 +11115,7 @@ f^{(n)}(x) = \sum_{k=n}^{\infty} {k(k-1)...(k-n+1)x^{k-n}} = \frac{n!}{(1-x)^{n+
 \sum_{k=0}^{\infty} {a^k x^k} & = \sum_{k=0}^{\infty} {(ax)^k}\\
 & = \frac{1}{1-ax}, |x| \lt \frac{1}{a}
 \end{align*}
-\hypertarget{p-1531}{}%
+\hypertarget{p-1541}{}%
 or perhaps%
 %
 \begin{gather*}
@@ -11080,14 +11123,14 @@ or perhaps%
 \end{gather*}
 \end{example}
 \begin{example}{Application: Converting repeating decimals to fractional form.}{example-63}%
-\hypertarget{p-1532}{}%
+\hypertarget{p-1542}{}%
 Consider this example:%
 %
 \begin{align*}
 2.48484848... & = 2 + 0.48 + 0.0048 + 0.000048 + ...\\
 &  = 2 + 0.48(1 + 0.01 + 0.0001 + ... ) = 2 + 0.48 \sum_{k=0}^\infty (0.01)^k
 \end{align*}
-\hypertarget{p-1533}{}%
+\hypertarget{p-1543}{}%
 Therefore, applying the Geometric Series%
 %
 \begin{align*}
@@ -11096,7 +11139,7 @@ Therefore, applying the Geometric Series%
 \end{align*}
 \end{example}
 \begin{example}{Playing around with repeating decimals.}{example-64}%
-\hypertarget{p-1534}{}%
+\hypertarget{p-1544}{}%
 Certainly most students would agree that \(0.333333... = \frac{1}{3} \). So, what about \(0.999999...\)? Simply follow the pattern above%
 %
 \begin{align*}
@@ -11111,7 +11154,7 @@ Certainly most students would agree that \(0.333333... = \frac{1}{3} \). So, wha
 \typeout{************************************************}
 %
 \section[{Binomial SumsBinomial SeriesTrinomial Series}]{Binomial SumsBinomial SeriesTrinomial Series}\label{section-80}
-\hypertarget{p-1535}{}%
+\hypertarget{p-1545}{}%
 The binomial series is also foundational. It is technically not a series since the sum_if finite but we won’t bother with that for now. It is given by%
 %
 \begin{gather*}
@@ -11119,14 +11162,14 @@ B = \sum_{k=0}^{n} {\binom{n}{k} a^k b^{n-k}}
 \end{gather*}
 \begin{theorem}{Binomial Theorem.}{}{theorem-Binomial}%
 \(n \in \mathbb{N} \)\(\displaystyle {(a+b)^n = \sum_{k=0}^{n} {\binom{n}{k} a^k b^{n-k}}}\)\end{theorem}
-\begin{proof}\hypertarget{proof-78}{}
-\hypertarget{p-1536}{}%
+\begin{proof}\hypertarget{proof-79}{}
+\hypertarget{p-1546}{}%
 By induction:%
 \par
-\hypertarget{p-1537}{}%
+\hypertarget{p-1547}{}%
 Basic Step: n = 1 is trivial%
 \par
-\hypertarget{p-1538}{}%
+\hypertarget{p-1548}{}%
 Inductive Step:  Assume the statement is true as given for some \(n \ge 1\). Show \((a+b)^{n+1} = \sum_{k=0}^{n+1} {\binom{n+1}{k} a^k b^{n+1-k}}\)%
 %
 \begin{align*}
@@ -11140,28 +11183,28 @@ Inductive Step:  Assume the statement is true as given for some \(n \ge 1\). Sho
 & = \sum_{k=0}^{n+1} \binom{n+1 }{k} a^k b^{n+1-k}\qedhere
 \end{align*}
 \end{proof}
-\hypertarget{p-1540}{}%
+\hypertarget{p-1550}{}%
 Consider \(B(a,b) = \sum_{k=0}^{n} {\binom{n}{k} a^k b^{n-k}}\). This finite sum_is known as the Binomial Series.%
 \par
-\hypertarget{p-1541}{}%
+\hypertarget{p-1551}{}%
 Show that \(B(a,b) = (a+b)^n\)%
 \par
-\hypertarget{p-1542}{}%
+\hypertarget{p-1552}{}%
 Show that \(B(1,1) = 2^n\)%
 \par
-\hypertarget{p-1543}{}%
+\hypertarget{p-1553}{}%
 Show that \(B(-1,1) = 0\)%
 \par
-\hypertarget{p-1544}{}%
+\hypertarget{p-1554}{}%
 Show that \(B(p,1-p) = 1\)%
 \par
-\hypertarget{p-1545}{}%
+\hypertarget{p-1555}{}%
 Easily, \(B(x,1) = \sum_{k=0}^{n} {\binom{n}{k} a^k}\)%
 %
 \begin{gather*}
 (a+b+c)^n = \sum_{k_1+k_2+k_3=n}^{} {\binom{n}{k_1,k_2,k_3} a^{k_1} b^{k_2} c^{k_3}} 
 \end{gather*}
-\hypertarget{p-1546}{}%
+\hypertarget{p-1556}{}%
 where \(\binom{n}{k_1,k_2,k_3} = \frac{n!}{k_1!k_2!k_3!}\). This can be generalized to any number of terms to give what is know as a multinomial series.%
 %
 %
@@ -11170,10 +11213,10 @@ where \(\binom{n}{k_1,k_2,k_3} = \frac{n!}{k_1!k_2!k_3!}\). This can be generali
 \typeout{************************************************}
 %
 \section[{Negative Binomial Series}]{Negative Binomial Series}\label{section-81}
-\hypertarget{p-1547}{}%
+\hypertarget{p-1557}{}%
 \((a+b)^{-n} = \sum_{k=0}^{\infty} {\binom{-n}{k} a^k b^{-n-k}}\)%
-\begin{theorem}{Alternate Form for Negative Binomial Series.}{}{theorem-80}%
-\hypertarget{p-1548}{}%
+\begin{theorem}{Alternate Form for Negative Binomial Series.}{}{theorem-81}%
+\hypertarget{p-1558}{}%
 \((a+b)^{-n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n+k-1}{k} a^k b^{-n-k}}\)%
 \end{theorem}
 \end{document}

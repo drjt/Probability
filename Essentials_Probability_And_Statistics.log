@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  14 NOV 2018 15:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 NOV 2018 11:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3649,39 +3649,39 @@ nation with the same identifier (name{cthm.2}) has been already used, duplicate
 <to be read again> 
                    \relax 
 l.8036 ...istribution and Plotting.}{}{theorem-54}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{cthm.3}) has been already used, duplicate
- ignored
-<to be read again> 
-                   \relax 
-l.8068 ...on Probability Function.}{definition-35}
                                                   % [134]pdfTeX warning (ext4):
- destination with the same identifier (name{cthm.4}) has been already used, dup
+ destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.8079 ...Exponential Distribution.}{}{theorem-55}
+l.8098 ...on Probability Function.}{definition-35}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.4}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.8109 ...Exponential Distribution.}{}{theorem-55}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8100 ...{Router Requests Revisited.}{example-43}
+l.8130 ...{Router Requests Revisited.}{example-43}
+                                                  % [135]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.6}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.8148 ...n{inlineexercise}{WebWork.}{exercise-74}
                                                   %pdfTeX warning (ext4): desti
-nation with the same identifier (name{cthm.6}) has been already used, duplicate
+nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.8118 ...n{inlineexercise}{WebWork.}{exercise-74}
-                                                  % [135]pdfTeX warning (ext4):
- destination with the same identifier (name{cthm.7}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
 l.8188 ...inuous memoryless model..}{}{theorem-56}
-                                                  % [136]pdfTeX warning (ext4):
- destination with the same identifier (name{cthm.8}) has been already used, dup
-licate ignored
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.8}) has been already used, duplicate
+ ignored
 <to be read again> 
                    \relax 
 l.8211 \begin{inlineexercise}{}{exercise-75}
@@ -3690,6 +3690,7 @@ Overfull \hbox (6.94032pt too wide) detected at line 8268
 [][]
  []
 
+[136]
 ************************************************
 Section 8.4 Gamma Distribution
 ************************************************
@@ -5169,124 +5170,128 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.9873 ...fidence Intervals for p.}{definition-41}
+l.9875 ...fidence Intervals for p.}{definition-41}
                                                   % [166] [167]pdfTeX warning (
 ext4): destination with the same identifier (name{cthm.2}) has been already use
 d, duplicate ignored
 <to be read again> 
                    \relax 
-l.9969 ...onfidence Interval for p.}{}{theorem-73}
+l.9973 ...onfidence Interval for p.}{}{theorem-73}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.9997 ...nce Interval methods for p.}{example-54}
+l.10004 ...ce Interval methods for p.}{example-54}
                                                   % [168]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.4}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.10053 ...{inlineexercise}{WebWork.}{exercise-91}
+l.10060 ...{inlineexercise}{WebWork.}{exercise-91}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10081 ...le Size for proportions.}{}{theorem-74}
-                                                  %
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [169]pdfTeX warning (ext4): destination with the same identifier (name{cthm.6}
-) has been already used, duplicate ignored
+l.10090 ... a preliminary estimate.}{}{theorem-74}
+                                                  % [169]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.6}) has been already used, dup
+licate ignored
 <to be read again> 
                    \relax 
-l.10089 ...e Size for one proportion.}{example-55}
+l.10113 ...no preliminary estimate.}{}{theorem-75}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10098 ...{inlineexercise}{WebWork.}{exercise-92}
+l.10126 ...e Size for one proportion.}{example-55}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.8}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.10135 ...{inlineexercise}{WebWork.}{exercise-92}
                                                   %
 ************************************************
 Section 10.5 Interval Estimates - Confidence Interval for \(\mu \)
 ************************************************
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 10118.
+(hyperref)                removing `math shift' on input line 10155.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 10118.
+(hyperref)                removing `\mu' on input line 10155.
 
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10121 ... Interval for One Mean.}{definition-42}
+l.10158 ... Interval for One Mean.}{definition-42}
                                                   % [170]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.2}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.10161 ...{inlineexercise}{WebWork.}{exercise-93}
+l.10198 ...{inlineexercise}{WebWork.}{exercise-93}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10192 ...e}{WebWork with t-scores.}{exercise-94}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{cthm.4}) has been already used, duplicate
- ignored
+l.10229 ...e}{WebWork with t-scores.}{exercise-94}
+                                                  % [171]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.4}) has been already used, dup
+licate ignored
 <to be read again> 
                    \relax 
-l.10215 ...) given Margin of Error.}{}{theorem-75}
+l.10252 ...) given Margin of Error.}{}{theorem-76}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10229 ... Sample Size for one Mean.}{example-56}
-                                                  % [171]
+l.10266 ... Sample Size for one Mean.}{example-56}
+                                                  %
 ************************************************
 Section 10.6 Interval Estimates - Confidence Interval for \(\sigma ^2\)
 ************************************************
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 10243.
+(hyperref)                removing `math shift' on input line 10280.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\sigma' on input line 10243.
+(hyperref)                removing `\sigma' on input line 10280.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 10243.
+(hyperref)                removing `superscript' on input line 10280.
 
 pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10246 ...ariance and \(\chi ^2\).}{}{theorem-76}
-                                                  % [172]
-Overfull \hbox (40.50357pt too wide) in paragraph at lines 10314--10315
+l.10283 ...ariance and \(\chi ^2\).}{}{theorem-77}
+                                                  % [172] [173]
+Overfull \hbox (40.50357pt too wide) in paragraph at lines 10351--10352
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (51.30368pt too wide) in paragraph at lines 10317--10318
+Overfull \hbox (51.30368pt too wide) in paragraph at lines 10354--10355
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[173]
-Overfull \hbox (18.90335pt too wide) in paragraph at lines 10341--10342
+
+Overfull \hbox (18.90335pt too wide) in paragraph at lines 10378--10379
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (29.70346pt too wide) in paragraph at lines 10344--10345
+Overfull \hbox (29.70346pt too wide) in paragraph at lines 10381--10382
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
@@ -5294,38 +5299,38 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10347 ...\sigma^2\) and \(\sigma\).}{example-57}
+l.10385 ...\sigma^2\) and \(\sigma\).}{example-57}
                                                   % [174]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.3}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.10388 ...d deviation with large n..}{example-58}
+l.10431 ...d deviation with large n..}{example-58}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10390 ...{inlineexercise}{WebWork.}{exercise-95}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{cthm.5}) has been already used, duplicate
- ignored
+l.10433 ...{inlineexercise}{WebWork.}{exercise-95}
+                                                  % [175]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.5}) has been already used, dup
+licate ignored
 <to be read again> 
                    \relax 
-l.10437 ...ntervals for \(\sigma^2\).}{example-59}
+l.10480 ...ntervals for \(\sigma^2\).}{example-59}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10447 ...{inlineexercise}{WebWork.}{exercise-96}
+l.10490 ...{inlineexercise}{WebWork.}{exercise-96}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.7}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10454 ... intervals for \(\sigma\).}{example-60}
-                                                  % [175]
+l.10497 ... intervals for \(\sigma\).}{example-60}
+                                                  %
 ************************************************
 Section 10.7 Exercises
 ************************************************
@@ -5333,36 +5338,38 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10467 ...onfidence interval for p.}{exercise-97}
+l.10510 ...onfidence interval for p.}{exercise-97}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.2}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10482 ...onfidence interval for p.}{exercise-98}
+l.10525 ...onfidence interval for p.}{exercise-98}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10493 ...ise}{- Voting projection.}{exercise-99}
+l.10536 ...ise}{- Voting projection.}{exercise-99}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10500 ...e interval for the mean.}{exercise-100}
+l.10543 ...e interval for the mean.}{exercise-100}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.5}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.10515 ...nce Interval Experiment.}{exercise-101}
+l.10558 ...nce Interval Experiment.}{exercise-101}
                                                   %
 ************************************************
 Chapter 11 Hypothesis Testing
 ************************************************
-[176]
+[176] [177] [178
+
+]
 Chapter 11.
 ************************************************
 Section 11.1 Introduction
@@ -5370,53 +5377,51 @@ Section 11.1 Introduction
 ************************************************
 Section 11.2 Hypotheses and Errors
 ************************************************
-[177
-
-]
+[179]
 ************************************************
 Section 11.3 Hypothesis Test for one proportion
-************************************************
-[178]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1})
- has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.10644 ...bWork - two tailed test.}{exercise-102}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{cthm.2}) has been already used, duplicate
- ignored
-<to be read again> 
-                   \relax 
-l.10670 ...inlineexercise}{WebWork.}{exercise-103}
-                                                  % [179]
-************************************************
-Section 11.4 Hypothesis Test for one mean
 ************************************************
 [180]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10755 \begin{inlineexercise}{}{exercise-104}
-                                              %pdfTeX warning (ext4): destinati
-on with the same identifier (name{cthm.2}) has been already used, duplicate ign
-ored
+l.10687 ...bWork - two tailed test.}{exercise-102}
+                                                  %pdfTeX warning (ext4): desti
+nation with the same identifier (name{cthm.2}) has been already used, duplicate
+ ignored
 <to be read again> 
                    \relax 
-l.10783 ...bWorK - two tailed test.}{exercise-105}
-                                                  % [181]pdfTeX warning (ext4):
- destination with the same identifier (name{cthm.3}) has been already used, dup
-licate ignored
-<to be read again> 
-                   \relax 
-l.10860 ...bWorK - one tailed test.}{exercise-106}
-                                                  %
+l.10713 ...inlineexercise}{WebWork.}{exercise-103}
+                                                  % [181]
 ************************************************
-Section 11.5 Hypothesis Test for one variance
+Section 11.4 Hypothesis Test for one mean
 ************************************************
 [182]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.10922 ...inlineexercise}{WebWorK.}{exercise-107}
+l.10798 \begin{inlineexercise}{}{exercise-104}
+                                              %pdfTeX warning (ext4): destinati
+on with the same identifier (name{cthm.2}) has been already used, duplicate ign
+ored
+<to be read again> 
+                   \relax 
+l.10826 ...bWorK - two tailed test.}{exercise-105}
+                                                  % [183]pdfTeX warning (ext4):
+ destination with the same identifier (name{cthm.3}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.10903 ...bWorK - one tailed test.}{exercise-106}
+                                                  %
+************************************************
+Section 11.5 Hypothesis Test for one variance
+************************************************
+[184]pdfTeX warning (ext4): destination with the same identifier (name{cthm.1})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.10965 ...inlineexercise}{WebWorK.}{exercise-107}
                                                   %
 ************************************************
 Section 11.6 Summary
@@ -5427,7 +5432,7 @@ Section 11.7 Exercises
 ************************************************
 Chapter 12 Review of Calculus
 ************************************************
-[183] [184
+[185] [186
 
 ]
 Chapter 12.
@@ -5441,13 +5446,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.11006 \begin{theorem}{}{}{theorem-GeomSeries}
+l.11049 \begin{theorem}{}{}{theorem-GeomSeries}
                                                %
-Overfull \hbox (36.76187pt too wide) detected at line 11016
+Overfull \hbox (36.76187pt too wide) detected at line 11059
 []
  []
 
-[185]
+[187]
 ************************************************
 Subsection 12.1.2 Alternate Forms for the Geometric Series
 ************************************************
@@ -5455,50 +5460,50 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.11045 ...alized Geometric Series.}{}{theorem-78}
+l.11088 ...alized Geometric Series.}{}{theorem-79}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.3}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.11055 ...g to get new Power Series.}{example-61}
+l.11098 ...g to get new Power Series.}{example-61}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.4}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.11069 ...le}{Playing with the base.}{example-62}
-                                                  % [186]pdfTeX warning (ext4):
+l.11112 ...le}{Playing with the base.}{example-62}
+                                                  % [188]pdfTeX warning (ext4):
  destination with the same identifier (name{cthm.5}) has been already used, dup
 licate ignored
 <to be read again> 
                    \relax 
-l.11082 ...cimals to fractional form.}{example-63}
+l.11125 ...cimals to fractional form.}{example-63}
                                                   %pdfTeX warning (ext4): desti
 nation with the same identifier (name{cthm.6}) has been already used, duplicate
  ignored
 <to be read again> 
                    \relax 
-l.11098 ...d with repeating decimals.}{example-64}
+l.11141 ...d with repeating decimals.}{example-64}
                                                   %
 ************************************************
 Section 12.2 Binomial SumsBinomial SeriesTrinomial Series
 ************************************************
 
-Overfull \hbox (4.85043pt too wide) in paragraph at lines 11113--11113
+Overfull \hbox (4.85043pt too wide) in paragraph at lines 11156--11156
 []\T1/cmr/bx/n/14.4 Binomial Sums-Bi-no-mial Se-riesTri-no-mial Se-
  []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.11115 ...technically not a series since the sum_
+l.11158 ...technically not a series since the sum_
                                                   if finite but we wonâ€™t b...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 11115
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 11158
 .
 
 
@@ -5508,7 +5513,7 @@ See the amsmath package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11117 \begin{gather*}
+l.11160 \begin{gather*}
                        
 You've lost some text.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5517,12 +5522,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.11120 ...{Binomial Theorem.}{}{theorem-Binomial}
+l.11163 ...{Binomial Theorem.}{}{theorem-Binomial}
                                                   %
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -5530,7 +5535,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing \endgroup inserted.
 <inserted text> 
                 \endgroup 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -5541,7 +5546,7 @@ my insertion and my current dilemma will both disappear.
 ! Undefined control sequence.
 <argument> \tcb@h@padding +\tcb@h@padtitle 
                                            +\tcb@h@upper +\tcb@h@segment +\t...
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5552,7 +5557,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...ding +\tcb@h@padtitle +\tcb@h@upper 
                                                   +\tcb@h@segment +\tcb@h@lo...
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5563,7 +5568,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...title +\tcb@h@upper +\tcb@h@segment 
                                                   +\tcb@h@lower 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5574,7 +5579,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...upper +\tcb@h@segment +\tcb@h@lower 
                                                   
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5585,7 +5590,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5594,7 +5599,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -5606,7 +5611,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 \tcb@set@normal@unbroken@beforeafter ...b@nobreak 
                                                   {\iftcb@ignorenobreak \els...
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5617,7 +5622,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@h@padtitle 
                            +\kvtcb@top@rule +\kvtcb@bottom@rule +\kvtcb@boxs...
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5628,7 +5633,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...cb@top +\kvtcb@bottom +\tcb@h@upper 
                                                   
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5639,7 +5644,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5648,7 +5653,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -5660,7 +5665,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 <argument> ...\kvtcb@bottom@rule -\tcb@h@padtitle 
                                                   
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5671,7 +5676,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5680,7 +5685,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -5692,7 +5697,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 <argument> \the \dimexpr \tcb@width 
                                     +\kvtcb@bbright \relax 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5703,7 +5708,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@width 
                       
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5714,7 +5719,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \relax 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5723,7 +5728,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \relax 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -5735,7 +5740,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5747,7 +5752,7 @@ Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5758,30 +5763,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no = in font nullfont!
-! Undefined control sequence.
-<argument> \tcb@outer@arc 
-                          
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \tcb@outer@arc 
-                          
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5793,7 +5775,7 @@ Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5804,7 +5786,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5816,7 +5798,30 @@ Missing character: There is no = in font nullfont!
 ! Undefined control sequence.
 <argument> \tcb@outer@arc 
                           
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no = in font nullfont!
+! Undefined control sequence.
+<argument> \tcb@outer@arc 
+                          
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5827,7 +5832,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \tcb@width 
                       -\kvtcb@right@rule 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5838,7 +5843,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \tcb@footnote@cnt@i 
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5851,7 +5856,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -5860,15 +5865,15 @@ or  <return>  to continue without it.
 ! Extra \endgroup.
 <recently read> \endgroup 
                           
-l.11121 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
+l.11164 ...inom{n}{k} a^k b^{n-k}}}\)\end{theorem}
                                                   
 Things are pretty mixed up, but I think the worst is over.
 
-[187]
+[189]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.11144 ...{n}{k} a^k b^{n-k}}\). This finite sum_
+l.11187 ...{n}{k} a^k b^{n-k}}\). This finite sum_
                                                   is known as the Binomial S...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -5876,13 +5881,13 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.11145 \par
+l.11188 \par
             
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (23.28604pt too wide) in paragraph at lines 11144--11145
+Overfull \hbox (23.28604pt too wide) in paragraph at lines 11187--11188
 []\T1/cmr/m/n/10 Consider $\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 
 a; b\OT1/cmr/m/n/10 ) = [][] []$\T1/cmr/m/n/10 . This fi-nite sum$[]\OML/cmm/m/
 it/10 sknownastheBinomialSeries:$ 
@@ -5895,12 +5900,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{cthm.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.11175 ...egative Binomial Series.}{}{theorem-80}
+l.11218 ...egative Binomial Series.}{}{theorem-81}
                                                   %
 ! You can't use `\prevdepth' in horizontal mode.
 <recently read> \prevdepth 
                            
-l.11178 \end{theorem}
+l.11221 \end{theorem}
                      
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -5910,7 +5915,7 @@ return to the right one by typing `I}' or `I$' or `I\par'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.11178 \end{theorem}
+l.11221 \end{theorem}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -5918,7 +5923,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing number, treated as zero.
 <to be read again> 
                    \noindent 
-l.11178 \end{theorem}
+l.11221 \end{theorem}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5927,7 +5932,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    \noindent 
-l.11178 \end{theorem}
+l.11221 \end{theorem}
                      
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -5939,19 +5944,19 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.11178 \end{theorem}
+l.11221 \end{theorem}
                      
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 Missing character: There is no è in font cmex10!
-[188]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 11179.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 11179.
+[190]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 11222.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 11222.
  (./Essentials_Probability_And_Statistics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 11179.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 11222.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 11179
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 11222
 .
 Package rerunfilecheck Info: File `Essentials_Probability_And_Statistics.out' h
 as not changed.
@@ -5965,10 +5970,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 40164 strings out of 492649
- 754481 string characters out of 6129622
- 903867 words of memory out of 5000000
- 39839 multiletter control sequences out of 15000+600000
+ 40185 strings out of 492649
+ 754686 string characters out of 6129622
+ 903906 words of memory out of 5000000
+ 39847 multiletter control sequences out of 15000+600000
  552553 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,13n,95p,10446b,2080s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -6003,11 +6008,11 @@ exlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/tex
 live/2018/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on Essentials_Probability_And_Statistics.pdf (198 pages, 1407070
+Output written on Essentials_Probability_And_Statistics.pdf (200 pages, 1410069
  bytes).
 PDF statistics:
- 5736 PDF objects out of 6186 (max. 8388607)
- 5437 compressed objects within 55 object streams
- 3689 named destinations out of 4296 (max. 500000)
+ 5758 PDF objects out of 6186 (max. 8388607)
+ 5457 compressed objects within 55 object streams
+ 3702 named destinations out of 4296 (max. 500000)
  815 words of extra memory for PDF output out of 10000 (max. 10000000)
 
