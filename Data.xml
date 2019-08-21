@@ -284,6 +284,54 @@ boxplot(data, horizontal=TRUE)
 </example>
 </p>
 
+<p>
+Of course, the data sets you can utilize by manually entering data will be relatively small and tedious to deal with. The open source statistical software R however has a number of built in data sets with many of them including a relatively large number of values. We will be utilizing some of those data sets throughout the remainder of this text. To see what data sets are actually available, execute the command data(). You can load the data from one of these sets by executing the data command with the desired data set name inside the parenthesis and then print out the first few data values with headers using the head command. Execute the interactive cell below and play around with some of the data sets. Remove the hash tag symbol to 'uncomment' those lines as needed.
+</p>
+
+<p>
+<sage language = 'r'>
+<input>
+data()
+# data(faithful)
+# head(faithful,10)
+# nrow(faithful)  # returns the number of observations (rows)
+# ncol(faithful)  # returns the number of variables per observation (columns)
+# print(? faithful)            # returns a more exhaustive description of the data 
+
+</input>
+</sage>
+</p>
+
+<p>
+Now that you can access large ready-to-go data sets, you will want to evaluate them in various ways. The following interactive cell helps you calculate the measures presented in this section as well as a few measures we will investigate in the next section. Note that an R cell only routinely outputs the final command. If you want to output any of the intermediate values, use the print() command as shown below. Also, to make things easier to enter, let's just go ahead and give the formal data set name a smaller local identifier x.
+</p>
+
+<p>
+<sage language = 'r'>
+<input>
+data(faithful)
+x &lt;- faithful
+x1 &lt;- x[,1]
+x2 &lt;- x[,2]
+m &lt;- min(faithful, 2)
+M &lt;- max(faithful, 2)
+print(paste("Minimum of the second outcome = ",m))
+print(paste("Maximum of the second outcome = ",M))
+cat("\n\n")   #  a couple of blank lines in the displayed output
+quantile(x[,1], c(.25,.29,.57))
+cat("\n\n")   #  a couple of blank lines in the displayed output
+# mu1 &lt;- mean(x1)
+# mu2 &lt;- mean(x2)
+# med1 &lt;- median(x1)
+# med2 &lt;- median(x2)
+# print(paste("Mean of the first outcome = ",mu1))
+# print(paste("Mean of the second outcome = ",mu2))
+# print(paste("Median of the first outcome = ",med1))
+# print(paste("Median of the second outcome = ",med2))
+</input>
+</sage>
+</p>
+
 </section>
 
 

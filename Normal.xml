@@ -27,7 +27,7 @@ We present the normal distribution by simply presenting it's probability functio
 <p>
 <definition><title>The Normal Distribution</title>
 	<statement>
-	<p>
+	<p xml:id="NormalPF">
 	Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution provided it has a probability function given by
 		<me>
 		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
@@ -284,9 +284,11 @@ which is given a special name below.
 	
 <p>
 <definition><title>Chi-Square Probability Function</title>
-<statement>Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
+<statement>
+<p xml:id="ChiSquarePF">Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
 	<me>f(x) = \frac{x^{r/2-1} e^{-x/2} }{\Gamma(r/2) 2^{r/2}}.</me>
 	Then X has a Chi-Square distribution with r degrees of freedom. This is often denoted <m>\chi^2(r)</m>.
+</p>
 </statement>
 </definition>
 </p>
@@ -355,7 +357,7 @@ def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),
 <p>
 <definition><title>The Cauchy Distribution</title>
 <statement>
-<p>
+<p xml:id="CauchyPF">
 Consider a continuous random variable on the real numbers defined by
 <me>f(x) = \frac{1/\pi}{1+x^2}.</me>
 A random variable with this probability function is said to be a Cauchy Distribution.
@@ -403,11 +405,24 @@ which is problematic.  Further, for the variance
 <me>\int_{-\infty}^{\infty} x^2 \frac{1}{1+x^2} dx </me>
 and note that the integrand does not converge to 0 at the endpoints and therefore the integral is automatically considered divergent.  Thus it is reasonable to note that the Cauchy distribution has no variance.
 </p>
-<p>On the other hand, there is another bell-shaped distribution that is useful and its random variable can be created by using a mixture of a normal variable and a <m>\Chi^2</m> variable. Indeed, suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
-<me>T = \frac{Z}{\sqrt(Y/r)}.</me>
-Then, T is said to have a (Student) t distribution.  The good news is that this distribution is useful and its statistics are presented below without proof.
+<p>On the other hand, there is another "bell-shaped" distribution that is useful and its random variable can be created by using a mixture of a normal variable and a <m>\Chi^2</m> variable. 
+</p>
 
-<theorem><title>Student t-distribution</title>
+<p>
+<definition><title>Student-t Distribution</title>
+<statement>
+<p xml:id="StudenttPF">
+Suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
+<me>T = \frac{Z}{\sqrt(Y/r)}.</me>
+Then, T is said to have a (Student) t distribution with probability function given by 
+<me>\frac{\Gamma \left ( \frac{n+1}{2} \right ) }{\sqrt{n \pi} \Gamma \left ( \frac{n}{2} \right ) } \left ( 1 + \frac{x^2}{n}\right )^{ - \left ( \frac{n+1}{2} \right )}  </me>
+</p>  
+</statement>
+</definition>
+
+The good news is that this distribution is useful and its properties are presented below without proof.
+
+<theorem><title>Student t-distribution properties</title>
 <statement>
 <p>
 For the Student t variable T defined above, 
@@ -462,6 +477,126 @@ legend("topright", inset=.05, title="Distributions",
 </sage>
 </p>
 
+</section>
+
+
+<section><title>Generating Functions for Normal and Associated Distributions</title>
+
+
+<p>
+<xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
+</p>
+
+
+<p>
+
+<theorem><title>Moment Generating Function for Normal</title>
+<statement>
+<p xml:id="NormalMGF">Presuming <m>t \gt 0</m> and
+<me>M(t) = e^{t \mu+\frac{1}{2}t^2\sigma^2}</me>
+</p>
+</statement>
+<proof>
+<p>Using the <xref ref="NormalPF">Normal probability function</xref>,
+<md>
+<mrow>M(t) &amp; = \int_{-\infty}^{\infty} e^{tx} \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}</mrow>
+<mrow> &amp; = \int_{-\infty}^{\infty} e^{tx} \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx</mrow>
+<mrow> &amp; = \int_{-\infty}^{\infty} e^{t(z \sigma + \mu)} \frac{1}{\sqrt{2 \pi}} e^{  -z ^2 / 2} dz</mrow>
+<mrow> &amp; = e^{t \mu} \int_{-\infty}^{\infty}  \frac{1}{\sqrt{2 \pi}} e^{  -(z ^2 - 2t z \sigma ) / 2} dz</mrow>
+<mrow> &amp; = = e^{t \mu} \int_{-\infty}^{\infty}  \frac{1}{\sqrt{2 \pi}} e^{  -(z ^2 - 2t z \sigma + t^2 \sigma^2 - t^2 \sigma^2 ) / 2} dz</mrow>
+<mrow> &amp; = e^{t \mu+\frac{1}{2}t^2\sigma^2} \int_{-\infty}^{\infty}  \frac{1}{\sqrt{2 \pi}} e^{  -\left (z - t \sigma \right )^2 / 2} dz</mrow>
+<mrow> &amp; = e^{t \mu+\frac{1}{2}t^2\sigma^2} \cdot 1 </mrow>
+</md>
+where the final integral is just a shifted standard normal and therefore has value 1.
+</p>
+</proof>
+</theorem>
+
+<corollary><title>Normal Properties via Moment Generating Function</title>
+<statement>
+<p>For the Normal variable X,
+<me> M(0) = 1</me>
+<me> M'(0) = \mu</me>
+<me> M''(0) = \sigma^2 + \mu^2</me>
+</p>
+</statement>
+<proof>
+<p>
+<me> M(0) = e^{0 \mu+\frac{1}{2}0^2\sigma^2} = e^0 = 1.</me>
+Continuing,
+<me> M'(t) = {\left(\sigma^2 t + \mu \right)} e^{\left(\frac{1}{2} \sigma^2 t^{2} + \mu t \right)}
+</me>
+and therefore
+<me> M'(0) = {\left(\sigma^2 0 + \mu \right)} e^{\left(\frac{1}{2} \sigma^2 0^{2} + \mu 0 \right)} = \mu e^0 = \mu.</me>
+Continuing with the second derivative,
+<me> M''(t) = {\left(\sigma^2 t + \mu\right)}^2 e^{\left(\frac{1}{2} \sigma^2 t^2 + \mu t\right)} + \sigma^2 e^{\left(\frac{1}{2} \sigma^2 t^2 + \mu t\right)}
+</me>
+and therefore
+<me> M''(0) = {\left(\sigma^2 0 + \mu\right)}^2 e^{\left(\frac{1}{2} \sigma^2 0^2 + \mu 0\right)} + \sigma^2 e^{\left(\frac{1}{2} \sigma^2 0^2 + \mu 0\right)} = \mu^2 + \sigma^2 </me>
+which is the squared mean plus the variance for the normal distribution.
+</p>
+</proof>
+</corollary>
+
+</p>
+
+
+<p>
+
+<theorem><title>Moment Generating Function for Chi-Square</title>
+<statement>
+<p xml:id="ChiSquareMGF">Presuming <m>t \gt 0</m> and
+<me>M(t) = \left ( \frac{1}{1-2t} \right )^{r/2}</me>
+</p>
+</statement>
+<proof>
+<p>Using the <xref ref="ChiSquarePF">Chi-Square probability function</xref>,
+<md>
+<mrow>M(t) &amp; = \int_0^{\infty} e^{tx} \frac{x^{r/2-1} e^{-x/2} }{\Gamma(r/2) 2^{r/2} } dx</mrow>
+<mrow> &amp; = \int_0^{\infty} \frac{x^{r/2-1} e^{-x(1-2 t)/2} }{\Gamma(r/2) 2^{r/2}} dx</mrow>
+<mrow> &amp; = \int_0^{\infty} \frac{\left ( \frac{u}{1-2t} \right )^{r/2-1} e^{-u/2} }{\Gamma(r/2) 2^{r/2} } \frac{1}{1-2t} du</mrow>
+<mrow> &amp; = \left ( \frac{1}{1-2t} \right )^{r/2} \int_0^{\infty} \frac{u^{r/2-1} e^{-u/2} }{\Gamma(r/2) 2^{r/2}} du</mrow>
+<mrow> &amp; = \left ( \frac{1}{1-2t} \right )^{r/2}</mrow>
+</md>
+where the final integral is again Chi-Square and therefore has value 1.
+</p>
+</proof>
+</theorem>
+
+<corollary><title>Chi-Square Properties via Moment Generating Function</title>
+<statement>
+<p>For the Chi-Square variable X, 
+<me> M(0) = 1</me>
+<me> M'(0) = r = \mu</me>
+<me> M''(0) = 2r + r^2 = \sigma^2 + \mu^2</me>
+</p>
+</statement>
+<proof>
+<p>
+<me> M(0) = \left ( \frac{1}{1-2 \cdot 0} \right )^{r/2} = 1.</me>
+Continuing,
+<me> M'(t) = \frac{r {\left(-2 t + 1\right)}^{\frac{1}{2} r - 1}}{{\left(-2 t + 1 \right)}^{r}}
+</me>
+and therefore
+<me> M'(0) = \frac{r {\left(-2 \cdot 0 + 1\right)}^{\frac{1}{2} r - 1}}{{\left(-2 \cdot 0 + 1 \right)}^{r}} = \frac{r}{1} = r.</me>
+Continuing with the second derivative,
+<me> M''(t) = -\frac{{\left(r - 2\right)} r {\left(-2 t + 1\right)}^{\frac{1}{2} r - 2}}{{\left(-2 t + 1\right)}^{r}} + \frac{2 r^{2} {\left(-2 t + 1\right)}^{r - 2}}{{\left(-2 t + 1\right)}^{\frac{3}{2} r}}
+
+</me>
+and therefore
+<md> 
+<mrow>M''(0) &amp; = -\frac{{\left(r - 2\right)} r {\left(-2 \cdot 0 + 1\right)}^{\frac{1}{2} r - 2}}{{\left(-2 \cdot 0 + 1\right)}^{r}} + \frac{2 r^{2} {\left(-2 \cdot 0 + 1\right)}^{r - 2}}{{\left(-2 \cdot 0 + 1\right)}^{\frac{3}{2} r}} </mrow>
+<mrow> &amp; = -\frac{{\left(r - 2\right)} r }{1} + \frac{2 r^{2} }{1}= 2r + r^2 = \sigma^2 + \mu^2</mrow>
+</md>
+which is the squared mean plus the variance for the normal distribution.
+</p>
+</proof>
+</corollary>
+
+</p>
+
+<p>It is interesting to note that the moment generating functions are not defined for the <xref ref="CauchyPF">Cauchy Distribution</xref> or for the <xref ref="StudenttPF">Student's t distribution</xref>.
+</p>
 </section>
 
 

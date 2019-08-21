@@ -834,6 +834,85 @@ Presume that p is the likelihood that God exists. Then you can compute the expec
 
 </section>
 
+<section><title>Generating Functions</title>
+<p>In the previous section, you were able to take a given probability distribution and create several "special" expected value metrics that provided useful or interesting facts about the particular distribution...such as the mean and variance. It is possible however to embed a lot of these metrics in a "generating function". </p>
+
+<definition><title>Moment Generating Function</title>
+<p xml:id="MomentGeneratingFunctionDefn">Given a probability function <m>f(x)</m>, the moment generating function is a transformation given by
+<me>M(t) = E[e^{tx}]</me>
+where the expected value is a summation or integral dependent upon the nature of the random variable x. If the expected value does not exist (due perhaps to a f(x) with asymptotes) then the M(t) does not exist.</p>
+</definition>
+
+<definition><title>Probability Generating Function</title>
+<p>Given a probability function <m>f(x)</m>, the probability generating function is a transformation given by
+<me>N(t) = E[t^x]</me>
+where the expected value is a summation or integral dependent upon the nature of the random variable x and again presuming that the resulting expected value exists.</p>
+</definition>
+
+<theorem><title>Relationship between <m>M(t)</m> and <m>N(t)</m></title>
+<statement> <m>M(t) = N(e^t)</m> and <m>N(t) = M(\ln(t))</m></statement>
+<proof><p>Obvious?  :)</p></proof>
+</theorem>
+
+
+<theorem><title>M(t) Properties</title>
+<statement>
+<p>
+<me>M(0)=1</me>
+<me>M'(0)=\mu</me>
+<me>M''(0)=\sigma^2 + \mu^2</me>
+</p>
+</statement>
+<proof>
+<p>For the first result, notice
+<me>M(0) = E[e^{0}] = E[1] = 1</me>
+is pretty trivial.
+</p>
+<p>For the next results, take derivatives and use the linearity of the summation or integral.  Here, let's consider the case where X is a continuous variable and leave the discrete case for you.
+<me>M'(t) = D_t \left [ \int_R e^{tx} f(x) dx \right ] = \int_R x e^{tx} f(x) dx</me>
+and then evaluating at t=0 gives
+<me>M'(0) = \int_R x e^{0} f(x) dx = \mu .</me>
+Continuing,
+<me>M''(t) = D_t \left [ \int_R x e^{tx} f(x) dx \right ] = \int_R x^2 e^{tx} f(x) dx</me>
+and evaluating at t=0 gives
+<me>M''(0) = \int_R x^2 e^{0} f(x) dx = E[x^2] = \sigma^2 + \mu^2.</me>
+It should be noted that one may also determine the skewness and the kurtosis in a similar manner.
+</p>
+</proof>
+</theorem>
+
+<theorem><title>N(t) Properties</title>
+<statement>
+<p>For discrete variable X, 
+<me> P(X=k) = \frac{N^{(k)}(0)}{k!} </me>
+</p>
+</statement>
+<proof>
+<p>Notice, in the discrete case where R = {0, 1, 2, ... }
+<me>N(t) = E[t^x] = \sum_R t^x f(x) = f(0) + t f(1) + t^2 f(x) + t^3 f(3) + ...</me>
+Therefore, by continually taking derivatives with respect to t and then evaluating those derivatives at t=0,
+<md>
+<mrow>N(0) = f(0)</mrow>
+<mrow>N'(0) = f(1)</mrow>
+<mrow>N''(0) = 2 f(2)</mrow>
+<mrow>N'''(0) = 6 f(3) </mrow>
+</md>
+etc.
+</p>
+</proof>
+</theorem>
+
+<corollary><title>Identical Random Variables have Identical Probability Generating Functions</title>
+<statement>If random variables <m>X_1</m> and <m>X_2</m> have the same probability generating function (and therefore the same moment generating function) then the variables have identical distributions.</statement>
+<proof>
+<p>
+Apply previous result and notice that both variables have the same probability function f(x).
+</p>
+</proof>
+</corollary>
+
+</section>
+
 	
 <section><title>Standard Units</title>
 	<p>Any distribution variable can be converted to “standard units” using the linear translation 

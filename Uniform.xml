@@ -558,6 +558,58 @@ def _(N1=input_box(10,width=5,label='\( N_1 \)'),
 	
 </section>
 
+
+<section><title>Generating Functions for Uniform-based Distributions</title>
+
+<p>
+<xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
+</p>
+
+<theorem><title>Moment Generating Function for Discrete Uniform</title>
+<statement>
+<p><me>M(t) = \frac{1}{n} \cdot \left [ e^t + e^{2t} + ... e^{nt} \right ] </me>
+</p>
+</statement>
+<proof>
+<p>Presuming R = {1, 2, ..., n},
+<me>M(t) = \sum_{x=1}^n e^{tx}/n = \frac{1}{n} \cdot \left [ e^t + e^{2t} + ... e^{nt} \right ] </me>
+</p>
+</proof>
+</theorem>
+
+<theorem><title>Moment Generating Function for Continuous Uniform</title>
+<statement>
+<p><me>M(t) = \frac{e^{bx} - e^{ax}}{b-a}</me>
+</p>
+</statement>
+<proof>
+<p>Presuming R = [a,b],
+<me>M(t) = \int_a^b e^{tx} \frac{1}{b-a} dx = \frac{1}{b-a} \frac{1}{t} e^{tx} \big |_a^b = \frac{e^{bx} - e^{ax}}{b-a}</me>
+</p>
+</proof>
+</theorem>
+
+
+<theorem><title>Moment Generating Function for Hypergeometric</title>
+<statement>
+<p>TBA
+</p>
+</statement>
+<proof>
+<p>
+<md>
+<mrow>M(t) &amp; = \sum_{x=0}^{n_1}\frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
+<mrow> &amp; = a mess...</mrow>
+</md>
+</p>
+</proof>
+</theorem>
+
+
+
+
+</section>
+
 <section><title>Summary</title>
 <p>
 <introduction>

@@ -564,7 +564,7 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	<p>Note that r=1 gives the Geometric Distribution.</p>
 
 <p>	
-<theorem><title>Negative Binomial Series</title>
+<theorem xml:id='NegBinomSeries'><title>Negative Binomial Series</title>
 	<statement> 
 		<p>
 			<me>\displaystyle \frac{1}{(a+b)^n} = \sum_{k=0}^{\infty} {(-1)^k \binom{n + k - 1}{k} a^k b^{-n-k}}</me> 
@@ -647,7 +647,7 @@ which is still relatively small.
 
 <p>
 <theorem><title>Negative Binomial Distribution Sums to 1</title>
-<statement>
+<statement xml:id="NegativeBinomialSumsToOne">>
 	<p>
 		<me>\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = 1</me>
 	</p>
@@ -807,6 +807,220 @@ Pnormal &lt;- function(X){dnorm(X, mean=mu-r, sd=sdev)}
 curve(Pnormal, col="red", lwd=2, add=TRUE)
 </input>
 </sage>
+</p>
+
+</section>
+
+<section><title>Generating Functions for Bernoulli-based Distributions</title>
+
+<p>
+<xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
+</p>
+
+
+<theorem><title>Moment Generating Function for Bernoulli</title>
+<statement>
+<p>
+<me>M(t) = (1-p) + p e^t</me>
+</p>
+</statement>
+<proof>
+<p>
+<me>M(t) = f(0) + e^t f(1) = (1-p) + p e^t</me>
+</p>
+</proof>
+</theorem>
+
+<theorem><title>Moment Generating Function for Geometric</title>
+<statement>
+<p>
+<me>M(t) = \frac{p e^t }{1 - e^t (1-p)} = \frac{p}{e^{-t} - (1-p)}</me>
+</p>
+</statement>
+<proof>
+<p>Presuming <m>e^t (1-p) \lt 1</m>,
+<md>
+<mrow>M(t) &amp; = \sum_{x=1}^{\infty} e^{tx} p (1-p)^{x-1}</mrow>
+<mrow> &amp; = \frac{p}{1-p} \sum_{x=1}^{\infty} (e^t (1-p))^x</mrow>
+<mrow> &amp; = \frac{p}{1-p} \frac{e^t (1-p)}{1 - e^t (1-p)}</mrow>
+<mrow> &amp; = \frac{pe^t }{1 - e^t (1-p)}.</mrow>
+</md>
+where we used the geometric series to convert the sum.  The second form comes by dividing through by <m>e^t</m>.
+</p>
+</proof>
+</theorem>
+
+<corollary><title>Geometric Properties via Moment Generating Function</title>
+<statement>
+<p>For the Geometric variable X,
+<me> M(0) = 1</me>
+<me> M'(0) = \frac{1}{p} = \mu</me>
+<me> M''(0) = \frac{1-p}{p^2} + \frac{1}{p^2} = \sigma^2 + \mu^2</me>
+</p>
+</statement>
+<proof>
+<p>
+<me> M(0) = p \frac{e^0 }{1 - e^0 (1-p)} = \frac{p}{1-(1-p)} = 1.</me>
+Using the second form for M(t),
+<me> M'(t) = \frac{e^{-t} p}{(e^{-t} - (1-p))^2}</me>
+and therefore
+<me> M'(0) = \frac{p}{(1-(1-p))^2} = \frac{1}{p}.</me>
+Continuing with the second derivative,
+<me> M''(t) = -\frac{p e^{-t} }{{\left(p + e^{-t} - 1\right)}^2} + \frac{2 p e^{-2t}}{{\left(p + e^{-t} - 1 \right)}^{3}}</me>
+and therefore
+<me> M''(0) = -\frac{p}{{\left(p + 1 - 1 \right)}^2} + \frac{2 p}{{\left(p + 1 - 1 \right)}^{3}} = -\frac{1}{p} + \frac{2}{p^2} = \frac{1}{p^2} + \frac{1-p}{p^2} </me>
+which is the squared mean plus the variance for the geometric distribution.
+</p>
+</proof>
+</corollary>
+
+<p>For the two uniform distributions and basic Bernoulli, there is really nothing much that can be done as n (or a and b) vary.  However, for all distributions that have the opportunity to "scale" larger and larger, we will first determine the M(t) and then demonstrate the a surprising relationship as their variables to grow appropriately.</p>
+
+<theorem><title>Moment Generating Function for Binomial</title>
+<statement>
+<p>
+<me>M(t) = \left ( p e^t + (1-p) \right )^n</me>
+</p>
+</statement>
+<proof>
+<p>
+<md>
+<mrow>M(t) &amp; = \sum_{x=0}^n e^{tx} \binom{n}{x} p^x (1-p)^{n-x} </mrow>
+<mrow> &amp; = \sum_{x=0}^n \binom{n}{x} (pe^t)^x (1-p)^{n-x} </mrow>
+<mrow> &amp; = \left ( p e^t + (1-p) \right )^n</mrow>
+</md>
+where we used the binomial theorem to simplify the sum.
+</p>
+</proof>
+</theorem>
+
+<p>
+Notice that the moment generating function for Bernoulli is simply the Binomial moment generating function with n=1.
+</p>
+
+<corollary><title>Binomial Properties via Moment Generating Function</title>
+<statement>
+<p><me>M(0) = 1</me>
+<me>M'(0) = np</me>
+<me>M''(0) = np(1-p) + (np)^2</me>
+</p>
+</statement>
+<proof>
+<p>
+<me>M(0) = \left ( p e^0 + (1-p) \right )^n = 1^n = 1.</me>
+Taking the derivative with respect to t,
+<me>M'(t) = n \left ( p e^t + (1-p) \right )^{n-1} p e^t</me>
+and evaluating at t=0 gives
+<me>M'(0) = n \left ( p + (1-p) \right )^{n-1} p = n 1^{n-1} p = np.</me>
+Again, taking another derivative with respect to t, 
+<me>M''(t) = n(n-1) \left ( p e^t + (1-p) \right )^{n-2} p^2 e^{2t} + n \left ( p e^t + (1-p) \right )^{n-1} p e^t </me>
+and evaluating at t=0 gives
+<md>
+<mrow>M''(0) &amp; = n(n-1) ( p + (1-p))^{n-2} p^2 + n ( p + (1-p)  )^{n-1} p </mrow>
+<mrow> &amp; = n(n-1)p^2 + np = (np)^2 + np - np^2 = np(1-p) + (np)^2.</mrow>
+</md>
+</p>
+</proof>
+</corollary>
+
+
+<!--
+<corollary><title>Limiting function for Binomial M(t)</title>
+<statement>
+<p>
+</p>
+</statement>
+<proof>
+<p>As we let <m>\mu \rightarrow \infty</m> and noting that <m>\mu = np </m>, we can rewrite M(t) in the form 
+<me>M(t) = \left ( \frac{\mu}{n} e^t + (1- \frac{\mu}{n}) \right )^n</me> and note that <m>\mu</m> grows proportionally to n. Thus,
+<md>
+<mrow>\lim_{n  \rightarrow \infty} M(t) &amp; = \lim_{n  \rightarrow \infty} \left ( \frac{\mu}{n} e^t + (1- \frac{\mu}{n}) \right )^n</mrow> 
+<mrow> &amp; = e^{\lim_{n  \rightarrow \infty} \frac{\ln \left ( \frac{\mu}{n} e^t + (1- \frac{\mu}{n}) \right )}{1/n}}</mrow> 
+<mrow> &amp; = e^{\lim_{n  \rightarrow \infty} \frac{\frac{1}{\left ( \frac{\mu}{n} e^t + (1- \frac{\mu}{n}) \right )} \left ( \frac{-\mu}{n^2} e^t + \frac{-\mu}{n^2} \right )}{-1/n^2}}</mrow>
+<mrow> &amp; =  e^{\lim_{n  \rightarrow \infty} \frac{1}{\left ( \frac{\mu}{n} e^t + (1- \frac{\mu}{n}) \right )} \left(  \mu e^t + \mu \right )}</mrow>
+<mrow> &amp; = e^{\frac{1}{\left ( 0 + (1- 0) \right )} \left(  \mu e^t + \mu \right )}</mrow>
+<mrow> &amp; = e^{\mu (e^t-1)}.</mrow>
+</md>
+(WAIT...mu depends upon n as well...NEED to review this.  SHOULD BE IN THE FORM <m>e^{\mu t - \frac{1}{2} \sigma^2 t^2.}</m>
+where we have used L'Hopital's rule to evaluate the indeterminate form. We will see this final form repeating itself as we continue through the text.
+</p>
+</proof>
+</corollary>
+-->
+
+<theorem><title>Moment Generating Function for Negative Binomial</title>
+<statement>
+<p>
+<me>M(t)  = \frac{p^r}{(1 - e^t(1-p))^r}</me>
+</p>
+</statement>
+<proof>
+<p>Using the <xref ref="NegativeBinomialSumsToOne">a previous theorem justifying the Negative Binomial probability funcdtion</xref>  with <m>a = p e^t</m> and <m>b = 1-p</m> and by changing variables to <m>u = x-r</m> gives
+<md>
+<mrow>M(t) &amp; = \sum_{u=0}^{\infty} e^{tu} \binom{u+r - 1}{r-1}(1-p)^{u}p^r</mrow>
+<mrow> &amp; =  p^r \sum_{u=0}^{\infty} \binom{u + r - 1}{r-1}(e^t(1-p))^u </mrow>
+<mrow> &amp; = \frac{ p^{r}}{(1 - e^t(1-p))^r} \sum_{u=0}^{\infty} \binom{u + r - 1}{r-1}(1 - e^t(1-p))^r (e^t(1-p))^u </mrow>
+<mrow> &amp; = \frac{p^{r}}{(1 - e^t(1-p))^r}  </mrow>
+</md>
+noting that the last summation is the the sum of a negative binomial probability function over its entire range.
+</p>
+<p>It should be noted one may also rewrite the summation and appeal directly to the <xref ref="NegBinomSeries">Negative Binomial Series</xref> to also prove this result.
+</p>
+</proof>
+</theorem>
+
+<p>
+Notice that the moment generating function for Geometric is simply the Negative Binomial moment generating function with r=1.
+</p>
+
+<corollary><title>Negative Binomial Properties via Moment Generating Function</title>
+<statement>
+<p><me>M(0) = 1</me>
+<me>M'(0) = \frac{r}{p}</me>
+<me>M''(0) = \left ( \frac{r(1-p)}{p^2} \right )^2 + \left ( \frac{r}{p} \right )^2</me>
+</p>
+</statement>
+<proof>
+<p>
+<me>M(0) = \frac{(p)^r}{(1 - (1-p))^r} = \frac{p^r}{p^r} = 1.</me>
+Taking the derivative with respect to t,
+<me>M'(t) = -\frac{{\left(p e^{t} - e^{t} + 1\right)}^{r - 1} {\left(p - 1\right)} p^{r} r e^{t}}{{\left(p e^{t} - e^{t} + 1\right)}^{2 r}}</me>
+and evaluating at t=0 gives
+<me>M'(0) = -\frac{{p}^{r - 1} {p - 1} p^{r} r }{{p}^{2 r}} = \frac{r(1-p)}{p}.</me> OOPS...don't need the (1-p) on top.
+Again, taking another derivative with respect to t, 
+<me>M''(t) =  -\frac{{\left(p e^{t} - e^{t}\right)} {\left(p e^{t} - e^{t} + 1\right)}^{r - 2} {\left(p - 1\right)} p^{r} {\left(r - 1\right)} r e^{t}}{{\left(p e^{t} - e^{t} + 1\right)}^{2r}}
+\\ + \frac{2 {\left(p e^{t} - e^{t}\right)} {\left(p e^{t} - e^{t} + 1\right)}^{2r - 2} {\left(p - 1\right)} p^{r} r^{2} e^{t}}{{\left(p e^{t} - e^{t} + 1\right)}^{3r}}
+\\ - \frac{{\left(p e^{t} - e^{t} + 1\right)}^{r - 1} {\left(p - 1\right)} p^{r} r e^{t}}{{\left(p e^{t} - e^{t} + 1\right)}^{2r}}
+</me>
+and evaluating at t=0 gives
+<md>
+<mrow>M''(0) &amp; = \frac{{\left(p^{2 \, r - 1} r - p^{2 \, r - 2} r - p^{2 \, r - 2}\right)} {\left(p - 1\right)} r}{p^{2 \, r}} </mrow>
+<mrow> &amp; = \left ( \frac{r(1-p)}{p^2} \right )^2 + \left ( \frac{r}{p} \right )^2.</mrow>
+</md>
+</p>
+</proof>
+</corollary>
+
+<p>Just in case you are wondering about the derivations and especially taking the derivatives above, Sage will do the heavy lifting for you.
+
+<sage>
+<input>
+var('t,x,n,p,mu,r')
+assume(p &lt; 1)
+assume(p &gt; 0)
+f = binomial(x+r-1,r-1)*p^r*(1-p)^x
+M = sum(e^(t*x)*f,x,0,infinity).factor()
+show(M)
+show(M(t=0))
+Mt = derivative(M,t).factor()
+show(Mt(t=0).simplify())
+Mtt = derivative(Mt,t)
+show(Mtt)
+show(Mtt(t=0).simplify())
+show((Mtt(t=0)-Mt(t=0)^2).factor())
+</input>
+</sage>
+
 </p>
 
 </section>

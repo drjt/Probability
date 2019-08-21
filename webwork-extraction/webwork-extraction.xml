@@ -18,6 +18,11 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="12.85" correct_ans_latex_string="12.85" correct_value="12.85" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="51" correct_ans_latex_string="51" correct_value="51" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=1&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework02/stat212-HW02-18.pg</server-url>
@@ -47,6 +52,12 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="40320" correct_ans_latex_string="40320" correct_value="40320" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="864" correct_ans_latex_string="864" correct_value="864" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="4320" correct_ans_latex_string="4320" correct_value="4320" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=10&amp;sourceFilePath=Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg</server-url>
@@ -69,6 +80,10 @@
       <fillin name="AnSwEr0001" characters="35" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="2.4948E+06" correct_ans_latex_string="2.4948\times 10^{6}" correct_value="2.4948E+06" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -93,6 +108,10 @@
       <p><fillin name="AnSwEr0001" characters="20" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="204490" correct_ans_latex_string="204490" correct_value="204490" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -135,6 +154,10 @@
       </solution>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="1646400" correct_ans_latex_string="1646400" correct_value="1646400" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=13&amp;sourceFilePath=Library/Rochester/setAlgebra38Counting/sw10_2_60.pg</server-url>
@@ -172,6 +195,13 @@
       </solution>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="4/11" correct_ans_latex_string="{\textstyle\frac{4}{11}}" correct_value="4/11" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" requireFraction="0" score="0" showEqualErrors="1" showFractionReduceWarnings="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceFractions="0" studentsMustReduceUnions="1" type="Value (Fraction)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="1/11" correct_ans_latex_string="{\textstyle\frac{1}{11}}" correct_value="1/11" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" requireFraction="0" score="0" showEqualErrors="1" showFractionReduceWarnings="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceFractions="0" studentsMustReduceUnions="1" type="Value (Fraction)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="2/11+4/11" correct_ans_latex_string="{\textstyle\frac{2}{11}}+{\textstyle\frac{4}{11}}" correct_value="6/11" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" requireFraction="0" score="0" showEqualErrors="1" showFractionReduceWarnings="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceFractions="0" studentsMustReduceUnions="1" type="Value (Fraction)" />
+        <AnSwEr0004 _filter_name="dereference_array_ans" ans_label="AnSwEr0004" ans_message="" ans_name="AnSwEr0004" correct_ans="1-4/11" correct_ans_latex_string="1-{\textstyle\frac{4}{11}}" correct_value="7/11" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" requireFraction="0" score="0" showEqualErrors="1" showFractionReduceWarnings="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceFractions="0" studentsMustReduceUnions="1" type="Value (Fraction)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=14&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg</server-url>
@@ -204,6 +234,13 @@
       </hint>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="5/18" correct_ans_latex_string="\frac{5}{18}" correct_value="0.277778" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="4/(18-4)" correct_ans_latex_string="\frac{4}{18-4}" correct_value="0.285714" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="(3+2)/18" correct_ans_latex_string="\frac{3+2}{18}" correct_value="0.277778" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 _filter_name="dereference_array_ans" ans_label="AnSwEr0004" ans_message="" ans_name="AnSwEr0004" correct_ans="(18-4)/4" correct_ans_latex_string="\frac{18-4}{4}" correct_value="3.5" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=15&amp;sourceFilePath=Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg</server-url>
@@ -231,6 +268,11 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="252" correct_ans_latex_string="252" correct_value="252" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.00396825396825397" correct_ans_latex_string="0.00396825396825397" correct_value="0.00396825396825397" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=16&amp;sourceFilePath=Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg</server-url>
@@ -250,12 +292,17 @@
     <static source="Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg" seed="17">
       <statement>
       <p>A bag contains <m>6</m> red marbles and <m>7</m> white marbles.  Two marbles are drawn in succession without replacement.  Find the probabilities of the following events:</p>
-      <p><em> 1. </em> The first marble drawn is red and the second is white.</p>
+      <p><alert> 1. </alert> The first marble drawn is red and the second is white.</p>
       <p>Answer: <fillin name="AnSwEr0001" characters="20" /></p>
-      <p><em> 2. </em> Both marbles drawn are red.</p>
+      <p><alert> 2. </alert> Both marbles drawn are red.</p>
       <p>Answer: <fillin name="AnSwEr0002" characters="20" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="6/13*7/(2*6)" correct_ans_latex_string="\frac{6}{13}\frac{7}{2\cdot 6}" correct_value="0.269231" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="6/13*(6-1)/(2*6)" correct_ans_latex_string="\frac{6}{13}\frac{6-1}{2\cdot 6}" correct_value="0.192308" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -275,11 +322,15 @@
       
     <static source="Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg" seed="18">
       <statement>
-      <p>A biomedical research company produces <m>50 \lt percent /></m> of its insulin at a plant in Kansas City, and the remainder is produced at a plant in Jefferson City.  Quality control has shown that <m>1.25 \lt percent /></m> of the insulin produced at the plant in Kansas City is defective, while <m>0.7 \lt percent /></m> of the insulin produced at the plant in Jefferson City is defective.  What is the probability that a randomly chosen unit of insulin came from the plant in Jefferson City given that it is defective?</p>
+      <p>A biomedical research company produces <m>50 \%</m> of its insulin at a plant in Kansas City, and the remainder is produced at a plant in Jefferson City.  Quality control has shown that <m>1.25 \%</m> of the insulin produced at the plant in Kansas City is defective, while <m>0.7 \%</m> of the insulin produced at the plant in Jefferson City is defective.  What is the probability that a randomly chosen unit of insulin came from the plant in Jefferson City given that it is defective?</p>
       <p><fillin name="AnSwEr0001" characters="20" /></p>
-      <p>(<em>Hint:</em> Draw a tree diagram first)</p>
+      <p>(<alert>Hint:</alert> Draw a tree diagram first)</p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.358974" correct_ans_latex_string="0.358974" correct_value="0.358974" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -302,9 +353,9 @@
       
       <p>Data from Office on Smoking and Health, Centers for 
       Disease Control and Prevention, indicate that 
-      36<percent /> of adults who did not finish high school, 
-      33<percent /> of high school graduates, 26<percent /> of 
-      adults who completed some college, and 15<percent /> of 
+      36% of adults who did not finish high school, 
+      33% of high school graduates, 26% of 
+      adults who completed some college, and 15% of 
       college graduates smoke.  Suppose that one individual 
       is selected at random and it is discovered that the 
       individual smokes.  Use the probabilities in the 
@@ -358,6 +409,10 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.231054562858966" correct_ans_latex_string="0.231054562858966" correct_value="0.231054562858966" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=19&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg</server-url>
@@ -386,6 +441,11 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="60" correct_ans_latex_string="60" correct_value="60" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="99" correct_ans_latex_string="99" correct_value="99" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=2&amp;sourceFilePath=Library/NAU/setStatistics/FiveNumFromPlot.pg</server-url>
@@ -410,6 +470,11 @@
       <p><m>\mbox{Var}(4 + 5 X) =</m><fillin name="AnSwEr0002" characters="40" />.</p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="137" correct_ans_latex_string="137" correct_value="137" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="25" correct_ans_latex_string="25" correct_value="25" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -452,6 +517,10 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="4.27" correct_ans_latex_string="4.27" correct_value="4.27" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=21&amp;sourceFilePath=Library/Mizzou/Finite_Math/Probability_Random_Variables/EV1.pg</server-url>
@@ -478,27 +547,27 @@
       <cell>Chances</cell>
       </row>
       <row>
-      <cell><dollar />15,000,000 </cell>
+      <cell>$15,000,000 </cell>
       <cell>1 chance in 300,000,000 </cell>
       </row>
       <row>
-      <cell><dollar />550,000 </cell>
+      <cell>$550,000 </cell>
       <cell>1 chance in 100,000,000 </cell>
       </row>
       <row>
-      <cell><dollar />50,000 </cell>
+      <cell>$50,000 </cell>
       <cell>1 chance in 80,000,000 </cell>
       </row>
       <row>
-      <cell><dollar />10,000 </cell>
+      <cell>$10,000 </cell>
       <cell>1 chance in 3,000,000 </cell>
       </row>
       <row>
-      <cell><dollar />600 </cell>
+      <cell>$600 </cell>
       <cell>1 chance in 200,000 </cell>
       </row>
       <row>
-      <cell>A watch valued at <dollar />70 </cell>
+      <cell>A watch valued at $70 </cell>
       <cell>1 chance in 8,000 </cell>
       </row>
       </tabular>
@@ -533,6 +602,11 @@
       
       </solution>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.0712083333333333" correct_ans_latex_string="0.0712083333333333" correct_value="0.0712083333333333" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="-0.268791666666667" correct_ans_latex_string="-0.268791666666667" correct_value="-0.268791666666667" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -591,10 +665,10 @@
       </row>
       </tabular>
       </sidebyside>
-      <p><em> Part a) </em>
+      <p><alert> Part a) </alert>
       Find the mean number of flaws per car. Please give your answer to two decimal places.</p>
       <p>The mean number of flaws per car is: <fillin name="AnSwEr0001" characters="6" /></p>
-      <p><em> Part b) </em></p>
+      <p><alert> Part b) </alert></p>
       <p>Find the variance of the number of flaws per car. Please give your answer to two decimal places.</p>
       <p>The variance of the number of flaws per car is: <fillin name="AnSwEr0002" characters="6" /></p>
       </statement>
@@ -625,6 +699,11 @@
       </solution>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="2.36" correct_ans_latex_string="2.36" correct_value="2.36" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" tolerance="0.005" toltype="absolute" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="2.072" correct_ans_latex_string="2.072" correct_value="2.072" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" tolerance="0.01" toltype="absolute" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=23&amp;sourceFilePath=Library/UBC/STAT/STAT241_251/setAssignment-01/HW01-01.pg</server-url>
@@ -649,6 +728,10 @@
       <p><fillin name="AnSwEr0001" characters="20" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.3" correct_ans_latex_string="0.3" correct_value="0.3" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -676,6 +759,13 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="16384" correct_ans_latex_string="16384" correct_value="16384" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.18328857421875" correct_ans_latex_string="0.18328857421875" correct_value="0.18328857421875" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="0.99908447265625" correct_ans_latex_string="0.99908447265625" correct_value="0.99908447265625" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 _filter_name="dereference_array_ans" ans_label="AnSwEr0004" ans_message="" ans_name="AnSwEr0004" correct_ans="0.9713134765625" correct_ans_latex_string="0.9713134765625" correct_value="0.9713134765625" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=25&amp;sourceFilePath=Library/Mizzou/Finite_Math/Probability_Introduction/Coin.pg</server-url>
@@ -695,7 +785,7 @@
     <static source="Library/Rochester/setProbability8BinomialDist/ur_pb_8_6.pg" seed="26">
       <statement>
       
-      <p>The Census Bureau reports that 82<percent /> of Americans over the age of 25 are high school graduates.
+      <p>The Census Bureau reports that 82% of Americans over the age of 25 are high school graduates.
       A survey of randomly selected residents of certain county included 1370 who were over the age of 25, 
       and 1074 of them were high school graduates.</p>
       <p>(a) <m></m> Find the mean and standard deviation for the number of high school graduates in groups of 1370 Americans over the age of 25.</p>
@@ -705,6 +795,12 @@
       <p>(Enter HIGH or LOW or NEITHER) <fillin name="AnSwEr0003" characters="15" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="1123.4" correct_ans_latex_string="1123.4" correct_value="1123.4" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="14.2201265817151" correct_ans_latex_string="14.2201265817151" correct_value="14.2201265817151" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="low" done="1" error_flag="" error_message="" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" student_ans="" type="str_cmp" />
+      </answerhashes>
       
     </static>
       
@@ -755,7 +851,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-29T11:18:37-06:00    
+      ###    on 2019-08-21T16:43:23-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -843,7 +939,7 @@
       
     <static seed="27">
       <statement>
-      <p>A telephone saleswoman arranges a sequence of interviews of potential customers in order to sell them an insurance policy. She believes that her success rate in completing a sale in any interview is 11 <percent />. Provide answers to at least 3 decimal places.</p>
+      <p>A telephone saleswoman arranges a sequence of interviews of potential customers in order to sell them an insurance policy. She believes that her success rate in completing a sale in any interview is 11 %. Provide answers to at least 3 decimal places.</p>
       <p>Determine the probability that she fails to make a sale on the first five interviews:  <fillin name="AnSwEr0001" characters="10" /></p>
       <p>Determine the probability that she makes her first sale on the fourth interview: <fillin name="AnSwEr0002" characters="10" /></p>
       <p>Determine the probability that the second sale is made on the sixth interview: <fillin name="AnSwEr0003" characters="10" /></p>
@@ -858,6 +954,12 @@
       <p><me>P(X = 6) = f(6) = 5 (1-p)^4 \cdot p^2 = 5 \cdot 0.89^4 \cdot 0.11^2 \approx 0.04209</me></p>
       </solution>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.558" correct_ans_latex_string="0.558" correct_value="0.558" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.078" correct_ans_latex_string="0.078" correct_value="0.078" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="0.04209" correct_ans_latex_string="0.04209" correct_value="0.04209" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -879,33 +981,39 @@
       <statement>
       
       <p>Customers arrive at a grocery store at an average of 1.8 per minute. Assume that the number of arrivals in a minute follows the Poisson distribution. Provide answers to the following to 3 decimal places.</p>
-      <p><em> Part a) </em></p>
+      <p><alert> Part a) </alert></p>
       <p>What is the probability that exactly two customers arrive in a minute?</p>
       <p><fillin name="AnSwEr0001" characters="6" /></p>
-      <p><em> Part b) </em></p>
+      <p><alert> Part b) </alert></p>
       <p>Find the probability that more than three customers arrive in a two-minute period.</p>
       <p><fillin name="AnSwEr0002" characters="6" /></p>
-      <p><em> Part c) </em></p>
+      <p><alert> Part c) </alert></p>
       <p>What is the probability that at least seven customers arrive in three minutes, given that exactly two arrive in the first minute?</p>
       <p><fillin name="AnSwEr0003" characters="6" /></p>
       </statement>
       
       <solution>
       
-      <p><em> Part a) </em></p>
+      <p><alert> Part a) </alert></p>
       <p>Let <m>X</m> be the number of customers arriving in a one-minute interval. Then <m>X \sim Po(1.8),</m> and</p>
       <p><m>\Pr(X = 2) = \frac{\text{e}^{-1.8} 1.8^2}{2!}</m>
       <m>= 0.268.</m></p>
-      <p><em> Part b) </em></p>
+      <p><alert> Part b) </alert></p>
       <p>If <m>Y</m> denotes the number of customers arriving in a two-minute interval, then <m>Y \sim Po(2 \times 1.8),</m> and <m>\Pr(Y > 3) = 1 - \Pr(Y \leq 3) = 0.000.</m> Via R:</p>
       <p>ppois(3, lambda=3.6, lower.tail=FALSE)</p>
-      <p><em> Part c) </em></p>
+      <p><alert> Part c) </alert></p>
       <p>For <m>i = 1, 2, 3,</m> let <m>X_i</m> be the number of customers arriving in minute <m>i</m>. These variables are independent, since counts in a Poisson process over non-overlapping intervals are independent; moreover <m>X \sim Po(1.8).</m> Hence</p>
       <p><m>\begin{align*} \Pr(X_1 + X_2 + X_3 \geq 7 | X_1 = 2) \amp = \frac{\Pr(X_1 + X_2 + X_3 \geq 7, X_1 = 2)}{\Pr(X_1 = 2)} \\ \amp = \frac{\Pr(X_2 + X_3 \geq 5) \Pr(X_1 = 2)}{\Pr(X_1 = 2)} \\ \amp = \Pr(X_2 + X_3 \geq 5) \\ \amp = \Pr(Y \geq 5) \end{align*}</m></p>
       <p>where <m>Y \sim Po(3.6)</m> as in part b. The result is <m>0.000.</m> Via R:</p>
       <p>ppois(4, 3.6, lower.tail=FALSE)</p>
       </solution>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.268" correct_ans_latex_string="0.268" correct_value="0.268" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" tolType="absolute" tolerance="0.001" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0" correct_ans_latex_string="0" correct_value="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" tolType="absolute" tolerance="0.002" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="0" correct_ans_latex_string="0" correct_value="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" tolType="absolute" tolerance="0.001" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -932,6 +1040,11 @@
       <fillin name="AnSwEr0002" characters="20" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.451188363905974" correct_ans_latex_string="0.451188363905974" correct_value="0.451188363905974" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.548811636094026" correct_ans_latex_string="0.548811636094026" correct_value="0.548811636094026" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -963,7 +1076,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-29T11:18:37-06:00    
+      ###    on 2019-08-21T16:43:23-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -1055,6 +1168,10 @@
       </solution>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="3515" correct_ans_latex_string="3515" correct_value="3515" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=3&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkFuIGFpcmxpbmUgaGFzIGRldGVybWluZWQgdGhhdCB0aGUgcmVsYXRpb25zaGlwIGJldHdlZW4gdGhlIG51bWJlciBvZiBwYXNzZW5nZXJzIG9uIGEgZmxpZ2h0IGFuZCB0aGUgdG90YWwgd2VpZ2h0IG9mIGx1Z2dhZ2Ugc3RvcmVkIGluIHRoZSBiYWdnYWdlIGNvbXBhcnRtZW50IGNhbiBiZSBlc3RpbWF0ZWQgYnkgdGhlIGxlYXN0IHNxdWFyZXMgcmVncmVzc2lvbiBlcXVhdGlvbgoKW2BgYHkgPSAxMjcgKyAyOCB4LmBgYF0KClByZWRpY3QgdGhlIHdlaWdodCBvZiBsdWdnYWdlIGZvciBhIGZsaWdodCB3aXRoIDEyMSBwYXNzZW5nZXJzLgoKQW5zd2VyOiBbX117JzM1MTUnfXt3aWR0aD0%2BMTV9IHBvdW5kcwoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OClNpbmNlIHggcmVwcmVzZW50cyB3ZWlnaHQsIGNob29zZSB4ID0gMTIxIGFuZCBldmFsdWF0ZSB0aGUgbGluZSBhdCB0aGF0IHZhbHVlIHRvIGdldCB0aGUgZXN0aW1hdGVkIHRvdGFsIGx1Z2dhZ2Ugd2VpZ2h0IHRvIGJlCgpbYGBgeSA9IDEyNyArIDI4ICgxMjEpID0gMzUxNWBgYF0KCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs%3D</server-url>
@@ -1114,7 +1231,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-29T11:18:37-06:00    
+      ###    on 2019-08-21T16:43:23-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -1245,6 +1362,13 @@
       </solution>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.2397" correct_ans_latex_string="0.2397" correct_value="0.2397" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.0801" correct_ans_latex_string="0.0801" correct_value="0.0801" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="0.0801" correct_ans_latex_string="0.0801" correct_value="0.0801" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 _filter_name="dereference_array_ans" ans_label="AnSwEr0004" ans_message="" ans_name="AnSwEr0004" correct_ans="0.5681" correct_ans_latex_string="0.5681" correct_value="0.5681" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=30&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGd0fXs%2BfVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBBIHRlc3RlciBtYWtlcyByYW5kb20gb2JzZXJ2YXRpb25zIG9mIHRoZSBsaWZlIHRpbWVzIG9mIHRoaXMgcGFydGljdWxhciBicmFuZCBvZiBsaWdodGJ1bGJzIGFuZCByZWNvcmRzIHRoZW0gb25lIGJ5IG9uZSBhcyBlaXRoZXIgYSBzdWNjZXNzIGlmIHRoZSBsaWZlIHRpbWUgZXhjZWVkcyAxIHllYXIsIG9yIGFzIGEgZmFpbHVyZSBvdGhlcndpc2UuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSByYW5kb21seSB0ZXN0ZWQgYnVsYiBsYXN0cyBtb3JlIHRoYW4gMSB5ZWFyOiBbX19fX19fX19fX117MC4yMzk3fQoKRGV0ZXJtaW5lIHByb2JhYmlsaXR5IHRoYXQgdGhlIGZpcnN0IHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSBmaWZ0aCBvYnNlcnZhdGlvbjogW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgc2Vjb25kIHN1Y2Nlc3Mgb2NjdXJzIGluIHRoZSA4dGggb2JzZXJ2YXRpb24gZ2l2ZW4gdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnJlZCBpbiB0aGUgM3JkIG9ic2VydmF0aW9uOiAgW19fX19fX19fX19dezAuMDgwMX0KCkRldGVybWluZSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgZmlyc3Qgc3VjY2VzcyBvY2N1cnMgaW4gYW4gb2RkLW51bWJlcmVkIG9ic2VydmF0aW9uOiBbX19fX19fX19fX117MC41NjgxfQoKCkVORF9QR01MCgpCRUdJTl9QR01MX0hJTlQKVXNlIHRoZSBleHBvbmVudGlhbCBkaXN0cmlidXRpb24gdG8gZ2V0IHRoZSBmaXJzdCBhbnN3ZXIuIFVzZSB0aGUgZ2VvbWV0cmljIHRvIGdldCB0aGUgcmVtYWluZGVyLgoKCkVORF9QR01MX0hJTlQKCkJFR0lOX1BHTUxfU09MVVRJT04KVXNpbmcgdGhlIGV4cG9uZW50aWFsIGRpc3RyaWJ1dGlvbiwKCltgYGBwID0gUChYIFxndCAxKSA9IDEgLSBGKDEpID0gMSAtICgxLWVeey1cZnJhY3sxfXswLjd9fSkgXGFwcHJveCAwLjIzOTcuYGBgXQoKCgpOb3csIHVzZSB0aGUgZ2VvbWV0cmljIGRpc3RyaWJ1dGlvbiB3aXRoIFtgcCA9IDAuMjM5N1x0ZXh0ey4uLn1gXQoKW2BgYFAoWCA9IDUpID0gZig1KSA9ICgxLTAuMjM5NyleNCBcY2RvdCAwLjIzOTcgXGFwcHJveCAwLjA4MDEuYGBgXQoKCgpbYGBgUChcdGV4dHsybmQgc3VjY2VzcyBvbiA4fSB8IFx0ZXh0ezFzdCBzdWNjZXNzIG9uIDN9KSA9IFAoWCA9IDUpIFxhcHByb3ggMC4wODAxYGBgXQoKCgpbYGBgXGJlZ2lue2FsaWduZWR9CiBQKFx0ZXh0ezFzdCBzdWNjZXNzIG9uIGFuIG9kZCB0cmlhbH0pICYgPSBmKDEpICsgZigzKSArIGYoNSkgKyAuLi5cXAogJiA9IHAgKyAoMS1wKV4yIFxjZG90IHAgKyAoMS1wKV40IFxjZG90IHAgKyAoMS1wKV42IFxjZG90IHAgKyAuLi4gXFwKICYgPSBwIFxzdW1fe3g9MH1ee1xpbmZ0eX0gXGxlZnQgKCAoMS1wKV4yIFxyaWdodCleayBcXAogJiA9IHAgXGZyYWN7MX17MS0oMS1wKV4yfSBcYXBwcm94IDAuNTY4MQpcZW5ke2FsaWduZWR9YGBgXQoKCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7</server-url>
@@ -1287,7 +1411,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-29T11:18:37-06:00    
+      ###    on 2019-08-21T16:43:23-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -1389,6 +1513,10 @@
       </solution>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.73497" correct_ans_latex_string="0.73497" correct_value="0.73497" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=31&amp;problemSource=RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTtsb2FkTWFjcm9zKCJQQ0NtYWNyb3MucGwiKTsKVEVYVChLZXlib2FyZEluc3RydWN0aW9ucyhxQFwoXG5ld2NvbW1hbmR7XGx0fXs8fVwpQCkpOwpDb250ZXh0KCdOdW1lcmljJyk7CgpCRUdJTl9QR01MCkl0IGNhbiBiZSBwcmVzdW1lZCB0aGF0IHRoZSBsaWZlIHNwYW4gaW4geWVhcnMgb2YgYSBjZXJ0YWluIGJyYW5kIG9mIGxpZ2h0YnVsYnMgZm9sbG93cyB0aGUgUG9pc3NvbiBwcm9jZXNzIGFzc3VtcHRpb25zLiAgU3VwcG9zZSB0aGF0IHRoZSBtZWFuIGxpZmUgc3BhbiB0aWxsIGZhaWx1cmUgaXMga25vd24gdG8gYmUgMC43IHllYXJzLiBUbyBkbyBsb25nLXRlcm0gc3R1ZHksIGEgc2VyaWVzIG9mIGxpZ2h0IGJ1bGJzIGFyZSBhcnJhbmdlZCBzbyB0aGF0IHdoZW4gdGhlIGZpcnN0IG9uZSBmYWlscywgdGhlIG5leHQgb25lIGNvbWVzIG9uLCBldGMuCgpEZXRlcm1pbmUgdGhlIHByb2JhYmlsaXR5IHRoYXQgaXQgdGFrZXMgYXQgbW9zdCAzLjUgeWVhcnMgYmVmb3JlIHRoZSA0dGggYnVsYiBmYWlsczogW19fX19fX19fX19dezAuNzM0OTd9CgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KVGhpcyBpcyBhIGdhbW1hIGRpc3RyaWJ1dGlvbiB3aXRoIHIgPSA0IGFuZAoKW2BgYEYoeCkgPSAxIC0gXHN1bV97az0wfV4zIFxmcmFjeyAoeC8wLjcpXmsgZV57LXgvMC43fX17ayF9YGBgXQoKU28sCgpbYGBgXGJlZ2lue2FsaWduZWR9ClAoWCBcbHQgMy41KSAmID0gRigzLjUpXFwKICYgPSAxIC0gXGZyYWN7ICgzLjUvMC43KV4wIGVeey0zLjUvMC43fX17MCF9IFxcIC0gXGZyYWN7ICgzLjUvMC43KV4xIGVeey0zLjUvMC43fX17MSF9IFxcIC0gXGZyYWN7ICgzLjUvMC43KV4yIGVeey0zLjUvMC43fX17MiF9IC0gXGZyYWN7ICgzLjUvMC43KV4zIGVeey0zLjUvMC43fX17MyF9XFwKICYgPSAxIC0gZV57LTV9IC0gNSBcY2RvdCBlXnstNX0gLSBcZnJhY3syNX17Mn0gXGNkb3QgZV57LTV9IC0gXGZyYWN7MTI1fXs2fSBcY2RvdCBlXnstNX1cXAogJiA9IDEgLSBlXnstNX0gXGxlZnQgKCAxICsgNSArIDI1LzIgKyAxMjUvNiBccmlnaHQgKSBcYXBwcm94IDAuNzM0OTcuClxlbmR7YWxpZ25lZH1gYGBdCgoKCgpFTkRfUEdNTF9TT0xVVElPTgoKRU5ERE9DVU1FTlQoKTs%3D</server-url>
@@ -1423,6 +1551,15 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.744126415189248" correct_ans_latex_string="0.744126415189248" correct_value="0.744126415189248" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="2.44712722426076" correct_ans_latex_string="2.44712722426076" correct_value="2.44712722426076" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="0.130463158797292" correct_ans_latex_string="0.130463158797292" correct_value="0.130463158797292" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 _filter_name="dereference_array_ans" ans_label="AnSwEr0004" ans_message="" ans_name="AnSwEr0004" correct_ans="0.402657776249234" correct_ans_latex_string="0.402657776249234" correct_value="0.402657776249234" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0005 _filter_name="dereference_array_ans" ans_label="AnSwEr0005" ans_message="" ans_name="AnSwEr0005" correct_ans="0.652001817378427" correct_ans_latex_string="0.652001817378427" correct_value="0.652001817378427" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0006 _filter_name="dereference_array_ans" ans_label="AnSwEr0006" ans_message="" ans_name="AnSwEr0006" correct_ans="1.27984401644543" correct_ans_latex_string="1.27984401644543" correct_value="1.27984401644543" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=32&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg</server-url>
@@ -1443,13 +1580,17 @@
       <statement>
       <p>Fluorescent lighbulbs have lifetimes that  are normally distributed with a mean of 6 years and a standard deviation of 
       1.6 years. The figure below shows the distribution of lifetimes of fluorescent lightbulbs. 
-      Calculate the shaded area under the curve.   <em> Express your answer in decimal form with at least two decimal place accuracy. </em></p>
+      Calculate the shaded area under the curve.   <alert> Express your answer in decimal form with at least two decimal place accuracy. </alert></p>
       <p>Answer: <fillin name="AnSwEr0001" characters="15" /></p>
       <sidebyside widths="73.3333333333333%">
       <image source="images/webwork-33-image-1.png" />
       </sidebyside>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.818594614120363" correct_ans_latex_string="0.818594614120363" correct_value="0.818594614120363" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1469,11 +1610,16 @@
       
     <static source="Library/NAU/setStatistics/normprob4.pg" seed="34">
       <statement>
-      <p>Consider a normal distribution curve where the middle 75 <percent /> of the area under the curve lies above the interval ( 3 , 20 ). Use this information to find the mean,  <m>\mu</m> , and the standard deviation, <m>\sigma</m> , of the distribution.</p>
+      <p>Consider a normal distribution curve where the middle 75 % of the area under the curve lies above the interval ( 3 , 20 ). Use this information to find the mean,  <m>\mu</m> , and the standard deviation, <m>\sigma</m> , of the distribution.</p>
       <p>a)  <m>\mu =</m> <fillin name="AnSwEr0001" characters="20" /></p>
       <p>b)  <m>\sigma =</m> <fillin name="AnSwEr0002" characters="20" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="11.5" correct_ans_latex_string="11.5" correct_value="11.5" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="7.38906" correct_ans_latex_string="7.38906" correct_value="7.38906" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" tolType="absolute" tolerance="0.01" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1506,6 +1652,12 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.979365455416859" correct_ans_latex_string="0.979365455416859" correct_value="0.979365455416859" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.0629326258242672" correct_ans_latex_string="0.0629326258242672" correct_value="0.0629326258242672" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="NO" done="1" error_flag="" error_message="" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" student_ans="" type="str_cmp" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=35&amp;sourceFilePath=Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg</server-url>
@@ -1535,6 +1687,12 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.0562612450862406" correct_ans_latex_string="0.0562612450862406" correct_value="0.0562612450862406" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.0355883973439094" correct_ans_latex_string="0.0355883973439094" correct_value="0.0355883973439094" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="0.866219249928062" correct_ans_latex_string="0.866219249928062" correct_value="0.866219249928062" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=36&amp;sourceFilePath=Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg</server-url>
@@ -1553,13 +1711,18 @@
       
     <static source="Library/NAU/setStatistics/cheby2.pg" seed="37">
       <statement>
-      <p>A statistician uses Chebyshev's Theorem to estimate that at least 10 <percent /> of a population lies between 
+      <p>A statistician uses Chebyshev's Theorem to estimate that at least 10 % of a population lies between 
       the values 2 and 13.  Use this information to find the values of the population mean, <m>\mu</m> , and 
       the population standard deviation <m>\sigma</m>.</p>
       <p>a)  <m>\mu =</m> <fillin name="AnSwEr0001" characters="20" /></p>
       <p>b)  <m>\sigma =</m> <fillin name="AnSwEr0002" characters="20" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="7.5" correct_ans_latex_string="7.5" correct_value="7.5" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="5.21775813927783" correct_ans_latex_string="5.21775813927783" correct_value="5.21775813927783" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1582,9 +1745,13 @@
       <p>Suppose that the blood pressure of the human inhabitants of a certain Pacific island is  distributed with 
       mean, <m>\mu</m> = 76 mmHg and standard deviation , <m>\sigma</m> = 15 mmHg. According to Chebyshev's Theorem, 
       at least what percentage of the islander's have blood pressure in the range from 32.5 mmHg to 119.5 mmHg ?</p>
-      <p>answer: <fillin name="AnSwEr0001" characters="20" /><percent /></p>
+      <p>answer: <fillin name="AnSwEr0001" characters="20" />%</p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="88.1093935790725" correct_ans_latex_string="88.1093935790725" correct_value="88.1093935790725" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1606,14 +1773,14 @@
       <statement>
       <p>A poll is taken in which <m>332</m> out of <m>550</m> randomly selected voters indicated their preference for a certain
       candidate.</p>
-      <p>(a) Find a <m>99</m><percent /> confidence interval for <m>p</m>.</p>
+      <p>(a) Find a <m>99</m>% confidence interval for <m>p</m>.</p>
       <p><fillin name="AnSwEr0001" characters="20" /> <m>\leq p \leq</m> <fillin name="AnSwEr0002" characters="20" /></p>
-      <p>(b) Find the margin of error for this <m>99</m><percent /> confidence interval for <m>p</m>.</p>
+      <p>(b) Find the margin of error for this <m>99</m>% confidence interval for <m>p</m>.</p>
       <p><fillin name="AnSwEr0003" characters="20" /></p>
       </statement>
       
       <statement>
-      <p>(c) Without doing any calculations, indicate whether the margin of error is larger or smaller or the same for an 80<percent /> confidence interval.
+      <p>(c) Without doing any calculations, indicate whether the margin of error is larger or smaller or the same for an 80% confidence interval.
       <var form="buttons">
       <li>
       <p>smaller</p>
@@ -1627,6 +1794,13 @@
       </var></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="0.549912116930105" correct_ans_latex_string="0.549912116930105" correct_value="0.549912116930105" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.657360610342622" correct_ans_latex_string="0.657360610342622" correct_value="0.657360610342622" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="0.0537242467062586" correct_ans_latex_string="0.0537242467062586" correct_value="0.0537242467062586" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 ans_name="AnSwEr0004" />
+      </answerhashes>
       
     </static>
       
@@ -1715,6 +1889,12 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="-0.479315960912047" correct_ans_latex_string="-0.479315960912047" correct_value="-0.479315960912047" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="1.19788273615635" correct_ans_latex_string="1.19788273615635" correct_value="1.19788273615635" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="no" done="1" error_flag="" error_message="" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" student_ans="" type="str_cmp" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=4&amp;sourceFilePath=Library/ASU-topics/setStat/dueck4_2_4.pg</server-url>
@@ -1736,11 +1916,15 @@
       <p>Refer to the following scenario.</p>
       <p>An epidemiologist is worried about the prevalence of the flu in East Vancouver and the potential shortage of vaccines for the area. She will need to provide a recommendation for how to allocate the vaccines appropriately across the city. She takes a simple random sample of 332 people living in East Vancouver and finds that 34 have recently had the flu.</p>
       <p>Suppose that the epidemiologist wants to re-estimate the population proportion and wishes
-      for her 95<percent /> confidence interval to have a margin of error no larger than 0.04.  How large 
+      for her 95% confidence interval to have a margin of error no larger than 0.04.  How large 
       a sample should she take to achieve this? Please carry answers to at least six decimal places in intermediate steps.</p>
       <p>Sample size = <fillin name="AnSwEr0001" characters="6" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" checker="CODE(0x55a8433791a0)" correct_ans="221 (using a critical value of 1.96)  or 230 (using a critical value of 2.0)" correct_ans_latex_string="230" correct_value="230" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1762,7 +1946,7 @@
       <statement>
       <p>A random sample of <m>n</m> measurements was selected from a population with 
       standard deviation <m>\sigma = 18.6</m> and unknown mean <m>\mu</m>.  
-      Calculate a <m>90</m> <percent /> confidence interval for <m>\mu</m> for each of the
+      Calculate a <m>90</m> % confidence interval for <m>\mu</m> for each of the
       following situations:</p>
       <p>(a) <m>n = 50, \ \overline{x} = 100</m></p>
       <p><fillin name="AnSwEr0001" characters="15" /> <m>\leq \mu \leq</m> <fillin name="AnSwEr0002" characters="15" /></p>
@@ -1775,6 +1959,16 @@
       ''INCREASES'', without the quotes.)</p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="95.6729" correct_ans_latex_string="95.6729" correct_value="95.6729" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="104.327" correct_ans_latex_string="104.327" correct_value="104.327" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="96.5792" correct_ans_latex_string="96.5792" correct_value="96.5792" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 _filter_name="dereference_array_ans" ans_label="AnSwEr0004" ans_message="" ans_name="AnSwEr0004" correct_ans="103.421" correct_ans_latex_string="103.421" correct_value="103.421" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0005 _filter_name="dereference_array_ans" ans_label="AnSwEr0005" ans_message="" ans_name="AnSwEr0005" correct_ans="96.9403" correct_ans_latex_string="96.9403" correct_value="96.9403" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0006 _filter_name="dereference_array_ans" ans_label="AnSwEr0006" ans_message="" ans_name="AnSwEr0006" correct_ans="103.06" correct_ans_latex_string="103.06" correct_value="103.06" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0007 _filter_name="dereference_array_ans" ans_label="AnSwEr0007" ans_message="" ans_name="AnSwEr0007" correct_ans="DECREASES" correct_ans_latex_string="\text{DECREASES}" correct_value="DECREASES" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (String)" typeMatch="Value::Real" />
+      </answerhashes>
       
     </static>
       
@@ -1795,7 +1989,7 @@
     <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg" seed="42">
       <statement>
       
-      <p>Use the given data to find the 95<percent /> confidence interval estimate of the population 
+      <p>Use the given data to find the 95% confidence interval estimate of the population 
       mean <m>\mu</m>. Assume that the population has a normal distribution.</p>
       <p>IQ scores of professional athletes:</p>
       <p>Sample size <m>n = 25</m></p>
@@ -1804,6 +1998,11 @@
       <p><fillin name="AnSwEr0001" characters="20" /> <m>\lt  \mu \lt </m> <fillin name="AnSwEr0002" characters="20" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="100.8722" correct_ans_latex_string="100.8722" correct_value="100.8722" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="109.1278" correct_ans_latex_string="109.1278" correct_value="109.1278" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1824,12 +2023,17 @@
     <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg" seed="43">
       <statement>
       <p>Find the critical values <m>\chi_L^2 = \chi_{1-\alpha/2}^2</m> and 
-      <m>\chi_R^2 = \chi_{\alpha/2}^2</m> that correspond to <m>98</m><percent /> degree of 
+      <m>\chi_R^2 = \chi_{\alpha/2}^2</m> that correspond to <m>98</m>% degree of 
       confidence and the sample size <m>n = 9.</m></p>
       <p><m>\chi_L^2 =</m> <fillin name="AnSwEr0001" characters="10" /> <m>\ \ \ \ </m>
       <m>\chi_R^2 =</m> <fillin name="AnSwEr0002" characters="10" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="1.64650" correct_ans_latex_string="1.6465" correct_value="1.6465" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="20.0902" correct_ans_latex_string="20.0902" correct_value="20.0902" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1849,11 +2053,15 @@
       
     <static source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg" seed="44">
       <statement>
-      <p>Find the minimum sample size needed to be <m>99</m><percent />  confident that the sample 
-      variance is within <m>40</m><percent /> of the population variance.</p>
+      <p>Find the minimum sample size needed to be <m>99</m>%  confident that the sample 
+      variance is within <m>40</m>% of the population variance.</p>
       <p><fillin name="AnSwEr0001" characters="6" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="100" correct_ans_latex_string="100" correct_value="100" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1886,6 +2094,11 @@
       <fillin name="AnSwEr0002" characters="10" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="-1.49" correct_ans_latex_string="-1.49" correct_value="-1.49" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.1362" correct_ans_latex_string="0.1362" correct_value="0.1362" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1922,6 +2135,11 @@
       <fillin name="AnSwEr0002" characters="10" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="1.30437" correct_ans_latex_string="1.30437" correct_value="1.30437" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="0.0968" correct_ans_latex_string="0.0968" correct_value="0.0968" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -1976,7 +2194,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2018-11-29T11:18:37-06:00    
+      ###    on 2019-08-21T16:43:23-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -2063,14 +2281,20 @@
       <statement>
       <p>A random sample of 10 observations was drawn from a large normally distributed population. The data is below.</p>
       <p>22 20 22 20 25 18 22 23 19 18</p>
-      <p>To determine if you can infer at the 4<percent /> significance level that the population mean is not equal to 22, complete the steps below:</p>
+      <p>To determine if you can infer at the 4% significance level that the population mean is not equal to 22, complete the steps below:</p>
       <p>The value of the standardized test statistic: <fillin name="AnSwEr0001" characters="10" /></p>
-      <p>Using interval notation with <m>\infty</m> written as <lq />infty<rq /> and <m>\cup</m> written as <lq />U<rq /> (capital u), determine each of the following:</p>
+      <p>Using interval notation with <m>\infty</m> written as <lq/>infty<rq/> and <m>\cup</m> written as <lq/>U<rq/> (capital u), determine each of the following:</p>
       <p>The rejection region for the standardized test statistic: <fillin name="AnSwEr0002" characters="30" /></p>
       <p>The p-value is <fillin name="AnSwEr0003" characters="10" /></p>
       <p>Your decision for the hypothesis test therefore would be to not reject the null hypothesis <m>H_0\text{.}</m></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="-1.5238" correct_ans_latex_string="-1.5238" correct_value="-1.5238" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" cmp_class="a Number" correct_ans="" correct_ans_latex_string="\text{}" correct_value="" done="" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" isPreview="" original_student_ans="" preview_latex_string="\text{}" preview_text_string="" score="1" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" student_formula="" student_value="" studentsMustReduceUnions="1" type="Value (String)" typeMatch="Value::Real" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="0.161894" correct_ans_latex_string="0.161894" correct_value="0.161894" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -2095,11 +2319,11 @@
       <p><me>\begin{array}{ccccccccccc} 
       17 \amp  21 \amp  22 \amp  16 \amp  21 \amp  20 \amp  23 \amp  17 \amp  23 \amp  22 
       \end{array}</me></p>
-      <p>Test to determine if we can infer at the 2<percent /> significance level that the 
+      <p>Test to determine if we can infer at the 2% significance level that the 
       population mean is not equal to 18, filling in the requested 
       information below.</p>
       <p>A. The value of the standardized test statistic: <fillin name="AnSwEr0001" characters="25" /></p>
-      <p><em> Note:</em> For the next part, your answer should use interval notation.  An
+      <p><alert> Note:</alert> For the next part, your answer should use interval notation.  An
       answer of the form <m>(-\infty, a)</m> is expressed (-infty, a), an answer of the 
       form <m>(b, \infty)</m> is expressed (b, infty), and an answer of the 
       form <m>(-\infty, a) \cup (b, \infty)</m> is expressed (-infty, a)U(b, infty).</p>
@@ -2122,6 +2346,13 @@
       </var></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="2.65921578128375" correct_ans_latex_string="2.65921578128375" correct_value="2.65921578128375" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="(-infinity,-2.82143) U (2.82143,infinity)" correct_ans_latex_string="\left(-\infty ,-2.82143\right)\cup \left(2.82143,\infty \right)" correct_value="(-infinity,-2.82143) U (2.82143,infinity)" debug="" done="1" entry_type="an interval or set" error_flag="" error_message="" extra="" firstElement="(-infinity,-2.82143)" ignoreInfinity="1" ignoreStrings="1" implicitList="1" list_type="an interval, set or union" ordered="0" original_student_ans="" partialCredit="0" preview_latex_string="" preview_text_string="" removeParens="1" requireParenMatch="0" score="0" short_type="a union" showCoordinateHints="0" showEqualErrors="1" showHints="0" showLengthHints="0" showParenHints="" showTypeWarnings="1" showUnionReduceWarnings="" student_ans="" studentsMustReduceUnions="" type="Value (Union)" typeMatch=")" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="0.0260792" correct_ans_latex_string="0.0260792" correct_value="0.0260792" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 ans_name="AnSwEr0004" />
+      </answerhashes>
       
     </static>
       
@@ -2147,8 +2378,8 @@
       and <m>s = 0.68</m>.  Does this sample provide evidence that people living in rural Idaho communities live 
       longer than 77 years?</p>
       <p>(a) State the null and alternative hypotheses:  (Type "mu" for the symbol <m>\mu</m> , 
-       e.g.  <em> mu <m>></m>1 </em> for the mean is greater than 1,  <em> mu <m>\lt </m> 1 </em> 
-      for the mean is less than 1, <em> mu not = 1 </em> for the mean is not equal to 1)</p>
+       e.g.  <alert> mu <m>></m>1 </alert> for the mean is greater than 1,  <alert> mu <m>\lt </m> 1 </alert> 
+      for the mean is less than 1, <alert> mu not = 1 </alert> for the mean is not equal to 1)</p>
       <p><m>H_0</m> : <fillin name="AnSwEr0001" characters="15" /></p>
       <p><m>H_a</m> : <fillin name="AnSwEr0002" characters="15" /></p>
       <p>(b) Find the test statistic, t =  <fillin name="AnSwEr0003" characters="10" /></p>
@@ -2157,6 +2388,13 @@
       <p>(Type: Yes or No) <fillin name="AnSwEr0004" characters="10" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="mu = 77" done="1" error_flag="" error_message="" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" student_ans="" type="ordered_str_cmp" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="mu &gt; 77" done="1" error_flag="" error_message="" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" student_ans="" type="ordered_str_cmp" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="(78.11-77)/(0.68/[sqrt(15)])" correct_ans_latex_string="\frac{78.11-77}{\frac{0.68}{\sqrt{15}}}" correct_value="6.32208" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 _filter_name="dereference_array_ans" ans_label="AnSwEr0004" ans_message="" ans_name="AnSwEr0004" correct_ans="Yes" correct_ans_latex_string="\text{Yes}" correct_value="Yes" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (String)" typeMatch="Value::Real" />
+      </answerhashes>
       
     </static>
       
@@ -2213,6 +2451,11 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 ans_name="AnSwEr0001" />
+        <AnSwEr0002 ans_name="AnSwEr0002" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=5&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg</server-url>
@@ -2249,6 +2492,13 @@
       </var></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="35.2977777777778" correct_ans_latex_string="35.2977777777778" correct_value="35.2977777777778" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="8.64272" correct_ans_latex_string="8.64272" correct_value="8.64272" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="42.7957" correct_ans_latex_string="42.7957" correct_value="42.7957" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 ans_name="AnSwEr0004" />
+      </answerhashes>
       
     </static>
       
@@ -2317,6 +2567,12 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 ans_name="AnSwEr0001" />
+        <AnSwEr0002 ans_name="AnSwEr0002" />
+        <AnSwEr0003 ans_name="AnSwEr0003" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=6&amp;sourceFilePath=Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg</server-url>
@@ -2353,6 +2609,13 @@
       </statement>
       
       
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="-3.3122770329689" correct_ans_latex_string="-3.3122770329689" correct_value="-3.3122770329689" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="-2.94104211797917" correct_ans_latex_string="-2.94104211797917" correct_value="-2.94104211797917" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="-0.145936853861059" correct_ans_latex_string="-0.145936853861059" correct_value="-0.145936853861059" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 _filter_name="dereference_array_ans" ans_label="AnSwEr0004" ans_message="" ans_name="AnSwEr0004" correct_ans="-0.049898885085184" correct_ans_latex_string="-0.049898885085184" correct_value="-0.049898885085184" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
+      
     </static>
       
     <server-url hint="yes" solution="yes">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=7&amp;sourceFilePath=Library/Rochester/setStatistics6CorrelationRegression/ur_stt_6_10.pg</server-url>
@@ -2377,6 +2640,12 @@
       <p>How many different sequences are possible if the first, third, and fourth numbers must be the same? <fillin name="AnSwEr0003" characters="20" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="6.04662E+07" correct_ans_latex_string="6.04662\times 10^{7}" correct_value="6.04662E+07" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="59049" correct_ans_latex_string="59049" correct_value="59049" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="1.67962E+06" correct_ans_latex_string="1.67962\times 10^{6}" correct_value="1.67962E+06" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       
@@ -2411,6 +2680,13 @@
       <p><fillin name="AnSwEr0004" characters="30" /></p>
       </statement>
       
+      
+      <answerhashes>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" correct_ans="6171" correct_ans_latex_string="6171" correct_value="6171" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0002 _filter_name="dereference_array_ans" ans_label="AnSwEr0002" ans_message="" ans_name="AnSwEr0002" correct_ans="1543" correct_ans_latex_string="1543" correct_value="1543" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0003 _filter_name="dereference_array_ans" ans_label="AnSwEr0003" ans_message="" ans_name="AnSwEr0003" correct_ans="1286" correct_ans_latex_string="1286" correct_value="1286" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0004 _filter_name="dereference_array_ans" ans_label="AnSwEr0004" ans_message="" ans_name="AnSwEr0004" correct_ans="257" correct_ans_latex_string="257" correct_value="257" debug="0" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+      </answerhashes>
       
     </static>
       

@@ -52,7 +52,7 @@ Consider a Poisson Process where you start with an interval of fixed length T an
 <p>
 <theorem><title>Poisson Probability Function</title>
 <statement>
-<p>Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
+<p xml:id="PoissonPF">Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
 <me>f(x) = \frac{\mu^x e^{-\mu}}{x!}</me>
 for <m>R = \{ 0, 1, 2, ... \}</m>.
 </p>
@@ -286,6 +286,7 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 <theorem><title>Derivation of Statistics for Exponential Distribution and Plotting</title>
 <statement>
 	<p>
+	<me>\mu = \frac{1}{\lambda}</me>
 	<me>\sigma^2 = \mu^2</me>
 	<me>\gamma_1 = 2</me>
 	<me>\gamma_2 = 9</me>
@@ -306,6 +307,17 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 	</p>
 </proof>
 </theorem>
+</p>
+
+
+<p>
+<definition><title>Alternate Form for the Exponential Distribution Probability Function</title>
+	<statement>
+	<p xml:id="ExponentialPF">Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
+		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
+	</p>
+	</statement>
+</definition>
 </p>
 
 <p>
@@ -337,17 +349,6 @@ def _(m = slider(1,12,1/2,2,label='mu')):
     plot(f(mu=m),x,0,30).show(ymax=1)
 	</input>
 </sage>
-</p>
-
-
-<p>
-<definition><title>Alternate Form for the Exponential Distribution Probability Function</title>
-	<statement>
-	<p>Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
-		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
-	</p>
-	</statement>
-</definition>
 </p>
 
 
@@ -573,7 +574,7 @@ Notice that for this random variable, <m>\mu = \lambda T</m> can be obtained for
 <p>
 <definition><title>Gamma Distribution Probability Function</title>
 <statement>
-<p>
+<p xml:id="GammaPF">
 If X measures the interval until the rth success and <m>\mu</m> as the average interval until the 1st success, then X with probability function
 <me>f(x) =  \frac{x^{r-1} \cdot e^{-\frac{x}{\mu}}}{\Gamma(r) \cdot \mu^r}</me>
 has a Gamma Distribution.
@@ -715,7 +716,7 @@ def _(r=[2,3,6,9,alpha]):
     
     pretty_print('Mean = ',mean)
     
-    v = (M2-mean^2).factor()
+    v = (M2-mean^2).full_simplify().factor()
     pretty_print('Variance = ',v)
     stand = sqrt(v)
     
@@ -775,6 +776,171 @@ hist(Psample, prob=TRUE, add=TRUE)
 </p>
 
 </section>
+
+<section><title>Generating Functions for Poisson Process Distributions</title>
+
+
+<p>
+<xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
+</p>
+
+
+<p>
+
+<theorem><title>Moment Generating Function for Poisson</title>
+<statement>
+<p xml:id="PoissonMGF">Presuming <m>t \gt 0</m> and
+<me>M(t) = e^{\mu \left ( e^t - 1 \right )}</me>
+</p>
+</statement>
+<proof>
+<p>Using the <xref ref="PoissonPF">Poisson probability function</xref>,
+<md>
+<mrow>M(t) &amp; = \sum_{x=0}^{\infty} e^{tx} \frac{\mu^x e^{-\mu}}{x!}</mrow>
+<mrow> &amp; = \sum_{x=0}^{\infty} \frac{\left (\mu e^t \right )^x e^{-\mu e^t} e^{\mu e^t} e^{-\mu} }{x!}</mrow>
+<mrow> &amp; =  e^{\mu e^t} e^{-\mu} \sum_{x=0}^{\infty} \frac{\left (\mu e^t \right )^x e^{-\mu e^t} }{x!}</mrow>
+<mrow> &amp; =  e^{\mu \left( e^t - 1 \right )}  \sum_{x=0}^{\infty} \frac{\left (\mu e^t \right )^x e^{-\mu e^t} }{x!}</mrow>
+<mrow> &amp; =  e^{\mu \left( e^t - 1 \right )},</mrow>
+</md>
+where we used a new poisson distribution with new mean <m>\mu e^t</m> to convert the sum.
+</p>
+</proof>
+</theorem>
+
+<corollary><title>Poisson Properties via Moment Generating Function</title>
+<statement>
+<p>For the Poisson variable X,
+<me> M(0) = 1</me>
+<me> M'(0) = \mu</me>
+<me> M''(0) = \mu + \mu^2 = \sigma^2 + \mu^2</me>
+</p>
+</statement>
+<proof>
+<p>
+<me> M(0) = e^{\mu \left ( e^0 - 1 \right )} = e^0 = 1.</me>
+Continuing,
+<me> M'(t) = \mu e^{\left(\mu {\left(e^{t} - 1\right)} + t\right)}</me>
+and therefore
+<me> M'(0) = \mu e^{\left(\mu {\left(1 - 1\right)} + 0\right)} = \mu e^0 = \mu.</me>
+Continuing with the second derivative,
+<me> M''(t) = {\left(\mu e^{t} + 1\right)} \mu e^{\left(\mu {\left(e^{t} - 1\right)} + t\right)}</me>
+and therefore
+<me> M''(0) = {\left(\mu + 1\right)} \mu e^{\left(\mu {\left(1 - 1\right)} + 0\right)} = {\left(\mu + 1\right)} \mu e^0 = \mu + \mu^2 </me>
+which is the squared mean plus the variance for the poisson distribution.
+</p>
+</proof>
+</corollary>
+
+</p>
+
+<p>
+<theorem><title>Moment Generating Function for Exponential</title>
+<statement>
+<p xml:id="ExponentialMGF">Presuming <m>t \lt \frac{1}{\mu}</m>, 
+<me>M(t) = \frac{1}{1-\mu t}.</me>
+</p>
+</statement>
+<proof>
+<p>Using the <xref ref="ExponentialPF">Exponential probability function</xref>
+<md>
+<mrow>M(t) &amp; = \int_0^{\infty} e^{tx} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx</mrow>
+<mrow> &amp; = \frac{1}{\mu} \int_0^{\infty} e^{- x \left ( -t + \frac{1}{\mu} \right ) } dx</mrow>
+<mrow> &amp; =  \frac{1}{\mu \left(-t + \frac{1}{\mu} \right )}  e^{- x \left ( -t + \frac{1}{\mu} \right ) } \big |_0^{\infty}</mrow>
+<mrow> &amp; =  \frac{1}{\mu \left(-t + \frac{1}{\mu} \right )}  \left ( -0 + 1 \right )</mrow>
+<mrow> &amp; =  \frac{1}{\left(-\mu t + 1 \right )}.</mrow>
+</md>
+</p>
+</proof>
+</theorem>
+
+<corollary><title>Exponential Properties via Moment Generating Function</title>
+<statement>
+<p>For the Exponential variable X,
+<me> M(0) = 1</me>
+<me> M'(0) = \mu</me>
+<me> M''(0) = \mu^2 + \mu^2 = \sigma^2 + \mu^2</me>
+</p>
+</statement>
+<proof>
+<p>
+<me> M(0) = \frac{1}{1-\mu 0} = 1.</me>
+Continuing,
+<me> M'(t) = \frac{\mu}{ \left ( 1-\mu t \right )^2}</me>
+and therefore
+<me> M'(0) = \frac{\mu}{ \left ( 1-\mu 0 \right )^2} = \mu.</me>
+Continuing with the second derivative,
+<me> M''(t) = \frac{2 \mu^2}{ \left ( 1-\mu t \right )^3}</me>
+and therefore
+<me> M''(0) = \frac{2 \mu^2}{ \left ( 1-\mu 0 \right )^3}= 2 \mu^2 = \mu^2 + \mu^2. </me>
+which is the squared mean plus the variance for the poisson distribution.
+</p>
+</proof>
+</corollary>
+</p>
+
+<p>
+<theorem><title>Moment Generating Function for Gamma</title>
+<statement>
+<p xml:id="GammaMGF">Presuming <m>t \lt \frac{1}{\mu}</m> where <m>\mu</m> is the mean waiting time till the first "change" and <m>r</m> is the number of changes desired, 
+<me>M(t) = \frac{1}{ \left ( 1-\mu t \right )^{r}}</me>
+</p>
+</statement>
+<proof>
+<p>Using the <xref ref="GammaPF">Gamma probability function</xref>, 
+<md>
+<mrow>M(t) &amp; = \int_0^{\infty} e^{tx}  \frac{x^{r-1} \cdot e^{-\frac{x}{\mu}}}{\Gamma(r) \cdot \mu^r} dx</mrow>
+<mrow>M(t) &amp; = \int_0^{\infty} \frac{x^{r-1} \cdot e^{-x \left ( \frac{1}{\mu} - t \right )}}{\Gamma(r) \mu^r \left ( \frac{1}{\mu} - t \right )} dx</mrow>
+<mrow>M(t) &amp; = {  \frac{1}{\left ( 1-t \mu \right )^r} } \int_0^{\infty} \frac{x^{r-1} \cdot e^{-\frac{x}{ \left ( \frac{\mu}{1-t \mu} \right )}}}{\Gamma(r) \cdot { \left ( \frac{\mu}{1-t \mu} \right )}^r} dx</mrow>
+<mrow> &amp; =  \frac{1}{\left(-\mu t + 1 \right )^{r}}.</mrow>
+</md>
+since the last integral is on the Gamma probability function but with an adjusted mean.
+</p>
+</proof>
+</theorem>
+
+<corollary><title>Gamma Properties via Moment Generating Function</title>
+<statement>
+<p>For the Gamma variable X,  
+<me> M(0) = 1</me>
+<me> M'(0) = r \mu</me>
+<me> M''(0) = r \mu^2 + \left ( r \mu \right )^2 = \sigma^2 + \mu^2</me>
+</p>
+</statement>
+<proof>
+<p>
+<me> M(0) = \frac{1}{ \left ( 1-\mu 0 \right )^{r}}  \frac{1}{1} = 1.</me>
+Continuing,
+<me> M'(t) = \frac{r \mu}{ \left ( 1-\mu t \right )^{r+1}}</me>
+and therefore
+<me> M'(0) = \frac{r \mu}{ \left ( 1-\mu 0 \right )^{r+1}} = r \mu.</me>
+Continuing with the second derivative,
+<me> M''(t) = \frac{r(r+1) \mu^2}{ \left ( 1-\mu t \right )^{r+2}}</me>
+and therefore
+<me> M''(0) = \frac{r(r+1) \mu^2}{ \left ( 1-\mu 0 \right )^{r+2}} = r(r+1) \mu^2 = r \mu^2 + r^2 \mu^2 </me>
+which is the squared mean plus the variance for the poisson distribution.
+</p>
+</proof>
+</corollary>
+</p>
+<p>Once again, Sage can obtain the final answers quickly.  For Poisson:
+<sage>
+<input>
+var('t,mu')
+M = e^(mu *  (e^t - 1))
+Mt = derivative(M,t)
+Mtt = derivative(Mt,t)
+show(M)
+show(Mt)
+show(Mt(t=0))
+show(Mtt)
+show(Mtt(t=0))
+</input>
+</sage>
+
+
+</p>
+</section>
+
 
 <section><title>Summary</title>
 <introduction>
