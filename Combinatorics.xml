@@ -13,9 +13,7 @@
 <section><title>Introduction</title>
 <p>One of the earliest applications of mathematics you probably remember is how you could use number to count things. For many, this is what they think people do when they do mathematics. In this chapter, we will discover that it is possible to count items without actually listing them all.</p>
 
-<p>
-<example><title>Counting by actually listing out all possibilities</title>
-<p>Consider counting the number of ways one can arrange Peter, Paul, and Mary with the order important.  Listing the possibilities:
+<p>To illustrate, consider counting the number of ways one can arrange Peter, Paul, and Mary with the order important.  Listing the possibilities:
 <ul>
 	<li>Peter, Paul, Mary</li>
 	<li>Peter, Mary, Paul</li>
@@ -56,8 +54,7 @@ So, it is easy to see that these are all of the possible outcomes and that the t
 </ul>
 Notice how the list quickly grows when just one more choice is added. This example illustrates how keeping track of the number of items in a set can quickly get impossible to manage unless we can use a more mathematical approach that allows you to count the number of possibilities without having to list them all.
 </p>
-</example>
-</p>
+
 
 </section>
 
@@ -360,7 +357,7 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 	<p>
 	Enumerate all of the n data items individually with the <m>n_1!</m> identical values first and the remaining groups in like manner to get the enumerated list 
 	<me>
-	  \left { x_{1,1}, ..., x_{1,n_1}, x_{2,1}, ..., x_{2,n_2}, ... , x_{s,1}, ..., x_{s,n_2}, \right }
+	  \left \{ x_{1,1}, ..., x_{1,n_1}, x_{2,1}, ..., x_{2,n_2}, ... , x_{s,1}, ..., x_{s,n_s} \right \}
 	</me>
 	In this order, there are <m>n_1!</m> ways to arrange the first group, <m>n_2!</m> ways to arrange the second, etc. There are <m>n_1! \times n_2! \times ... \times \n_s!</m> ways to arrange all of the categories together with groups in this order but none of those group reorders does anything since those data values are all the same. Dividing out those from the <m>n!</m> original permutations of all items leaves one with the multinomial coefficient. 
 	</p>
@@ -550,7 +547,7 @@ In general, it would be nice to have a direct formula to determine the number of
 		<statement>
 		<p>
 		The value <m>_nC_r</m> is known as the binomial coefficient. It is
-		denoted by <m>{n \choose r}</m> and is read "n choose k".
+		denoted by <m>{n \choose r}</m> and is read "n choose r".
 		</p>
 		</statement>
 	</definition>
@@ -598,7 +595,7 @@ def _(n = slider(1,15,1,5)):
 		<li>
 		<md>
 			<mrow>\binom{n}{r} + \binom{n}{r+1} &amp; = \frac{n!}{r!(n-r)!} + \frac{n!}{(r+1)!(n-(r+1))!}</mrow>
-			<mrow> &amp; = (r+1) \frac{n!}{(r+1)!(n-r)!} // + (n-r) \frac{n!}{(r+1)!(n-r))!}</mrow>
+			<mrow> &amp; = (r+1) \frac{n!}{(r+1)!(n-r)!} \\ + (n-r) \frac{n!}{(r+1)!(n-r))!}</mrow>
 			<mrow> &amp; = \frac{(r+1) n! + (n-r)n!}{(r+1)!(n-r)!}</mrow>
 			<mrow> &amp; = \frac{(n+1) n!}{(r+1)!((n+1)-(r+1))!}</mrow>
 			<mrow> &amp; = \binom{n+1}{r+1}</mrow>

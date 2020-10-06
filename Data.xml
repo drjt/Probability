@@ -48,6 +48,19 @@ In creating statistical measures, you might want to consider one of the followin
 </p>
 	
 
+<p>
+<exercise><title>WebWork</title>
+		<introduction>
+		<p>
+		Here is an active exercise that you can continue to attempt until you get the correct answer.  Try to avoid clicking on the provided solution unless you are hopelessly stuck on exercises like this throughout the text.
+		</p>
+		</introduction>
+		<webwork source="Library/UVA-Stat/setStat212-Homework01/stat212-HW01-13.pg">
+		</webwork>
+</exercise>
+</p>
+
+
 </section>
 
 
@@ -61,7 +74,11 @@ In creating statistical measures, you might want to consider one of the followin
 <definition>
 	<title>Order Statistic</title>
 	<statement>
-	<p xml:id="OrderStatistics">From the data set <m>x_1, x_2, ... , x_n</m>, assume that when sorted it is denoted <m>y_1, y_2, ..., y_n</m> where  
+	<p xml:id="OrderStatistics">From the data set 
+	<me>x_1, x_2, ... , x_n,</me> 
+	assume that when sorted it is denoted 
+	<me>y_1, y_2, ..., y_n</me> 
+	where  
 	<me> y_1 \le y_2 \le ... \le y_n.</me> 
 	Then, <m>y_k</m> is known as the kth order statistic. </p>
 	</statement>
@@ -71,7 +88,10 @@ In creating statistical measures, you might want to consider one of the followin
 <p>	
 <example xml:id="PresidentAge"><title>Age of Presidents - order statistics</title>
 	<p>
-	The age at inauguration for presidents from 1981-2019 gives the data <m>x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47, x_6 = 70</m> (Reagan, Bush, Clinton, Bush, Obama, Trump). For this data, the order statistics are denoted <m>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69, y_6 = 71</m>.
+	The age at inauguration for presidents from 1981-2019 gives the data 
+	<me>x_1 = 69, x_2 = 64, x_3 = 46, x_4 = 54, x_5 = 47, x_6 = 70</me> 
+	(Reagan, Bush, Clinton, Bush, Obama, Trump). For this data, the order statistics are denoted 
+	<me>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69, y_6 = 70.</me>
 	</p>
 </example>
 </p>
@@ -83,7 +103,7 @@ In creating statistical measures, you might want to consider one of the followin
 <p>
 <definition><title>Minimum/Maximum:</title>  
 	<statement>
-	<p xml:id="MaxMin">For a given data set, the smallest and largest values are known as the minimum and maximum, respectively. In our notation, minimum = <m>y_1</m> and the maximum = <m>y_n</m></p>
+	<p xml:id="MaxMin">For a given data set, the smallest and largest values are known as the minimum and maximum, respectively. In our notation and presuming a data set of size n, the minimum = <m>y_1</m> and the maximum = <m>y_n</m></p>
 	</statement>
 </definition>
 </p>
@@ -102,8 +122,8 @@ In creating statistical measures, you might want to consider one of the followin
 A value that separates ordered data into two groups with a desired percentage on each side is called a percentile. There are multiple ways that have been created that achieve this goal. In this text we present two and will consistently use the first one presented below. For each, in general, a given percentile is a numerical value at which approximately a given percentage of the data is smaller. 
 </p>
 <p>
-The definition presented below provides for a unique measure for each unique value of p that corresponds to the PERCENTILE.EXC macro in Excel.  This version starts by computing <m>(n+1)p</m> where 
-<m>0 &lt; p &lt; 1</m> and using this to linearly interpolate between two adjacent entries in the sorted list.  Another option that corresponds to PERCENTILE.INC (and PERCENTILE) in Excel is to start with <m>(n-1)p+1</m> for determining how to pick the two adjacent entries and then proceeding with linear interpolation. Again, the definition below utilizes the first approach.
+The definition presented below provides for a unique measure for each unique value of s that corresponds to the PERCENTILE.EXC macro in Excel.  This version starts by computing <m>(n+1)s</m> where 
+<m>0 &lt; s &lt; 1</m> and using this to linearly interpolate between two adjacent entries in the sorted list.  Another option that corresponds to PERCENTILE.INC (and PERCENTILE) in Excel is to start with <m>(n-1)p+1</m> for determining how to pick the two adjacent entries and then proceeding with linear interpolation. Again, the definition below utilizes the first approach.
 </p>
 
 <p>	
@@ -153,7 +173,7 @@ and so m = 2 and r = 0.94.  Thus, the percentile will lie between <m>y_2 = 47</m
 </p>
 	
 <p>
-The formula for percentiles determines a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be averages of equal numbers and will therefore be the common value.
+Both formula approaches for percentiles determine a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be averages of equal numbers and will therefore be the common value.
 </p>
 
 <p>
@@ -177,11 +197,11 @@ It should be noted that many graphing calculators often compute quartiles using 
 <p>
 <example><title><m>Q_1</m> and <m>Q_3</m> when n mod 4 = 2</title>
 <p>
-Suppose n = 22 = 5(4) + 2. Computing the first quartile as defined above gives (n+1)p = 23(0.25) = 5.75 = 5 + 0.75 = m + r.  Therefore,
+Suppose n = 22 = 5(4) + 2. Computing the first quartile as defined above gives (n+1)s = 23(0.25) = 5.75 = 5 + 0.75 = m + r.  Therefore,
 <me>Q_1 = 0.25 \times y_5 + 0.75 \times y_6</me>
 which is a value closer to <m>y_6</m>.  Many graphing calculators however quickly approximate this with
 <me>0.5 \times y_5 + 0.5 \times y_6</me>
-so you should be aware of this possible difference.  You should also notice that in this case p = 0.25 but r = 0.75 so these values are not required to be the same. 
+so you should be aware of this possible difference.  You should also notice that in this case s = 0.25 but r = 0.75 so these values are not required to be the same. 
 </p>
 </example>
 </p>
@@ -200,18 +220,20 @@ so you should be aware of this possible difference.  You should also notice that
 <example><title>Small Example - Quartiles</title>
 	<statement>
 	<p>
-Consider the following data set: {2,5,8,10}. The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
+Consider the data set 
+<me>\{2, 5, 8, 10 \}.</me> 
+The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
 	</p>
 
 	<p>Using the <xref ref="PercentileDefn"> definition </xref>, the 25th percentile is computed by considering 
-	<me>(n+1)p = (4+1)0.25 = 5/4 = 1.25</me>.  
+	<me>(n+1)s = (4+1)0.25 = 5/4 = 1.25</me>.  
 	So, m = 1 and r = 0.25. Therefore 
 	<me>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</me> 
 	as noted above. 
 	</p>
 	<p>
 	Similarly, the 75th percentile is given by
-	<me>(n+1)p = (4+1)0.75 = 15/4 = 3.75</me>.  
+	<me>(n+1)s = (4+1)0.75 = 15/4 = 3.75</me>.  
 	So, m = 3 and r = 0.75. Therefore 
 	<me>P^{0.75} = 0.25 \times 8 + 0.75 \times 10 = 9.5</me> 
 	
@@ -219,8 +241,8 @@ Consider the following data set: {2,5,8,10}. The 50th percentile should be a num
 	<md>
 		<mrow>3 = (1-r) \times 2 + r \times 5</mrow>
 		<mrow>\Rightarrow r = \frac{1}{3}</mrow>
-		<mrow>\Rightarrow (n+1)p = 1 + \frac{1}{3} = \frac{4}{3}</mrow>
-		<mrow>\Rightarrow p = \frac{4}{15} \approx 0.267</mrow>
+		<mrow>\Rightarrow (n+1)s = 1 + \frac{1}{3} = \frac{4}{3}</mrow>
+		<mrow>\Rightarrow s = \frac{4}{15} \approx 0.267</mrow>
 	</md>
 	and so 3 would actually be at approximately the 26.7th percentile.
 	</p>
@@ -231,14 +253,14 @@ Consider the following data set: {2,5,8,10}. The 50th percentile should be a num
 <p>
 <exercise>
 <p>
-In general, given a numerical value within the range of a given data set, one can determine the percentile ranking of that value by reversing the general formula for percentile and solving for p, given <m>P^s</m>.  Determine such a formula/process for doing this in general.
+In general, given a numerical value within the range of a given data set, one can determine the percentile ranking of that value by reversing the general formula for percentile and solving for s, given <m>P^s</m>.  Determine such a formula/process for doing this in general.
 </p>
 </exercise>
 </p>
 	
 <p>
-	For your data set {2,5,8,10}, 
-	<m>Q_1 = 2.75, Q_2 = 6.5,</m> and <m>Q_3 = 9.5</m>.
+	Again using your data set {2, 5, 8, 10}, 
+	<me>Q_1 = 2.75, Q_2 = 6.5, Q_3 = 9.5.</me>
 </p>
 
 <p>
@@ -264,11 +286,11 @@ You can also compute these statistics automatically using the opensource statist
 <sage language = 'r'>
 <input>
 data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
-paste("Quartiles:")
-quantile(data)
-paste("Specific Percentiles:")
-quantile(data, c(.32, .57, .98))   # find the 32nd, 57th and 98th percentiles
-paste("Box and Whisker Diagram:")
+print(paste("Quartiles:"))
+print(quantile(data))
+print(paste("Specific Percentiles:"))
+print(quantile(data, c(.32, .57, .98)))   # find the 32nd, 57th and 98th percentiles
+print(paste("Box and Whisker Diagram:"))
 boxplot(data, horizontal=TRUE) 
 </input>
 </sage>
@@ -354,7 +376,7 @@ cat("\n\n")   #  a couple of blank lines in the displayed output
 	</definition>
 	
 	<p>
-	To illustrate, consider the previous data set: {2,5,8,10}. The arithmetic mean is given by
+	To illustrate, consider the previous data set: {2, 5, 8, 10}. The arithmetic mean is given by
 	<me>\overline{x} = \frac{2+5+8+10}{4} = \frac{25}{4} = 6.25.</me>
 	</p>
 	
@@ -397,8 +419,8 @@ G.show(ymin=-0.5, ymax = M)
 <p>
 <sage>
 <input>
-x = [2, 5, 8, 10]     # Put _unique_ data values in this list
-w = [1, 2.5, 2.5, 4]  # Scale to be at most 10 and not tiny for good image
+x = [2, 5, 8, 10, 10]     # Put data values in this list
+w = [1, 2.5, 2.5, 4,2]  # Scale to be at most 10 and not tiny for good image
 wsum = sum(w)
 
 n = len(x)
@@ -408,7 +430,7 @@ mu = 0
 for k in range(1,n):
     mu += x[k]*w[k]
     if x[k]==x[k-1]:
-        pts.append((x[k],pts[k-1][1]+0.1))
+        pts.append((x[k],pts[k-1][1]+0.2*w[k]))
         M += 0.2
     else:
         pts.append((x[k],0.05))
@@ -417,8 +439,7 @@ G = Graphics()
 for k in range(n):
     G += point(pts[k],size=100*w[k]) 
 P = polygon([(mu,0), (mu+0.2,-0.5), (mu-0.2,-0.5)],color='brown')
-(G+P).show(ymin=-0.5, ymax = M)
-</input>
+(G+P).show(xmin=min(x)-0.5, xmax=max(x)+0.5, ymin=-2*M, ymax = 2*M)</input>
 </sage>
 </p>
 
@@ -429,6 +450,25 @@ P = polygon([(mu,0), (mu+0.2,-0.5), (mu-0.2,-0.5)],color='brown')
 Suppose in a given class you have a daily grade of 92, exam 1 grade of 85, exam 2 grade of 87, and a final exam grade of 93.  IF the daily grade counts 10 percent, the first two exams count 25 percent each and the final counts 40 percent then your final grade would be
 <me>\frac{0.10 \cdot 92 + 0.25 \cdot 85 + 0.25 \cdot 87 + 0.40 \cdot 0.93}{0.10 + 0.25 + 0.25 + 0.40} = 89.4 .</me>
 It would then appear that you might want to do some bargaining with your teacher about how nice it would be to round that up.
+</p>
+</example>
+</p>
+
+<p>
+<definition><title>Mode</title>
+<statement>
+<p xml:id="Mode">The mode for a given data set is the data value that repeats the greatest number of times. If there are two or more such data values, then each is a mode. If all of the data values are unique, then there is no mode.
+</p>
+</statement>
+</definition>
+</p>
+
+<p>
+<example><title>Computing mode</title>
+<p>
+Consider the data set
+<me>2,4,2,5,5,7,3,2,5,9</me>
+Notice the number 2 is included 3 times in this set as is the number 5. Hence both are modes and we might say that this data set is "bi-modal".
 </p>
 </example>
 </p>
@@ -449,6 +489,25 @@ if n is odd and
 	<me>\frac{y_\frac{n}{2} + y_{\frac{n}{2}+1}}{2}</me>
 if n is even.
 </p>
+
+<p><title>Computing Mean, Median and Mode</title>
+<exercise>
+<introduction>
+<p>
+</p>
+		</introduction>
+		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC03S03/MeanMedianMode02.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		
+		</p>
+		</conclusion>
+</exercise>
+</p>
+
+
+
 
 <p>
 From the <xref ref="PresidentAge"> Presidential data </xref>, note that you are considering an even number of data values and so the median is given by (54+64)/2 = 59. 
@@ -477,10 +536,14 @@ You can again compute many statistics automatically using R...
 <sage language = 'r'>
 <input>
 data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
-paste("Mean = ", mean(data))
+print(paste("Mean = ", mean(data)))
 paste("Median =", median(data))
 </input>
 </sage>
+</p>
+
+<p>
+Now, replace the explicit data in the above interactive cell and replace with one of the built in data sets.  For example, comment out the first line and replace with something like data = faithful[,2] .
 </p>
 
 <p>
@@ -592,7 +655,7 @@ Determine the minimum, maximim, midrange, and mean for this data.
 </p>
 
 <p>
-It is trivial to note that the range is very easy to compute but it completely gnores all data values but the two ends.
+It is trivial to note that the range is very easy to compute but it completely ignores all data values except for the two ends.
 </p>
 
 <p>From the <xref ref="PresidentAge"> Presidential data </xref>, the maximum is 69 and the minimum is 46 so the range is 23, the difference of these two. </p>
@@ -619,7 +682,9 @@ This metric is therefore always zero for any provided set of data since cancella
 
 <p>Average Absolute Deviation from the Mean (Population):  
 <me> \frac{\sum_{k=1}^n \left | x_k-\mu \right |}{n} </me>
-which, although nicely stated, is difficult to deal with algebraically since the absolute values do not simplify well algebraically. To avoid this algebraic roadblock, we can look for another way to nearly accomplish the same goal by squaring and then square rooting. 
+which, although nicely stated, is difficult to deal with algebraically since the absolute values do not simplify well algebraically. Indeed, it is easy to see that, for example when n=3, the mean lies somewhere between <m>y_1</m> and <m>y_3</m> (using the ordered data) but could be on either side of <m>y_2</m> and so
+<me>|y_1-\mu| + |y_2 - \mu| + |y_3 - \mu| = -(x_1-\mu) + ?(x_2 - \mu) + |y_3 - \mu|.</me>
+To avoid this algebraic roadblock, we can look for another way to nearly accomplish the same goal by squaring and then square rooting. 
 </p>
 
 <p>Average Squared Deviation from the Mean (Population):
@@ -717,21 +782,43 @@ So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{
 </example>
 </p>
 
+
+<p><title>Computing Descriptive Statistics</title>
+<exercise>
+<introduction>
+		<p>
+		Notice this exercise also asks you to pick out the corresponding box-plot.
+		</p>
+		</introduction>
+		<webwork source="Library/UBC/STAT/STAT241_251/setAssignment-01/HW01_03/HW01-03_1.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		
+		</p>
+		</conclusion>
+</exercise>
+</p>
+
+
 <p>
-Use R to compute these values...
+Once again, we can compute these descriptive statistics using R. We again display a box and whisker diagram and you should now notice the the "box" corresponds to the IQR.
 <sage language = 'r'>
 <input>
 data &lt;- c( 1, -1, 0, 2, 2, 5)   # concatenate the following items into a list
-paste("Variance = ", var(data))
-paste("Standard Dev = ", sd(data))
-paste("Inter Quantile Range =",IQR(data))
-paste("Box and Whisker Diagram:")
+print(paste("Variance = ", var(data)))
+print(paste("Standard Dev = ", sd(data)))
+print(paste("Inter Quantile Range =",IQR(data)))
 boxplot(data, horizontal=TRUE) 
 </input>
 </sage>
 </p>
 
-<p>Once again, the Population of the individual USA states according to the 2013 Census is considered below.</p>
+<p>Experiment in the above interactive cell by using one of the built-in data sets.
+</p>
+
+<p>
+We can also consider once again the Population of the individual USA states according to the 2013 Census is considered below.</p>
 
 <p>
 <exercise><title>USA State Population Measures of Variation</title>
@@ -778,6 +865,10 @@ boxplot(data, horizontal=TRUE)
 </p>
 
 <p>
+The interquartile range is sometimes also called the interquantile range. It must be noted that R computes the IQR differently for some reason. You can look up the R documentation to see what they do but notice that you can force R to use the standard approach as well.  Below, for example, the interactive cell determine the IQR using R's preferred method. However, to use the method from this text, you can make the function call IQR(data, type=2). This might be helpful to know when working on some WeBWorK exercises where the author could be using R to compute the correct answer.
+</p>
+
+<p>
 The state population data set has been entered for you in the R cell below...
 <sage language = 'r'>
 <input>
@@ -785,8 +876,8 @@ data &lt;- c (0.6,0.6,0.6,0.7,0.7,0.8,0.9,1,1.1,1.3,1.3,1.4,1.6,
 1.9,1.9,2.1,2.8,2.9,2.9,3,3,3.1,3.6,3.9,3.9,4.4,4.6,
 4.8,4.8,5.3,5.4,5.7,5.9,6,6.5,6.6,6.6,6.7,7,8.3,
 8.9,9.8,9.9,10,11.6,12.8,12.9,19.6,19.7,26.4,38.3)
-paste("Variance = ", var(data))
-paste("Standard Dev = ", sd(data))
+print(paste("Variance = ", var(data)))
+print(paste("Standard Dev = ", sd(data)))
 paste("Inter Quantile Range =",IQR(data))
 
 </input>
@@ -884,6 +975,25 @@ Create a frequency distribution and determine the sample mean and variance.
 </p>
 </exercise>
 
+<p><title>Statistics using Discrete Grouped Data</title></p>
+
+<p>
+<exercise>
+<introduction>
+		<p>
+		You will first need to determine appropriate frequencies before using the grouped data formulas above.
+		</p>
+		</introduction>
+		<webwork source="Library/Mizzou/Finite_Math/Statistics_Introduction/Freq.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		
+		</p>
+		</conclusion>
+</exercise>
+</p>
+
 </subsection>
 
 
@@ -892,9 +1002,18 @@ Create a frequency distribution and determine the sample mean and variance.
 </p>
 <p>So, for medians, consider the following approach:
 </p>
+<p>Consider data collected into intervals of the form
+<ul>
+<li><m>[a_1,b_1)</m></li>
+<li><m>[a_2,b_2)</m></li>
+<li><m>[a_3,b_3)</m></li>
+<li> ... </li>
+<li><m>[a_n,b_n)</m></li>
+</ul> 
+where <m>f_k</m> is the frequency of data items in interval <m>[a_k,b_k)</m> with corresponding cummulative frequency <m>F_k</m>.
+</p>
 <p>
 <ol>
-<li>Compute frequencies <m>f_k</m> and cummulative frequencies <m>F_k</m> for each class</li>
 <li>Set m = total cummulative frequency/2 = <m>F_{last}/2</m></li>
 <li>Determine the interval <m>k</m> where <m>m \in [F_{k-1},F_k]</m></li> 
 <li>Set median = <m>(b_k-a_k)\frac{m - F_{k-1}}{f_k}+a_k</m></li>
@@ -920,6 +1039,23 @@ The total cummulative frequency is 25 and so <m>m = \frac{25}{2} = 12.5</m> whic
 <me>\text{median} = (20-10) \frac{12.5-12}{4} + 10 = 11.25</me>
 </p>
 </example>
+</p>
+
+<p><title>Statistics using Continuous Grouped Data</title>
+<exercise>
+<introduction>
+		<p>
+		You will first need to determine appropriate frequencies before using the grouped data formulas above.
+		</p>
+		</introduction>
+		<webwork source="Library/Mizzou/Finite_Math/Statistics_Measures_of_Central_Tendency/MeanGroupedData.pg">
+		</webwork>
+		<conclusion>
+		<p>
+		
+		</p>
+		</conclusion>
+</exercise>
 </p>
 
 </subsection>
@@ -976,9 +1112,13 @@ A kurtosis of 3 indicates that the data is perfectly bell shaped (a "normal" dis
 <statement>
 Skewness = 
 <me>\text{skewness} = \frac{1}{s^3} 
+\left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}\sum_{k=1}^n x_k^2}{n} + 2 \overline{x}^3 \right ]
+\\ = \frac{1}{s^3} 
 \left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 v \overline{x} - \overline{x}^3 \right ]</me>
 and Kurtosis =
-<me>\text{kurtosis} = \frac{1}{s^4} 
+<me>\text{kurtosis}  = \frac{1}{s^4} 
+\left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \sum_{k=1}^n x_k^2}{n} - 3 \overline{x}^4  \right ]
+\\ = \frac{1}{s^4} 
 \left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v - 3 \overline{x}^4  \right ]</me>
 <proof>
 <p>
@@ -1030,7 +1170,12 @@ Computing skewness and kurtosis by hand can often be better organized using a ta
 </table>
 
 So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m> as before and so
-<m>\overline{x} = \frac{3}{2}</m>, <m>v = \frac{26}{6}</m>, <m>s^2 = \frac{6}{5} \times v = \frac{26}{5}</m>, and so <m>s = \sqrt{\frac{26}{5}} = \sqrt{5.2}</m>.
+<md>
+<mrow>\overline{x} = \frac{9}{6} = \frac{3}{2},</mrow> 
+<mrow>v = \frac{25}{6} - \left ( \frac{3}{2} \left )^2 = \frac{43}{12} \approx 3.58 ,</mrow> 
+<mrow>s^2 = \frac{6}{5} \times v = \frac{43}{10} = 4.3,</mrow>
+<mrow>\text{and so} s = \sqrt{4.3} \approx 2.07</mrow>
+</md>.
 
 But also, <m>\Sigma x_k^3 = 141</m> and <m>\Sigma x_k^4 = 659</m>.  Use these in the formulas above to obtain skewness of
 
@@ -1228,6 +1373,7 @@ boxplot(data, horizontal=TRUE)
 		
 </subsection>
 
+<!--
 <subsection><title>Density Plots</title>
 <p>
 A Density Plot can be created to visually interpret if the variable is close to normal
@@ -1247,6 +1393,9 @@ plot(density(cars$speed), main="Density Plot: Speed", ylab="Frequency", sub=past
 www.machinelearningplus.com
 </p>
 </subsection>
+
+-->	
+
 </section>
 
 

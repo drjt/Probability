@@ -10,7 +10,7 @@
 <chapter xml:id="ProbabilityFunctions" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Probability Functions</title>
 
-<section><title>Introduction</title>
+<section xml:id="ProbabilityFunctionsIntro"><title>Introduction</title>
 	
 <p>Each of the probability exercises thus far required you to utilize basic definitions and theorems to determine the answer. Starting a new problem meant starting over from scratch. This is burdensome.  However, you may have noticed that some of the ways you might have created solutions for some problems ending up looking very similar to the solutions for others. In this chapter, you will consider the framework needed for creating general solution techniques. These techniques will give a number of "distributions" which are general ways to solve a particular type of problem.
 </p>
@@ -21,7 +21,7 @@
 </section>
 
 
-<section><title>Random Variables</title>
+<section xml:id="RandomVariables"><title>Random Variables</title>
 
 <p>For a given set of events, we might have difficulty doing mathematics since the outcomes
 are not numerical. In order to accomodate our desire to convert to numerical measures we want
@@ -30,11 +30,11 @@ variable.
 </p>
 
 <p>
-<definition><title>Random Variable</title>
+<definition xml:id="DefnRandomVariable"><title>Random Variable</title>
 	<statement>
-		<p>Given a random experiment with sample space S, a function X mapping each 
-		element of S to a unique real number is called a random variable. 
-		For each element s from the sample space S, denote this function by
+		<p>Given a random experiment with sample space <m>S</m>, a function X mapping each 
+		element of <m>S</m> to a unique real number is called a random variable. 
+		For each element s from the sample space <m>S</m>, denote this function by
 		<me>X(s) = x</me>
 		and let R  be the range of X. R will be called "the space of X" and in notation
 		<me> R = { x : X(s)=x, \text{for some} s \in S } .</me>
@@ -45,7 +45,7 @@ variable.
 
 <image source="images/randomvariable.png" />
 
-<p>We will make various restrictions on the range of the random variable to fit different 
+<p>We will make various restrictions on the range of the <xref ref="DefnRandomVariable">random variable</xref> to fit different 
 generalized problems. Then, we will be able to work on a problem (which may be 
 inherently non-numerical) by using the random variable in subsequent calculations.
 </p>
@@ -56,10 +56,10 @@ inherently non-numerical) by using the random variable in subsequent calculation
 	<me>S = \text{{ success, failure }}.</me>
 	Choose 
 	<md>
-		<mrow>X(success)=1</mrow>
-		<mrow>X(failure)=0.</mrow>
+		<mrow>X( \text{success})=1</mrow>
+		<mrow>X( \text{failure})=0.</mrow>
 	</md>
-	Then, R={0,1}.
+	Then, R = {0,1}.
 	</p>
 </example>
 </p>
@@ -72,7 +72,7 @@ inherently non-numerical) by using the random variable in subsequent calculation
 	<me>S = \text{ {(a,b): a=die 1 outcome, b=die 2 outcome}}.</me>
 	Choose 
 	<me>X( (a,b) ) = a+b.</me> 
-	Then, R={2, 3, 4, 5, ..., 12}.
+	Then, <m>R</m> = {2, 3, 4, 5, ..., 12}.
 	</p>
 </example>
 </p>
@@ -93,30 +93,51 @@ inherently non-numerical) by using the random variable in subsequent calculation
 <definition><title>Countable and Uncountable Sets</title>
 	<statement>
 		<p>
-		R contains a countable number of points if either R is finite or there 
+		<m>R</m> contains a countable number of points if either <m>R</m> is finite or there 
 		is a one to one correspondence between R and the positive integers. 
-		Such a set will be called discrete. We will see that often the set R is not countable. 
-		If R consists of an interval of points (or a union of intervals), 
+		Such a set will be called discrete. We will see that often the set <m>R</m> is not countable. 
+		If <m>R</m> consists of an interval of points (or a union of intervals), 
 		then we call X a continuous random variable. 
 		</p>
 	</statement>
 </definition>
 </p>	
 
+<p>
+Notice that in each of the examples above, the space <m>R</m> was finite. Therefore, each of those random variables would be considered countable. One can however have random variables with a infinite number of values in <m>R</m> and yet still be countable.
+</p>
+
+<p>
+<example>
+<p>
+Consider the random variable X representing the number of coin flips <em>until</em> you get a Heads.  Even though it is unlikely to have to keep on going, consider the fact that you <em>could</em> continually flip and get Tails every time for a long time.  So, the possible values for X would be <m>R</m> = {1, 2, 3, 4, ... } which is precisely the infinite set of positive integers.  Therefore, X is a countable random variable. 
+</p>
+</example>
+</p>
+
+<p>
+<example>
+<p>
+Consider the random variable X representing the time until a light bulb fails to work after being successfully turned on.  Notice that the bulb <em>could</em> fail in a relatively short time (near 0 let's say) or <em>could</em> continue to last for almost eternity (or as long as you might want to measure).  However, time is measured on a continuum and therefore for this random variable X you would have R equal to the interval from 0 to infinity, i.e. <m>R = (0,\infty)</m> which is not a countable set.
+</p>
+</example>
+</p>
+
 </section>
 
 
-<section><title>Probability Functions</title>
+<section xml:id="ProbabilityFunctionsDefined"><title>Probability Functions</title>
 
-<p>In the formulas below, we will presume that we have a random variable X which maps the sample space S onto some range of real numbers R.  From this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.
+<p>In the formulas below, we will presume that we have a <xref ref="DefnRandomVariable">random variable</xref>
+ X which maps the sample space S onto some range of real numbers <m>R</m>.  From this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.
 </p>
 <p>For example, consider a random variable which assigns a 1 when you roll a 1 on a six-sided die and 0 otherwise. Presuming each side is equally likely, <m>f(1) = \frac{1}{6}</m> and <m>f(0) = \frac{5}{6}</m>.
 </p>
 
 <p>
-<definition><title>Probability "Mass" Function</title>
+<definition xml:id="DefnPMF"><title>Probability "Mass" Function</title>
 	<statement>
-		<p>Given a discrete random variable X on a space R, a probability mass function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
+		<p>Given a discrete <xref ref="DefnRandomVariable">random variable</xref> X on a space R, a probability mass function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
 		<md>
 			<mrow>&amp; \forall x \in R , f(x) \gt 0</mrow>
 			<mrow>&amp; \sum_{x \in R} f(x) = 1</mrow>
@@ -129,7 +150,7 @@ inherently non-numerical) by using the random variable in subsequent calculation
 </p>
 
 <p>	
-<definition><title>Probability "Density" Function</title>
+<definition xml:id="DefnPDF"><title>Probability "Density" Function</title>
 	<statement>
 	<p>Given a continuous random variable X on a space R, a probability density function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
 		<md>
@@ -160,58 +181,59 @@ Consider <m>f(x) = x/10</m> over R = {1,2,3,4}.  Then, f(x) is obviously positiv
 <input>
 # Combining all of the above into one interactive cell
 @interact
-def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets):"), 
-       Probs = input_box([1/20,1/20,1/20,3/20,1/20,4/20,4/20,1/20,1/20,3/20],label="Enter corresponding f(x) (in brackets):"),
-       n_samples=slider(100,10000,100,100,label="Number of times to sample from this distribution:")):
+def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"), 
+       Probs = input_box([1/20,1/20,1/20,3/20,1/20,4/20,4/20,1/20,1/20,3/20],label=" $$f(x)$$ (in brackets):"),
+       n_samples=slider(100,10000,100,100,label="# if samples:")):
     n = len(D)
     R = range(n)
     one_huh = sum(Probs)
-    pretty_print('\n\nJust to be certain, we should check to make certain the probabilities sum to 1\n')
-    pretty_print(html('$\sum_{x\epsilon R} f(x) = %s$'%str(one_huh)))
+
+    if one_huh!=1:
+        print("f(x) values do not sum to 1")
+    else:
+        G = Graphics()
+        if len(D)==len(Probs):
+            f = zip(D,Probs)
+            meanf = 0
+            variancef = 0
+            for k in R:
+                meanf += D[k]*Probs[k]
+                variancef += D[k]^2*Probs[k]
+                G += line([(D[k],0),(D[k],Probs[k])],color='green')
+            variancef = variancef - meanf^2
+            sd = sqrt(variancef)
+            G += points(f,color='blue',size=50)
+            G += point((meanf,0),color='yellow',size=60,zorder=3)
+            G += line([(meanf-sd,0),(meanf+sd,0)],color='red',thickness=5)
     
-    G = Graphics()
-    if len(D)==len(Probs):
-        f = zip(D,Probs)
-        meanf = 0
-        variancef = 0
-        for k in R:
-            meanf += D[k]*Probs[k]
-            variancef += D[k]^2*Probs[k]
-            G += line([(D[k],0),(D[k],Probs[k])],color='green')
-        variancef = variancef - meanf^2
-        sd = sqrt(variancef)
-        G += points(f,color='blue',size=50)
-        G += point((meanf,0),color='yellow',size=60,zorder=3)
-        G += line([(meanf-sd,0),(meanf+sd,0)],color='red',thickness=5)
-    
-        g = DiscreteProbabilitySpace(D,Probs)
-        pretty_print('     mean = %s'%str(meanf))
-        pretty_print(' variance = %s'%str(variancef))
+            g = DiscreteProbabilitySpace(D,Probs)
+            pretty_print("     mean = %s"%str(meanf))
+            pretty_print(" variance = %s"%str(variancef))
     
         #  perhaps to add mean and variance for pmf here
-    else:
-        print 'Domain D and Probabilities Probs must be lists of the same size'
+        else:
+            print("Domain D and Probabilities Probs must be lists of the same size")
     
     #  Now, let's sample from the distribution given above and see how a random sampling matches up
 
-    counts = [0] * len(Probs)
-    X = GeneralDiscreteDistribution(Probs)
-    sample = []
+        counts = [0] * len(Probs)
+        X = GeneralDiscreteDistribution(Probs)
+        sample = []
 
-    for _ in range(n_samples):
-        elem = X.get_random_element()
-        sample.append(D[elem])
-        counts[elem] += 1
-    Empirical = [1.0*x/n_samples for x in counts] # random
+        for _ in range(n_samples):
+            elem = X.get_random_element()
+            sample.append(D[elem])
+            counts[elem] += 1
+        Empirical = [1.0*x/n_samples for x in counts] # random
     
-    samplemean = mean(sample)
-    samplevariance = variance(sample)
-    sampdev = sqrt(samplevariance)
+        samplemean = mean(sample)
+        samplevariance = variance(sample)
+        sampdev = sqrt(samplevariance)
     
-    E = points(zip(D,Empirical),color='orange',size=40)
-    E += point((samplemean,0.005),color='brown',size=60,zorder=3)
-    E += line([(samplemean-sampdev,0.005),(samplemean+sampdev,0.005)],color='orange',thickness=5)    
-    (G+E).show(ymin=0,figsize=(8,5))	
+        E = points(zip(D,Empirical),color='orange',size=40)
+        E += point((samplemean,0.005),color='brown',size=60,zorder=3)
+        E += line([(samplemean-sampdev,0.005),(samplemean+sampdev,0.005)],color='orange',thickness=5)    
+        (G+E).show(ymin=0,figsize=(8,5))	
 </input>
 </sage>
 </p>
@@ -219,7 +241,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 <p>
 <example><title>Continuous Probability Function</title>
 <p>
-	Consider <m>f(x) = x^2/c</m> for some positive real number c and presume R = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make f(x) a probability density function, we must have
+	Consider <m>f(x) = x^2/c</m> for some positive real number c and presume R = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make f(x) a <xref ref="DefnPDF">probability density function</xref>, we must have
 	<me>\int_{x \in R} f(x) = 1.</me>
 	In this instance you get
 	<me>1 = \int_{-1}^2 x^2/c = x^3/(3c) |_{-1}^2 = \frac{8}{3c} - \frac{-1}{3c} = \frac{3}{c}</me>
@@ -229,7 +251,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 </p>
 
 <p>	
-<definition><title>Distribution Function</title>
+<definition xml:id="DefnDistributionFunction"><title>Distribution Function</title>
 	<statement>
 		<p>Given a random variable X on a space R, a probability distribution function on X is given by a function 
 		<me>F:\mathbb{R} \rightarrow \mathbb{R} \ni \displaystyle F(x)=P(X \le x).</me>
@@ -297,14 +319,14 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 <p>		
 <theorem xml:id="theorem-Fmin">
 	<statement>
-		<p><m>F(x)=0, \forall x \lt \inf(R)</m>
+		<p><m>F(x)=0, \forall x \lt \inf(R)</m> where inf is the infimum...the "minimum" but in a limit sense.
 		</p>
 	</statement>
 	<proof>
 		<p>
-		Let a = inf(R). Then, for <m>x \lt a,</m>
+		Let a = inf(<m>R</m>). Then, for <m>x \lt a,</m>
 		<me>F(x) = P(X \le x) \le P(X \lt a) = 0</me> 
-		since none of the x-values in this range are in R.
+		since none of the x-values in this range are in <m>R</m>.
 		</p>
 	</proof>
 </theorem>
@@ -314,14 +336,14 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 <theorem xml:id="theorem-Fmax">
 	<statement>
 	<p>
-	<m>F(x)=1, \forall x \ge \sup(R)</m>
+	<m>F(x)=1, \forall x \ge \sup(R)</m> where sup is the supremum...the "maximum" but in a limit sense.
 	</p>
 	</statement>
 	<proof>
 		<p>
-		Let b = sup(R). Then, for 
+		Let b = sup(<m>R</m>). Then, for 
 		<me>x \ge b, F(x) = P(X \le x)  = P(X \le b) + P( b \lt X \le x) = P(X \le b) = 1</me> 
-		since all of the x-values in this range are in R and therefore will either sum over or integrate over all of R.
+		since all of the x-values in this range are in R and therefore will either sum over or integrate over all of <m>R</m>.
 		</p>
 		
 	</proof>
@@ -332,11 +354,11 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 <theorem>
 	<statement xml:id="theorem-F-non-decreasing">
 	<p>
-	F is non-decreasing
+	<m>F</m> is non-decreasing
 	</p>
 	</statement>
 	<proof>
-		<p>Case 1: R discrete
+		<p>Case 1: <m>R</m> discrete
 			<md>
 				<mrow>\forall x_1,x_2 \in \mathbb{Z} \ni x_1 \lt x_2</mrow>
 				<mrow>F(x_2) &amp; = \sum_{x \le x_2} f(x) </mrow>
@@ -344,7 +366,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 				<mrow>&amp; \ge \sum_{x \le x_1} f(x) = F(x_1)</mrow>
 			</md>
 		</p>
-		<p>Case 2: R continuous
+		<p>Case 2: <m>R</m> continuous
 			<md>
 				<mrow>\forall x_1,x_2 \in \mathbb{R} \ni x_1 \lt x_2</mrow>
 				<mrow>F(x_2) &amp; = \int_{-\infty}^{x_2} f(x) dx </mrow>
@@ -365,7 +387,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 	</p>
 	</statement>
 	<proof>
-		<p>Assume <m>x \in R</m> for some discrete R. Then,
+		<p>Assume <m>x \in R</m> for some discrete <m>R</m>. Then,
 		<me>F(x) - F(x-1) = \sum_{u \le x} f(u) - \sum_{u \lt x} f(u) = f(x)</me>
 		</p>
 	</proof>
@@ -373,7 +395,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 </p>
 
 <p>	
-<theorem xml:id="theorem-Fvsf-continuyous">
+<theorem xml:id="theorem-Fvsf-continuous">
 <title>Using Continuous Distribution function to compute probabilities</title>
 	<statement>
 	<p>For <m>a \lt b, (a,b) \in R, P(a \lt X \le b) = F(b) - F(a)</m>
@@ -395,7 +417,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 <p>
 <corollary xml:id="corollary-ProbPointZero-continuous">
 	<statement>
-	<p>For continuous distributions, P(X = a) = 0
+	<p>For continuous distributions, <m>P(X = a) = 0</m>.
 	</p>
 	</statement>
 	<proof>
@@ -409,17 +431,17 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 </p>	
 
 <p>
-<theorem><title>F(x) vs f(x), for continuous distributions</title>
+<theorem><title><m>F(x)</m> vs <m>f(x)</m>, for continuous distributions</title>
 	<statement>
-		<p>If X is a continuous random variable, f the corresponding probability function, and F the associated distribution function, then
+		<p>If X is a continuous random variable, <m>f</m> the corresponding probability function, and <m>F</m> the associated distribution function, then
 		<me>f(x) = F'(x)</me>
 		</p>
 	</statement>
 	<proof>
-	<p>Assume X is continuous and f and F as above. Notice, by the definition of f, <m>\lim_{x \rightarrow \pm \infty} f(x) = 0</m> since otherwise the integral over the entire space could not be finite.
+	<p>Assume X is continuous and <m>f</m> and <m>F</m> as above. Notice, by the definition of <m>f</m>, <m>\lim_{x \rightarrow \pm \infty} f(x) = 0</m> since otherwise the integral over the entire space could not be finite.
 	</p>
 	<p>
-	Now, let A(x) be any antiderivative of f(x). Then, by the Fundamental Theorem of Calculus,
+	Now, let A(x) be any antiderivative of <m>f(x)</m>. Then, by the Fundamental Theorem of Calculus,
 	<md>
 		<mrow>F(x) &amp; = \int_{-\infty}^x f(u) du</mrow>
 		<mrow> &amp; = A(x) - \lim_{u \rightarrow -\infty} A(u)</mrow>
@@ -431,14 +453,14 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Enter domain R (in brackets)
 </p>
 
 <p>
-<definition><title>Percentiles for Random Variables</title>
+<definition xml:id="DefnPercentileRandomVariable"><title>Percentiles for Random Variables</title>
 <statement>
 <p>
 For <m>0 \lt p \lt 1</m>, the <m>100p^{th}</m> percentile is the largest random variable value c that satisfies
 <me>F(c) = p.</me>
-For continuous random variables over an interval R = [a,b], you will solve for c in the equation
+For continuous random variables over an interval <m>R = [a,b]</m>, you will solve for c in the equation
 <me>\int_a^c f(x) dx.</me>
-For discrete random variables, it is unlikely that a particular percentile will land exactly on one of the elements of R but you will want to take the smallest value in R so that <m>F(c) \ge p</m>.
+For discrete random variables, it is unlikely that a particular percentile will land exactly on one of the elements of <m>R</m> but you will want to take the smallest value in R so that <m>F(c) \ge p</m>.
 </p>
 <p>
 The 50th percentile (as before) is also known as the median.
@@ -472,19 +494,19 @@ TBA, using one of the table examples from above.
 		
 </section> 
 
-<section><title>Expected Value</title>
+<section xml:id="ExpectedValue"><title>Expected Value</title>
 	<p>Blaise Pascal was a 	17th century mathematician and philosopher who was accomplished in many areas but may likely be best known to you for his creation of what is now known as Pascal's Triangle. As part of his philosophical pursuits, he proposed what is known as "Pascal's wager". It suggests two  mutually exclusive outcomes: that God exists or that he does not. His argument is that a rational person should live as though God exists and seek to believe in God. If God does not actually exist, such a person will have only a finite loss (some pleasures, luxury, etc.), whereas they stand to receive infinite gains as represented by eternity in Heaven and avoid an infinite losses of eternity in Hell. This type of reasoning is part of what is known as "decision theory".
 	</p>
 	<p>You may not confront such dire payouts when making your daily decisions but we need a formal method for making these determinations precise. The procedure for doing so is what we call expected value.
 	</p>
 	
 	<p>
-	<definition><title>Expected Value</title>
-	<p>Given a random variable X over space R, corresponding probability function f(x) and "value function" v(x), the expected value of v(x) is given by
+	<definition xml:id="DefnExpectedValue"><title>Expected Value</title>
+	<p>Given a random variable <m>X</m> over space <m>R</m>, corresponding probability function <m>f(x)</m> and "value function" <m>v(x)</m>, the expected value of <m>v(x)</m> is given by
 	<me>E = E[v(X)] = \sum_{x \in R} v(x) f(x)</me>
-	provided X is discrete, or
+	provided <m>X</m> is discrete, or
 	<me>E = E[v(X)] = \int_R v(x)f(x) dx</me>
-	provided X is continuous.
+	provided <m>X</m> is continuous.
 	</p>
 	</definition>
 	</p>
@@ -494,9 +516,9 @@ TBA, using one of the table examples from above.
 	<statement>
 	<p>
 	<ol>
-		<li>E[c] = c</li>
-		<li>E[c v(X)] = c E[v(X)]</li>
-		<li>E[v(X) + w(X)] = E[v(X)] + E[w(X)]</li>
+		<li><m>E[c] = c</m></li>
+		<li><m>E[c v(X)] = c E[v(X)]</m></li>
+		<li><m>E[v(X) + w(X)] = E[v(X)] + E[w(X)]</m></li>
 	</ol>
 	</p>
 	</statement>
@@ -529,7 +551,7 @@ TBA, using one of the table examples from above.
 
 	<p>
 	<example><title>Discrete Expected Value</title>
-	<p>Consider <m>f(x) = x/10</m> over R = {1,2,3,4} where the payout is 10 euros if x=1, 5 euros if x=2, 2 euros if x=3 and -7 euros if x = 4.  Then your value function would be 
+	<p>Consider <m>f(x) = x/10</m> over <m>R</m> = {1,2,3,4} where the payout is 10 euros if x=1, 5 euros if x=2, 2 euros if x=3 and -7 euros if x = 4.  Then your value function would be 
 	<me>v(1)=10, v(2) = 5, v(3)=2, v(4) = -7.</me> 
 	Computing the expect payout gives
 	<me>E = 10 \times 1/10 + 5 \times 2/10 + 2 \times 3/10 - 7 \times 4/10 = -2/10</me>
@@ -541,7 +563,7 @@ TBA, using one of the table examples from above.
 	<p>
 	<example xml:id="ContinuousEV-example"><title>Continuous Expected Value</title>
 	<p>
-	Consider <m>f(x) = x^2/3</m> over R = [-1,2] with value function given by <m>v(x) = e^x - 1</m>. Then, the expected value for v(x) is given by
+	Consider <m>f(x) = x^2/3</m> over <m>R</m> = [-1,2] with value function given by <m>v(x) = e^x - 1</m>. Then, the expected value for <m>v(x)</m> is given by
 	<me>E = \int_{-1}^2 (e^x-1) \cdot x^2/3 = -1/9 \cdot (e + 15) \cdot e^{-1} + 2/3 \cdot e^2 - 8/9 \approx 3.3129</me>
 	</p>
 	</example>
@@ -553,10 +575,10 @@ TBA, using one of the table examples from above.
 	<p>
 	Given a random variable with probability function f(x) over space R
 	<ol>
-		<li>The mean of X = <m>\mu = E[x]</m></li>
-		<li>The variance of X = <m>\sigma^2 = E[(x-\mu)^2]</m></li>
-		<li>The skewness of X = <m>\gamma_1 = \frac{E[(x-\mu)^3]}{\sigma^3}</m></li>
-		<li>The kurtosis of X = <m>\gamma_2 = \frac{E[(x-\mu)^4]}{\sigma^4}</m></li>
+		<li xml:id="TheoreticalMean">The mean of <m>X = \mu = E[x]</m></li>
+		<li xml:id="TheoreticalVariance">The variance of <m>X = \sigma^2 = E[(x-\mu)^2]</m></li>
+		<li xml:id="TheoreticalSkewness">The skewness of <m>X = \gamma_1 = \frac{E[(x-\mu)^3]}{\sigma^3}</m></li>
+		<li xml:id="TheoreticalKurtosis">The kurtosis of <m>X = \gamma_2 = \frac{E[(x-\mu)^4]}{\sigma^4}</m></li>
 	</ol>
 	</p>
 	</statement>
@@ -568,9 +590,9 @@ TBA, using one of the table examples from above.
 	<statement>
 	<p>
 	<ol>
-		<li><m>\sigma^2 = E[x^2] - \mu^2 = E[X(x-1)] + \mu - \mu^2</m></li>
-		<li><m>\gamma_1 = \frac{1}{\sigma^3} \cdot \left [ E[X^3] - 3 \mu E[X^2] + 2\mu^3 \right ]</m></li>
-		<li><m>\gamma_2 = \frac{1}{\sigma^4} \cdot \left [ E[X^4] - 4 \mu E[X^3] + 6\mu^2 E[X^2] - 3 \mu^4 \right ]</m></li>
+		<li xml:id="TheoreticalMeasuresAlternatesVar"><m>\sigma^2 = E[x^2] - \mu^2 = E[X(x-1)] + \mu - \mu^2</m></li>
+		<li xml:id="TheoreticalMeasuresAlternatesSkew"><m>\gamma_1 = \frac{1}{\sigma^3} \cdot \left [ E[X^3] - 3 \mu E[X^2] + 2\mu^3 \right ]</m></li>
+		<li xml:id="TheoreticalMeasuresAlternatesKurt"><m>\gamma_2 = \frac{1}{\sigma^4} \cdot \left [ E[X^4] - 4 \mu E[X^3] + 6\mu^2 E[X^2] - 3 \mu^4 \right ]</m></li>
 	</ol>
 	</p>
 	</statement>
@@ -601,7 +623,7 @@ TBA, using one of the table examples from above.
 	<image source="images/DiscreteHistogramExample.png" />
 	</p>
 	<p>
-	Using the definition of mean as a sum,
+	Using the definition of <xref ref="TheoreticalMean">mean</xref> as a sum,
 	<md>
 		<mrow>\mu &amp; = 0 \cdot 0.10 + 1 \cdot 0.25 + 2 \cdot 0.40 + 4 \cdot 0.15 + 7 \cdot 0.10</mrow>
 		<mrow> &amp; = 0 + 0.25 + 0.80 + 0.60 + 0.70</mrow>
@@ -610,7 +632,7 @@ TBA, using one of the table examples from above.
 	Notice where this lies on the probability histogram for this distribution.
 	</p>
 	
-	<p>For the variance
+	<p>For the <xref ref="TheoreticalVariance">variance</xref> and using <xref ref="TheoreticalMeasuresAlternatesVar">the alternate formulation</xref>
 	<md>
 		<mrow>\sigma^2 &amp; = E[X^2] - \mu^2</mrow>
 		<mrow> &amp; = \left [ 0^2 \cdot 0.10 + 1^2 \cdot 0.25 + 2^2 \cdot 0.40 + 4^2 \cdot 0.15 + 7^2 \cdot 0.10 \right ] - 2.35^2</mrow>
@@ -621,7 +643,7 @@ TBA, using one of the table examples from above.
 	and so the standard deviation <m>\sigma = \sqrt{3.6275} \approx 1.90</m>. Notice that 4 times this value encompasses almost all of the range of the distribution.
 	</p>
 	
-	<p>For the skewness
+	<p>For the <xref ref="TheoreticalSkewness">skewness</xref> and using <xref ref="TheoreticalMeasuresAlternatesSkew">the alternate formulation</xref>
 	<md>
 		<mrow> \text{Numerator = } &amp; E[X^3] - 3 \mu E[X^2] + 2\mu^3</mrow>
 		<mrow> &amp; = \left [ 0^3 \cdot 0.10 + 1^3 \cdot 0.25 + 2^3 \cdot 0.40 + 4^3 \cdot 0.15 + 7^3 \cdot 0.10 \right ] - 3 \cdot 2.35 \cdot 9.15 + 2 \cdot 2.35^3</mrow>
@@ -632,7 +654,7 @@ TBA, using one of the table examples from above.
 	which yields a skewness of <m>\gamma_1 = 8.80 / \sigma^3 \approx 1.27 </m>. This indicates a slight skewness to the right of the mean. You can notice the 4 and 7 entries on the histogram illustrate a slight trailing off to the right.
 	</p>
 	
-	<p>Finally, for kurtosis
+	<p>Finally, for <xref ref="TheoreticalKurtosis">kurtosis</xref> and using <xref ref="TheoreticalMeasuresAlternatesKurt">the alternate formulation</xref>
 	<md>
 		<mrow> \text{Numerator = } &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3\mu^4</mrow>
 		<mrow> &amp; = \left [ 0^4 \cdot 0.10 + 1^4 \cdot 0.25 + 2^4 \cdot 0.40 + 4^4 \cdot 0.15 + 7^4 \cdot 0.10 \right ] - 4 \cdot 2.35 \cdot 47.35 + 6 \cdot 2.35^2 \cdot 9.15^2 - 3 \cdot 2.35^4</mrow>
@@ -683,11 +705,11 @@ TBA, using one of the table examples from above.
 
 	<p>
 	Consider the following example when computing these statistics for a continuous variable. 
-	Let <m>f(x) = \frac{3}{4} \cdot (1-x^2)</m> over R = [-1,1].  
+	Let <m>f(x) = \frac{3}{4} \cdot (1-x^2)</m> over <m>R = [-1,1]</m>.  
 		<image source="images/ContinuousDistributionExample.png" />
 	</p>
 	<p>
-	Then for the mean
+	Then for the <xref ref="TheoreticalMean">mean</xref>
 	<md>
 		<mrow>\mu &amp; = \int_{-1}^1 x \cdot \frac{3}{4} \cdot (1-x^2) dx</mrow>
 		<mrow> &amp; = \int_{-1}^1 \frac{3}{4} \cdot (x-x^3) dx</mrow>
@@ -698,7 +720,7 @@ TBA, using one of the table examples from above.
 	as expected since the probability function is symmetric about x=0.
 	</p>
 	
-	<p>For the variance
+	<p>For the <xref ref="TheoreticalMeasuresAlternates">variance</xref>
 	<md>
 		<mrow>\sigma^2 &amp; = \int_{-1}^1 x^2 \cdot \frac{3}{4} \cdot (1-x^2) dx - \mu^2</mrow>
 		<mrow> &amp; = \int_{-1}^1 \cdot \frac{3}{4} \cdot (x^2-x^4) dx - 0</mrow>
@@ -710,7 +732,7 @@ TBA, using one of the table examples from above.
 	and taking the square root gives a standard deviation slightly less than 1/2. Notice that four times this value encompasses almost all of the range of the distribution.
 	</p>
 	
-	<p>For the skewness, notice that the graph is symmetrical about the mean and so we would expect a skewness of 0.  Just to check it out
+	<p>For the <xref ref="TheoreticalSkewness">skewness</xref>, notice that the graph is symmetrical about the mean and so we would expect a skewness of 0.  Just to check it out
 	<md>
 		<mrow> \text{Numerator = } &amp; E[X^3] - 3 \mu E[X^2] + 2\mu^3</mrow>
 		<mrow> &amp; = \int_{-1}^1 x^3 \cdot \frac{3}{4} \cdot (1-x^2) dx - 3 E[X^2] \cdot 0 + 0^3 </mrow>
@@ -721,7 +743,7 @@ TBA, using one of the table examples from above.
 	as expected without having to actually complete the calculation by dividing by the cube of the standard deviation.
 	</p>
 	
-	<p>Finally, note that the probability function in this case is modestly close to a bell shaped curve so we would expect a kurtosis in the vicinity of 3. Indeed, noting that (conveniently) <m>\mu = 0</m> gives
+	<p>Finally, note that the probability function in this case is modestly close to a bell shaped curve so we would expect a <xref ref="TheoreticalKurtosis">kurtosis</xref> and using <xref ref="TheoreticalMeasuresKurt">the alternate formulation</xref> in the vicinity of 3. Indeed, noting that (conveniently) <m>\mu = 0</m> gives
 	<md>
 		<mrow> \text{Numerator = } &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3 \mu^4</mrow>
 		<mrow> &amp; = \int_{-1}^1 x^4 \cdot \frac{3}{4} \cdot (1-x^2) dx</mrow>
@@ -736,9 +758,9 @@ TBA, using one of the table examples from above.
 <p>
 <example>
 <p>
-Consider <xref ref="ContinuousEV-example">our previous example</xref>. To compute the mean and standard deviation for this distribution,
+Consider <xref ref="ContinuousEV-example">our previous example</xref>. To compute the <xref ref="TheoreticalMean">mean</xref> and <xref ref="TheoreticalVariance">variance</xref> (and hence the standard deviation) for this distribution,
 <me>\mu = \int_{-1}^2 x \cdot x^2/3 dx = \int_{-1}^2 x^3/3 dx = \frac{2^4}{12} - \frac{(-1)^4}{12} = \frac{15}{12} = \frac{5}{4}</me>
-and by using <xref ref="TheoreticalMeasuresAlternates">the alternate forumulas</xref>
+and by using <xref ref="TheoreticalMeasuresAlternates">the alternate formulas</xref>
 <md>
 	<mrow>\sigma^2 &amp; = E[X^2] - \mu^2</mrow>
 	<mrow> &amp; = \int_{-1}^2 x^2 \cdot x^2/3 dx - \mu^2</mrow>
@@ -750,7 +772,7 @@ which gives
 <me>\sigma = \sqrt{\frac{51}{80}} \approx 0.7984.</me>
 </p>
 <p>
-For skewness, note that in computing the variance above you also found that
+For <xref ref="TheoreticalSkewness">skewness</xref>, note that in computing the variance above you also found that
 <me>E[X^2] = \frac{11}{5}.</me>
 So, once again by using <xref ref="TheoreticalMeasuresAlternates">the alternate forumulas</xref>
 <me>E[X^3] = \int_{-1}^2 x^3 \cdot x^2/3 dx = \frac{x^6}{18} |_{-1}^2 = \frac{7}{2}</me>
@@ -758,7 +780,7 @@ and so
 <me>\gamma_1 = \frac{\frac{7}{2} - 3 \cdot \frac{5}{4} \cdot \frac{11}{5} + 2 \cdot (\frac{5}{4})^3}{\sqrt{\frac{51}{80}}^3}</me>
 </p>
 <p>
-For kurtosis, you can reuse <m>E[X^3] = \frac{7}{2}</m> and <m>E[X^2] = \frac{11}{5}</m> and 
+For <xref ref="TheoreticalKurtosis">kurtosis</xref>, you can reuse <m>E[X^3] = \frac{7}{2}</m> and <m>E[X^2] = \frac{11}{5}</m> and 
 <xref ref="TheoreticalMeasuresAlternates">the alternate forumulas</xref> to determine
 <me>E[(X-\mu)^4] = E[X^4] - 4 \mu \cdot E[X^3] + 6 \mu^2 \cdot E[X^2] - 3 \mu^4</me>
 which is the numerator for the kurtosis.  
@@ -834,16 +856,16 @@ Presume that p is the likelihood that God exists. Then you can compute the expec
 
 </section>
 
-<section><title>Generating Functions</title>
+<section xml:id="GeneratingFunctions"><title>Generating Functions</title>
 <p>In the previous section, you were able to take a given probability distribution and create several "special" expected value metrics that provided useful or interesting facts about the particular distribution...such as the mean and variance. It is possible however to embed a lot of these metrics in a "generating function". </p>
 
-<definition><title>Moment Generating Function</title>
+<definition xml:id="DefnMomentGeneratingFunction"><title>Moment Generating Function</title>
 <p xml:id="MomentGeneratingFunctionDefn">Given a probability function <m>f(x)</m>, the moment generating function is a transformation given by
 <me>M(t) = E[e^{tx}]</me>
 where the expected value is a summation or integral dependent upon the nature of the random variable x. If the expected value does not exist (due perhaps to a f(x) with asymptotes) then the M(t) does not exist.</p>
 </definition>
 
-<definition><title>Probability Generating Function</title>
+<definition xml:id="DefnProbabilityGeneratingFunction"><title>Probability Generating Function</title>
 <p>Given a probability function <m>f(x)</m>, the probability generating function is a transformation given by
 <me>N(t) = E[t^x]</me>
 where the expected value is a summation or integral dependent upon the nature of the random variable x and again presuming that the resulting expected value exists.</p>
@@ -855,7 +877,7 @@ where the expected value is a summation or integral dependent upon the nature of
 </theorem>
 
 
-<theorem><title>M(t) Properties</title>
+<theorem xml:id="MomentGeneratingFunctionProperties"><title><m>M(t)</m> Properties</title>
 <statement>
 <p>
 <me>M(0)=1</me>
@@ -868,7 +890,7 @@ where the expected value is a summation or integral dependent upon the nature of
 <me>M(0) = E[e^{0}] = E[1] = 1</me>
 is pretty trivial.
 </p>
-<p>For the next results, take derivatives and use the linearity of the summation or integral.  Here, let's consider the case where X is a continuous variable and leave the discrete case for you.
+<p>For the next results, take derivatives and use the linearity of the summation or integral.  Here, let's consider the case where <m>X</m> is a continuous variable and leave the discrete case for you.
 <me>M'(t) = D_t \left [ \int_R e^{tx} f(x) dx \right ] = \int_R x e^{tx} f(x) dx</me>
 and then evaluating at t=0 gives
 <me>M'(0) = \int_R x e^{0} f(x) dx = \mu .</me>
@@ -881,14 +903,14 @@ It should be noted that one may also determine the skewness and the kurtosis in 
 </proof>
 </theorem>
 
-<theorem><title>N(t) Properties</title>
+<theorem xml:id="ProbabilityGeneratingFunctionProperties"><title>N(t) Properties</title>
 <statement>
-<p>For discrete variable X, 
+<p>For discrete variable <m>X</m>, 
 <me> P(X=k) = \frac{N^{(k)}(0)}{k!} </me>
 </p>
 </statement>
 <proof>
-<p>Notice, in the discrete case where R = {0, 1, 2, ... }
+<p>Notice, in the discrete case where <m>R</m> = {0, 1, 2, ... }
 <me>N(t) = E[t^x] = \sum_R t^x f(x) = f(0) + t f(1) + t^2 f(x) + t^3 f(3) + ...</me>
 Therefore, by continually taking derivatives with respect to t and then evaluating those derivatives at t=0,
 <md>
@@ -906,7 +928,7 @@ etc.
 <statement>If random variables <m>X_1</m> and <m>X_2</m> have the same probability generating function (and therefore the same moment generating function) then the variables have identical distributions.</statement>
 <proof>
 <p>
-Apply previous result and notice that both variables have the same probability function f(x).
+Apply previous result and notice that both variables have the same probability function <m>f(x)</m>.
 </p>
 </proof>
 </corollary>
@@ -914,7 +936,7 @@ Apply previous result and notice that both variables have the same probability f
 </section>
 
 	
-<section><title>Standard Units</title>
+<section xml:id="StandardUnits"><title>Standard Units</title>
 	<p>Any distribution variable can be converted to “standard units” using the linear translation 
 	<me>\displaystyle z = \frac{x-\mu}{\sigma}.</me> 
 	In doing so, values of z will always represent the number of
@@ -954,28 +976,22 @@ Here are some exercises to consider related to Probability Functions.
 	</p>
 	</exercise>
 	
-	<exercise><title>Later</title>
-	<p>
-	B.  
-	</p>
-	</exercise>
-	
 	
 	<exercise><title>Flipping Fixed Number of Coins</title>
 	<p>
-	You flip three coins and measure the number of heads obtained. Determine the space R for the corresponding random variable X. From the eight possible outcomes, determine all outcomes corresponding to X=2. Identify the random variable as discrete or continuous.
+	You flip three coins and measure the number of heads obtained. Determine the space <m>R</m> for the corresponding random variable <m>X</m>. From the eight possible outcomes, determine all outcomes corresponding to <m>X = 2</m>. Identify the random variable as discrete or continuous.
 	</p>
 	</exercise>
 	
 	<exercise><title>Flipping Coins till success</title>
 	<p>
-	You flip one coin repeatedly until you get a second head. Determine the space R for the corresponding random variable X. From the possibilities, determine all outcomes corresponding to X=4. Identify the random variable as discrete or continuous.
+	You flip one coin repeatedly until you get a second head. Determine the space <m>R</m> for the corresponding random variable <m>X</m>. From the possibilities, determine all outcomes corresponding to <m>X = 4</m>. Identify the random variable as discrete or continuous.
 	</p>
 	</exercise>
 	
 	<exercise><title>Time between Accidents</title>
 	<p>
-	Now you want to measure the time between accidents at a particular intersection in town. Determine the space R for the corresponding random variable X. Describe all outcomes corresponding to <m>X \lt 1</m>. Be purposeful in the problem to describe the units you are using to measure time. Identify the random variable as discrete or continuous.
+	Now you want to measure the time between accidents at a particular intersection in town. Determine the space <m>R</m> for the corresponding random variable <m>X</m>. Describe all outcomes corresponding to <m>X \lt 1</m>. Be purposeful in the problem to describe the units you are using to measure time. Identify the random variable as discrete or continuous.
 	</p>
 	</exercise>
 	

@@ -853,7 +853,7 @@ that is, the standard normal distribution function.
 </p>
 <p>
 If instead you plan to sample from this distribution n=32 times, the Central Limit Theorem implies that you will get a random variable <m>\overline{X}</m> which has an approximate normal distribution with the same mean but with new variance <m>\sigma_{\overline{X}}^2 = \frac{4}{32} = \frac{1}{8}</m>.  Therefore
-<me>P( \overline{X} \lt 3.9 ) \approx normalcdf(0,3.9,4,sqrt(1/8)) = 0.2119 .</me>
+<me>P( \overline{X} \lt 3.9 ) \approx normalcdf(0,3.9,4,sqrt(1/8)) = 0.3886 .</me>
 </p>
 </example>
 </p>

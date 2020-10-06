@@ -54,10 +54,10 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 			freq[0] = freq[0]+1
 		else:
 			freq[1] = freq[1]+1
-	print("\nThe frequency of tails = "+ str(freq[0]))+" and heads = "+ str(freq[1])+"."
+	print("The frequency of tails = %s"%str(freq[0])+" and heads = %s"%str(freq[1]))
 	rel = [freq[0]/num_rolls,freq[1]/num_rolls]
 	print("\nThe relative frequencies for Tails and Heads:"+str(rel))
-	show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
+	show(bar_chart(freq,axes=False,ymin=0,xmin=-1/2))     #  A histogram of the results
 </input>
 </sage>
 </p>
@@ -79,7 +79,7 @@ def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	<p>
 	Let's try again
 	by doing a random experiment consisting of rolling a single die one time. Note that the sample space 
-	in this case will be the outcomes S = \{ 1, 2, 3, 4, 5, 6 \}.
+	in this case will be the outcomes S = { 1, 2, 3, 4, 5, 6 \.
 </p>
 
 <p>
@@ -92,16 +92,16 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [
 	show(rolls)   
 
 	freq = [rolls.count(outcome) for outcome in set(die)]  # count the numbers for each outcome
-	print 'The frequencies of each outcome is '+str(freq)
+	print('The frequencies of each outcome is %s'%str(freq))
 
-	print 'The relative frequencies of each outcome:'
+	print('The relative frequencies of each outcome:')
 	rel_freq = [freq[outcome-1]/num_rolls for outcome in set(die)]  # make frequencies relative
-	print rel_freq
+	print(rel_freq)
 	fs = []
 	for f in rel_freq:
 		fs.append(f.n(digits=4))
-	print fs
-	show(bar_chart(freq,axes=False,ymin=0)) 
+	print(fs)
+	show(bar_chart(freq,axes=False,ymin=0,xmin=-1/2))
 </input>
 </sage>
 </p>
@@ -131,15 +131,14 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
     show(rolls)   
 
     freq = [sums.count(outcome) for outcome in set(dice)]  # count the numbers for each outcome
-    print 'The frequencies of each outcome is '+str(freq)
+    print('The frequencies of each outcome is %s'%str(freq))
     
-    print 'The relative frequencies of each outcome:'
+    print('The relative frequencies of each outcome:')
     rel_freq = [freq[outcome-2]/num_rolls for outcome in set(dice)]  # make frequencies relative
-    print rel_freq        
-    show(bar_chart(freq,axes=False,ymin=0))     #  A histogram of the results
-    print "Relative Frequence of ",dice[0]," is about ",rel_freq[0].n(digits=4)
-    print "Relative Frequence of ",dice[num_sides-1]," is about ",rel_freq[num_sides-1].n(digits=4)
-
+    print(rel_freq)
+    show(bar_chart(freq,axes=False,ymin=0, xmin=-1))     #  A histogram of the results
+    print("Relative Frequence of %s"%str(dice[0])+" is about %s"%str(rel_freq[0].n(digits=4)))
+    print("Relative Frequence of %s"%str(dice[num_sides-1])+" is about %s"%str(rel_freq[num_sides-1].n(digits=4)))
 </input>
 </sage>
 </p>
@@ -223,11 +222,11 @@ def _(num_hands=slider[50..5000]):                  # Set up the number of hands
                 two_pair=two_pair+1
             if freq_values[1]==1:
                 one_pair=one_pair+1
-    print "       One Pair frequency = ",one_pair," with relative frequency ",one_pair/num_hands
-    print "       Two Pair frequency = ",two_pair," with relative frequency ",two_pair/num_hands
-    print "Three of a Kind frequency = ",three_kind," with relative frequency ",three_kind/num_hands
-    print "     Full House frequency = ",full_house," with relative frequency ",full_house/num_hands
-    print " Four of a Kind frequency = ",four_kind," with relative frequency ",four_kind/num_hands
+    print("       One Pair frequency = %s"%str(one_pair)+" with relative frequency %s"%str(one_pair/num_hands))
+    print("       Two Pair frequency = %s"%str(two_pair)+" with relative frequency %s"%str(two_pair/num_hands))
+    print("Three of a Kind frequency = %s"%str(three_kind)+" with relative frequency %s"%str(three_kind/num_hands))
+    print("     Full House frequency = %s"%str(full_house)+" with relative frequency %s"%str(full_house/num_hands))
+    print(" Four of a Kind frequency = %s"%str(four_kind)+" with relative frequency %s"%str(four_kind/num_hands))
 </input>
 </sage>
 </p>
@@ -268,12 +267,12 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
     for k in range(1,n):
         CF[k] = freq[k] + CF[k-1]
     
-    print 'The cumulative relative frequencies of each outcome:'
+    print('The cumulative relative frequencies of each outcome:')
     Crel_freq = [CF[outcome-2]/num_rolls for outcome in set(dice)]  # make frequencies relative
-    print Crel_freq        
-    show(bar_chart(CF,axes=False,ymin=0))     #  A histogram of the results
-    print "Cumulative Relative Frequence of ",dice[0]," is about ",Crel_freq[0].n(digits=4)
-    print "Cumulative Relative Frequence of ",dice[num_sides-1]," is about ",Crel_freq[num_sides-1].n(digits=4)
+    print(Crel_freq)        
+    show(bar_chart(CF,axes=False,ymin=0, xmin= -1))     #  A histogram of the results
+    print("Cumulative Relative Frequence of %s"%str(dice[0])+" is about %s"%str(Crel_freq[0].n(digits=4)))
+    print("Cumulative Relative Frequence of %s"%str(dice[num_sides-1])+" is about %s"%str(Crel_freq[num_sides-1].n(digits=4)))
 </input>
 </sage>
 </p>
@@ -386,7 +385,7 @@ Consider how we might create a definition for the expectation of a given outcome
 	|A|/|S| = 1/6.
 </p>
 
-<p>From our example where we take the sum of two die, the outcome A = \{ 4,5 \} from the
+<p>From our example where we take the sum of two die, the outcome A = { 4,5 } from the
 	collection S = {2,3,4,...,12} would be
 	<md>
 		<mrow>|A| = | \{ (1,3),(2,2),(3,1),(1,4),(2,3),(3,2),(4,1) \}| = 7</mrow>
@@ -672,7 +671,7 @@ def _(auto_update=False):
 		</webwork>
 		<conclusion>
 		<p>
-		So, these are simple calculations.
+		So, by counting actual "equally likely" outcomes these probabilities are easy to compute.
 		</p>
 		</conclusion>
 	</exercise>
@@ -729,7 +728,9 @@ def _(auto_update=False):
 	</statement>
 	<solution>
 	<p>
-	Remember, when using equally likely outcomes |A|/|S| assumes that the items counted for A are also in the sample space S.  In this case, for example, to determine the Probability of getting a sum of (say) 4 includes the rolls (1,3), (2,2), and (3,1). These three "successes" from the 36 possible ordered pairs gives P(4) = 3/36.  Similarly, P(5) = |dice rolls with a sum of 5|/36 = |(1,4), (2,3), (3,2), (4,1)| / 36 = 4/36.  Continue in this manner to determine the other possibilities and then compare to the experimental sage cell seen earlier for <xref ref="TwoDiceSage"> the sum of two dice </xref>.
+	Remember, when using equally likely outcomes |A|/|S| assumes that the items counted for A are also in the sample space S.  In this case, for example, to determine the Probability of getting a sum of (say) 4 includes the rolls (1,3), (2,2), and (3,1). These three "successes" from the 36 possible ordered pairs gives P(4) = 3/36.  Similarly, 
+	<p>P(5) = |dice rolls with a sum of 5|/36 = |(1,4), (2,3), (3,2), (4,1)| / 36 = 4/36.</p>
+Continue in this manner to determine the other possibilities and then compare to the experimental sage cell seen earlier for <xref ref="TwoDiceSage"> the sum of two dice </xref>.
 	</p>
 	</solution>
 </exercise>
@@ -785,7 +786,7 @@ So, a win can be obtained in two ways: 7 or 11 on first roll or getting the poin
 <p>
 <sage>
 <input>
-print "Conditional Events - successively deal 5 cards w/o replacement" 
+print("Conditional Events - successively deal 5 cards w/o replacement" )
 
 var('Ace Clubs Diamonds Hearts Jack King Queen Spades') 
 
@@ -814,15 +815,15 @@ def _(choice=['Hearts','Spades','Diamonds','Clubs','New Deck'],again=['Repeat Sa
         shuffle(deck1)
         history1=[]
     if (Set(deck1).cardinality()&lt;5):
-        print "Deck is too small...get a new deck"
-    elif choice&lt;&gt;'New Deck':
+        print("Deck is too small...get a new deck")
+    elif choice!='New Deck':
         hand = [deck1.pop() for card in range(5)] 
-        print "Click on a desired suit above to deal out another 5 card hand.  The cards dealt:"
-        print hand
-        print "The remaining cards in the deck:"
-        print deck1
+        print("Click on a desired suit above to deal out another 5 card hand.  The cards dealt:")
+        print(hand)
+        print("The remaining cards in the deck:")
+        print(deck1)
         num = Set(deck1).cardinality()
-        print "\nThe number of remaining cards in the deck = %s"%str(num)
+        print("\nThe number of remaining cards in the deck = %s"%str(num))
         looking = []
         for card in deck1:
             if card[1]==suit:
@@ -830,10 +831,8 @@ def _(choice=['Hearts','Spades','Diamonds','Clubs','New Deck'],again=['Repeat Sa
         prob = float(Set(looking).cardinality())/num
         history1.append(prob)
         
-        print 'So, the remaining probability of getting a card from '+choice+' from the remaining cards is %s'%str(prob)
-    list_plot(history1).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))
-
-</input>
+        print('So, the remaining probability of getting a card from '+choice+' from the remaining cards is %s'%str(prob))
+    list_plot(history1).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))</input>
 </sage>
 </p>
 	
@@ -842,7 +841,7 @@ def _(choice=['Hearts','Spades','Diamonds','Clubs','New Deck'],again=['Repeat Sa
 <p>
 <sage>
 <input>
-print "Independent Events - Successively deal 5 cards but WITH replacement"
+print('Independent Events - Successively deal 5 cards but WITH replacement')
 
 var('Ace Clubs Diamonds Hearts Jack King Queen Spades') 
 
@@ -869,15 +868,15 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
     deck1 = copy(full_deck)
     shuffle(deck1) 
     hand = [deck1.pop() for card in range(5)] 
-    print "The cards dealt:"
-    print hand
-    print "Replacing this hand and reshuffling gives the remaining cards in the deck:"
+    print("The cards dealt:")
+    print(hand)
+    print("Replacing this hand and reshuffling gives the remaining cards in the deck:")
     deck1 = copy(full_deck)
     shuffle(deck1)
     print(deck1)
     
     num = Set(deck1).cardinality()
-    print "\nThe number of remaining cards in the deck = %s"%str(num)
+    print("\nThe number of remaining cards in the deck = %s"%str(num))
     looking = []
     for card in deck1:
         if card[1]==suit:
@@ -885,23 +884,29 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
     prob = float(Set(looking).cardinality())/num
     h2.append(prob)
     
-    print 'So, the remaining probability of getting a '+choice+' from the remaining cards is %s'%str(prob)
+    print('So, the remaining probability of getting a '+choice+' from the remaining cards is %s'%str(prob))
     list_plot(h2).show(xmin=0,xmax=15,ymin=0,ymax=1,figsize=(5,2))
     
-    print 'Independent Events - Successively deal 5 cards but WITH replacement' 
-
-
-</input>
+    print('Independent Events - Successively deal 5 cards but WITH replacement')</input>
 </sage>
 </p>
-	
-<p><em>Changing Sample Space - Balls:</em>  
-Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.
+
+<p>
+<example><title>Changing Sample Space - Balls</title>
+<p>  
+Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  
+</p>
+<p>However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.
+</p>
+</example>
 </p>
 
-
-<p><em>Changing Sample Space - Cards: </em>
-Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. When extracting one card randomly, the probability	of that card being a Heart is P(Heart) = 13/52. Now, assume that one card has already been extracted and setaside.  Now, prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second draw. To compute this probability correctly, one need to formulate the question so that subadditivity can be utilized.
+<p>
+<example><title>Changing Sample Space - Cards</title>
+<p>
+Consider a deck of 52 standard playing cards and a success occurs when a Heart is selected from the deck. When extracting one card randomly, the probability	of that card being a Heart is P(Heart) = 13/52. 
+</p>
+<p>Now, assume that one card has already been extracted and set aside.  Next, prepare to extract another. If the first card drawn was a Heart, then there are only 12 Hearts left for the second draw. However, if the first card drawn was not a Heart, then there are 13 Hearts available for the second draw. To compute this probability correctly, one need to formulate the question so that subadditivity can be utilized.
 </p>
 <p>
 Let <m>H_1</m> be the outcome Heart on 1st draw and <m>H_2</m> be the outcome Heart on 2nd draw. Then,
@@ -913,28 +918,30 @@ Let <m>H_1</m> be the outcome Heart on 1st draw and <m>H_2</m> be the outcome He
 	<mrow> &amp; = \frac{13}{52} \cdot \frac{12}{51} + \frac{39}{52} \cdot \frac{13}{51} = \frac{12}{4 \cdot 51} + \frac{3 \cdot 13}{4 \cdot 51}	</mrow>  
 </md>
 </p>
+</example>
+</p>
 	
 <p>
-<definition>
+<definition xml:id="DefnConditionalProbability">
 		<title>Conditional Probability</title>
 		<statement>
 		<p>For sets A and B,
 			<me>P(B | A) = \frac{P(A \cap B)}{ P(A) },</me>
-			 provided P(A)<m>\gt 0</m>.
+			 provided <m>P(A) \gt 0</m>.
 		 </p>
 		 </statement>
 </definition>
 </p>
 
 <p>
-You can read P(B|A) as "the probability of B given A".
+You can read <m>P(B|A)</m> as "the probability of B given A".
 </p>
 
 <p>
 <theorem>
 	<statement>
 	<p>
-	Conditional Probability satisfies all of the requirements of regular probability.
+	<xref ref="DefnConditionalProbability">Conditional Probability</xref> satisfies all of the requirements of regular probability.
 	</p>
 	</statement>
 	<proof>
@@ -960,7 +967,7 @@ You can read P(B|A) as "the probability of B given A".
 </p>
 
 <p>	
-<theorem><title>Multiplication Rule</title>
+<theorem xml:id="MultiplicationRule"><title>Multiplication Rule</title>
 	<statement>
 	<p> For any sets A and B,
 		<me>P(A \cap B) = P(A) P(B | A) = P(B) P(A | B)</me>
@@ -968,7 +975,7 @@ You can read P(B|A) as "the probability of B given A".
 	</statement>
 	<proof>
 		<p>
-		If P(A)=0 or P(B)=0, then the result is trivial. Otherwise, unravel the definition of conditional probably by taking the denominator to the other side. Also note that you can write <m>A \cap B = B \cap A</m>.
+		If <m>P(A)=0</m> or <m>P(B)=0</m>, then the result is trivial. Otherwise, unravel the definition of <xref ref="DefnConditionalProbability">conditional probability</xref> by taking the denominator to the other side. Also note that you can write <m>A \cap B = B \cap A</m>.
 		</p>
 	</proof>
 </theorem>
@@ -994,14 +1001,14 @@ You can read P(B|A) as "the probability of B given A".
 </section>
 	
 	
-<section><title>Bayes Theorem</title>	
+<section><title>Bayes' Theorem</title>	
 	<introduction>
-	<p>Conditional probabilities can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to an important result known as Baye's Theorem.
+	<p><xref ref="DefnConditionalProbability">Conditional probabilities</xref> can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to an important result known as Bayes' Theorem.
 	</p>
 	</introduction>
 
-	<theorem>
-	<title>Bayes Theorem</title>
+	<theorem xml:id="BayesTheorem">
+	<title>Bayes' Theorem</title>
 	<statement>
 	<p>
 	Let <m>S = \{ S_1, S_2, ... , S_m \}</m> where the <m>S_k</m> are pairwise disjoint and <m>S_1 \cup S_2 \cup ... \cup S_m = S</m> (i.e. a partition of the space S).  Then for any <m>A \subset S</m>
@@ -1013,7 +1020,7 @@ You can read P(B|A) as "the probability of B given A".
 	</statement>
 	<proof>
 	<p>
-	Notice, by the definition of conditional probability and the multiplication rule
+	Notice, by the definition of <xref ref="DefnConditionalProbability">conditional probability</xref> and the <xref ref="MultiplicationRule">multiplication rule</xref>
 	<me>P(S_j | A) = \frac{P(S_j \cap A)}{P(A)} = \frac{P(S_j)P( A | S_j)}{P(A)}.</me>
 	But using the disjointness of the partition 
 	<md>
@@ -1040,7 +1047,7 @@ You can read P(B|A) as "the probability of B given A".
 		<li>Rainy, in which case we can deduce from the given info that P(Rain) = 5/365</li>
 		<li>Not Rainy, and since this is the complement of above, P(Not Rain) = 360/365</li>
 	</ul>
-	In the notation of Bayes Theorem, let A represent a forecast of Rain and note you have 
+	In the notation of <xref ref="BayesTheorem">Bayes Theorem</xref>, let A represent a forecast of Rain and note you have 
 	<me>P(\text{Rain}) = P(S_1) = \frac{5}{365}</me>
 	 and 
 	<me>P(\text{Not Rain}) = P(S_2) = \frac{360}{365}.</me> 
@@ -1048,7 +1055,7 @@ You can read P(B|A) as "the probability of B given A".
     <me>P(\text{ Forecast Rain | Rain}) = P( A | S_1) = 0.9</me>
     <me>P(\text{ Forecast Rain | Not Rain}) = P( A | S_2) = 0.1</me>
     
-    Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes Theorem allows you to turn this around...
+    Notice that the question provided requests that you find the probability of Rain given that the weatherman has forecasted rain. What is given on the other hand is the reverse of that conditional probability. Using Bayes' Theorem allows you to turn this around...
 	<md>
 		<mrow>P(\text{Rain}) &amp;  = P(S_1) P( A | S_1) + P(S_2) P(A | S_2)</mrow>	
 		<mrow> &amp; = \frac{5}{365} \cdot 0.9 + \frac{360}{365} \cdot 0.1</mrow>
@@ -1059,14 +1066,39 @@ You can read P(B|A) as "the probability of B given A".
 		<mrow> &amp; = \frac{5 \cdot 0.9}{5 \cdot 0.9 + 360 \cdot 0.1}</mrow>
 		<mrow> &amp; = \frac{45}{45+360} \approx 0.111</mrow>
 	</md>
-	So, normally there is only a 5 percent chance of rain on a given day but given that the weatherman has forecast rain, the chance of rain has risen to a little more than 11 percent.
-</p>		
+	So, normally there is only approximately a 1.369 percent chance of rain (5/365) on a given day but given that the weatherman has forecast rain, the chance of rain increases to a little more than 11 percent.
+</p>	
+
+
+<p>Here's a standard and yet surprising example:
+</p>
+<p>
+Your neighbor has 2 children. You learn that he has a daughter Anna. What is the probability that Anna’s sibling is a sister? Your first reaction might be that it is obviously 1/2 since (ok, roughly) it is equally likely that the other sibling was born female or male. But is that accurate?
+</p>
+<p>
+If you were to list all of the possible female/male outcomes when having two children, then the sample space is S = {FF, FM, MF, MM} with FM meaning the first child is female and the second is male. Assuming again that girls and boys are equally likely to be born, these 4 outcomes have equal probability of <m>1/4</m>.
+</p>
+<p>
+The question asks is whether the neighbor has another daughter in the set Fem2 = {FF} but since Anna is a girl then the possible outcomes now is only Fem = {FF, FM, MF}.
+</p>
+<p>
+So, 
+<md>
+  <mrow>P(Fem2|Fem) &amp; = \frac{P(Fem2 \cap Fem)}{P(Fem)} </mrow>
+  <mrow> &amp; = \frac{P(FF)}{P(FF or FM or MF)}</mrow>
+  <mrow> &amp; = \frac{\frac{1}{4}}{\frac{3}{4}} = \frac{1}{3}</mrow>
+</md>
+</p>	
+
+<p>
+<xref ref="BayesTheorem">Bayes' Theorem</xref> also works well in analyzing "Let's Make A Deal" finale choice.
+</p>
 
 <p>
 <exercise><title>WebWork</title>
 	<introduction>
 	<p>
-	Let's try a Bayes Theorem example...
+	Let's try a Bayes' Theorem example...
 	</p>
 	</introduction>
 	<webwork source="Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg">
@@ -1081,7 +1113,7 @@ You can read P(B|A) as "the probability of B given A".
 <exercise><title>WebWork</title>
 	<introduction>
 	<p>
-	Here is a more extensive Bayes Theorem example...
+	Here is a more extensive Bayes' Theorem example...
 	</p>
 	</introduction>
 	<webwork source="Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg">
@@ -1094,7 +1126,7 @@ You can read P(B|A) as "the probability of B given A".
 </exercise>
 </p>
 
-<p>The interactive cell below can be used to easily compute all of the conditional probabilities associated with Bayes's Theorem. Notice how the relative size of the pie-shaped partition changes when you presume that an event in the space has already occurred.</p>
+<p>The interactive cell below can be used to easily compute all of the conditional probabilities associated with <xref ref="BayesTheorem">Bayes' Theorem</xref>. Notice how the relative size of the pie-shaped partition changes when you presume that an event in the space has already occurred.</p>
 
 <p xml:id="BayesSage">
 <sage>
@@ -1104,8 +1136,8 @@ You can read P(B|A) as "the probability of B given A".
 def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
 
 @interact
-def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$ P(S_1),P(S_2),... $"),
-        Conditional_Probabilities=input_box('0.02,0.01,0.03',label='$ P(A|S_1),P(A|S_2),... $'),
+def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$$ P(S_1),P(S_2),... $$"),
+        Conditional_Probabilities=input_box('0.02,0.01,0.03',label='$$ P(A|S_1),P(A|S_2),... $$'),
         print_numbers=checkbox(True,label='Numerical Results on Graphs?'),
         auto_update=False):
             
@@ -1197,6 +1229,19 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$ P(S_1),P(S_2),
 </sage>
 </p>
 
+<p>You can actually also use <xref ref="BayesTheorem">Bayes' Theorem</xref> to answer a easy question!  Indeed, suppose that you draw one card from a shuffled and standard 52 card deck.  Given that you know the card is an Ace, what is the probability that it is also a Heart.
+</p>
+<p>
+Using the Bayes' approach, let's break up the world into Hearts (H) and non-Hearts (N).  Easily, 
+<me>P(A|H) = 1/13</me>
+<me>P(A|N) = 3/39</me>
+and so by Bayes'
+<me>P(H|A) = \frac{P(H) P(A|H)}{P(H) P(A|H) + P(N) P(A|N)} 
+= \frac{\frac{13}{52} \cdot \frac{1}{13}}{\frac{13}{52} \cdot \frac{1}{13} + \frac{39}{52} \cdot \frac{3}{39}} = \frac{1}{4}</me>
+as expected!
+</p>
+
+
 
 <p>
 <exercise><title>Insured vs Accident</title>
@@ -1227,7 +1272,7 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$ P(S_1),P(S_2),
 	</statement>
 	<solution>
 	<p>
-	  Plug the middle column into the first input box and the right column into the second input box of the  <xref ref="BayesSage"> Bayes Sage Cell </xref>
+	  Plug the middle column into the first input box and the right column into the second input box of the  <xref ref="BayesSage">Bayes Sage Cell </xref>
 	</p>
 	</solution>
 </exercise>
@@ -1249,6 +1294,7 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$ P(S_1),P(S_2),
 		<li>Given that your test came back negative, determine the likelihood that the child will not have spina bifida</li>
 		<li>Given that a positive test means you have a 1/100 to 1/300 chance of experiencing one of the abnormalities, determine the likelihood of spinal bifida in a randomly selected child.</li>
 	</ol>
+	You can get some help checking your arithmetic using the <xref ref="BayesSage">Bayes' Sage interact</xref>
 	</p>
 	</statement>
 </exercise>
@@ -1355,7 +1401,7 @@ TBA
 <p>
 <exercise><title>Conditional Basic computation</title>
 	<statement><p>
-	Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.29</m>, determine
+	Given <m>P(A) = 0.43, P(B) = 0.72, \text{and} P(A \cap B) = 0.29</m>, determine
 	<ol>
 		<li><m>P(A \cup B)</m></li>
 		<li><m>P(B | A)</m></li>
@@ -1364,6 +1410,10 @@ TBA
 	</ol>
 	</p>
 	</statement>
+	<solution>
+	<p>Use the Theorems and Definitions provided to complete the first three.  For the fourth part, it might be useful to use DeMorgan's Laws from set theory to rewrite <m>A^c \cap B^c = (A \cup B)^c</m> and then use a theorem.
+	</p>
+	</solution>
 </exercise>
 </p>
 
@@ -1581,7 +1631,7 @@ TBA
 <exercise><title>Basic Independence Calculations</title>
 	<statement>
 	<p>
-	Given P(A) = 0.43, P(B) = 0.72, and <m>P(A \cap B) = 0.31</m>, verify that A and B are not independent.
+	Given <m>P(A) = 0.43, P(B) = 0.72, \text{and} P(A \cap B) = 0.31</m>, verify that A and B are not independent.
 	</p>
 	</statement>
 	<solution>
@@ -1602,7 +1652,7 @@ TBA
 <exercise><title>Compound events and Independence</title>
 	<statement>
 	<p>
-	Given A, B, and C are independent events, with P(A) = 2/5, P(B) = 3/4, and P(C) = 1/6, determine:
+	Given A, B, and C are <xref ref="DefnIndependentEvents">independent events</xref>, with <m>P(A) = 2/5, P(B) = 3/4, \text{and} P(C) = 1/6</m>, determine:
 	<ol>
 		<li><m>P(A \cap B \cap C)</m></li>
 		<li><m>P(A^c \cap B^c \cap C)</m></li>
