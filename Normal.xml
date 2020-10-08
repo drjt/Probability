@@ -7,10 +7,10 @@
 <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
 <!-- See the file COPYING for copying conditions.             -->
 
-<chapter xml:id="Normal" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="NormalRelatedDistributions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Normal Distributions</title>
 
-<section><title>Introduction</title>
+<section xml:id="NormalRelatedDistributionsIntroduction"><title>Introduction</title>
 <p>
 You should have noticed by now that many distributions tend to have a bell-shaped graph as parameters are allowed to increase. Indeed, the formulas for skewness <m>\gamma_1</m> and kurtosis <m>\gamma_2</m> approach 0 and 3 respectively for the Hypergeometric, Binomial, Negative Binomial, Poisson, and Gamma Distributions. One might wonder if this is just a happy coincidence or is something more insidious at play. 
 </p>
@@ -22,10 +22,10 @@ We present the normal distribution by simply presenting it's probability functio
 </p>
 </section>
 
-<section><title>The Normal Distribution</title>
+<section xml:id="NormalDistribution"><title>The Normal Distribution</title>
 	
 <p>
-<definition><title>The Normal Distribution</title>
+<definition xml:id="DefnNormalDistribution"><title>The Normal Distribution</title>
 	<statement>
 	<p xml:id="NormalPF">
 	Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution provided it has a probability function given by
@@ -60,7 +60,7 @@ def _(m=slider(-10,10,1,0,label='$\mu$'),s=slider(1/5,5,1/10,1,label='$\sigma$')
 </p>
 
 <p>
-<theorem>
+<theorem xml:id="StandardNormalDistribution"><title>Standard Normal Distribution</title>
 <statement>
 <p>
 If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal distribution and often use Z as the variable name and will use <m>\Phi(z)</m> for the standard normal distribution function. In this case, the density function reduces to
@@ -100,7 +100,7 @@ When in the standard normal distribution, you can use a graphing calculator's no
 	</statement>
 <proof>
 <p>
-Note that you can convert the integral above to <xref ref="StandardUnitConversion">standard units</xref> so that it is sufficient to show
+Note that you can convert the integral above to <xref ref="StandardUnits">standard units</xref> so that it is sufficient to show
 <me>I = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{z^2}{2} } dz = 1</me>
 Toward this end, consider <m>I^2</m> and change the variables to get
 <md>
@@ -125,7 +125,7 @@ as desired.
 	
 	
 <p>
-<theorem><title>Verifying the normal probability mean</title>
+<theorem xml:id="NormalMean"><title>Verifying the normal probability mean</title>
 <statement>
 		<p>
 		<me>E[X] = \int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \mu</me>
@@ -152,7 +152,7 @@ as desired.
 	
 	
 <p>
-<theorem><title>Verifying the normal probability variance</title>
+<theorem xml:id="NormalVariance"><title>Verifying the normal probability variance</title>
 	<statement>
 	<p>
 		<me>E[(X-\mu)^2] = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \sigma^2</me>
@@ -206,7 +206,7 @@ Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compu
 
 
 <p>
-<theorem><title>Normal Distribution Maximum</title>
+<theorem xml:id="NormalCurveMax"><title>Normal Distribution Maximum</title>
 <statement>
 	<p>The maximum of the normal distribution probability function occurs when <m>x = \mu</m>
 	</p>
@@ -221,7 +221,7 @@ Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compu
 </p>
 
 <p>
-<theorem><title>Normal Distribution Points of Inflection</title>
+<theorem xml:id="NormalPOI"><title>Normal Distribution Points of Inflection</title>
 <statement>
 	<p>Points of Inflection for the normal distribution probability function occurs when <m>x = \mu + \sigma</m> and <m>x = \mu - \sigma</m>.
 	</p>
@@ -270,7 +270,7 @@ def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = ')
 
 
 
-<section><title>Chi-Square Distribution</title>
+<section xml:id="ChiSquareDistribution"><title>Chi-Square Distribution</title>
 <p>The following distribution is related to both the Normal Distribution and to the Gamma Distribution. Initially, consider a gamma distribution with probability function
 	
 	<me>\frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}.</me>
@@ -283,7 +283,7 @@ which is given a special name below.
 </p>
 	
 <p>
-<definition><title>Chi-Square Probability Function</title>
+<definition xml:id="DefnChiSquare"><title>Chi-Square Probability Function</title>
 <statement>
 <p xml:id="ChiSquarePF">Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
 	<me>f(x) = \frac{x^{r/2-1} e^{-x/2} }{\Gamma(r/2) 2^{r/2}}.</me>
@@ -306,7 +306,7 @@ def _(r=slider(1,20,1,3,label='r =')):
 </p>
 
 <p>
-<theorem><title><m>\chi^2</m> statistics</title>
+<theorem xml:id="ChiSquareStatistics"><title><m>\chi^2</m> statistics</title>
 <statement>
 		<me>\mu = r</me>
 		<me>\sigma^2 = 2r</me>
@@ -317,7 +317,7 @@ def _(r=slider(1,20,1,3,label='r =')):
 </p>
 
 <p>	
-<theorem><title>Relationship between Normal and <m>\chi^2</m></title>
+<theorem xml:id="NormalVsChiSquare"><title>Relationship between Normal and <m>\chi^2</m></title>
 <statement>
 	If <m>Z_1, Z_2, ..., Z_r</m> are r standard normal variables, then
 	<me> X = \sum_{k=1}^r Z_k^2</me>
@@ -350,12 +350,12 @@ def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),
 	
 </section>
 
-<section><title>Other "Bell Shaped" distributions</title>
+<section xml:id="OtherBellShapedDistributions"><title>Other "Bell Shaped" distributions</title>
 <p>The Normal distribution discussed above is very important when doing statistical analysis. It however is not the only distribution that is symmetrical about the mean and looks like a bell.  In this section, we consider two other options--one which is virtually useless and another which is very useful.
 </p>
 
 <p>
-<definition><title>The Cauchy Distribution</title>
+<definition xml:id="DefnCauchyDistribution"><title>The Cauchy Distribution</title>
 <statement>
 <p xml:id="CauchyPF">
 Consider a continuous random variable on the real numbers defined by
@@ -367,7 +367,7 @@ A random variable with this probability function is said to be a Cauchy Distribu
 </p>
 
 
-<theorem><title>The Cauchy Distribution</title>
+<theorem xml:id="CauchyStatistics"><title>The Cauchy Distribution</title>
 <statement><me>f(x) = \frac{1/\pi}{1+x^2}</me>
 is a probability function on <m>(-\infty, \infty)</m>.
 </statement>
@@ -409,7 +409,7 @@ and note that the integrand does not converge to 0 at the endpoints and therefor
 </p>
 
 <p>
-<definition><title>Student-t Distribution</title>
+<definition xml:id="DefnStudentt"><title>Student-t Distribution</title>
 <statement>
 <p xml:id="StudenttPF">
 Suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
@@ -422,7 +422,7 @@ Then, T is said to have a (Student) t distribution with probability function giv
 
 The good news is that this distribution is useful and its properties are presented below without proof.
 
-<theorem><title>Student t-distribution properties</title>
+<theorem xml:id="StudenttStatistics"><title>Student t-distribution properties</title>
 <statement>
 <p>
 For the Student t variable T defined above, 
@@ -480,7 +480,7 @@ legend("topright", inset=.05, title="Distributions",
 </section>
 
 
-<section><title>Generating Functions for Normal and Associated Distributions</title>
+<section xml:id="NormalAssociatedGeneratingFunctions"><title>Generating Functions for Normal and Associated Distributions</title>
 
 
 <p>
@@ -490,9 +490,9 @@ legend("topright", inset=.05, title="Distributions",
 
 <p>
 
-<theorem><title>Moment Generating Function for Normal</title>
+<theorem xml:id="NormalMGF"><title>Moment Generating Function for Normal</title>
 <statement>
-<p xml:id="NormalMGF">Presuming <m>t \gt 0</m> and
+<p>Presuming <m>t \gt 0</m> and
 <me>M(t) = e^{t \mu+\frac{1}{2}t^2\sigma^2}</me>
 </p>
 </statement>
@@ -543,9 +543,9 @@ which is the squared mean plus the variance for the normal distribution.
 
 <p>
 
-<theorem><title>Moment Generating Function for Chi-Square</title>
+<theorem xml:id="ChiSquareMGF"><title>Moment Generating Function for Chi-Square</title>
 <statement>
-<p xml:id="ChiSquareMGF">Presuming <m>t \gt 0</m> and
+<p>Presuming <m>t \gt 0</m> and
 <me>M(t) = \left ( \frac{1}{1-2t} \right )^{r/2}</me>
 </p>
 </statement>
@@ -601,7 +601,7 @@ which is the squared mean plus the variance for the normal distribution.
 
 
 
-<section><title>Normal Distribution as a Limiting Distribution</title>
+<section xml:id="NormalAsLimitingDistribution"><title>Normal Distribution as a Limiting Distribution</title>
 <p>Over the past several chapters you should have noticed that many distributions have skewness and kurtosis formulae which have limiting values of 0 and 3 respectively. This means that each of those distributions which can be approximated by the normal distribution for "large" parameter values.
 </p>
 
@@ -795,7 +795,7 @@ So, even with random data, if you are to consider the arrangement of the collect
 </section>
 
 
-<section><title>Central Limit Theorem</title>
+<section xml:id="CentralLimitTheoremSection"><title>Central Limit Theorem</title>
 <p>
 Often, when one wants to solve various scientific problems, several assumptions will be made regarding the nature of the underlying setting and base their conclusions on those assumptions.  Indeed, if one is going to use a Binomial Distribution or a Negative Binomial Distribution, an assumption on the value of p is necessary.  For Poisson and Exponential Distributions, one must know the mean.  For Normal Distributions, one must assume values for both the mean and the standard deviation.   Where do these values come from?  Often, one may perform a preliminary study and obtain a sample statistic...such as a sample mean or a relative frequency and use these values for μ or p.</p>
 
@@ -807,7 +807,7 @@ But what is the underlying distribution of these sample statistics?  The Central
 </p>
 
 <p>
-<theorem><title>Central Limit Theorem</title>
+<theorem xml:id="CentralLimitTheorem"><title>Central Limit Theorem</title>
 	<statement>
 	<p>
 	Presume X is a random variable from a distribution with known mean <m>\mu</m> and known variance <m>\sigma_x^2</m>.  
@@ -871,7 +871,7 @@ The Central Limit Theorem provides that regardless of the distribution of X, the
 is a Binomial variable.
 </p>
 
-<theorem><title>Binomial as approximate Normal</title>
+<theorem xml:id="BinomialApproximatelyNormal"><title>The Binomial Distribution approximately Normal if n large.</title>
 <statement>
 <p>
 Given a Binomial variable X with <m>\mu = np</m> and <m>\sigma^2 = np(1-p)</m>, then X is approximately also normal with the same mean and variance so long as <m>np \gt 5</m> and <m>n(1-p) \gt 5</m>.
@@ -906,7 +906,7 @@ Notice that these are very close.
 
 
 
-<corollary>
+<corollary xml:id="PoissonApproximatelyNormal"><title>The Poisson Distribution is approximately normal with <m>\mu</m> large.</title>
 <statement>
 <p>
 Given a Poisson variable X with <m>\mu</m> and <m>\sigma^2 = \mu</m> given, then X is approximately also normal with the same mean and variance so long as <m>\mu \gt 5</m>.
@@ -940,7 +940,7 @@ Again, these are very close.
 
 	
 	
-<theorem><title>Gamma as approximate Normal</title>
+<theorem xml:id="GammaApproximatelyNormal"><title>The Gamma is approximate Normal for <m>\mu</m> large.</title>
 <statement>
 <p>
 Given a Gamma variable X with mean <m>r \mu</m> and variance <m> r BLOB</m> given, then X is approximately also normal with the same mean and variance so long as CONDITION????.
@@ -990,7 +990,7 @@ The above theorems allow you to utilize the normal distribution to compute appro
 </section>
 
 
-<section><title>Summary</title>
+<section xml:id="NormalRelatedDistributionsSummary"><title>Summary</title>
 <introduction>
 <p>
 Here is a summary of the major points in this chapter:
@@ -1002,7 +1002,7 @@ TBA
 </section>
 
 
-<section><title>Exercises</title>
+<section xml:id="NormalRelatedDistributionsExercises"><title>Exercises</title>
 
 
 <exercise><title> - Computing basic standard normal probabilities</title>

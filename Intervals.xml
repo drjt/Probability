@@ -10,19 +10,21 @@
 <chapter xml:id="IntervalEstimation" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Estimation</title>
 
-<section><title>Introduction</title>
+<section xml:id="IntervalEstimationIntroduction"><title>Introduction</title>
 <p>
 You should have noticed by now that repeatedly sampling from a given distribution will yield a variety of sample statistics such as <m>\overline{x}</m> as an estimate perhaps for the population mean <m>\mu</m> or <m>\frac{Y}{n}</m> as an estimate for the population likelihood of success p. In this section, you will see how these sample "point estimators" are actually the best possible choices.
 </p>
+
 <p>
 In creating these point estimates repeatedly, you have noticed that the results will change somewhat over time. Indeed, flip a coin 20 times and you might expect 10 heads. However, in practice it is likely to 9 or 12 out of 20 and possible to get any of the other possible outcomes. This natural variation makes the point estimates noted above to almost certainly be in error. However one would expect that they should be close and the Central Limit Theorem does indicate that the distribution of sample means should be approximately normally distributed. Thus, instead of relying just on the value of the point estimate, you might want to investigate a way to determine a reasonable interval centered on the sample statistic in which you have some confidence the actual population statistic should belong. This leads to a discussion of interval estimates known as confidence intervals (using calculational tools) and statistical tolerance intervals (using order statistics).
 </p>
+
 <p>
 In this chapter we first discuss how to determine appropriate methods for estimating the needed population statistics (point estimates) and then quantify how good they are (confidence intervals).
 </p>
 </section>
 
-<section>	
+<section xml:id="IntervalEstimationChebyshev">	
 	<title>Interval Estimates - Chebyshev</title>
 
 	<p>An interval centered on the mean in which at least a certain proportion
@@ -31,10 +33,11 @@ In this chapter we first discuss how to determine appropriate methods for estima
 
 	<theorem>
 	<title>Chebyshev's Theorem</title>
-	<statement>
+	<statement><p>
 	Given a random variable X with given mean <m>\mu</m> and standard deviation <m>\sigma</m>, for <m> a \in \mathbb{R}^+</m> , 
 	
 	<me>P( \big | X - \mu \big | \lt a ) \gt 1 - \frac{\sigma^2}{a^2}</me>
+	</p>
 	</statement>
 	<proof>
 	<p>
@@ -61,7 +64,9 @@ In this chapter we first discuss how to determine appropriate methods for estima
 	</corollary>
 
 	<corollary><title>Special Cases for Chebyshev's Theorem</title>
-	<statement>For any distribution, it is not possible for f(x)=0 within one standard deviation of the mean. Aslo, at least 75% of the data for any distribution must lie within two standard deviations of the mean and at least 88% must lie within three.
+	<statement><p>
+	For any distribution, it is not possible for f(x)=0 within one standard deviation of the mean. Aslo, at least 75% of the data for any distribution must lie within two standard deviations of the mean and at least 88% must lie within three.
+	</p>
 	</statement>
 	<proof>
 	<p>
@@ -89,13 +94,15 @@ In this chapter we first discuss how to determine appropriate methods for estima
 </example>
 </p>
 
+<p>
 <example><title> - Comparing known distribution to Chebyshev</title>
 	<p>TBA
 	</p>
-	</example>
+</example>
+</p>
 </section>
 
-<section><title>Point Estimates</title>
+<section xml:id="IntervalEstimationPointEstimates"><title>Point Estimates</title>
 
 <p>
 For Binomial, Geometric, what is p? For exponential, what is the mean?  For normal, what are the mean and standard deviation? Each of these parameters are necessary before you can compute any probability values from their respective formulas. Since they might not be given in a particular instance, they will need to be estimated in some manner. 
@@ -129,18 +136,17 @@ to approximate the theoretical standard deviation.
 
 
 
-<section><title>Interval Estimates - Confidence Interval for p</title>
+<section xml:id="ConfidenceIntervalsForP"><title>Interval Estimates - Confidence Interval for p</title>
 <p>
 Sometimes selecting a value for p for a Binomial, Geometric, or Negative Binomial distribution problem can be done by using a theoretical value. Indeed, when flipping a coin it is reasonable to assume p = 1/2 is the probability of getting a head on one flip. Similarly, it is reasonable to assume p = 1/6 when you are looking for a particular side of a 6-sided die. However, many times you will want to deal with a problem in which it is not possible to determine exactly the precise value for the likelihood of success such as your true probability of making a free throw in basketball or knowing the true percentage of the electorate that will vote for your favorite candidate. 
 </p>
+
 <p>
 In these later situations, we found in the previous section that relative frequency <m>\frac{Y}{n}</m> is generally a good way to estimate p. In this section, you will investigate how to measure the closeness--and thereby assure some confidence in that estimate--regarding how well the point estimate approximates the actual value of p.
 </p>
 
-
-
 <p>
-<definition><title>Confidence Intervals for p</title>
+<definition xml:id="DefnConfidenceIntervalForP"><title>Confidence Intervals for p</title>
 <statement>
 <p>Given a point estimate <m>\tilde{p}</m> for p, a confidence interval for p is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form
 <me>\tilde{p} - E_1 \lt p \lt \tilde{p} + E_2</me>
@@ -161,6 +167,7 @@ Generally, symmmetry is presumed when using a two-sided confidence interval so t
 <me>P(\tilde{p} - E \lt p \lt \tilde{p} + E) = 1 - \alpha.</me>
 In this case, E is known as the margin of error.
 </p>
+
 <p>
 To determine E carefully, note that from the central limit theorem
 <me>\frac{Y-np}{\sqrt{np(1-p}} = \frac{\tilde{p} - p}{\sqrt{p(1-p)/n}}</me>
@@ -173,6 +180,7 @@ or by rearranging the inside inequality
 <me>P( \tilde{p} - z_{ \alpha/2}\sqrt{\tilde{p}(1-\tilde{p})/n} \lt  p \lt \tilde{p} + z_{ \alpha/2}\sqrt{\tilde{p}(1-\tilde{p})/n}) = 1 - \alpha.</me>
 Setting <m>E = z_{ \alpha/2}\sqrt{\tilde{p}(1-\tilde{p})/n}</m> gives a way to determine a confidence interval centered on <m>\tilde{p} = \frac{Y}{n}</m> for p with "confidence level" <m>1-\alpha</m>.  
 </p>
+
 <p>
 To complete the interval, one needs a specific value for <m>z_{ \alpha/2}</m>.
 Generally, one chooses confidence levels on the order of 90%, 95%, or 99% with 95% being the usual choice.  Fortunately this value is easily computed using graphing calculators or other automatic methods although your ancient teacher might have been required to use tables. On a TI calculator, use
@@ -187,22 +195,26 @@ Using the symmetry of the normal distribution, this can be rewritten
 <me>F(z_{ \frac{0.1}{2}}) = P( z \lt z_{ \frac{0.1}{2}}) = 0.95 = 1 - \frac{0.1}{2} .</me>
 Using the inverse of the standard normal distribution (on the TI calculator this is InvNorm(0.95)) gives <m>z_{ 0.05} \approx 1.645</m>.
 </p>
+
 <p>
 Similarly, for a 95 % confidence level, find where
 <me>F(z_{ \frac{0.05}{2}}) = P( z \lt z_{ \frac{0.05}{2}}) = 0.975 = 1 - \frac{0.05}{2} .</me>
 The calculators InvNorm(0.975) gives <m>z_{ 0.025} \approx 1.960</m>.
 </p>
+
 <p>
 For a 99 % confidence level, find where
 <me>F(z_{ \frac{0.01}{2}}) = P( z \lt z_{ \frac{0.01}{2}}) = 0.995 = 1 - \frac{0.01}{2} .</me>
 The calculators InvNorm(0.995) gives <m>z_{ 0.005} \approx 2.576</m>.
 </p>
+
 <p>
 Notice that when computing the confidence intervals above that we choose to just replace some of the p terms with <m>\tilde{p}</m> so that only one p term was left and could be isolated in the middle. There are other ways to deal with this. The easiest is to take the worst case scenario for the p terms in the denominator above. Indeed, the confidence interval is made wider (and therefore more likely to contain the actual p) if the square root term is as large as possible, using basic calculus it is easy to see that p(1-p) is maximized when p = 1/2. Therefore, a second alternative is to create your confidence interval using
 <me>z = \frac{\tilde{p} - p}{\frac{1}{2\sqrt{n}}}</me>
 and therefore <m>E = \frac{z_{ \alpha/2}}{2\sqrt{n}}</m>.
 This method should be used only when trying to create the roughest and "safest" interval.
 </p>
+
 <p>
 The methods for determining a confidence interval for p above depend upon a good approximation with the Central Limit Theorem. This approximation will be fine if n is relatively large. To consider a confidence interval for p when n is small, note that the binomial random variable is discrete and so expanding the interval by a factor of <m>\frac{1}{2n}</m> might be in order. Indeed, replace <m>z_{\alpha/2}</m> by <m>t_{\alpha/2}(n-1)</m> and continue otherwise.
 </p>
@@ -213,7 +225,7 @@ Another more elaborate mechanism when n is relatively large is given by the Wils
 
 
 <p>
-<theorem><title>Wilson Score Confidence Interval for p</title>
+<theorem xml:id="WilsonConfidenceInterval"><title>Wilson Score Confidence Interval for p</title>
 <statement>
 <p>
 <me>\frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} - z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}} \lt p \lt \frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} + z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}}
@@ -244,10 +256,11 @@ Solving for p using the quadratic formula and simplifying ultimately results in 
 <p>
 Presume that from a sample of size n = 400 you get Y = 144 successes.  Determine 95% two-sided confidence intervals for the actual p using all three of the methods above. Note that for each you will utilize <m>z_{\alpha/2} = z_{0.025} = 1.960</m> and <m>\tilde{p} = \frac{144}{400} = 0.36</m>.
 </p>
+
 <p>Normal Interval:
-<me>P( 0.36 - 1.960 \sqrt{0.36 \cdot 0.64) / 400} \lt  p \lt 0.36 + 1.960 \sqrt{0.36 \cdot 0.64) / 400}) = 1 - \alpha.</me>
+<me>P( 0.36 - 1.96 \sqrt{0.36 \cdot 0.64) / 400} \lt  p \lt 0.36 + 1.96 \sqrt{0.36 \cdot 0.64) / 400}) = 1 - \alpha.</me>
 or
-<me>P( 0.36 - 1.960 \cdot 0.6 \cdot 0.8) / 20 \lt  p \lt 0.36 + 1.960 \cdot 0.6 \cdot 0.8) / 20) = 0.95 </me>
+<me>P( 0.36 - 1.96 \cdot 0.6 \cdot 0.8) / 20 \lt  p \lt 0.36 + 1.96 \cdot 0.6 \cdot 0.8) / 20) = 0.95 </me>
 or
 <me>P( 0.36 - 0.04704 \lt  p \lt 0.36 + 0.04704) = 0.95 .</me>
 or
@@ -255,6 +268,7 @@ or
 So, there is a 95% chance that the actual value for p lies inside the interval
 <m>(0.31296 , 0.40704).</m>
 </p>
+
 <p>Maximal Interval:
 <me>P( 0.36 - 1.960 \frac{1}{2\sqrt{400}} \lt  p \lt 0.36 + 1.960 \frac{1}{2\sqrt{400}} ) = 1 - \alpha.</me>
 or
@@ -263,6 +277,7 @@ or
 <me>P( 0.311 \lt  p \lt 0.409 ) = 1 - \alpha.</me>
 Notice the interval is only slightly wider than when using <m>\tilde{p}</m> to estimate p in the first case.
 </p>
+
 <p>Wilson Score Interval:  Let's do this on in parts...
 <me>z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}} = 1.96 \sqrt{ \frac{0.36 \cdot 0.64 + \frac{1.96^2}{1600}}{400}} \approx 0.04728
 </me>
@@ -273,6 +288,7 @@ or
 <me>0.3145 \lt p \lt 0.4082</me>
 which is slightly different than the first and slightly smaller than the second.
 </p>
+
 </example>
 </p>
 
@@ -285,7 +301,7 @@ which is slightly different than the first and slightly smaller than the second.
 </p>
 
 <p>
-<theorem><title>Determining Sample Size for proportions with a preliminary estimate</title>
+<theorem xml:id="SampleSizeForConfidenceIntervalForP"><title>Determining Sample Size for proportions with a preliminary estimate</title>
 <statement>
 <p>
 Given a margin of error E and preliminary relative frequency estimate <m>\tilde{p_0}</m> the sample size needed to create the corresponding confidence interval is given by 
@@ -306,7 +322,7 @@ Presuming E is given and n is unknown, simply solve for n (noting that n is an i
 
 
 <p>
-<theorem><title>Determining Sample Size for proportions with no preliminary estimate</title>
+<theorem xml:id="SampleSizeForConfidenceIntervalForPWithoutPreliminary"><title>Determining Sample Size for proportions with no preliminary estimate</title>
 <statement>
 <p>
 Given only a margin of error E, the sample size needed to create the corresponding confidence interval is given by 
@@ -321,7 +337,7 @@ Note that the maximum for <m>y = x(1-x) </m> occurs at <m> x = 1/2, y = 1/4.</m>
 </theorem>
 </p>
 
-
+<p>
 <example><title>Determining Sample Size for one proportion</title>
 <p>
 Given a 99% confidence level, margin of error E=0.03, and preliminary estimate <m>\tilde{p_0} = 0.35</m>, notice that <m>z_{\alpha / 2} = 2.58</m> gives
@@ -329,23 +345,24 @@ Given a 99% confidence level, margin of error E=0.03, and preliminary estimate <
 or a sample size of at least 1683.
 </p>
 </example>
+</p>
 
 <p>
 <exercise><title>WebWork</title>
-<webwork source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg">
-</webwork>
+	<webwork source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg">
+	</webwork>
 </exercise>
 </p>
 
 </section>
 
-<section><title>Interval Estimates - Confidence Interval for <m>\mu</m></title>
+<section xml:id="ConfidenceIntervalForMean"><title>Interval Estimates - Confidence Interval for <m>\mu</m></title>
 <p>
 As with the confidence intervals above for proportions, the Central Limit Theorem also allows you to create an interval centered on a sample mean for estimating the population mean <m>\mu</m>.
 </p>
 
-
-<definition><title>Confidence Interval for One Mean</title>
+<p>
+<definition xml:id="DefnConfidenctIntervalForMean"><title>Confidence Interval for One Mean</title>
 <statement>
 <p>
 Given a sample mean <m>\overline{x}</m>, a two-sided confidence interval for the mean with confidence level <m>1-\alpha</m> is an interval 
@@ -356,6 +373,7 @@ Generally, the interval is symmetrical of the form <m>\overline{x} \pm E</m> wit
 </p>
 </statement>
 </definition>
+</p>
 
 <p>
 Once again, utilize the Central Limit Theorem.  Notice that the symmetrical confidence interval 
@@ -378,8 +396,8 @@ with confidence level <m>1-\alpha</m> and margin of error
 
 <p>
 <exercise><title>WebWork</title>
-<webwork source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg">
-</webwork>
+	<webwork source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg">
+	</webwork>
 </exercise>
 </p>
 
@@ -390,8 +408,8 @@ It should be noted that the use of the Central Limit Theorem makes the use of  I
 
 <p>
 <exercise><title>WebWork with t-scores</title>
-<webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg">
-</webwork>
+	<webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg">
+	</webwork>
 </exercise>
 </p>
 
@@ -400,7 +418,8 @@ It should be noted that the use of the Central Limit Theorem makes the use of  I
 Additionally, this derivation assumes that <m>\mu</m> is not known...indeed the goal is to approximate that mean using <m>\overline{x}</m>...but that <m>\sigma</m> is known. This is often not the case. It can however be shown that if n is larger than 30, replacing <m>\sigma</m> with the sample standard deviation s gives an acceptable confidence interval.
 </p>
 
-<theorem><title>Sample Size needed for <m>\mu</m> given Margin of Error</title>
+<p>
+<theorem xml:id="SampleSizeForConfidenceIntervalForMeanWithoutPreliminary"><title>Sample Size needed for <m>\mu</m> given Margin of Error</title>
 <statement>
 <p>
 Given confidence level <m>1-\alpha</m> and margin of error E, the sample size needed to determine an appropriate confidence interval satisfies
@@ -413,12 +432,13 @@ Solve for n in the formula for E above. Notice that n must be an integer so you 
 </p>
 </proof>
 </theorem>
+</p>
 
 <p>
 Notice, in practice you might want to take n to be a little larger than the absolute minimum value prescribed above since you are dealing with approximations (Central Limit Theorem and the use of an estimate for s rather than the actual <m>\sigma</m>.)
 </p>
 
-
+<p>
 <example><title>Determining Sample Size for one Mean</title>
 <p>
 Given a 95% confidence level, margin of error E=0.1, and preliminary sample with standard deviation s = 2, <m>z_{\alpha / 2} = 1.96</m> gives
@@ -426,11 +446,11 @@ Given a 95% confidence level, margin of error E=0.1, and preliminary sample with
 or a sample size of at least 1537.
 </p>
 </example>
-
+</p>
 </section>
 
 
-<section><title>Interval Estimates - Confidence Interval for <m>\sigma^2</m></title>
+<section xml:id="ConfidenceIntervalsForSigma2"><title>Interval Estimates - Confidence Interval for <m>\sigma^2</m></title>
 
 <p>
 Once again, you may need to approximate the population variance or standard deviation but only have the sample values available. One difference from the previous sections is that you are not dealing with an average of values (such as <m>\overline{x}</m> or <m>\tilde{p}</m>) but with the average of the squares of values. The Central Limit Theorem does not directly help you in this case but the following result (presented without proof) provides a solution.
@@ -472,7 +492,6 @@ Using the inverse chi-square gives values for the expression on the inside and a
 <me> E_1 = \frac{(n-1)S^2}{\chi^2_{1-\alpha/2}} </me>
 and
 <me> E_2 = \frac{(n-1)S^2}{\chi^2_{\alpha/2}} </me>
-
 </p>
 
 <p>
@@ -492,11 +511,11 @@ def _(c=input_box(0.95,width=10,label='Confidence Level = '),n=input_box(20,widt
     b = T.cum_distribution_function_inv(1-alpha/2)
     b1 = T.cum_distribution_function(b)
     
-    print 'From the Chi-Square distribution for X:'
-    print 'P(',a,'&lt; X &lt; ',(b),') = ',c
-    print 'with'
-    print 'P( X &lt; ',a,') = ',a1
-    print 'P( X &lt; ',b,') = ',b1
+    print('From the Chi-Square distribution for X:')
+    print('P(',a,'&lt; X &lt; ',(b),') = ',c)
+    print('with')
+    print('P( X &lt; ',a,') = ',a1)
+    print('P( X &lt; ',b,') = ',b1)
     
     f = x^(n/2-1)*e^(-x/2)/(gamma(n/2)*2^(n/2))
     G = plot(f,x,0,b+(b-a)/2)+plot(f,x,a,b,thickness=5,color='green')
@@ -508,8 +527,8 @@ def _(c=input_box(0.95,width=10,label='Confidence Level = '),n=input_box(20,widt
 </sage>
 
 <p>
-
 You can simply type in your input values easily in the Sage cell below.
+</p>
 
 <sage>
 	<input>
@@ -524,11 +543,11 @@ a1 = T.cum_distribution_function(a)
 b = T.cum_distribution_function_inv(1-alpha/2)
 b1 = T.cum_distribution_function(b)
 
-print 'From the Chi-Square distribution for X:'
-print 'P(',a,'&lt; X &lt; ',(b),') = ',c
-print 'with'
-print 'P( X &lt; ',a,') = ',a1
-print 'P( X &lt; ',b,') = ',b1
+print('From the Chi-Square distribution for X:')
+print('P(',a,'&lt; X &lt; ',(b),') = ',c)
+print('with')
+print('P( X &lt; ',a,') = ',a1)
+print('P( X &lt; ',b,') = ',b1)
 
 f = x^(n/2-1)*e^(-x/2)/(gamma(n/2)*2^(n/2))
 G = plot(f,x,0,b+(b-a)/2)+plot(f,x,a,b,thickness=5,color='green')
@@ -572,58 +591,65 @@ a1 = T.cum_distribution_function(a)
 b = T.cum_distribution_function_inv(1-alpha/2)
 b1 = T.cum_distribution_function(b)
 
-print 'From the Chi-Square distribution for X:'
-print 'P(',a,'&lt; X &lt; ',(b),') = ',c
-print 'with'
-print 'P( X &lt; ',a,') = ',a1
-print 'P( X &lt; ',b,') = ',b1
+print('From the Chi-Square distribution for X:')
+print('P(',a,'&lt; X &lt; ',(b),') = ',c)
+print('with')
+print('P( X &lt; ',a,') = ',a1)
+print('P( X &lt; ',b,') = ',b1)
 	</input>
 </sage>
 </p>
 
-<example><title> - Two-sided Confidence interval for the variance and standard deviation with large n.</title>
 
 <p>
 <exercise><title>WebWork</title>
+<introduction>
+	<p>Two-sided Confidence interval for the variance and standard deviation with large n.
+	</p>
+</introduction>
 <webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg">
 </webwork>
 </exercise>
 </p>
 
-<p>Continuing the previous example, suppose now that you have n=400 data values and suppose you have computed from those a sample variance of <m>s^2 = 479.5</m>.  Then, the only change in the calculation is the two chi-square statistic values. For 95% but now with 399 degrees of freedom
-<m>\chi_{0.025}^2 = 345.55</m> and <m>\chi_{0.975}^2 = 456.24</m>.  
 
-Therefore
-<me> E_1 = \frac{8 \cdot 479.5}{456.24} \approx 419.3</me>
-and
-<me> E_2 = \frac{8 \cdot 479.5}{345.55} \approx 553.7.</me>
-Hence, you are 95% certain that 
-<me>419.24 \lt \sigma^2 \lt 553.7.</me>
-By taking square roots you get
-<me>20.48 \lt \sigma \lt 23.53</me>
-which is a relatively tight confidence interval.  Notice, these are also completely contained in the confidence intervals from the previous small n example.
+<p>Suppose  that you have n=400 data values and suppose you have computed from those a sample variance of <m>s^2 = 479.5</m>.  Then, the only change in the calculation is the two chi-square statistic values. For 95% but now with 399 degrees of freedom
+<m>\chi_{0.025}^2 = 345.55</m> and <m>\chi_{0.975}^2 = 456.24</m>.  
 </p>
-</example>
+<p>
+	Therefore
+	<me> E_1 = \frac{8 \cdot 479.5}{456.24} \approx 419.3</me>
+	and
+	<me> E_2 = \frac{8 \cdot 479.5}{345.55} \approx 553.7.</me>
+	Hence, you are 95% certain that 
+	<me>419.24 \lt \sigma^2 \lt 553.7.</me>
+	By taking square roots you get
+	<me>20.48 \lt \sigma \lt 23.53</me>
+	which is a relatively tight confidence interval.  Notice, these are also completely contained in the confidence intervals from the previous small n example.
 </p>
+
 
 <p>
 Similar to above, another choice to estimate <m>\sigma ^2</m> is to use a one sided confidence interval. If you want to find one of these, continue as described above but just leave one endpoint off.  Indeed, 
-<me>\sigma^2 \lt E_2</me>
+	<me>\sigma^2 \lt E_2</me>
 can be determined using 
-<me> F(\chi^2_{\alpha} ) = F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha</me>
+	<me> F(\chi^2_{\alpha} ) = F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha</me>
 and 
-<me>E_1 \lt \sigma^2 </me>
+	<me>E_1 \lt \sigma^2 </me>
 can be determined using
-<me> F(\chi^2_{1-\alpha} ) = F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha.</me>
+	<me> F(\chi^2_{1-\alpha} ) = F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha.</me>
+</p>
 
-
+<p>
 <example><title> - One-sided Confidence intervals for <m>\sigma^2</m></title>
 <p>
+TBA
 </p>
 </example>
 </p>
 
-<p>You can, of course, use the formula to work out the sample size needed in order to have a sufficiently narrow confidence interval
+<p>
+You can, of course, use the formula to work out the sample size needed in order to have a sufficiently narrow confidence interval
 </p>
 
 <p>
@@ -635,21 +661,25 @@ can be determined using
 
 <p>
 Finally, to determine a confidence interval for <m>\sigma</m>, proceed using the protocols described above and simply take the square root on the resulting interval.
+</p>
 
-<example><title> - Confidence intervals for <m>\sigma</m></title>
 <p>
+<example><title> - Confidence intervals for <m>\sigma</m></title>
+<p> TBA
 </p>
 </example>
-
 </p>
 
 </section>
 
-<section><title>Exercises</title>
+<section xml:id="IntervalEstimationExercises"><title>Exercises</title>
+
+
 <p>
 <exercise><title> - Basic Confidence interval for p</title>
 <p>
 Given Y = 30 successes in n = 100 trials, determine a 90% confidence interval for the unknown value for p.  
+</p>
 <solution>
 <p>
 <m>\tilde{p} = 0.3</m> and <m>z_{0.05} = 1.645</m> gives
@@ -658,12 +688,14 @@ or
 <me>0.225 \lt p \lt 0.375.</me>
 </p>
 </solution>
-</p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Sample Size for confidence interval for p</title>
 <p>
 Given a preliminary estimate <m>\tilde{p_0} = 0.23</m>, determine the same size needed for determine a 95% confidence interval for p with margin of error 0.02.
+</p>
 <solution>
 <p>
 Using <m>z_{0.025} = 1.96</m>,
@@ -671,39 +703,48 @@ Using <m>z_{0.025} = 1.96</m>,
 and so pick at least 1701 as the sample size.
 </p>
 </solution>
-</p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Voting projection</title>
 <p>Randomly polling 3200 eligible voters for governor in a particular state resulted in finding that 1590 favored your candidate. Determine an appropriate 95% confidence interval for the true proportion p of voters who favor your candidate. Noting that <m>\tilde{p}</m> in this instance is smaller than 50%, write a short paragraph regarding what you might conclude from this confidence interval regarding your candidate's chances in winning the election.
-
+</p>
 <solution>
 <p>
 Note that although the point estimate is below 50%, the confidence interval includes the possibility that the actual value for p is greater than 50%. So, you cannot conclude that your candidate will either win or lose.
 </p>
 </solution>
-</p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Basic Confidence interval for the mean</title>
-<p>Given a sample mean of <m>\overline{x} = 25.3</m> with n = 121 and sample variance <m>s^2 = 12.1</m>, determine a 99% confidence interval for the true mean <m>\mu</m>.
+<p>
+Given a sample mean of <m>\overline{x} = 25.3</m> with n = 121 and sample variance <m>s^2 = 12.1</m>, determine a 99% confidence interval for the true mean <m>\mu</m>.
+</p>
 <solution>
-<p>Using <m>z_{0.005} = 2.576</m> and <m>s = \sqrt{12.1} \approx 3.4786</m> gives a confidence interval 
-<me>25.3 - 2.576 \cdot \frac{3.4786}{11} \lt \mu \lt 25.3 + 2.576 \cdot \frac{3.4786}{11}</me>
+	<p>Using <m>z_{0.005} = 2.576</m> and <m>s = \sqrt{12.1} \approx 3.4786</m> gives a confidence interval 
+	<me>25.3 - 2.576 \cdot \frac{3.4786}{11} \lt \mu \lt 25.3 + 2.576 \cdot \frac{3.4786}{11}</me>
 or 
-<me>24.4854 \lt \mu \lt 26.1148.</me>
-</p>
+	<me>24.4854 \lt \mu \lt 26.1148.</me>
+	</p>
 </solution>
-</p>
 </exercise>
+</p>
 
+<p>
 <exercise><title> - Confidence Interval Experiment</title>
 <p>
-
+TBA
 </p>
 </exercise>
+</p>
+
+<p>
 Roll two regular pair of dice 35 times, recording the sum of the dots for each roll.  Using the data from your sample, determine the corresponding sample mean and sample variance.  Using this data, create a 95% confidence interval for the population mean and a 95% "centered" confidence interval for the standard deviation. Once complete, compare your results with what you know should be the correct population statistics an appropriate "hat" distribution. (You might want to use the chi-square calculator provided earlier in this text.)
 </p>
+
 <p>
 Go back over your 35 rolls and count the number of 7's or 11's rolled. Determine a corresponding relative frequency for this outcome. Using this data, create a 95% confidence interval for the theoretical proportion of success p.  Compare your result with what you know should be the correct theoretical p. 
 </p>

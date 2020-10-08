@@ -114,7 +114,7 @@ R (<url href="https://www.r-project.org/">https://www.r-project.org/</url>) is a
     <!-- See the file COPYING for copying conditions.             -->
     <chapter xml:id="RepresentingData">
       <title>Statistical Measures</title>
-      <section>
+      <section xml:id="DataIntroduction">
         <title>Introduction</title>
         <p>
 To compute your final grade in a class your teacher will likely consider the scores you have earned on various assignments and examinations completed during the duration of the course. However, she ultimately will likely be required to assign some numerical score indicating your level of success in the course. One grade to rule them all. This final grade can only be one value and it would make sense that the grade be a reflection of your work on these tasks. So, what is a fair way for your teacher to complete this task? 
@@ -129,7 +129,7 @@ In general, it is often useful to make decisions using quantitative data but mak
 So, let's go and hopefully you will in some measure enjoy the ride!
 </p>
       </section>
-      <section>
+      <section xml:id="MeasurementScales">
         <title>Measurement Scales</title>
         <p>
 In creating statistical measures, you might want to consider one of the following general types.
@@ -178,12 +178,12 @@ In creating statistical measures, you might want to consider one of the followin
   </webwork-reps></exercise>
 </p>
       </section>
-      <section>
+      <section xml:id="MeasuresOfPosition">
         <title>Statistical Measures of Position</title>
         <p>Given a collection of data, sorting the data may provide several useful descriptors. When sorting data, you can easily use something like a spreadsheet for larger data sets but in this section you will also see there are ways to perform a sort by hand. In either case, statistical measures of position generally involve very little computational work once the data is sorted and take into account only the order of the data from lowest to highest.  To assist with notation, we will generally use x-values to represent the original raw data and y-values to represent that same data when ordered with the subscript indicating the positional placement.
 	</p>
         <p>	
-<definition><title>Order Statistic</title><statement><p xml:id="OrderStatistics">From the data set 
+<definition xml:id="DefnOrderStatistics"><title>Order Statistic</title><statement><p xml:id="OrderStatistics">From the data set 
 	<me>x_1, x_2, ... , x_n,</me> 
 	assume that when sorted it is denoted 
 	<me>y_1, y_2, ..., y_n</me> 
@@ -203,7 +203,7 @@ In creating statistical measures, you might want to consider one of the followin
 	Once the data is sorted, it should be very easy for you to locate the smallest and largest values. 
 	</p>
         <p>
-<definition><title>Minimum/Maximum:</title><statement><p xml:id="MaxMin">For a given data set, the smallest and largest values are known as the minimum and maximum, respectively. In our notation and presuming a data set of size n, the minimum = <m>y_1</m> and the maximum = <m>y_n</m></p></statement></definition>
+<definition xml:id="DefnMaxMin"><title>Minimum/Maximum:</title><statement><p>For a given data set, the smallest and largest values are known as the minimum and maximum, respectively. In our notation and presuming a data set of size n, the minimum = <m>y_1</m> and the maximum = <m>y_n</m></p></statement></definition>
 </p>
         <p>	
 <example><title>Age of Presidents - Minimum/Maximum</title><statement><p>
@@ -218,19 +218,34 @@ The definition presented below provides for a unique measure for each unique val
 <m>0 &lt; s &lt; 1</m> and using this to linearly interpolate between two adjacent entries in the sorted list.  Another option that corresponds to PERCENTILE.INC (and PERCENTILE) in Excel is to start with <m>(n-1)p+1</m> for determining how to pick the two adjacent entries and then proceeding with linear interpolation. Again, the definition below utilizes the first approach.
 </p>
         <p>	
-<definition xml:id="PercentileDefn"><title>Percentiles</title><statement><p xml:id="Percentiles">For <m>0 \lt s \lt 1</m> and for order statistics <m>y_1, y_2, ..., y_n</m> define the 100s-th percentile to be 
+<definition xml:id="DefnPercentiles"><title>Percentiles</title><statement><p>For <m>0 \lt s \lt 1</m> and for order statistics <m>y_1, y_2, ..., y_n</m> define the 100s-th percentile to be 
 		<me>P^{s} = (1-r)y_m + ry_{m+1}</me>
-	where m is the integer part of (n+1)s, namely 
+	where m is the integer part of <m>(n+1)s</m>, namely 
 		<me>m = \left\lfloor (n+1)s \right\rfloor</me> 
 	and 
 		<me>r = (n+1)s - m,</me>
 	
-	the fractional part of (n+1)s. 
+	the fractional part of <m>(n+1)s</m>. 
+	</p><p>
+	In Excel, this is PERCENTILE.EXC.
+	</p></statement></definition> 
+</p>
+        <p>	
+<definition xml:id="DefnPercentilesAlt"><title>Alternate Percentile Definition</title><statement><p>For <m>0 \lt s \lt 1</m> and for order statistics <m>y_1, y_2, ..., y_n</m> define the 100s-th percentile to be 
+		<me>P^{s} = (1-r)y_m + ry_{m+1}</me>
+	where m is the integer part of <m>(n-1)s + 1</m>, namely 
+		<me>m = \left\lfloor (n-1)s + 1 \right\rfloor </me> 
+	and 
+		<me>r = (n-1)s + 1 - m,</me>
+	
+	the fractional part of <m>(n-1)s+1</m>. 
+	</p><p>
+	In Excel, this is PERCENTILE.INC or just PERCENTILE.
 	</p></statement></definition> 
 </p>
         <p><title>Computing Percentiles</title>
 <exercise><introduction><p>
-		Compute the following percentile values.
+		Compute the following <xref ref="DefnPercentilesAlt">percentile values using the alternate formula</xref>.
 		</p></introduction><webwork-reps xml:id="extracted-webwork-2" ww-id="webwork-2">
     <pg source="Library/UVA-Stat/setStat212-Homework02/stat212-HW02-18.pg"/>
 
@@ -263,7 +278,7 @@ The definition presented below provides for a unique measure for each unique val
 		</p></conclusion></exercise>
 </p>
         <p>
-<example><title>Presidential Percentile</title><p>To compute, say, the 42nd percentile for the 
+<example><title>Presidential Percentile</title><p>To compute, say, the 42nd <xref ref="DefnPercentiles">percentile using the definition</xref> for the 
 <xref ref="PresidentAge"> President inauguration data presented earlier </xref> consider s = 0.42. Since there are 6 numbers in our data set, then
 
 <me>(n+1)s = 7 \cdot 0.42 = 2.94</me>
@@ -279,7 +294,7 @@ Both formula approaches for percentiles determine a weighted average between <m>
 Some special percentiles are provided special names...
 </p>
         <p>
-<definition><title>Quartiles</title><statement><p xml:id="Quartiles">Given a sorted data set, the first, second, and third quartiles are the values of 
+<definition xml:id="DefnQuartiles"><title>Quartiles</title><statement><p>Given a sorted data set, the first, second, and third quartiles are the values of 
 	<m>Q_1 = P^{0.25}, Q_2 = P^{0.5}</m> and <m>Q_3 = P^{0.75}</m>.
 	</p></statement></definition>
 </p>
@@ -296,7 +311,7 @@ so you should be aware of this possible difference.  You should also notice that
 </p></example>
 </p>
         <p>
-<definition><title>Deciles:</title><statement><p xml:id="Deciles">Given a sorted data set, the first, second, ..., ninth deciles are the value of 
+<definition xml:id="DefnDeciles"><title>Deciles:</title><statement><p>Given a sorted data set, the first, second, ..., ninth deciles are the value of 
 	<m>D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}</m>
 	</p></statement></definition>
 </p>
@@ -305,7 +320,7 @@ so you should be aware of this possible difference.  You should also notice that
 Consider the data set 
 <me>\{2, 5, 8, 10 \}.</me> 
 The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
-	</p><p>Using the <xref ref="PercentileDefn"> definition </xref>, the 25th percentile is computed by considering 
+	</p><p>Using the <xref ref="DefnPercentiles">percentile definition </xref>, the 25th percentile is computed by considering 
 	<me>(n+1)s = (4+1)0.25 = 5/4 = 1.25</me>.  
 	So, m = 1 and r = 0.25. Therefore 
 	<me>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</me> 
@@ -334,13 +349,13 @@ In general, given a numerical value within the range of a given data set, one ca
 	For a given data set, a summary of these statistics is often desired in order to give the user a quick overview of the more important order statistics.
 </p>
         <p>
-<definition><title>5-number summary</title><statement><p xml:id="FiveNumberSummary">Given a set of data, the 5-number summary is a vector of the order statistics given by 
+<definition xml:id="DefnFiveNumberSummary"><title>5-number summary</title><statement><p>Given a set of data, the 5-number summary is a vector of the order statistics given by 
 	
 	<me>\lt \text{minimum}, Q_1, Q_2, Q_3, \text{maximum} \gt .</me> 
 	</p></statement></definition>
 </p>
         <p>
-You can also compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org. You can change the data list if you want to use this to compute values for a different collections of numbers. The five-number-summary is displayed graphically using a "Box-Plot". Graphical representations of data will be discussed later in this chapter. You should compare the answers found using R with the values produced by our <xref ref="PercentileDefn"> definition </xref>
+You can also compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org. You can change the data list if you want to use this to compute values for a different collections of numbers. The five-number-summary is displayed graphically using a "Box-Plot". Graphical representations of data will be discussed later in this chapter. You should compare the answers found using R with the values produced by our <xref ref="DefnPercentiles"> definition </xref>
 </p>
         <p>
 <sage language="r"><input>
@@ -354,7 +369,7 @@ boxplot(data, horizontal=TRUE)
 </input></sage>
 </p>
         <p>	
-<example><title>Small example - 5 number summary</title><statement><p>Returning to our previous example, the five number summary would be
+<example><title>Small example - 5 number summary</title><statement><p>Returning to our previous example, the <xref ref="DefnFiveNumberSummary">five number summary</xref> would be
 	<me>\lt 2, 2.75, 6.5, 9.5, 10 \gt .</me>
 	</p></statement></example>
 </p>
@@ -399,12 +414,12 @@ cat("\n\n")   #  a couple of blank lines in the displayed output
 </input></sage>
 </p>
       </section>
-      <section>
+      <section xml:id="MeasuresOfTheMiddle">
         <title>Statistical Measures of the Middle</title>
-        <definition>
+        <definition xml:id="DefnMean">
           <title>Arithmetic Mean</title>
           <statement>
-            <p xml:id="Mean">Suppose X is a discrete random variable with range 
+            <p>Suppose X is a discrete random variable with range 
 	<m>R = {x_1, x_2, ..., x_n}</m>. 
 	The arithmetic mean is given by
 		<me>
@@ -419,7 +434,7 @@ cat("\n\n")   #  a couple of blank lines in the displayed output
 	<me>\overline{x} = \frac{2+5+8+10}{4} = \frac{25}{4} = 6.25.</me>
 	</p>
         <p>
-	The mean is often called the centroid in the sense that if the x values were locations of objects of equal weight, then the centroid
+	The <xref ref="DefnMean">mean</xref> is often called the centroid in the sense that if the x values were locations of objects of equal weight, then the centroid
 	would be the point where this system of n equal masses would balance. Play around with the interactive cell below by entering your own data values into the first list.
 	</p>
         <p>
@@ -481,7 +496,7 @@ It would then appear that you might want to do some bargaining with your teacher
 </p></example>
 </p>
         <p>
-<definition><title>Mode</title><statement><p xml:id="Mode">The mode for a given data set is the data value that repeats the greatest number of times. If there are two or more such data values, then each is a mode. If all of the data values are unique, then there is no mode.
+<definition xml:id="DefnMode"><title>Mode</title><statement><p>The mode for a given data set is the data value that repeats the greatest number of times. If there are two or more such data values, then each is a mode. If all of the data values are unique, then there is no mode.
 </p></statement></definition>
 </p>
         <p>
@@ -492,7 +507,7 @@ Notice the number 2 is included 3 times in this set as is the number 5. Hence bo
 </p></example>
 </p>
         <p>
-<definition><title>Median:</title><statement><p xml:id="Median">A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.
+<definition xml:id="DefnMedian"><title>Median:</title><statement><p>A positional measure of the middle is often utilized by finding the location of the 50th percentile. This value is also called the median and indicates the value at which approximately half the sorted data lies below and half lies above.
 </p></statement></definition>
 </p>
         <p>
@@ -537,7 +552,7 @@ if n is even.
 From the <xref ref="PresidentAge"> Presidential data </xref>, note that you are considering an even number of data values and so the median is given by (54+64)/2 = 59. 
 </p>
         <p>
-<definition><title>Midrange:</title><statement><p xml:id="Midrange">The midrange is a mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
+<definition xml:id="DefnMidrange"><title>Midrange:</title><statement><p>The midrange is a mixture of the mean and median where one takes the simple average of the maximum and minimum values in the data set. Using the order statistics, this equals 
 	<me>\frac{y_1+y_n}{2}</me>
 </p></statement></definition>
 </p>
@@ -564,7 +579,7 @@ Now, replace the explicit data in the above interactive cell and replace with on
 </p><p>
 <table halign="left"><caption>USA State Populations - 2014</caption><tabular halign="right"><row><cell bottom="medium">State</cell><cell bottom="medium">Population</cell></row><row><cell>Wyoming</cell><cell>0.6</cell></row><row><cell>Vermont</cell><cell>0.6</cell></row><row><cell>District of Columbia</cell><cell>0.6</cell></row><row><cell>North Dakota</cell><cell>0.7</cell></row><row><cell>Alaska</cell><cell>0.7</cell></row><row><cell>South Dakota</cell><cell>0.8</cell></row><row><cell>Delaware</cell><cell>0.9</cell></row><row><cell>Montana</cell><cell>1</cell></row><row><cell>Rhode Island</cell><cell>1.1</cell></row><row><cell>New Hampshire</cell><cell>1.3</cell></row><row><cell>Maine</cell><cell>1.3</cell></row><row><cell>Hawaii</cell><cell>1.4</cell></row><row><cell>Idaho</cell><cell>1.6</cell></row><row><cell>West Virginia</cell><cell>1.9</cell></row><row><cell>Nebraska</cell><cell>1.9</cell></row><row><cell>New Mexico</cell><cell>2.1</cell></row><row><cell>Nevada</cell><cell>2.8</cell></row><row><cell>Kansas</cell><cell>2.9</cell></row><row><cell>Utah</cell><cell>2.9</cell></row><row><cell>Arkansas</cell><cell>3</cell></row><row><cell>Mississippi</cell><cell>3</cell></row><row><cell>Iowa</cell><cell>3.1</cell></row><row><cell>Connecticut</cell><cell>3.6</cell></row><row><cell>Oklahoma</cell><cell>3.9</cell></row><row><cell>Oregon</cell><cell>3.9</cell></row><row><cell>Kentucky</cell><cell>4.4</cell></row><row><cell>Louisiana</cell><cell>4.6</cell></row><row><cell>South Carolina</cell><cell>4.8</cell></row><row><cell>Alabama</cell><cell>4.8</cell></row><row><cell>Colorado</cell><cell>5.3</cell></row><row><cell>Minnesota</cell><cell>5.4</cell></row><row><cell>Wisconsin</cell><cell>5.7</cell></row><row><cell>Maryland</cell><cell>5.9</cell></row><row><cell>Missouri</cell><cell>6</cell></row><row><cell>Tennessee</cell><cell>6.5</cell></row><row><cell>Indiana</cell><cell>6.6</cell></row><row><cell>Arizona</cell><cell>6.6</cell></row><row><cell>Massachusetts</cell><cell>6.7</cell></row><row><cell>Washington</cell><cell>7</cell></row><row><cell>Virginia</cell><cell>8.3</cell></row><row><cell>New Jersey</cell><cell>8.9</cell></row><row><cell>North Carolina</cell><cell>9.8</cell></row><row><cell>Michigan</cell><cell>9.9</cell></row><row><cell>Georgia</cell><cell>10</cell></row><row><cell>Ohio</cell><cell>11.6</cell></row><row><cell>Pennsylvania</cell><cell>12.8</cell></row><row><cell>Illinois</cell><cell>12.9</cell></row><row><cell>Florida</cell><cell>19.6</cell></row><row><cell>New York</cell><cell>19.7</cell></row><row><cell>Texas</cell><cell>26.4</cell></row><row><cell>California</cell><cell>38.3</cell></row></tabular></table>
 
-Determine the minimum, maximim, midrange, and mean for this data.
+Determine the minimum, maximim, <xref ref="DefnMidrange">midrange</xref>, and <xref ref="DefnMean">mean</xref> for this data.
 </p></statement><solution><p>Notice that these are already in order so you can presume 
 		<m>y_1 = 0.6</m> million is the minimum and <m>y_{50} = 38.3</m> 
 		million is the maximum. Therefore, the midrange is given by
@@ -578,12 +593,12 @@ Determine the minimum, maximim, midrange, and mean for this data.
 		</p></solution></example>
 </p>
       </section>
-      <section>
+      <section xml:id="MeasuresOfVariation">
         <title>Statistical Measures of Variation</title>
         <p>These measures provide some indication of how much the data set is "spread out". Indeed, note that the data sets {-2,-1,0,1,2} and {-200,-100,0,100,200} have the same mean but one is much more spread out than the other. Measures of variation should catch this difference.
 </p>
         <p>
-<definition><title>Range:</title><statement><p xml:id="Range">Using the order statistics, <me>y_n - y_1.</me>  
+<definition xml:id="DefnRange"><title>Range:</title><statement><p>Using the order statistics, <me>y_n - y_1.</me>  
 </p></statement></definition>
 </p>
         <p>
@@ -591,7 +606,7 @@ It is trivial to note that the range is very easy to compute but it completely i
 </p>
         <p>From the <xref ref="PresidentAge"> Presidential data </xref>, the maximum is 69 and the minimum is 46 so the range is 23, the difference of these two. </p>
         <p>
-<definition><title>Interquartile Range (IQR):</title><statement><p xml:id="IQR">
+<definition xml:id="DefnIQR"><title>Interquartile Range (IQR):</title><statement><p>
 <me>IQR = P^{0.75} - P^{0.25}.</me> 
 </p></statement></definition>
 </p>
@@ -617,7 +632,7 @@ which will always be non-negative but can be easily expanded using algebra. Sinc
 Using the average squared deviation from the mean, differences have been squared. Thus all of the squared differences added are non-negative but very small ones have been made even smaller and larger ones have been made relatively larger. To undo this scaling issue, one must take a square root to get things back into the right ball park. 
 </p>
         <p>
-<definition><title>Variance and Standard Deviation</title><statement><p xml:id="Variance">The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>\sigma^2</m>. Therefore
+<definition xml:id="DefnVarianceSD"><title>Variance and Standard Deviation</title><statement><p>The variance is the average squared deviation from the mean. If this data comes from the entire universe of possibilities then we call it a population variance and denote this value by <m>\sigma^2</m>. Therefore
 	<me>\sigma^2 = \frac{\sum_{k=1}^n ( x_k-\mu )^2}{n} </me>
 </p><p>The standard deviation is the square root of the variance. If this data comes from the entire universe of possibilities then we call it a population standard deviation and denote this value by <m>\sigma</m>. Therefore
 <me> \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.</me>
@@ -773,13 +788,13 @@ paste("Inter Quantile Range =",IQR(data))
 </input></sage>
 </p>
       </section>
-      <section>
+      <section xml:id="GroupedData">
         <title>Adjusting Statistical Measures for Grouped Data</title>
         <introduction>
           <p>As you considered the measures of the center and spread before, each data point was considered individually. Often, data may however be grouped into categories. The number of data items in each category is called the "frequency" of that outcome and the collection of these frequencies for all outcomes is called a "frequency distribution". 
 </p>
         </introduction>
-        <subsection>
+        <subsection xml:id="GroupedDataDiscrete">
           <title>Data Grouped into Single-valued Categories</title>
           <p>In this case, rather than considering <m>x_k</m> to be the kth data value can take advantage of the grouping to perhaps save a bit on arithmetic.</p>
           <p>Indeed, let's assume that data is grouped into m categories <m>x_1, x_2, ..., x_m</m> with corresponding frequencies <m>f_1, f_2, ..., f_m</m>. Then, for example, when computing the mean rather than adding <m>x_1</m> with itself <m>f_1</m> times just compute <m>x_1 \times f_1</m> for the first category and continuing through the remaining categories. This gives the following grouped data formula for the mean
@@ -886,7 +901,7 @@ Create a frequency distribution and determine the sample mean and variance.
 		</p></conclusion></exercise>
 </p>
         </subsection>
-        <subsection>
+        <subsection xml:id="GroupedDataContinuous">
           <title>Data Grouped into Continuous Intervals</title>
           <p>For measures on data grouped into intervals, it is somewhat difficult to do calculations when the data no longer exists as individual values since all you know is the frequencies of each interval. You can use "class marks"...the midpoints of each interval...as representers for all of the items that fell into that interval for computing means and variances.  For positional measures, you want to approach this in the same manner as with percentiles before.  That is, my doing some sort of linear interpolation on the width of each interval.
 </p>
@@ -945,12 +960,12 @@ The total cummulative frequency is 25 and so <m>m = \frac{25}{2} = 12.5</m> whic
 </p>
         </subsection>
       </section>
-      <section>
+      <section xml:id="OtherPointMeasures">
         <title>Other Statistical Point Measures</title>
         <p>Above, we have investigated statistical measures that help determine the middle and the spread of a given data set. There are however other metrics available that help describe the distribution of that data.  Skewness is one of those metrics and describes any lack of symmetry of the data set's distribution and whether data is stretched out to one side or the other.
 </p>
         <p>
-<definition><title>Skewness</title><statement><p xml:id="Skewness">For population data, the Skewness of <m>x_1, x_2, ..., x_n</m> is given by
+<definition xml:id="DefnSkewness"><title>Skewness</title><statement><p>For population data, the Skewness of <m>x_1, x_2, ..., x_n</m> is given by
 <me> \frac{1}{\sigma^3} \frac{\sum_{k=1}^n ( x_k-\mu )^3}{n}.</me>
 </p><p>For sample data, the Skewness of <m>x_1, x_2, ..., x_n</m> is given by
 <me> \frac{1}{s^3} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}.</me>
@@ -963,7 +978,7 @@ A positive skewness indicates that the positive <m>(x_k - \mu)^3</m> terms (like
 Data might tend to be clustered around the mean. The "kurtosis" can be used to measure how closely data resembles a "bell-shaped" collection.
 </p>
         <p>
-<definition><title>Kurtosis</title><statement><p xml:id="Kurtosis">For population data, the Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
+<definition xml:id="DefnKurtosis"><title>Kurtosis</title><statement><p>For population data, the Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
 <me> \frac{1}{\sigma^4} \frac{\sum_{k=1}^n ( x_k-\mu )^4}{n}.</me>
 </p><p>For sample data, the Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
 <me> \frac{1}{s^4} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}.</me>
@@ -972,28 +987,34 @@ Data might tend to be clustered around the mean. The "kurtosis" can be used to m
         <p>
 A kurtosis of 3 indicates that the data is perfectly bell shaped (a "normal" distribution) whereas data further away from 3 indicates data that is less bell shaped.
 </p>
-        <theorem>
+        <theorem xml:id="AlternateSkewnessAndKurtosis">
           <title>Alternate Formulas for Skewness and Kurtosis</title>
           <statement>
 Skewness = 
 <me>\text{skewness} = \frac{1}{s^3} 
-\left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}\sum_{k=1}^n x_k^2}{n} + 2 \overline{x}^3 \right ]
+\left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}\sum_{k=1}^n \frac{x_k^2}{n} + 2 \overline{x}^3 \right ]
 \\ = \frac{1}{s^3} 
 \left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 v \overline{x} - \overline{x}^3 \right ]</me>
 and Kurtosis =
-<me>\text{kurtosis}  = \frac{1}{s^4} 
-\left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \sum_{k=1}^n x_k^2}{n} - 3 \overline{x}^4  \right ]
-\\ = \frac{1}{s^4} 
-\left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v - 3 \overline{x}^4  \right ]</me><proof><p>
+<me>
+\text{kurtosis}  = \frac{1}{s^4} 
+\left [ 
+\frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \frac{\sum_{k=1}^n x_k^2}{n} - 3 \overline{x}^4  \right ]
+\\ = \frac{1}{s^4} \left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v + 3 \overline{x}^4  
+\right ]
+</me><proof><p>
 For skewness, expand the cubic and break up the sum. Factoring out constants (such as <m>\overline{x}</m>) gives
 <md><mrow>&amp; \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}</mrow><mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x} \frac{\sum_{k=1}^n x_k^2 }{n} + 3 \overline{x}^2 \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \overline{x}^3}{n}</mrow><mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}(v + \overline{x}^2) + 3 \overline{x}^3 - \overline{x}^3</mrow><mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}v - \overline{x}^3</mrow></md>
 and divide by the cube of the standard deviation to finish. Note that the first expansion in the derivation above can be used quickly if the data is collected in a table and powers easily computed.
 </p><p>
 For kurtosis, similarly expand the quartic and break up the sum as before. Note that you can extract the value of the cubic term by solving for that term in the skewness formula above. Then,
-<md><mrow>&amp; \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}</mrow><mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \frac{\sum_{k=1}^n x_k^2}{n} - 4 \overline{x}^3 \frac{\sum_{k=1}^n x_k}{n} + \frac{\sum_{k=1}^n \overline{x}^4}{n}</mrow><mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 (v+\overline{x}^2) - 4 \overline{x}^4 + \overline{x}^4</mrow><mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v - 3 \overline{x}^4 </mrow></md>
+<md><mrow>&amp; \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}</mrow><mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \frac{\sum_{k=1}^n x_k^2}{n} - 4 \overline{x}^3 \frac{\sum_{k=1}^n x_k}{n} + \frac{\sum_{k=1}^n \overline{x}^4}{n}</mrow><mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 (v+\overline{x}^2) - 4 \overline{x}^4 + \overline{x}^4</mrow><mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v + 3 \overline{x}^4 </mrow></md>
 and then divide by the fourth power of the standard deviation.  Note again that the first expansion in the derivation above might also be a useful shortcut.
 </p></proof></statement>
         </theorem>
+        <p>
+It should be noted that there are other possible ways to come up with interesting alternate ways to compute the kurtosis, etc. based on previous values. The ones presented above relate back to the mean and variance whose values might be more readily obtained from calculators for example.
+</p>
         <p>Going back to a previous example...</p>
         <p>
 Computing skewness and kurtosis by hand can often be better organized using a table. Below, notice that the <m>x_k</m> column would be the given data values but the other columns you could again easily compute.
@@ -1001,7 +1022,9 @@ Computing skewness and kurtosis by hand can often be better organized using a ta
 <table halign="left"><tabular halign="right"><row><cell bottom="medium"><m>x_k</m></cell><cell bottom="medium"><m>x_k^2</m></cell><cell bottom="medium"><m>x_k^3</m></cell><cell bottom="medium"><m>x_k^4</m></cell></row><row><cell>1</cell><cell>1</cell><cell>1</cell><cell>1</cell></row><row><cell>-1</cell><cell>1</cell><cell>-1</cell><cell>1</cell></row><row><cell>0</cell><cell>0</cell><cell>0</cell><cell>0</cell></row><row><cell>2</cell><cell>4</cell><cell>8</cell><cell>16</cell></row><row><cell>2</cell><cell>4</cell><cell>8</cell><cell>16</cell></row><row><cell>5</cell><cell>25</cell><cell>125</cell><cell>625</cell></row></tabular><caption>Computing data statistics by hand</caption></table>
 
 So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m> as before and so
-<md><mrow>\overline{x} = \frac{9}{6} = \frac{3}{2},</mrow><mrow>v = \frac{25}{6} - \left ( \frac{3}{2} \left )^2 = \frac{43}{12} \approx 3.58 ,</mrow><mrow>s^2 = \frac{6}{5} \times v = \frac{43}{10} = 4.3,</mrow><mrow>\text{and so} s = \sqrt{4.3} \approx 2.07</mrow></md>.
+<me>\overline{x} = \frac{9}{6} = \frac{3}{2}</me>
+and
+<md><mrow>v = \frac{25}{6} - \left ( \frac{3}{2} \right )^2 = \frac{43}{12} \approx 3.58 ,</mrow><mrow>s^2 = \frac{6}{5} \times v = \frac{43}{10} = 4.3,</mrow><mrow>\text{and so} s = \sqrt{4.3} \approx 2.07</mrow></md>.
 
 But also, <m>\Sigma x_k^3 = 141</m> and <m>\Sigma x_k^4 = 659</m>.  Use these in the formulas above to obtain skewness of
 
@@ -1012,12 +1035,12 @@ and kurtosis of
 <me>\left [ \frac{659}{6} - 4 \cdot \frac{3}{2} \cdot \frac{141}{6} + 6 \left ( \frac{3}{2} \right )^2  \cdot \frac{26}{5}  - 3 \cdot \left ( \frac{3}{2} \right )^4 \right ] / s^4.</me>
 </p>
       </section>
-      <section>
+      <section xml:id="GraphicalStatistics">
         <title>Visual Statistical Measures - Graphical Representation of Data</title>
         <introduction>
           <p>Data sets can range from small to very large. Visual representations of these data sets often allow you to see trends and reveal a lot about the distribution of the data values.</p>
         </introduction>
-        <subsection>
+        <subsection xml:id="GraphicalStatisticsHistograms">
           <title>Histograms</title>
           <p>Frequency Histograms - height matters</p>
           <p>Consider the data set given by
@@ -1065,7 +1088,7 @@ def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated b
 </input></sage>		
 </p>
         </subsection>
-        <subsection>
+        <subsection xml:id="GraphicalStatisticsStemAndLeaf">
           <title>Stem and Leaf Plot</title>
           <p> 
 A Stem and Leaf Plot allows you to create a histogram of sorts but maintain the individual data values. To create one of these plots, you will need to consider your particular data set and create a two-step sieve for organizing the set.  The first part is to create "stems" that are often associated with the highest digit(s) of each data value and the "leaves" that are often associated with the remaining digit(s) of the data value.
@@ -1097,9 +1120,9 @@ Notice how it is easy to now see that most state populations are relatively smal
 </p></example>
 </p>
         </subsection>
-        <subsection>
+        <subsection xml:id="GraphicalStatisticsBoxAndWhisker">
           <title>Box and Whisker Diagram (Box Plot)</title>
-          <p>This graphical display identifies the "5-number-summary" associated with the minimum, quartiles, and the maximum. That is, <m>y_1, Q_1, Q_2, Q_3, y_n</m>.  These values separate the data roughly into quarters. To distinguish these quarters connect <m>y_1</m> and <m>Q_1</m> with a straight line (a whisker) and do the same with <m>Q_3</m> and <m>y_n</m>. Use a box to connect <m>Q_1</m> with <m>Q_2</m> and the same to connect <m>Q_2</m> with <m>Q_3</m>. Then the boxed areas also identify the IQR.  
+          <p>This graphical display identifies the <xref ref="DefnFiveNumberSummary">5-number-summary</xref> associated with the minimum, <xref ref="DefnQuartiles">quartiles</xref>, and the maximum. That is, <m>y_1, Q_1, Q_2, Q_3, y_n</m>.  These values separate the data roughly into quarters. To distinguish these quarters connect <m>y_1</m> and <m>Q_1</m> with a straight line (a whisker) and do the same with <m>Q_3</m> and <m>y_n</m>. Use a box to connect <m>Q_1</m> with <m>Q_2</m> and the same to connect <m>Q_2</m> with <m>Q_3</m>. Then the boxed areas also identify the IQR.  
 </p>
           <p>
 <sage language="r"><input>
@@ -1167,7 +1190,7 @@ www.machinelearningplus.com
 
 -->
       </section>
-      <section>
+      <section xml:id="RepresentingDataSummary">
         <title>Summary</title>
         <introduction>
           <p>
@@ -1175,49 +1198,49 @@ Links to the main formulas related to descriptive statistics:
 </p>
         </introduction>
         <p>
-          <xref ref="OrderStatistics">Order Statistics</xref>
+          <xref ref="DefnOrderStatistics">Order Statistics</xref>
         </p>
         <p>
-          <xref ref="MaxMin">Maximum and Minimum</xref>
+          <xref ref="DefnMaxMin">Maximum and Minimum</xref>
         </p>
         <p>
-          <xref ref="Percentiles">Percentiles</xref>
+          <xref ref="DefnPercentiles">Percentiles</xref>
         </p>
         <p>
-          <xref ref="Quartiles">Quartiles</xref>
+          <xref ref="DefnQuartiles">Quartiles</xref>
         </p>
         <p>
-          <xref ref="Deciles">Deciles</xref>
+          <xref ref="DefnDeciles">Deciles</xref>
         </p>
         <p>
-          <xref ref="FiveNumberSummary">5-number summary</xref>
+          <xref ref="DefnFiveNumberSummary">5-number summary</xref>
         </p>
         <p>
-          <xref ref="Mean">Mean</xref>
+          <xref ref="DefnMean">Mean</xref>
         </p>
         <p>
-          <xref ref="Median">Median</xref>
+          <xref ref="DefnMedian">Median</xref>
         </p>
         <p>
-          <xref ref="Midrange">Midrange</xref>
+          <xref ref="DefnMidrange">Midrange</xref>
         </p>
         <p>
-          <xref ref="Range">Range</xref>
+          <xref ref="DefnRange">Range</xref>
         </p>
         <p>
-          <xref ref="IQR">Inter Quartile Range</xref>
+          <xref ref="DefnIQR">Inter Quartile Range</xref>
         </p>
         <p>
-          <xref ref="Variance">Variance</xref>
+          <xref ref="DefnVarianceSD">Variance</xref>
         </p>
         <p>
-          <xref ref="Skewness">Skewness</xref>
+          <xref ref="DefnSkewness">Skewness</xref>
         </p>
         <p>
-          <xref ref="Kurtosis">Kurtosis</xref>
+          <xref ref="DefnKurtosis">Kurtosis</xref>
         </p>
       </section>
-      <section>
+      <section xml:id="RepresentingDataExercises">
         <title>Exercises</title>
         <p>Complete the online WebWorK homework set "Computational Measures".</p>
         <exercise>
@@ -1238,13 +1261,13 @@ Links to the main formulas related to descriptive statistics:
     <!--                                                          -->
     <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
     <!-- See the file COPYING for copying conditions.             -->
-    <chapter xml:id="CurveEstimation">
+    <chapter xml:id="Regression">
       <title>Regression</title>
-      <section>
+      <section xml:id="RegressionIntroduction">
         <title>Introduction</title>
         <p>
 Given two distinct points, there is one line which passes exactly through both.  Indeed, if the points are <m>(x_1,y_1), (x_2,y_2)</m> then presuming the x-values are different gives the equation
-<me> y = \frac{y_2 - y_1}{x_2 - x_2}(x - x_1) + y_1</me>
+<me> y = \frac{y_2 - y_1}{x_2 - x_1}(x - x_1) + y_1</me>
 is the linear function which passes through both points.  If the x's are equal then 
 <me> x = x_1</me>
 is your linear equation. 
@@ -1254,7 +1277,7 @@ However, once you collect three or more points it is likely that there is no lin
 In this chapter, you will investigate how to create polynomial functions which in some manner approximate a collection of data point in some "best" manner.
 </p>
       </section>
-      <section>
+      <section xml:id="BestFitLine">
         <title>Best-fit Line</title>
         <p>
 In this section, we will presume only one independent variable x and one dependent variable y.
@@ -1392,13 +1415,13 @@ Solving these for m and b gives the best fit line.
           </conclusion>
         </exercise>
       </section>
-      <section>
+      <section xml:id="Correlation">
         <title>Correlation</title>
         <p>
 You can plot points and plot the resulting best-fit line determined in the previous section but the question remains whether the line is any good. In particular, the real use of the line often is to subsequently predict y-values for a given x-value. However, it is very likely that the best-fit line does not even pass through any of the provided data points.  So, how can something that misses every marker still be considered a good fit. To quantify this, we first need to discuss a way to measure how well two variables vary with each other.
 </p>
         <p>
-<definition><title>Sample Covariance</title><p>Given paired data 
+<definition xml:id="DefnSampleCovariance"><title>Sample Covariance</title><p>Given paired data 
 <me>(x_1,y_1), (x_2,y_2), ... , (x_n,y_n)</me>
 with corresponding means <m>\overline{x}</m> and <m>\overline{y}</m>, the sample covariance is given by
 <me> s_{xy} = \sum_{k=1}^n \frac{(x_k-\overline{x})(y_k-\overline{y})}{n-1}.</me>
@@ -1407,7 +1430,7 @@ with corresponding means <m>\overline{x}</m> and <m>\overline{y}</m>, the sample
         <p>This general definition provides a general measure which is a second order term (like variance) but also maintains "units". To provide a unit-less metric, consider the following measure.
 
 <p>
-<definition><title>Spearman's Rho (Correlation Coefficient)</title><p>Given a collection of data points, the Spearman's Rho correlation coefficient is given by
+<definition xml:id="DefnCorrelationCoefficient"><title>Spearman's Rho (Correlation Coefficient)</title><p>Given a collection of data points, the Spearman's Rho correlation coefficient is given by
 <me>r = \frac{s_{xy}}{s_x s_y}</me>
 where <m>s_x</m> is the standard deviation of the x-values only and <m>s_y</m> is the standard deviation of the y-values only.
 </p></definition>
@@ -1602,7 +1625,7 @@ abline(lm(y ~ x))
         <p>Again, repeat the above R code by instead use columns 2 and 4 from USJudgeRatings. Notice the relatively large correlation coefficient but ponder if there is really any connection between these two columns. Repeat for columns 1 and 4 and interpret the results.
 </p>
       </section>
-      <section>
+      <section xml:id="HigherDegreeRegression">
         <title>Higher Degree Regression</title>
         <p>
 Continuing in a similar fashion to the previous section, consider now an approximation using a quadratic function <m>f(x) = ax^2 + bx + c</m>.  In this case, the total squared error would be of the form
@@ -1664,7 +1687,7 @@ show(G+H)
 
 -->
       </section>
-      <section>
+      <section xml:id="MultiVariableRegressionExample">
         <title>Multi-variable Regression</title>
         <p>
 The regression models that we have looked at till now have always presumed a single independent variable and with "linear" coefficients. It is much more likely when investigating cause and effect relationships that there are perhaps many variables that contribute or perhaps using a non-linear relationship between the unknown coefficients.  To tease you to consider taking another course that covers multi-variate regression, in this section we briefly consider a two-variable model. We also consider an interesting example that illustrates the danger in using models to estimate values well beyond the range of the relevant data that has been used to create the model.
@@ -1766,7 +1789,7 @@ Indeed, you cannot roast a turkey by simply turning the oven on 120 and pumping 
     <!-- See the file COPYING for copying conditions.             -->
     <chapter xml:id="Combinatorics">
       <title>Counting and Combinatorics</title>
-      <section>
+      <section xml:id="CombinatoricsIntroduction">
         <title>Introduction</title>
         <p>One of the earliest applications of mathematics you probably remember is how you could use number to count things. For many, this is what they think people do when they do mathematics. In this chapter, we will discover that it is possible to count items without actually listing them all.</p>
         <p>To illustrate, consider counting the number of ways one can arrange Peter, Paul, and Mary with the order important.  Listing the possibilities:
@@ -1776,10 +1799,10 @@ So, it is easy to see that these are all of the possible outcomes and that the t
 Notice how the list quickly grows when just one more choice is added. This example illustrates how keeping track of the number of items in a set can quickly get impossible to manage unless we can use a more mathematical approach that allows you to count the number of possibilities without having to list them all.
 </p>
       </section>
-      <section>
+      <section xml:id="CombinatoricsGeneralities">
         <title>General Counting Principles</title>
         <p>
-<definition><title>Cardinality</title><statement><p>Given a set of elements A, the number of elements in the 
+<definition xml:id="DefnCardinality"><title>Cardinality</title><statement><p>Given a set of elements A, the number of elements in the 
 		set is known as its cardinality and is denoted |A|. If the set has 
 		an infinite number of elements then we set |A| = <m>\infty</m>.
 		</p></statement></definition>
@@ -1873,7 +1896,7 @@ In order to "count without counting" we establish the following foundational pri
   </webwork-reps></exercise>
 </p>
         <p>
-<definition xml:id="Factorial"><title>Factorial</title><statement><p>For any natural number n, 
+<definition xml:id="DefnFactorial"><title>Factorial</title><statement><p>For any natural number n, 
 		<md><mrow>n! = n(n-1)(n-2) ... 3 \cdot 2 \cdot 1</mrow></md>
 		and by convention set 0! = 1.
 		</p></statement></definition>
@@ -1923,13 +1946,13 @@ In order to "count without counting" we establish the following foundational pri
 		characters able to determine the correct "VALLEYFORGE" passphrase?</p></example>
 </p>
       </section>
-      <section>
+      <section xml:id="Permutations">
         <title>Permutations</title>
         <p>
 When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.
 </p>
         <p>
-	<theorem><title>Permutations of everything</title><statement><p>The number of permutations of n distinct items is n!</p></statement><proof><p>Notice that if n=1, then there is only 1 item to arrange and 
+	<theorem xml:id="PermuationsOfAll"><title>Permutations of everything</title><statement><p>The number of permutations of n distinct items is n!</p></statement><proof><p>Notice that if n=1, then there is only 1 item to arrange and 
 			that there is only one possible arrangment.</p><p>
 			By induction, assume that any set with n elements has n! arrangments 
 			and assume that 
@@ -2055,7 +2078,7 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 		</p></conclusion></exercise>	
 </p>
       </section>
-      <section>
+      <section xml:id="Combinations">
         <title>Combinations</title>
         <p>When counting various outcomes sometimes the order of things does not matter.
 If so, each unique unordered outcome is called a combination. </p>
@@ -2211,7 +2234,7 @@ def _(n = slider(1,15,1,5)):
 </input></sage>
 </p>
         <p>
-<theorem><title> Binomial Coefficient Formulas</title><statement><p> For <m> n \in \mathbb{N}</m>,
+<theorem xml:id="BinomialCoefficientFormulas"><title> Binomial Coefficient Formulas</title><statement><p> For <m> n \in \mathbb{N}</m>,
 	<ol><li><m>\binom{n}{0} = 1</m></li><li><m>\binom{n}{n} = 1</m></li><li><m>\binom{n}{1} = n</m></li><li><m>\binom{n}{n-1} = n</m></li><li><m>\binom{n}{r} = \binom{n}{n-r}</m></li><li><m>\binom{n+1}{r+1} = \binom{n}{r} + \binom{n}{r+1}</m></li></ol>
 	</p></statement><proof><p>
 	<ol><li><m>\binom{n}{0} = \frac{n!}{0!(n-0)!} = 1</m></li><li><m>\binom{n}{n} = \frac{n!}{n!(n-n)!} = 1</m></li><li><m>\binom{n}{1} = \frac{n!}{1!(n-1)!} = n</m></li><li><m>\binom{n}{n-1} = \frac{n!}{(n-1)!(n-(n-1))!} = n</m></li><li><m>\binom{n}{r} = \frac{n!}{r!(n-r)!} = \frac{n!}{(n-r)!(n-(n-r))!} = \binom{n}{n-r}</m></li><li>
@@ -2220,7 +2243,7 @@ def _(n = slider(1,15,1,5)):
 	</p></proof></theorem>
 </p>
       </section>
-      <section>
+      <section xml:id="CombinatoricsSummary">
         <title>Summary</title>
         <introduction>
           <p>
@@ -2252,7 +2275,7 @@ Here are the important results from this chapter:
 <xref ref="BinomialCoefficients">Binomial Coefficients</xref>
 </p>
       </section>
-      <section>
+      <section xml:id="CombinatoricsExercises">
         <title>Exercises</title>
         <p>Complete the online homework "Counting".</p>
         <p>
@@ -2274,7 +2297,7 @@ A standard deck of playing cards consists of 52 cards broken up into four "suits
     <!-- See the file COPYING for copying conditions.             -->
     <chapter xml:id="ProbabilityGeneralities">
       <title>Probability Theory</title>
-      <section>
+      <section xml:id="ProbabilityGeneralitiesIntro">
         <title>Introduction</title>
         <p>
 Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.
@@ -2502,7 +2525,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 
 </p>
       </section>
-      <section>
+      <section xml:id="ProbabilityBasics">
         <title>Definition of Probability</title>
         <p>	
 <introduction><p>
@@ -2835,7 +2858,7 @@ def _(auto_update=False):
 		</p></conclusion></exercise>
 </p>
       </section>
-      <section>
+      <section xml:id="ProbabilityBasicsExercises">
         <title>Exercises</title>
         <p>
 <exercise><title>Poker</title><statement><p>
@@ -2872,7 +2895,7 @@ So, a win can be obtained in two ways: 7 or 11 on first roll or getting the poin
 	</p></solution></exercise>
 </p>
       </section>
-      <section>
+      <section xml:id="ConditionalProbability">
         <title>Conditional Probability</title>
         <introduction>
           <p>When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain then the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
@@ -3058,7 +3081,7 @@ You can read <m>P(B|A)</m> as "the probability of B given A".
 		</p></conclusion></exercise>	
 </p>
       </section>
-      <section>
+      <section xml:id="Bayes">
         <title>Bayes' Theorem</title>
         <introduction>
           <p><xref ref="DefnConditionalProbability">Conditional probabilities</xref> can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to an important result known as Bayes' Theorem.
@@ -3328,7 +3351,7 @@ as expected!
 	</p></statement></exercise>
 </p>
       </section>
-      <section>
+      <section xml:id="Independence">
         <title>Independence</title>
         <introduction>
           <p>You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
@@ -3367,7 +3390,7 @@ as expected!
 </p>
 -->
         <p>
-<corollary><title>Independence and Mutual Exclusivity</title><statement><p>If events A and B are both <xref ref="DefnIndependentEvents">independent</xref> and <xref ref="DefnMutuallyExclusive">mutually exclusive</xref>, then at least one of them has zero probability.
+<corollary xml:id="IndependenceVsDisjointness"><title>Independence and Mutual Exclusivity</title><statement><p>If events A and B are both <xref ref="DefnIndependentEvents">independent</xref> and <xref ref="DefnMutuallyExclusive">mutually exclusive</xref>, then at least one of them has zero probability.
 	</p></statement><proof><p>
 			By independence, <m>P(A \cap B) = P(A) \cdot P(B)</m>. However, by mutually exclusivity, <m>A \cap B = \emptyset \Rightarrow P(A \cap B) = 0</m> gives
 			<me>P(A) \cdot P(B) = 0.</me>
@@ -3380,18 +3403,17 @@ as expected!
 	</p></statement></corollary>
 </p>
       </section>
-      <section>
+      <section xml:id="ProbabilityGeneralitiesSummary">
         <title>Summary</title>
         <p>
 TBA
 </p>
       </section>
-      <section>
+      <section xml:id="ProbabilityGeneralitiesExercises">
         <title>More Exercises</title>
-        <introduction/>
         <p>
 <exercise><title>Conditional Basic computation</title><statement><p>
-	Given <m>P(A) = 0.43, P(B) = 0.72, \text{and} P(A \cap B) = 0.29</m>, determine
+	Given <m>P(A) = 0.43, P(B) = 0.72,</m> and <m>P(A \cap B) = 0.29</m>, determine
 	<ol><li><m>P(A \cup B)</m></li><li><m>P(B | A)</m></li><li><m>P(A | B)</m></li><li><m>P(A^c \cap B^c)</m></li></ol>
 	</p></statement><solution><p>Use the Theorems and Definitions provided to complete the first three.  For the fourth part, it might be useful to use DeMorgan's Laws from set theory to rewrite <m>A^c \cap B^c = (A \cup B)^c</m> and then use a theorem.
 	</p></solution></exercise>
@@ -3403,7 +3425,7 @@ TBA
 	<table halign="left"><caption>Gender vs Major</caption><tabular halign="right"><row><cell bottom="medium" right="medium">Enrollment</cell><cell bottom="medium">Male</cell><cell bottom="medium" right="medium">Female</cell><cell bottom="medium">Totals</cell></row><row><cell right="medium">STEM</cell><cell>420</cell><cell right="medium">510</cell><cell>930</cell></row><row><cell right="medium">Business</cell><cell>320</cell><cell right="medium">270</cell><cell>590</cell></row><row><cell bottom="medium" right="medium">Other</cell><cell bottom="medium">610</cell><cell bottom="medium" right="medium">710</cell><cell bottom="medium">1320</cell></row><row><cell right="medium">Totals</cell><cell>1350</cell><cell right="medium">1490</cell><cell>2840</cell></row></tabular></table>
 
 	Determine the following:
-	<ol><li>P( STEM major )</li><li>P( STEM | Female )</li><li>P( Female | STEM )</li><li>P( Female | Not STEM)</li></ol>
+	<ol><li><m>P( \text{STEM major} )</m></li><li><m>P( \text{STEM | Female} )</m></li><li><m>P( \text{Female | STEM} )</m></li><li><m>P( \text{Female | Not STEM} )</m></li></ol>
 	</p></statement></exercise>
 </p>
         <p>	
@@ -3414,16 +3436,16 @@ TBA
 	Using the normal equally-likely definition, <m>P(\text{first}) = \frac{1}{15}</m>.
 	</p><p>
 	To get the A on the last pick requires that all of the previous picks to be something else. You don't get the opportunity to pick the A if it has already been selected. So, if L stands for losing (not getting the A), then 
-	<md><mrow> P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3 \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</mrow></md>
+	<md><mrow> P(\text{last}) &amp; = P(\text{LLLLLLLLLLLLLLA}) </mrow><mrow> &amp; = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3 \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</mrow></md>
 	Therefore, it is the same probability of getting the A whether you pick first or last.  In general, to win on the kth pick gives
-	<md><mrow> P(\text{kth}) = P(\text{LL...LA}) = \frac{14 \cdot 13 \cdot ... \cdot (15-k) \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</mrow></md>
+	<md><mrow> P(\text{kth}) &amp; = P(\text{LL...LA})</mrow><mrow> &amp; = \frac{14 \cdot 13 \cdot ... \cdot (15-k) \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</mrow></md>
 	Hence, it is the same probability regardless of when you get to pick.
 	</p><p>
 	If there are two A's possible, then the options for person k in include either receiving the first of the two slips or the second. The probability for determining the first of the two is computed in a manner similar to above except that there is one more A and one less other.
-	<md><mrow> P(\text{kth as first}) = P(\text{LL...LA}) = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</mrow></md>
+	<md><mrow> P(\text{kth as first}) &amp; = P(\text{LL...LA})</mrow><mrow> &amp; = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</mrow></md>
 
 	The probability of getting the second A means exactly one of the previous k-1 selections also picked the other A. There are k-1 ways that this could happen. Computing for one of the options and multiplying by k-1 gives
-	<md><mrow> P(\text{kth as second}) = P(\text{LL...LAA}) = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</mrow></md>	
+	<md><mrow> P(\text{kth as second}) &amp; = P(\text{LL...LAA})</mrow><mrow> &amp; = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</mrow></md>	
 	Adding these two together gives
 	<md><mrow>P(\text{getting an A when there are two}) = \frac{2 \cdot (15-k) + 2 \cdot (k-1)}{15 \cdot 14}</mrow><mrow> = \frac{28}{15 \cdot 14} = \frac{2}{15}.</mrow></md>
 
@@ -3478,7 +3500,9 @@ TBA
 <exercise><title>Internet meme solution</title><statement><p>
 	This one is from an internet meme:  Two fair 6-sided dice are rolled together and you are told that at least one of the dice is a 6. Given that a 6 will be removed, determine the probability that the other die is a 6.
 	</p></statement><solution><p>
-	In this case, you are presented with an outcome where the possible choices consist of (1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).  Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
+	In this case, you are presented with an outcome where the possible choices consist of 
+	<me>(1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).</me>
+Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
 	</p><p>
 	It is interesting to note that if the question instead was posed so that one of the dice was a 6 and it was removed, then the probability of the other dice showing a 6 would be 1/6.
 	</p></solution></exercise>
@@ -3504,7 +3528,7 @@ TBA
 </p>
         <p>
 <exercise><title>Basic Independence Calculations</title><statement><p>
-	Given <m>P(A) = 0.43, P(B) = 0.72, \text{and} P(A \cap B) = 0.31</m>, verify that A and B are not independent.
+	Given <m>P(A) = 0.43, P(B) = 0.72, </m> and <m>P(A \cap B) = 0.31</m>, verify that A and B are not independent.
 	</p></statement><solution><p>
 	A and B are <xref ref="DefnIndependentEvents">independent by definition</xref> provided 
 	<me>P(A \cap B) = P(A) P(B).</me>
@@ -3517,7 +3541,7 @@ TBA
 </p>
         <p>
 <exercise><title>Compound events and Independence</title><statement><p>
-	Given A, B, and C are <xref ref="DefnIndependentEvents">independent events</xref>, with <m>P(A) = 2/5, P(B) = 3/4, \text{and} P(C) = 1/6</m>, determine:
+	Given A, B, and C are <xref ref="DefnIndependentEvents">independent events</xref>, with <m>P(A) = 2/5, P(B) = 3/4,</m> and <m>P(C) = 1/6</m>, determine:
 	<ol><li><m>P(A \cap B \cap C)</m></li><li><m>P(A^c \cap B^c \cap C)</m></li><li><m>P(A \cup B \cup C)</m></li></ol>
 	</p></statement><solution><p>
 	Extending the <xref ref="DefnIndependentEvents">definition of independent events</xref> gives
@@ -3597,11 +3621,11 @@ to assign numerical values to all outcomes. The process of doing this creates wh
 variable.
 </p>
         <p>
-<definition xml:id="DefnRandomVariable"><title>Random Variable</title><statement><p>Given a random experiment with sample space <m>S</m>, a function X mapping each 
+<definition xml:id="DefnRandomVariable"><title>Random Variable</title><statement><p>Given a random experiment with sample space <m>S</m>, a function <m>X</m> mapping each 
 		element of <m>S</m> to a unique real number is called a random variable. 
 		For each element s from the sample space <m>S</m>, denote this function by
 		<me>X(s) = x</me>
-		and let R  be the range of X. R will be called "the space of X" and in notation
+		and let <m>R</m>  be the range of <m>X.</m></p><p><m>R</m> will be called "the space of X" and in notation
 		<me> R = { x : X(s)=x, \text{for some} s \in S } .</me>
 		</p></statement></definition>
 </p>
@@ -3615,7 +3639,7 @@ inherently non-numerical) by using the random variable in subsequent calculation
 	<me>S = \text{{ success, failure }}.</me>
 	Choose 
 	<md><mrow>X( \text{success})=1</mrow><mrow>X( \text{failure})=0.</mrow></md>
-	Then, R = {0,1}.
+	Then, <m>R</m> = {0,1}.
 	</p></example>
 </p>
         <p>
@@ -3629,10 +3653,10 @@ inherently non-numerical) by using the random variable in subsequent calculation
 </p>
         <p>
 <example><title>Other Dice Options</title><p>When rolling dice in a board game (like RISK), one might use
-	<me>S= \text{{(a,b): a=die 1 outcome, b=die 2 outcome}}</me>
+	<me>S= \text{{ (a,b) : a=die 1 outcome, b=die 2 outcome}}</me>
 	Choose 
 	<me>X( (a,b) ) = \text{max{a,b}}.</me> 
-	Then, R={1, 2, 3, 4, 5, 6}.
+	Then, <m>R</m> = {1, 2, 3, 4, 5, 6}.
 	</p></example>
 </p>
         <p>
@@ -3649,32 +3673,32 @@ Notice that in each of the examples above, the space <m>R</m> was finite. Theref
 </p>
         <p>
 <example><p>
-Consider the random variable X representing the number of coin flips <em>until</em> you get a Heads.  Even though it is unlikely to have to keep on going, consider the fact that you <em>could</em> continually flip and get Tails every time for a long time.  So, the possible values for X would be <m>R</m> = {1, 2, 3, 4, ... } which is precisely the infinite set of positive integers.  Therefore, X is a countable random variable. 
+Consider the random variable <m>X</m> representing the number of coin flips <em>until</em> you get a Heads.  Even though it is unlikely to have to keep on going, consider the fact that you <em>could</em> continually flip and get Tails every time for a long time.  So, the possible values for <m>X</m> would be <m>R</m> = {1, 2, 3, 4, ... } which is precisely the infinite set of positive integers.  Therefore, <m>X</m> is a countable random variable. 
 </p></example>
 </p>
         <p>
 <example><p>
-Consider the random variable X representing the time until a light bulb fails to work after being successfully turned on.  Notice that the bulb <em>could</em> fail in a relatively short time (near 0 let's say) or <em>could</em> continue to last for almost eternity (or as long as you might want to measure).  However, time is measured on a continuum and therefore for this random variable X you would have R equal to the interval from 0 to infinity, i.e. <m>R = (0,\infty)</m> which is not a countable set.
+Consider the random variable <m>X</m> representing the time until a light bulb fails to work after being successfully turned on.  Notice that the bulb <em>could</em> fail in a relatively short time (near 0 let's say) or <em>could</em> continue to last for almost eternity (or as long as you might want to measure).  However, time is measured on a continuum and therefore for this random variable <m>X</m> you would have <m>R</m> equal to the interval from 0 to infinity, i.e. <m>R = (0,\infty)</m> which is not a countable set.
 </p></example>
 </p>
       </section>
       <section xml:id="ProbabilityFunctionsDefined">
         <title>Probability Functions</title>
         <p>In the formulas below, we will presume that we have a <xref ref="DefnRandomVariable">random variable</xref>
- X which maps the sample space S onto some range of real numbers <m>R</m>.  From this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.
+ <m>X</m> which maps the sample space S onto some range of real numbers <m>R</m>.  From this set, we then can define a probability function <m>f(x)</m> which acts on the numerical values in <m>R</m> and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.
 </p>
         <p>For example, consider a random variable which assigns a 1 when you roll a 1 on a six-sided die and 0 otherwise. Presuming each side is equally likely, <m>f(1) = \frac{1}{6}</m> and <m>f(0) = \frac{5}{6}</m>.
 </p>
         <p>
-<definition xml:id="DefnPMF"><title>Probability "Mass" Function</title><statement><p>Given a discrete <xref ref="DefnRandomVariable">random variable</xref> X on a space R, a probability mass function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
+<definition xml:id="DefnPMF"><title>Probability "Mass" Function</title><statement><p>Given a discrete <xref ref="DefnRandomVariable">random variable</xref> <m>X</m> on a space <m>R</m>, a probability mass function on <m>X</m> is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
 		<md><mrow>&amp; \forall x \in R , f(x) \gt 0</mrow><mrow>&amp; \sum_{x \in R} f(x) = 1</mrow><mrow>&amp; A \subset R \Rightarrow P(X \in A) = \sum_{x \in A}f(x)</mrow></md>
-		For <m>x \not\in R</m>, you can use the convention f(x)=0.
+		For <m>x \not\in R</m>, you can use the convention <m>f(x)=0</m>.
 		</p></statement></definition>
 </p>
         <p>	
-<definition xml:id="DefnPDF"><title>Probability "Density" Function</title><statement><p>Given a continuous random variable X on a space R, a probability density function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
+<definition xml:id="DefnPDF"><title>Probability "Density" Function</title><statement><p>Given a continuous random variable <m>X</m> on a space <m>R</m>, a probability density function on <m>X</m> is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
 		<md><mrow>&amp; \forall x \in R , f(x) \gt 0</mrow><mrow>&amp; \int_{R} f(x) dx = 1</mrow><mrow>&amp; A \subset R \Rightarrow P(X \in A) = \int_{A} f(x) dx</mrow></md>
-		For <m>x \not\in R</m>, you can use the convention f(x)=0.
+		For <m>x \not\in R</m>, you can use the convention <m>f(x)=0</m>.
 	</p></statement></definition>
 </p>
         <p>
@@ -3682,7 +3706,9 @@ For the purposes of this book, we will use the term "Probability Function" to re
 </p>
         <p>
 <example><title>Discrete Probability Function</title><p>
-Consider <m>f(x) = x/10</m> over R = {1,2,3,4}.  Then, f(x) is obviously positive for each of the values in R and certainly <me>\sum_{x \in R} f(x) = f(1) + f(2) + f(3) + f(4) = 1/10 + 2/10 + 3/10 + 4/10 = 1.</me> Therefore, f(x) is a probability mass function over the space R.
+Consider <m>f(x) = x/10</m> over R = {1,2,3,4}.  Then, f(x) is obviously positive for each of the values in R and certainly 
+<me>\sum_{x \in R} f(x) = f(1) + f(2) + f(3) + f(4) = 1/10 + 2/10 + 3/10 + 4/10 = 1.</me> 
+Therefore, f(x) is a probability mass function over the space <m>R</m>.
 </p></example>
 </p>
         <p>
@@ -3746,29 +3772,29 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 </p>
         <p>
 <example><title>Continuous Probability Function</title><p>
-	Consider <m>f(x) = x^2/c</m> for some positive real number c and presume R = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make f(x) a <xref ref="DefnPDF">probability density function</xref>, we must have
+	Consider <m>f(x) = x^2/c</m> for some positive real number c and presume <m>R</m> = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make <m>f(x)</m> a <xref ref="DefnPDF">probability density function</xref>, we must have
 	<me>\int_{x \in R} f(x) = 1.</me>
 	In this instance you get
 	<me>1 = \int_{-1}^2 x^2/c = x^3/(3c) |_{-1}^2 = \frac{8}{3c} - \frac{-1}{3c} = \frac{3}{c}</me>
-	Therefore, f(x) is a probability density function over R provided   = 3.
+	Therefore, <m>f(x)</m> is a probability density function over <m>R</m> provided  <m>c = 3</m>.
 </p></example>
 </p>
         <p>	
-<definition xml:id="DefnDistributionFunction"><title>Distribution Function</title><statement><p>Given a random variable X on a space R, a probability distribution function on X is given by a function 
+<definition xml:id="DefnDistributionFunction"><title>Distribution Function</title><statement><p>Given a random variable <m>X</m> on a space <m>R</m>, a probability distribution function on <m>X</m> is given by a function 
 		<me>F:\mathbb{R} \rightarrow \mathbb{R} \ni \displaystyle F(x)=P(X \le x).</me>
 		</p></statement></definition>
 </p>
         <p>
-<example><title>Discrete Distribution Function</title><p>Using <m>f(x) = x/10</m> over R = {1,2,3,4} again, note that F(x) will only change at these four domain values. We get
+<example><title>Discrete Distribution Function</title><p>Using <m>f(x) = x/10</m> over <m>R</m> = {1,2,3,4} again, note that <m>F(x)</m> will only change at these four domain values. We get
 	
 	<table halign="left"><caption>Discrete Distribution Function Example</caption><tabular halign="right"><row><cell bottom="medium" right="medium">X</cell><cell bottom="medium">F(x)</cell></row><row><cell right="medium"><m>x \lt 1</m></cell><cell>0</cell></row><row><cell right="medium"><m>1 \le x \lt 2</m></cell><cell>1/10</cell></row><row><cell right="medium"><m>2 \le x \lt 3</m></cell><cell>3/10</cell></row><row><cell right="medium"><m>3 \le x \lt 4</m></cell><cell>6/10</cell></row><row><cell right="medium"><m>4 \le x </m></cell><cell>1</cell></row></tabular></table>
 	</p></example>
 </p>
         <p>	
 <example><title>Continuous Distribution Function</title><p>
-	Consider <m>f(x) = x^2/3</m> over R = [-1,2].  Then, for <m>-1 \le x \le 2</m>,
+	Consider <m>f(x) = x^2/3</m> over <m>R</m> = [-1,2].  Then, for <m>-1 \le x \le 2</m>,
 	<me>F(x) = \int_{-1}^x u^2/3 du = x^3/9 + 1/9.</me>
-	Notice, F(-1) = 0 since nothing has yet been accumulated over values smaller than -1 and F(2)=1 since by that time everything has been accumulated. In summary:
+	Notice, <m>F(-1) = 0</m> since nothing has yet been accumulated over values smaller than -1 and <m>F(2) = 1</m> since by that time everything has been accumulated. In summary:
 	
 	<table halign="left"><caption>Continuous Distribution Function Example</caption><tabular halign="right"><row><cell bottom="medium" right="medium">X</cell><cell bottom="medium">F(x)</cell></row><row><cell right="medium"><m>x \lt -1</m></cell><cell>0</cell></row><row><cell right="medium"><m>-1 \le x \lt 2</m></cell><cell><m>x^3/9 + 1/9</m></cell></row><row><cell right="medium"><m>2 \le x</m></cell><cell>1</cell></row></tabular></table>
 		
@@ -3828,17 +3854,17 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
         <p>
 <corollary xml:id="corollary-ProbPointZero-continuous"><statement><p>For continuous distributions, <m>P(X = a) = 0</m>.
 	</p></statement><proof><p>
-		We will assume that F(x) is a continuous function. With that assumption, note
+		We will assume that <m>F(x)</m> is a continuous function. With that assumption, note
 		<me>P(a-\epsilon \lt  x \le a)  = \int_{a-\epsilon}^a f(x) dx = F(a) - F(a-\epsilon)</me>
 		Take the limit as <m> \epsilon \rightarrow 0^+</m> to get the result noting that
 		</p></proof></corollary>
 </p>
         <p>
-<theorem><title><m>F(x)</m> vs <m>f(x)</m>, for continuous distributions</title><statement><p>If X is a continuous random variable, <m>f</m> the corresponding probability function, and <m>F</m> the associated distribution function, then
+<theorem><title><m>F(x)</m> vs <m>f(x)</m>, for continuous distributions</title><statement><p>If <m>X</m> is a continuous random variable, <m>f</m> the corresponding probability function, and <m>F</m> the associated distribution function, then
 		<me>f(x) = F'(x)</me>
-		</p></statement><proof><p>Assume X is continuous and <m>f</m> and <m>F</m> as above. Notice, by the definition of <m>f</m>, <m>\lim_{x \rightarrow \pm \infty} f(x) = 0</m> since otherwise the integral over the entire space could not be finite.
+		</p></statement><proof><p>Assume <m>X</m> is continuous and <m>f</m> and <m>F</m> as above. Notice, by the definition of <m>f</m>, <m>\lim_{x \rightarrow \pm \infty} f(x) = 0</m> since otherwise the integral over the entire space could not be finite.
 	</p><p>
-	Now, let A(x) be any antiderivative of <m>f(x)</m>. Then, by the Fundamental Theorem of Calculus,
+	Now, let <m>A(x)</m> be any antiderivative of <m>f(x)</m>. Then, by the Fundamental Theorem of Calculus,
 	<md><mrow>F(x) &amp; = \int_{-\infty}^x f(u) du</mrow><mrow> &amp; = A(x) - \lim_{u \rightarrow -\infty} A(u)</mrow></md>
 	Hence, <m>F'(x) = A'(x) - \lim_{u \rightarrow -\infty} A'(u) = f(x)</m> as desired.
 	</p></proof></theorem>
@@ -3849,7 +3875,7 @@ For <m>0 \lt p \lt 1</m>, the <m>100p^{th}</m> percentile is the largest random 
 <me>F(c) = p.</me>
 For continuous random variables over an interval <m>R = [a,b]</m>, you will solve for c in the equation
 <me>\int_a^c f(x) dx.</me>
-For discrete random variables, it is unlikely that a particular percentile will land exactly on one of the elements of <m>R</m> but you will want to take the smallest value in R so that <m>F(c) \ge p</m>.
+For discrete random variables, it is unlikely that a particular percentile will land exactly on one of the elements of <m>R</m> but you will want to take the smallest value in <m>R</m> so that <m>F(c) \ge p</m>.
 </p><p>
 The 50th percentile (as before) is also known as the median.
 </p></statement></definition>
@@ -4120,7 +4146,7 @@ TBA, using one of the table examples from above.
 	<md><mrow> \text{Numerator = } &amp; E[X^3] - 3 \mu E[X^2] + 2\mu^3</mrow><mrow> &amp; = \int_{-1}^1 x^3 \cdot \frac{3}{4} \cdot (1-x^2) dx - 3 E[X^2] \cdot 0 + 0^3 </mrow><mrow> &amp; = \int_{-1}^1 \cdot \frac{3}{4} \cdot (x^3-x^5) dx</mrow><mrow> &amp; = \frac{3}{4} \cdot (x^4/4-x^6/6) \big |_{-1}^1</mrow><mrow> &amp; = 0</mrow></md>
 	as expected without having to actually complete the calculation by dividing by the cube of the standard deviation.
 	</p>
-        <p>Finally, note that the probability function in this case is modestly close to a bell shaped curve so we would expect a <xref ref="TheoreticalKurtosis">kurtosis</xref> and using <xref ref="TheoreticalMeasuresKurt">the alternate formulation</xref> in the vicinity of 3. Indeed, noting that (conveniently) <m>\mu = 0</m> gives
+        <p>Finally, note that the probability function in this case is modestly close to a bell shaped curve so we would expect a <xref ref="TheoreticalKurtosis">kurtosis</xref> and using <xref ref="TheoreticalKurtosis">the alternate formulation</xref> in the vicinity of 3. Indeed, noting that (conveniently) <m>\mu = 0</m> gives
 	<md><mrow> \text{Numerator = } &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3 \mu^4</mrow><mrow> &amp; = \int_{-1}^1 x^4 \cdot \frac{3}{4} \cdot (1-x^2) dx</mrow><mrow> &amp; = \frac{3}{4} \cdot (x^5 /5-x^7 /7) \big |_{-1}^1</mrow><mrow> &amp; = \frac{3}{4} \cdot 2(1/5-1/7)</mrow><mrow> &amp; = \frac{3}{35}</mrow></md>
 	and so by dividing by <m>\sigma^4 = \sqrt{\frac{1}{5}}^4 = \frac{1}{25}</m> gives a kurtosis of
 	<me>\gamma_2 = \frac{3}{35} / \frac{1}{25} = \frac{75}{35} \approx 2.14.</me>
@@ -4278,13 +4304,13 @@ Apply previous result and notice that both variables have the same probability f
 	</p></example>
 	</p>
       </section>
-      <section>
+      <section xml:id="ProbabilityFunctionsSummary">
         <title>Summary</title>
         <p>
 TBA
 </p>
       </section>
-      <section>
+      <section xml:id="ProbabilityFunctionsExercises">
         <title>Exercises</title>
         <introduction>
 Here are some exercises to consider related to Probability Functions.
@@ -4321,30 +4347,30 @@ Here are some exercises to consider related to Probability Functions.
     <!--                                                          -->
     <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
     <!-- See the file COPYING for copying conditions.             -->
-    <chapter xml:id="UniformHypergeometric">
+    <chapter xml:id="EquallyLikelyBasedDistributions">
       <title>Distributions based upon Equally likely Outcomes</title>
-      <section>
+      <section xml:id="EquallyLikelyBasedDistributionsIntroduction">
         <title>Introduction</title>
         <p>
 When motivating our definition of probability you may have noticed that we modeled our definition on the relative frequency of equally-likely outcomes. In this chapter you will develop the theoretical formulas which can be used to model equally-likely outcomes.
 </p>
         <p>
 In this chapter, you will investigate the following distributions:
-<ol><li>Discrete Uniform - each of a finite collection of outcomes is equally likely and prescribed a "position" and X measures the position of an item selected randomly from the outcomes.</li><li>Continuous Uniform - an interval of values is possible with sub-intervals of equal length having equal probabilities and X measures a location inside that interval.</li><li>Hypergeometric - each of a finite collection of values are equally likely and grouped into two classes (successes vs failures) and a subset of that collection is extracted with X measuring the number of successes in the sample.</li></ol>
+<ol><li>Discrete Uniform - each of a finite collection of outcomes is equally likely and prescribed a "position" and <m>X</m> measures the position of an item selected randomly from the outcomes.</li><li>Continuous Uniform - an interval of values is possible with sub-intervals of equal length having equal probabilities and <m>X</m> measures a location inside that interval.</li><li>Hypergeometric - each of a finite collection of values are equally likely and grouped into two classes (successes vs failures) and a subset of that collection is extracted with <m>X</m> measuring the number of successes in the sample.</li></ol>
 </p>
       </section>
-      <section>
+      <section xml:id="DiscreteUniform">
         <title>Discrete Uniform Distribution</title>
         <p>
 In this section, you will investigate distributions that begin with individual outcomes that are equally likely and expand into more general settings.
 </p>
         <p>
 <theorem><title>Discrete Uniform Distribution</title><statement><p xml:id="DiscreteUniformFunction">
-Assume outcomes in R = {1, 2, 3, ..., n} are equally likely.  Then, the probability function for the discrete uniform variable X is
+Assume outcomes in <m>R</m> = {1, 2, 3, ..., n} are equally likely.  Then, the probability function for the discrete uniform variable <m>X</m> is
 <me>f(x) = \frac{1}{n}</me>
 for <m>x \in R</m>.
 </p></statement><proof><p>
-	Assume that you have a variable with space R = {1, 2, 3, ..., n} so that the likelihood of each value is equally likely. Then, the probability function satisfies <m>f(x) = c</m> for any <m>x \in R</m>.  As before, since <m>\sum_{x \in R} f(x) = 1</m>, then 
+	Assume that you have a variable with space <m>R</m> = {1, 2, 3, ..., n} so that the likelihood of each value is equally likely. Then, the probability function satisfies <m>f(x) = c</m> for any <m>x \in R</m>.  As before, since <m>\sum_{x \in R} f(x) = 1</m>, then 
 	<me>f(x) = \frac{1}{n}.</me> 
 	</p></proof></theorem>
 </p>
@@ -4367,8 +4393,8 @@ def _(n=slider(2,10,1,2)):
 </p>
         <p>
 <theorem><title>Properties of the Discrete Uniform Probability Function</title><statement><p xml:id="DiscreteUniformProperties">
-	<m>f(x) = \frac{1}{n}</m> over R = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function and
-	<ol><li><m>\mu = \frac{1+n}{2}</m></li><li><m>\sigma^2 = \frac{n^2-1}{12}</m></li><li><m>\gamma_1 = 0</m></li><li><m>\gamma_2 = \frac{6}{5}\frac{1+n^2}{1-n^2}</m></li><li>Distribution function F(x) = frac{x}{n} for <m>x \in R</m>.</li></ol>
+	<m>f(x) = \frac{1}{n}</m> over <m>R</m> = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function and
+	<ol><li><m>\mu = \frac{1+n}{2}</m></li><li><m>\sigma^2 = \frac{n^2-1}{12}</m></li><li><m>\gamma_1 = 0</m></li><li><m>\gamma_2 = \frac{6}{5}\frac{1+n^2}{1-n^2}</m></li><li>Distribution function <m>F(x) = frac{x}{n}</m> for <m>x \in R</m>.</li></ol>
 	</p></statement><proof><p>
 	Trivially, by construction you get by summing over <m>R = \{1, 2, ... , n \}</m>
 	<me>\sum_{x=1}^n \frac{1}{n} = 1</me>
@@ -4404,19 +4430,19 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),' + 3')
 </input></sage>
 </p>
         <p>
-<example><title>Rolling one die</title><p>When you consider rolling a regular, fair, single 6-sided die, each side is equally likely. The sample space consists of the 6 sides, each with a unique number of physical dots. Let the random variable X correspond each side with the number corresponding to the number of dots. Then, R = {1, 2, 3, 4, 5, 6}.  Since each side is equally likely then f(x) = 1/6.
+<example><title>Rolling one die</title><p>When you consider rolling a regular, fair, single 6-sided die, each side is equally likely. The sample space consists of the 6 sides, each with a unique number of physical dots. Let the random variable <m>X</m> correspond each side with the number corresponding to the number of dots. Then, <m>R</m> = {1, 2, 3, 4, 5, 6}.  Since each side is equally likely then <m>f(x) = 1/6</m>.
 </p><p>
-Further, the probability of getting an outcome in A={2,3} would be f(2)+f(3) = 1/6 + 1/6 = 2/6.
+Further, the probability of getting an outcome in A = {2,3} would be <m>f(2)+f(3) = 1/6 + 1/6 = 2/6</m>.
 </p></example>
 </p>
       </section>
-      <section>
+      <section xml:id="ContinuousUniform">
         <title>Continuous Uniform Distribution</title>
         <p>
-Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + \Delta \lt X \lt v + \Delta)</m> for reasonable values of <m>\Delta</m> so that the interval remains inside R.
+Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + \Delta \lt X \lt v + \Delta)</m> for reasonable values of <m>\Delta</m> so that the interval remains inside <m>R</m>.
 </p>
         <p>
-<theorem><title>Continuous Uniform Probability Function</title><statement><p xml:id="ContinuousUniformFunction">For R = [a,b], with a &lt; b, the continuous uniform probability function is given by
+<theorem><title>Continuous Uniform Probability Function</title><statement><p xml:id="ContinuousUniformFunction">For <m>R</m> = [a,b], with a &lt; b, the continuous uniform probability function is given by
 	<me>f(x) = \frac{1}{b-a}.</me>
 </p></statement><proof><p>From before, for X a continuous uniform variable, we get
 	<md><mrow>\int_u^v f(x) dx = \int_{u+\Delta}^{v+\Delta} f(x) dx</mrow><mrow>F(v)-F(u) = F(v+\Delta)-F(u+\Delta)</mrow><mrow>F(u+\Delta)-F(u) = F(v+\Delta)-F(v)</mrow><mrow>frac{F(u+\Delta)-F(u)}{\Delta} = \frac{F(v+\Delta)-F(v)}{\Delta}</mrow></md>
@@ -4486,7 +4512,7 @@ For computing probabilities, you will want to break up any resulting integrals i
 <md><mrow> \sigma^2 &amp; = E[X^2] - \mu^2 = \int_a^b x^2 \frac{1}{b-a} dx  - \mu^2</mrow><mrow> &amp; = \frac{x^3}{3(b-a)} right |_a^b - \left ( \frac{a+b}{2} \right )^2</mrow><mrow> &amp; = \frac{b^3-a^3}{3(b-a)} - \frac{a^2 + 2ab + b^2}{4}</mrow><mrow> &amp; = \frac{4 b^2 + 4 ab + 4 a^2 - 3a^2 - 6 ab - 3b^2}{12}</mrow><mrow> &amp; = \frac{b^2-2ab+a^2}{12} = \frac{(b-a)^2}{12}.</mrow></md>
 </p><p>For the skewness, 
 <md><mrow> \gamma_0 &amp; = E[X^3] - 3 \mu E[X^2] + 2 \mu^3</mrow><mrow> &amp; = \int_a^b x^3 \frac{1}{b-a} dx - 3 \mu \frac{b^3-a^3}{3(b-a)} + 2 \left ( \frac{a+b}{2} \right )^3</mrow><mrow> &amp; = \frac{x^4}{4(b-a)} right |_a^b - 3 \frac{a+b}{2} \cdot \frac{b^3-a^3}{3(b-a)} + 2 \frac{a^3 + 3a^2 b + 3a b^2 + b^3}{8} </mrow><mrow> &amp; = \text{a miracle of algebra}</mrow><mrow> &amp; = 0.</mrow></md>
-</p><p>The variance is more algebra like above. We will just let Sage do that part for us below.
+</p><p>The kurtosis is more algebra like above. We will just let Sage do that part for us below.
 </p></proof>
 </p>
         <p>
@@ -4520,7 +4546,7 @@ for b1 in range(2,7):
 </p>
         <p>
 <example><title>Occurence of exactly one event randomly in a given interval</title><p>
-Suppose you know that only one person showed up at the counter of a local business in a given 30 minute interval of time. Then, R=[0,30] given f(x) = 1/30.
+Suppose you know that only one person showed up at the counter of a local business in a given 30 minute interval of time. Then, <m>R</m> = [0,30] given <m>f(x) = 1/30</m>.
 </p><p>
 Further, the probability that the person arrived within the first 6 minutes would be <m>\int_0^6 \frac{1}{30} dx = 0.2</m>.
 </p></example>
@@ -4534,7 +4560,7 @@ For x in this range,
 </p></proof></theorem>
 </p>
       </section>
-      <section>
+      <section xml:id="HypergeometricDistribution">
         <title>Hypergeometric Distribution</title>
         <p>
 For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.
@@ -4546,7 +4572,7 @@ Indeed, consider a collection of n items from which you want to take a sample of
 <image source="images/HypergeometricBucket.png" width="60%"/>
 </p>
         <p>
-<theorem><title>Hypergeometric Probability Function</title><statement><p xml:id="HypergeometricFunction">For a Hypergeometric random variable with R = {0, 1, ..., r} and assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>,
+<theorem><title>Hypergeometric Probability Function</title><statement><p xml:id="HypergeometricFunction">For a Hypergeometric random variable with <m>R</m> = {0, 1, ..., r} and assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>,
 	<me>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</me>	
 </p></statement><proof><p>
 For the following, we will presume thatSince you are sampling without replacement and trying only measure the number of items from your desired group in the sample, then the space of X will include R = {0, 1, ..., r} assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>. In the case when r is too large for either of these, the formulas below will follow noting that binomial coefficients are zero if the top is smaller than the bottom or if the bottom is negative.
@@ -4594,7 +4620,7 @@ Therefore, you have about 1 chance out of 5 that the friend got 2 or more of you
 		</p>
 		</li><li>
 		<p>
-For variance, we will use an alternate form of the definition that is useful when looking for cancellation options with the numerous factorials in the hypergeometric probability function. Indeed, you can easily notice that
+For variance, we will use an alternate form of the definition that is useful when looking for cancellation options with the numerous factorials in the <xref ref="HypergeometricDistribution">hypergeometric probability function</xref>. Indeed, you can easily notice that
 <me>\sigma^2 = E[X^2] - \mu^2 = E[X^2-X]+E[X] -\mu^2 = E[X(X-1)] + \mu - \mu^2.</me>
 Since we have <m>\mu = r \frac{n_1}{n}</m> from above then let's focus on the first term only and use the substitutions
 			<md><mrow>y = x-2</mrow><mrow>n_3 = n_1-2</mrow><mrow>s = r-2</mrow><mrow>m = n-2</mrow></md>
@@ -4653,7 +4679,7 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </exercise>
 </p>
 -->
-        <p>Consider the Hypergeometric distribution for various values of <m>n_1, n_2,</m> and r using the interactive cell above. Notice what happens when you start with relatively small values of <m>n_1, n_2,</m> and r (say, start with <m>n_1 = 5, n_2 = 8,</m> and r = 4 and then doubling then all again and again. Consider the likely skewness and kurtosis of the graph as the values get larger.
+        <p>Consider the <xref ref="HypergeometricDistribution">Hypergeometric Distribution</xref> for various values of <m>n_1, n_2,</m> and r using the interactive cell above. Notice what happens when you start with relatively small values of <m>n_1, n_2,</m> and r (say, start with <m>n_1 = 5, n_2 = 8,</m> and r = 4 and then doubling then all again and again. Consider the likely skewness and kurtosis of the graph as the values get larger.
 </p>
         <p>
 In the interactive cell below, notice how many items are in each portion of the "Venn Bucket" when you change the size of the number extracted--denoted by what is inside the circle.
@@ -4664,9 +4690,9 @@ In the interactive cell below, notice how many items are in each portion of the 
 # Size of classes N1 and N2 must be given as well as subset size r
 var('x')
 @interact(layout=dict(top=[['N1','N2','r']]))
-def _(N1=input_box(10,width=5,label='\( N_1 \)'),
-    N2=input_box(10,width=5,label='\( N_2 \)'),
-    r=input_box(5,width=5,label='\( r \)')):
+def _(N1=input_box(10,width=5,label='$$ N_1 $$'),
+    N2=input_box(10,width=5,label='$$ N_2 $$'),
+    r=input_box(5,width=5,label='$$ r $$')):
     N = N1 + N2
     f = binomial(N1,x)*binomial(N2,r-x)/binomial(N,r)
     @interact
@@ -4674,7 +4700,7 @@ def _(N1=input_box(10,width=5,label='\( N_1 \)'),
         Px = f(x=X)
         Pxapprox = Px.n(digits=8)
         formula = "\\frac{\\binom{%s}"%str(N1)+"{%s}"%str(X)+" \\binom{%s}"%str(N2)+"{%s}}"%str(r-X)+"{ \\binom{%s}"%str(N)+"{%s}}"%str(r)
-        pretty_print(html("P(X = %s"%str(X)+") = \( %s \)"%str(formula)+" = \( %s \)"%str(latex(Px))+"\( \\approx %s \)"%str(Pxapprox)))
+        pretty_print(html("P(X = %s"%str(X)+") = $ %s $"%str(formula)+" = $ %s $"%str(latex(Px))+"$ \\approx %s $"%str(Pxapprox)))
         G = polygon([(0,0), (1,0), (1.2,1), (-.2,1)],color='lightblue')
         G += line([(0.5,0),(0.5,1)],thickness=2)
         G += circle((0.5,0.3),0.25,fill=True,facecolor='yellow',alpha=0.5,zorder=2)
@@ -4685,36 +4711,36 @@ def _(N1=input_box(10,width=5,label='\( N_1 \)'),
 	</input>
         </sage>
       </section>
-      <section>
+      <section xml:id="EquallyLikelyGeneratingFunctions">
         <title>Generating Functions for Uniform-based Distributions</title>
         <p>
 <xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
-        <theorem>
+        <theorem xml:id="MGFDiscrete">
           <title>Moment Generating Function for Discrete Uniform</title>
           <statement>
             <p><me>M(t) = \frac{1}{n} \cdot \left [ e^t + e^{2t} + ... e^{nt} \right ] </me>
 </p>
           </statement>
           <proof>
-            <p>Presuming R = {1, 2, ..., n},
+            <p>Presuming <m>R</m> = {1, 2, ..., n},
 <me>M(t) = \sum_{x=1}^n e^{tx}/n = \frac{1}{n} \cdot \left [ e^t + e^{2t} + ... e^{nt} \right ] </me>
 </p>
           </proof>
         </theorem>
-        <theorem>
+        <theorem xml:id="MGFContinuous">
           <title>Moment Generating Function for Continuous Uniform</title>
           <statement>
             <p><me>M(t) = \frac{e^{bx} - e^{ax}}{b-a}</me>
 </p>
           </statement>
           <proof>
-            <p>Presuming R = [a,b],
+            <p>Presuming <m>R</m> = [a,b],
 <me>M(t) = \int_a^b e^{tx} \frac{1}{b-a} dx = \frac{1}{b-a} \frac{1}{t} e^{tx} \big |_a^b = \frac{e^{bx} - e^{ax}}{b-a}</me>
 </p>
           </proof>
         </theorem>
-        <theorem>
+        <theorem xml:id="MGFHypergeometric">
           <title>Moment Generating Function for Hypergeometric</title>
           <statement>
             <p>TBA
@@ -4727,7 +4753,7 @@ def _(N1=input_box(10,width=5,label='\( N_1 \)'),
           </proof>
         </theorem>
       </section>
-      <section>
+      <section xml:id="EquallyLikelySummary">
         <title>Summary</title>
         <p>
 <introduction><p>
@@ -4753,11 +4779,11 @@ Here is a summary of the major formulas from this chapter:
 <xref ref="HypergeometricProperties">Hypergeometric statistics</xref>
 </p>
       </section>
-      <section>
+      <section xml:id="EquallyLikelyExercises">
         <title>Exercises</title>
         <p>
 <exercise><title> - The Proverbial Urn Problem</title><statement><p>
-You have an urn with 10 marbles of which <m>n_1 = 6</m> are red and <m>N_2 = 4</m> are blue. You select randomly r = 3 of the marbles without replacement and let X represent the number of red marbles in your sample. With R = {0, 1, 2, 3}, determine:
+You have an urn with 10 marbles of which <m>n_1 = 6</m> are red and <m>N_2 = 4</m> are blue. You select randomly r = 3 of the marbles without replacement and let <m>X</m> represent the number of red marbles in your sample. With <m>R</m> = {0, 1, 2, 3}, determine:
 <ul><li>f(x)</li><li>P(2 of the 3 are red) = f(2)</li><li>P(at most 2 of the 3 are red) = f(0) + f(1) + f(2)</li></ul> 
 </p></statement><hint><p>
 This is hypergeometric using  
@@ -4785,24 +4811,24 @@ This is a hypergeometric distribution with <m>n_1 = 15, n_2 = 35, r = 11</m>.
 </p>
         <p>
 <exercise><title> - Old Faithful</title><statement><p>
-Ole Faithful geyser in Yellowstone National Park erupts every 91 minutes. You show up at some random time in the eruption cycle and your tour bus plans to stay for 25 minutes. Determine the likelihood that you will be able to see it erupt.  Express your answer by giving correct formulas for f(x) and F(x) and then determine the specific answer to this question.
+Ole Faithful geyser in Yellowstone National Park erupts every 91 minutes. You show up at some random time in the eruption cycle and your tour bus plans to stay for 25 minutes. Determine the likelihood that you will be able to see it erupt.  Express your answer by giving correct formulas for <m>f(x)</m> and <m>F(x)</m> and then determine the specific answer to this question.
 </p></statement><hint><p>
-This is the continuous uniform distribution over R = [0, 91].
+This is the continuous uniform distribution over <m>R</m> = [0, 91].
 </p></hint></exercise>
 </p>
         <p>
 <exercise><title> - Uniform Scenarios</title><statement><p>
-Explain how the following situations can be modeled using either a discrete or continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
+Explain how the following situations can be modeled using either a discrete or continuous uniform distribution by identifying the space <m>R</m> and the corresponding <m>f(x)</m> for each situation.
 <ul><li>The location on a prize wheel where the spun wheel will stop.</li><li>Given a clock with only a minute hand, the current one second interval.</li><li>The location on a automobile tire where the next puncture will occur.</li></ul>
 </p></statement></exercise>
 </p>
         <p>
 <exercise><title> - Continous Uniform on a different space</title><statement><p>
-Determine an explicit formula for f(x) and the mean and variance for an continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
+Determine an explicit formula for <m>f(x)</m> and the mean and variance for an continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
 </p></statement><solution><p>
 Since you must have 
 <me>\int_{x \in R} f(x) dx = 1</me>
-and since f(x) must be constant than all you must do is measure the accumulated width of the intervals in R. This is 5 + 1 + 6 = 12 and so
+and since <m>f(x)</m> must be constant than all you must do is measure the accumulated width of the intervals in <m>R</m>. This is 5 + 1 + 6 = 12 and so
 <me>
 f(x)=\left\{\begin{matrix}
  \frac{1}{12}, &amp; -2 \le x \le 3
@@ -4859,30 +4885,32 @@ Therefore, the expect value of spending another dollar to get the multiplier eff
     <!--                                                          -->
     <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
     <!-- See the file COPYING for copying conditions.             -->
-    <chapter xml:id="BinomialGeometricNegBinomial">
+    <chapter xml:id="BernoulliBasedDistributions">
       <title>Distributions based upon Bernoulli Trials</title>
-      <section>
+      <section xml:id="BernoulliIntroduction">
         <title>Introduction</title>
         <p>
 	Many practical problems involve measuring simply whether something was a success or a failure. In these situations, "success" should not be interpreted as having any moral or subjective meaning but only construed to mean that something you are looking for actually occurs.
 	</p>
         <p>
-	In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable X over the space <m>R = \{0, 1 \}</m> mapping X(success) = 1 and X(failure)=0. If p = P(success) then 
+	In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable <m>X</m> over the space <m>R = \{0, 1 \}</m> mapping <m>X</m>(success) = 1 and <m>X</m>(Failure)=0. If p = P(Success) then 
 	<me>f(x) = p^x \cdot (1-p)^{1-x}</me>
-	would be a formula but which only related to two values P(failure) = f(0) = (1-p) and P(Success) = f(1) = p.  
+	would be a formula but which only related to two values: 
+	<me>P(\text{Failure}) = f(0) = (1-p)</me>
+	<me>P(\text{Success}) = f(1) = p</me>  
 	</p>
         <p>
-	Notice that p=0 means that you will always get a failure and that p=1 means that you will always get a success. In these cases, X would no longer be a random variable since the outcome for X could be predicted with certainty. Therefore, we will always assume that <m>0 &lt; p &lt; 1</m>.
+	Notice that p=0 means that you will always get a failure and that p=1 means that you will always get a success. In these cases, <m>X</m> would no longer be a random variable since the outcome for <m>X</m> could be predicted with certainty. Therefore, we will always assume that <m>0 &lt; p &lt; 1</m>.
 	</p>
         <p>
 	The Bernoulli distribution on its own is not extremely useful but serves as a starting point for several others that are useful.  Indeed, in this chapter you will investigate distributions that relate some number of successes in multiple trials to some number of independent trials. The difference between these distributions will be that one of these variables will be fixed and the other one will be variable.
 </p>
         <p>
 In this chapter, you will investigate the following distributions:
-<ol><li>Binomial - the number of trials is fixed and X measures the variable number of successes</li><li>Geometric - the number of successes is fixed--at 1--and X measures the variable number of trials</li><li>Negative Binomial - the number of successes is fixed and X measures the variable number of trials</li></ol>
+<ol><li>Binomial - the number of trials is fixed and <m>X</m> measures the variable number of successes</li><li>Geometric - the number of successes is fixed--at 1--and <m>X</m> measures the variable number of trials</li><li>Negative Binomial - the number of successes is fixed and <m>X</m> measures the variable number of trials</li></ol>
 </p>
       </section>
-      <section>
+      <section xml:id="BinomialDistribution">
         <title>Binomial Distribution</title>
         <p>Consider a sequence  of n independent Bernoulli trials with the likelihood of a success p on each individual trial stays constant from trial to trial with <m> 0 \lt p \lt 1 </m>. If we let the variable <m>X</m> measure the number of successes obtained when doing a fixed number of trials n with <m>R = \{ 0, 1, ..., n \}</m>, then the resulting distribution of probabilities is called a Binomial Distribution.</p>
         <p>
@@ -4914,15 +4942,15 @@ The following interactive cell illustrates the range of choices for a Binomial s
 # N and p need to be given
 var('x')
 @interact(layout=dict(top=[['N','p']]))
-def _(N=input_box(10,width=5,label='\( N \)'),
-    p=input_box(3/10,width=5,label='\( p \)')):
+def _(N=input_box(10,width=5,label='$$ N $$'),
+    p=input_box(3/10,width=5,label='$$ p $$')):
     f = binomial(N,x)*p^x*(1-p)^(N-x)
     @interact
     def __(X = slider(0,N,1)):
         Px = f(x=X)
         Pxapprox = Px.n(digits=8)
         formula = "\\binom{%s}"%str(N)+"{%s}"%str(X)+"({%s})"%str(p)+"^{%s}"%str(X)+"(1-{%s})"%str(p)+"^{%s}"%str(N-X)
-        pretty_print(html("P(X = %s"%str(X)+") = \( %s \)"%str(formula)+" = \( %s \)"%str(latex(Px))+"\( \\approx %s \)"%str(Pxapprox)))
+        pretty_print(html("P(X = %s"%str(X)+") = $ %s $"%str(formula)+" = $ %s $"%str(latex(Px))+"$ \\approx %s $"%str(Pxapprox)))
         G = polygon([(0,0), (1,0), (1,1), (0,1)],thickness=10,color='blue',alpha=0.7,zorder=1)
 
         if X &gt; 0:
@@ -4989,17 +5017,17 @@ If you rather would prefer to determine the probability of getting 10 or fewer h
         <example>
           <title>Testing critical components</title>
           <p>
-Often one will test a critical system components for failure and toward that end collect a sample of 100 of these components from the manufacturer. Suppose the component is listed as having a p=0.01 probability of breaking and you want to know the likelihood that at most 1 of the tested components actually fails when tested. You find it reasonable to presume that different components succeed or fail independently of each other. So, you can model this situation with a binomial distribution. 
+Often one will test a critical system components for failure and toward that end collect a sample of 100 of these components from the manufacturer. Suppose the component is listed as having a p = 0.01 probability of breaking and you want to know the likelihood that at most 1 of the tested components actually fails when tested. You find it reasonable to presume that different components succeed or fail independently of each other. So, you can model this situation with a binomial distribution. 
 </p>
           <p>
-If X measures the number of components that fail when tested, the specific probability function is given by
+If <m>X</m> measures the number of components that fail when tested, the specific probability function is given by
 <me>f(x) = \binom{100}{x} 0.01^x 0.99^{100-x}.</me>
 The probability that at most one component fails is then given by
 <me>F(1) = f(0) + f(1) = \binom{100}{0} 0.01^0 0.99^{100} + \binom{100}{1} 0.01^1 0.99^99 \\ = 0.99^{100} + 100 \cdot 0.01 \cdot 0.99^{99} = 0.99^{99}(0.99 + 100 \cdot 0.01 \\ = 0.99^{99} \cdot 1.99 \approx 0.73576.</me>
 </p>
         </example>
         <p>
-Utilize the interactive cell below to compute f(x) and F(x) for the Binomial distribution
+Utilize the interactive cell below to compute <m>f(x)</m> and <m>F(x)</m> for the Binomial distribution
 </p>
         <p>
 <sage><input>
@@ -5023,16 +5051,16 @@ def _(p=input_box(3/10,width=15),n=input_box(10,width=15)):
 	<me>\gamma_1 = \frac{1-2p}{\sqrt{np(1-p)}}</me>
 	<me>\gamma_2 = \frac{1-6p(1-p)}{np(1-p)} + 3</me>
 	</p></statement><proof><p>
-		For the mean,
+		For the <xref ref="TheoreticalMean">mean</xref>,
 		<md><mrow> \mu &amp; = E[X] </mrow><mrow> &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow><mrow> &amp; = \sum_{x=1}^{n} {x \frac{n(n-1)!}{x(x-1)!(n-x)!} p^x (1-p)^{n-x}}</mrow><mrow> &amp; = np \sum_{x=1}^{n} {\frac{(n-1)!}{(x-1)!((n-1)-(x-1))!} p^{x-1} (1-p)^{(n-1)-(x-1)}}</mrow></md>
 
 		Using the change of variables <m>k=x-1</m> and <m>m = n-1</m> yields a binomial series
 		<md><mrow> &amp; = np \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}}</mrow><mrow> &amp; = np (p + (1-p))^m = np</mrow></md>
-	</p><p>For the variance,
-		<md><mrow> \sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow><mrow> &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow><mrow> &amp; = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2</mrow><mrow> &amp; = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow></md>
+	</p><p>For the <xref ref="TheoreticalVariance">variance</xref>,
+		<md><mrow> \sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow><mrow> &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow><mrow> &amp; = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2</mrow><mrow> = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow></md>
 	</p><p>Using the change of variables <m>k=x-2</m> and <m>m = n-2</m> yields a binomial series
 	<md><mrow> &amp; = n(n-1)p^2  \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2</mrow><mrow> &amp; = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)</mrow></md>
-	</p><p>The skewness and kurtosis can be found similarly using formulas involving E[X(X-1)(X-2)] and E[X(X-1)(X-2)(X-3)]. The complete determination is performed using Sage below.
+	</p><p>The <xref ref="TheoreticalSkewness">skewness</xref> and <xref ref="TheoreticalKurtosis">kurtosis</xref> can be found similarly using formulas involving E[X(X-1)(X-2)] and E[X(X-1)(X-2)(X-3)]. The complete determination is performed using Sage below.
 	</p></proof></theorem>
 </p>
         <p>The following uses Sage to symbolically confirm the general formulas for the Binomial distribution.
@@ -5136,7 +5164,7 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 </input></sage>
 </p>
       </section>
-      <section>
+      <section xml:id="GeometricDistribution">
         <title>Geometric Distribution</title>
         <p>Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
@@ -5148,7 +5176,7 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 	then the resulting distribution of probabilities is called a 
 	Geometric Distribution.</p>
         <p>
-	<theorem xml:id="GeometricProbabilityFunctionTheorem"><statement><p xml:id="GeometricProbabilityFunction">For a Geometric variable X with <m>R = \{1, 2, 3, ... \}</m>,
+	<theorem xml:id="GeometricProbabilityFunctionTheorem"><statement><p xml:id="GeometricProbabilityFunction">For a Geometric variable <m>X</m> with <m>R = \{1, 2, 3, ... \}</m>,
 	<me>f(x) = (1-p)^{x-1} \cdot p</me>
 	</p></statement><proof><p> Since successive trials are independent, then the probability 
 	of the first success occurring on the mth trial presumes that
@@ -5198,7 +5226,7 @@ Let's go ahead and verify this probability function and investigate some of the 
 var('x')
 # n = 50 by default. actually should be infinite
 @interact
-def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
+def _(p=input_box(1/10,label='p = ',width=10),n=[25,50,75,100,200]):
     np1 = n+1
     R = range(1,np1)
     f(x) = (1-p)^(x-1)*p
@@ -5220,9 +5248,9 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 			<me>\gamma_1 = \frac{2-p}{\sqrt{1-p}}</me>
 			<me>\gamma_2 = \frac{p^2-6p+6}{1-p} + 3</me>
 
-		</p></statement><proof><p> For the mean,
+		</p></statement><proof><p> For the <xref ref="TheoreticalMean">mean</xref>,
 			<md><mrow>\mu &amp; = E[X] = \sum_{x=1}^{\infty} {x(1-p)^{x-1}p}</mrow><mrow> &amp; = p \sum_{x=1}^{\infty} {x(1-p)^{x-1}}</mrow><mrow> &amp; = p \frac{1}{(1-(1-p))^2}</mrow><mrow> &amp; = p \frac{1}{p^2} = \frac{1}{p}</mrow></md>
-			</p><p> For the variance,
+			</p><p> For the <xref ref="TheoreticalVariance">variance</xref>,
 			<md><mrow>\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow><mrow> &amp; = \sum_{x=1}^{\infty} {x(x-1)(1-p)^{x-1}p} + \mu - \mu^2 </mrow><mrow> &amp; = (1-p)p \sum_{x=2}^{\infty} {x(x-1)(1-p)^{x-2}} + \frac{1}{p} - \frac{1}{p^2}</mrow><mrow> &amp; = (1-p)p \frac{2}{(1-(1-p))^3} + \frac{1}{p} - \frac{1}{p^2}</mrow><mrow> &amp; = \frac{1-p}{p^2}</mrow></md>
 			</p></proof></theorem> 
 </p>
@@ -5234,7 +5262,7 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 		</p></proof></theorem> 
 </p>
         <p>	
-	<theorem><title>Statistics for Geometric Distribution</title><statement><p>Mean, Variance, Skewness, Kurtosis computed by Sage.
+	<theorem><title>Statistics for Geometric Distribution</title><statement><p>Mean, Variance, <xref ref="TheoreticalSkewness">Skewness</xref>, <xref ref="TheoreticalKurtosis">Kurtosis</xref> computed by Sage.
 		</p></statement><proof><p>
 See the interactive Sage cell below...
 </p></proof></theorem>
@@ -5261,7 +5289,7 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</input></sage>
 </p>
         <p>
-	<theorem><title>The Geometric Distribution yields a memoryless model.</title><statement><p>
+	<theorem xml:id="TheoremGeometricMemoryless"><title>The Geometric Distribution yields a memoryless model.</title><statement><p>
 	If X has a geometric distribution and a and b are nonnegative integers, then
 	<me>P( X &gt; a + b | X &gt; b ) = P( X &gt; a)</me>
 	</p></statement><proof><p>
@@ -5270,7 +5298,7 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</p></proof></theorem>
 </p>
       </section>
-      <section>
+      <section xml:id="NegativeBinomial">
         <title>Negative Binomial</title>
         <p>Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
@@ -5306,7 +5334,7 @@ Similarly,
 <me> \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}</me>
 </p></proof></theorem>	
 </p>
-        <p>Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success on each individual trial <m>p</m> where 
+        <p>Consider the situation where one can observe a sequence of independent trials with the likelihood of a success on each individual trial <m>p</m> where 
 	<m> 0 \lt p \lt 1 </m>.  
 For a positive integer r, let the variable <m>X</m> measure the number of trials needed in order to obtain the rth success. Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
         <p>
@@ -5394,7 +5422,7 @@ def _(p=input_box(1/12,width=15),r=slider(1,10,1,2)):
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2020-10-06T09:05:47-05:00    
+      ###    on 2020-10-08T11:05:58-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -5575,12 +5603,12 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </input></sage>
 </p>
       </section>
-      <section>
+      <section xml:id="BernoulliGeneratingFunctions">
         <title>Generating Functions for Bernoulli-based Distributions</title>
         <p>
 <xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
-        <theorem>
+        <theorem xml:id="MGFBernoulli">
           <title>Moment Generating Function for Bernoulli</title>
           <statement>
             <p>
@@ -5593,7 +5621,7 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </p>
           </proof>
         </theorem>
-        <theorem>
+        <theorem xml:id="MGFGeometric">
           <title>Moment Generating Function for Geometric</title>
           <statement>
             <p>
@@ -5632,7 +5660,7 @@ which is the squared mean plus the variance for the geometric distribution.
           </proof>
         </corollary>
         <p>For the two uniform distributions and basic Bernoulli, there is really nothing much that can be done as n (or a and b) vary.  However, for all distributions that have the opportunity to "scale" larger and larger, we will first determine the M(t) and then demonstrate the a surprising relationship as their variables to grow appropriately.</p>
-        <theorem>
+        <theorem xml:id="MGFBinomial">
           <title>Moment Generating Function for Binomial</title>
           <statement>
             <p>
@@ -5694,7 +5722,7 @@ where we have used L'Hopital's rule to evaluate the indeterminate form. We will 
 </proof>
 </corollary>
 -->
-        <theorem>
+        <theorem xml:id="MFGNegativeBinomial">
           <title>Moment Generating Function for Negative Binomial</title>
           <statement>
             <p>
@@ -5702,7 +5730,7 @@ where we have used L'Hopital's rule to evaluate the indeterminate form. We will 
 </p>
           </statement>
           <proof>
-            <p>Using the <xref ref="NegativeBinomialSumsToOne">a previous theorem justifying the Negative Binomial probability funcdtion</xref>  with <m>a = p e^t</m> and <m>b = 1-p</m> and by changing variables to <m>u = x-r</m> gives
+            <p>Using the <xref ref="NegativeBinomialSumsToOne">a previous theorem</xref> justifying the Negative Binomial probability function  with <m>a = p e^t</m> and <m>b = 1-p</m> and by changing variables to <m>u = x-r</m> gives
 <md><mrow>M(t) &amp; = \sum_{u=0}^{\infty} e^{tu} \binom{u+r - 1}{r-1}(1-p)^{u}p^r</mrow><mrow> &amp; =  p^r \sum_{u=0}^{\infty} \binom{u + r - 1}{r-1}(e^t(1-p))^u </mrow><mrow> &amp; = \frac{ p^{r}}{(1 - e^t(1-p))^r} \sum_{u=0}^{\infty} \binom{u + r - 1}{r-1}(1 - e^t(1-p))^r (e^t(1-p))^u </mrow><mrow> &amp; = \frac{p^{r}}{(1 - e^t(1-p))^r}  </mrow></md>
 noting that the last summation is the the sum of a negative binomial probability function over its entire range.
 </p>
@@ -5758,7 +5786,7 @@ show((Mtt(t=0)-Mt(t=0)^2).factor())
 
 </p>
       </section>
-      <section>
+      <section xml:id="BernoulliBasedSummary">
         <title>Summary</title>
         <introduction>
 Here is a summary of the major results dealing with Bernoulli-based variables:
@@ -5782,7 +5810,7 @@ Here is a summary of the major results dealing with Bernoulli-based variables:
 <xref ref="NegativeBinomialStatistics">Negative Binomial Distribution Statistics</xref>
 </p>
       </section>
-      <section>
+      <section xml:id="BernoulliBasedExercises">
         <title>Exercises</title>
         <p>
 <exercise><title> - Gallup Consumer Confidence Polling</title><p>
@@ -5850,15 +5878,15 @@ Take a die and roll it 4 times, keeping track on paper each time you get a 6 (sa
     <!--                                                          -->
     <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
     <!-- See the file COPYING for copying conditions.             -->
-    <chapter xml:id="PoissonExponentialGamma">
+    <chapter xml:id="PoissonProcess">
       <title>Distributions based upon Poisson Processes</title>
-      <section>
+      <section xml:id="PoissonProcessIntroduction">
         <title>Introduction</title>
         <p>
 In this chapter, you will investigate the relationship between number of successes over some interval.  For each, one of these quantities will be fixed and the other one variable. First, consider the following:
 </p>
         <p>
-<definition><title>Poisson Process</title><statement><p>
+<definition xml:id="DefnPoissonProcess"><title>Poisson Process</title><statement><p>
 A Poisson process is a course of action in which:
 <ol><li>Successes in non-overlapping subintervals are independent of each other.</li><li>The probability of exactly one success in a sufficiently small interval of length h is proportional to h.  In notation, P(one success) = <m>\lambda h</m>.</li><li>The probability of two or more successes in a sufficiently small interval is essentially 0.</li></ol>
 </p></statement></definition>
@@ -5871,13 +5899,13 @@ In this chapter, you will investigate the following distributions:
 <ol><li>Poisson - the interval is fixed and X measures the variable number of successes.</li><li>Exponential - the number of successes is fixed--at 1--and X measures the variable interval length needed to get that success.</li><li>Gamma - the number of successes is fixed and X measures the variable interval needed to get the desired number of successes.</li></ol>
 </p>
       </section>
-      <section>
+      <section xml:id="PoissonDistribution">
         <title>Poisson Distribution</title>
         <p>
 Consider a Poisson Process where you start with an interval of fixed length T and where X measures the variable number of successes, or changes, within that interval. The resulting distribution of X will be called a Poisson distribution.
 </p>
         <p>
-<theorem><title>Poisson Probability Function</title><statement><p xml:id="PoissonPF">Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
+<theorem xml:id="PoissonPMF"><title>Poisson Probability Function</title><statement><p xml:id="PoissonPF">Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
 <me>f(x) = \frac{\mu^x e^{-\mu}}{x!}</me>
 for <m>R = \{ 0, 1, 2, ... \}</m>.
 </p></statement><proof><p>
@@ -5893,7 +5921,7 @@ However, since there are a finite number of independent intervals each with prob
 </p></proof></theorem>
 </p>
         <p>
-<theorem><title>Verify Poisson Probability Function</title><statement><p>
+<theorem xml:id="PoissonVerification"><title>Verify Poisson Probability Function</title><statement><p>
 	<me>\sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} e^{-\lambda T} = 1</me>
 </p></statement><proof><p>Using the Power Series expansion for the natural exponential,
 <md><mrow> \sum_{x=0}^{\infty} f(x) &amp; = \sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} e^{-\lambda T} </mrow><mrow> &amp; = e^{-\lambda T} \sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} </mrow><mrow> &amp; = e^{-\lambda T} e^{\lambda T}  </mrow><mrow> &amp; = 1</mrow></md>
@@ -5946,7 +5974,7 @@ On the other hand, suppose the question is to ask whether 1020 or fewer requests
   </webwork-reps></exercise>
 </p>
         <p>
-<theorem><title>Statistics for Poisson</title><statement><p>
+<theorem xml:id="PoissonStats"><title>Statistics for Poisson</title><statement><p>
 <me>\mu = \lambda T</me>
 <me>\sigma^2 = \mu</me>
 <me>\gamma_1 = \frac{1}{\sqrt{\mu}}</me>
@@ -6010,20 +6038,26 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </input></sage>
 </p>
       </section>
-      <section>
+      <section xml:id="ExponentialDistribution">
         <title>Exponential Distribution</title>
         <p>
 Once again, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain a first success with <m>R = (0,\infty)</m>. The resulting distribution of X will be called an Exponential distribution.
 	</p>
         <p>
-To derive the probability function for this distribution, consider finding f(x) by first considering F(x). This gives
-
-<md><mrow>F(x)&amp;  = P(X \le x)</mrow><mrow> &amp; = 1 - P(X \gt x)</mrow><mrow> &amp; = 1 - P(\text{first change occurs after an interval of length x})</mrow><mrow> &amp; = 1 - P(\text{no changes in the interval [0,x]})</mrow><mrow> &amp; = 1 - \frac{(\lambda x)^0 e^{-\lambda x}}{0!}</mrow><mrow> &amp; = 1 - e^{-\lambda x}</mrow></md>
-where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. 
+To derive the probability function for this distribution, consider finding f(x) by first considering F(x). 
 </p>
         <p>
+<theorem xml:id="ExponentialPDF"><title>Exponential Probability Function</title><p>
+<statement><p>For an exponential random variable <m>X</m>, f(x) = \lambda e^{-\lambda x}, where <m>\lambda</m> is a given parameter.
+</p></statement>
+<proof><p>
+	<md><mrow>F(x)&amp;  = P(X \le x)</mrow><mrow> &amp; = 1 - P(X \gt x)</mrow><mrow> &amp; = 1 - P(\text{first change occurs after an interval of length x})</mrow><mrow> &amp; = 1 - P(\text{no changes in the interval [0,x]})</mrow><mrow> &amp; = 1 - \frac{(\lambda x)^0 e^{-\lambda x}}{0!}</mrow><mrow> &amp; = 1 - e^{-\lambda x}</mrow></md>
+where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. 
+	</p><p>
 Using this distribution function and taking the derivative yields
-<me>f(x) = F'(x) = \lambda e^{-\lambda x}.</me>
+	<me>f(x) = F'(x) = \lambda e^{-\lambda x}.</me>
+	</p></proof>
+</p></theorem>
 </p>
         <p>
 We found that if <m>\lambda</m> is the parameter for the Poisson process, then the Poisson distribution had mean <m>\lambda T</m> or if one presumed that T=1, then for that distribution, the mean is just <m>\lambda</m>.  We will find out below that the mean for the exponential distribution will be <m>\frac{1}{\lambda}</m>. Therefore, we will eventually present this formula using the exponental mean <m>\mu = \frac{1}{\lambda}</m> rather than using <m>\lambda</m> in the actual formula. 
@@ -6032,7 +6066,7 @@ We found that if <m>\lambda</m> is the parameter for the Poisson process, then t
 You will also often find that exercises in other textbooks and in online WeBWorK will just provide <m>\lambda</m> for the underlying Poisson process and that the time interval T will be presumed to be T=1.  For those problems, if the exercise asks for a Poisson probability, use <m>\mu = \lambda</m> while if the exercise asks for an Exponential probability, use <m>\mu = \frac{1}{\lambda}</m>.
 </p>
         <p>
-<theorem><title>Verification of Exponential Probability Function</title><statement><p>
+<theorem xml:id="ExponentialVerification"><title>Verification of Exponential Probability Function</title><statement><p>
 		<me>\int_0^{\infty} \lambda e^{-\lambda x} dx = 1</me>
 	</p></statement><proof><p>
 		<md><mrow> &amp; \int_0^{\infty} \lambda e^{-\lambda x} dx</mrow><mrow> &amp; = \int_0^{\infty} e^{-u} du</mrow><mrow> &amp; = -e^{-u} \big |_0^{\infty} = 1</mrow></md>
@@ -6040,7 +6074,7 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 		</p></proof></theorem>
 </p>
         <p>
-<theorem><title>Derivation of Statistics for Exponential Distribution and Plotting</title><statement><p>
+<theorem xml:id="ExponentialStatistics"><title>Derivation of Statistics for Exponential Distribution and Plotting</title><statement><p>
 	<me>\mu = \frac{1}{\lambda}</me>
 	<me>\sigma^2 = \mu^2</me>
 	<me>\gamma_1 = 2</me>
@@ -6054,9 +6088,11 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 	</p></proof></theorem>
 </p>
         <p>
-<definition><title>Alternate Form for the Exponential Distribution Probability Function</title><statement><p xml:id="ExponentialPF">Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
+<theorem><title>Alternate Form for the Exponential Distribution Probability Function</title><statement><p xml:id="ExponentialPF">Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose <m>X</m> measures the variable interval length needed until you get a first success.  Then <m>X</m> has an exponential distribution with probability function
 		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
-	</p></statement></definition>
+	</p></statement><proof><p>
+	Simply replace the mean as derived above in the original function.
+	</p></proof></theorem>
 </p>
         <p>
 <sage><input>
@@ -6087,7 +6123,7 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 	</input></sage>
 </p>
         <p>
-<theorem><title>Distribution function for Exponential Distribution</title><statement><p>
+<theorem xml:id="ExponentialDistributionFunction"><title>Distribution function for Exponential Distribution</title><statement><p>
 		<me>F(x) = 1 - e^{-\frac{x}{\mu}}</me>
 	</p></statement><proof><p>
 	Using <m>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}</m>, note
@@ -6156,7 +6192,7 @@ hist(Psample, prob=TRUE, add=TRUE)
 </input></sage>
 </p>
         <p>
-<theorem><title>The Exponential Distribution yields a continuous memoryless model.</title><statement><p>
+<theorem xml:id="ExponentialMemoryless"><title>The Exponential Distribution yields a continuous memoryless model.</title><statement><p>
 	If X has an exponential distribution and a and b are nonnegative integers, then
 	<me>P( X &gt; a + b | X &gt; b ) = P( X &gt; a)</me>
 	</p></statement><proof><p>Using the definition of conditional probability,
@@ -6201,7 +6237,7 @@ Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2020-10-06T09:05:47-05:00    
+      ###    on 2020-10-08T11:05:58-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -6215,7 +6251,7 @@ Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
       ## EditionText1()
       ## AuthorText1(John Travis)
       ## Section1(not reported)
-      ## Problem1(8.3.8)
+      ## Problem1(8.3.9)
       ## Author()
       ## Institution()
       ## Language(en-US)
@@ -6337,18 +6373,18 @@ Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
   </webwork-reps></exercise>
 </p>
       </section>
-      <section>
+      <section xml:id="GammaDistribution">
         <title>Gamma Distribution</title>
         <p>
 Extending the exponential distribution model developed above, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain the rth success for some natural number r. Then <m>R = (0,\infty)</m> and the resulting distribution of X will be called a Gamma distribution.
 </p>
         <p>
-<definition><title>Gamma Function</title><statement><p>
+<definition xml:id="DefnGammaFunction"><title>Gamma Function</title><statement><p>
 	<me>\Gamma(t) = \int_0^{\infty} u^{t-1} e^{-u} du</me>
 	</p></statement></definition>
 </p>
         <p>
-<theorem><title>Gamma Function on the natural numbers</title><statement><p>
+<theorem xml:id="GammaAsFactorial"><title>Gamma Function on the natural numbers</title><statement><p>
 For <m>n \in \mathbb{N}</m>,
 <me>\Gamma(n+1) = n!</me>
 </p></statement><proof><p>
@@ -6367,7 +6403,7 @@ where you can replace <m>(r-1)! = \Gamma(r)</m>.
 Notice that for this random variable, <m>\mu = \lambda T</m> can be obtained for the exponential distribution. For the Gamma distribution, the following takes <m>\mu</m> to be the average interval till the first success and then modifies the corresponding Gamma parameters according to increasing values of r.
 </p>
         <p>
-<definition><title>Gamma Distribution Probability Function</title><statement><p xml:id="GammaPF">
+<definition xml:id="DefnGammaDistributionFunction"><title>Gamma Distribution  Function</title><statement><p xml:id="GammaPF">
 If X measures the interval until the rth success and <m>\mu</m> as the average interval until the 1st success, then X with probability function
 <me>f(x) =  \frac{x^{r-1} \cdot e^{-\frac{x}{\mu}}}{\Gamma(r) \cdot \mu^r}</me>
 has a Gamma Distribution.
@@ -6397,7 +6433,7 @@ has a Gamma Distribution.
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2020-10-06T09:05:47-05:00    
+      ###    on 2020-10-08T11:05:58-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -6531,7 +6567,7 @@ print n(1-prob_complement)
 </input></sage>
 </p>
         <p>
-<theorem><title>Verify Gamma Probability function</title><statement><p>
+<theorem xml:id="GammaVerification"><title>Verify Gamma Probability function</title><statement><p>
 <me>\int_0^{\infty} \frac{x^{r-1} e^{-x/ \mu}}{\Gamma(r) \mu^r} dx = 1</me>
 </p></statement><proof><p>
 Evaluate the sage code below.
@@ -6632,14 +6668,14 @@ hist(Psample, prob=TRUE, add=TRUE)
 </input></sage>
 </p>
       </section>
-      <section>
+      <section xml:id="PoissonProcessGeneratingFunctions">
         <title>Generating Functions for Poisson Process Distributions</title>
         <p>
 <xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
         <p>
 
-<theorem><title>Moment Generating Function for Poisson</title><statement><p xml:id="PoissonMGF">Presuming <m>t \gt 0</m> and
+<theorem xml:id="PoissonMGF"><title>Moment Generating Function for Poisson</title><statement><p>Presuming <m>t \gt 0</m> and
 <me>M(t) = e^{\mu \left ( e^t - 1 \right )}</me>
 </p></statement><proof><p>Using the <xref ref="PoissonPF">Poisson probability function</xref>,
 <md><mrow>M(t) &amp; = \sum_{x=0}^{\infty} e^{tx} \frac{\mu^x e^{-\mu}}{x!}</mrow><mrow> &amp; = \sum_{x=0}^{\infty} \frac{\left (\mu e^t \right )^x e^{-\mu e^t} e^{\mu e^t} e^{-\mu} }{x!}</mrow><mrow> &amp; =  e^{\mu e^t} e^{-\mu} \sum_{x=0}^{\infty} \frac{\left (\mu e^t \right )^x e^{-\mu e^t} }{x!}</mrow><mrow> &amp; =  e^{\mu \left( e^t - 1 \right )}  \sum_{x=0}^{\infty} \frac{\left (\mu e^t \right )^x e^{-\mu e^t} }{x!}</mrow><mrow> &amp; =  e^{\mu \left( e^t - 1 \right )},</mrow></md>
@@ -6665,7 +6701,7 @@ which is the squared mean plus the variance for the poisson distribution.
 
 </p>
         <p>
-<theorem><title>Moment Generating Function for Exponential</title><statement><p xml:id="ExponentialMGF">Presuming <m>t \lt \frac{1}{\mu}</m>, 
+<theorem xml:id="ExponentialMGF"><title>Moment Generating Function for Exponential</title><statement><p>Presuming <m>t \lt \frac{1}{\mu}</m>, 
 <me>M(t) = \frac{1}{1-\mu t}.</me>
 </p></statement><proof><p>Using the <xref ref="ExponentialPF">Exponential probability function</xref>
 <md><mrow>M(t) &amp; = \int_0^{\infty} e^{tx} \frac{1}{\mu} e^{-\frac{x}{\mu}} dx</mrow><mrow> &amp; = \frac{1}{\mu} \int_0^{\infty} e^{- x \left ( -t + \frac{1}{\mu} \right ) } dx</mrow><mrow> &amp; =  \frac{1}{\mu \left(-t + \frac{1}{\mu} \right )}  e^{- x \left ( -t + \frac{1}{\mu} \right ) } \big |_0^{\infty}</mrow><mrow> &amp; =  \frac{1}{\mu \left(-t + \frac{1}{\mu} \right )}  \left ( -0 + 1 \right )</mrow><mrow> &amp; =  \frac{1}{\left(-\mu t + 1 \right )}.</mrow></md>
@@ -6689,7 +6725,7 @@ which is the squared mean plus the variance for the poisson distribution.
 </p></proof></corollary>
 </p>
         <p>
-<theorem><title>Moment Generating Function for Gamma</title><statement><p xml:id="GammaMGF">Presuming <m>t \lt \frac{1}{\mu}</m> where <m>\mu</m> is the mean waiting time till the first "change" and <m>r</m> is the number of changes desired, 
+<theorem xml:id="GammaMGF"><title>Moment Generating Function for Gamma</title><statement><p>Presuming <m>t \lt \frac{1}{\mu}</m> where <m>\mu</m> is the mean waiting time till the first "change" and <m>r</m> is the number of changes desired, 
 <me>M(t) = \frac{1}{ \left ( 1-\mu t \right )^{r}}</me>
 </p></statement><proof><p>Using the <xref ref="GammaPF">Gamma probability function</xref>, 
 <md><mrow>M(t) &amp; = \int_0^{\infty} e^{tx}  \frac{x^{r-1} \cdot e^{-\frac{x}{\mu}}}{\Gamma(r) \cdot \mu^r} dx</mrow><mrow>M(t) &amp; = \int_0^{\infty} \frac{x^{r-1} \cdot e^{-x \left ( \frac{1}{\mu} - t \right )}}{\Gamma(r) \mu^r \left ( \frac{1}{\mu} - t \right )} dx</mrow><mrow>M(t) &amp; = {  \frac{1}{\left ( 1-t \mu \right )^r} } \int_0^{\infty} \frac{x^{r-1} \cdot e^{-\frac{x}{ \left ( \frac{\mu}{1-t \mu} \right )}}}{\Gamma(r) \cdot { \left ( \frac{\mu}{1-t \mu} \right )}^r} dx</mrow><mrow> &amp; =  \frac{1}{\left(-\mu t + 1 \right )^{r}}.</mrow></md>
@@ -6729,7 +6765,7 @@ show(Mtt(t=0))
 
 </p>
       </section>
-      <section>
+      <section xml:id="PoissonProcessSummary">
         <title>Summary</title>
         <introduction>
           <p>
@@ -6740,7 +6776,7 @@ Here is a summary of the major points in this chapter:
 TBA
 </p>
       </section>
-      <section>
+      <section xml:id="PoissonProcessExercises">
         <title>Exercises</title>
         <p>
 <exercise><title> - Home Sales</title><p>
@@ -6828,9 +6864,9 @@ Finally, notice that the time interval has been adjusted. Since the mean formula
     <!--                                                          -->
     <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
     <!-- See the file COPYING for copying conditions.             -->
-    <chapter xml:id="Normal">
+    <chapter xml:id="NormalRelatedDistributions">
       <title>Normal Distributions</title>
-      <section>
+      <section xml:id="NormalRelatedDistributionsIntroduction">
         <title>Introduction</title>
         <p>
 You should have noticed by now that many distributions tend to have a bell-shaped graph as parameters are allowed to increase. Indeed, the formulas for skewness <m>\gamma_1</m> and kurtosis <m>\gamma_2</m> approach 0 and 3 respectively for the Hypergeometric, Binomial, Negative Binomial, Poisson, and Gamma Distributions. One might wonder if this is just a happy coincidence or is something more insidious at play. 
@@ -6842,10 +6878,10 @@ The answer by appealing to mathematics reveals that nothing sinister is going on
 We present the normal distribution by simply presenting it's probability function without derivation. In order to more carefully investigate the development of the normal distribution (and the Chi-Square Distribution) you will need to study "Moment Generating Functions" and some serious mathematics. Without supplying this rigor you can still utilize the results. 
 </p>
       </section>
-      <section>
+      <section xml:id="NormalDistribution">
         <title>The Normal Distribution</title>
         <p>
-<definition><title>The Normal Distribution</title><statement><p xml:id="NormalPF">
+<definition xml:id="DefnNormalDistribution"><title>The Normal Distribution</title><statement><p xml:id="NormalPF">
 	Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution provided it has a probability function given by
 		<me>
 		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
@@ -6871,7 +6907,7 @@ def _(m=slider(-10,10,1,0,label='$\mu$'),s=slider(1/5,5,1/10,1,label='$\sigma$')
     </input></sage>
 </p>
         <p>
-<theorem><statement><p>
+<theorem xml:id="StandardNormalDistribution"><title>Standard Normal Distribution</title><statement><p>
 If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal distribution and often use Z as the variable name and will use <m>\Phi(z)</m> for the standard normal distribution function. In this case, the density function reduces to
 		<me>f(z) = \frac{1}{\sqrt{2 \pi}} e^{ -z^2 / 2}</me>
 </p></statement><proof><p>Convert to "standard units" using the conversion 
@@ -6917,7 +6953,7 @@ When in the standard normal distribution, you can use a graphing calculator's no
 <theorem><title>Verifying the normal probability function</title><statement><p>
 		<me>\int_{-\infty}^{\infty} \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = 1</me>
 		</p></statement><proof><p>
-Note that you can convert the integral above to <xref ref="StandardUnitConversion">standard units</xref> so that it is sufficient to show
+Note that you can convert the integral above to <xref ref="StandardUnits">standard units</xref> so that it is sufficient to show
 <me>I = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{z^2}{2} } dz = 1</me>
 Toward this end, consider <m>I^2</m> and change the variables to get
 <md><mrow>I^2 &amp; = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{u^2}{2} } du \cdot \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{v^2}{2} } dv</mrow><mrow>&amp; = \frac{1}{2 \pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{ -\frac{u^2+v^2}{2} } du dv</mrow></md>
@@ -6930,7 +6966,7 @@ as desired.
 </p></proof></theorem>
 </p>
         <p>
-<theorem><title>Verifying the normal probability mean</title><statement><p>
+<theorem xml:id="NormalMean"><title>Verifying the normal probability mean</title><statement><p>
 		<me>E[X] = \int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \mu</me>
 		</p></statement><proof><p>
 	<me>z = \frac{x-\mu}{\sigma}</me>
@@ -6942,7 +6978,7 @@ as desired.
 	</p></proof></theorem>
 </p>
         <p>
-<theorem><title>Verifying the normal probability variance</title><statement><p>
+<theorem xml:id="NormalVariance"><title>Verifying the normal probability variance</title><statement><p>
 		<me>E[(X-\mu)^2] = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \sigma^2</me>
 	</p></statement><proof><p>
 	<md><mrow>E[(X-\mu)^2] &amp; = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx</mrow><mrow> &amp; = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} \sigma^2 z^2 \cdot  e^{ -z^2 / 2} dz</mrow><mrow> &amp; = \frac{\sigma^2}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} z \cdot z e^{ -z^2 / 2} dz</mrow><mrow> &amp; = \frac{\sigma^2}{\sqrt{2 \pi}} \cdot \big [ -z e^{-z^2 / 2} \big |_{-\infty}^{\infty} + \int_{-\infty}^{\infty}  e^{ -z^2 / 2}  dz \big ]</mrow><mrow> &amp; = \frac{\sigma^2}{\sqrt{2 \pi}} \cdot \big [ 0 + \sqrt{2 \pi} \big ]</mrow><mrow> &amp; = \sigma^2 </mrow></md>
@@ -7010,14 +7046,14 @@ Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compu
   </webwork-reps></exercise>
 </p>
         <p>
-<theorem><title>Normal Distribution Maximum</title><statement><p>The maximum of the normal distribution probability function occurs when <m>x = \mu</m>
+<theorem xml:id="NormalCurveMax"><title>Normal Distribution Maximum</title><statement><p>The maximum of the normal distribution probability function occurs when <m>x = \mu</m>
 	</p></statement><proof><p>Take the derivative of the probability function to get 
 	<me>\frac{\sqrt{2} {\left(\mu - x\right)} e^{\left(-\frac{{\left(\mu - x\right)}^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{3}}</me>
 	which is zero only when <m>x = \mu</m>.  Easily by evaluating to the left and right of this value shows that this critical value yields a maximum.
 	</p></proof></theorem>
 </p>
         <p>
-<theorem><title>Normal Distribution Points of Inflection</title><statement><p>Points of Inflection for the normal distribution probability function occurs when <m>x = \mu + \sigma</m> and <m>x = \mu - \sigma</m>.
+<theorem xml:id="NormalPOI"><title>Normal Distribution Points of Inflection</title><statement><p>Points of Inflection for the normal distribution probability function occurs when <m>x = \mu + \sigma</m> and <m>x = \mu - \sigma</m>.
 	</p></statement><proof><p>Take the second derivative of the probability function to get 
 	<me>\frac{\sqrt{2} {\left(\mu + \sigma - x\right)} {\left(\mu - \sigma - x\right)} e^{\left(-\frac{\mu^{2}}{2 \, \sigma^{2}} + \frac{\mu x}{\sigma^{2}} - \frac{x^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{5}}</me>
 	which is zero only when <m>x = \mu \pm \sigma</m>.  Easily by evaluating to the left and right of this value shows that these critical values yield points of inflection.
@@ -7070,7 +7106,7 @@ def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = ')
   </webwork-reps></exercise>
 </p>
       </section>
-      <section>
+      <section xml:id="ChiSquareDistribution">
         <title>Chi-Square Distribution</title>
         <p>The following distribution is related to both the Normal Distribution and to the Gamma Distribution. Initially, consider a gamma distribution with probability function
 	
@@ -7083,7 +7119,7 @@ Replacing <m>\mu = 2</m> and r with r/2 gives
 which is given a special name below.
 </p>
         <p>
-<definition><title>Chi-Square Probability Function</title><statement><p xml:id="ChiSquarePF">Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
+<definition xml:id="DefnChiSquare"><title>Chi-Square Probability Function</title><statement><p xml:id="ChiSquarePF">Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
 	<me>f(x) = \frac{x^{r/2-1} e^{-x/2} }{\Gamma(r/2) 2^{r/2}}.</me>
 	Then X has a Chi-Square distribution with r degrees of freedom. This is often denoted <m>\chi^2(r)</m>.
 </p></statement></definition>
@@ -7098,10 +7134,10 @@ def _(r=slider(1,20,1,3,label='r =')):
 	</input></sage>
 </p>
         <p>
-<theorem><title><m>\chi^2</m> statistics</title><statement><me>\mu = r</me><me>\sigma^2 = 2r</me><me>\gamma_1 = 2 \sqrt{2/r}</me><me>\gamma_2 = \frac{12}{r} + 3</me></statement></theorem>
+<theorem xml:id="ChiSquareStatistics"><title><m>\chi^2</m> statistics</title><statement><me>\mu = r</me><me>\sigma^2 = 2r</me><me>\gamma_1 = 2 \sqrt{2/r}</me><me>\gamma_2 = \frac{12}{r} + 3</me></statement></theorem>
 </p>
         <p>	
-<theorem><title>Relationship between Normal and <m>\chi^2</m></title><statement>
+<theorem xml:id="NormalVsChiSquare"><title>Relationship between Normal and <m>\chi^2</m></title><statement>
 	If <m>Z_1, Z_2, ..., Z_r</m> are r standard normal variables, then
 	<me> X = \sum_{k=1}^r Z_k^2</me>
 	is <m>\chi^2(r)</m>.
@@ -7124,18 +7160,18 @@ def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),
     </input></sage>
 </p>
       </section>
-      <section>
+      <section xml:id="OtherBellShapedDistributions">
         <title>Other "Bell Shaped" distributions</title>
         <p>The Normal distribution discussed above is very important when doing statistical analysis. It however is not the only distribution that is symmetrical about the mean and looks like a bell.  In this section, we consider two other options--one which is virtually useless and another which is very useful.
 </p>
         <p>
-<definition><title>The Cauchy Distribution</title><statement><p xml:id="CauchyPF">
+<definition xml:id="DefnCauchyDistribution"><title>The Cauchy Distribution</title><statement><p xml:id="CauchyPF">
 Consider a continuous random variable on the real numbers defined by
 <me>f(x) = \frac{1/\pi}{1+x^2}.</me>
 A random variable with this probability function is said to be a Cauchy Distribution.
 </p></statement></definition>
 </p>
-        <theorem>
+        <theorem xml:id="CauchyStatistics">
           <title>The Cauchy Distribution</title>
           <statement><me>f(x) = \frac{1/\pi}{1+x^2}</me>
 is a probability function on <m>(-\infty, \infty)</m>.
@@ -7175,7 +7211,7 @@ and note that the integrand does not converge to 0 at the endpoints and therefor
         <p>On the other hand, there is another "bell-shaped" distribution that is useful and its random variable can be created by using a mixture of a normal variable and a <m>\Chi^2</m> variable. 
 </p>
         <p>
-<definition><title>Student-t Distribution</title><statement><p xml:id="StudenttPF">
+<definition xml:id="DefnStudentt"><title>Student-t Distribution</title><statement><p xml:id="StudenttPF">
 Suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
 <me>T = \frac{Z}{\sqrt(Y/r)}.</me>
 Then, T is said to have a (Student) t distribution with probability function given by 
@@ -7184,7 +7220,7 @@ Then, T is said to have a (Student) t distribution with probability function giv
 
 The good news is that this distribution is useful and its properties are presented below without proof.
 
-<theorem><title>Student t-distribution properties</title><statement><p>
+<theorem xml:id="StudenttStatistics"><title>Student t-distribution properties</title><statement><p>
 For the Student t variable T defined above, 
 <me> \mu = 0</me>
 and if r&gt;2
@@ -7228,14 +7264,14 @@ legend("topright", inset=.05, title="Distributions",
 </input></sage>
 </p>
       </section>
-      <section>
+      <section xml:id="NormalAssociatedGeneratingFunctions">
         <title>Generating Functions for Normal and Associated Distributions</title>
         <p>
 <xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
         <p>
 
-<theorem><title>Moment Generating Function for Normal</title><statement><p xml:id="NormalMGF">Presuming <m>t \gt 0</m> and
+<theorem xml:id="NormalMGF"><title>Moment Generating Function for Normal</title><statement><p>Presuming <m>t \gt 0</m> and
 <me>M(t) = e^{t \mu+\frac{1}{2}t^2\sigma^2}</me>
 </p></statement><proof><p>Using the <xref ref="NormalPF">Normal probability function</xref>,
 <md><mrow>M(t) &amp; = \int_{-\infty}^{\infty} e^{tx} \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}</mrow><mrow> &amp; = \int_{-\infty}^{\infty} e^{tx} \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx</mrow><mrow> &amp; = \int_{-\infty}^{\infty} e^{t(z \sigma + \mu)} \frac{1}{\sqrt{2 \pi}} e^{  -z ^2 / 2} dz</mrow><mrow> &amp; = e^{t \mu} \int_{-\infty}^{\infty}  \frac{1}{\sqrt{2 \pi}} e^{  -(z ^2 - 2t z \sigma ) / 2} dz</mrow><mrow> &amp; = = e^{t \mu} \int_{-\infty}^{\infty}  \frac{1}{\sqrt{2 \pi}} e^{  -(z ^2 - 2t z \sigma + t^2 \sigma^2 - t^2 \sigma^2 ) / 2} dz</mrow><mrow> &amp; = e^{t \mu+\frac{1}{2}t^2\sigma^2} \int_{-\infty}^{\infty}  \frac{1}{\sqrt{2 \pi}} e^{  -\left (z - t \sigma \right )^2 / 2} dz</mrow><mrow> &amp; = e^{t \mu+\frac{1}{2}t^2\sigma^2} \cdot 1 </mrow></md>
@@ -7264,7 +7300,7 @@ which is the squared mean plus the variance for the normal distribution.
 </p>
         <p>
 
-<theorem><title>Moment Generating Function for Chi-Square</title><statement><p xml:id="ChiSquareMGF">Presuming <m>t \gt 0</m> and
+<theorem xml:id="ChiSquareMGF"><title>Moment Generating Function for Chi-Square</title><statement><p>Presuming <m>t \gt 0</m> and
 <me>M(t) = \left ( \frac{1}{1-2t} \right )^{r/2}</me>
 </p></statement><proof><p>Using the <xref ref="ChiSquarePF">Chi-Square probability function</xref>,
 <md><mrow>M(t) &amp; = \int_0^{\infty} e^{tx} \frac{x^{r/2-1} e^{-x/2} }{\Gamma(r/2) 2^{r/2} } dx</mrow><mrow> &amp; = \int_0^{\infty} \frac{x^{r/2-1} e^{-x(1-2 t)/2} }{\Gamma(r/2) 2^{r/2}} dx</mrow><mrow> &amp; = \int_0^{\infty} \frac{\left ( \frac{u}{1-2t} \right )^{r/2-1} e^{-u/2} }{\Gamma(r/2) 2^{r/2} } \frac{1}{1-2t} du</mrow><mrow> &amp; = \left ( \frac{1}{1-2t} \right )^{r/2} \int_0^{\infty} \frac{u^{r/2-1} e^{-u/2} }{\Gamma(r/2) 2^{r/2}} du</mrow><mrow> &amp; = \left ( \frac{1}{1-2t} \right )^{r/2}</mrow></md>
@@ -7295,7 +7331,7 @@ which is the squared mean plus the variance for the normal distribution.
         <p>It is interesting to note that the moment generating functions are not defined for the <xref ref="CauchyPF">Cauchy Distribution</xref> or for the <xref ref="StudenttPF">Student's t distribution</xref>.
 </p>
       </section>
-      <section>
+      <section xml:id="NormalAsLimitingDistribution">
         <title>Normal Distribution as a Limiting Distribution</title>
         <p>Over the past several chapters you should have noticed that many distributions have skewness and kurtosis formulae which have limiting values of 0 and 3 respectively. This means that each of those distributions which can be approximated by the normal distribution for "large" parameter values.
 </p>
@@ -7472,7 +7508,7 @@ def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),
 So, even with random data, if you are to consider the arrangement of the collected means rather than the arrangement of the actual data then the means appear to have a bell-shaped distribution as well.
 </p>
       </section>
-      <section>
+      <section xml:id="CentralLimitTheoremSection">
         <title>Central Limit Theorem</title>
         <p>
 Often, when one wants to solve various scientific problems, several assumptions will be made regarding the nature of the underlying setting and base their conclusions on those assumptions.  Indeed, if one is going to use a Binomial Distribution or a Negative Binomial Distribution, an assumption on the value of p is necessary.  For Poisson and Exponential Distributions, one must know the mean.  For Normal Distributions, one must assume values for both the mean and the standard deviation.   Where do these values come from?  Often, one may perform a preliminary study and obtain a sample statistic...such as a sample mean or a relative frequency and use these values for μ or p.</p>
@@ -7481,7 +7517,7 @@ But what is the underlying distribution of these sample statistics?  The Central
         <p>The results from the previous section illustrate the tendency for bell-shaped distributions. This tendency can be described more mathematically through the following theorem. It is presented here without proof.
 </p>
         <p>
-<theorem><title>Central Limit Theorem</title><statement><p>
+<theorem xml:id="CentralLimitTheorem"><title>Central Limit Theorem</title><statement><p>
 	Presume X is a random variable from a distribution with known mean <m>\mu</m> and known variance <m>\sigma_x^2</m>.  
 	For some natural number n, sample the distribution repeatedly creating a string of random variables denoted <m>X_1, X_2, ... , X_n</m> and set <m>\overline{X} = \frac{\sum X_k}{n}</m>. 
 	</p><p> 
@@ -7545,8 +7581,8 @@ The Central Limit Theorem provides that regardless of the distribution of X, the
 <me>X = \sum_{k=1}^n Y_k</me>
 is a Binomial variable.
 </p>
-        <theorem>
-          <title>Binomial as approximate Normal</title>
+        <theorem xml:id="BinomialApproximatelyNormal">
+          <title>The Binomial Distribution approximately Normal if n large.</title>
           <statement>
             <p>
 Given a Binomial variable X with <m>\mu = np</m> and <m>\sigma^2 = np(1-p)</m>, then X is approximately also normal with the same mean and variance so long as <m>np \gt 5</m> and <m>n(1-p) \gt 5</m>.
@@ -7573,7 +7609,8 @@ Using the normal distribution,
 Notice that these are very close.
 </p>
         </example>
-        <corollary>
+        <corollary xml:id="PoissonApproximatelyNormal">
+          <title>The Poisson Distribution is approximately normal with <m>\mu</m> large.</title>
           <statement>
             <p>
 Given a Poisson variable X with <m>\mu</m> and <m>\sigma^2 = \mu</m> given, then X is approximately also normal with the same mean and variance so long as <m>\mu \gt 5</m>.
@@ -7598,8 +7635,8 @@ Using the normal distribution,
 Again, these are very close.
 </p>
         </example>
-        <theorem>
-          <title>Gamma as approximate Normal</title>
+        <theorem xml:id="GammaApproximatelyNormal">
+          <title>The Gamma is approximate Normal for <m>\mu</m> large.</title>
           <statement>
             <p>
 Given a Gamma variable X with mean <m>r \mu</m> and variance <m> r BLOB</m> given, then X is approximately also normal with the same mean and variance so long as CONDITION????.
@@ -7636,7 +7673,7 @@ As these examples illustrate, you will have increasing success in approximating 
 The above theorems allow you to utilize the normal distribution to compute approximate probabilities for the variable X in the stated distributions. This is not always true for all distributions since some do not have parameters which allow for approaching normality. However, regardless of the distribution the Central Limit Theorem always allows you to approximate probabilities if they involve an average of repeated attempts...that is, for variable <m>\overline{X}</m>. This usefulness is illustrated in the examples below.
 </p>
       </section>
-      <section>
+      <section xml:id="NormalRelatedDistributionsSummary">
         <title>Summary</title>
         <introduction>
           <p>
@@ -7647,7 +7684,7 @@ Here is a summary of the major points in this chapter:
 TBA
 </p>
       </section>
-      <section>
+      <section xml:id="NormalRelatedDistributionsExercises">
         <title>Exercises</title>
         <exercise>
           <title> - Computing basic standard normal probabilities</title>
@@ -7684,7 +7721,7 @@ which would be the location of the 80th percentile.</li></ul>
     <!-- See the file COPYING for copying conditions.             -->
     <chapter xml:id="IntervalEstimation">
       <title>Estimation</title>
-      <section>
+      <section xml:id="IntervalEstimationIntroduction">
         <title>Introduction</title>
         <p>
 You should have noticed by now that repeatedly sampling from a given distribution will yield a variety of sample statistics such as <m>\overline{x}</m> as an estimate perhaps for the population mean <m>\mu</m> or <m>\frac{Y}{n}</m> as an estimate for the population likelihood of success p. In this section, you will see how these sample "point estimators" are actually the best possible choices.
@@ -7696,7 +7733,7 @@ In creating these point estimates repeatedly, you have noticed that the results 
 In this chapter we first discuss how to determine appropriate methods for estimating the needed population statistics (point estimates) and then quantify how good they are (confidence intervals).
 </p>
       </section>
-      <section>
+      <section xml:id="IntervalEstimationChebyshev">
         <title>Interval Estimates - Chebyshev</title>
         <p>An interval centered on the mean in which at least a certain proportion
 	of the actual data must lie.
@@ -7704,9 +7741,12 @@ In this chapter we first discuss how to determine appropriate methods for estima
         <theorem>
           <title>Chebyshev's Theorem</title>
           <statement>
+            <p>
 	Given a random variable X with given mean <m>\mu</m> and standard deviation <m>\sigma</m>, for <m> a \in \mathbb{R}^+</m> , 
 	
-	<me>P( \big | X - \mu \big | \lt a ) \gt 1 - \frac{\sigma^2}{a^2}</me></statement>
+	<me>P( \big | X - \mu \big | \lt a ) \gt 1 - \frac{\sigma^2}{a^2}</me>
+	</p>
+          </statement>
           <proof>
             <p>
 	Notice that the variance of a continuous variable X is given by
@@ -7725,8 +7765,11 @@ In this chapter we first discuss how to determine appropriate methods for estima
         </corollary>
         <corollary>
           <title>Special Cases for Chebyshev's Theorem</title>
-          <statement>For any distribution, it is not possible for f(x)=0 within one standard deviation of the mean. Aslo, at least 75% of the data for any distribution must lie within two standard deviations of the mean and at least 88% must lie within three.
-	</statement>
+          <statement>
+            <p>
+	For any distribution, it is not possible for f(x)=0 within one standard deviation of the mean. Aslo, at least 75% of the data for any distribution must lie within two standard deviations of the mean and at least 88% must lie within three.
+	</p>
+          </statement>
           <proof>
             <p>
 	Apply the Chebyshev Theorem with <m>a = \sigma</m> to get
@@ -7792,13 +7835,12 @@ In this chapter we first discuss how to determine appropriate methods for estima
 
   </webwork-reps></example>
 </p>
-        <example>
-          <title> - Comparing known distribution to Chebyshev</title>
-          <p>TBA
-	</p>
-        </example>
+        <p>
+<example><title> - Comparing known distribution to Chebyshev</title><p>TBA
+	</p></example>
+</p>
       </section>
-      <section>
+      <section xml:id="IntervalEstimationPointEstimates">
         <title>Point Estimates</title>
         <p>
 For Binomial, Geometric, what is p? For exponential, what is the mean?  For normal, what are the mean and standard deviation? Each of these parameters are necessary before you can compute any probability values from their respective formulas. Since they might not be given in a particular instance, they will need to be estimated in some manner. 
@@ -7823,7 +7865,7 @@ and similarly sample standard deviation
 to approximate the theoretical standard deviation. 
 </p>
       </section>
-      <section>
+      <section xml:id="ConfidenceIntervalsForP">
         <title>Interval Estimates - Confidence Interval for p</title>
         <p>
 Sometimes selecting a value for p for a Binomial, Geometric, or Negative Binomial distribution problem can be done by using a theoretical value. Indeed, when flipping a coin it is reasonable to assume p = 1/2 is the probability of getting a head on one flip. Similarly, it is reasonable to assume p = 1/6 when you are looking for a particular side of a 6-sided die. However, many times you will want to deal with a problem in which it is not possible to determine exactly the precise value for the likelihood of success such as your true probability of making a free throw in basketball or knowing the true percentage of the electorate that will vote for your favorite candidate. 
@@ -7832,7 +7874,7 @@ Sometimes selecting a value for p for a Binomial, Geometric, or Negative Binomia
 In these later situations, we found in the previous section that relative frequency <m>\frac{Y}{n}</m> is generally a good way to estimate p. In this section, you will investigate how to measure the closeness--and thereby assure some confidence in that estimate--regarding how well the point estimate approximates the actual value of p.
 </p>
         <p>
-<definition><title>Confidence Intervals for p</title><statement><p>Given a point estimate <m>\tilde{p}</m> for p, a confidence interval for p is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form
+<definition xml:id="DefnConfidenceIntervalForP"><title>Confidence Intervals for p</title><statement><p>Given a point estimate <m>\tilde{p}</m> for p, a confidence interval for p is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form
 <me>\tilde{p} - E_1 \lt p \lt \tilde{p} + E_2</me>
 with
 <me>P(\tilde{p} - E_1 \lt p \lt \tilde{p} + E_2) = 1 - \alpha</me>
@@ -7894,7 +7936,7 @@ The methods for determining a confidence interval for p above depend upon a good
 Another more elaborate mechanism when n is relatively large is given by the Wilson Score. This confidence interval is more complicated than just taking <m>\tilde{p}</m> and adding and subtracting E. This approach notes that the possible extreme values for p must satisfy (before replacing some of the p terms with <m>\tilde{p}</m>)
 </p>
         <p>
-<theorem><title>Wilson Score Confidence Interval for p</title><statement><p>
+<theorem xml:id="WilsonConfidenceInterval"><title>Wilson Score Confidence Interval for p</title><statement><p>
 <me>\frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} - z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}} \lt p \lt \frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} + z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}}
 </me>
 </p></statement><proof><p>Again, noting that <m>\tilde{p} = \frac{Y}{n}</m>, the expression above
@@ -7916,9 +7958,9 @@ Solving for p using the quadratic formula and simplifying ultimately results in 
 <example><title>Comparison of the three Confidence Interval methods for p</title><p>
 Presume that from a sample of size n = 400 you get Y = 144 successes.  Determine 95% two-sided confidence intervals for the actual p using all three of the methods above. Note that for each you will utilize <m>z_{\alpha/2} = z_{0.025} = 1.960</m> and <m>\tilde{p} = \frac{144}{400} = 0.36</m>.
 </p><p>Normal Interval:
-<me>P( 0.36 - 1.960 \sqrt{0.36 \cdot 0.64) / 400} \lt  p \lt 0.36 + 1.960 \sqrt{0.36 \cdot 0.64) / 400}) = 1 - \alpha.</me>
+<me>P( 0.36 - 1.96 \sqrt{0.36 \cdot 0.64) / 400} \lt  p \lt 0.36 + 1.96 \sqrt{0.36 \cdot 0.64) / 400}) = 1 - \alpha.</me>
 or
-<me>P( 0.36 - 1.960 \cdot 0.6 \cdot 0.8) / 20 \lt  p \lt 0.36 + 1.960 \cdot 0.6 \cdot 0.8) / 20) = 0.95 </me>
+<me>P( 0.36 - 1.96 \cdot 0.6 \cdot 0.8) / 20 \lt  p \lt 0.36 + 1.96 \cdot 0.6 \cdot 0.8) / 20) = 0.95 </me>
 or
 <me>P( 0.36 - 0.04704 \lt  p \lt 0.36 + 0.04704) = 0.95 .</me>
 or
@@ -7986,7 +8028,7 @@ which is slightly different than the first and slightly smaller than the second.
   </webwork-reps></exercise>
 </p>
         <p>
-<theorem><title>Determining Sample Size for proportions with a preliminary estimate</title><statement><p>
+<theorem xml:id="SampleSizeForConfidenceIntervalForP"><title>Determining Sample Size for proportions with a preliminary estimate</title><statement><p>
 Given a margin of error E and preliminary relative frequency estimate <m>\tilde{p_0}</m> the sample size needed to create the corresponding confidence interval is given by 
 <me>n \gt \left ( \frac{z_{\alpha /2}}{E} \right )^2 \tilde{p_0}(1-\tilde{p_0}).</me>
 </p></statement><proof><p>
@@ -7998,21 +8040,20 @@ Presuming E is given and n is unknown, simply solve for n (noting that n is an i
 </p></proof></theorem>
 </p>
         <p>
-<theorem><title>Determining Sample Size for proportions with no preliminary estimate</title><statement><p>
+<theorem xml:id="SampleSizeForConfidenceIntervalForPWithoutPreliminary"><title>Determining Sample Size for proportions with no preliminary estimate</title><statement><p>
 Given only a margin of error E, the sample size needed to create the corresponding confidence interval is given by 
 <me>n \gt \left ( \frac{z_{\alpha /2}}{2 E} \right )^2 .</me>
 </p></statement><proof><p>
 Note that the maximum for <m>y = x(1-x) </m> occurs at <m> x = 1/2, y = 1/4.</m> Therefore, replacing <m>\tilde{p_0}(1-\tilde{p_0} \le \frac{1}{4}</m> gives the result.
 </p></proof></theorem>
 </p>
-        <example>
-          <title>Determining Sample Size for one proportion</title>
-          <p>
+        <p>
+<example><title>Determining Sample Size for one proportion</title><p>
 Given a 99% confidence level, margin of error E=0.03, and preliminary estimate <m>\tilde{p_0} = 0.35</m>, notice that <m>z_{\alpha / 2} = 2.58</m> gives
 <me>n \gt \left ( \frac{2.58}{0.03} \right )^2 0.35 \cdot 0.65 \approx 1682.59</me>
 or a sample size of at least 1683.
+</p></example>
 </p>
-        </example>
         <p>
 <exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-44" ww-id="webwork-44">
     <pg source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg"/>
@@ -8025,7 +8066,7 @@ or a sample size of at least 1683.
       
       
       <answerhashes>
-        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" checker="CODE(0x557d634f9418)" correct_ans="436 (using a critical value of 1.96)  or 454 (using a critical value of 2.0)" correct_ans_latex_string="454" correct_value="454" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)"/>
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" checker="CODE(0x557d644eeb18)" correct_ans="436 (using a critical value of 1.96)  or 454 (using a critical value of 2.0)" correct_ans_latex_string="454" correct_value="454" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)"/>
       </answerhashes>
       
     </static>
@@ -8041,23 +8082,20 @@ or a sample size of at least 1683.
   </webwork-reps></exercise>
 </p>
       </section>
-      <section>
+      <section xml:id="ConfidenceIntervalForMean">
         <title>Interval Estimates - Confidence Interval for <m>\mu</m></title>
         <p>
 As with the confidence intervals above for proportions, the Central Limit Theorem also allows you to create an interval centered on a sample mean for estimating the population mean <m>\mu</m>.
 </p>
-        <definition>
-          <title>Confidence Interval for One Mean</title>
-          <statement>
-            <p>
+        <p>
+<definition xml:id="DefnConfidenctIntervalForMean"><title>Confidence Interval for One Mean</title><statement><p>
 Given a sample mean <m>\overline{x}</m>, a two-sided confidence interval for the mean with confidence level <m>1-\alpha</m> is an interval 
 <me>\overline{x} - E_1 \lt \mu \lt \overline{x} + E_2</me>
 such that
 <me>P(\overline{x} - E_1 \lt \mu \lt \overline{x} + E_2) = 1-\alpha.</me>
 Generally, the interval is symmetrical of the form <m>\overline{x} \pm E</m> with E again known as the margin of error.  One-sided confidence intervals can be determined in the same manner as in the previous section.
+</p></statement></definition>
 </p>
-          </statement>
-        </definition>
         <p>
 Once again, utilize the Central Limit Theorem.  Notice that the symmetrical confidence interval 
 <me>P(\overline{x} - E \lt \mu \lt \overline{x} + E) = 1-\alpha.</me>
@@ -8145,33 +8183,26 @@ It should be noted that the use of the Central Limit Theorem makes the use of  I
         <p>
 Additionally, this derivation assumes that <m>\mu</m> is not known...indeed the goal is to approximate that mean using <m>\overline{x}</m>...but that <m>\sigma</m> is known. This is often not the case. It can however be shown that if n is larger than 30, replacing <m>\sigma</m> with the sample standard deviation s gives an acceptable confidence interval.
 </p>
-        <theorem>
-          <title>Sample Size needed for <m>\mu</m> given Margin of Error</title>
-          <statement>
-            <p>
+        <p>
+<theorem xml:id="SampleSizeForConfidenceIntervalForMeanWithoutPreliminary"><title>Sample Size needed for <m>\mu</m> given Margin of Error</title><statement><p>
 Given confidence level <m>1-\alpha</m> and margin of error E, the sample size needed to determine an appropriate confidence interval satisfies
 <me> n \gt \left ( z_{\alpha /2} \frac{\sigma}{E} \right )^2</me>
-</p>
-          </statement>
-          <proof>
-            <p>
+</p></statement><proof><p>
 Solve for n in the formula for E above. Notice that n must be an integer so you will need to round up. You will also need an estimate for the sample standard deviation s by using a preliminary sample. 
+</p></proof></theorem>
 </p>
-          </proof>
-        </theorem>
         <p>
 Notice, in practice you might want to take n to be a little larger than the absolute minimum value prescribed above since you are dealing with approximations (Central Limit Theorem and the use of an estimate for s rather than the actual <m>\sigma</m>.)
 </p>
-        <example>
-          <title>Determining Sample Size for one Mean</title>
-          <p>
+        <p>
+<example><title>Determining Sample Size for one Mean</title><p>
 Given a 95% confidence level, margin of error E=0.1, and preliminary sample with standard deviation s = 2, <m>z_{\alpha / 2} = 1.96</m> gives
 <me>n \gt \left ( 1.96 \cdot \frac{2}{0.1} \right )^2 \approx 1536.64</me>
 or a sample size of at least 1537.
+</p></example>
 </p>
-        </example>
       </section>
-      <section>
+      <section xml:id="ConfidenceIntervalsForSigma2">
         <title>Interval Estimates - Confidence Interval for <m>\sigma^2</m></title>
         <p>
 Once again, you may need to approximate the population variance or standard deviation but only have the sample values available. One difference from the previous sections is that you are not dealing with an average of values (such as <m>\overline{x}</m> or <m>\tilde{p}</m>) but with the average of the squares of values. The Central Limit Theorem does not directly help you in this case but the following result (presented without proof) provides a solution.
@@ -8211,7 +8242,6 @@ Using the inverse chi-square gives values for the expression on the inside and a
 <me> E_1 = \frac{(n-1)S^2}{\chi^2_{1-\alpha/2}} </me>
 and
 <me> E_2 = \frac{(n-1)S^2}{\chi^2_{\alpha/2}} </me>
-
 </p>
         <p>
 To determine appropriate values for <m>\chi^2_{\alpha/2} </m> and <m>\chi^2_{1-\alpha/2} </m> with equal probabilities in each tail, consider using the interactive cell below:
@@ -8229,11 +8259,11 @@ def _(c=input_box(0.95,width=10,label='Confidence Level = '),n=input_box(20,widt
     b = T.cum_distribution_function_inv(1-alpha/2)
     b1 = T.cum_distribution_function(b)
     
-    print 'From the Chi-Square distribution for X:'
-    print 'P(',a,'&lt; X &lt; ',(b),') = ',c
-    print 'with'
-    print 'P( X &lt; ',a,') = ',a1
-    print 'P( X &lt; ',b,') = ',b1
+    print('From the Chi-Square distribution for X:')
+    print('P(',a,'&lt; X &lt; ',(b),') = ',c)
+    print('with')
+    print('P( X &lt; ',a,') = ',a1)
+    print('P( X &lt; ',b,') = ',b1)
     
     f = x^(n/2-1)*e^(-x/2)/(gamma(n/2)*2^(n/2))
     G = plot(f,x,0,b+(b-a)/2)+plot(f,x,a,b,thickness=5,color='green')
@@ -8244,10 +8274,10 @@ def _(c=input_box(0.95,width=10,label='Confidence Level = '),n=input_box(20,widt
 	</input>
         </sage>
         <p>
-
 You can simply type in your input values easily in the Sage cell below.
-
-<sage><input>
+</p>
+        <sage>
+          <input>
 # Chi-Square Calculator specifics
 var('t')
 c=0.95
@@ -8259,11 +8289,11 @@ a1 = T.cum_distribution_function(a)
 b = T.cum_distribution_function_inv(1-alpha/2)
 b1 = T.cum_distribution_function(b)
 
-print 'From the Chi-Square distribution for X:'
-print 'P(',a,'&lt; X &lt; ',(b),') = ',c
-print 'with'
-print 'P( X &lt; ',a,') = ',a1
-print 'P( X &lt; ',b,') = ',b1
+print('From the Chi-Square distribution for X:')
+print('P(',a,'&lt; X &lt; ',(b),') = ',c)
+print('with')
+print('P( X &lt; ',a,') = ',a1)
+print('P( X &lt; ',b,') = ',b1)
 
 f = x^(n/2-1)*e^(-x/2)/(gamma(n/2)*2^(n/2))
 G = plot(f,x,0,b+(b-a)/2)+plot(f,x,a,b,thickness=5,color='green')
@@ -8271,9 +8301,9 @@ G += line([(a,0),(a,f(x=a))],color='green',thickness=3)
 G += line([(b,0),(b,f(x=b))],color='green',thickness=3)
 G += text(str(c.n(digits=5)),((a+b)/2,f(x=(a+b)/2)/3),color='green')
 G.show()
-	</input></sage>
-
-<p>
+	</input>
+        </sage>
+        <p>
 <example><title> - Two-sided Confidence interval for <m>\sigma^2</m> and <m>\sigma</m></title><p>Given the data 570, 561, 546, 540, 609, 580, 550, 577, 585, determine a 95% confidence interval for <m>\sigma^2</m>.
 </p><p>
 Using the computational forumaula (or your calculator) gives <m>s^2 \approx 479.5</m>. Also, notice for n=9, the resulting interval will use a Chi-square variable with 8 degrees of freedom. Using the symmetric option, gives
@@ -8288,8 +8318,7 @@ By taking square roots you get
 Notice, this interval is relatively wide which is a result both of the number of data values being relatively small (n=9) and the actual data values being relatively large and spread out.
 </p></example>
 </p>
-
-<p>
+        <p>
 <sage><input>
 # Chi-Square Calculator specifics
 var('t')
@@ -8302,16 +8331,16 @@ a1 = T.cum_distribution_function(a)
 b = T.cum_distribution_function_inv(1-alpha/2)
 b1 = T.cum_distribution_function(b)
 
-print 'From the Chi-Square distribution for X:'
-print 'P(',a,'&lt; X &lt; ',(b),') = ',c
-print 'with'
-print 'P( X &lt; ',a,') = ',a1
-print 'P( X &lt; ',b,') = ',b1
+print('From the Chi-Square distribution for X:')
+print('P(',a,'&lt; X &lt; ',(b),') = ',c)
+print('with')
+print('P( X &lt; ',a,') = ',a1)
+print('P( X &lt; ',b,') = ',b1)
 	</input></sage>
 </p>
-
-<example><title> - Two-sided Confidence interval for the variance and standard deviation with large n.</title><p>
-<exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-47" ww-id="webwork-47">
+        <p>
+<exercise><title>WebWork</title><introduction><p>Two-sided Confidence interval for the variance and standard deviation with large n.
+	</p></introduction><webwork-reps xml:id="extracted-webwork-47" ww-id="webwork-47">
     <pg source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg"/>
 
       
@@ -8338,35 +8367,38 @@ print 'P( X &lt; ',b,') = ',b1
     <server-url hint="no" solution="no">https://webwork-ptx.aimath.org/webwork2/html2xml?courseID=anonymous&amp;userID=anonymous&amp;password=anonymous&amp;course_password=anonymous&amp;answersSubmitted=0&amp;displayMode=MathJax&amp;outputformat=simple&amp;problemSeed=47&amp;sourceFilePath=Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg</server-url>
 
   </webwork-reps></exercise>
-</p><p>Continuing the previous example, suppose now that you have n=400 data values and suppose you have computed from those a sample variance of <m>s^2 = 479.5</m>.  Then, the only change in the calculation is the two chi-square statistic values. For 95% but now with 399 degrees of freedom
+</p>
+        <p>Suppose  that you have n=400 data values and suppose you have computed from those a sample variance of <m>s^2 = 479.5</m>.  Then, the only change in the calculation is the two chi-square statistic values. For 95% but now with 399 degrees of freedom
 <m>\chi_{0.025}^2 = 345.55</m> and <m>\chi_{0.975}^2 = 456.24</m>.  
-
-Therefore
-<me> E_1 = \frac{8 \cdot 479.5}{456.24} \approx 419.3</me>
-and
-<me> E_2 = \frac{8 \cdot 479.5}{345.55} \approx 553.7.</me>
-Hence, you are 95% certain that 
-<me>419.24 \lt \sigma^2 \lt 553.7.</me>
-By taking square roots you get
-<me>20.48 \lt \sigma \lt 23.53</me>
-which is a relatively tight confidence interval.  Notice, these are also completely contained in the confidence intervals from the previous small n example.
-</p></example>
+</p>
+        <p>
+	Therefore
+	<me> E_1 = \frac{8 \cdot 479.5}{456.24} \approx 419.3</me>
+	and
+	<me> E_2 = \frac{8 \cdot 479.5}{345.55} \approx 553.7.</me>
+	Hence, you are 95% certain that 
+	<me>419.24 \lt \sigma^2 \lt 553.7.</me>
+	By taking square roots you get
+	<me>20.48 \lt \sigma \lt 23.53</me>
+	which is a relatively tight confidence interval.  Notice, these are also completely contained in the confidence intervals from the previous small n example.
 </p>
         <p>
 Similar to above, another choice to estimate <m>\sigma ^2</m> is to use a one sided confidence interval. If you want to find one of these, continue as described above but just leave one endpoint off.  Indeed, 
-<me>\sigma^2 \lt E_2</me>
+	<me>\sigma^2 \lt E_2</me>
 can be determined using 
-<me> F(\chi^2_{\alpha} ) = F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha</me>
+	<me> F(\chi^2_{\alpha} ) = F \left ( \frac{(n-1)S^2}{E_2} \right ) = \alpha</me>
 and 
-<me>E_1 \lt \sigma^2 </me>
+	<me>E_1 \lt \sigma^2 </me>
 can be determined using
-<me> F(\chi^2_{1-\alpha} ) = F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha.</me>
-
-
+	<me> F(\chi^2_{1-\alpha} ) = F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha.</me>
+</p>
+        <p>
 <example><title> - One-sided Confidence intervals for <m>\sigma^2</m></title><p>
+TBA
 </p></example>
 </p>
-        <p>You can, of course, use the formula to work out the sample size needed in order to have a sufficiently narrow confidence interval
+        <p>
+You can, of course, use the formula to work out the sample size needed in order to have a sufficiently narrow confidence interval
 </p>
         <p>
 <exercise><title>WebWork</title><webwork-reps xml:id="extracted-webwork-48" ww-id="webwork-48">
@@ -8396,52 +8428,54 @@ can be determined using
 </p>
         <p>
 Finally, to determine a confidence interval for <m>\sigma</m>, proceed using the protocols described above and simply take the square root on the resulting interval.
-
-<example><title> - Confidence intervals for <m>\sigma</m></title><p>
+</p>
+        <p>
+<example><title> - Confidence intervals for <m>\sigma</m></title><p> TBA
 </p></example>
-
 </p>
       </section>
-      <section>
+      <section xml:id="IntervalEstimationExercises">
         <title>Exercises</title>
         <p>
 <exercise><title> - Basic Confidence interval for p</title><p>
 Given Y = 30 successes in n = 100 trials, determine a 90% confidence interval for the unknown value for p.  
-<solution><p>
+</p><solution><p>
 <m>\tilde{p} = 0.3</m> and <m>z_{0.05} = 1.645</m> gives
 <me>0.3 - 1.645 \sqrt{\frac{0.3 \cdot 0.7}{100}} \lt p \lt 0.3 + 1.645 \sqrt{\frac{0.3 \cdot 0.7}{100}}</me>
 or
 <me>0.225 \lt p \lt 0.375.</me>
-</p></solution>
-</p></exercise>
-
+</p></solution></exercise>
+</p>
+        <p>
 <exercise><title> - Sample Size for confidence interval for p</title><p>
 Given a preliminary estimate <m>\tilde{p_0} = 0.23</m>, determine the same size needed for determine a 95% confidence interval for p with margin of error 0.02.
-<solution><p>
+</p><solution><p>
 Using <m>z_{0.025} = 1.96</m>,
 <me>n \gt \big ( \frac{1.96}{0.02} \big )^2 \cdot 0.23 \cdot 0.77 \approx 1700.87</me>
 and so pick at least 1701 as the sample size.
-</p></solution>
-</p></exercise>
-
+</p></solution></exercise>
+</p>
+        <p>
 <exercise><title> - Voting projection</title><p>Randomly polling 3200 eligible voters for governor in a particular state resulted in finding that 1590 favored your candidate. Determine an appropriate 95% confidence interval for the true proportion p of voters who favor your candidate. Noting that <m>\tilde{p}</m> in this instance is smaller than 50%, write a short paragraph regarding what you might conclude from this confidence interval regarding your candidate's chances in winning the election.
-
-<solution><p>
+</p><solution><p>
 Note that although the point estimate is below 50%, the confidence interval includes the possibility that the actual value for p is greater than 50%. So, you cannot conclude that your candidate will either win or lose.
-</p></solution>
-</p></exercise>
-
-<exercise><title> - Basic Confidence interval for the mean</title><p>Given a sample mean of <m>\overline{x} = 25.3</m> with n = 121 and sample variance <m>s^2 = 12.1</m>, determine a 99% confidence interval for the true mean <m>\mu</m>.
-<solution><p>Using <m>z_{0.005} = 2.576</m> and <m>s = \sqrt{12.1} \approx 3.4786</m> gives a confidence interval 
-<me>25.3 - 2.576 \cdot \frac{3.4786}{11} \lt \mu \lt 25.3 + 2.576 \cdot \frac{3.4786}{11}</me>
+</p></solution></exercise>
+</p>
+        <p>
+<exercise><title> - Basic Confidence interval for the mean</title><p>
+Given a sample mean of <m>\overline{x} = 25.3</m> with n = 121 and sample variance <m>s^2 = 12.1</m>, determine a 99% confidence interval for the true mean <m>\mu</m>.
+</p><solution><p>Using <m>z_{0.005} = 2.576</m> and <m>s = \sqrt{12.1} \approx 3.4786</m> gives a confidence interval 
+	<me>25.3 - 2.576 \cdot \frac{3.4786}{11} \lt \mu \lt 25.3 + 2.576 \cdot \frac{3.4786}{11}</me>
 or 
-<me>24.4854 \lt \mu \lt 26.1148.</me>
-</p></solution>
-</p></exercise>
-
+	<me>24.4854 \lt \mu \lt 26.1148.</me>
+	</p></solution></exercise>
+</p>
+        <p>
 <exercise><title> - Confidence Interval Experiment</title><p>
-
+TBA
 </p></exercise>
+</p>
+        <p>
 Roll two regular pair of dice 35 times, recording the sum of the dots for each roll.  Using the data from your sample, determine the corresponding sample mean and sample variance.  Using this data, create a 95% confidence interval for the population mean and a 95% "centered" confidence interval for the standard deviation. Once complete, compare your results with what you know should be the correct population statistics an appropriate "hat" distribution. (You might want to use the chi-square calculator provided earlier in this text.)
 </p>
         <p>
@@ -8460,7 +8494,7 @@ Repeat this exercise but this time roll 105 times.  Notice how these differ from
     <!-- See the file COPYING for copying conditions.             -->
     <chapter xml:id="HypothesisTesting">
       <title>Hypothesis Testing</title>
-      <section>
+      <section xml:id="HypothesisTestingIntroduction">
         <title>Introduction</title>
         <p>
 When creating confidence intervals, you started with a sample and used the sample statistic (sample mean, relative frequency, sample variance, etc.) to anchor an interval which (with high possibility) contains the corresponding population statistic <m>\mu, p, \sigma^2</m>, etc. In this section, we instead start with an educated guess for one of the population statistics <m>\mu, p, \sigma^2</m> and then statistically compare that value with the subsequently collected sample statistic.
@@ -8469,7 +8503,7 @@ When creating confidence intervals, you started with a sample and used the sampl
 The educated guess noted above is often called the "null hypothesis" and should be considered as a guess that one tries to disprove if possible by using a subsequent statistical sample.
 </p>
       </section>
-      <section>
+      <section xml:id="HypothesisTestingErrors">
         <title>Hypotheses and Errors</title>
         <p>
 In formulating a hypothesis, you will be making a declarative statement (a proposition) that has an actual truth value. That is, it is either true or it is not true in real life. However, since we will assess that truth using a test sample then measuring that truth value will never be 100% certain in the same manner that confidence intervals can never include 100% of the possible choices for a particular statistic. Hence, it is possible for you to make an incorrect conclusion.
@@ -8500,7 +8534,7 @@ So, our plan of attack is to find some way to determine, from a sample, the amou
         <p>Finally, you will notice in each of the instances presented that the form of the solution method will be very similar to the forms we used in creating confidence intervals. The difference is that for hypothesis testing we <em>assume</em> the value in the middle and test to see whether the sample statistic is in one of the tails so that we can reject rather than with confidence intervals we assume as sample statistic is in the middle and then use that sample to create boundaries within which the theoretical population statistic <em>must</em> like with high confidence.
 </p>
       </section>
-      <section>
+      <section xml:id="HypothesisTestingOneP">
         <title>Hypothesis Test for one proportion</title>
         <p>
 In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value p:
@@ -8607,7 +8641,7 @@ and find that this has probability approximately 0.0392 + 0.0392 = 0.0784.  Howe
   </webwork-reps></exercise>
 </p>
       </section>
-      <section>
+      <section xml:id="HypothesisTestingOneMean">
         <title>Hypothesis Test for one mean</title>
         <p>
 In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value <m>\mu</m>:
@@ -8677,7 +8711,7 @@ Since this p-value is less than our significance level <m>\alpha = 0.01</m> then
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2020-10-06T09:05:47-05:00    
+      ###    on 2020-10-08T11:05:58-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -8884,7 +8918,7 @@ Since this p-value is less than our significance level <m>\alpha = 0.05</m> (by 
   </webwork-reps></exercise>
 </p>
       </section>
-      <section>
+      <section xml:id="HypothesisTestingOneVariance">
         <title>Hypothesis Test for one variance</title>
         <p>
 Proceeding in a similar manner, we can also perform hypothesis testing on variances using the <m>\chi^2</m>-distribution to determine probabilities.
@@ -8952,13 +8986,13 @@ Technically, for the two-tailed test you could pick T-values so that the total p
 	
 </section>
 -->
-      <section>
+      <section xml:id="HypothesisTestingSummary">
         <title>Summary</title>
         <p>
 TBA
 </p>
       </section>
-      <section>
+      <section xml:id="HypothesisTestingExercises">
         <title>Exercises</title>
         <p>
 TBA
@@ -8976,13 +9010,13 @@ TBA
       <introduction>
         <p>This chapter is a review of power series results from Calculus.</p>
       </introduction>
-      <section>
+      <section xml:id="GeometricSeriesReview">
         <title>Geometric Series</title>
         <introduction><p>
 		  Knowledge of the use of power series is very important when dealing with both 
 		  probability functions. </p><md><mrow>S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}</mrow></md> provided x is small is of utmost importance  
 		<p>as is its extension know as the negative binomial series <m>( n \in \mathbb{N} )</m>.</p><md><mrow>NB = \sum_{k=0}^{\infty} (-1)^k \binom{-n + k - 1}{k} {x^k b^{-n-k}} = \frac{1}{(x+b)^n}</mrow></md><p>In this section, we review this series, develop its properties, and explore some of its extensions.</p></introduction>
-        <subsection>
+        <subsection xml:id="GeometricSeries">
           <title>Geometric Series</title>
           <theorem xml:id="theorem-GeomSeries">
             <statement>
@@ -9020,8 +9054,7 @@ def _(n = slider(2,20,1,2)):
 </input>
           </sage>
         </subsection>
-        <introduction/>
-        <subsection>
+        <subsection xml:id="GeometricSeriesAlternate">
           <title>Alternate Forms for the Geometric Series</title>
           <theorem>
             <title>Generalized Geometric Series</title>
@@ -9081,7 +9114,7 @@ def _(n = slider(2,20,1,2)):
           </example>
         </subsection>
       </section>
-      <section><title>Binomial Sums</title><p>
+      <section xml:id="BinomialSums"><title>Binomial Sums</title><p>
   The binomial series is also foundational. It is technically not a series since the sum_if finite 
   but we won’t bother with that for now.  
   It is given by </p><md><mrow>B = \sum_{k=0}^{n} {\binom{n}{k} a^k b^{n-k}}</mrow></md> provided n is a natural number.  
@@ -9092,7 +9125,7 @@ def _(n = slider(2,20,1,2)):
 		This finite sum_is known as the Binomial Series.</p><p>Show that <m>B(a,b) = (a+b)^n</m></p><p>Show that <m>B(1,1) = 2^n</m></p><p>Show that <m>B(-1,1) = 0</m></p><p>Show that <m>B(p,1-p) = 1</m></p><p>Easily, <m>B(x,1) = \sum_{k=0}^{n} {\binom{n}{k} a^k}</m></p><title>Trinomial Series</title><md><mrow>(a+b+c)^n = \sum_{k_1+k_2+k_3=n}^{} {\binom{n}{k_1,k_2,k_3} a^{k_1} b^{k_2} c^{k_3}} </mrow></md><p>where <m>\binom{n}{k_1,k_2,k_3} = \frac{n!}{k_1!k_2!k_3!}</m>. This can be generalized to any number 
 		of terms to give what
 		is know as a multinomial series.</p></section>
-      <section>
+      <section xml:id="NegativeBinomialSeries">
         <title>Negative Binomial Series</title>
         <p>
           <m>(a+b)^{-n} = \sum_{k=0}^{\infty} {\binom{-n}{k} a^k b^{-n-k}}</m>

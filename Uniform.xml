@@ -7,10 +7,10 @@
 <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
 <!-- See the file COPYING for copying conditions.             -->
 
-<chapter xml:id="UniformHypergeometric" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="EquallyLikelyBasedDistributions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Distributions based upon Equally likely Outcomes</title>
 
-<section><title>Introduction</title>
+<section xml:id="EquallyLikelyBasedDistributionsIntroduction"><title>Introduction</title>
 <p>
 When motivating our definition of probability you may have noticed that we modeled our definition on the relative frequency of equally-likely outcomes. In this chapter you will develop the theoretical formulas which can be used to model equally-likely outcomes.
 </p>
@@ -18,14 +18,14 @@ When motivating our definition of probability you may have noticed that we model
 <p>
 In this chapter, you will investigate the following distributions:
 <ol>
-	<li>Discrete Uniform - each of a finite collection of outcomes is equally likely and prescribed a "position" and X measures the position of an item selected randomly from the outcomes.</li>
-	<li>Continuous Uniform - an interval of values is possible with sub-intervals of equal length having equal probabilities and X measures a location inside that interval.</li>
-	<li>Hypergeometric - each of a finite collection of values are equally likely and grouped into two classes (successes vs failures) and a subset of that collection is extracted with X measuring the number of successes in the sample.</li>
+	<li>Discrete Uniform - each of a finite collection of outcomes is equally likely and prescribed a "position" and <m>X</m> measures the position of an item selected randomly from the outcomes.</li>
+	<li>Continuous Uniform - an interval of values is possible with sub-intervals of equal length having equal probabilities and <m>X</m> measures a location inside that interval.</li>
+	<li>Hypergeometric - each of a finite collection of values are equally likely and grouped into two classes (successes vs failures) and a subset of that collection is extracted with <m>X</m> measuring the number of successes in the sample.</li>
 </ol>
 </p>
 </section>	
 	
-<section><title>Discrete Uniform Distribution</title>
+<section xml:id="DiscreteUniform"><title>Discrete Uniform Distribution</title>
 <p>
 In this section, you will investigate distributions that begin with individual outcomes that are equally likely and expand into more general settings.
 </p>
@@ -34,14 +34,14 @@ In this section, you will investigate distributions that begin with individual o
 <theorem><title>Discrete Uniform Distribution</title>
 <statement>
 <p xml:id="DiscreteUniformFunction">
-Assume outcomes in R = {1, 2, 3, ..., n} are equally likely.  Then, the probability function for the discrete uniform variable X is
+Assume outcomes in <m>R</m> = {1, 2, 3, ..., n} are equally likely.  Then, the probability function for the discrete uniform variable <m>X</m> is
 <me>f(x) = \frac{1}{n}</me>
 for <m>x \in R</m>.
 </p>
 </statement>
 <proof>
 	<p>
-	Assume that you have a variable with space R = {1, 2, 3, ..., n} so that the likelihood of each value is equally likely. Then, the probability function satisfies <m>f(x) = c</m> for any <m>x \in R</m>.  As before, since <m>\sum_{x \in R} f(x) = 1</m>, then 
+	Assume that you have a variable with space <m>R</m> = {1, 2, 3, ..., n} so that the likelihood of each value is equally likely. Then, the probability function satisfies <m>f(x) = c</m> for any <m>x \in R</m>.  As before, since <m>\sum_{x \in R} f(x) = 1</m>, then 
 	<me>f(x) = \frac{1}{n}.</me> 
 	</p>
 </proof>
@@ -72,13 +72,13 @@ def _(n=slider(2,10,1,2)):
 <theorem><title>Properties of the Discrete Uniform Probability Function</title>
 <statement>
 	<p xml:id="DiscreteUniformProperties">
-	<m>f(x) = \frac{1}{n}</m> over R = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function and
+	<m>f(x) = \frac{1}{n}</m> over <m>R</m> = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function and
 	<ol>
 		<li><m>\mu = \frac{1+n}{2}</m></li>
 		<li><m>\sigma^2 = \frac{n^2-1}{12}</m></li>
 		<li><m>\gamma_1 = 0</m></li>
 		<li><m>\gamma_2 = \frac{6}{5}\frac{1+n^2}{1-n^2}</m></li>
-		<li>Distribution function F(x) = frac{x}{n} for <m>x \in R</m>.</li>
+		<li>Distribution function <m>F(x) = frac{x}{n}</m> for <m>x \in R</m>.</li>
 	</ol>
 	</p>
 </statement>
@@ -152,25 +152,25 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),' + 3')
 
 <p>
 <example><title>Rolling one die</title>
-<p>When you consider rolling a regular, fair, single 6-sided die, each side is equally likely. The sample space consists of the 6 sides, each with a unique number of physical dots. Let the random variable X correspond each side with the number corresponding to the number of dots. Then, R = {1, 2, 3, 4, 5, 6}.  Since each side is equally likely then f(x) = 1/6.
+<p>When you consider rolling a regular, fair, single 6-sided die, each side is equally likely. The sample space consists of the 6 sides, each with a unique number of physical dots. Let the random variable <m>X</m> correspond each side with the number corresponding to the number of dots. Then, <m>R</m> = {1, 2, 3, 4, 5, 6}.  Since each side is equally likely then <m>f(x) = 1/6</m>.
 </p>
 <p>
-Further, the probability of getting an outcome in A={2,3} would be f(2)+f(3) = 1/6 + 1/6 = 2/6.
+Further, the probability of getting an outcome in A = {2,3} would be <m>f(2)+f(3) = 1/6 + 1/6 = 2/6</m>.
 </p>
 </example>
 </p>
 
 </section>
 
-<section><title>Continuous Uniform Distribution</title>
+<section xml:id="ContinuousUniform"><title>Continuous Uniform Distribution</title>
 <p>
-Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + \Delta \lt X \lt v + \Delta)</m> for reasonable values of <m>\Delta</m> so that the interval remains inside R.
+Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + \Delta \lt X \lt v + \Delta)</m> for reasonable values of <m>\Delta</m> so that the interval remains inside <m>R</m>.
 </p>
 	
 <p>
 <theorem><title>Continuous Uniform Probability Function</title>
 <statement>
-<p xml:id="ContinuousUniformFunction">For R = [a,b], with a &lt; b, the continuous uniform probability function is given by
+<p xml:id="ContinuousUniformFunction">For <m>R</m> = [a,b], with a &lt; b, the continuous uniform probability function is given by
 	<me>f(x) = \frac{1}{b-a}.</me>
 </p>
 </statement>
@@ -272,7 +272,7 @@ For computing probabilities, you will want to break up any resulting integrals i
 <mrow> &amp; = 0.</mrow>
 </md>
 </p>
-<p>The variance is more algebra like above. We will just let Sage do that part for us below.
+<p>The kurtosis is more algebra like above. We will just let Sage do that part for us below.
 </p>
 </proof>
 </p>
@@ -312,7 +312,7 @@ for b1 in range(2,7):
 <p>
 <example><title>Occurence of exactly one event randomly in a given interval</title>
 <p>
-Suppose you know that only one person showed up at the counter of a local business in a given 30 minute interval of time. Then, R=[0,30] given f(x) = 1/30.
+Suppose you know that only one person showed up at the counter of a local business in a given 30 minute interval of time. Then, <m>R</m> = [0,30] given <m>f(x) = 1/30</m>.
 </p>
 <p>
 Further, the probability that the person arrived within the first 6 minutes would be <m>\int_0^6 \frac{1}{30} dx = 0.2</m>.
@@ -339,7 +339,7 @@ For x in this range,
 </section>
 
 
-<section><title>Hypergeometric Distribution</title>
+<section xml:id="HypergeometricDistribution"><title>Hypergeometric Distribution</title>
 <p>
 For the discrete uniform distribution, the presumption is that you will be making a selection one time from the collection of items. However, if you want to take a larger sample without replacement from a distribution in which originally all are equally likely then you will end up with something which will not be uniform.
 </p>
@@ -355,7 +355,7 @@ Indeed, consider a collection of n items from which you want to take a sample of
 <p>
 <theorem><title>Hypergeometric Probability Function</title>
 <statement>
-<p xml:id="HypergeometricFunction">For a Hypergeometric random variable with R = {0, 1, ..., r} and assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>,
+<p xml:id="HypergeometricFunction">For a Hypergeometric random variable with <m>R</m> = {0, 1, ..., r} and assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>,
 	<me>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</me>	
 </p>
 </statement>
@@ -442,7 +442,7 @@ Therefore, you have about 1 chance out of 5 that the friend got 2 or more of you
 		</li>
 		<li>
 		<p>
-For variance, we will use an alternate form of the definition that is useful when looking for cancellation options with the numerous factorials in the hypergeometric probability function. Indeed, you can easily notice that
+For variance, we will use an alternate form of the definition that is useful when looking for cancellation options with the numerous factorials in the <xref ref="HypergeometricDistribution">hypergeometric probability function</xref>. Indeed, you can easily notice that
 <me>\sigma^2 = E[X^2] - \mu^2 = E[X^2-X]+E[X] -\mu^2 = E[X(X-1)] + \mu - \mu^2.</me>
 Since we have <m>\mu = r \frac{n_1}{n}</m> from above then let's focus on the first term only and use the substitutions
 			<md>
@@ -524,7 +524,7 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </p>
 -->
 
-<p>Consider the Hypergeometric distribution for various values of <m>n_1, n_2,</m> and r using the interactive cell above. Notice what happens when you start with relatively small values of <m>n_1, n_2,</m> and r (say, start with <m>n_1 = 5, n_2 = 8,</m> and r = 4 and then doubling then all again and again. Consider the likely skewness and kurtosis of the graph as the values get larger.
+<p>Consider the <xref ref="HypergeometricDistribution">Hypergeometric Distribution</xref> for various values of <m>n_1, n_2,</m> and r using the interactive cell above. Notice what happens when you start with relatively small values of <m>n_1, n_2,</m> and r (say, start with <m>n_1 = 5, n_2 = 8,</m> and r = 4 and then doubling then all again and again. Consider the likely skewness and kurtosis of the graph as the values get larger.
 </p>	
 <p>
 In the interactive cell below, notice how many items are in each portion of the "Venn Bucket" when you change the size of the number extracted--denoted by what is inside the circle.
@@ -535,9 +535,9 @@ In the interactive cell below, notice how many items are in each portion of the 
 # Size of classes N1 and N2 must be given as well as subset size r
 var('x')
 @interact(layout=dict(top=[['N1','N2','r']]))
-def _(N1=input_box(10,width=5,label='\( N_1 \)'),
-    N2=input_box(10,width=5,label='\( N_2 \)'),
-    r=input_box(5,width=5,label='\( r \)')):
+def _(N1=input_box(10,width=5,label='$$ N_1 $$'),
+    N2=input_box(10,width=5,label='$$ N_2 $$'),
+    r=input_box(5,width=5,label='$$ r $$')):
     N = N1 + N2
     f = binomial(N1,x)*binomial(N2,r-x)/binomial(N,r)
     @interact
@@ -545,7 +545,7 @@ def _(N1=input_box(10,width=5,label='\( N_1 \)'),
         Px = f(x=X)
         Pxapprox = Px.n(digits=8)
         formula = "\\frac{\\binom{%s}"%str(N1)+"{%s}"%str(X)+" \\binom{%s}"%str(N2)+"{%s}}"%str(r-X)+"{ \\binom{%s}"%str(N)+"{%s}}"%str(r)
-        pretty_print(html("P(X = %s"%str(X)+") = \( %s \)"%str(formula)+" = \( %s \)"%str(latex(Px))+"\( \\approx %s \)"%str(Pxapprox)))
+        pretty_print(html("P(X = %s"%str(X)+") = $ %s $"%str(formula)+" = $ %s $"%str(latex(Px))+"$ \\approx %s $"%str(Pxapprox)))
         G = polygon([(0,0), (1,0), (1.2,1), (-.2,1)],color='lightblue')
         G += line([(0.5,0),(0.5,1)],thickness=2)
         G += circle((0.5,0.3),0.25,fill=True,facecolor='yellow',alpha=0.5,zorder=2)
@@ -559,38 +559,38 @@ def _(N1=input_box(10,width=5,label='\( N_1 \)'),
 </section>
 
 
-<section><title>Generating Functions for Uniform-based Distributions</title>
+<section xml:id="EquallyLikelyGeneratingFunctions"><title>Generating Functions for Uniform-based Distributions</title>
 
 <p>
 <xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
 
-<theorem><title>Moment Generating Function for Discrete Uniform</title>
+<theorem xml:id="MGFDiscrete"><title>Moment Generating Function for Discrete Uniform</title>
 <statement>
 <p><me>M(t) = \frac{1}{n} \cdot \left [ e^t + e^{2t} + ... e^{nt} \right ] </me>
 </p>
 </statement>
 <proof>
-<p>Presuming R = {1, 2, ..., n},
+<p>Presuming <m>R</m> = {1, 2, ..., n},
 <me>M(t) = \sum_{x=1}^n e^{tx}/n = \frac{1}{n} \cdot \left [ e^t + e^{2t} + ... e^{nt} \right ] </me>
 </p>
 </proof>
 </theorem>
 
-<theorem><title>Moment Generating Function for Continuous Uniform</title>
+<theorem xml:id="MGFContinuous"><title>Moment Generating Function for Continuous Uniform</title>
 <statement>
 <p><me>M(t) = \frac{e^{bx} - e^{ax}}{b-a}</me>
 </p>
 </statement>
 <proof>
-<p>Presuming R = [a,b],
+<p>Presuming <m>R</m> = [a,b],
 <me>M(t) = \int_a^b e^{tx} \frac{1}{b-a} dx = \frac{1}{b-a} \frac{1}{t} e^{tx} \big |_a^b = \frac{e^{bx} - e^{ax}}{b-a}</me>
 </p>
 </proof>
 </theorem>
 
 
-<theorem><title>Moment Generating Function for Hypergeometric</title>
+<theorem  xml:id="MGFHypergeometric"><title>Moment Generating Function for Hypergeometric</title>
 <statement>
 <p>TBA
 </p>
@@ -610,7 +610,7 @@ def _(N1=input_box(10,width=5,label='\( N_1 \)'),
 
 </section>
 
-<section><title>Summary</title>
+<section xml:id="EquallyLikelySummary"><title>Summary</title>
 <p>
 <introduction>
 <p>
@@ -640,13 +640,13 @@ Here is a summary of the major formulas from this chapter:
 
 </section>
 
-<section><title>Exercises</title>
+<section xml:id="EquallyLikelyExercises"><title>Exercises</title>
 
 <p>
 <exercise><title> - The Proverbial Urn Problem</title>
 <statement>
 <p>
-You have an urn with 10 marbles of which <m>n_1 = 6</m> are red and <m>N_2 = 4</m> are blue. You select randomly r = 3 of the marbles without replacement and let X represent the number of red marbles in your sample. With R = {0, 1, 2, 3}, determine:
+You have an urn with 10 marbles of which <m>n_1 = 6</m> are red and <m>N_2 = 4</m> are blue. You select randomly r = 3 of the marbles without replacement and let <m>X</m> represent the number of red marbles in your sample. With <m>R</m> = {0, 1, 2, 3}, determine:
 <ul>
 	<li>f(x)</li>
 	<li>P(2 of the 3 are red) = f(2)</li>
@@ -713,12 +713,12 @@ This is a hypergeometric distribution with <m>n_1 = 15, n_2 = 35, r = 11</m>.
 <exercise><title> - Old Faithful</title>
 <statement>
 <p>
-Ole Faithful geyser in Yellowstone National Park erupts every 91 minutes. You show up at some random time in the eruption cycle and your tour bus plans to stay for 25 minutes. Determine the likelihood that you will be able to see it erupt.  Express your answer by giving correct formulas for f(x) and F(x) and then determine the specific answer to this question.
+Ole Faithful geyser in Yellowstone National Park erupts every 91 minutes. You show up at some random time in the eruption cycle and your tour bus plans to stay for 25 minutes. Determine the likelihood that you will be able to see it erupt.  Express your answer by giving correct formulas for <m>f(x)</m> and <m>F(x)</m> and then determine the specific answer to this question.
 </p>
 </statement>
 <hint>
 <p>
-This is the continuous uniform distribution over R = [0, 91].
+This is the continuous uniform distribution over <m>R</m> = [0, 91].
 </p>
 </hint>
 </exercise>
@@ -728,7 +728,7 @@ This is the continuous uniform distribution over R = [0, 91].
 <exercise><title> - Uniform Scenarios</title>
 <statement>
 <p>
-Explain how the following situations can be modeled using either a discrete or continuous uniform distribution by identifying the space R and the corresponding f(x) for each situation.
+Explain how the following situations can be modeled using either a discrete or continuous uniform distribution by identifying the space <m>R</m> and the corresponding <m>f(x)</m> for each situation.
 <ul>
 	<li>The location on a prize wheel where the spun wheel will stop.</li>
 	<li>Given a clock with only a minute hand, the current one second interval.</li>
@@ -743,14 +743,14 @@ Explain how the following situations can be modeled using either a discrete or c
 <exercise><title> - Continous Uniform on a different space</title>
 <statement>
 <p>
-Determine an explicit formula for f(x) and the mean and variance for an continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
+Determine an explicit formula for <m>f(x)</m> and the mean and variance for an continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.
 </p>
 </statement>
 <solution>
 <p>
 Since you must have 
 <me>\int_{x \in R} f(x) dx = 1</me>
-and since f(x) must be constant than all you must do is measure the accumulated width of the intervals in R. This is 5 + 1 + 6 = 12 and so
+and since <m>f(x)</m> must be constant than all you must do is measure the accumulated width of the intervals in <m>R</m>. This is 5 + 1 + 6 = 12 and so
 <me>
 f(x)=\left\{\begin{matrix}
  \frac{1}{12}, &amp; -2 \le x \le 3

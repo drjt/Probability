@@ -14,7 +14,7 @@
         <p>This chapter is a review of power series results from Calculus.</p>
     </introduction>
 
-	<section>
+	<section xml:id="GeometricSeriesReview">
 		<title>Geometric Series</title>
 		<introduction>
 		<p>
@@ -30,7 +30,7 @@
 		<p>In this section, we review this series, develop its properties, and explore some of its extensions.</p>
 		</introduction>
 		
-		<subsection>
+		<subsection xml:id="GeometricSeries">
 			<title>Geometric Series</title>
 			<theorem xml:id="theorem-GeomSeries">
 			<statement> <m> S = \sum_{k=0}^{\infty} {x^k} = \frac{1}{1-x}</m> </statement>
@@ -68,11 +68,8 @@ def _(n = slider(2,20,1,2)):
 </sage>
 	</subsection>
 
-<introduction>
 
-</introduction>
-
-	<subsection>
+	<subsection xml:id="GeometricSeriesAlternate">
 		<title>Alternate Forms for the Geometric Series</title>
 		<theorem>
 			<title>Generalized Geometric Series</title>
@@ -134,7 +131,7 @@ def _(n = slider(2,20,1,2)):
 </section>
 
 
-<section>
+<section xml:id="BinomialSums">
 <title>Binomial Sums</title>
 <p>
   The binomial series is also foundational. It is technically not a series since the sum_if finite 
@@ -195,7 +192,7 @@ def _(n = slider(2,20,1,2)):
 
 
 
-<section>
+<section xml:id="NegativeBinomialSeries">
 	<title>Negative Binomial Series</title>
 	<p><m>(a+b)^{-n} = \sum_{k=0}^{\infty} {\binom{-n}{k} a^k b^{-n-k}}</m></p>
 	<theorem>

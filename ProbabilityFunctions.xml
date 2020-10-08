@@ -32,11 +32,12 @@ variable.
 <p>
 <definition xml:id="DefnRandomVariable"><title>Random Variable</title>
 	<statement>
-		<p>Given a random experiment with sample space <m>S</m>, a function X mapping each 
+		<p>Given a random experiment with sample space <m>S</m>, a function <m>X</m> mapping each 
 		element of <m>S</m> to a unique real number is called a random variable. 
 		For each element s from the sample space <m>S</m>, denote this function by
 		<me>X(s) = x</me>
-		and let R  be the range of X. R will be called "the space of X" and in notation
+		and let <m>R</m>  be the range of <m>X.</m></p>
+		<p><m>R</m> will be called "the space of X" and in notation
 		<me> R = { x : X(s)=x, \text{for some} s \in S } .</me>
 		</p>
 	</statement>
@@ -59,7 +60,7 @@ inherently non-numerical) by using the random variable in subsequent calculation
 		<mrow>X( \text{success})=1</mrow>
 		<mrow>X( \text{failure})=0.</mrow>
 	</md>
-	Then, R = {0,1}.
+	Then, <m>R</m> = {0,1}.
 	</p>
 </example>
 </p>
@@ -81,10 +82,10 @@ inherently non-numerical) by using the random variable in subsequent calculation
 <example>
 	<title>Other Dice Options</title>
 	<p>When rolling dice in a board game (like RISK), one might use
-	<me>S= \text{{(a,b): a=die 1 outcome, b=die 2 outcome}}</me>
+	<me>S= \text{{ (a,b) : a=die 1 outcome, b=die 2 outcome}}</me>
 	Choose 
 	<me>X( (a,b) ) = \text{max{a,b}}.</me> 
-	Then, R={1, 2, 3, 4, 5, 6}.
+	Then, <m>R</m> = {1, 2, 3, 4, 5, 6}.
 	</p>
 </example>
 </p>
@@ -110,7 +111,7 @@ Notice that in each of the examples above, the space <m>R</m> was finite. Theref
 <p>
 <example>
 <p>
-Consider the random variable X representing the number of coin flips <em>until</em> you get a Heads.  Even though it is unlikely to have to keep on going, consider the fact that you <em>could</em> continually flip and get Tails every time for a long time.  So, the possible values for X would be <m>R</m> = {1, 2, 3, 4, ... } which is precisely the infinite set of positive integers.  Therefore, X is a countable random variable. 
+Consider the random variable <m>X</m> representing the number of coin flips <em>until</em> you get a Heads.  Even though it is unlikely to have to keep on going, consider the fact that you <em>could</em> continually flip and get Tails every time for a long time.  So, the possible values for <m>X</m> would be <m>R</m> = {1, 2, 3, 4, ... } which is precisely the infinite set of positive integers.  Therefore, <m>X</m> is a countable random variable. 
 </p>
 </example>
 </p>
@@ -118,7 +119,7 @@ Consider the random variable X representing the number of coin flips <em>until</
 <p>
 <example>
 <p>
-Consider the random variable X representing the time until a light bulb fails to work after being successfully turned on.  Notice that the bulb <em>could</em> fail in a relatively short time (near 0 let's say) or <em>could</em> continue to last for almost eternity (or as long as you might want to measure).  However, time is measured on a continuum and therefore for this random variable X you would have R equal to the interval from 0 to infinity, i.e. <m>R = (0,\infty)</m> which is not a countable set.
+Consider the random variable <m>X</m> representing the time until a light bulb fails to work after being successfully turned on.  Notice that the bulb <em>could</em> fail in a relatively short time (near 0 let's say) or <em>could</em> continue to last for almost eternity (or as long as you might want to measure).  However, time is measured on a continuum and therefore for this random variable <m>X</m> you would have <m>R</m> equal to the interval from 0 to infinity, i.e. <m>R = (0,\infty)</m> which is not a countable set.
 </p>
 </example>
 </p>
@@ -129,7 +130,7 @@ Consider the random variable X representing the time until a light bulb fails to
 <section xml:id="ProbabilityFunctionsDefined"><title>Probability Functions</title>
 
 <p>In the formulas below, we will presume that we have a <xref ref="DefnRandomVariable">random variable</xref>
- X which maps the sample space S onto some range of real numbers <m>R</m>.  From this set, we then can define a probability function f(x) which acts on the numerical values in R and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.
+ <m>X</m> which maps the sample space S onto some range of real numbers <m>R</m>.  From this set, we then can define a probability function <m>f(x)</m> which acts on the numerical values in <m>R</m> and returns another real number.  We attempt to do so to obtain (for discrete values) P(sample space value s)<m> = f(X(s))</m>.  That is, the probability of a given outcome s is equal to the composition which takes s to a numerical value x which is then plugged into f to get the same final values.
 </p>
 <p>For example, consider a random variable which assigns a 1 when you roll a 1 on a six-sided die and 0 otherwise. Presuming each side is equally likely, <m>f(1) = \frac{1}{6}</m> and <m>f(0) = \frac{5}{6}</m>.
 </p>
@@ -137,13 +138,13 @@ Consider the random variable X representing the time until a light bulb fails to
 <p>
 <definition xml:id="DefnPMF"><title>Probability "Mass" Function</title>
 	<statement>
-		<p>Given a discrete <xref ref="DefnRandomVariable">random variable</xref> X on a space R, a probability mass function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
+		<p>Given a discrete <xref ref="DefnRandomVariable">random variable</xref> <m>X</m> on a space <m>R</m>, a probability mass function on <m>X</m> is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
 		<md>
 			<mrow>&amp; \forall x \in R , f(x) \gt 0</mrow>
 			<mrow>&amp; \sum_{x \in R} f(x) = 1</mrow>
 			<mrow>&amp; A \subset R \Rightarrow P(X \in A) = \sum_{x \in A}f(x)</mrow>
 		</md>
-		For <m>x \not\in R</m>, you can use the convention f(x)=0.
+		For <m>x \not\in R</m>, you can use the convention <m>f(x)=0</m>.
 		</p>
 	</statement>
 </definition>
@@ -152,13 +153,13 @@ Consider the random variable X representing the time until a light bulb fails to
 <p>	
 <definition xml:id="DefnPDF"><title>Probability "Density" Function</title>
 	<statement>
-	<p>Given a continuous random variable X on a space R, a probability density function on X is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
+	<p>Given a continuous random variable <m>X</m> on a space <m>R</m>, a probability density function on <m>X</m> is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
 		<md>
 			<mrow>&amp; \forall x \in R , f(x) \gt 0</mrow>
 			<mrow>&amp; \int_{R} f(x) dx = 1</mrow>
 			<mrow>&amp; A \subset R \Rightarrow P(X \in A) = \int_{A} f(x) dx</mrow>
 		</md>
-		For <m>x \not\in R</m>, you can use the convention f(x)=0.
+		For <m>x \not\in R</m>, you can use the convention <m>f(x)=0</m>.
 	</p>
 	</statement>
 </definition>
@@ -171,7 +172,9 @@ For the purposes of this book, we will use the term "Probability Function" to re
 <p>
 <example><title>Discrete Probability Function</title>
 <p>
-Consider <m>f(x) = x/10</m> over R = {1,2,3,4}.  Then, f(x) is obviously positive for each of the values in R and certainly <me>\sum_{x \in R} f(x) = f(1) + f(2) + f(3) + f(4) = 1/10 + 2/10 + 3/10 + 4/10 = 1.</me> Therefore, f(x) is a probability mass function over the space R.
+Consider <m>f(x) = x/10</m> over R = {1,2,3,4}.  Then, f(x) is obviously positive for each of the values in R and certainly 
+<me>\sum_{x \in R} f(x) = f(1) + f(2) + f(3) + f(4) = 1/10 + 2/10 + 3/10 + 4/10 = 1.</me> 
+Therefore, f(x) is a probability mass function over the space <m>R</m>.
 </p>
 </example>
 </p>
@@ -241,11 +244,11 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 <p>
 <example><title>Continuous Probability Function</title>
 <p>
-	Consider <m>f(x) = x^2/c</m> for some positive real number c and presume R = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make f(x) a <xref ref="DefnPDF">probability density function</xref>, we must have
+	Consider <m>f(x) = x^2/c</m> for some positive real number c and presume <m>R</m> = [-1,2]. Then f(x) is nonnegative (and only equals zero at one point). To make <m>f(x)</m> a <xref ref="DefnPDF">probability density function</xref>, we must have
 	<me>\int_{x \in R} f(x) = 1.</me>
 	In this instance you get
 	<me>1 = \int_{-1}^2 x^2/c = x^3/(3c) |_{-1}^2 = \frac{8}{3c} - \frac{-1}{3c} = \frac{3}{c}</me>
-	Therefore, f(x) is a probability density function over R provided   = 3.
+	Therefore, <m>f(x)</m> is a probability density function over <m>R</m> provided  <m>c = 3</m>.
 </p>
 </example>
 </p>
@@ -253,7 +256,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 <p>	
 <definition xml:id="DefnDistributionFunction"><title>Distribution Function</title>
 	<statement>
-		<p>Given a random variable X on a space R, a probability distribution function on X is given by a function 
+		<p>Given a random variable <m>X</m> on a space <m>R</m>, a probability distribution function on <m>X</m> is given by a function 
 		<me>F:\mathbb{R} \rightarrow \mathbb{R} \ni \displaystyle F(x)=P(X \le x).</me>
 		</p>
 	</statement>
@@ -262,7 +265,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 	
 <p>
 <example><title>Discrete Distribution Function</title>
-	<p>Using <m>f(x) = x/10</m> over R = {1,2,3,4} again, note that F(x) will only change at these four domain values. We get
+	<p>Using <m>f(x) = x/10</m> over <m>R</m> = {1,2,3,4} again, note that <m>F(x)</m> will only change at these four domain values. We get
 	
 	<table halign="left">
 		<caption>Discrete Distribution Function Example</caption>
@@ -283,9 +286,9 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 <p>	
 <example><title>Continuous Distribution Function</title>
 	<p>
-	Consider <m>f(x) = x^2/3</m> over R = [-1,2].  Then, for <m>-1 \le x \le 2</m>,
+	Consider <m>f(x) = x^2/3</m> over <m>R</m> = [-1,2].  Then, for <m>-1 \le x \le 2</m>,
 	<me>F(x) = \int_{-1}^x u^2/3 du = x^3/9 + 1/9.</me>
-	Notice, F(-1) = 0 since nothing has yet been accumulated over values smaller than -1 and F(2)=1 since by that time everything has been accumulated. In summary:
+	Notice, <m>F(-1) = 0</m> since nothing has yet been accumulated over values smaller than -1 and <m>F(2) = 1</m> since by that time everything has been accumulated. In summary:
 	
 	<table halign="left">
 		<caption>Continuous Distribution Function Example</caption>
@@ -422,7 +425,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 	</statement>
 	<proof>
 		<p>
-		We will assume that F(x) is a continuous function. With that assumption, note
+		We will assume that <m>F(x)</m> is a continuous function. With that assumption, note
 		<me>P(a-\epsilon \lt  x \le a)  = \int_{a-\epsilon}^a f(x) dx = F(a) - F(a-\epsilon)</me>
 		Take the limit as <m> \epsilon \rightarrow 0^+</m> to get the result noting that
 		</p>
@@ -433,15 +436,15 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 <p>
 <theorem><title><m>F(x)</m> vs <m>f(x)</m>, for continuous distributions</title>
 	<statement>
-		<p>If X is a continuous random variable, <m>f</m> the corresponding probability function, and <m>F</m> the associated distribution function, then
+		<p>If <m>X</m> is a continuous random variable, <m>f</m> the corresponding probability function, and <m>F</m> the associated distribution function, then
 		<me>f(x) = F'(x)</me>
 		</p>
 	</statement>
 	<proof>
-	<p>Assume X is continuous and <m>f</m> and <m>F</m> as above. Notice, by the definition of <m>f</m>, <m>\lim_{x \rightarrow \pm \infty} f(x) = 0</m> since otherwise the integral over the entire space could not be finite.
+	<p>Assume <m>X</m> is continuous and <m>f</m> and <m>F</m> as above. Notice, by the definition of <m>f</m>, <m>\lim_{x \rightarrow \pm \infty} f(x) = 0</m> since otherwise the integral over the entire space could not be finite.
 	</p>
 	<p>
-	Now, let A(x) be any antiderivative of <m>f(x)</m>. Then, by the Fundamental Theorem of Calculus,
+	Now, let <m>A(x)</m> be any antiderivative of <m>f(x)</m>. Then, by the Fundamental Theorem of Calculus,
 	<md>
 		<mrow>F(x) &amp; = \int_{-\infty}^x f(u) du</mrow>
 		<mrow> &amp; = A(x) - \lim_{u \rightarrow -\infty} A(u)</mrow>
@@ -460,7 +463,7 @@ For <m>0 \lt p \lt 1</m>, the <m>100p^{th}</m> percentile is the largest random 
 <me>F(c) = p.</me>
 For continuous random variables over an interval <m>R = [a,b]</m>, you will solve for c in the equation
 <me>\int_a^c f(x) dx.</me>
-For discrete random variables, it is unlikely that a particular percentile will land exactly on one of the elements of <m>R</m> but you will want to take the smallest value in R so that <m>F(c) \ge p</m>.
+For discrete random variables, it is unlikely that a particular percentile will land exactly on one of the elements of <m>R</m> but you will want to take the smallest value in <m>R</m> so that <m>F(c) \ge p</m>.
 </p>
 <p>
 The 50th percentile (as before) is also known as the median.
@@ -743,7 +746,7 @@ TBA, using one of the table examples from above.
 	as expected without having to actually complete the calculation by dividing by the cube of the standard deviation.
 	</p>
 	
-	<p>Finally, note that the probability function in this case is modestly close to a bell shaped curve so we would expect a <xref ref="TheoreticalKurtosis">kurtosis</xref> and using <xref ref="TheoreticalMeasuresKurt">the alternate formulation</xref> in the vicinity of 3. Indeed, noting that (conveniently) <m>\mu = 0</m> gives
+	<p>Finally, note that the probability function in this case is modestly close to a bell shaped curve so we would expect a <xref ref="TheoreticalKurtosis">kurtosis</xref> and using <xref ref="TheoreticalKurtosis">the alternate formulation</xref> in the vicinity of 3. Indeed, noting that (conveniently) <m>\mu = 0</m> gives
 	<md>
 		<mrow> \text{Numerator = } &amp; E[X^4] - 4 \mu E[X^3] + 6 \mu^2 E[X^2] - 3 \mu^4</mrow>
 		<mrow> &amp; = \int_{-1}^1 x^4 \cdot \frac{3}{4} \cdot (1-x^2) dx</mrow>
@@ -960,13 +963,13 @@ Apply previous result and notice that both variables have the same probability f
 </section>   
 
 
-<section><title>Summary</title>
+<section xml:id="ProbabilityFunctionsSummary"><title>Summary</title>
 <p>
 TBA
 </p>
 </section>
 
-<section><title>Exercises</title>
+<section xml:id="ProbabilityFunctionsExercises"><title>Exercises</title>
 <introduction>
 Here are some exercises to consider related to Probability Functions.
 </introduction>	

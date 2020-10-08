@@ -7,22 +7,24 @@
 <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
 <!-- See the file COPYING for copying conditions.             -->
 
-<chapter xml:id="BinomialGeometricNegBinomial" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="BernoulliBasedDistributions" xmlns:xi="http://www.w3.org/2001/XInclude">
 
 <title>Distributions based upon Bernoulli Trials</title>
 
-<section><title>Introduction</title>
+<section xml:id="BernoulliIntroduction"><title>Introduction</title>
 	<p>
 	Many practical problems involve measuring simply whether something was a success or a failure. In these situations, "success" should not be interpreted as having any moral or subjective meaning but only construed to mean that something you are looking for actually occurs.
 	</p>
 	
 	<p>
-	In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable X over the space <m>R = \{0, 1 \}</m> mapping X(success) = 1 and X(failure)=0. If p = P(success) then 
+	In situation where a single trial is performed and the result is determined only to be a success or failure is called a Bernoulli event. Indeed, one could create a corresponding probability function using a random variable <m>X</m> over the space <m>R = \{0, 1 \}</m> mapping <m>X</m>(success) = 1 and <m>X</m>(Failure)=0. If p = P(Success) then 
 	<me>f(x) = p^x \cdot (1-p)^{1-x}</me>
-	would be a formula but which only related to two values P(failure) = f(0) = (1-p) and P(Success) = f(1) = p.  
+	would be a formula but which only related to two values: 
+	<me>P(\text{Failure}) = f(0) = (1-p)</me>
+	<me>P(\text{Success}) = f(1) = p</me>  
 	</p>
 	<p>
-	Notice that p=0 means that you will always get a failure and that p=1 means that you will always get a success. In these cases, X would no longer be a random variable since the outcome for X could be predicted with certainty. Therefore, we will always assume that <m>0 &lt; p &lt; 1</m>.
+	Notice that p=0 means that you will always get a failure and that p=1 means that you will always get a success. In these cases, <m>X</m> would no longer be a random variable since the outcome for <m>X</m> could be predicted with certainty. Therefore, we will always assume that <m>0 &lt; p &lt; 1</m>.
 	</p>
 	<p>
 	The Bernoulli distribution on its own is not extremely useful but serves as a starting point for several others that are useful.  Indeed, in this chapter you will investigate distributions that relate some number of successes in multiple trials to some number of independent trials. The difference between these distributions will be that one of these variables will be fixed and the other one will be variable.
@@ -30,15 +32,15 @@
 <p>
 In this chapter, you will investigate the following distributions:
 <ol>
-	<li>Binomial - the number of trials is fixed and X measures the variable number of successes</li>
-	<li>Geometric - the number of successes is fixed--at 1--and X measures the variable number of trials</li>
-	<li>Negative Binomial - the number of successes is fixed and X measures the variable number of trials</li>
+	<li>Binomial - the number of trials is fixed and <m>X</m> measures the variable number of successes</li>
+	<li>Geometric - the number of successes is fixed--at 1--and <m>X</m> measures the variable number of trials</li>
+	<li>Negative Binomial - the number of successes is fixed and <m>X</m> measures the variable number of trials</li>
 </ol>
 </p>
 
 </section>
 
-<section>
+<section xml:id="BinomialDistribution">
  	<title>Binomial Distribution</title>	
 	<p>Consider a sequence  of n independent Bernoulli trials with the likelihood of a success p on each individual trial stays constant from trial to trial with <m> 0 \lt p \lt 1 </m>. If we let the variable <m>X</m> measure the number of successes obtained when doing a fixed number of trials n with <m>R = \{ 0, 1, ..., n \}</m>, then the resulting distribution of probabilities is called a Binomial Distribution.</p>
 
@@ -88,15 +90,15 @@ The following interactive cell illustrates the range of choices for a Binomial s
 # N and p need to be given
 var('x')
 @interact(layout=dict(top=[['N','p']]))
-def _(N=input_box(10,width=5,label='\( N \)'),
-    p=input_box(3/10,width=5,label='\( p \)')):
+def _(N=input_box(10,width=5,label='$$ N $$'),
+    p=input_box(3/10,width=5,label='$$ p $$')):
     f = binomial(N,x)*p^x*(1-p)^(N-x)
     @interact
     def __(X = slider(0,N,1)):
         Px = f(x=X)
         Pxapprox = Px.n(digits=8)
         formula = "\\binom{%s}"%str(N)+"{%s}"%str(X)+"({%s})"%str(p)+"^{%s}"%str(X)+"(1-{%s})"%str(p)+"^{%s}"%str(N-X)
-        pretty_print(html("P(X = %s"%str(X)+") = \( %s \)"%str(formula)+" = \( %s \)"%str(latex(Px))+"\( \\approx %s \)"%str(Pxapprox)))
+        pretty_print(html("P(X = %s"%str(X)+") = $ %s $"%str(formula)+" = $ %s $"%str(latex(Px))+"$ \\approx %s $"%str(Pxapprox)))
         G = polygon([(0,0), (1,0), (1,1), (0,1)],thickness=10,color='blue',alpha=0.7,zorder=1)
 
         if X &gt; 0:
@@ -149,10 +151,10 @@ If you rather would prefer to determine the probability of getting 10 or fewer h
 
 <example><title>Testing critical components</title>
 <p>
-Often one will test a critical system components for failure and toward that end collect a sample of 100 of these components from the manufacturer. Suppose the component is listed as having a p=0.01 probability of breaking and you want to know the likelihood that at most 1 of the tested components actually fails when tested. You find it reasonable to presume that different components succeed or fail independently of each other. So, you can model this situation with a binomial distribution. 
+Often one will test a critical system components for failure and toward that end collect a sample of 100 of these components from the manufacturer. Suppose the component is listed as having a p = 0.01 probability of breaking and you want to know the likelihood that at most 1 of the tested components actually fails when tested. You find it reasonable to presume that different components succeed or fail independently of each other. So, you can model this situation with a binomial distribution. 
 </p>
 <p>
-If X measures the number of components that fail when tested, the specific probability function is given by
+If <m>X</m> measures the number of components that fail when tested, the specific probability function is given by
 <me>f(x) = \binom{100}{x} 0.01^x 0.99^{100-x}.</me>
 The probability that at most one component fails is then given by
 <me>F(1) = f(0) + f(1) = \binom{100}{0} 0.01^0 0.99^{100} + \binom{100}{1} 0.01^1 0.99^99 \\ = 0.99^{100} + 100 \cdot 0.01 \cdot 0.99^{99} = 0.99^{99}(0.99 + 100 \cdot 0.01 \\ = 0.99^{99} \cdot 1.99 \approx 0.73576.</me>
@@ -161,7 +163,7 @@ The probability that at most one component fails is then given by
 
 	
 <p>
-Utilize the interactive cell below to compute f(x) and F(x) for the Binomial distribution
+Utilize the interactive cell below to compute <m>f(x)</m> and <m>F(x)</m> for the Binomial distribution
 </p>
 
 <p>
@@ -195,7 +197,7 @@ def _(p=input_box(3/10,width=15),n=input_box(10,width=15)):
 
 <proof>
 	<p>
-		For the mean,
+		For the <xref ref="TheoreticalMean">mean</xref>,
 		<md>
 			<mrow> \mu &amp; = E[X] </mrow>
 			<mrow> &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow>
@@ -210,12 +212,12 @@ def _(p=input_box(3/10,width=15),n=input_box(10,width=15)):
 		</md>
 	</p>
 
-	<p>For the variance,
+	<p>For the <xref ref="TheoreticalVariance">variance</xref>,
 		<md>
 		<mrow> \sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
 		<mrow> &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow>
 		<mrow> &amp; = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2</mrow>
-		<mrow> &amp; = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow>
+		<mrow> = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow>
 		</md>
 	</p>
 
@@ -227,7 +229,7 @@ def _(p=input_box(3/10,width=15),n=input_box(10,width=15)):
 	</p>
 
 
-	<p>The skewness and kurtosis can be found similarly using formulas involving E[X(X-1)(X-2)] and E[X(X-1)(X-2)(X-3)]. The complete determination is performed using Sage below.
+	<p>The <xref ref="TheoreticalSkewness">skewness</xref> and <xref ref="TheoreticalKurtosis">kurtosis</xref> can be found similarly using formulas involving E[X(X-1)(X-2)] and E[X(X-1)(X-2)(X-3)]. The complete determination is performed using Sage below.
 	</p>
 
 </proof>
@@ -331,7 +333,7 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 
 
 
-<section>
+<section xml:id="GeometricDistribution">
 	<title>Geometric Distribution</title>
 	<p>Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
@@ -346,7 +348,7 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 	<p>
 	<theorem xml:id="GeometricProbabilityFunctionTheorem">
 	<statement>
-	<p xml:id="GeometricProbabilityFunction">For a Geometric variable X with <m>R = \{1, 2, 3, ... \}</m>,
+	<p xml:id="GeometricProbabilityFunction">For a Geometric variable <m>X</m> with <m>R = \{1, 2, 3, ... \}</m>,
 	<me>f(x) = (1-p)^{x-1} \cdot p</me>
 	</p>
 	</statement>
@@ -413,7 +415,7 @@ Let's go ahead and verify this probability function and investigate some of the 
 var('x')
 # n = 50 by default. actually should be infinite
 @interact
-def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
+def _(p=input_box(1/10,label='p = ',width=10),n=[25,50,75,100,200]):
     np1 = n+1
     R = range(1,np1)
     f(x) = (1-p)^(x-1)*p
@@ -442,7 +444,7 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 		</p>
 		</statement>
 		<proof>
-			<p> For the mean,
+			<p> For the <xref ref="TheoreticalMean">mean</xref>,
 			<md>
 				<mrow>\mu &amp; = E[X] = \sum_{x=1}^{\infty} {x(1-p)^{x-1}p}</mrow>
 				<mrow> &amp; = p \sum_{x=1}^{\infty} {x(1-p)^{x-1}}</mrow>
@@ -451,7 +453,7 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 			</md>
 			</p>
 
-			<p> For the variance,
+			<p> For the <xref ref="TheoreticalVariance">variance</xref>,
 			<md>
 				<mrow>\sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
 				<mrow> &amp; = \sum_{x=1}^{\infty} {x(x-1)(1-p)^{x-1}p} + \mu - \mu^2 </mrow>
@@ -489,7 +491,7 @@ def _(p=input_box(0.1,label='p = '),n=[25,50,75,100,200]):
 	<theorem>
 		<title>Statistics for Geometric Distribution</title>
 		<statement>
-		<p>Mean, Variance, Skewness, Kurtosis computed by Sage.
+		<p>Mean, Variance, <xref ref="TheoreticalSkewness">Skewness</xref>, <xref ref="TheoreticalKurtosis">Kurtosis</xref> computed by Sage.
 		</p>
 		</statement>
 <proof>
@@ -526,7 +528,7 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 
 
 <p>
-	<theorem><title>The Geometric Distribution yields a memoryless model.</title>
+	<theorem xml:id="TheoremGeometricMemoryless"><title>The Geometric Distribution yields a memoryless model.</title>
 	<statement>
 	<p>
 	If X has a geometric distribution and a and b are nonnegative integers, then
@@ -550,7 +552,7 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 
 </section>
 
-<section><title>Negative Binomial</title>	
+<section xml:id="NegativeBinomial"><title>Negative Binomial</title>	
 	<p>Consider the situation where one can observe a sequence  of independent
 	trials where the likelihood of a success on each individual trial
 	stays constant from trial to trial. Call this likelihood the probably of
@@ -605,7 +607,7 @@ Similarly,
 </theorem>	
 </p>
 			
-<p>Consider the situation where one can observe a sequence  of independent trials with the likelihood of a success on each individual trial <m>p</m> where 
+<p>Consider the situation where one can observe a sequence of independent trials with the likelihood of a success on each individual trial <m>p</m> where 
 	<m> 0 \lt p \lt 1 </m>.  
 For a positive integer r, let the variable <m>X</m> measure the number of trials needed in order to obtain the rth success. Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
 
@@ -811,14 +813,14 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 
 </section>
 
-<section><title>Generating Functions for Bernoulli-based Distributions</title>
+<section xml:id="BernoulliGeneratingFunctions"><title>Generating Functions for Bernoulli-based Distributions</title>
 
 <p>
 <xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
 
 
-<theorem><title>Moment Generating Function for Bernoulli</title>
+<theorem xml:id="MGFBernoulli"><title>Moment Generating Function for Bernoulli</title>
 <statement>
 <p>
 <me>M(t) = (1-p) + p e^t</me>
@@ -831,7 +833,7 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </proof>
 </theorem>
 
-<theorem><title>Moment Generating Function for Geometric</title>
+<theorem xml:id="MGFGeometric"><title>Moment Generating Function for Geometric</title>
 <statement>
 <p>
 <me>M(t) = \frac{p e^t }{1 - e^t (1-p)} = \frac{p}{e^{-t} - (1-p)}</me>
@@ -876,7 +878,7 @@ which is the squared mean plus the variance for the geometric distribution.
 
 <p>For the two uniform distributions and basic Bernoulli, there is really nothing much that can be done as n (or a and b) vary.  However, for all distributions that have the opportunity to "scale" larger and larger, we will first determine the M(t) and then demonstrate the a surprising relationship as their variables to grow appropriately.</p>
 
-<theorem><title>Moment Generating Function for Binomial</title>
+<theorem xml:id="MGFBinomial"><title>Moment Generating Function for Binomial</title>
 <statement>
 <p>
 <me>M(t) = \left ( p e^t + (1-p) \right )^n</me>
@@ -948,14 +950,14 @@ where we have used L'Hopital's rule to evaluate the indeterminate form. We will 
 </corollary>
 -->
 
-<theorem><title>Moment Generating Function for Negative Binomial</title>
+<theorem xml:id="MFGNegativeBinomial"><title>Moment Generating Function for Negative Binomial</title>
 <statement>
 <p>
 <me>M(t)  = \frac{p^r}{(1 - e^t(1-p))^r}</me>
 </p>
 </statement>
 <proof>
-<p>Using the <xref ref="NegativeBinomialSumsToOne">a previous theorem justifying the Negative Binomial probability funcdtion</xref>  with <m>a = p e^t</m> and <m>b = 1-p</m> and by changing variables to <m>u = x-r</m> gives
+<p>Using the <xref ref="NegativeBinomialSumsToOne">a previous theorem</xref> justifying the Negative Binomial probability function  with <m>a = p e^t</m> and <m>b = 1-p</m> and by changing variables to <m>u = x-r</m> gives
 <md>
 <mrow>M(t) &amp; = \sum_{u=0}^{\infty} e^{tu} \binom{u+r - 1}{r-1}(1-p)^{u}p^r</mrow>
 <mrow> &amp; =  p^r \sum_{u=0}^{\infty} \binom{u + r - 1}{r-1}(e^t(1-p))^u </mrow>
@@ -1025,7 +1027,7 @@ show((Mtt(t=0)-Mt(t=0)^2).factor())
 
 </section>
 
-<section><title>Summary</title>
+<section xml:id="BernoulliBasedSummary"><title>Summary</title>
 <introduction>
 Here is a summary of the major results dealing with Bernoulli-based variables:
 </introduction>
@@ -1049,7 +1051,7 @@ Here is a summary of the major results dealing with Bernoulli-based variables:
 </p>
 </section>
 
-<section><title>Exercises</title>
+<section xml:id="BernoulliBasedExercises"><title>Exercises</title>
 
 <p>
 <exercise><title> - Gallup Consumer Confidence Polling</title>

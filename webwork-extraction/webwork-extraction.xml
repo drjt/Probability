@@ -1099,7 +1099,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2020-10-06T09:05:47-05:00    
+      ###    on 2020-10-08T11:05:58-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -1353,7 +1353,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2020-10-06T09:05:47-05:00    
+      ###    on 2020-10-08T11:05:58-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -1367,7 +1367,7 @@
       ## EditionText1()
       ## AuthorText1(John Travis)
       ## Section1(not reported)
-      ## Problem1(8.3.8)
+      ## Problem1(8.3.9)
       ## Author()
       ## Institution()
       ## Language(en-US)
@@ -1533,7 +1533,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2020-10-06T09:05:47-05:00    
+      ###    on 2020-10-08T11:05:58-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    
@@ -2058,7 +2058,7 @@
       
       
       <answerhashes>
-        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" checker="CODE(0x557d634f9418)" correct_ans="436 (using a critical value of 1.96)  or 454 (using a critical value of 2.0)" correct_ans_latex_string="454" correct_value="454" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
+        <AnSwEr0001 _filter_name="dereference_array_ans" ans_label="AnSwEr0001" ans_message="" ans_name="AnSwEr0001" checker="CODE(0x557d644eeb18)" correct_ans="436 (using a critical value of 1.96)  or 454 (using a critical value of 2.0)" correct_ans_latex_string="454" correct_value="454" done="1" error_flag="" error_message="" ignoreInfinity="1" ignoreStrings="1" original_student_ans="" preview_latex_string="" preview_text_string="" score="0" showEqualErrors="1" showTypeWarnings="1" showUnionReduceWarnings="1" student_ans="" studentsMustReduceUnions="1" type="Value (Real)" />
       </answerhashes>
       
     </static>
@@ -2481,7 +2481,7 @@
     <pg>
       #######################################
       ###    Generated from PreTeXt source   
-      ###    on 2020-10-06T09:05:47-05:00    
+      ###    on 2020-10-08T11:05:58-05:00    
       ###                                    
       ###   http://mathbook.pugetsound.edu   
       ###                                    

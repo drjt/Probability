@@ -10,7 +10,7 @@
 <chapter xml:id="ProbabilityGeneralities" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Probability Theory</title>
 
-<section><title>Introduction</title>
+<section xml:id="ProbabilityGeneralitiesIntro"><title>Introduction</title>
 
 <p>
 Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.
@@ -282,7 +282,7 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 </section>
 
 
-<section><title>Definition of Probability</title>
+<section xml:id="ProbabilityBasics"><title>Definition of Probability</title>
 
 <p>	
 <introduction>
@@ -697,7 +697,7 @@ def _(auto_update=False):
 </section>
 
 
-<section><title>Exercises</title>
+<section xml:id="ProbabilityBasicsExercises"><title>Exercises</title>
 
 <p>
 <exercise>
@@ -773,7 +773,7 @@ So, a win can be obtained in two ways: 7 or 11 on first roll or getting the poin
 
 </section>
 
-<section>
+<section xml:id="ConditionalProbability">
 <title>Conditional Probability</title>
 	<introduction>
 	<p>When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain then the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
@@ -1001,7 +1001,7 @@ You can read <m>P(B|A)</m> as "the probability of B given A".
 </section>
 	
 	
-<section><title>Bayes' Theorem</title>	
+<section xml:id="Bayes"><title>Bayes' Theorem</title>	
 	<introduction>
 	<p><xref ref="DefnConditionalProbability">Conditional probabilities</xref> can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to an important result known as Bayes' Theorem.
 	</p>
@@ -1304,7 +1304,7 @@ as expected!
 
 
 
-<section><title>Independence</title>
+<section xml:id="Independence"><title>Independence</title>
 
 	<introduction>
 	<p>You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
@@ -1360,7 +1360,7 @@ as expected!
 -->
 
 <p>
-<corollary><title>Independence and Mutual Exclusivity</title>
+<corollary xml:id="IndependenceVsDisjointness"><title>Independence and Mutual Exclusivity</title>
 	<statement>
 	<p>If events A and B are both <xref ref="DefnIndependentEvents">independent</xref> and <xref ref="DefnMutuallyExclusive">mutually exclusive</xref>, then at least one of them has zero probability.
 	</p>
@@ -1386,22 +1386,18 @@ as expected!
 </p>
 </section>
 
-<section><title>Summary</title>
+<section xml:id="ProbabilityGeneralitiesSummary"><title>Summary</title>
 <p>
 TBA
 </p>
 </section>
 
-<section><title>More Exercises</title>
-
-    <introduction>
-    
-    </introduction>
+<section xml:id="ProbabilityGeneralitiesExercises"><title>More Exercises</title>
 
 <p>
 <exercise><title>Conditional Basic computation</title>
 	<statement><p>
-	Given <m>P(A) = 0.43, P(B) = 0.72, \text{and} P(A \cap B) = 0.29</m>, determine
+	Given <m>P(A) = 0.43, P(B) = 0.72,</m> and <m>P(A \cap B) = 0.29</m>, determine
 	<ol>
 		<li><m>P(A \cup B)</m></li>
 		<li><m>P(B | A)</m></li>
@@ -1436,10 +1432,10 @@ TBA
 
 	Determine the following:
 	<ol>
-		<li>P( STEM major )</li>
-		<li>P( STEM | Female )</li>
-		<li>P( Female | STEM )</li>
-		<li>P( Female | Not STEM)</li>
+		<li><m>P( \text{STEM major} )</m></li>
+		<li><m>P( \text{STEM | Female} )</m></li>
+		<li><m>P( \text{Female | STEM} )</m></li>
+		<li><m>P( \text{Female | Not STEM} )</m></li>
 	</ol>
 	</p>
 	</statement>
@@ -1468,11 +1464,13 @@ TBA
 	<p>
 	To get the A on the last pick requires that all of the previous picks to be something else. You don't get the opportunity to pick the A if it has already been selected. So, if L stands for losing (not getting the A), then 
 	<md>
-	<mrow> P(\text{last}) = P(\text{LLLLLLLLLLLLLLA}) = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3 \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</mrow>
+	<mrow> P(\text{last}) &amp; = P(\text{LLLLLLLLLLLLLLA}) </mrow>
+	<mrow> &amp; = \frac{14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9  \cdot 8  \cdot 7  \cdot 6  \cdot 5  \cdot 4  \cdot 3 \cdot 2  \cdot 1}{15 \cdot 14 \cdot 13 \cdot 12 \cdot 11 \cdot 10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2} = \frac{1}{15}.</mrow>
 	</md>
 	Therefore, it is the same probability of getting the A whether you pick first or last.  In general, to win on the kth pick gives
 	<md>
-	<mrow> P(\text{kth}) = P(\text{LL...LA}) = \frac{14 \cdot 13 \cdot ... \cdot (15-k) \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</mrow>
+	<mrow> P(\text{kth}) &amp; = P(\text{LL...LA})</mrow>
+	<mrow> &amp; = \frac{14 \cdot 13 \cdot ... \cdot (15-k) \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{1}{15}</mrow>
 	</md>
 	Hence, it is the same probability regardless of when you get to pick.
 	</p>
@@ -1481,12 +1479,14 @@ TBA
 	<p>
 	If there are two A's possible, then the options for person k in include either receiving the first of the two slips or the second. The probability for determining the first of the two is computed in a manner similar to above except that there is one more A and one less other.
 	<md>
-	<mrow> P(\text{kth as first}) = P(\text{LL...LA}) = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</mrow>
+	<mrow> P(\text{kth as first}) &amp; = P(\text{LL...LA})</mrow>
+	<mrow> &amp; = \frac{13 \cdot 12 \cdot ... \cdot (15-k)  \cdot 2}{15 \cdot 14 ... \cdot (16-(k+1)) \cdot (16-k)} = \frac{2 \cdot (15-k)}{15 \cdot 14}</mrow>
 	</md>
 
 	The probability of getting the second A means exactly one of the previous k-1 selections also picked the other A. There are k-1 ways that this could happen. Computing for one of the options and multiplying by k-1 gives
 	<md>
-	<mrow> P(\text{kth as second}) = P(\text{LL...LAA}) = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</mrow>
+	<mrow> P(\text{kth as second}) &amp; = P(\text{LL...LAA})</mrow>
+	<mrow> &amp; = (k-1) \cdot \frac{13 \cdot 12 \cdot ... \cdot (15-k) \cdot 2 \cdot 1}{15 \cdot 14 ... \cdot (16-k) \cdot (15-k)} = \frac{2 \cdot (k-1)}{15 \cdot 14}.</mrow>
 	</md>	
 	Adding these two together gives
 	<md>
@@ -1575,7 +1575,9 @@ TBA
 	
 	<solution>
 	<p>
-	In this case, you are presented with an outcome where the possible choices consist of (1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).  Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
+	In this case, you are presented with an outcome where the possible choices consist of 
+	<me>(1,6), (2,6), (3,6), (4,6), (5,6), (6,6), (6,5), (6,4), (6,3), (6,2), (6,1).</me>
+Each of these would satisfy the condition that at least one of the dice is a 6. From this group, the only success that satisfies being a 6, given that another 6 has already been removed, is the (6,6) outcome. Therefore, the conditional probability is 1/11.
 	</p>
 	<p>
 	It is interesting to note that if the question instead was posed so that one of the dice was a 6 and it was removed, then the probability of the other dice showing a 6 would be 1/6.
@@ -1631,7 +1633,7 @@ TBA
 <exercise><title>Basic Independence Calculations</title>
 	<statement>
 	<p>
-	Given <m>P(A) = 0.43, P(B) = 0.72, \text{and} P(A \cap B) = 0.31</m>, verify that A and B are not independent.
+	Given <m>P(A) = 0.43, P(B) = 0.72, </m> and <m>P(A \cap B) = 0.31</m>, verify that A and B are not independent.
 	</p>
 	</statement>
 	<solution>
@@ -1652,7 +1654,7 @@ TBA
 <exercise><title>Compound events and Independence</title>
 	<statement>
 	<p>
-	Given A, B, and C are <xref ref="DefnIndependentEvents">independent events</xref>, with <m>P(A) = 2/5, P(B) = 3/4, \text{and} P(C) = 1/6</m>, determine:
+	Given A, B, and C are <xref ref="DefnIndependentEvents">independent events</xref>, with <m>P(A) = 2/5, P(B) = 3/4,</m> and <m>P(C) = 1/6</m>, determine:
 	<ol>
 		<li><m>P(A \cap B \cap C)</m></li>
 		<li><m>P(A^c \cap B^c \cap C)</m></li>

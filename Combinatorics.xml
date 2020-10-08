@@ -10,7 +10,7 @@
 <chapter xml:id="Combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Counting and Combinatorics</title>
 
-<section><title>Introduction</title>
+<section xml:id="CombinatoricsIntroduction"><title>Introduction</title>
 <p>One of the earliest applications of mathematics you probably remember is how you could use number to count things. For many, this is what they think people do when they do mathematics. In this chapter, we will discover that it is possible to count items without actually listing them all.</p>
 
 <p>To illustrate, consider counting the number of ways one can arrange Peter, Paul, and Mary with the order important.  Listing the possibilities:
@@ -59,10 +59,10 @@ Notice how the list quickly grows when just one more choice is added. This examp
 </section>
 
 
-<section><title>General Counting Principles</title>
+<section  xml:id="CombinatoricsGeneralities"><title>General Counting Principles</title>
 	
 <p>
-<definition>
+<definition xml:id="DefnCardinality">
 	<title>Cardinality</title>
 		<statement>
 		<p>Given a set of elements A, the number of elements in the 
@@ -138,7 +138,7 @@ In order to "count without counting" we establish the following foundational pri
 </p>
 
 <p>
-<definition xml:id="Factorial"><title>Factorial</title>
+<definition xml:id="DefnFactorial"><title>Factorial</title>
 		<statement>
 		<p>For any natural number n, 
 		<md>
@@ -233,14 +233,14 @@ In order to "count without counting" we establish the following foundational pri
 
 
 
-<section>
+<section  xml:id="Permutations">
 <title>Permutations</title>
 <p>
 When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.
 </p>
 
 <p>
-	<theorem>
+	<theorem xml:id="PermuationsOfAll">
 	<title>Permutations of everything</title>
 	<statement>
 	<p>The number of permutations of n distinct items is n!</p>
@@ -386,7 +386,7 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 
 
 
-<section><title>Combinations</title>
+<section  xml:id="Combinations"><title>Combinations</title>
 <p>When counting various outcomes sometimes the order of things does not matter.
 If so, each unique unordered outcome is called a combination. </p>
 <p>
@@ -572,7 +572,7 @@ def _(n = slider(1,15,1,5)):
 </p>
 
 <p>
-<theorem><title> Binomial Coefficient Formulas</title>
+<theorem xml:id="BinomialCoefficientFormulas"><title> Binomial Coefficient Formulas</title>
 	<statement><p> For <m> n \in \mathbb{N}</m>,
 	<ol>
 		<li><m>\binom{n}{0} = 1</m></li>
@@ -609,7 +609,7 @@ def _(n = slider(1,15,1,5)):
 </section>
 
 
-<section><title>Summary</title>
+<section  xml:id="CombinatoricsSummary"><title>Summary</title>
 <introduction>
 <p>
 Here are the important results from this chapter:
@@ -642,7 +642,7 @@ Here are the important results from this chapter:
 
 </section>
 
-<section><title>Exercises</title>
+<section xml:id="CombinatoricsExercises"><title>Exercises</title>
 <p>Complete the online homework "Counting".</p>
 <p>
 A standard deck of playing cards consists of 52 cards broken up into four "suits" known as Hearts, Spades, Diamonds, and Clubs. Each suit is broken up additionally into unique cards with "face values" from {2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace} and generally in that order from low to high.</p>

@@ -7,16 +7,16 @@
 <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
 <!-- See the file COPYING for copying conditions.             -->
 
-<chapter xml:id="PoissonExponentialGamma" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="PoissonProcess" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Distributions based upon Poisson Processes</title>
 
-<section><title>Introduction</title>
+<section xml:id="PoissonProcessIntroduction"><title>Introduction</title>
 <p>
 In this chapter, you will investigate the relationship between number of successes over some interval.  For each, one of these quantities will be fixed and the other one variable. First, consider the following:
 </p>
 
 <p>
-<definition><title>Poisson Process</title>
+<definition xml:id="DefnPoissonProcess"><title>Poisson Process</title>
 <statement>
 <p>
 A Poisson process is a course of action in which:
@@ -44,13 +44,13 @@ In this chapter, you will investigate the following distributions:
 
 </section>
 
-<section><title>Poisson Distribution</title>
+<section xml:id="PoissonDistribution"><title>Poisson Distribution</title>
 <p>
 Consider a Poisson Process where you start with an interval of fixed length T and where X measures the variable number of successes, or changes, within that interval. The resulting distribution of X will be called a Poisson distribution.
 </p>
 
 <p>
-<theorem><title>Poisson Probability Function</title>
+<theorem xml:id="PoissonPMF"><title>Poisson Probability Function</title>
 <statement>
 <p xml:id="PoissonPF">Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
 <me>f(x) = \frac{\mu^x e^{-\mu}}{x!}</me>
@@ -84,7 +84,7 @@ However, since there are a finite number of independent intervals each with prob
 </p>
 
 <p>
-<theorem><title>Verify Poisson Probability Function</title>
+<theorem xml:id="PoissonVerification"><title>Verify Poisson Probability Function</title>
 <statement>
 <p>
 	<me>\sum_{x=0}^{\infty} \frac{(\lambda T)^x}{x!} e^{-\lambda T} = 1</me>
@@ -135,7 +135,7 @@ On the other hand, suppose the question is to ask whether 1020 or fewer requests
 
 
 <p>
-<theorem><title>Statistics for Poisson</title>
+<theorem xml:id="PoissonStats"><title>Statistics for Poisson</title>
 <statement>
 <p>
 <me>\mu = \lambda T</me>
@@ -231,28 +231,42 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 
 
 
-<section><title>Exponential Distribution</title>
+<section xml:id="ExponentialDistribution"><title>Exponential Distribution</title>
 	<p>
 Once again, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain a first success with <m>R = (0,\infty)</m>. The resulting distribution of X will be called an Exponential distribution.
 	</p>
 
 
 <p>
-To derive the probability function for this distribution, consider finding f(x) by first considering F(x). This gives
-
-<md>
-	<mrow>F(x)&amp;  = P(X \le x)</mrow> 
-	<mrow> &amp; = 1 - P(X \gt x)</mrow>
-	<mrow> &amp; = 1 - P(\text{first change occurs after an interval of length x})</mrow>
-	<mrow> &amp; = 1 - P(\text{no changes in the interval [0,x]})</mrow>
-	<mrow> &amp; = 1 - \frac{(\lambda x)^0 e^{-\lambda x}}{0!}</mrow>
-	<mrow> &amp; = 1 - e^{-\lambda x}</mrow>
-</md>
-where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. 
+To derive the probability function for this distribution, consider finding f(x) by first considering F(x). 
 </p>
+
 <p>
+<theorem xml:id="ExponentialPDF"><title>Exponential Probability Function</title>
+<p>
+<statement>
+<p>For an exponential random variable <m>X</m>, f(x) = \lambda e^{-\lambda x}, where <m>\lambda</m> is a given parameter.
+</p>
+</statement>
+<proof>
+	<p>
+	<md>
+		<mrow>F(x)&amp;  = P(X \le x)</mrow> 
+		<mrow> &amp; = 1 - P(X \gt x)</mrow>
+		<mrow> &amp; = 1 - P(\text{first change occurs after an interval of length x})</mrow>
+		<mrow> &amp; = 1 - P(\text{no changes in the interval [0,x]})</mrow>
+		<mrow> &amp; = 1 - \frac{(\lambda x)^0 e^{-\lambda x}}{0!}</mrow>
+		<mrow> &amp; = 1 - e^{-\lambda x}</mrow>
+	</md>
+where the discrete Poisson Probability Function is used to answer the probability of exactly no changes in the "fixed" interval [0,x]. 
+	</p>
+	<p>
 Using this distribution function and taking the derivative yields
-<me>f(x) = F'(x) = \lambda e^{-\lambda x}.</me>
+	<me>f(x) = F'(x) = \lambda e^{-\lambda x}.</me>
+	</p>
+</proof>
+</p>
+</theorem>
 </p>
 
 <p>
@@ -263,7 +277,7 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 </p>
 
 <p>
-<theorem><title>Verification of Exponential Probability Function</title>
+<theorem xml:id="ExponentialVerification"><title>Verification of Exponential Probability Function</title>
 	<statement>
 	<p>
 		<me>\int_0^{\infty} \lambda e^{-\lambda x} dx = 1</me>
@@ -283,7 +297,7 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 </p>
 
 <p>
-<theorem><title>Derivation of Statistics for Exponential Distribution and Plotting</title>
+<theorem xml:id="ExponentialStatistics"><title>Derivation of Statistics for Exponential Distribution and Plotting</title>
 <statement>
 	<p>
 	<me>\mu = \frac{1}{\lambda}</me>
@@ -311,13 +325,18 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 
 
 <p>
-<definition><title>Alternate Form for the Exponential Distribution Probability Function</title>
+<theorem><title>Alternate Form for the Exponential Distribution Probability Function</title>
 	<statement>
-	<p xml:id="ExponentialPF">Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose X measures the variable interval length needed until you get a first success.  Then X has an exponential distribution with probability function
+	<p xml:id="ExponentialPF">Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose <m>X</m> measures the variable interval length needed until you get a first success.  Then <m>X</m> has an exponential distribution with probability function
 		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
 	</p>
 	</statement>
-</definition>
+	<proof>
+	<p>
+	Simply replace the mean as derived above in the original function.
+	</p>
+	</proof>
+</theorem>
 </p>
 
 <p>
@@ -353,7 +372,7 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 
 
 <p>
-<theorem><title>Distribution function for Exponential Distribution</title>
+<theorem xml:id="ExponentialDistributionFunction"><title>Distribution function for Exponential Distribution</title>
 	<statement>
 	<p>
 		<me>F(x) = 1 - e^{-\frac{x}{\mu}}</me>
@@ -425,7 +444,7 @@ hist(Psample, prob=TRUE, add=TRUE)
 </p>
 
 <p>
-<theorem><title>The Exponential Distribution yields a continuous memoryless model.</title>
+<theorem xml:id="ExponentialMemoryless"><title>The Exponential Distribution yields a continuous memoryless model.</title>
 <statement>
 	<p>
 	If X has an exponential distribution and a and b are nonnegative integers, then
@@ -500,20 +519,16 @@ Now, use the geometric distribution with <m>p = 0.2397</m>...
 </webwork>
 </exercise>
 </p>
-
-
-
 </section>
 
 
-
-<section><title>Gamma Distribution</title>
+<section xml:id="GammaDistribution"><title>Gamma Distribution</title>
 <p>
 Extending the exponential distribution model developed above, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain the rth success for some natural number r. Then <m>R = (0,\infty)</m> and the resulting distribution of X will be called a Gamma distribution.
 </p>
 
 <p>
-<definition><title>Gamma Function</title>
+<definition xml:id="DefnGammaFunction"><title>Gamma Function</title>
 <statement>
 	<p>
 	<me>\Gamma(t) = \int_0^{\infty} u^{t-1} e^{-u} du</me>
@@ -523,7 +538,7 @@ Extending the exponential distribution model developed above, consider a Poisson
 </p>
 
 <p>
-<theorem><title>Gamma Function on the natural numbers</title>
+<theorem xml:id="GammaAsFactorial"><title>Gamma Function on the natural numbers</title>
 <statement>
 <p>
 For <m>n \in \mathbb{N}</m>,
@@ -572,7 +587,7 @@ Notice that for this random variable, <m>\mu = \lambda T</m> can be obtained for
 </p>
 
 <p>
-<definition><title>Gamma Distribution Probability Function</title>
+<definition xml:id="DefnGammaDistributionFunction"><title>Gamma Distribution  Function</title>
 <statement>
 <p xml:id="GammaPF">
 If X measures the interval until the rth success and <m>\mu</m> as the average interval until the 1st success, then X with probability function
@@ -647,7 +662,7 @@ print n(1-prob_complement)
 
 
 <p>
-<theorem><title>Verify Gamma Probability function</title>
+<theorem xml:id="GammaVerification"><title>Verify Gamma Probability function</title>
 <statement>
 <p>
 <me>\int_0^{\infty} \frac{x^{r-1} e^{-x/ \mu}}{\Gamma(r) \mu^r} dx = 1</me>
@@ -777,7 +792,7 @@ hist(Psample, prob=TRUE, add=TRUE)
 
 </section>
 
-<section><title>Generating Functions for Poisson Process Distributions</title>
+<section xml:id="PoissonProcessGeneratingFunctions"><title>Generating Functions for Poisson Process Distributions</title>
 
 
 <p>
@@ -787,9 +802,9 @@ hist(Psample, prob=TRUE, add=TRUE)
 
 <p>
 
-<theorem><title>Moment Generating Function for Poisson</title>
+<theorem xml:id="PoissonMGF"><title>Moment Generating Function for Poisson</title>
 <statement>
-<p xml:id="PoissonMGF">Presuming <m>t \gt 0</m> and
+<p>Presuming <m>t \gt 0</m> and
 <me>M(t) = e^{\mu \left ( e^t - 1 \right )}</me>
 </p>
 </statement>
@@ -834,9 +849,9 @@ which is the squared mean plus the variance for the poisson distribution.
 </p>
 
 <p>
-<theorem><title>Moment Generating Function for Exponential</title>
+<theorem xml:id="ExponentialMGF"><title>Moment Generating Function for Exponential</title>
 <statement>
-<p xml:id="ExponentialMGF">Presuming <m>t \lt \frac{1}{\mu}</m>, 
+<p>Presuming <m>t \lt \frac{1}{\mu}</m>, 
 <me>M(t) = \frac{1}{1-\mu t}.</me>
 </p>
 </statement>
@@ -879,9 +894,9 @@ which is the squared mean plus the variance for the poisson distribution.
 </p>
 
 <p>
-<theorem><title>Moment Generating Function for Gamma</title>
+<theorem xml:id="GammaMGF"><title>Moment Generating Function for Gamma</title>
 <statement>
-<p xml:id="GammaMGF">Presuming <m>t \lt \frac{1}{\mu}</m> where <m>\mu</m> is the mean waiting time till the first "change" and <m>r</m> is the number of changes desired, 
+<p>Presuming <m>t \lt \frac{1}{\mu}</m> where <m>\mu</m> is the mean waiting time till the first "change" and <m>r</m> is the number of changes desired, 
 <me>M(t) = \frac{1}{ \left ( 1-\mu t \right )^{r}}</me>
 </p>
 </statement>
@@ -942,7 +957,7 @@ show(Mtt(t=0))
 </section>
 
 
-<section><title>Summary</title>
+<section xml:id="PoissonProcessSummary"><title>Summary</title>
 <introduction>
 <p>
 Here is a summary of the major points in this chapter:
@@ -953,7 +968,7 @@ TBA
 </p>
 </section>
 
-<section><title>Exercises</title>
+<section xml:id="PoissonProcessExercises"><title>Exercises</title>
 
 <p>
 <exercise><title> - Home Sales</title>

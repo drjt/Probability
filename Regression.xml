@@ -7,13 +7,13 @@
 <!-- Copyright (C) 2013-2016  Robert A. Beezer                -->
 <!-- See the file COPYING for copying conditions.             -->
 
-<chapter xml:id="CurveEstimation" xmlns:xi="http://www.w3.org/2001/XInclude">
+<chapter xml:id="Regression" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Regression</title>
 
-<section><title>Introduction</title>
+<section xml:id="RegressionIntroduction"><title>Introduction</title>
 <p>
 Given two distinct points, there is one line which passes exactly through both.  Indeed, if the points are <m>(x_1,y_1), (x_2,y_2)</m> then presuming the x-values are different gives the equation
-<me> y = \frac{y_2 - y_1}{x_2 - x_2}(x - x_1) + y_1</me>
+<me> y = \frac{y_2 - y_1}{x_2 - x_1}(x - x_1) + y_1</me>
 is the linear function which passes through both points.  If the x's are equal then 
 <me> x = x_1</me>
 is your linear equation. 
@@ -25,7 +25,7 @@ In this chapter, you will investigate how to create polynomial functions which i
 </p>
 </section>
 
-<section><title>Best-fit Line</title>
+<section xml:id="BestFitLine"><title>Best-fit Line</title>
 <p>
 In this section, we will presume only one independent variable x and one dependent variable y.
 </p>
@@ -119,13 +119,13 @@ Solving these for m and b gives the best fit line.
 
 </section>
 
-<section><title>Correlation</title>
+<section xml:id="Correlation"><title>Correlation</title>
 <p>
 You can plot points and plot the resulting best-fit line determined in the previous section but the question remains whether the line is any good. In particular, the real use of the line often is to subsequently predict y-values for a given x-value. However, it is very likely that the best-fit line does not even pass through any of the provided data points.  So, how can something that misses every marker still be considered a good fit. To quantify this, we first need to discuss a way to measure how well two variables vary with each other.
 </p>
 
 <p>
-<definition><title>Sample Covariance</title>
+<definition xml:id="DefnSampleCovariance"><title>Sample Covariance</title>
 <p>Given paired data 
 <me>(x_1,y_1), (x_2,y_2), ... , (x_n,y_n)</me>
 with corresponding means <m>\overline{x}</m> and <m>\overline{y}</m>, the sample covariance is given by
@@ -137,7 +137,7 @@ with corresponding means <m>\overline{x}</m> and <m>\overline{y}</m>, the sample
 <p>This general definition provides a general measure which is a second order term (like variance) but also maintains "units". To provide a unit-less metric, consider the following measure.
 
 <p>
-<definition><title>Spearman's Rho (Correlation Coefficient)</title>
+<definition xml:id="DefnCorrelationCoefficient"><title>Spearman's Rho (Correlation Coefficient)</title>
 <p>Given a collection of data points, the Spearman's Rho correlation coefficient is given by
 <me>r = \frac{s_{xy}}{s_x s_y}</me>
 where <m>s_x</m> is the standard deviation of the x-values only and <m>s_y</m> is the standard deviation of the y-values only.
@@ -282,7 +282,7 @@ abline(lm(y ~ x))
 
 </section>
 
-<section><title>Higher Degree Regression</title>
+<section xml:id="HigherDegreeRegression"><title>Higher Degree Regression</title>
 <p>
 Continuing in a similar fashion to the previous section, consider now an approximation using a quadratic function <m>f(x) = ax^2 + bx + c</m>.  In this case, the total squared error would be of the form
 <me>TSE(a,b,c) = \sum_{k=0}^n (a x_k^2 + b x_k + c - y_k)^2.</me>
@@ -351,7 +351,7 @@ show(G+H)
 
 
 
-<section><title>Multi-variable Regression</title>
+<section xml:id="MultiVariableRegressionExample"><title>Multi-variable Regression</title>
 <p>
 The regression models that we have looked at till now have always presumed a single independent variable and with "linear" coefficients. It is much more likely when investigating cause and effect relationships that there are perhaps many variables that contribute or perhaps using a non-linear relationship between the unknown coefficients.  To tease you to consider taking another course that covers multi-variate regression, in this section we briefly consider a two-variable model. We also consider an interesting example that illustrates the danger in using models to estimate values well beyond the range of the relevant data that has been used to create the model.
 </p>

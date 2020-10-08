@@ -10,7 +10,7 @@
 <chapter xml:id="HypothesisTesting" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Hypothesis Testing</title>
 
-<section><title>Introduction</title>
+<section xml:id="HypothesisTestingIntroduction"><title>Introduction</title>
 <p>
 When creating confidence intervals, you started with a sample and used the sample statistic (sample mean, relative frequency, sample variance, etc.) to anchor an interval which (with high possibility) contains the corresponding population statistic <m>\mu, p, \sigma^2</m>, etc. In this section, we instead start with an educated guess for one of the population statistics <m>\mu, p, \sigma^2</m> and then statistically compare that value with the subsequently collected sample statistic.
 </p>
@@ -19,7 +19,7 @@ The educated guess noted above is often called the "null hypothesis" and should 
 </p>
 </section>
 
-<section><title>Hypotheses and Errors</title>
+<section xml:id="HypothesisTestingErrors"><title>Hypotheses and Errors</title>
 
 <p>
 In formulating a hypothesis, you will be making a declarative statement (a proposition) that has an actual truth value. That is, it is either true or it is not true in real life. However, since we will assess that truth using a test sample then measuring that truth value will never be 100% certain in the same manner that confidence intervals can never include 100% of the possible choices for a particular statistic. Hence, it is possible for you to make an incorrect conclusion.
@@ -58,7 +58,12 @@ So, our plan of attack is to find some way to determine, from a sample, the amou
 
 
 </section>
-<section><title>Hypothesis Test for one proportion</title>
+
+
+
+
+
+<section xml:id="HypothesisTestingOneP"><title>Hypothesis Test for one proportion</title>
 <p>
 In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value p:
 <me> H_0 : p = p_0 \\ H_a : p \neq p_0</me>
@@ -124,7 +129,7 @@ and find that this has probability approximately 0.0392 + 0.0392 = 0.0784.  Howe
 
 </section>
 
-<section><title>Hypothesis Test for one mean</title>
+<section xml:id="HypothesisTestingOneMean"><title>Hypothesis Test for one mean</title>
 <p>
 In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value <m>\mu</m>:
 <me> H_0 : \mu = \mu_0 \\ H_a: \mu \neq \mu_0</me>
@@ -241,7 +246,7 @@ Since this p-value is less than our significance level <m>\alpha = 0.05</m> (by 
 </section>
 
 
-<section><title>Hypothesis Test for one variance</title>
+<section xml:id="HypothesisTestingOneVariance"><title>Hypothesis Test for one variance</title>
 <p>
 Proceeding in a similar manner, we can also perform hypothesis testing on variances using the <m>\chi^2</m>-distribution to determine probabilities.
 <me> H_0 : \sigma^2 = \sigma_0^2  \\ H_a: \sigma^2 \neq \sigma_0^2</me>
@@ -283,13 +288,13 @@ Technically, for the two-tailed test you could pick T-values so that the total p
 </section>
 -->
 
-<section><title>Summary</title>
+<section xml:id="HypothesisTestingSummary"><title>Summary</title>
 <p>
 TBA
 </p>
 </section>
 
-<section><title>Exercises</title>
+<section xml:id="HypothesisTestingExercises"><title>Exercises</title>
 <p>
 TBA
 </p>
