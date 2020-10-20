@@ -77,8 +77,8 @@ def _(n=slider(2,10,1,2)):
 		<li><m>\mu = \frac{1+n}{2}</m></li>
 		<li><m>\sigma^2 = \frac{n^2-1}{12}</m></li>
 		<li><m>\gamma_1 = 0</m></li>
-		<li><m>\gamma_2 = \frac{6}{5}\frac{1+n^2}{1-n^2}</m></li>
-		<li>Distribution function <m>F(x) = frac{x}{n}</m> for <m>x \in R</m>.</li>
+		<li><m>\gamma_2 = 3 - \frac{6}{5}\frac{n^2+1}{n^2-1}</m></li>
+		<li>Distribution function <m>F(x) = \frac{x}{n}</m> for <m>x \in R</m>.</li>
 	</ol>
 	</p>
 </statement>
