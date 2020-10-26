@@ -1,0 +1,2 @@
+../pretext/pretext -c webwork -s https://webwork-ptx.aimath.org -d webwork-representations  ProbabilityMain.xml
+xsltproc --xinclude --maxdepth 6000 --maxvars 6000 --stringparam html.knowl.exercise.inline 'no' -stringparam publisher ProbabilityPub.xml ../xsl/pretext-html.xsl ProbabilityMain.xml
