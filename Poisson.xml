@@ -122,12 +122,7 @@ On the other hand, suppose the question is to ask whether 1020 or fewer requests
 </p>
 
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		This one uses the poisson distribution.
-		</p>
-		</introduction>
+<exercise><title>WebWork - Poisson</title>
 		<webwork source="Library/UBC/STAT/STAT302/HW06/HW06-03.pg">
 		</webwork>
 </exercise>
@@ -406,12 +401,8 @@ Let's determine the probability that a first request arrives in the next two sec
 </p>
 
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		This one uses the exponential distribution.
-		</p>
-		</introduction>
+<exercise><title>WebWork - Exponential</title>
+
 		<webwork source="Library/Rochester/setProbability14ExponentialDist/ur_pb_14_1.pg">
 		</webwork>
 </exercise>
@@ -471,10 +462,6 @@ Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
 <p>
 <exercise>
 <webwork>
-<setup>
-    <pg-code>
-    </pg-code>
-</setup>
 <statement>
 <p>
 It can be presumed that the life span in years of a certain brand of lightbulbs follows the Poisson process assumptions.  Suppose that the mean life span till failure is known to be 0.7 years. A tester makes random observations of the life times of this particular brand of lightbulbs and records them one by one as either a success if the life time exceeds 1 year, or as a failure otherwise.
@@ -601,10 +588,6 @@ has a Gamma Distribution.
 <p>
 <exercise>
 <webwork>
-<setup>
-    <pg-code>
-    </pg-code>
-</setup>
 <statement>
 <p>
 It can be presumed that the life span in years of a certain brand of lightbulbs follows the Poisson process assumptions.  Suppose that the mean life span till failure is known to be 0.7 years. To do long-term study, a series of light bulbs are arranged so that when the first one fails, the next one comes on, etc.
@@ -796,7 +779,7 @@ hist(Psample, prob=TRUE, add=TRUE)
 
 
 <p>
-<xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
+<xref ref="DefnMomentGeneratingFunction">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
 
 
@@ -958,11 +941,11 @@ show(Mtt(t=0))
 
 
 <section xml:id="PoissonProcessSummary"><title>Summary</title>
-<introduction>
+
 <p>
 Here is a summary of the major points in this chapter:
 </p>
-</introduction>
+
 <p>
 TBA
 </p>

@@ -25,7 +25,7 @@ In this chapter, you will investigate the following distributions:
 </p>
 </section>	
 	
-<section xml:id="DiscreteUniform"><title>Discrete Uniform Distribution</title>
+<section xml:id="DiscreteUniform" text="title"><title>Discrete Uniform Distribution</title>
 <p>
 In this section, you will investigate distributions that begin with individual outcomes that are equally likely and expand into more general settings.
 </p>
@@ -33,7 +33,7 @@ In this section, you will investigate distributions that begin with individual o
 <p>
 <theorem><title>Discrete Uniform Distribution</title>
 <statement>
-<p xml:id="DiscreteUniformFunction">
+<p>
 Assume outcomes in <m>R</m> = {1, 2, 3, ..., n} are equally likely.  Then, the probability function for the discrete uniform variable <m>X</m> is
 <me>f(x) = \frac{1}{n}</me>
 for <m>x \in R</m>.
@@ -69,9 +69,9 @@ def _(n=slider(2,10,1,2)):
 </p>
 
 <p>
-<theorem><title>Properties of the Discrete Uniform Probability Function</title>
+<theorem xml:id="DiscreteUniformProperties"><title>Properties of the Discrete Uniform Probability Function</title>
 <statement>
-	<p xml:id="DiscreteUniformProperties">
+	<p>
 	<m>f(x) = \frac{1}{n}</m> over <m>R</m> = {1, 2, 3, ..., n} satisfies the properties of a discrete probability function and
 	<ol>
 		<li><m>\mu = \frac{1+n}{2}</m></li>
@@ -89,7 +89,7 @@ def _(n=slider(2,10,1,2)):
 	Also, 1/n is positive for all x values.
 	</p>
 	
-	<p>To determine the mean,
+	<p>To determine the <xref ref="TheoreticalMean">mean</xref>,
 		<md>
 			<mrow>\mu &amp; = \sum_{x=1}^n x \cdot \frac{1}{n}</mrow>
 			<mrow> &amp; = \frac{1}{n}\sum_{x=1}^n x </mrow>
@@ -98,7 +98,7 @@ def _(n=slider(2,10,1,2)):
 		</md>
 	</p>	
 	
-	<p>To determine the variance,
+	<p>To determine the <xref ref="TheoreticalVariance">variance</xref>,
 		<md>
 			<mrow>\sigma^2 &amp; = \sum_{x=1}^n x^2 \cdot \frac{1}{n} - \mu^2</mrow>
 			<mrow> &amp; = \frac{1}{n}\sum_{x=1}^n x^2 - \left ( \frac{1+n}{2}\right )^2 </mrow>
@@ -109,7 +109,7 @@ def _(n=slider(2,10,1,2)):
 		</md>
 	</p>
 
-	<p>For skewness,
+	<p>For <xref ref="TheoreticalSkewness">skewness</xref>,
 		<md>
 			<mrow>\gamma_1 = &amp; \sum_{x=1}^n x^3 \cdot \frac{1}{n} - 3 \mu \sum_{x=1}^n x^2 \cdot \frac{1}{n}  + 2\mu^3</mrow>
 			<mrow> &amp; = \frac{n^2(n+1)^2}{4n} - 3\frac{(n(n+1)(2n+1))}{2n} \frac{1+n}{2} + 2 \left ( \frac{1+n}{2}\right )^3 </mrow>
@@ -120,7 +120,7 @@ def _(n=slider(2,10,1,2)):
 	which should be obvious since the histogram for this distribution is constantly flat.
 	</p>
 
-	<p>For Kurtosis, 
+	<p>For <xref ref="TheoreticalKurtosis">kurtosis</xref>, 
 	use the fourth moment and simplify.  This this is tedious, the algebra is performed using Sage in the active cell below this proof. However, you might want to supply the remainder of this proof using the fact that
 	<me>\sum_{x=1}^n x^4 = \frac{6n^5 + 15n^4 + 10n^3 - n}{30}.</me>
 	</p>
@@ -164,13 +164,15 @@ Further, the probability of getting an outcome in A = {2,3} would be <m>f(2)+f(3
 
 <section xml:id="ContinuousUniform"><title>Continuous Uniform Distribution</title>
 <p>
-Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests <m>P(u \lt X \lt v) = P(u + \Delta \lt X \lt v + \Delta)</m> for reasonable values of <m>\Delta</m> so that the interval remains inside <m>R</m>.
+Modeling the idea of "equally-likely" in a continuous world requires a slightly different perspective since there are obviously infinitely many outcomes to consider. Instead, you should consider requiring that intervals in the domain which are of equal width should have the same probability regardless of where they are in that domain. This behaviour suggests 
+   <me>P(u \lt X \lt v) = P(u + \Delta \lt X \lt v + \Delta)</me>
+ for reasonable values of <m>\Delta</m> so that the interval remains inside <m>R</m>.
 </p>
 	
 <p>
-<theorem><title>Continuous Uniform Probability Function</title>
+<theorem  xml:id="ContinuousUniformFunction"><title>Continuous Uniform Probability Function</title>
 <statement>
-<p xml:id="ContinuousUniformFunction">For <m>R</m> = [a,b], with a &lt; b, the continuous uniform probability function is given by
+<p>For <m>R</m> = [a,b], with a &lt; b, the continuous uniform probability function is given by
 	<me>f(x) = \frac{1}{b-a}.</me>
 </p>
 </statement>
@@ -180,7 +182,7 @@ Modeling the idea of "equally-likely" in a continuous world requires a slightly 
 		<mrow>\int_u^v f(x) dx = \int_{u+\Delta}^{v+\Delta} f(x) dx</mrow>
 		<mrow>F(v)-F(u) = F(v+\Delta)-F(u+\Delta)</mrow>
 		<mrow>F(u+\Delta)-F(u) = F(v+\Delta)-F(v)</mrow>
-		<mrow>frac{F(u+\Delta)-F(u)}{\Delta} = \frac{F(v+\Delta)-F(v)}{\Delta}</mrow>
+		<mrow>\frac{F(u+\Delta)-F(u)}{\Delta} = \frac{F(v+\Delta)-F(v)}{\Delta}</mrow>
 	</md>
 	which is true regardless of \Delta so long as you stay in the domain of interest. Letting <m>\Delta \rightarrow 0</m> gives
 	<me>F'(u) = F'(v)</me>
@@ -206,12 +208,7 @@ Then, if you want to compute something like <m>P(2 &lt; X &lt; 4.5)</m> integrat
 </p>
 
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		This one uses the continuous uniform distribution.
-		</p>
-		</introduction>
+<exercise><title>WebWork - Continuous Uniform</title>
 		<webwork source="Library/Rochester/setProbability16JointDist/ur_pb_16_3.pg">
 		</webwork>
 </exercise>
@@ -222,7 +219,7 @@ Then, if you want to compute something like <m>P(2 &lt; X &lt; 4.5)</m> integrat
 <example><title>Continuous Uniform over two disjoint intervals</title>
 <p>
 Suppose <m>R = [0,2] \cup [5,7]</m>.  Then, as in the theorem proof
-<me>1 = \int_R c dx = \int_0^2 c dx + \int_5^7 c dx = 4c.</me>
+<me>1 = \int_R c \cdot dx = \int_0^2 c \cdot dx + \int_5^7 c \cdot dx = 4c.</me>
 Thus, <m> f(x) = \frac{1}{4}</m>.
 For computing probabilities, you will want to break up any resulting integrals in a similar manner.
 </p>
@@ -230,9 +227,9 @@ For computing probabilities, you will want to break up any resulting integrals i
 </p>
 
 <p>
-<theorem><title>Properties of the Continuous Uniform Probability Function</title>
+<theorem xml:id="ContinuousUniformProperties"><title>Properties of the Continuous Uniform Probability Function</title>
 <statement>
-	<p xml:id="ContinuousUniformProperties">For the Continuous Uniform Distribution over <m>R = [a,b]</m>, with a &lt; b,
+	<p>For the Continuous Uniform Distribution over <m>R = [a,b]</m>, with a &lt; b,
 	<ol>
 		<li><m>f(x) = \frac{1}{b-a}</m> satisfies the properties of a probability function over R = [a,b].</li>
 		<li><m>\mu = \frac{a+b}{2}</m></li>
@@ -247,14 +244,14 @@ For computing probabilities, you will want to break up any resulting integrals i
 <proof>
 <p>We can verify most of these here but you can also determine these using Sage below.
 </p>
-<p>For the mean,
+<p>For the <xref ref="TheoreticalMean">mean</xref>,
 <md>
 <mrow> \mu &amp; = E[X] = \int_a^b x \frac{1}{b-a} dx</mrow>
 <mrow> &amp; = \frac{x^2}{2(b-a)} right |_a^b</mrow>
 <mrow> &amp; = \frac{b^2-a^2}{2(b-a)} = \frac{b+a}{2}.</mrow>
 </md>
 </p>
-<p>For the variance,
+<p>For the <xref ref="TheoreticalVariance">variance</xref>,
 <md>
 <mrow> \sigma^2 &amp; = E[X^2] - \mu^2 = \int_a^b x^2 \frac{1}{b-a} dx  - \mu^2</mrow>
 <mrow> &amp; = \frac{x^3}{3(b-a)} right |_a^b - \left ( \frac{a+b}{2} \right )^2</mrow>
@@ -263,7 +260,7 @@ For computing probabilities, you will want to break up any resulting integrals i
 <mrow> &amp; = \frac{b^2-2ab+a^2}{12} = \frac{(b-a)^2}{12}.</mrow>
 </md>
 </p>
-<p>For the skewness, 
+<p>For the <xref ref="TheoreticalSkewness">skewness</xref>, 
 <md>
 <mrow> \gamma_0 &amp; = E[X^3] - 3 \mu E[X^2] + 2 \mu^3</mrow>
 <mrow> &amp; = \int_a^b x^3 \frac{1}{b-a} dx - 3 \mu \frac{b^3-a^3}{3(b-a)} + 2 \left ( \frac{a+b}{2} \right )^3</mrow>
@@ -272,7 +269,7 @@ For computing probabilities, you will want to break up any resulting integrals i
 <mrow> &amp; = 0.</mrow>
 </md>
 </p>
-<p>The kurtosis is more algebra like above. We will just let Sage do that part for us below.
+<p>The <xref ref="TheoreticalKurtosis">kurtosis</xref> is more algebra like above. We will just let Sage do that part for us below.
 </p>
 </proof>
 </p>
@@ -353,9 +350,9 @@ Indeed, consider a collection of n items from which you want to take a sample of
 </p>	
 	
 <p>
-<theorem><title>Hypergeometric Probability Function</title>
+<theorem xml:id="HypergeometricFunction"><title>Hypergeometric Probability Function</title>
 <statement>
-<p xml:id="HypergeometricFunction">For a Hypergeometric random variable with <m>R</m> = {0, 1, ..., r} and assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>,
+<p>For a Hypergeometric random variable with <m>R</m> = {0, 1, ..., r} and assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>,
 	<me>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</me>	
 </p>
 </statement>
@@ -385,9 +382,9 @@ Therefore, you have about 1 chance out of 5 that the friend got 2 or more of you
 </p>
 
 <p>	
-	<theorem><title>Properties of the Hypergeometric Distribution</title>
+	<theorem xml:id="HypergeometricProperties"><title>Properties of the Hypergeometric Distribution</title>
 	<statement>
-	<p xml:id="HypergeometricProperties">
+	<p>
 	<ol>
 		<li><m>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</m> satisfies the properties of a probability function.</li>
 		<li><m>\mu = r \frac{n_1}{n}</m></li>
@@ -513,12 +510,7 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 
 <!--
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		This one uses the hypergeometric distribution.
-		</p>
-		</introduction>
+<exercise><title>WebWork - Hypergeometric</title>
 <webwork source="Library/Misc/hypergeometric.pg"></webwork>
 </exercise>
 </p>
@@ -562,7 +554,7 @@ def _(N1=input_box(10,width=5,label='$$ N_1 $$'),
 <section xml:id="EquallyLikelyGeneratingFunctions"><title>Generating Functions for Uniform-based Distributions</title>
 
 <p>
-<xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
+<xref ref="DefnMomentGeneratingFunction">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
 
 <theorem xml:id="MGFDiscrete"><title>Moment Generating Function for Discrete Uniform</title>
@@ -612,14 +604,12 @@ def _(N1=input_box(10,width=5,label='$$ N_1 $$'),
 
 <section xml:id="EquallyLikelySummary"><title>Summary</title>
 <p>
-<introduction>
-<p>
+
 Here is a summary of the major formulas from this chapter:
-</p>
-</introduction>
+
 </p>
 <p>
-<xref ref="DiscreteUniformFunction">Discrete Uniform f(x)</xref>
+<xref ref="DiscreteUniform">Discrete Uniform f(x)</xref>
 </p>
 <p>
 <xref ref="DiscreteUniformProperties">Discrete Uniform statistics</xref>

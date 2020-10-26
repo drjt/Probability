@@ -105,23 +105,16 @@ and find that this has probability approximately 0.0392 + 0.0392 = 0.0784.  Howe
 
 <p>
 <exercise><title>WebWork - two tailed test</title>
-		<introduction>
-		<p>
-		Two-tailed test for p.
-		</p>
-		</introduction>
 		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg">
 		</webwork>
 </exercise>
 </p>
-
+		<p>
+		Next is a one-tailed test for p. Notice, in this case you will only compute z-score probability for one tail and not both tails.
+		</p>
 <p>
 <exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		One-tailed test for p. Notice, in this case you will only compute z-score probability for one tail and not both tails.
-		</p>
-		</introduction>
+
 		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg">
 		</webwork>
 </exercise>
@@ -173,11 +166,6 @@ Since this p-value is less than our significance level <m>\alpha = 0.01</m> then
 <p>
 <exercise>
 <webwork>
-<setup>
-    <pg-code>
-    
-    </pg-code>
-</setup>
 <statement>
 <p>
 A random sample of 10 observations was drawn from a large normally distributed population. The data is below.

@@ -602,11 +602,8 @@ print('P( X &lt; ',b,') = ',b1)
 
 
 <p>
-<exercise><title>WebWork</title>
-<introduction>
-	<p>Two-sided Confidence interval for the variance and standard deviation with large n.
-	</p>
-</introduction>
+<exercise><title>WebWork - Two-sided with large n</title>
+
 <webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg">
 </webwork>
 </exercise>

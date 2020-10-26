@@ -268,7 +268,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 	<p>Using <m>f(x) = x/10</m> over <m>R</m> = {1,2,3,4} again, note that <m>F(x)</m> will only change at these four domain values. We get
 	
 	<table halign="left">
-		<caption>Discrete Distribution Function Example</caption>
+		<title>Discrete Distribution Function Example</title>
       	<tabular halign="right">
       
 <row><cell bottom="medium" right="medium">X</cell><cell bottom="medium">F(x)</cell></row>      
@@ -291,7 +291,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 	Notice, <m>F(-1) = 0</m> since nothing has yet been accumulated over values smaller than -1 and <m>F(2) = 1</m> since by that time everything has been accumulated. In summary:
 	
 	<table halign="left">
-		<caption>Continuous Distribution Function Example</caption>
+		<title>Continuous Distribution Function Example</title>
       	<tabular halign="right">
       
 <row><cell bottom="medium" right="medium">X</cell><cell bottom="medium">F(x)</cell></row>      
@@ -309,10 +309,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 <!--
 <p>
 <exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		</p>
-		</introduction>
+
 <webwork source="Library/UBC/STAT/STAT241_251/setAssignment-02/HW02-01/HW02-01a.pg">
 		</webwork>
 </exercise>
@@ -541,11 +538,7 @@ TBA, using one of the table examples from above.
 
 <p>
 <exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		Use algebra and the theorem above.
-		</p>
-		</introduction>
+
 		<webwork source="Library/Rochester/setProbability17Expectation/ur_pb_17_4.pg">
 		</webwork>
 </exercise>
@@ -611,7 +604,7 @@ TBA, using one of the table examples from above.
 	Consider the following example when computing these statistics for a discrete variable. In this case, we will utilize a variable with a relatively small space so that the summations can be easily done by hand. Indeed, consider
 	
 	<table halign="left">
-		<caption>Discrete Probability Function Example</caption>
+		<title>Discrete Probability Function Example</title>
       	<tabular halign="right">
       
 <row><cell bottom="medium" right="medium">X</cell><cell bottom="medium">f(x)</cell></row>      
@@ -670,36 +663,22 @@ TBA, using one of the table examples from above.
 
 
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		.
-		</p>
-		</introduction>
+<exercise><title>WebWork - Random Variables</title>
+
 		<webwork source="Library/Mizzou/Finite_Math/Probability_Random_Variables/EV1.pg">
 		</webwork>
 </exercise>
 </p>
 
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		.
-		</p>
-		</introduction>
+<exercise><title>WebWork - More Random Variables</title>
 		<webwork source="Library/Rochester/setProbability7RandomVariables/ur_pb_7_6.pg">
 		</webwork>
 </exercise>
 </p>
 	
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		.
-		</p>
-		</introduction>
+<exercise><title>WebWork - Even More</title>
 		<webwork source="Library/UBC/STAT/STAT241_251/setAssignment-01/HW01-01.pg">
 		</webwork>
 </exercise>
@@ -863,9 +842,10 @@ Presume that p is the likelihood that God exists. Then you can compute the expec
 <p>In the previous section, you were able to take a given probability distribution and create several "special" expected value metrics that provided useful or interesting facts about the particular distribution...such as the mean and variance. It is possible however to embed a lot of these metrics in a "generating function". </p>
 
 <definition xml:id="DefnMomentGeneratingFunction"><title>Moment Generating Function</title>
-<p xml:id="MomentGeneratingFunctionDefn">Given a probability function <m>f(x)</m>, the moment generating function is a transformation given by
-<me>M(t) = E[e^{tx}]</me>
-where the expected value is a summation or integral dependent upon the nature of the random variable x. If the expected value does not exist (due perhaps to a f(x) with asymptotes) then the M(t) does not exist.</p>
+	<p>Given a probability function <m>f(x)</m>, the moment generating function is a transformation given by
+	<me>M(t) = E[e^{tx}]</me>
+where the expected value is a summation or integral dependent upon the nature of the random variable x. If the expected value does not exist (due perhaps to a f(x) with asymptotes) then the M(t) does not exist.
+	</p>
 </definition>
 
 <definition xml:id="DefnProbabilityGeneratingFunction"><title>Probability Generating Function</title>
@@ -970,9 +950,9 @@ TBA
 </section>
 
 <section xml:id="ProbabilityFunctionsExercises"><title>Exercises</title>
-<introduction>
+<p>
 Here are some exercises to consider related to Probability Functions.
-</introduction>	
+</p>	
 	<exercise><title>Flipping A Fixed Number of Coins</title>
 	<p>
 	Consider the random variable from the previous section where you flip three coins and measure the number of heads obtained. Determine f(0), f(1), f(2), and f(3) and the corresponding distribution function F(x). These can be expressed in a table format. Generalize your answer to the case when you flip a n coins where n is a fixed natural number.

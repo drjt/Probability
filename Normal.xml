@@ -79,13 +79,13 @@ If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal dis
 When in the standard normal distribution, you can use a graphing calculator's normalcdf(a,b) to approximate <m>P(a \le Z \le b)</m>.  Note that when no mean or standard deviation for normalcdf is provided, the calculator presumes standard normal.
 </p>
 
+
+	<p>
+	Note that you can use a graphing calculator's normalcdf(a,b) to compute probabilities.
+	</p>
 <p>
 <exercise><title>WebWork - Computing Standard Normal Probabilities</title>
-	<introduction>
-	<p>
-	You can use a graphing calculator's normalcdf(a,b) to compute these. 
-	</p>
-	</introduction>
+
 		<webwork source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg">
 		</webwork>
 </exercise>
@@ -181,24 +181,19 @@ Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compu
 
 <p>
 <exercise><title>WebWork - Computing Regular Normal Probabilities</title>
-	<introduction>
-	<p>
-	This one requires normalcdf with mean and standard deviation.
-	</p>
-	</introduction>
+
 		<webwork source="Library/NAU/setStatistics/normal_dist2.pg">
 		</webwork>
 </exercise>
 </p>
 
-
-<p>
-<exercise><title>WebWork - Computing Regular Normal Probabilities</title>
-	<introduction>
 	<p>
 	While we are at it, can we "go backwards" and figure out the mean and variance if given some probabilities.
 	</p>
-	</introduction>
+	
+<p>
+<exercise><title>WebWork - Computing Regular Normal Probabilities</title>
+
 		<webwork source="Library/NAU/setStatistics/normprob4.pg">
 		</webwork>
 </exercise>
@@ -256,11 +251,7 @@ def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = ')
 
 <p>
 <exercise><title>WebWork - Applying Normal Probabilities</title>
-	<introduction>
-	<p>
-	
-	</p>
-	</introduction>
+
 		<webwork source="Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg">
 		</webwork>
 </exercise>
@@ -484,7 +475,7 @@ legend("topright", inset=.05, title="Distributions",
 
 
 <p>
-<xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
+<xref ref="DefnMomentGeneratingFunction">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
 
 
@@ -832,13 +823,13 @@ with corresponding distribution function <m>F_n(W_n)</m>,
 that is, the standard normal distribution function.
 </p>
 
+	<p>
+	While we are at it, we can again "go backwards" and figure out the mean and variance if given some probabilities.
+	</p>
+	
 <p>
 <exercise><title>WebWork - Computing probabilities on <m>\overline{X}</m></title>
-	<introduction>
-	<p>
-	While we are at it, can we "go backwards" and figure out the mean and variance if given some probabilities.
-	</p>
-	</introduction>
+
 		<webwork source="Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg">
 		</webwork>
 </exercise>
@@ -991,11 +982,11 @@ The above theorems allow you to utilize the normal distribution to compute appro
 
 
 <section xml:id="NormalRelatedDistributionsSummary"><title>Summary</title>
-<introduction>
+
 <p>
 Here is a summary of the major points in this chapter:
 </p>
-</introduction>
+
 <p>
 TBA
 </p>

@@ -35,30 +35,29 @@ So, let's go and hopefully you will in some measure enjoy the ride!
 <p>
 In creating statistical measures, you might want to consider one of the following general types.
 </p>
+
 <p>
-	<ul>
-		<li><p>Nominal measures - In this case, data falls into mutually exclusive and exhaustive categories for which the numerical value is only used for identification purposes. For example, assigning Male = 1, Female = -1.</p></li>
-		<li><p>Ordinal measures - In this case, data consists of discrete numerical values which can be ranked from lowest to highest or vice versa. For example, your grades in a number of classes are used to compute your GPA--which is a single number.</p></li>
-		<li><p>Interval measures - In this case, data possesses an order and where the distance between data values is of significance. For example, heights and weights.</p></li>
-		<li><p>Ratio measures - In this case, data can be expressed as a position in some interval and where ratios between observations have meaning. For example, percentile rankings</p></li>
-	</ul>
+<ul>
+	<li><p>Nominal measures - In this case, data falls into mutually exclusive and exhaustive categories for which the numerical value is only used for identification purposes. For example, assigning Male = 1, Female = -1.</p></li>
+	<li><p>Ordinal measures - In this case, data consists of discrete numerical values which can be ranked from lowest to highest or vice versa. For example, your grades in a number of classes are used to compute your GPA--which is a single number.</p></li>
+	<li><p>Interval measures - In this case, data possesses an order and where the distance between data values is of significance. For example, heights and weights.</p></li>
+	<li><p>Ratio measures - In this case, data can be expressed as a position in some interval and where ratios between observations have meaning. For example, percentile rankings</p></li>
+</ul>
 </p>
 
 <p>In the subsequent sections of this chapter, you will see that a number of different measures are available for most data sets. Determining which "correct" measure to use for describing any given data set will depend the actual situation surrounding the collection of the data.
 </p>
-	
-
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		Here is an active exercise that you can continue to attempt until you get the correct answer.  Try to avoid clicking on the provided solution unless you are hopelessly stuck on exercises like this throughout the text.
-		</p>
-		</introduction>
-		<webwork source="Library/UVA-Stat/setStat212-Homework01/stat212-HW01-13.pg">
-		</webwork>
-</exercise>
+Below is an active exercise that you can continue to attempt until you get the correct answer.  Try to avoid clicking on the provided solution unless you are hopelessly stuck on exercises like this throughout the text.
 </p>
+		
+c
+<exercise><title>WebWork</title>
+
+		<webwork source="Library/UVA-Stat/setStat212-Homework01/stat212-HW01-13.pg" />
+
+</exercise>
+
 
 
 </section>
@@ -165,20 +164,15 @@ The definition presented below provides for a unique measure for each unique val
 </definition> 
 </p>
 
-<p><title>Computing Percentiles</title>
+<p>
+Compute the following <xref ref="DefnPercentilesAlt">percentile values using the alternate formula</xref>.
+</p>
+
+<p><title>WeBWorK - Computing Percentiles</title>
 <exercise>
-<introduction>
-		<p>
-		Compute the following <xref ref="DefnPercentilesAlt">percentile values using the alternate formula</xref>.
-		</p>
-		</introduction>
-		<webwork source="Library/UVA-Stat/setStat212-Homework02/stat212-HW02-18.pg">
-		</webwork>
-		<conclusion>
-		<p>
-		
-		</p>
-		</conclusion>
+	<webwork source="Library/UVA-Stat/setStat212-Homework02/stat212-HW02-18.pg">
+	</webwork>
+
 </exercise>
 </p>
 
@@ -513,19 +507,12 @@ if n is odd and
 if n is even.
 </p>
 
-<p><title>Computing Mean, Median and Mode</title>
-<exercise>
-<introduction>
 <p>
-</p>
-		</introduction>
+<exercise><title>WeBWorK - Computing Mean, Median and Mode</title>
+
 		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC03S03/MeanMedianMode02.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		
-		</p>
-		</conclusion>
+
 </exercise>
 </p>
 
@@ -577,7 +564,7 @@ Now, replace the explicit data in the above interactive cell and replace with on
 </p>
 <p>
 <table halign="left">
-    <caption>USA State Populations - 2014</caption>
+    <title>USA State Populations - 2014</title>
       <tabular halign="right">
       
 <row><cell bottom="medium">State</cell><cell bottom="medium">Population</cell></row>      
@@ -785,7 +772,7 @@ The second part is proved similarly. Using the first part of the proof above,
 In the data table below, notice that the <m>x_k</m> column would be the given data values but the column for <m>x_k^2</m> you could easily compute.
 
 <table halign="left">
-<caption>Sample Grouped Data</caption>
+<title>Sample Grouped Data</title>
       <tabular halign="right">
       
 <row>
@@ -806,20 +793,12 @@ So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{
 </p>
 
 
-<p><title>Computing Descriptive Statistics</title>
-<exercise>
-<introduction>
-		<p>
-		Notice this exercise also asks you to pick out the corresponding box-plot.
-		</p>
-		</introduction>
+<p>
+<exercise><title>Computing Descriptive Statistics</title>
+
 		<webwork source="Library/UBC/STAT/STAT241_251/setAssignment-01/HW01_03/HW01-03_1.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		
-		</p>
-		</conclusion>
+
 </exercise>
 </p>
 
@@ -913,14 +892,16 @@ paste("Inter Quantile Range =",IQR(data))
 
 
 <section xml:id="GroupedData"><title>Adjusting Statistical Measures for Grouped Data</title>
+
 <introduction>
 <p>As you considered the measures of the center and spread before, each data point was considered individually. Often, data may however be grouped into categories. The number of data items in each category is called the "frequency" of that outcome and the collection of these frequencies for all outcomes is called a "frequency distribution". 
 </p>
 </introduction>
 
-<subsection xml:id="GroupedDataDiscrete"><title>Data Grouped into Single-valued Categories</title>
-<p>In this case, rather than considering <m>x_k</m> to be the kth data value can take advantage of the grouping to perhaps save a bit on arithmetic.</p>
-<p>Indeed, let's assume that data is grouped into m categories <m>x_1, x_2, ..., x_m</m> with corresponding frequencies <m>f_1, f_2, ..., f_m</m>. Then, for example, when computing the mean rather than adding <m>x_1</m> with itself <m>f_1</m> times just compute <m>x_1 \times f_1</m> for the first category and continuing through the remaining categories. This gives the following grouped data formula for the mean
+<p>Data Grouped into Single-valued Categories</p>
+
+<p xml:id="GroupedDataDiscrete">
+Rather than considering <m>x_k</m> to be the kth data value, take advantage of the grouping to perhaps save a bit on arithmetic. Indeed, let's assume that data is grouped into m categories <m>x_1, x_2, ..., x_m</m> with corresponding frequencies <m>f_1, f_2, ..., f_m</m>. Then, for example, when computing the mean rather than adding <m>x_1</m> with itself <m>f_1</m> times just compute <m>x_1 \times f_1</m> for the first category and continuing through the remaining categories. This gives the following grouped data formula for the mean
 		<me>
 		\mu = \frac{x_1 f_1 + ... + x_m f_m}{f_1 + ... + f_m} = \frac{\sum_{k=1}^m x_k f_k}{\sum_{k=1}^m f_k}.
 		</me>
@@ -928,8 +909,9 @@ and the following grouped data formula for the variance (along with one equivale
 		<me> 
 		\sigma^2 = \frac{\sum_{k=1}^m ( x_k-\mu )^2 f_k}{\sum_{k=1}^m f_k} = \frac{\sum_{k=1}^m x_k^2 f_k}{\sum_{k=1}^m f_k} - \mu^2
 		</me>
-
 </p>
+
+
 
 <exercise>
 <p>
@@ -969,7 +951,7 @@ Create a frequency distribution and determine the sample mean and variance.
 	<p>
 	Collecting this data into a frequency distribution gives
 	<table halign="left">
-	<caption>Grouped Discrete Data</caption>
+	<title>Grouped Discrete Data</title>
 		  <tabular halign="right">
 	  
 			<row><cell bottom="medium"><m>x_k</m></cell><cell bottom="medium"><m>f_k</m></cell></row>      
@@ -998,34 +980,19 @@ Create a frequency distribution and determine the sample mean and variance.
 </p>
 </exercise>
 
-<p><title>Statistics using Discrete Grouped Data</title></p>
-
 <p>
-<exercise>
-<introduction>
-		<p>
-		You will first need to determine appropriate frequencies before using the grouped data formulas above.
-		</p>
-		</introduction>
+<exercise><title>WeBWorK - Grouped Discrete Data</title>
 		<webwork source="Library/Mizzou/Finite_Math/Statistics_Introduction/Freq.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		
-		</p>
-		</conclusion>
 </exercise>
 </p>
 
-</subsection>
 
 
-<subsection xml:id="GroupedDataContinuous"><title>Data Grouped into Continuous Intervals</title>
-<p>For measures on data grouped into intervals, it is somewhat difficult to do calculations when the data no longer exists as individual values since all you know is the frequencies of each interval. You can use "class marks"...the midpoints of each interval...as representers for all of the items that fell into that interval for computing means and variances.  For positional measures, you want to approach this in the same manner as with percentiles before.  That is, my doing some sort of linear interpolation on the width of each interval.
+
+<p xml:id="GroupedDataContinuous">For measures on data grouped into intervals, it is somewhat difficult to do calculations when the data no longer exists as individual values since all you know is the frequencies of each interval. You can use "class marks"...the midpoints of each interval...as representers for all of the items that fell into that interval for computing means and variances.  For positional measures, you want to approach this in the same manner as with percentiles before.  That is, my doing some sort of linear interpolation on the width of each interval.
 </p>
-<p>So, for medians, consider the following approach:
-</p>
-<p>Consider data collected into intervals of the form
+<p>So, for medians, consider the following approach:  Consider data collected into intervals of the form
 <ul>
 <li><m>[a_1,b_1)</m></li>
 <li><m>[a_2,b_2)</m></li>
@@ -1047,7 +1014,7 @@ where <m>f_k</m> is the frequency of data items in interval <m>[a_k,b_k)</m> wit
 <example><title>Computing Median for Interval Grouped Data</title>
 <p>
 	<table halign="left">
-	<caption>Interval Frequency Distribution</caption>
+	<title>Interval Frequency Distribution</title>
 		  <tabular halign="right">
 	  
 			<row><cell bottom="medium"><m>[a_k,b_k]</m></cell><cell bottom="medium"><m>f_k</m></cell></row>      
@@ -1064,25 +1031,14 @@ The total cummulative frequency is 25 and so <m>m = \frac{25}{2} = 12.5</m> whic
 </example>
 </p>
 
-<p><title>Statistics using Continuous Grouped Data</title>
-<exercise>
-<introduction>
-		<p>
-		You will first need to determine appropriate frequencies before using the grouped data formulas above.
-		</p>
-		</introduction>
+<p>
+<exercise><title>Statistics using Continuous Grouped Data</title>
+
 		<webwork source="Library/Mizzou/Finite_Math/Statistics_Measures_of_Central_Tendency/MeanGroupedData.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		
-		</p>
-		</conclusion>
+
 </exercise>
 </p>
-
-</subsection>
-
 
 </section>
 
@@ -1196,7 +1152,7 @@ Computing skewness and kurtosis by hand can often be better organized using a ta
 <row><cell>5</cell><cell>25</cell><cell>125</cell><cell>625</cell></row>		
 
       </tabular>
-      <caption>Computing data statistics by hand</caption>
+      <title>Computing data statistics by hand</title>
 </table>
 
 So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m> as before and so
@@ -1224,18 +1180,21 @@ and kurtosis of
 
 
 <section xml:id="GraphicalStatistics"><title>Visual Statistical Measures - Graphical Representation of Data</title>
-<introduction>
-<p>Data sets can range from small to very large. Visual representations of these data sets often allow you to see trends and reveal a lot about the distribution of the data values.</p>
 
+<introduction>
+<p>Data sets can range from small to very large. Visual representations of these data sets often allow you to see trends and reveal a lot about the distribution of the data values. Several ways to describe data using graphical means are presented below.</p>
 </introduction>
 
-<subsection xml:id="GraphicalStatisticsHistograms"><title>Histograms</title>
+
+<p xml:id="GraphicalStatisticsHistograms"><title>Histograms</title>
+Often the quantity of data available makes it difficult to see trends and general relationships within the data. As the saying goes "A picture is worth a thousand words" and one way to express data with a picture is with a bar chart called a "histogram".  Most gnerally, histograms describe frequencies or relative frequencies and are more specifically described with additional modifers such as "relative frequence histogram".
+</p>
 
 <p>Frequency Histograms - height matters</p>
 <p>Consider the data set given by
 		
 <table halign="left">
-   <caption>Basic Frequency Table</caption>
+   <title>Basic Frequency Table</title>
       <tabular halign="right">
       
 <row><cell bottom="medium"><m>x_k</m></cell><cell bottom="medium"><m>f_k</m></cell></row>      
@@ -1258,6 +1217,8 @@ A frequency histogram representing this data looks like
 </p>
 
 <p>Experiment with creating your own histogram by inputting your data into the interactive Sage cell below.
+
+
 <sage>
 <input>
 #  This function is used to convert an input string into separate entries
@@ -1274,12 +1235,17 @@ def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated b
 </input>
 </sage>
 
+
+
 </p>
 <p>
 Relative Frequency Histograms - In this case, area describes relative frequency.  Notice in the interactive cell above that each bar is of width one. Therefore, frequency = area. In some instances where data may be grouped the total width of the interval may be different and so the height will need to be adjusted so that the total area of each bar corresponds to the relative frequency of that category.
 </p>
 
 <p>Cummulative Histograms.  In these a running total is presented using all values from the given point and below.
+</p>
+
+
 <sage>
 <input>
 #  This function is used to convert an input string into separate entries
@@ -1296,14 +1262,16 @@ def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated b
     histogram( freq, range=[m-1/2,M+1/2], cumulative = "true", bins = bn, align="mid", linewidth=2, edgecolor="blue", color="yellow").show(ymax=top)
 </input>
 </sage>		
-</p>
-</subsection>
 
-<subsection xml:id="GraphicalStatisticsStemAndLeaf"><title>Stem and Leaf Plot</title>
+
+<p xml:id="GraphicalStatisticsStemAndLeaf">
+<title>Stem and Leaf Plot</title>
 
 <p> 
 A Stem and Leaf Plot allows you to create a histogram of sorts but maintain the individual data values. To create one of these plots, you will need to consider your particular data set and create a two-step sieve for organizing the set.  The first part is to create "stems" that are often associated with the highest digit(s) of each data value and the "leaves" that are often associated with the remaining digit(s) of the data value.
 </p>
+</p>
+
 <p>
 Once the data set is broken down into stems and leaves, it is often simple to sort the leaves under each stem to yield an "ordered Stem and Leaf Plot". Such as mechanism is a simple two-step procedure that allows you to sort a data set by hand.
 </p>
@@ -1317,7 +1285,7 @@ In this case we will consider the stems to be the tens digits and the leaves to 
 
 <p>
 <table halign="left">
-   <caption>Stem and Leaf Plot (unordered)</caption>
+   <title>Stem and Leaf Plot (unordered)</title>
       <tabular halign="right">
       
 <row><cell bottom="medium">Stems</cell><cell bottom="medium">Leaves</cell></row>      
@@ -1331,7 +1299,7 @@ In this case we will consider the stems to be the tens digits and the leaves to 
 Then, an ordered Stem and Leaf Plot would be
 
 <table halign="left">
-   <caption>Stem and Leaf Plot (ordered)</caption>
+   <title>Stem and Leaf Plot (ordered)</title>
       <tabular halign="right">
       
 <row><cell bottom="medium">Stems</cell><cell bottom="medium">Leaves</cell></row>      
@@ -1363,11 +1331,12 @@ Notice how it is easy to now see that most state populations are relatively smal
 </example>
 </p>
 
-</subsection>
 
-<subsection xml:id="GraphicalStatisticsBoxAndWhisker"><title>Box and Whisker Diagram (Box Plot)</title>
+<p xml:id="GraphicalStatisticsBoxAndWhisker">
+<title>Box and Whisker Diagram (Box Plot)</title>
 
 <p>This graphical display identifies the <xref ref="DefnFiveNumberSummary">5-number-summary</xref> associated with the minimum, <xref ref="DefnQuartiles">quartiles</xref>, and the maximum. That is, <m>y_1, Q_1, Q_2, Q_3, y_n</m>.  These values separate the data roughly into quarters. To distinguish these quarters connect <m>y_1</m> and <m>Q_1</m> with a straight line (a whisker) and do the same with <m>Q_3</m> and <m>y_n</m>. Use a box to connect <m>Q_1</m> with <m>Q_2</m> and the same to connect <m>Q_2</m> with <m>Q_3</m>. Then the boxed areas also identify the IQR.  
+</p>
 </p>
 
 <p>
@@ -1385,24 +1354,17 @@ boxplot(data, horizontal=TRUE)
 </sage>
 </p>
 
-<p><title>Computing Percentiles</title>
+<p><title>WeBWorK - Computing Percentiles</title>
 <exercise>
-<introduction>
-		<p>
-		Let's use a box plot to determine some order statistics.
-		</p>
-		</introduction>
-		<webwork source="Library/NAU/setStatistics/FiveNumFromPlot.pg">
-		</webwork>
-		<conclusion>
-		<p>
-		
-		</p>
-		</conclusion>
+	<title>
+	<p>Let's use a box plot to determine some order statistics.
+	</p>
+	</title>
+	<webwork source="Library/NAU/setStatistics/FiveNumFromPlot.pg">
+	</webwork>
 </exercise>
 </p>
 		
-</subsection>
 
 <!--
 <subsection><title>Density Plots</title>
@@ -1431,11 +1393,11 @@ www.machinelearningplus.com
 
 
 <section xml:id="RepresentingDataSummary"><title>Summary</title>
-<introduction>
+
 <p>
 Links to the main formulas related to descriptive statistics:
 </p>
-</introduction>
+
 <p><xref ref="DefnOrderStatistics">Order Statistics</xref></p>
 <p><xref ref="DefnMaxMin">Maximum and Minimum</xref></p>
 <p><xref ref="DefnPercentiles">Percentiles</xref></p>

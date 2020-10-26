@@ -43,18 +43,13 @@ But why even bother creating a formula (a line here) to approximate data that do
 </p>
 
 <exercise>
-		<introduction>
+		<title>
 		<p>
-		Consider using the following best-fit line for approximation.
+		WeBWorK - best-fit line for approximation
 		</p>
-		</introduction>
+		</title>
 		<webwork source="Library/NAU/setStatistics/linear_regression1.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
 </exercise>
 
 <p>
@@ -103,18 +98,13 @@ Solving these for m and b gives the best fit line.
 </p>
 
 <exercise>
-		<introduction>
+		<title>
 		<p>
-		Ok.  Let's see if you can apply this to get a best fit line.
+		WeBWorK - get a best fit line
 		</p>
-		</introduction>
+		</title>
 		<webwork source="Library/ASU-topics/setStat/dueck4_2_4.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
 </exercise>
 
 </section>
@@ -206,7 +196,7 @@ A similar proof follows in the second case by noting that
 <row><cell>39</cell><cell>9</cell><cell>4</cell><cell>14</cell><cell>7</cell></row>		
 
       </tabular>
-      <caption>Computing best fit line and correlation coefficient by hand</caption>
+      <title>Computing best fit line and correlation coefficient by hand</title>
 </table>
 
 Therefore
@@ -223,33 +213,25 @@ You should go ahead and simplify these values, solve the system of equations, pl
 
 
 <exercise>
-		<introduction>
+		<title>
 		<p>
-		Interpreting correlation coefficients.
+		WeBWorK - Interpreting correlation coefficients.
 		</p>
-		</introduction>
+		</title>
 		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
+
 </exercise>
 
 <exercise>
-		<introduction>
+		<title>
 		<p>
-		Interpreting correlation coefficients.
+		WeBWorK - Interpreting correlation coefficients again.
 		</p>
-		</introduction>
+		</title>
 		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
+
 </exercise>
 
 

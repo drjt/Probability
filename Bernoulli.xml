@@ -137,12 +137,8 @@ If you rather would prefer to determine the probability of getting 10 or fewer h
 </example>
 
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		This one uses the binomial distribution.
-		</p>
-		</introduction>
+<exercise><title>WebWork - Binomial</title>
+
 		<webwork source="Library/Mizzou/Finite_Math/Probability_Introduction/Coin.pg">
 		</webwork>
 </exercise>
@@ -267,12 +263,8 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 
 
 <p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		This one uses the binomial distribution.
-		</p>
-		</introduction>
+<exercise><title>WebWork - Binomial</title>
+
 		<webwork source="Library/Rochester/setProbability8BinomialDist/ur_pb_8_6.pg">
 		</webwork>
 </exercise>
@@ -346,9 +338,9 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 	Geometric Distribution.</p>
 
 	<p>
-	<theorem xml:id="GeometricProbabilityFunctionTheorem">
+	<theorem xml:id="GeometricProbabilityFunction">
 	<statement>
-	<p xml:id="GeometricProbabilityFunction">For a Geometric variable <m>X</m> with <m>R = \{1, 2, 3, ... \}</m>,
+	<p>For a Geometric variable <m>X</m> with <m>R = \{1, 2, 3, ... \}</m>,
 	<me>f(x) = (1-p)^{x-1} \cdot p</me>
 	</p>
 	</statement>
@@ -432,9 +424,9 @@ def _(p=input_box(1/10,label='p = ',width=10),n=[25,50,75,100,200]):
 </p>
 
 <p>	
-	<theorem><title>Geometric Statistics Theorem</title>
+	<theorem xml:id="GeometricStatistics"><title>Geometric Statistics Theorem</title>
 		<statement>
-		<p xml:id="GeometricStatistics">
+		<p>
 		For the geometric distribution, 
 			<me>\mu = 1/p</me>
 			<me>\sigma^2  = \frac{1-p}{p^2}</me>
@@ -612,9 +604,9 @@ Similarly,
 For a positive integer r, let the variable <m>X</m> measure the number of trials needed in order to obtain the rth success. Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
 
 <p>
-<theorem><title>Negative Binomial Probability Function</title>
+<theorem xml:id="NegativeBinomialProbabilityFunction"><title>Negative Binomial Probability Function</title>
 <statement>
-	<p xml:id="NegativeBinomialProbabilityFunction">
+	<p>
 	<me>f(x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r,</me>
 	for <m>x \in R = \{r, r+1, ... \}</m>.
 	</p>
@@ -648,8 +640,8 @@ which is still relatively small.
 </example>
 
 <p>
-<theorem><title>Negative Binomial Distribution Sums to 1</title>
-<statement xml:id="NegativeBinomialSumsToOne">>
+<theorem xml:id="NegativeBinomialSumsToOne"><title>Negative Binomial Distribution Sums to 1</title>
+<statement>>
 	<p>
 		<me>\sum_{x=r}^{\infty} {\binom{x - 1}{r-1}(1-p)^{x-r}p^r} = 1</me>
 	</p>
@@ -695,10 +687,6 @@ def _(p=input_box(1/12,width=15),r=slider(1,10,1,2)):
 -->
 <exercise>
 <webwork>
-<setup>
-    <pg-code>
-    </pg-code>
-</setup>
 <statement>
 <p>
 A telephone saleswoman arranges a sequence of interviews of potential customers in order to sell them an insurance policy. She believes that her success rate in completing a sale in any interview is 11 %. Provide answers to at least 3 decimal places.
@@ -730,9 +718,9 @@ Determine the probability that the second sale is made on the sixth interview: <
 </exercise>
 
 <p>
-<theorem><title>Statistics for Negative Binomial Distribution</title>
+<theorem xml:id="NegativeBinomialStatistics"><title>Statistics for Negative Binomial Distribution</title>
 <statement>
-	<p xml:id="NegativeBinomialStatistics">
+	<p>
 		For the Negative Binomial Distribution, 
 		<me>\mu = \frac{r}{p}</me>
 		<me>\sigma^2 = r \frac{1-p}{p^2}</me>
@@ -816,7 +804,7 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 <section xml:id="BernoulliGeneratingFunctions"><title>Generating Functions for Bernoulli-based Distributions</title>
 
 <p>
-<xref ref="MomentGeneratingFunctionDefn">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
+<xref ref="DefnMomentGeneratingFunction">Moment Generating Functions</xref> can be derived for each of the distributions in this chapter.
 </p>
 
 
@@ -950,7 +938,7 @@ where we have used L'Hopital's rule to evaluate the indeterminate form. We will 
 </corollary>
 -->
 
-<theorem xml:id="MFGNegativeBinomial"><title>Moment Generating Function for Negative Binomial</title>
+<theorem xml:id="MGFNegativeBinomial"><title>Moment Generating Function for Negative Binomial</title>
 <statement>
 <p>
 <me>M(t)  = \frac{p^r}{(1 - e^t(1-p))^r}</me>
@@ -1028,9 +1016,9 @@ show((Mtt(t=0)-Mt(t=0)^2).factor())
 </section>
 
 <section xml:id="BernoulliBasedSummary"><title>Summary</title>
-<introduction>
+<p>
 Here is a summary of the major results dealing with Bernoulli-based variables:
-</introduction>
+</p>
 <p>
 <xref ref="BinomialProbabilityFunction">Binomial Distribution</xref>
 </p>

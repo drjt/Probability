@@ -146,11 +146,11 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 
 <!--
 	<exercise>
-		<introduction>
+		<title>
 		<p>
-		Let's see if you understand the relationship between frequency and relative frequency.
+		WeBWorK - relationship between frequency and relative frequency.
 		</p>
-		</introduction>
+		</title>
 		<webwork source="local/relative_frequency1.pg">
 		</webwork>
 		<conclusion>
@@ -285,14 +285,12 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 <section xml:id="ProbabilityBasics"><title>Definition of Probability</title>
 
 <p>	
-<introduction>
-<p>
+
 Relative frequency gives a way to measure the proportion of "successful" outcomes when doing an experimental approach. From the interactive applications above, it appears that the relative frequency does jump around as the experiment is repeated but that the amount of variation decreases as the number of experiments increases. This is known to be true in general and is known as the "Law of Large Numbers". 
 </p>
 <p>
 We would like to formalize what these relative frequencies are approaching and will call this theoretical limit the "probability" of the outcome. In doing so, we will do our best to model our definition so that it follow the behavior of relative frequency.
-</p>
-</introduction>
+
 </p>
 
 <p>
@@ -428,11 +426,11 @@ Consider how we might create a definition for the expectation of a given outcome
 
 <p>
 	<exercise>
-		<introduction>
+		<title>
 		<p>
-		Using the definition above, determine the following probabilities.
+		WeBWorK - Using the definition 
 		</p>
-		</introduction>
+		</title>
 		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg">
 		</webwork>
 		<conclusion>
@@ -660,13 +658,11 @@ def _(auto_update=False):
 </sage>
 </p>
 
-<p>	
-	<exercise><title>WebWork</title>
-		<introduction>
 		<p>
 		Let's see if you understand the relationship between frequency and relative frequency. In this exercise, presume "Probabiity" to be the expected fraction of outcomes you might logically expect.
 		</p>
-		</introduction>
+<p>	
+	<exercise><title>WebWork</title>
 		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg">
 		</webwork>
 		<conclusion>
@@ -679,10 +675,7 @@ def _(auto_update=False):
 
 <p>
 	<exercise><title>WebWork</title>
-		<introduction>
-		<p>This one is a little harder and uses the binomial coefficients from Combinatorics.
-		</p>
-		</introduction>
+
 		<webwork source="Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg">
 		</webwork>
 		<conclusion>
@@ -775,10 +768,10 @@ So, a win can be obtained in two ways: 7 or 11 on first roll or getting the poin
 
 <section xml:id="ConditionalProbability">
 <title>Conditional Probability</title>
-	<introduction>
+
 	<p>When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain then the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
 	</p>
-	</introduction>
+
 
 <p>Indeed, consider what happens when you keep on dealing a hand of five cards from a shuffled deck but without replacement.  Notice how the probability of the same thing (such as P(getting a Heart on the next card)) oscillates based upon what cards came out of the deck on previous hands.
 </p>
@@ -984,11 +977,6 @@ You can read <m>P(B|A)</m> as "the probability of B given A".
 
 <p>
 <exercise><title>WebWork</title>
-	<introduction>
-		<p>Conditional Probability sometimes makes you have to think carefully about the ways to get 
-		the desired outcome.
-		</p>
-		</introduction>
 		<webwork source="Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg">
 		</webwork>
 		<conclusion>
@@ -1002,10 +990,11 @@ You can read <m>P(B|A)</m> as "the probability of B given A".
 	
 	
 <section xml:id="Bayes"><title>Bayes' Theorem</title>	
-	<introduction>
-	<p><xref ref="DefnConditionalProbability">Conditional probabilities</xref> can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to an important result known as Bayes' Theorem.
+
+	<p>
+	<xref ref="DefnConditionalProbability">Conditional probabilities</xref> can be computed using the methods developed above if the appropriate information is available. Some times you will however have some information available, such as <m>P(A | B)</m> but need <m>P(B | A)</m>. The ability to "play around with history" by switching what has been presumed to occur leads to an important result known as Bayes' Theorem.
 	</p>
-	</introduction>
+
 
 	<theorem xml:id="BayesTheorem">
 	<title>Bayes' Theorem</title>
@@ -1095,12 +1084,7 @@ So,
 </p>
 
 <p>
-<exercise><title>WebWork</title>
-	<introduction>
-	<p>
-	Let's try a Bayes' Theorem example...
-	</p>
-	</introduction>
+<exercise><title>WebWork - Bayes'</title>
 	<webwork source="Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg">
 	</webwork>
 	<conclusion>
@@ -1110,12 +1094,8 @@ So,
 	</conclusion>
 </exercise>
 
-<exercise><title>WebWork</title>
-	<introduction>
-	<p>
-	Here is a more extensive Bayes' Theorem example...
-	</p>
-	</introduction>
+<exercise><title>WebWork- Bigger Bayes'</title>
+
 	<webwork source="Library/UVA-Stat/setStat212-Homework04/stat212-HW04-16.pg">
 	</webwork>
 	<conclusion>
@@ -1250,7 +1230,7 @@ as expected!
 	Your automobile insurance company uses past history to determine how to set rates by measuring the number of accidents caused by clients in various age ranges. The following table summarizes the proportion of those insured and the corresponding probabilities by age range:
 
 	<table halign="left">
-		<caption>Age vs Accident Likelihood</caption>
+		<title>Age vs Accident Likelihood</title>
       	<tabular halign="right">
       
 <row><cell bottom="medium" right="medium">Age</cell><cell bottom="medium" right="medium">Proportion of Insured</cell><cell bottom="medium">Probability of Accident</cell></row>      
@@ -1306,10 +1286,8 @@ as expected!
 
 <section xml:id="Independence"><title>Independence</title>
 
-	<introduction>
 	<p>You have seen when repeatedly sampling without replacement leads to a change the the likelihood of some event in successive trials. Indeed, this is what conditional probabilities above illustrate. However, when sampling with replacement you may find a different situation arises. Indeed, you easily notice that when flipping a coin, P(Heads) = 1/2 regardless of the outcome of any previous flip.  In situations such as this where the probability of an event is not affected by the occurrence (or lack of occurrence) of some other event determining the probability of compound events can be greatly simplified.
 	</p>
-	</introduction>
 
 <p>	
 <definition xml:id="DefnIndependentEvents"><title>Independent Events</title>
@@ -1341,12 +1319,8 @@ as expected!
 
 <!--
 <p>
-<exercise><title>WebWork</title>
-	<introduction>
-		<p>
-		Independence makes combined probabilities VERY easy to compute.
-		</p>
-	</introduction>
+<exercise><title>WebWork - Independence</title>
+
 	<webwork source="Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg"></webwork>
 	<conclusion>
 		<p>
@@ -1419,7 +1393,7 @@ TBA
 	The table below classifies students at your university according to gender and according to major.
 
 	<table halign="left">
-		<caption>Gender vs Major</caption>
+		<title>Gender vs Major</title>
       	<tabular halign="right">
       
 <row><cell bottom="medium" right="medium">Enrollment</cell><cell bottom="medium">Male</cell><cell bottom="medium" right="medium">Female</cell><cell bottom="medium">Totals</cell></row>      
