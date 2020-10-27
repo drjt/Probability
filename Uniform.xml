@@ -207,12 +207,11 @@ Then, if you want to compute something like <m>P(2 &lt; X &lt; 4.5)</m> integrat
 </example>
 </p>
 
-<p>
+
 <exercise><title>WebWork - Continuous Uniform</title>
 		<webwork source="Library/Rochester/setProbability16JointDist/ur_pb_16_3.pg">
 		</webwork>
 </exercise>
-</p>
 
 
 <p>
@@ -509,11 +508,11 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </p>
 
 <!--
-<p>
+
 <exercise><title>WebWork - Hypergeometric</title>
 <webwork source="Library/Misc/hypergeometric.pg"></webwork>
 </exercise>
-</p>
+
 -->
 
 <p>Consider the <xref ref="HypergeometricDistribution">Hypergeometric Distribution</xref> for various values of <m>n_1, n_2,</m> and r using the interactive cell above. Notice what happens when you start with relatively small values of <m>n_1, n_2,</m> and r (say, start with <m>n_1 = 5, n_2 = 8,</m> and r = 4 and then doubling then all again and again. Consider the likely skewness and kurtosis of the graph as the values get larger.

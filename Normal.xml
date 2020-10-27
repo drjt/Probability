@@ -25,9 +25,9 @@ We present the normal distribution by simply presenting it's probability functio
 <section xml:id="NormalDistribution"><title>The Normal Distribution</title>
 	
 <p>
-<definition xml:id="DefnNormalDistribution"><title>The Normal Distribution</title>
+<definition xml:id="NormalPF"><title>The Normal Distribution</title>
 	<statement>
-	<p xml:id="NormalPF">
+	<p>
 	Given two parameters <m>\mu</m> and <m>\sigma</m>, a random variable X over <m>R = (-\infty,\infty)</m> has a normal distribution provided it has a probability function given by
 		<me>
 		f(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{ -\left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2}
@@ -83,13 +83,13 @@ When in the standard normal distribution, you can use a graphing calculator's no
 	<p>
 	Note that you can use a graphing calculator's normalcdf(a,b) to compute probabilities.
 	</p>
-<p>
+
 <exercise><title>WebWork - Computing Standard Normal Probabilities</title>
 
 		<webwork source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 <p>
 <theorem><title>Verifying the normal probability function</title>
@@ -179,25 +179,25 @@ as desired.
 Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compute general normal probabilities.  Pay attention to the the order of terms. For normal distributions, the calculator function always requires an interval. If you are looking for a one-sided probability, such as <m>P(X \gt 4)</m> for a problem with mean <m>\mu = 2</m> and <m>\sigma = 3</m>, you can replace the infinite upper limit with "large" finite endpoint. Providing something that is more than 10 standard deviations above the mean is for all practical purposes infinity with respect to calculations. So, in this case <m>P(X \gt 4)</m> can be approximated by normalcdf(4,32,2,3).  If you are brave, you can go even higher and use normalcdf(4,100000,2,3) if desired. 
 </p>
 
-<p>
+
 <exercise><title>WebWork - Computing Regular Normal Probabilities</title>
 
 		<webwork source="Library/NAU/setStatistics/normal_dist2.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 	<p>
 	While we are at it, can we "go backwards" and figure out the mean and variance if given some probabilities.
 	</p>
 	
-<p>
+
 <exercise><title>WebWork - Computing Regular Normal Probabilities</title>
 
 		<webwork source="Library/NAU/setStatistics/normprob4.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 
 <p>
@@ -249,13 +249,13 @@ def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = ')
 </sage>
 </p>
 
-<p>
+
 <exercise><title>WebWork - Applying Normal Probabilities</title>
 
 		<webwork source="Library/Rochester/setProbability10NormalDist/ur_pb_10_9.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 </section>
 
@@ -274,9 +274,9 @@ which is given a special name below.
 </p>
 	
 <p>
-<definition xml:id="DefnChiSquare"><title>Chi-Square Probability Function</title>
+<definition xml:id="ChiSquarePF"><title>Chi-Square Probability Function</title>
 <statement>
-<p xml:id="ChiSquarePF">Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
+<p>Given an natural number r, suppose X is a random variable over the space <m>R = (0,\infty)</m> with probability function given by
 	<me>f(x) = \frac{x^{r/2-1} e^{-x/2} }{\Gamma(r/2) 2^{r/2}}.</me>
 	Then X has a Chi-Square distribution with r degrees of freedom. This is often denoted <m>\chi^2(r)</m>.
 </p>
@@ -346,9 +346,9 @@ def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),
 </p>
 
 <p>
-<definition xml:id="DefnCauchyDistribution"><title>The Cauchy Distribution</title>
+<definition xml:id="CauchyPF"><title>The Cauchy Distribution</title>
 <statement>
-<p xml:id="CauchyPF">
+<p>
 Consider a continuous random variable on the real numbers defined by
 <me>f(x) = \frac{1/\pi}{1+x^2}.</me>
 A random variable with this probability function is said to be a Cauchy Distribution.
@@ -400,9 +400,9 @@ and note that the integrand does not converge to 0 at the endpoints and therefor
 </p>
 
 <p>
-<definition xml:id="DefnStudentt"><title>Student-t Distribution</title>
+<definition xml:id="StudenttPF"><title>Student-t Distribution</title>
 <statement>
-<p xml:id="StudenttPF">
+<p>
 Suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
 <me>T = \frac{Z}{\sqrt(Y/r)}.</me>
 Then, T is said to have a (Student) t distribution with probability function given by 
@@ -827,13 +827,13 @@ that is, the standard normal distribution function.
 	While we are at it, we can again "go backwards" and figure out the mean and variance if given some probabilities.
 	</p>
 	
-<p>
+
 <exercise><title>WebWork - Computing probabilities on <m>\overline{X}</m></title>
 
 		<webwork source="Library/UVA-Stat/setStat212-Homework07/stat212-HW07-06.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 <p>
 <example><title>Exponential X vs Normal <m>\overline{X}</m></title>

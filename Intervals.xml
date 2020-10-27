@@ -80,19 +80,18 @@ In this chapter we first discuss how to determine appropriate methods for estima
 	</corollary>
 	
 	
-<p>
-<example><title>WebWork</title>
+
+<exercise><title>WebWork - Chebyshev</title>
 <webwork source="Library/NAU/setStatistics/cheby2.pg">
 </webwork>
-</example>
-</p>
+</exercise>
 
-<p>
-<example><title>WebWork</title>
+
+<exercise><title>WebWork - More Chebyshev</title>
 <webwork source="Library/NAU/setStatistics/cheby1.pg">
 </webwork>
-</example>
-</p>
+</exercise>
+
 
 <p>
 <example><title> - Comparing known distribution to Chebyshev</title>
@@ -293,12 +292,12 @@ which is slightly different than the first and slightly smaller than the second.
 </p>
 
 
-<p>
-<exercise><title>WebWork</title>
+
+<exercise><title>WebWork - Confidence Intervals</title>
 <webwork source="Library/ASU-topics/setStat/kolossa49.pg">
 </webwork>
 </exercise>
-</p>
+
 
 <p>
 <theorem xml:id="SampleSizeForConfidenceIntervalForP"><title>Determining Sample Size for proportions with a preliminary estimate</title>
@@ -347,12 +346,11 @@ or a sample size of at least 1683.
 </example>
 </p>
 
-<p>
-<exercise><title>WebWork</title>
+
+<exercise><title>WebWork - Sample Size</title>
 	<webwork source="Library/UBC/STAT/STAT200/hw07/hw07-q04b.pg">
 	</webwork>
 </exercise>
-</p>
 
 </section>
 
@@ -394,24 +392,24 @@ with confidence level <m>1-\alpha</m> and margin of error
 <me>E = z_{\alpha /2} \frac{\sigma}{\sqrt{n}}.</me>
 </p>
 
-<p>
-<exercise><title>WebWork</title>
+
+<exercise><title>WebWork - Confidence Interval for the Mean</title>
 	<webwork source="Library/CollegeOfIdaho/setStatistics_Ch14InferenceIntro/14Stats_05_InferenceIntro.pg">
 	</webwork>
 </exercise>
-</p>
+
 
 
 <p>
 It should be noted that the use of the Central Limit Theorem makes the use of  InvNorm an approximation. It can be shown that so long as n is larger than 30 then generally this approximation is reasonable. If not, then use replace the z-score with a corresponding value from the t-distribution.
 </p>
 
-<p>
-<exercise><title>WebWork with t-scores</title>
+
+<exercise><title>WebWork - Confidence Interval with t-scores</title>
 	<webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_6.pg">
 	</webwork>
 </exercise>
-</p>
+
 
 
 <p>
@@ -601,13 +599,13 @@ print('P( X &lt; ',b,') = ',b1)
 </p>
 
 
-<p>
-<exercise><title>WebWork - Two-sided with large n</title>
+
+<exercise><title>WebWork - Two-sided Confidence Interval with large n</title>
 
 <webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_20.pg">
 </webwork>
 </exercise>
-</p>
+
 
 
 <p>Suppose  that you have n=400 data values and suppose you have computed from those a sample variance of <m>s^2 = 479.5</m>.  Then, the only change in the calculation is the two chi-square statistic values. For 95% but now with 399 degrees of freedom
@@ -649,12 +647,12 @@ TBA
 You can, of course, use the formula to work out the sample size needed in order to have a sufficiently narrow confidence interval
 </p>
 
-<p>
-<exercise><title>WebWork</title>
+
+<exercise><title>WebWork - One-sided Confidence Interval</title>
 <webwork source="Library/Rochester/setStatistics3Estimates/ur_stt_3_22.pg">
 </webwork>
 </exercise>
-</p>
+
 
 <p>
 Finally, to determine a confidence interval for <m>\sigma</m>, proceed using the protocols described above and simply take the square root on the resulting interval.

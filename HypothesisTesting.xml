@@ -103,22 +103,26 @@ and find that this has probability approximately 0.0392 + 0.0392 = 0.0784.  Howe
 </p>
 
 
-<p>
-<exercise><title>WebWork - two tailed test</title>
+
+<exercise><title>WebWork - Two Tailed Test</title>
 		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_03_InferencePropn.pg">
 		</webwork>
 </exercise>
-</p>
-		<p>
-		Next is a one-tailed test for p. Notice, in this case you will only compute z-score probability for one tail and not both tails.
-		</p>
+
+
 <p>
-<exercise><title>WebWork</title>
+Next is a one-tailed test for p. Notice, in this case you will only compute z-score probability for one tail and not both tails.
+		</p>
+
+
+
+<exercise><title>WebWork - One Tailed Test</title>
 
 		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch19InferencePropn/19Stats_10_InferencePropn.pg">
 		</webwork>
 </exercise>
-</p>
+
+
 
 </section>
 
@@ -163,9 +167,9 @@ To compute the p-value,
 Since this p-value is less than our significance level <m>\alpha = 0.01</m> then you can reject the null hypothesis and accept the alternate.
 </p>
 
-<p>
+
 <exercise>
-<webwork>
+<webwork><title>WeBWorK - Hypothesis Testing</title>
 <statement>
 <p>
 A random sample of 10 observations was drawn from a large normally distributed population. The data is below.
@@ -196,15 +200,15 @@ Your decision for the hypothesis test therefore would be to not reject the null 
 </solution>
 </webwork>
 </exercise>
-</p>
 
 
-<p>This is a repeat of the previous exercise but using the OPL
-<exercise><title>WebWorK - two tailed test</title>
+
+
+<exercise><title>WebWorK - Another Two Tailed Test</title>
 <webwork source="Library/UVA-Stat/setStat212-Homework10/stat212-HW10-08.pg">
 </webwork>
 </exercise>
-</p>
+
 
 <p>
 Consider One-tailed Hypothesis test for <m>\mu</m> using an interesting application:
@@ -224,12 +228,12 @@ To compute the p-value,
 Since this p-value is less than our significance level <m>\alpha = 0.05</m> (by a lot) then you can reject the null hypothesis and accept the alternate. It is safe therefore to say that customers can expect at least 16 ounces! However, note that some folks will still be stiffed since the standard deviation of 0.08 certainly means that some bottles have less than 16.05-0.08 ounces of beverage.  
 </p>
 
-<p>
+
 <exercise><title>WebWorK - one tailed test</title>
 <webwork source="Library/CollegeOfIdaho/setStatistics_Ch17InferenceMean_t/17Stats_08_InferenceMean_t.pg">
 </webwork>
 </exercise>
-</p>
+
 	
 </section>
 
@@ -254,12 +258,12 @@ and for one-tailed to the left if
 Technically, for the two-tailed test you could pick T-values so that the total probability sums to <m>\alpha</m> in any fashion but generally this probability is split evenly between the two tails as noted above.
 </p>	
 
-<p>
-<exercise><title>WebWorK</title>
+
+<exercise><title>WebWorK - Confidence Interval for <m>\sigma</m></title>
 <webwork source="Library/Rochester/setStatistics4HypothesisTesting/ur_stt_4_22.pg">
 </webwork>
 </exercise>
-</p>
+
 
 
 

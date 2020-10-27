@@ -48,9 +48,9 @@ In this chapter, you will investigate the following distributions:
 Now, let's determine the actual probability function for this distribution.
 </p>
 <p>
-<theorem xml:id="BinomialProbabilityFunctionTheorem"><title>Derivation of Binomial Probability Function</title>
+<theorem xml:id="BinomialProbabilityFunction"><title>Derivation of Binomial Probability Function</title>
 	<statement>
-	<p xml:id="BinomialProbabilityFunction">
+	<p>
 	For R = {0, 1, ..., n},
 	<me>f(x) = \binom{n}{x}p^x(1-p)^{n-x}</me>
 	</p>
@@ -136,13 +136,9 @@ If you rather would prefer to determine the probability of getting 10 or fewer h
 </p>
 </example>
 
-<p>
 <exercise><title>WebWork - Binomial</title>
-
-		<webwork source="Library/Mizzou/Finite_Math/Probability_Introduction/Coin.pg">
-		</webwork>
+		<webwork source="Library/Mizzou/Finite_Math/Probability_Introduction/Coin.pg" />
 </exercise>
-</p>
 
 
 <example><title>Testing critical components</title>
@@ -181,53 +177,52 @@ def _(p=input_box(3/10,width=15),n=input_box(10,width=15)):
 </p>
 
 <p>
-<theorem xml:id="BinomialStatisticsTheorem"><title>Binomial Distribution Statistics</title>
-	<statement>
-	<p xml:id="BinomialStatistics">For the Binomial Distribution
+<theorem xml:id="BinomialStatistics"><title>Binomial Distribution Statistics</title>
+<statement>
+	<p>
 	<me>\mu = np</me>
 	<me>\sigma^2 = np(1-p)</me>
 	<me>\gamma_1 = \frac{1-2p}{\sqrt{np(1-p)}}</me>
 	<me>\gamma_2 = \frac{1-6p(1-p)}{np(1-p)} + 3</me>
 	</p>
-	</statement>
+</statement>
 
 <proof>
 	<p>
-		For the <xref ref="TheoreticalMean">mean</xref>,
-		<md>
-			<mrow> \mu &amp; = E[X] </mrow>
-			<mrow> &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow>
-			<mrow> &amp; = \sum_{x=1}^{n} {x \frac{n(n-1)!}{x(x-1)!(n-x)!} p^x (1-p)^{n-x}}</mrow>
+	For the <xref ref="TheoreticalMean">mean</xref>,
+	<md>
+	<mrow> \mu &amp; = E[X] </mrow>
+	<mrow> &amp; = \sum_{x=0}^{n} {x \binom{n}{x} p^x (1-p)^{n-x}}</mrow>
+	<mrow> &amp; = \sum_{x=1}^{n} {x \frac{n(n-1)!}{x(x-1)!(n-x)!} p^x (1-p)^{n-x}}</mrow>
 			<mrow> &amp; = np \sum_{x=1}^{n} {\frac{(n-1)!}{(x-1)!((n-1)-(x-1))!} p^{x-1} (1-p)^{(n-1)-(x-1)}}</mrow>
-		</md>
+	</md>
 
-		Using the change of variables <m>k=x-1</m> and <m>m = n-1</m> yields a binomial series
-		<md>
-			<mrow> &amp; = np \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}}</mrow>
-			<mrow> &amp; = np (p + (1-p))^m = np</mrow>
-		</md>
+	Using the change of variables <m>k=x-1</m> and <m>m = n-1</m> yields a binomial series
+	<md>
+	<mrow> &amp; = np \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}}</mrow>
+	<mrow> &amp; = np (p + (1-p))^m = np</mrow>
+	</md>
 	</p>
 
 	<p>For the <xref ref="TheoreticalVariance">variance</xref>,
-		<md>
-		<mrow> \sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
-		<mrow> &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow>
-		<mrow> &amp; = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2</mrow>
-		<mrow> = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow>
-		</md>
+	<md>
+	<mrow> \sigma^2 &amp; = E[X(X-1)] + \mu - \mu^2 </mrow>
+	<mrow> &amp; = \sum_{x=0}^{n} {x(x-1) \binom{n}{x} p^x (1-p)^{n-x}} + np - n^2p^2</mrow>
+	<mrow> &amp; = \sum_{x=2}^{n} {x(x-1) \frac{n(n-1)(n-2)!}{x(x-1)(x-2)!(n-x)!} p^x (1-p)^{n-x}}  + np - n^2p^2</mrow>
+	<mrow> = n(n-1)p^2 \sum_{x=2}^{n} {\frac{(n-2)!}{(x-2)!((n-2)-(x-2))!} p^{x-2} (1-p)^{(n-2)-(x-2)}} + np - n^2p^2</mrow>
+	</md>
 	</p>
 
 	<p>Using the change of variables <m>k=x-2</m> and <m>m = n-2</m> yields a binomial series
 	<md>
-		<mrow> &amp; = n(n-1)p^2  \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2</mrow>
-		<mrow> &amp; = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)</mrow>
+	<mrow> &amp; = n(n-1)p^2  \sum_{k=0}^{m} {\frac{m!}{k!(m-k)!} p^k (1-p)^{m-k}} + np - n^2p^2</mrow>
+	<mrow> &amp; = n(n-1)p^2 + np - n^2p^2 = np - np^2 = np(1-p)</mrow>
 	</md>
 	</p>
 
 
 	<p>The <xref ref="TheoreticalSkewness">skewness</xref> and <xref ref="TheoreticalKurtosis">kurtosis</xref> can be found similarly using formulas involving E[X(X-1)(X-2)] and E[X(X-1)(X-2)(X-3)]. The complete determination is performed using Sage below.
 	</p>
-
 </proof>
 </theorem>
 </p>
@@ -262,13 +257,11 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 </p>
 
 
-<p>
-<exercise><title>WebWork - Binomial</title>
 
-		<webwork source="Library/Rochester/setProbability8BinomialDist/ur_pb_8_6.pg">
-		</webwork>
+<exercise><title>WebWork - Binomial</title>
+		<webwork source="Library/Rochester/setProbability8BinomialDist/ur_pb_8_6.pg" />
 </exercise>
-</p>
+
 
 <p>
 <sage language='r'>

@@ -51,8 +51,8 @@ In creating statistical measures, you might want to consider one of the followin
 Below is an active exercise that you can continue to attempt until you get the correct answer.  Try to avoid clicking on the provided solution unless you are hopelessly stuck on exercises like this throughout the text.
 </p>
 		
-c
-<exercise><title>WebWork</title>
+
+<exercise><title>WebWork - Types of Data</title>
 
 		<webwork source="Library/UVA-Stat/setStat212-Homework01/stat212-HW01-13.pg" />
 
@@ -168,13 +168,13 @@ The definition presented below provides for a unique measure for each unique val
 Compute the following <xref ref="DefnPercentilesAlt">percentile values using the alternate formula</xref>.
 </p>
 
-<p><title>WeBWorK - Computing Percentiles</title>
-<exercise>
+
+<exercise><title>WeBWorK - Computing Percentiles</title>
 	<webwork source="Library/UVA-Stat/setStat212-Homework02/stat212-HW02-18.pg">
 	</webwork>
 
 </exercise>
-</p>
+
 
 <p>
 <example><title>Presidential Percentile</title>
@@ -507,16 +507,13 @@ if n is odd and
 if n is even.
 </p>
 
-<p>
+
 <exercise><title>WeBWorK - Computing Mean, Median and Mode</title>
 
 		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC03S03/MeanMedianMode02.pg">
 		</webwork>
 
 </exercise>
-</p>
-
-
 
 
 <p>
@@ -793,14 +790,12 @@ So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{
 </p>
 
 
-<p>
-<exercise><title>Computing Descriptive Statistics</title>
 
+<exercise><title>Computing Descriptive Statistics</title>
 		<webwork source="Library/UBC/STAT/STAT241_251/setAssignment-01/HW01_03/HW01-03_1.pg">
 		</webwork>
-
 </exercise>
-</p>
+
 
 
 <p>
@@ -980,12 +975,11 @@ Create a frequency distribution and determine the sample mean and variance.
 </p>
 </exercise>
 
-<p>
+
 <exercise><title>WeBWorK - Grouped Discrete Data</title>
 		<webwork source="Library/Mizzou/Finite_Math/Statistics_Introduction/Freq.pg">
 		</webwork>
 </exercise>
-</p>
 
 
 
@@ -1031,14 +1025,11 @@ The total cummulative frequency is 25 and so <m>m = \frac{25}{2} = 12.5</m> whic
 </example>
 </p>
 
-<p>
+
 <exercise><title>Statistics using Continuous Grouped Data</title>
-
-		<webwork source="Library/Mizzou/Finite_Math/Statistics_Measures_of_Central_Tendency/MeanGroupedData.pg">
-		</webwork>
-
+		<webwork source="Library/Mizzou/Finite_Math/Statistics_Measures_of_Central_Tendency/MeanGroupedData.pg" />
 </exercise>
-</p>
+
 
 </section>
 
@@ -1354,16 +1345,12 @@ boxplot(data, horizontal=TRUE)
 </sage>
 </p>
 
-<p><title>WeBWorK - Computing Percentiles</title>
-<exercise>
-	<title>
-	<p>Let's use a box plot to determine some order statistics.
-	</p>
-	</title>
+
+<exercise><title>WeBWorK - Computing Percentiles</title>
 	<webwork source="Library/NAU/setStatistics/FiveNumFromPlot.pg">
 	</webwork>
 </exercise>
-</p>
+
 		
 
 <!--

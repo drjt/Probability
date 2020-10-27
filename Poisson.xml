@@ -50,9 +50,9 @@ Consider a Poisson Process where you start with an interval of fixed length T an
 </p>
 
 <p>
-<theorem xml:id="PoissonPMF"><title>Poisson Probability Function</title>
+<theorem xml:id="PoissonPF"><title>Poisson Probability Function</title>
 <statement>
-<p xml:id="PoissonPF">Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
+<p>Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
 <me>f(x) = \frac{\mu^x e^{-\mu}}{x!}</me>
 for <m>R = \{ 0, 1, 2, ... \}</m>.
 </p>
@@ -121,12 +121,12 @@ On the other hand, suppose the question is to ask whether 1020 or fewer requests
 </example>
 </p>
 
-<p>
+
 <exercise><title>WebWork - Poisson</title>
 		<webwork source="Library/UBC/STAT/STAT302/HW06/HW06-03.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 
 <p>
@@ -320,9 +320,9 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 
 
 <p>
-<theorem><title>Alternate Form for the Exponential Distribution Probability Function</title>
+<theorem xml:id="ExponentialPF"><title>Alternate Form for the Exponential Distribution Probability Function</title>
 	<statement>
-	<p xml:id="ExponentialPF">Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose <m>X</m> measures the variable interval length needed until you get a first success.  Then <m>X</m> has an exponential distribution with probability function
+	<p>Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose <m>X</m> measures the variable interval length needed until you get a first success.  Then <m>X</m> has an exponential distribution with probability function
 		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
 	</p>
 	</statement>
@@ -400,13 +400,13 @@ Let's determine the probability that a first request arrives in the next two sec
 </example>
 </p>
 
-<p>
+
 <exercise><title>WebWork - Exponential</title>
 
 		<webwork source="Library/Rochester/setProbability14ExponentialDist/ur_pb_14_1.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 
 <p>
@@ -459,9 +459,11 @@ hist(Psample, prob=TRUE, add=TRUE)
 <!--
 Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
 -->
-<p>
+
+
+
 <exercise>
-<webwork>
+<webwork><title>WeBWorK - Lightbulbs</title>
 <statement>
 <p>
 It can be presumed that the life span in years of a certain brand of lightbulbs follows the Poisson process assumptions.  Suppose that the mean life span till failure is known to be 0.7 years. A tester makes random observations of the life times of this particular brand of lightbulbs and records them one by one as either a success if the life time exceeds 1 year, or as a failure otherwise.
@@ -505,7 +507,11 @@ Now, use the geometric distribution with <m>p = 0.2397</m>...
 </solution>
 </webwork>
 </exercise>
-</p>
+
+
+
+
+
 </section>
 
 
@@ -515,7 +521,7 @@ Extending the exponential distribution model developed above, consider a Poisson
 </p>
 
 <p>
-<definition xml:id="DefnGammaFunction"><title>Gamma Function</title>
+<definition xml:id="GammaPF"><title>Gamma Function</title>
 <statement>
 	<p>
 	<me>\Gamma(t) = \int_0^{\infty} u^{t-1} e^{-u} du</me>
@@ -574,9 +580,9 @@ Notice that for this random variable, <m>\mu = \lambda T</m> can be obtained for
 </p>
 
 <p>
-<definition xml:id="DefnGammaDistributionFunction"><title>Gamma Distribution  Function</title>
+<definition xml:id="GammaDF"><title>Gamma Distribution  Function</title>
 <statement>
-<p xml:id="GammaPF">
+<p>
 If X measures the interval until the rth success and <m>\mu</m> as the average interval until the 1st success, then X with probability function
 <me>f(x) =  \frac{x^{r-1} \cdot e^{-\frac{x}{\mu}}}{\Gamma(r) \cdot \mu^r}</me>
 has a Gamma Distribution.
@@ -585,16 +591,17 @@ has a Gamma Distribution.
 </definition>
 </p>
 
-<p>
+
+
 <exercise>
-<webwork>
+<webwork><title>WeBWorK - Lightbulbs</title>
 <statement>
 <p>
 It can be presumed that the life span in years of a certain brand of lightbulbs follows the Poisson process assumptions.  Suppose that the mean life span till failure is known to be 0.7 years. To do long-term study, a series of light bulbs are arranged so that when the first one fails, the next one comes on, etc.
 </p>
 <p>
 Determine the probability that it takes at most 3.5 years before the 4th bulb fails:
-<var name="0.73497" width="10" />
+<var name="'0.73497'" width="10" />
 </p>
 </statement>
 <solution>
@@ -612,7 +619,9 @@ So,
 </solution>
 </webwork>
 </exercise>
-</p>
+
+
+
 
 <p>
 <example><title>Router Requests Revisited Again</title>
@@ -792,7 +801,7 @@ hist(Psample, prob=TRUE, add=TRUE)
 </p>
 </statement>
 <proof>
-<p>Using the <xref ref="PoissonPF">Poisson probability function</xref>,
+<p>Using the Poisson probability function
 <md>
 <mrow>M(t) &amp; = \sum_{x=0}^{\infty} e^{tx} \frac{\mu^x e^{-\mu}}{x!}</mrow>
 <mrow> &amp; = \sum_{x=0}^{\infty} \frac{\left (\mu e^t \right )^x e^{-\mu e^t} e^{\mu e^t} e^{-\mu} }{x!}</mrow>

@@ -307,13 +307,13 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 </p>
 
 <!--
-<p>
+
 <exercise><title>WebWork</title>
 
 <webwork source="Library/UBC/STAT/STAT241_251/setAssignment-02/HW02-01/HW02-01a.pg">
 		</webwork>
 </exercise>
-</p>
+
 -->
 
 <p>		
@@ -536,13 +536,12 @@ TBA, using one of the table examples from above.
 	
 
 
-<p>
-<exercise><title>WebWork</title>
 
+<exercise><title>WebWork - Expected Value</title>
 		<webwork source="Library/Rochester/setProbability17Expectation/ur_pb_17_4.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 
 	<p>
@@ -662,27 +661,27 @@ TBA, using one of the table examples from above.
 	</p>
 
 
-<p>
+
 <exercise><title>WebWork - Random Variables</title>
 
 		<webwork source="Library/Mizzou/Finite_Math/Probability_Random_Variables/EV1.pg">
 		</webwork>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title>WebWork - More Random Variables</title>
 		<webwork source="Library/Rochester/setProbability7RandomVariables/ur_pb_7_6.pg">
 		</webwork>
 </exercise>
-</p>
+
 	
-<p>
+
 <exercise><title>WebWork - Even More</title>
 		<webwork source="Library/UBC/STAT/STAT241_251/setAssignment-01/HW01-01.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 
 	<p>

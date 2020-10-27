@@ -114,28 +114,21 @@ In order to "count without counting" we establish the following foundational pri
 	</theorem>
 </p>
 
-<p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		Let's apply the Multiplication Principle.
-		</p>
-		</introduction>
+
+<exercise><title>WebWork - Multiplications Principle</title>
+
 		<webwork source="Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg">
 		</webwork>
 </exercise>
-</p>
 
-<p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		</p>
-		</introduction>
+
+
+<exercise><title>WebWork - Counting without Counting</title>
+
 		<webwork source="Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg">
 		</webwork>
 </exercise>
-</p>
+
 
 <p>
 <definition xml:id="DefnFactorial"><title>Factorial</title>
@@ -312,22 +305,13 @@ Following the tree idea from above, continue for several steps but then stop onc
 
 </p>
 
-<p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		Let's apply the the Permutation formula.
-		</p>
-		</introduction>
+
+<exercise><title>WebWork - Permutations</title>
+
 		<webwork source="Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
 </exercise>	
-</p>
+
 
 <p>	
 <theorem xml:id="PermutationWithReplacementDistinguishable"><title>Permutations of a subset with replacement</title>
@@ -365,22 +349,12 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 </theorem>
 </p>
 
-<p>	
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		Let's apply the this new Permutation formula.
-		</p>
-		</introduction>
+	
+<exercise><title>WebWork - More Permutations</title>
 		<webwork source="Library/NAU/setCounting/RepeatedCombination1.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		Another one bites the dust.
-		</p>
-		</conclusion>
 </exercise>	
-</p>	
+	
 	
 </section>
 
@@ -483,33 +457,22 @@ In general, it would be nice to have a direct formula to determine the number of
 </theorem>
 </p>
 
-<p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		Let's apply the this new Combination forumula.
-		</p>
-		</introduction>
+
+<exercise><title>WebWork - Combinations</title>
+
 		<webwork source="Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg">
 		</webwork>
-		<solution>
-		A solution can be presented here.
-		</solution>
 		<conclusion>
 		<p>
 		Notice that to determine the number of outcomes required you to use the combination forumula several times and then multiply the results using the multiplication principle.
 		</p>
 		</conclusion>
 </exercise>	
-</p>
 
-<p>
-<exercise><title>WebWork</title>
-		<introduction>
-		<p>
-		Use the new Combination formula again.
-		</p>
-		</introduction>
+
+
+<exercise><title>WebWork - More Combinations</title>
+
 		<webwork source="Library/Rochester/setAlgebra38Counting/sw10_2_60.pg">
 		</webwork>
 		<conclusion>
@@ -518,7 +481,7 @@ In general, it would be nice to have a direct formula to determine the number of
 		</p>
 		</conclusion>
 </exercise>	
-</p>
+
 
 <p>
 <example><title>Ipad Security</title>

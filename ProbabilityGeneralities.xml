@@ -118,8 +118,8 @@ In general, this suggests a rule: if there are n outcomes and each one has the s
 	always true that outcomes are equally likely. Consider rolling two die and measuring their sum:
 </p>
 
-<p xml:id="TwoDiceSage">
-<sage>
+<p>
+<sage xml:id="TwoDiceSage">
 <title>Rolling Two Dice and Measuring their Sum</title>
 <input>
 @interact
@@ -146,18 +146,10 @@ def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(
 
 <!--
 	<exercise>
-		<title>
-		<p>
-		WeBWorK - relationship between frequency and relative frequency.
-		</p>
-		</title>
+		<title>WeBWorK - relationship between frequency and relative frequency.</title>
 		<webwork source="local/relative_frequency1.pg">
 		</webwork>
-		<conclusion>
-		<p>
-		So, these are simple calculations.
-		</p>
-		</conclusion>
+
 	</exercise>
 -->
 
@@ -424,23 +416,17 @@ Consider how we might create a definition for the expectation of a given outcome
 	</definition>	
 </p>	
 
-<p>
-	<exercise>
-		<title>
-		<p>
-		WeBWorK - Using the definition 
-		</p>
-		</title>
-		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg">
-		</webwork>
-		<conclusion>
-		<p>
-		Notice when you are given complete information regarding the entire data set then determining
-		probabilities for events can be relatively easy to compute.
-		</p>
-		</conclusion>
-	</exercise>
-</p>
+
+<exercise><title>WeBWorK - Using the definition </title>
+	<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability01.pg">
+	</webwork>
+	<conclusion>
+	<p>
+Notice when you are given complete information regarding the entire data set then determining probabilities for events can be relatively easy to compute.
+	</p>
+	</conclusion>
+</exercise>
+
 
 
 <p>
@@ -658,34 +644,33 @@ def _(auto_update=False):
 </sage>
 </p>
 
-		<p>
-		Let's see if you understand the relationship between frequency and relative frequency. In this exercise, presume "Probabiity" to be the expected fraction of outcomes you might logically expect.
-		</p>
-<p>	
-	<exercise><title>WebWork</title>
-		<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg">
-		</webwork>
-		<conclusion>
-		<p>
-		So, by counting actual "equally likely" outcomes these probabilities are easy to compute.
-		</p>
-		</conclusion>
-	</exercise>
-</p>
-
 <p>
-	<exercise><title>WebWork</title>
-
-		<webwork source="Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg">
-		</webwork>
-		<conclusion>
-		<p>
-		Notice how the probabilities look similar to relative frequencies. It's just the case 
-		that you are counting ALL of the individual simple possibilities that lead to a success.
-		</p>
-		</conclusion>
-	</exercise>
+Let's see if you understand the relationship between frequency and relative frequency. In this exercise, presume "Probabiity" to be the expected fraction of outcomes you might logically expect.
 </p>
+
+<exercise><title>WebWork - Equally Likely</title>
+	<webwork source="Library/MC/PreAlgebra/setPreAlgebraC06S04/BasicProbability03.pg">
+	</webwork>
+	<conclusion>
+	<p>
+	So, by counting actual "equally likely" outcomes these probabilities are easy to compute.
+	</p>
+	</conclusion>
+</exercise>
+
+
+
+<exercise><title>WebWork - Easy Probabilities</title>
+	<webwork source="Library/Rochester/setProbability5RandomSample/ur_pb_5_1a.pg">
+	</webwork>
+	<conclusion>
+	<p>
+	Notice how the probabilities look similar to relative frequencies. It's just the case 
+	that you are counting ALL of the individual simple possibilities that lead to a success.
+	</p>
+	</conclusion>
+</exercise>
+
 
 </section>
 
@@ -975,8 +960,8 @@ You can read <m>P(B|A)</m> as "the probability of B given A".
 </p>
 	
 
-<p>
-<exercise><title>WebWork</title>
+
+<exercise><title>WebWork - Disjoint Pieces</title>
 		<webwork source="Library/UMN/algebraKaufmannSchwitters/ks_15_5_42.pg">
 		</webwork>
 		<conclusion>
@@ -985,7 +970,7 @@ You can read <m>P(B|A)</m> as "the probability of B given A".
 		</p>
 		</conclusion>
 </exercise>	
-</p>
+
 </section>
 	
 	
@@ -1083,7 +1068,7 @@ So,
 <xref ref="BayesTheorem">Bayes' Theorem</xref> also works well in analyzing "Let's Make A Deal" finale choice.
 </p>
 
-<p>
+
 <exercise><title>WebWork - Bayes'</title>
 	<webwork source="Library/Mizzou/Finite_Math/Probability_Bayes_Theorem/Bayes1.pg">
 	</webwork>
@@ -1104,12 +1089,12 @@ So,
 	</p>
 	</conclusion>
 </exercise>
-</p>
+
 
 <p>The interactive cell below can be used to easily compute all of the conditional probabilities associated with <xref ref="BayesTheorem">Bayes' Theorem</xref>. Notice how the relative size of the pie-shaped partition changes when you presume that an event in the space has already occurred.</p>
 
-<p xml:id="BayesSage">
-<sage>
+<p>
+<sage xml:id="BayesSage">
 <input>
 
 #  This function is used to convert an input string into separate entries
@@ -1317,8 +1302,7 @@ as expected!
 
 
 
-<!--
-<p>
+
 <exercise><title>WebWork - Independence</title>
 
 	<webwork source="Library/Rochester/setProbability4Conditional/ur_pb_4_8.pg"></webwork>
@@ -1330,8 +1314,8 @@ as expected!
 		</p>
 	</conclusion>
 </exercise>
-</p>
--->
+
+
 
 <p>
 <corollary xml:id="IndependenceVsDisjointness"><title>Independence and Mutual Exclusivity</title>
