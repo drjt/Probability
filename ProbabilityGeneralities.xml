@@ -10,7 +10,7 @@
 <chapter xml:id="ProbabilityGeneralities" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Probability Theory</title>
 
-<section xml:id="ProbabilityGeneralitiesIntro"><title>Introduction</title>
+<section xml:id="ProbabilityGeneralitiesIntro"><title>Quantifying Uncertainty?</title>
 
 <p>
 Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.
@@ -325,19 +325,19 @@ def _(X='1,2,3', Y='2,a,3,4,apple', Z='a,b,10,apple'):
     Txy = " - NOT disjoint "
     if Set(XY).is_empty():
         Txy = ' - disjoint '
-    pretty_print(html("$X \cap Y$ = %s"%f(XY)+"%s"%Txy))
+    pretty_print(html("$X \\cap Y$ = %s"%f(XY)+"%s"%Txy))
     Txz = " - NOT disjoint "
     if Set(XZ).is_empty():
         Txz = ' - disjoint '
-    pretty_print(html("$X \cap Z$ = %s"%f(XZ)+"%s"%Txz))
+    pretty_print(html("$X \\cap Z$ = %s"%f(XZ)+"%s"%Txz))
     Tyz = " - NOT disjoint "
     if Set(YZ).is_empty():
         Tyz = ' - disjoint ' 
-    pretty_print(html("$Y \cap Z$ = %s"%f(YZ)+"%s"%Tyz))
+    pretty_print(html("$Y \\cap Z$ = %s"%f(YZ)+"%s"%Tyz))
     Txyz = " - NOT disjoint "
     if Set(XYZ).is_empty():
         Txyz = ' - disjoint ' 
-    pretty_print(html("$X \cap Y \cap Z$ = %s"%f(XYZ)+"%s"%Txyz))
+    pretty_print(html("$X \\cap Y \\cap Z$ = %s"%f(XYZ)+"%s"%Txyz))
     centers = [(cos(n*2*pi/3), sin(n*2*pi/3)) for n in [0,1,2]]
     scale = 1.7
     clr = ['yellow', 'blue', 'green']
@@ -613,7 +613,7 @@ def L(str):
     if m == n/5:
         top = m
     for k in range(top):
-        print str[5*k:5*k+5]
+        print(str[5*k:5*k+5])
         
 suits = [S, D, C, H] 
 values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A] 
@@ -621,9 +621,9 @@ values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A]
 deck = [(value, suit) for suit in suits for value in values]
 full_deck = copy(deck)  # to save a copy of the original deck for later use.
 
-L(deck)
+# L(deck)
 shuffle(deck)
-L(deck)
+# L(deck)
 deck1 = copy(full_deck)
 shuffle(deck1)
 
@@ -631,18 +631,17 @@ shuffle(deck1)
 def _(auto_update=False):
     global deck1    
     shuffle(deck1)            
-    if (Set(deck1).cardinality()&lt;5):
-        print 'Deck is too small...getting a new deck'
+    if (Set(deck1).cardinality() &lt; 5):
+        print('Deck is too small...getting a new deck')
         deck1 = copy(full_deck)
     else:
         hand = [deck1.pop() for card in range(5)] 
-        print "The cards dealt:"
+        pretty_print("The cards dealt:")
         L(hand)
-        print
-        print " The remaining cards in the deck:"
+        pretty_print(" The remaining cards in the deck:")
         L(deck1)
-        print
-        print(html("\n The number of remaining cards in the deck = %s"%str(Set(deck1).cardinality())))</input>
+        pretty_print(html("\n The number of remaining cards in the deck = %s"%str(Set(deck1).cardinality())))
+</input>
 </sage>
 
 

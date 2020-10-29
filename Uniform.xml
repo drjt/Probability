@@ -380,10 +380,9 @@ or after some simplification
 Therefore, you have about 1 chance out of 5 that the friend got 2 or more of your bars. You can be somewhat confident that plenty of dark chocolate bars remain hoarded for yourself.
 </p>
 
-<p>	
-	<theorem xml:id="HypergeometricProperties"><title>Properties of the Hypergeometric Distribution</title>
-	<statement>
-	<p>
+<theorem xml:id="HypergeometricProperties"><title>Properties of the Hypergeometric Distribution</title>
+<statement>
+<p>
 	<ol>
 		<li><m>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</m> satisfies the properties of a probability function.</li>
 		<li><m>\mu = r \frac{n_1}{n}</m></li>
@@ -391,89 +390,92 @@ Therefore, you have about 1 chance out of 5 that the friend got 2 or more of you
 		<li><m>\gamma_1 = \frac{(n - 2 n_1)\sqrt{n-1}(n - 2r)}{r n_1 (n - n_1) \sqrt{n-r}(n-2)}</m></li>
 		<li><m>\gamma_2 = \frac{n(n+1)-6n(n-r)}{n_1(n-n_1)} + \frac{3r(n-r)(n+6)}{n^2} - 6</m></li>
 	</ol>
-	</p>
-	</statement>
-	<proof>
-	<p>
-	<ol>
-		<li>
-			<p>		
-			<md>
-				<mrow>\sum_{x=0}^n \binom{n}{x} y^x &amp; = (1+y)^n, \text{ by the Binomial Theorem}</mrow>
-				<mrow>&amp; = (1+y)^{n_1} \cdot (1+y)^{n_2} </mrow>
-				<mrow>&amp; = \sum_{x=0}^{n_1} \binom{n_1}{x} y^x \cdot \sum_{x=0}^{n_2} \binom{n_2}{x} y^x </mrow>
-				<mrow>&amp; = \sum_{x=0}^n \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t} y^x</mrow>
-			</md>		
-			Equating like coefficients for the various powers of y gives
-			<me>\binom{n}{r} = \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t}.</me>
-			Dividing gives
-			<me>1 = \sum_{x=0}^r f(x).</me>
-			</p>
-		</li>
-		<li>
-		<p>For the mean
-			<md>
-				<mrow>\sum_{x=0}^n x \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}} &amp; = 
-\frac{1}{\binom{n}{r}} \sum_{x=1}^n  \frac{n_1(n_1-1)!}{(x-1)!(n_1-x)!}  \binom{n-n_1}{r-x}				
-				</mrow>
-				<mrow> &amp; = \frac{n_1}{\binom{n}{r}} \sum_{x=1}^n  \frac{(n_1-1)!}{(x-1)!((n_1-1)-(x-1))!}  \binom{n-n_1}{r-x} </mrow>
-				<mrow> &amp; = \frac{n_1}{\frac{n(n-1)!}{r!(n-r)!}} \sum_{x=1}^n  \binom{n_1-1}{x-1}  \binom{n-n_1}{r-x} </mrow>
-			</md>
-			Consider the following change of variables for the summation: 
-			<md>
-				<mrow>y = x-1</mrow>
-				<mrow>n_3 = n_1-1</mrow>
-				<mrow>s = r-1</mrow>
-				<mrow>m = n-1</mrow>
-			</md>
-			Then, this becomes
-			<md>
-				<mrow> \mu = \sum_{x=0}^n x \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}} &amp; = r \frac{n_1}{n} \sum_{y=0}^m  \frac{\binom{n_3}{y} \binom{m-n_3}{s-y}}{\binom{m}{s}}
-				</mrow>
-				<mrow>&amp; = r \frac{n_1}{n} \cdot 1</mrow>
-			</md>
-			noting that the summation is in the same form as was show yields 1 above.
-
-		</p>
-		</li>
-		<li>
-		<p>
-For variance, we will use an alternate form of the definition that is useful when looking for cancellation options with the numerous factorials in the <xref ref="HypergeometricDistribution">hypergeometric probability function</xref>. Indeed, you can easily notice that
-<me>\sigma^2 = E[X^2] - \mu^2 = E[X^2-X]+E[X] -\mu^2 = E[X(X-1)] + \mu - \mu^2.</me>
-Since we have <m>\mu = r \frac{n_1}{n}</m> from above then let's focus on the first term only and use the substitutions
-			<md>
-				<mrow>y = x-2</mrow>
-				<mrow>n_3 = n_1-2</mrow>
-				<mrow>s = r-2</mrow>
-				<mrow>m = n-2</mrow>
-			</md>
-to get
-<md>
-<mrow>E[X(X-1)] &amp; = \sum_{x=0}^n x(x-1) \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
-<mrow> &amp; = \sum_{x=2}^n x(x-1) \frac{\frac{n_1!}{x(x-1)(x-2)!(n_1-x)! } \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
-<mrow> &amp; = \sum_{x=2}^n \frac{\frac{n_1!}{(x-2)!(n_1-x)! } \frac{n_2!}{(r-x)!(n_2-r+x)!}}{\binom{n}{r}}</mrow>
-<mrow> &amp; = n_1 \cdot (n_1-1) \cdot  
-                      \\ \sum_{x=2}^n \frac{\frac{(n_3)!}{(x-2)!(n_3 -(x-2))! } \frac{n_2!}{((r-2)-(x-2))!(n_2-(r-2)+(x-2))!}}{\binom{n}{r}}</mrow>
-<mrow> &amp; = n_1 \cdot (n_1-1) \sum_{y=0}^{m} \frac{\frac{(n_3)!}{y!(n_3 -y)! } \frac{n_2!}{(s-y)!(n_2-s+y)!}}{\binom{n}{r}}</mrow>
-<mrow> &amp; = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} \sum_{y=0}^{m} \frac{\binom{(n_3)}{y} \binom{n_2}{s-y}}{\binom{m}{s}}</mrow>
-<mrow> &amp; = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} </mrow>
-</md>
-where we have used the summation formula above that showed that f(x) was a probability function.  
 </p>
+</statement>
+<proof>
 <p>
-Putting this together with the earlier formula gives
-<me>\sigma^2 = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} + r \frac{n_1}{n} - \left ( r \frac{n_1}{n} \right )^2.</me> 
+<ol>
+	<li>
+		<p>		
+		<md>
+		<mrow>\sum_{x=0}^n \binom{n}{x} y^x &amp; = (1+y)^n, \text{ by the Binomial Theorem}</mrow>
+		<mrow>&amp; = (1+y)^{n_1} \cdot (1+y)^{n_2} </mrow>
+		<mrow>&amp; = \sum_{x=0}^{n_1} \binom{n_1}{x} y^x \cdot \sum_{x=0}^{n_2} \binom{n_2}{x} y^x </mrow>
+		<mrow>&amp; = \sum_{x=0}^n \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t} y^x</mrow>
+		</md>		
+		Equating like coefficients for the various powers of y gives
+		<me>\binom{n}{r} = \sum_{t=0}^r \binom{n_1}{r} \binom{n_2}{r-t}.</me>
+		Dividing gives
+		<me>1 = \sum_{x=0}^r f(x).</me>
 		</p>
-		</li>
-		<li>
-		<p>The proof of kurtosis is even more messy and we won’t bother with proving it for this distribution!
+	</li>
+	<li>
+		<p>For the mean
+		<md>
+		<mrow>\sum_{x=0}^n x \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}} &amp; = 
+\frac{1}{\binom{n}{r}} \sum_{x=1}^n  \frac{n_1(n_1-1)!}{(x-1)!(n_1-x)!}  \binom{n-n_1}{r-x}</mrow>
+		<mrow> &amp; = \frac{n_1}{\binom{n}{r}} \sum_{x=1}^n  \frac{(n_1-1)!}{(x-1)!((n_1-1)-(x-1))!}  \binom{n-n_1}{r-x} </mrow>
+		<mrow> &amp; = \frac{n_1}{\frac{n(n-1)!}{r!(n-r)!}} \sum_{x=1}^n  \binom{n_1-1}{x-1}  \binom{n-n_1}{r-x} </mrow>
+		</md>
+		Consider the following change of variables for the summation: 
+		<md>
+		<mrow>y = x-1</mrow>
+		<mrow>n_3 = n_1-1</mrow>
+		<mrow>s = r-1</mrow>
+		<mrow>m = n-1</mrow>
+		</md>
+		Then, this becomes
+		<md>
+		<mrow> \mu = \sum_{x=0}^n x \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}} &amp; = r \frac{n_1}{n} \sum_{y=0}^m  \frac{\binom{n_3}{y} \binom{m-n_3}{s-y}}{\binom{m}{s}}</mrow>
+		<mrow>&amp; = r \frac{n_1}{n} \cdot 1</mrow>
+		</md>
+		noting that the summation is in the same form as was show yields 1 above.
 		</p>
-		</li>
+	</li>
+	<li>
+		<p>
+For variance, we will use an alternate form of the definition that is useful when looking for cancellation options with the numerous factorials in the <xref ref="HypergeometricDistribution">hypergeometric probability function</xref>.  Indeed, you can easily notice that
+
+		<me>\sigma^2 = E[X^2] - \mu^2 = E[X^2-X]+E[X] -\mu^2 = E[X(X-1)] + \mu - \mu^2.</me>
+
+Since we have <m>\mu = r \frac{n_1}{n}</m> from above then let's focus on the first term only and use the substitutions
+		<md>
+		<mrow>y = x-2</mrow>
+		<mrow>n_3 = n_1-2</mrow>
+		<mrow>s = r-2</mrow>
+		<mrow>m = n-2</mrow>
+		</md>
+		</p>
+		<p>
+		to get
+		<md>
+		<mrow>E[X(X-1)] = \sum_{x=0}^n x(x-1) \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
+		<mrow> = \sum_{x=2}^n x(x-1) \frac{\frac{n_1!}{x(x-1)(x-2)!(n_1-x)! } \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
+		<mrow>  = \sum_{x=2}^n \frac{\frac{n_1!}{(x-2)!(n_1-x)! } \frac{n_2!}{(r-x)!(n_2-r+x)!}}{\binom{n}{r}}</mrow>
+		<mrow>  = n_1 \cdot (n_1-1) \cdot  
+                       \sum_{x=2}^n \frac{\frac{(n_3)!}{(x-2)!(n_3 -(x-2))! } \frac{n_2!}{((r-2)-(x-2))!(n_2-(r-2)+(x-2))!}}{\binom{n}{r}}</mrow>
+		<mrow>  = n_1 \cdot (n_1-1) \sum_{y=0}^{m} \frac{\frac{(n_3)!}{y!(n_3 -y)! } \frac{n_2!}{(s-y)!(n_2-s+y)!}}{\binom{n}{r}}</mrow>
+		<mrow>  = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} \sum_{y=0}^{m} \frac{\binom{(n_3)}{y} \binom{n_2}{s-y}}{\binom{m}{s}}</mrow>
+		<mrow>  = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} </mrow>
+		</md>
+where we have used the summation formula above that showed that f(x) was a probability function.  
+		</p>
+		<p>
+		Putting this together with the earlier formula gives
+
+		<me>\sigma^2 = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} + r \frac{n_1}{n} - \left ( r \frac{n_1}{n} \right )^2.</me> 
+		</p>
+	</li>
+	<li>
+		<p>
+		The proof of kurtosis is even more messy and we won’t bother with proving it for this distribution!
+		</p>
+	</li>
 	</ol>
-	</p>
-	</proof>
-	</theorem>
 </p>
+</proof>
+</theorem>
+
 
 	<p>
 	Note, if r=1 then you are back at a regular discrete uniform model. Indeed, <me>P(\text{desired item}) = 1 \cdot \frac{n_1}{n} = \mu .</me>
@@ -733,7 +735,7 @@ Explain how the following situations can be modeled using either a discrete or c
 
 
 
-<exercise><title> - Continous Uniform on a different space</title>
+<exercise><title> - Continuous Uniform on a different space</title>
 <statement>
 <p>
 Determine an explicit formula for <m>f(x)</m> and the mean and variance for an continuous uniform distribution over <m>R = [-2,3] \cup [5,6] \cup [9,15]</m>.

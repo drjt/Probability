@@ -10,7 +10,7 @@
 <chapter xml:id="Combinatorics" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Counting and Combinatorics</title>
 
-<section xml:id="CombinatoricsIntroduction"><title>Introduction</title>
+<section xml:id="CombinatoricsIntroduction"><title>Counting without Counting?</title>
 
 <p>
 One of the earliest applications of mathematics you probably remember is how you could use number to count things. For many, this is what they think people do when they do mathematics. In this chapter, we will discover that it is possible to count items without actually listing them all.

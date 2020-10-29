@@ -10,7 +10,7 @@
 <chapter xml:id="IntervalEstimation" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Estimation</title>
 
-<section xml:id="IntervalEstimationIntroduction"><title>Introduction</title>
+<section xml:id="IntervalEstimationIntroduction"><title>How Close is Close?</title>
 <p>
 You should have noticed by now that repeatedly sampling from a given distribution will yield a variety of sample statistics such as <m>\overline{x}</m> as an estimate perhaps for the population mean <m>\mu</m> or <m>\frac{Y}{n}</m> as an estimate for the population likelihood of success p. In this section, you will see how these sample "point estimators" are actually the best possible choices.
 </p>

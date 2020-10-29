@@ -11,7 +11,7 @@
     <title>Statistical Measures</title>
 
 
-<section xml:id="DataIntroduction"><title>Introduction</title>
+<section xml:id="DataIntroduction"><title>Making Inferences</title>
 <p>
 To compute your final grade in a class your teacher will likely consider the scores you have earned on various assignments and examinations completed during the duration of the course. However, she ultimately will likely be required to assign some numerical score indicating your level of success in the course. One grade to rule them all. This final grade can only be one value and it would make sense that the grade be a reflection of your work on these tasks. So, what is a fair way for your teacher to complete this task? 
 </p>
@@ -48,16 +48,17 @@ In creating statistical measures, you might want to consider one of the followin
 <p>In the subsequent sections of this chapter, you will see that a number of different measures are available for most data sets. Determining which "correct" measure to use for describing any given data set will depend the actual situation surrounding the collection of the data.
 </p>
 <p>
-Below is an active exercise that you can continue to attempt until you get the correct answer.  Try to avoid clicking on the provided solution unless you are hopelessly stuck on exercises like this throughout the text.
+Below are a couple of active WeBWorK exercises that you can continue to attempt until you get the correct answer.  Try to avoid clicking on the provided solution unless you are hopelessly stuck on exercises like this throughout the text.
 </p>
 		
 
 <exercise><title>WebWork - Types of Data</title>
-
-		<webwork source="Library/UVA-Stat/setStat212-Homework01/stat212-HW01-13.pg" />
-
+		<webwork source="Library/UVA-Stat/setStat212-Homework01/stat212-HW01-16.pg" />
 </exercise>
 
+<exercise><title>WebWork - Types of Data Again</title>
+		<webwork source="Library/UVA-Stat/setStat212-Homework01/stat212-HW01-13.pg" />
+</exercise>
 
 
 </section>
@@ -223,7 +224,7 @@ It should be noted that many graphing calculators often compute quartiles using 
 </p>
 
 
-<example><title><m>Q_1</m> and <m>Q_3</m> when n mod 4 = 2</title>
+<example><title><m>Q_1</m> and <m>Q_3</m> vs Calculators</title>
 <p>
 Suppose n = 22 = 5(4) + 2. Computing the first quartile as defined above gives (n+1)s = 23(0.25) = 5.75 = 5 + 0.75 = m + r.  Therefore,
 <me>Q_1 = 0.25 \times y_5 + 0.75 \times y_6</me>
@@ -280,14 +281,25 @@ Using the <xref ref="DefnPercentiles">percentile definition </xref>, the 25th pe
 </statement>
 </example>
 
-
-
-<exercise>
 <p>
-In general, given a numerical value within the range of a given data set, one can determine the percentile ranking of that value by reversing the general formula for percentile and solving for s, given <m>P^s</m>.  Determine such a formula/process for doing this in general.
+In general, given a numerical value within the range of a given data set, one can determine the percentile ranking of that value by reversing the general formula for percentile and solving for s, given <m>P^s</m>. Since two ways to determine percentiles have been provided above then there will be two possible answers. Let's address this usinging the main definition above. 
 </p>
-</exercise>
 
+<theorem>
+<statement>Given any value y with <m> y_1 &lt; y &lt; y_n</m>, then y is at the <m>P_s</m> percentile with 
+<me>s = \frac{r+m}{n+1}</me>
+where n = the number of data items, m = the positional subscript such that <m>y_m &lt; y &lt; y_{m+1}</m> and <m>r = \frac{y - y_m}{y_{m+1} - y</m>
+</statement>
+<proof>
+By the definition of percentile with <m>y = P^s</m>, 
+<me> y = (1-r) y_m + r y_{m+1}.</me>
+Solving for r and equating to the formula for <m>r</m> in the definition of percentile yields
+<me> r = \frac{y - y_m}{y_{m+1} -y_m} = (n+1)s - m.</me>
+Solving this for s given
+<me>s = \frac{r+m}{n+1}.</me>
+Hence, <me> y = P^s. </me>
+</proof>
+</theorem>
 	
 <p>
 	Again using your data set {2, 5, 8, 10}, 
@@ -421,22 +433,22 @@ cat("\n\n")   #  a couple of blank lines in the displayed output
 <p>
 <sage>
 <input>
-x = [2, 5, 8, 10, 11]     # Put your data values in this list
-x.sort()
-
-mu = mean(x)
-n = len(x)
-pts = [(x[0],0.05)]
-M = 0.2
-for k in range(1,n):
-    if x[k]==x[k-1]:
-        pts.append((x[k],pts[k-1][1]+0.1))
-        M += 0.1
-    else:
-        pts.append((x[k],0.05))
-G = points(pts,size=100,figsize=[10,2])
-G += polygon([(mu,0), (mu+0.2,-0.5), (mu-0.2,-0.5)],color='brown')
-G.show(ymin=-0.5, ymax = M)
+@interact
+def _(x = input_box(default=[2, 5, 8, 10, 11])):     # Put your data values in this list
+    x.sort()
+    mu = mean(x)
+    n = len(x)
+    pts = [(x[0],0.05)]
+    M = 0.2
+    for k in range(1,n):
+        if x[k]==x[k-1]:
+            pts.append((x[k],pts[k-1][1]+0.1))
+            M += 0.1
+        else:
+            pts.append((x[k],0.05))
+    G = points(pts,size=100,ymin=-0.5,ymax = M,xmin=min(x)-2,xmax=max(x)+2,ticks=[[], []],figsize=[12,2])
+    G += polygon([(mu,0), (mu+0.2,-0.5), (mu-0.2,-0.5)],color='brown')
+    G.show()
 </input>
 </sage>
 </p>
@@ -472,7 +484,7 @@ G = Graphics()
 for k in range(n):
     G += point(pts[k],size=100*w[k]) 
 P = polygon([(mu,0), (mu+0.2,-0.5), (mu-0.2,-0.5)],color='brown')
-(G+P).show(xmin=min(x)-0.5, xmax=max(x)+0.5, ymin=-2*M, ymax = 2*M)</input>
+(G+P).show(xmin=min(x)-0.5, xmax=max(x)+0.5, ymin=-2*M, ymax = 2*M, ticks=[[], []])</input>
 </sage>
 </p>
 

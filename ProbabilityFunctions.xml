@@ -10,7 +10,7 @@
 <chapter xml:id="ProbabilityFunctions" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Probability Functions</title>
 
-<section xml:id="ProbabilityFunctionsIntro"><title>Introduction</title>
+<section xml:id="ProbabilityFunctionsIntro"><title>Probability Niches</title>
 	
 <p>Each of the probability exercises thus far required you to utilize basic definitions and theorems to determine the answer. Starting a new problem meant starting over from scratch. This is burdensome.  However, you may have noticed that some of the ways you might have created solutions for some problems ending up looking very similar to the solutions for others. In this chapter, you will consider the framework needed for creating general solution techniques. These techniques will give a number of "distributions" which are general ways to solve a particular type of problem.
 </p>
@@ -341,8 +341,8 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
 	</statement>
 	<proof>
 		<p>
-		Let b = sup(<m>R</m>). Then, for 
-		<me>x \ge b, F(x) = P(X \le x)  = P(X \le b) + P( b \lt X \le x) = P(X \le b) = 1</me> 
+		Let b = sup(<m>R</m>). Then, for <m>x \ge b,</m> 
+		<me>F(x) = P(X \le x)  = P(X \le b) + P( b \lt X \le x) = P(X \le b) = 1</me> 
 		since all of the x-values in this range are in R and therefore will either sum over or integrate over all of <m>R</m>.
 		</p>
 		
@@ -744,8 +744,8 @@ Consider <xref ref="ContinuousEV-example">our previous example</xref>. To comput
 and by using <xref ref="TheoreticalMeasuresAlternates">the alternate formulas</xref>
 <md>
 	<mrow>\sigma^2 &amp; = E[X^2] - \mu^2</mrow>
-	<mrow> &amp; = \int_{-1}^2 x^2 \cdot x^2/3 dx - \mu^2</mrow>
-	<mrow> &amp; = \int_{-1}^2 x^4/3 dx - \left ( \frac{5}{4} \right</mrow>
+	<mrow> &amp; = \int_{-1}^2 x^2 \cdot x^2/3 \; dx - \mu^2</mrow>
+	<mrow> &amp; = \int_{-1}^2 x^4/3 \; dx - \left ( \frac{5}{4} \right )^2</mrow>
 	<mrow> &amp; = \frac{2^5}{15} - \frac{(-1)^5}{15} - \frac{25}{16}</mrow>
 	<mrow> &amp; = \frac{33}{15} - \frac{25}{16} = \frac{51}{80}</mrow>
 </md>

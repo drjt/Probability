@@ -430,8 +430,8 @@ Notice, their model utilizes quadratic terms and therefore uses a generalization
 @interact
 def _(T = (90),R = (95)):
     H = -42.379+2.04901523*T+10.14333127*R-0.22475541*T*R -6.83783*10^(-3)*T^2-5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R +8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2
-    print("At %s"%str(T)+"\(^o\) with %s"%str(R)+" percent relative humidity,")
-    print("the Heat Index =%s"%str(H))
+    pretty_print(html("At %s"% str(T)+"$ ^o $ with %s"%str(R)+" percent relative humidity,"))
+    pretty_print(html("Heat Index =%s"%str(H)))
 </input>
 </sage>
 
@@ -443,10 +443,12 @@ Below one can compute a table for various ambient Temperature readings given one
 
 <sage><title> Computing Heat Index Table</title>
 <input>
-R = 95
-for T in range(80,121):
-    H = -42.379+2.04901523*T+10.14333127*R-0.22475541*T*R-6.83783*10^(-3)*T^2-5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R+8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2
-    print("At %s"%str(T)+"\(^o\) with  relative humidity %s"%str(R)+"the Heat Index =%s"%str(H))
+@interact
+def _(R = input_box(default=95,width=10,label="Relative Humidity")):
+    for T in range(80,121):
+        H = -42.379+2.04901523*T+10.14333127*R-0.22475541*T*R-6.83783*10^(-3)*T^2-5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R+8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2
+        H = H.n(digits=4)
+        pretty_print(html("At %s"%str(T)+"$ ^o $ with  relative humidity %s "%str(R)+"the Heat Index = %s "%str(H)+" degrees."))
 	
 </input>
 </sage>
