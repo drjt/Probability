@@ -52,10 +52,11 @@ Consider a Poisson Process where you start with an interval of fixed length T an
 <p>
 <theorem xml:id="PoissonPF"><title>Poisson Probability Function</title>
 <statement>
-<p>Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, 
+<p>Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, with <m>\mu</m> as a needed parameter
 <me>f(x) = \frac{\mu^x e^{-\mu}}{x!}</me>
-for <m>R = \{ 0, 1, 2, ... \}</m>.
+for <m>R = \{ 0, 1, 2, ... \}.</m>
 </p>
+You will verify later than the parameter <m>\mu</m> utilized here actually corresponds to the theoretical mean of this distribution.
 </statement>
 <proof>
 <p>
@@ -64,7 +65,7 @@ For a sufficiently large natural number n, break up the given interval [0,T] int
 
 However, since there are a finite number of independent intervals each with probability p of containing a success then you can use a Binomial distribution to evaluate the corresponding probabilities so long as n is finite. Doing so yields and taking the limit as n approaches infinity gives:
 <md>
-	<mrow>f(x) &amp; = P(\text{x changes in [0,T]}) </mrow>
+	<mrow>f(x) &amp; = P(x \text{changes in} [0,T]) </mrow>
 	<mrow> &amp; = \lim_{n \rightarrow \infty} \binom{n}{x} p^x (1-p)^{n-x}</mrow>
 	<mrow> &amp; = \lim_{n \rightarrow \infty} \binom{n}{x} (\frac{\lambda T}{n})^x (1-\frac{\lambda T}{n})^{n-x}</mrow>
 	<mrow> &amp; = \lim_{n \rightarrow \infty} \frac{n(n-1)...(n-x+1)}{x!} ( \frac{\lambda T}{n})^x (1- \frac{\lambda T}{n})^{n-x}</mrow>
@@ -78,6 +79,7 @@ However, since there are a finite number of independent intervals each with prob
 	<mrow> &amp; = \frac{(\lambda T)^x}{x!} 
 	e^{-\lambda T}</mrow>
 </md>
+where L'Hopitals rule was utilized in the final step.
 </p>
 </proof>
 </theorem>
@@ -222,6 +224,8 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 </input>
 </sage>
 </p>
+
+
 </section>
 
 
@@ -240,7 +244,12 @@ To derive the probability function for this distribution, consider finding f(x) 
 <theorem xml:id="ExponentialPDF"><title>Exponential Probability Function</title>
 <p>
 <statement>
-<p>For an exponential random variable <m>X</m>, f(x) = \lambda e^{-\lambda x}, where <m>\lambda</m> is a given parameter.
+<p>For an exponential random variable <m>X</m>, 
+<me>f(x) = \lambda e^{-\lambda x},</me> 
+where <m>\lambda</m> is a given parameter.
+</p>
+<p>
+(Note that we will find later that <m>\lambda = \frac{1}{\mu}</m> or the reciprocal of the theoretical mean.)
 </p>
 </statement>
 <proof>
@@ -248,8 +257,8 @@ To derive the probability function for this distribution, consider finding f(x) 
 	<md>
 		<mrow>F(x)&amp;  = P(X \le x)</mrow> 
 		<mrow> &amp; = 1 - P(X \gt x)</mrow>
-		<mrow> &amp; = 1 - P(\text{first change occurs after an interval of length x})</mrow>
-		<mrow> &amp; = 1 - P(\text{no changes in the interval [0,x]})</mrow>
+		<mrow> &amp; = 1 - P(\text{first change occurs after an interval of length} x)</mrow>
+		<mrow> &amp; = 1 - P(\text{no changes in the interval} [0,x])</mrow>
 		<mrow> &amp; = 1 - \frac{(\lambda x)^0 e^{-\lambda x}}{0!}</mrow>
 		<mrow> &amp; = 1 - e^{-\lambda x}</mrow>
 	</md>
@@ -320,7 +329,7 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 
 
 <p>
-<theorem xml:id="ExponentialPF"><title>Alternate Form for the Exponential Distribution Probability Function</title>
+<corollary xml:id="ExponentialPF"><title>Alternate Form for the Exponential Distribution Probability Function</title>
 	<statement>
 	<p>Given a Poisson process and a constant <m>\mu = \frac{1}{\lambda}</m>, suppose <m>X</m> measures the variable interval length needed until you get a first success.  Then <m>X</m> has an exponential distribution with probability function
 		<me>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}.</me>
@@ -331,12 +340,12 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 	Simply replace the mean as derived above in the original function.
 	</p>
 	</proof>
-</theorem>
+</corollary>
 </p>
 
-<p>
+
 <sage>
-	<input>
+<input>
 # Exponential Distribution
 var('x,mu')
 assume(mu>0)
@@ -361,19 +370,18 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 @interact
 def _(m = slider(1,12,1/2,2,label='mu')):
     plot(f(mu=m),x,0,30).show(ymax=1)
-	</input>
+</input>
 </sage>
-</p>
 
 
-<p>
+
 <theorem xml:id="ExponentialDistributionFunction"><title>Distribution function for Exponential Distribution</title>
-	<statement>
+<statement>
 	<p>
 		<me>F(x) = 1 - e^{-\frac{x}{\mu}}</me>
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>
 	Using <m>f(x) = \frac{1}{\mu} e^{-\frac{x}{\mu}}</m>, note
 	<md>
@@ -382,9 +390,9 @@ def _(m = slider(1,12,1/2,2,label='mu')):
 		<mrow> &amp; = 1 - e^{-\frac{x}{\mu}}</mrow>
 	</md>
 	</p>
-	</proof>
+</proof>
 </theorem>
-</p>
+
 
 
 <p>
@@ -409,7 +417,7 @@ Let's determine the probability that a first request arrives in the next two sec
 
 
 
-<p>
+
 <sage language = 'r'>
 <input>
 r=1                # the number of successes desired
@@ -432,14 +440,14 @@ Psample = rexp(10^6, mu)  # to create a histogram, sample a lot
 hist(Psample, prob=TRUE, add=TRUE)
 </input>
 </sage>
-</p>
 
-<p>
+
+
 <theorem xml:id="ExponentialMemoryless"><title>The Exponential Distribution yields a continuous memoryless model.</title>
 <statement>
 	<p>
 	If X has an exponential distribution and a and b are nonnegative integers, then
-	<me>P( X > a + b | X > b ) = P( X > a)</me>
+	<me>P( X > a + b \; \; | \; \; X > b ) = P( X > a)</me>
 	</p>
 </statement>
 <proof>
@@ -454,7 +462,7 @@ hist(Psample, prob=TRUE, add=TRUE)
 	</p>
 </proof>
 </theorem>
-</p>
+
 
 <!--
 Adapted from "Library/UBC/STAT/STAT241_251/setAssignment-04/HW04-01.pg"
@@ -520,17 +528,17 @@ Now, use the geometric distribution with <m>p = 0.2397</m>...
 Extending the exponential distribution model developed above, consider a Poisson Process where you start with an interval of variable length X so that X measures the interval needed in order to obtain the rth success for some natural number r. Then <m>R = (0,\infty)</m> and the resulting distribution of X will be called a Gamma distribution.
 </p>
 
-<p>
-<definition xml:id="GammaPF"><title>Gamma Function</title>
+
+<definition xml:id="GammaFunction"><title>Gamma Function</title>
 <statement>
 	<p>
 	<me>\Gamma(t) = \int_0^{\infty} u^{t-1} e^{-u} du</me>
 	</p>
 </statement>
 </definition>
-</p>
 
-<p>
+
+
 <theorem xml:id="GammaAsFactorial"><title>Gamma Function on the natural numbers</title>
 <statement>
 <p>
@@ -550,10 +558,11 @@ Continuing using an inductive argument to obtain the final result.
 </p>
 </proof>
 </theorem>
-</p>
+
 
 
 <p>To find the probability function for the gamma distribution, once again focus on the development of F(x). Assuming r is a natural number greater than 1 and noting that X measures the interval length needed in order to achieve the rth success
+
 <md>
 	<mrow>F(x) &amp; = P(X \le x)</mrow>
 	<mrow> &amp; = 1 - P(X \gt x)</mrow>
@@ -578,9 +587,12 @@ where you can replace <m>(r-1)! = \Gamma(r)</m>.
 <p>
 Notice that for this random variable, <m>\mu = \lambda T</m> can be obtained for the exponential distribution. For the Gamma distribution, the following takes <m>\mu</m> to be the average interval till the first success and then modifies the corresponding Gamma parameters according to increasing values of r.
 </p>
-
 <p>
-<definition xml:id="GammaDF"><title>Gamma Distribution  Function</title>
+So, to summarize, you get the Gamma Probability Function below.
+</p>
+
+
+<definition xml:id="GammaPF"><title>Gamma Probability Function</title>
 <statement>
 <p>
 If X measures the interval until the rth success and <m>\mu</m> as the average interval until the 1st success, then X with probability function
@@ -589,7 +601,7 @@ has a Gamma Distribution.
 </p>
 </statement>
 </definition>
-</p>
+
 
 
 
@@ -623,7 +635,7 @@ So,
 
 
 
-<p>
+
 <example><title>Router Requests Revisited Again</title>
 <p>
 For the third time, let's consider a router which, over time, has been shown to receive on average 1000 requests in any given 10 minute period during regular working hours and you want to know the likelihood that it takes more than 4 seconds in order to receive the 5th request. As you have already seen, it takes on average <m>\frac{10}{1000} = \frac{1}{100} = 0.01</m> minutes to receive the first request so we use that again here. If X were to measure the time interval until the fifth actual request comes in, then the Gamma distribution would be a good model using 
@@ -633,27 +645,29 @@ For the third time, let's consider a router which, over time, has been shown to 
 The question above asks for
 <me>P(X \gt 4 \text{seconds}) = P(X \gt \frac{4}{60} ) = 1 - F(\frac{4}{60}).</me>
 
+Therefore
+<me>P(X \gt 4 \text{seconds}) = 1 - F(\frac{4}{60}) \approx 0.205627.</me>
+
+
 Again, since X is a continuous variable you must integrate to compute probabilities. This will require integration by parts or you can use the F(x) from the derivation above. Here, let's just let Sage do the integration for us noting that <m>\Gamma(5) = 4! = 24</m>. You can compute the needed integral using the interactive cell immediately below.
 </p>
 </example>
-</p>
-<p>
-Therefore
-<me>P(X \gt 4 \text{seconds}) = 1 - F(\frac{4}{60}) \approx 0.205627.</me>
-</p>
-<p>
+
+
+
 <sage>
 <input>
 var('x')
 f = x^4*e^(-x/0.01)/(24*0.01^5)
 prob_complement = integrate(f,x,0,4/60)
-print n(1-prob_complement)
+print('For the interval from 0 to 4/60, the probability above is')
+print(n(1-prob_complement))
 </input>
 </sage>
-</p>
 
 
-<p>
+
+
 <theorem xml:id="GammaVerification"><title>Verify Gamma Probability function</title>
 <statement>
 <p>
@@ -666,25 +680,24 @@ Evaluate the sage code below.
 </p>
 </proof>
 </theorem>
-</p>
 
-<p>
+
+
 <sage>
-	<input>
+<input>
 # Gamma Distribution
 var('x,mu,r')
 assume(mu>0)
 assume(r,'integer')
 assume(r>1)
-f(x) =x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
+f(x) = x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
 S = integral(f,x,0,oo).full_simplify()
-F = '$ \int_0^{\infty} \\frac{x^{r-1} e^{-x/ \mu}}{\Gamma(r) \mu^r} dx = %s$'%str(S)
-html(F) 
-	</input>
+F = "$ \\int_0^{\\infty} \\frac{x^{r-1} e^{-x/ \\mu}}{\\Gamma(r) \\mu^r} dx = %s $"%str(S)
+show(html(F))
+</input>
 </sage>
-</p>
 
-<p>
+
 <sage>
 <input>
 # Gamma Distribution Graphing
@@ -694,11 +707,11 @@ assume(r,'integer')
 @interact
 def _(r=[2,3,6,12,24],mu=slider(1,12,1,5,label='mu')):
     f(x) =x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
-    plot(f,x,0,200).show()
+    plot(f,x,0,r*10).show()
     
 </input>
 </sage>
-</p>
+
 
 
 
@@ -706,6 +719,7 @@ def _(r=[2,3,6,12,24],mu=slider(1,12,1,5,label='mu')):
 
 <p>
 Derivation of mean, variance, skewness, and kurtosis. Pick "alpha" for the general formulas.
+</p>
 <sage>
 	<input>
 # Gamma Distribution
@@ -734,27 +748,30 @@ def _(r=[2,3,6,9,alpha]):
     pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 	</input>
 </sage>
-</p>
 
 
 <p>The interactive cell below can be used to compute the distribution function for the gamma distribution for various input values. If you desire to let r get bigger than the slider allows, feel free to edit the cell above and evaluate again.
+</p>
 
 <sage>
-	<input>
+<input>
 # Gamma Distribution Calculator
 var('x,mu,r')
-pretty_print('Enter the number of successes desired, the given mean, and the value of X to get F(X)')
+pretty_print('Enter the number of successes desired,')
+pretty_print('the given mean, and the value of X to get F(X)')
 @interact
-def _(r=slider(1,10,1,2),mu = input_box(2,label="$\mu = $",width=10),b=input_box(2,label="X = ",width=10)):
+def _(r=slider(1,10,1,2, label="$$ r = $$"),
+      mu = input_box(2,label="$$\\mu = $$",width=10),
+      b=input_box(2,label="$$ X = $$",width=10)):
     f(x) =x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
     p = integral(f,x,0,b)
     
-    pretty_print('Probability = \t',p,' which is approximately \t',p.n(digits=5))
-	</input>
+    pretty_print('Probability = ',p,' which is approximately \t',p.n(digits=5))
+</input>
 </sage>
-</p>
 
-<p>
+
+
 <sage language='r'>
 <input>
 r=3                # the number of successes desired
@@ -780,7 +797,7 @@ hist(Psample, prob=TRUE, add=TRUE)
 
 </input>
 </sage>
-</p>
+
 
 </section>
 
@@ -792,7 +809,6 @@ hist(Psample, prob=TRUE, add=TRUE)
 </p>
 
 
-<p>
 
 <theorem xml:id="PoissonMGF"><title>Moment Generating Function for Poisson</title>
 <statement>
@@ -838,9 +854,9 @@ which is the squared mean plus the variance for the poisson distribution.
 </proof>
 </corollary>
 
-</p>
 
-<p>
+
+
 <theorem xml:id="ExponentialMGF"><title>Moment Generating Function for Exponential</title>
 <statement>
 <p>Presuming <m>t \lt \frac{1}{\mu}</m>, 
@@ -883,9 +899,9 @@ which is the squared mean plus the variance for the poisson distribution.
 </p>
 </proof>
 </corollary>
-</p>
 
-<p>
+
+
 <theorem xml:id="GammaMGF"><title>Moment Generating Function for Gamma</title>
 <statement>
 <p>Presuming <m>t \lt \frac{1}{\mu}</m> where <m>\mu</m> is the mean waiting time till the first "change" and <m>r</m> is the number of changes desired, 
@@ -928,8 +944,10 @@ which is the squared mean plus the variance for the poisson distribution.
 </p>
 </proof>
 </corollary>
-</p>
+
 <p>Once again, Sage can obtain the final answers quickly.  For Poisson:
+</p>
+
 <sage>
 <input>
 var('t,mu')
@@ -945,7 +963,7 @@ show(Mtt(t=0))
 </sage>
 
 
-</p>
+
 </section>
 
 
@@ -962,7 +980,7 @@ TBA
 
 <section xml:id="PoissonProcessExercises"><title>Exercises</title>
 
-<p>
+
 <exercise><title> - Home Sales</title>
 <p>
 A local realty office sells on average 10 houses a week.  Let X measure the number of houses they will sell in the next week.  Determine
@@ -975,9 +993,9 @@ A local realty office sells on average 10 houses a week.  Let X measure the numb
 </ol>
 </p>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Customer arrivals - Total</title>
 <p>
 Customers arrive at your store on the average of 10 per hour.  Assuming that the arrival of customers satisfies the properties of a Poisson process, determine:
@@ -985,6 +1003,7 @@ Customers arrive at your store on the average of 10 per hour.  Assuming that the
 	<li>the expected number of customers to arrive in a given 3 hour period.</li>
 	<li>the probability that fewer than 10 customers arrive in a given hour.</li>
 </ol>
+</p>
 <solution>
 <p>
 Using the given information, apply the Poisson distribution.  For one hour <m>\mu = 10</m> so that for three hours the expected number of customers would be triple with 30 expected customers.
@@ -998,11 +1017,10 @@ With <m>\mu_1 = 10</m>,
 </md>
 </p>
 </solution>
-</p>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Customer arrivals - First</title>
 <p>
 Customers arrive at your store on the average of 10 per hour.  Assuming that the arrival of customers satisfies the properties of a Poisson process, determine:
@@ -1010,6 +1028,7 @@ Customers arrive at your store on the average of 10 per hour.  Assuming that the
 	<li>the number of minutes expected between the arrival of each customer</li>
 	<li>the probability it takes more than 9 minutes before the next customer arrives.</li>
 </ol>
+</p>
 <solution>
 <p>
 Using the given information, apply the exponential distribution.  Since 10 arrive on average in one hour then you would expect 1 to arrive in 6 minutes.
@@ -1019,11 +1038,10 @@ With <m>\mu = 6</m> minutes,
 <me>P(X \gt 9) = 1 - F(9) = e^{-9/6}.</me>
 </p>
 </solution>
-</p>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Customer arrivals - 10th</title>
 <p>
 Customers arrive at your store on the average of 10 per hour.  Assuming that the arrival of customers satisfies the properties of a Poisson process, determine:
@@ -1031,6 +1049,7 @@ Customers arrive at your store on the average of 10 per hour.  Assuming that the
 	<li>the number of minutes expected for the arrival of three customers.</li>
 	<li>the probability it takes less than 20 minutes before the third customer arrives.</li>
 </ol>
+</p>
 <solution>
 <p>
 Using the given information, apply the gamma distribution.  Since 10 arrive on average in one hour then you would expect 1 to arrive in 6 minutes and therefore 3 to arrive on average in 18 minutes.
@@ -1040,11 +1059,9 @@ With <m>\mu = 18</m> minutes,
 <me>P(X \lt 20) = F(20).</me>
 </p>
 </solution>
-</p>
 </exercise>
-</p>
 
-<p>
+
 <exercise><title>Approximating Binomial with Poisson</title>
 In our derivation above, we used the limit of a Binomial probability function to create the Poisson's probability function. Therefore, for large n the two should be computationally very close.  Use this fact to approximate P(X &gt; 10000) for a Binomial distribution with n = 40000 and p = 1/4 by converting to a Poisson probability function. 
 <hint>
@@ -1065,9 +1082,9 @@ This approximation method is not completely satisfactory since both being discre
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Computer Network Data Traffic</title>
 <p>
 Consider the arrival of requests on a server. Presume that the requests are considered as coming from an anonymous and large collection of users independently of each other on an average of 50 requests per second. If X measures the number of requests per second, determine
@@ -1076,7 +1093,7 @@ Consider the arrival of requests on a server. Presume that the requests are cons
 	<li><m>P(\mu - 2\sigma \le X \le \mu + 2\sigma)</m></li>
 	<li>the expected number of requests per hour.</li>
 </ol>
-
+</p>
 <solution>
 <p>
 Given the average of 50 requests per second and X measuring the number of "successes" in a given second long time interval given a Poission distribution
@@ -1098,9 +1115,8 @@ Using the distribution function,
 Finally, notice that the time interval has been adjusted. Since the mean formula is proportional to the interval over which X is measured, using <m>\mu = \lambda T</m> with <m>\lambda = 1</m> when the interval is 1 second, then when the interval is one hour, T = 3600 seconds. Hence, we would expect on average <m>50 \cdot 3600 = 180,000</m> requests in one hour.
 </p>
 </solution>
-</p>
 </exercise>
-</p>
+
 
 </section>
 

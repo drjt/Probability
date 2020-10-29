@@ -1034,8 +1034,7 @@ Here is a summary of the major results dealing with Bernoulli-based variables:
 
 <section xml:id="BernoulliBasedExercises"><title>Exercises</title>
 
-<p>
-<exercise><title> - Gallup Consumer Confidence Polling</title>
+<exercise><title>Gallup Consumer Confidence Polling</title>
 <p>
 A January 2008 Gallup poll on consumer confidence asked the question "How would you rate economic conditions in this country today" and 22% responded "Excellent" or "Good", 45% responded "Only Fair", and 33% responded "Poor". If you pick a representative sample of 25 people and ask them the same question, if X measures the number of responses that are "Excellent" or "Good", determine
 <ul>
@@ -1056,9 +1055,9 @@ This is a Binomial distribution with n=25 and p = 0.22.
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Rolling Dice</title>
 <p>
 You keep on rolling a pair of dice and let X be the number of rolls needed until you get a sum of 7 or 11 for the second time. Determine:
@@ -1085,9 +1084,9 @@ You keep on rolling a pair of dice and let X be the number of rolls needed until
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Collecting Kids Meal Prizes</title>
 <p>
 You love to eat at Chick-Fil-A with your kids and want to collect all of the five new book titles that come randomly included with each kids meal.  If the promotion with these books starts today, determine:
@@ -1114,9 +1113,9 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Rolling Dice</title>
 <p>Suppose you roll a standard pair of 6-sided dice 20 times and let X measure the number of outcomes which result in a sum of 7 or 11. Determine:
 <ol>
@@ -1127,9 +1126,9 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 </ol>
 </p>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Rolling Dice yet again</title>
 <p>Suppose you roll a standard pair of 6-sided dice X times until you get a sum of 7 or 11 a third time. Determine:
 <ol>
@@ -1140,9 +1139,9 @@ You love to eat at Chick-Fil-A with your kids and want to collect all of the fiv
 </ol>
 </p>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise>
 <title> - 2 standard deviations from the mean</title>
 <p>Given p = 0.3 determine the following:
@@ -1172,15 +1171,15 @@ Then,
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title>Chapter Experiment</title>
 <p>
 Take a die and roll it 4 times, keeping track on paper each time you get a 6 (say).  Repeat this 100 times. (Actually, you can use a standard 6-sided die or find a more exotic one with more sides.)  You should have gotten anywhere from 0 of the rolls to be a 6 up to all of the rolls to be a 6.  Collect the relative frequencies of each of the possible outcomes in R= \{0,1,2, ..., 100\} and plot.  Compare several of the experimental relative frequencies with the theoretical value you would expect using the proper distribution from this chapter. Comment on how well you did. 
 </p>
 </exercise>
-</p>
+
 
 </section>
 

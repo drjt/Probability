@@ -66,10 +66,13 @@ Below is an active exercise that you can continue to attempt until you get the c
 
 
 <section xml:id="MeasuresOfPosition"><title>Statistical Measures of Position</title>
-	<p>Given a collection of data, sorting the data may provide several useful descriptors. When sorting data, you can easily use something like a spreadsheet for larger data sets but in this section you will also see there are ways to perform a sort by hand. In either case, statistical measures of position generally involve very little computational work once the data is sorted and take into account only the order of the data from lowest to highest.  To assist with notation, we will generally use x-values to represent the original raw data and y-values to represent that same data when ordered with the subscript indicating the positional placement.
-	</p>
+<introduction>
+<p>
+Given a collection of data, sorting the data may provide several useful descriptors. When sorting data, you can easily use something like a spreadsheet for larger data sets but in this section you will also see there are ways to perform a sort by hand. In either case, statistical measures of position generally involve very little computational work once the data is sorted and take into account only the order of the data from lowest to highest.  To assist with notation, we will generally use x-values to represent the original raw data and y-values to represent that same data when ordered with the subscript indicating the positional placement.
+</p>
+</introduction>
+
 	
-<p>	
 <definition xml:id="DefnOrderStatistics">
 	<title>Order Statistic</title>
 	<statement>
@@ -82,9 +85,9 @@ Below is an active exercise that you can continue to attempt until you get the c
 	Then, <m>y_k</m> is known as the kth order statistic. </p>
 	</statement>
 </definition>
-</p>
 
-<p>	
+
+	
 <example xml:id="PresidentAge"><title>Age of Presidents - order statistics</title>
 	<p>
 	The age at inauguration for presidents from 1981-2019 gives the data 
@@ -93,21 +96,21 @@ Below is an active exercise that you can continue to attempt until you get the c
 	<me>y_1 = 46, y_2 = 47, y_3 = 54, y_4 = 64, y_5 = 69, y_6 = 70.</me>
 	</p>
 </example>
-</p>
-	
-	<p>
-	Once the data is sorted, it should be very easy for you to locate the smallest and largest values. 
-	</p>
 
+	
 <p>
+	Once the data is sorted, it should be very easy for you to locate the smallest and largest values. 
+</p>
+
+
 <definition xml:id="DefnMaxMin"><title>Minimum/Maximum:</title>  
 	<statement>
 	<p>For a given data set, the smallest and largest values are known as the minimum and maximum, respectively. In our notation and presuming a data set of size n, the minimum = <m>y_1</m> and the maximum = <m>y_n</m></p>
 	</statement>
 </definition>
-</p>
 
-<p>	
+
+	
 <example><title>Age of Presidents - Minimum/Maximum</title>
 	<statement>
 	<p>
@@ -115,20 +118,22 @@ Below is an active exercise that you can continue to attempt until you get the c
 	</p>
 	</statement>
 </example>
-</p>
+
 
 <p>
 A value that separates ordered data into two groups with a desired percentage on each side is called a percentile. There are multiple ways that have been created that achieve this goal. In this text we present two and will consistently use the first one presented below. For each, in general, a given percentile is a numerical value at which approximately a given percentage of the data is smaller. 
 </p>
+
 <p>
 The definition presented below provides for a unique measure for each unique value of s that corresponds to the PERCENTILE.EXC macro in Excel.  This version starts by computing <m>(n+1)s</m> where 
 <m>0 &lt; s &lt; 1</m> and using this to linearly interpolate between two adjacent entries in the sorted list.  Another option that corresponds to PERCENTILE.INC (and PERCENTILE) in Excel is to start with <m>(n-1)p+1</m> for determining how to pick the two adjacent entries and then proceeding with linear interpolation. Again, the definition below utilizes the first approach.
 </p>
 
-<p>	
+	
 <definition xml:id="DefnPercentiles"><title>Percentiles</title>
-	<statement>
-	<p>For <m>0 \lt s \lt 1</m> and for order statistics <m>y_1, y_2, ..., y_n</m> define the 100s-th percentile to be 
+<statement>
+	<p>
+	For <m>0 \lt s \lt 1</m> and for order statistics <m>y_1, y_2, ..., y_n</m> define the 100s-th percentile to be 
 		<me>P^{s} = (1-r)y_m + ry_{m+1}</me>
 	where m is the integer part of <m>(n+1)s</m>, namely 
 		<me>m = \left\lfloor (n+1)s \right\rfloor</me> 
@@ -137,17 +142,18 @@ The definition presented below provides for a unique measure for each unique val
 	
 	the fractional part of <m>(n+1)s</m>. 
 	</p>
+	
 	<p>
 	In Excel, this is PERCENTILE.EXC.
 	</p>
 	</statement>
 </definition> 
-</p>
 
-<p>	
+	
 <definition xml:id="DefnPercentilesAlt"><title>Alternate Percentile Definition</title>
-	<statement>
-	<p>For <m>0 \lt s \lt 1</m> and for order statistics <m>y_1, y_2, ..., y_n</m> define the 100s-th percentile to be 
+<statement>
+	<p>
+	For <m>0 \lt s \lt 1</m> and for order statistics <m>y_1, y_2, ..., y_n</m> define the 100s-th percentile to be 
 		<me>P^{s} = (1-r)y_m + ry_{m+1}</me>
 	where m is the integer part of <m>(n-1)s + 1</m>, namely 
 		<me>m = \left\lfloor (n-1)s + 1 \right\rfloor </me> 
@@ -156,13 +162,14 @@ The definition presented below provides for a unique measure for each unique val
 	
 	the fractional part of <m>(n-1)s+1</m>. 
 	</p>
+	
 	<p>
 	In Excel, this is PERCENTILE.INC or just PERCENTILE.
 	</p>
 
-	</statement>
+</statement>
 </definition> 
-</p>
+
 
 <p>
 Compute the following <xref ref="DefnPercentilesAlt">percentile values using the alternate formula</xref>.
@@ -176,9 +183,10 @@ Compute the following <xref ref="DefnPercentilesAlt">percentile values using the
 </exercise>
 
 
-<p>
+
 <example><title>Presidential Percentile</title>
-<p>To compute, say, the 42nd <xref ref="DefnPercentiles">percentile using the definition</xref> for the 
+<p>
+To compute, say, the 42nd <xref ref="DefnPercentiles">percentile using the definition</xref> for the 
 <xref ref="PresidentAge"> President inauguration data presented earlier </xref> consider s = 0.42. Since there are 6 numbers in our data set, then
 
 <me>(n+1)s = 7 \cdot 0.42 = 2.94</me>
@@ -187,7 +195,7 @@ and so m = 2 and r = 0.94.  Thus, the percentile will lie between <m>y_2 = 47</m
 <me>P^{0.42} = 0.06 \cdot 47 + 0.94 \cdot 54 = 53.58.</me> 
 </p>
 </example>
-</p>
+
 	
 <p>
 Both formula approaches for percentiles determine a weighted average between <m>y_m</m> and <m>y_{m+1}</m> which is unique for distinct values of p provided each of the data values are distinct. Note that if some of the y-values are equal then some of these averages might be averages of equal numbers and will therefore be the common value.
@@ -197,21 +205,24 @@ Both formula approaches for percentiles determine a weighted average between <m>
 Some special percentiles are provided special names...
 </p>
 
-<p>
+
 <definition xml:id="DefnQuartiles"><title>Quartiles</title> 
-	<statement>
-	<p>Given a sorted data set, the first, second, and third quartiles are the values of 
-	<m>Q_1 = P^{0.25}, Q_2 = P^{0.5}</m> and <m>Q_3 = P^{0.75}</m>.
+<statement>
+	<p>
+	Given a sorted data set, the first, second, and third quartiles are the values of 
+	<me>Q_1 = P^{0.25}, Q_2 = P^{0.5}</me> 
+	and 
+	<me>Q_3 = P^{0.75}.</me>
 	</p>
-	</statement>
+</statement>
 </definition>
-</p>
+
 
 <p>
 It should be noted that many graphing calculators often compute quartiles using a straight average of two adjacent entries rather than by using the formula above. This causes some difficulty and especially so when n mod 4 = 2. 
 </p>
 
-<p>
+
 <example><title><m>Q_1</m> and <m>Q_3</m> when n mod 4 = 2</title>
 <p>
 Suppose n = 22 = 5(4) + 2. Computing the first quartile as defined above gives (n+1)s = 23(0.25) = 5.75 = 5 + 0.75 = m + r.  Therefore,
@@ -221,34 +232,37 @@ which is a value closer to <m>y_6</m>.  Many graphing calculators however quickl
 so you should be aware of this possible difference.  You should also notice that in this case s = 0.25 but r = 0.75 so these values are not required to be the same. 
 </p>
 </example>
-</p>
 
-<p>
+
+
 <definition xml:id="DefnDeciles"><title>Deciles:</title>
-	<statement>
-	<p>Given a sorted data set, the first, second, ..., ninth deciles are the value of 
-	<m>D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}</m>
-	</p>
-	</statement>
-</definition>
-</p>
-	
-<p>	
-<example><title>Small Example - Quartiles</title>
-	<statement>
+<statement>
 	<p>
+	Given a sorted data set, the first, second, ..., ninth deciles are the value of 
+	<me>D_1 = P^{0.1}, D_2 = P^{0.2}, ... , D_9 = P^{0.9}</me>
+	</p>
+</statement>
+</definition>
+
+	
+	
+<example><title>Small Example - Quartiles</title>
+<statement>
+<p>
 Consider the data set 
 <me>\{2, 5, 8, 10 \}.</me> 
 The 50th percentile should be a numerical value for which approximately 50% of the data is smaller. In this case, that would be some number between 5 and 8.  For now, let's just take 6.5 so that two numbers in the set lie below 6.5 and two lie above. This is a perfect 50% for the 50th percentile. In a similar manner, the 25th percentile would be some number between 2 and 5, say 2.75, so that one number lies below 2.75 and three numbers lie above.
-	</p>
+</p>
 
-	<p>Using the <xref ref="DefnPercentiles">percentile definition </xref>, the 25th percentile is computed by considering 
+<p>
+Using the <xref ref="DefnPercentiles">percentile definition </xref>, the 25th percentile is computed by considering 
 	<me>(n+1)s = (4+1)0.25 = 5/4 = 1.25</me>.  
 	So, m = 1 and r = 0.25. Therefore 
 	<me>P^{0.25} = 0.75 \times 2 + 0.25 \times 5 = 2.75</me> 
 	as noted above. 
-	</p>
-	<p>
+</p>
+
+<p>
 	Similarly, the 75th percentile is given by
 	<me>(n+1)s = (4+1)0.75 = 15/4 = 3.75</me>.  
 	So, m = 3 and r = 0.75. Therefore 
@@ -262,18 +276,18 @@ The 50th percentile should be a numerical value for which approximately 50% of t
 		<mrow>\Rightarrow s = \frac{4}{15} \approx 0.267</mrow>
 	</md>
 	and so 3 would actually be at approximately the 26.7th percentile.
-	</p>
-	</statement>
-</example>
 </p>
+</statement>
+</example>
 
-<p>
+
+
 <exercise>
 <p>
 In general, given a numerical value within the range of a given data set, one can determine the percentile ranking of that value by reversing the general formula for percentile and solving for s, given <m>P^s</m>.  Determine such a formula/process for doing this in general.
 </p>
 </exercise>
-</p>
+
 	
 <p>
 	Again using your data set {2, 5, 8, 10}, 
@@ -284,22 +298,23 @@ In general, given a numerical value within the range of a given data set, one ca
 	For a given data set, a summary of these statistics is often desired in order to give the user a quick overview of the more important order statistics.
 </p>
 
-<p>
+
 <definition xml:id="DefnFiveNumberSummary"><title>5-number summary</title>
-	<statement>
-	<p>Given a set of data, the 5-number summary is a vector of the order statistics given by 
+<statement>
+	<p>
+	Given a set of data, the 5-number summary is a vector of the order statistics given by 
 	
 	<me>\lt \text{minimum}, Q_1, Q_2, Q_3, \text{maximum} \gt .</me> 
 	</p>
-	</statement>
+</statement>
 </definition>
-</p>
+
 
 <p>
 You can also compute these statistics automatically using the opensource statistical software known simply as "R".  The following interactive cell uses the opensource software "Sage" to perform this calculation using the freely available web portal at sagemath.sagecell.org. You can change the data list if you want to use this to compute values for a different collections of numbers. The five-number-summary is displayed graphically using a "Box-Plot". Graphical representations of data will be discussed later in this chapter. You should compare the answers found using R with the values produced by our <xref ref="DefnPercentiles"> definition </xref>
 </p>
 
-<p>
+
 <sage language = 'r'>
 <input>
 data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
@@ -311,23 +326,24 @@ print(paste("Box and Whisker Diagram:"))
 boxplot(data, horizontal=TRUE) 
 </input>
 </sage>
-</p>
 
-<p>	
+
+	
 <example><title>Small example - 5 number summary</title>
-	<statement>
-	<p>Returning to our previous example, the <xref ref="DefnFiveNumberSummary">five number summary</xref> would be
+<statement>
+	<p>
+	Returning to our previous example, the <xref ref="DefnFiveNumberSummary">five number summary</xref> would be
 	<me>\lt 2, 2.75, 6.5, 9.5, 10 \gt .</me>
 	</p>
-	</statement>
+</statement>
 </example>
-</p>
+
 
 <p>
 Of course, the data sets you can utilize by manually entering data will be relatively small and tedious to deal with. The open source statistical software R however has a number of built in data sets with many of them including a relatively large number of values. We will be utilizing some of those data sets throughout the remainder of this text. To see what data sets are actually available, execute the command data(). You can load the data from one of these sets by executing the data command with the desired data set name inside the parenthesis and then print out the first few data values with headers using the head command. Execute the interactive cell below and play around with some of the data sets. Remove the hash tag symbol to 'uncomment' those lines as needed.
 </p>
 
-<p>
+
 <sage language = 'r'>
 <input>
 data()
@@ -339,13 +355,13 @@ data()
 
 </input>
 </sage>
-</p>
+
 
 <p>
 Now that you can access large ready-to-go data sets, you will want to evaluate them in various ways. The following interactive cell helps you calculate the measures presented in this section as well as a few measures we will investigate in the next section. Note that an R cell only routinely outputs the final command. If you want to output any of the intermediate values, use the print() command as shown below. Also, to make things easier to enter, let's just go ahead and give the formal data set name a smaller local identifier x.
 </p>
 
-<p>
+
 <sage language = 'r'>
 <input>
 data(faithful)
@@ -369,7 +385,7 @@ cat("\n\n")   #  a couple of blank lines in the displayed output
 # print(paste("Median of the second outcome = ",med2))
 </input>
 </sage>
-</p>
+
 
 </section>
 
@@ -732,7 +748,7 @@ and the sample standard deviation similarly as the square root of the sample var
 </md>
 </p>
 
-<p>
+
 <theorem xml:id='AlternateVariance'><title>Alternate Forms for Variance</title>
 <statement>
 <md>
@@ -761,16 +777,14 @@ The second part is proved similarly. Using the first part of the proof above,
 </p>
 </proof>
 </theorem>
-</p>
 
-<p>
+
+
 <example><title>Computing means and variances by hand</title>
 <p>
 In the data table below, notice that the <m>x_k</m> column would be the given data values but the column for <m>x_k^2</m> you could easily compute.
 
-<table halign="left">
-<title>Sample Grouped Data</title>
-      <tabular halign="right">
+<table halign="left"><title>Sample Grouped Data</title><tabular halign="right">
       
 <row>
 <cell bottom="medium"><m>x_k</m></cell>
@@ -787,7 +801,7 @@ In the data table below, notice that the <m>x_k</m> column would be the given da
 So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{x} = \frac{9}{6} = \frac{3}{2}</m> and <m>v = \frac{\Sigma x_k^2}{6} - (\overline{x})^2 = ( \frac{35}{6} - \frac{3}{2}^2 = \frac{70-18}{12} = \frac{26}{6}</m>.  Therefore, <m>s^2 = \frac{6}{5} \times v = \frac{26}{5}</m>.
 </p>
 </example>
-</p>
+
 
 
 
@@ -800,6 +814,8 @@ So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{
 
 <p>
 Once again, we can compute these descriptive statistics using R. We again display a box and whisker diagram and you should now notice the the "box" corresponds to the IQR.
+</p>
+
 <sage language = 'r'>
 <input>
 data &lt;- c( 1, -1, 0, 2, 2, 5)   # concatenate the following items into a list
@@ -809,7 +825,7 @@ print(paste("Inter Quantile Range =",IQR(data)))
 boxplot(data, horizontal=TRUE) 
 </input>
 </sage>
-</p>
+
 
 <p>Experiment in the above interactive cell by using one of the built-in data sets.
 </p>
@@ -817,11 +833,12 @@ boxplot(data, horizontal=TRUE)
 <p>
 We can also consider once again the Population of the individual USA states according to the 2013 Census is considered below.</p>
 
-<p>
+
 <exercise><title>USA State Population Measures of Variation</title>
-<p>Using the <xref ref="StatePopulations"> US Census Bureau state populations </xref> (in millions) for 2014 provided earlier, determine the range, quartiles, and variance for this sample data.
-</p>
 <p>
+Using the <xref ref="StatePopulations"> US Census Bureau state populations </xref> (in millions) for 2014 provided earlier, 
+determine the range, quartiles, and variance for this sample data.
+</p>
 <solution> 
 	<p>Again, you should note that these are already in order so the range is quickly found to be 
 	<me>y_n - y_1 = 38.3 - 0.6 = 37.7</me> 
@@ -857,9 +874,8 @@ We can also consider once again the Population of the individual USA states acco
 	<me>s \approx \sqrt{49.48} \approx 7.03</me> million residents.
 	</p>
 </solution>
-</p>
 </exercise>
-</p>
+
 
 <p>
 The interquartile range is sometimes also called the interquantile range. It must be noted that R computes the IQR differently for some reason. You can look up the R documentation to see what they do but notice that you can force R to use the standard approach as well.  Below, for example, the interactive cell determine the IQR using R's preferred method. However, to use the method from this text, you can make the function call IQR(data, type=2). This might be helpful to know when working on some WeBWorK exercises where the author could be using R to compute the correct answer.

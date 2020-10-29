@@ -31,15 +31,14 @@ In this chapter we first discuss how to determine appropriate methods for estima
 	of the actual data must lie.
 	</p>
 
-	<theorem>
-	<title>Chebyshev's Theorem</title>
-	<statement><p>
+<theorem><title>Chebyshev's Theorem</title>
+<statement><p>
 	Given a random variable X with given mean <m>\mu</m> and standard deviation <m>\sigma</m>, for <m> a \in \mathbb{R}^+</m> , 
 	
 	<me>P( \big | X - \mu \big | \lt a ) \gt 1 - \frac{\sigma^2}{a^2}</me>
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>
 	Notice that the variance of a continuous variable X is given by
 	<md>
@@ -52,23 +51,23 @@ In this chapter we first discuss how to determine appropriate methods for estima
 	</md>
 	Dividing by <m>a^2</m> and taking the complement gives the result.
 	</p>
-	</proof>
-	</theorem>
+</proof>
+</theorem>
 	
-	<corollary><title>Alternate Form for Chebyshev's Theorem</title>
-	<statement>
+<corollary><title>Alternate Form for Chebyshev's Theorem</title>
+<statement>
 	<p>For positive k,
 	<me>P( \big | X - \mu \big | \lt k \sigma ) \gt 1 - \frac{1}{k^2}</me>
 	</p>
-	</statement>
-	</corollary>
+</statement>
+</corollary>
 
-	<corollary><title>Special Cases for Chebyshev's Theorem</title>
-	<statement><p>
+<corollary><title>Special Cases for Chebyshev's Theorem</title>
+<statement><p>
 	For any distribution, it is not possible for f(x)=0 within one standard deviation of the mean. Aslo, at least 75% of the data for any distribution must lie within two standard deviations of the mean and at least 88% must lie within three.
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>
 	Apply the Chebyshev Theorem with <m>a = \sigma</m> to get
 	<me>P(\mu - \sigma \lt X \lt \mu + \sigma) \gt 1 - \frac{\sigma^2}{\sigma^2} = 0</me>
@@ -76,8 +75,8 @@ In this chapter we first discuss how to determine appropriate methods for estima
 	<p>
 	Apply the Chebyshev Theorem with <m>a = 2 \sigma</m> to get <m>1 - \frac{1}{2^2} = 0.75</m> and with <m>k = 3 \sigma</m> to get <m>1 - \frac{1}{3^2} = \frac{8}{9} > 0.8888</m>.
 	</p>
-	</proof>
-	</corollary>
+</proof>
+</corollary>
 	
 	
 
@@ -93,12 +92,12 @@ In this chapter we first discuss how to determine appropriate methods for estima
 </exercise>
 
 
-<p>
+
 <example><title> - Comparing known distribution to Chebyshev</title>
 	<p>TBA
 	</p>
 </example>
-</p>
+
 </section>
 
 <section xml:id="IntervalEstimationPointEstimates"><title>Point Estimates</title>
@@ -144,7 +143,7 @@ Sometimes selecting a value for p for a Binomial, Geometric, or Negative Binomia
 In these later situations, we found in the previous section that relative frequency <m>\frac{Y}{n}</m> is generally a good way to estimate p. In this section, you will investigate how to measure the closeness--and thereby assure some confidence in that estimate--regarding how well the point estimate approximates the actual value of p.
 </p>
 
-<p>
+
 <definition xml:id="DefnConfidenceIntervalForP"><title>Confidence Intervals for p</title>
 <statement>
 <p>Given a point estimate <m>\tilde{p}</m> for p, a confidence interval for p is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form
@@ -158,7 +157,7 @@ or
 </p>
 </statement>
 </definition>
-</p>
+
 
 
 <p>
@@ -223,7 +222,7 @@ Another more elaborate mechanism when n is relatively large is given by the Wils
 </p>
 
 
-<p>
+
 <theorem xml:id="WilsonConfidenceInterval"><title>Wilson Score Confidence Interval for p</title>
 <statement>
 <p>
@@ -248,9 +247,9 @@ Solving for p using the quadratic formula and simplifying ultimately results in 
 </p>
 </proof>
 </theorem>
-</p>
 
-<p>
+
+
 <example><title>Comparison of the three Confidence Interval methods for p</title>
 <p>
 Presume that from a sample of size n = 400 you get Y = 144 successes.  Determine 95% two-sided confidence intervals for the actual p using all three of the methods above. Note that for each you will utilize <m>z_{\alpha/2} = z_{0.025} = 1.960</m> and <m>\tilde{p} = \frac{144}{400} = 0.36</m>.
@@ -289,7 +288,7 @@ which is slightly different than the first and slightly smaller than the second.
 </p>
 
 </example>
-</p>
+
 
 
 
@@ -299,7 +298,7 @@ which is slightly different than the first and slightly smaller than the second.
 </exercise>
 
 
-<p>
+
 <theorem xml:id="SampleSizeForConfidenceIntervalForP"><title>Determining Sample Size for proportions with a preliminary estimate</title>
 <statement>
 <p>
@@ -317,10 +316,10 @@ Presuming E is given and n is unknown, simply solve for n (noting that n is an i
 </p>
 </proof>
 </theorem>
-</p>
 
 
-<p>
+
+
 <theorem xml:id="SampleSizeForConfidenceIntervalForPWithoutPreliminary"><title>Determining Sample Size for proportions with no preliminary estimate</title>
 <statement>
 <p>
@@ -334,9 +333,9 @@ Note that the maximum for <m>y = x(1-x) </m> occurs at <m> x = 1/2, y = 1/4.</m>
 </p>
 </proof>
 </theorem>
-</p>
 
-<p>
+
+
 <example><title>Determining Sample Size for one proportion</title>
 <p>
 Given a 99% confidence level, margin of error E=0.03, and preliminary estimate <m>\tilde{p_0} = 0.35</m>, notice that <m>z_{\alpha / 2} = 2.58</m> gives
@@ -344,7 +343,7 @@ Given a 99% confidence level, margin of error E=0.03, and preliminary estimate <
 or a sample size of at least 1683.
 </p>
 </example>
-</p>
+
 
 
 <exercise><title>WebWork - Sample Size</title>
@@ -359,7 +358,7 @@ or a sample size of at least 1683.
 As with the confidence intervals above for proportions, the Central Limit Theorem also allows you to create an interval centered on a sample mean for estimating the population mean <m>\mu</m>.
 </p>
 
-<p>
+
 <definition xml:id="DefnConfidenctIntervalForMean"><title>Confidence Interval for One Mean</title>
 <statement>
 <p>
@@ -371,7 +370,7 @@ Generally, the interval is symmetrical of the form <m>\overline{x} \pm E</m> wit
 </p>
 </statement>
 </definition>
-</p>
+
 
 <p>
 Once again, utilize the Central Limit Theorem.  Notice that the symmetrical confidence interval 
@@ -416,7 +415,7 @@ It should be noted that the use of the Central Limit Theorem makes the use of  I
 Additionally, this derivation assumes that <m>\mu</m> is not known...indeed the goal is to approximate that mean using <m>\overline{x}</m>...but that <m>\sigma</m> is known. This is often not the case. It can however be shown that if n is larger than 30, replacing <m>\sigma</m> with the sample standard deviation s gives an acceptable confidence interval.
 </p>
 
-<p>
+
 <theorem xml:id="SampleSizeForConfidenceIntervalForMeanWithoutPreliminary"><title>Sample Size needed for <m>\mu</m> given Margin of Error</title>
 <statement>
 <p>
@@ -430,13 +429,13 @@ Solve for n in the formula for E above. Notice that n must be an integer so you 
 </p>
 </proof>
 </theorem>
-</p>
+
 
 <p>
 Notice, in practice you might want to take n to be a little larger than the absolute minimum value prescribed above since you are dealing with approximations (Central Limit Theorem and the use of an estimate for s rather than the actual <m>\sigma</m>.)
 </p>
 
-<p>
+
 <example><title>Determining Sample Size for one Mean</title>
 <p>
 Given a 95% confidence level, margin of error E=0.1, and preliminary sample with standard deviation s = 2, <m>z_{\alpha / 2} = 1.96</m> gives
@@ -444,7 +443,7 @@ Given a 95% confidence level, margin of error E=0.1, and preliminary sample with
 or a sample size of at least 1537.
 </p>
 </example>
-</p>
+
 </section>
 
 
@@ -556,7 +555,7 @@ G.show()
 	</input>
 </sage>
 
-<p>
+
 <example><title> - Two-sided Confidence interval for <m>\sigma^2</m> and <m>\sigma</m></title>
 <p>Given the data 570, 561, 546, 540, 609, 580, 550, 577, 585, determine a 95% confidence interval for <m>\sigma^2</m>.
 </p>
@@ -573,9 +572,9 @@ By taking square roots you get
 Notice, this interval is relatively wide which is a result both of the number of data values being relatively small (n=9) and the actual data values being relatively large and spread out.
 </p>
 </example>
-</p>
 
-<p>
+
+
 <sage>
 	<input>
 # Chi-Square Calculator specifics
@@ -596,7 +595,7 @@ print('P( X &lt; ',a,') = ',a1)
 print('P( X &lt; ',b,') = ',b1)
 	</input>
 </sage>
-</p>
+
 
 
 
@@ -635,13 +634,13 @@ can be determined using
 	<me> F(\chi^2_{1-\alpha} ) = F \left ( \frac{(n-1)S^2}{E_1} \right ) = 1 - \alpha.</me>
 </p>
 
-<p>
+
 <example><title> - One-sided Confidence intervals for <m>\sigma^2</m></title>
 <p>
 TBA
 </p>
 </example>
-</p>
+
 
 <p>
 You can, of course, use the formula to work out the sample size needed in order to have a sufficiently narrow confidence interval
@@ -658,20 +657,20 @@ You can, of course, use the formula to work out the sample size needed in order 
 Finally, to determine a confidence interval for <m>\sigma</m>, proceed using the protocols described above and simply take the square root on the resulting interval.
 </p>
 
-<p>
+
 <example><title> - Confidence intervals for <m>\sigma</m></title>
 <p> TBA
 </p>
 </example>
-</p>
+
 
 </section>
 
 <section xml:id="IntervalEstimationExercises"><title>Exercises</title>
 
 
-<p>
-<exercise><title> - Basic Confidence interval for p</title>
+
+<exercise><title>Basic Confidence interval for p</title>
 <p>
 Given Y = 30 successes in n = 100 trials, determine a 90% confidence interval for the unknown value for p.  
 </p>
@@ -684,9 +683,9 @@ or
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Sample Size for confidence interval for p</title>
 <p>
 Given a preliminary estimate <m>\tilde{p_0} = 0.23</m>, determine the same size needed for determine a 95% confidence interval for p with margin of error 0.02.
@@ -699,9 +698,9 @@ and so pick at least 1701 as the sample size.
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Voting projection</title>
 <p>Randomly polling 3200 eligible voters for governor in a particular state resulted in finding that 1590 favored your candidate. Determine an appropriate 95% confidence interval for the true proportion p of voters who favor your candidate. Noting that <m>\tilde{p}</m> in this instance is smaller than 50%, write a short paragraph regarding what you might conclude from this confidence interval regarding your candidate's chances in winning the election.
 </p>
@@ -711,9 +710,9 @@ Note that although the point estimate is below 50%, the confidence interval incl
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Basic Confidence interval for the mean</title>
 <p>
 Given a sample mean of <m>\overline{x} = 25.3</m> with n = 121 and sample variance <m>s^2 = 12.1</m>, determine a 99% confidence interval for the true mean <m>\mu</m>.
@@ -726,15 +725,15 @@ or
 	</p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Confidence Interval Experiment</title>
 <p>
 TBA
 </p>
 </exercise>
-</p>
+>
 
 <p>
 Roll two regular pair of dice 35 times, recording the sum of the dots for each roll.  Using the data from your sample, determine the corresponding sample mean and sample variance.  Using this data, create a 95% confidence interval for the population mean and a 95% "centered" confidence interval for the standard deviation. Once complete, compare your results with what you know should be the correct population statistics an appropriate "hat" distribution. (You might want to use the chi-square calculator provided earlier in this text.)

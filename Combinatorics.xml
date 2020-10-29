@@ -11,9 +11,13 @@
     <title>Counting and Combinatorics</title>
 
 <section xml:id="CombinatoricsIntroduction"><title>Introduction</title>
-<p>One of the earliest applications of mathematics you probably remember is how you could use number to count things. For many, this is what they think people do when they do mathematics. In this chapter, we will discover that it is possible to count items without actually listing them all.</p>
 
-<p>To illustrate, consider counting the number of ways one can arrange Peter, Paul, and Mary with the order important.  Listing the possibilities:
+<p>
+One of the earliest applications of mathematics you probably remember is how you could use number to count things. For many, this is what they think people do when they do mathematics. In this chapter, we will discover that it is possible to count items without actually listing them all.
+</p>
+
+<p>T
+o illustrate, consider counting the number of ways one can arrange Peter, Paul, and Mary with the order important.  Listing the possibilities:
 <ul>
 	<li>Peter, Paul, Mary</li>
 	<li>Peter, Mary, Paul</li>
@@ -55,68 +59,59 @@ So, it is easy to see that these are all of the possible outcomes and that the t
 Notice how the list quickly grows when just one more choice is added. This example illustrates how keeping track of the number of items in a set can quickly get impossible to manage unless we can use a more mathematical approach that allows you to count the number of possibilities without having to list them all.
 </p>
 
-
 </section>
+
+
 
 
 <section  xml:id="CombinatoricsGeneralities"><title>General Counting Principles</title>
 	
-<p>
-<definition xml:id="DefnCardinality">
-	<title>Cardinality</title>
-		<statement>
+<definition xml:id="DefnCardinality"><title>Cardinality</title>
+<statement>
 		<p>Given a set of elements A, the number of elements in the 
 		set is known as its cardinality and is denoted |A|. If the set has 
 		an infinite number of elements then we set |A| = <m>\infty</m>.
 		</p>
-		</statement>
+</statement>
 </definition>
-</p>
 	
 <p>
 In order to "count without counting" we establish the following foundational principle:
 </p>
 
-<p>	
+
 <theorem xml:id="MultiplicationPrinciple"><title>Multiplication Principle</title>
-		<statement>
-		<p>
-		Given two successive events A and B, the number of ways 
-		to perform A and then B is |A||B|.
-		</p>
-		</statement>
-		<proof>
-			<p>If either of the events has infinite cardinality, then it is 
-			clear
-			that the number of ways to perform A and then B will also be 
-			infinite. So, assume that both |A| and |B| are finite.
-			In order to count the successive events, enumerate the elements in
-			each set
-			<md>
-				<mrow>A = \left \{ a_1, a_2, a_3, ... , a_{|A|} \right \}</mrow> 	
-				and
-				<mrow>B = \left \{  b_1, b_2, b_3, ... , b_{|B|} \right \}</mrow>
-			</md>
-			and consider the function f(k,j) = (k-1)|B| + j. This function is 
-			one-to-one and onto from the set 
-			<md>
-				<mrow>\left \{ (k,j): 1 \le k \le |A|, 1 \le j \le |B| \right \} </mrow>
-			</md> 
-			onto 
-			<md>
-				<mrow>\left \{ s : 1 \le s \le |A| |B| \right \}.</mrow>
-			</md> 
-			Since this
-			second set has |A| |B| elements then the conclusion follows. 
-			coordinates.
-			</p>
-		</proof>
-	</theorem>
-</p>
+<statement>
+	<p>
+	Given two successive events A and B, the number of ways 
+	to perform A and then B is |A||B|.
+	</p>
+</statement>
+<proof>
+	<p>
+	If either of the events has infinite cardinality, then it is clear
+	that the number of ways to perform A and then B will also be 
+	infinite. So, assume that both |A| and |B| are finite.
+	In order to count the successive events, enumerate the elements in
+	each set
+	<md>
+		<mrow>A = \left \{ a_1, a_2, a_3, ... , a_{|A|} \right \}</mrow> 	
+	and
+		<mrow>B = \left \{  b_1, b_2, b_3, ... , b_{|B|} \right \}</mrow>
+	</md>
+	and consider the function f(k,j) = (k-1)|B| + j. This function is 
+	one-to-one and onto from the set 
+		<me>\left \{ (k,j): 1 \le k \le |A|, 1 \le j \le |B| \right \} </me>
+	onto 
+		<me>\left \{ s : 1 \le s \le |A| |B| \right \}.</me>
+	Since this second set has |A| |B| elements then the conclusion follows. 
+	</p>
+</proof>
+</theorem>
+
 
 
 <exercise><title>WebWork - Multiplications Principle</title>
-
 		<webwork source="Library/Mizzou/Finite_Math/Set_Theory_Addition_and_Multiplication_Principles/MultiplicationPrinciple2.pg">
 		</webwork>
 </exercise>
@@ -124,45 +119,43 @@ In order to "count without counting" we establish the following foundational pri
 
 
 <exercise><title>WebWork - Counting without Counting</title>
-
 		<webwork source="Library/Rochester/setDiscrete9Counting/ur_dis_9_2.pg">
 		</webwork>
 </exercise>
 
 
-<p>
 <definition xml:id="DefnFactorial"><title>Factorial</title>
-		<statement>
-		<p>For any natural number n, 
-		<md>
-			<mrow>n! = n(n-1)(n-2) ... 3 \cdot 2 \cdot 1</mrow>
-		</md>
-		and by convention set 0! = 1.
-		</p>
-		</statement>
+<statement>
+	<p>
+	For any natural number n, 
+		<me>n! = n(n-1)(n-2) ... 3 \cdot 2 \cdot 1</me>
+	and by convention set 0! = 1.
+	</p>
+</statement>
 </definition>
-</p>
 
-<p>	
+
+
 <example><title>iPad security code</title>
-		<p>Consider your ipad's security. To unlock the screen suppose you need to enter a four digit pass code. How easy is it to guess this pass code?</p>
-		<p>Using the standard 10 digit keypad, we first have two questions to consider?
+<p>
+Consider your ipad's security. To unlock the screen suppose you need to enter a four digit pass code. How easy is it to guess this pass code?
+</p>
+<p>Using the standard 10 digit keypad, we first have two questions to consider?
 		<ol>
 			<li>Does the order in which the digits are entered matter?</li>
 			<li>Can you reuse a digit more than once?</li>
 		</ol>
 		For the ipad, if the order does matter and you cannot reuse digits, the number of possible codes can be determined by considering each digit as a separate event with four such events in succession providing the right code. By successively applying the multiplication principle, you find that the number of possible codes is the number of remaining available digits at each step.  Namely, <m>10 \times 9 \times 8 \times 7 = 5040.</m>
-		</p>
-		<p>
-		On the other hand, if you were allowed to reuse the digits then the number of possible outcomes would be more since all 10 digits would be available for each event.  Namely, <m>10 \times 10 \times 10 \times 10 = 10000.</m>
-		</p>
-		<p>
-		Now, consider how this changes if you can use a 4 or 6 digit passcode. Determine the number of possible passcodes.
-		</p>
-</example>
 </p>
+<p>
+		On the other hand, if you were allowed to reuse the digits then the number of possible outcomes would be more since all 10 digits would be available for each event.  Namely, <m>10 \times 10 \times 10 \times 10 = 10000.</m>
+</p>
+<p>
+		Now, consider how this changes if you can use a 4 or 6 digit passcode. Determine the number of possible passcodes.
+</p>
+</example>
 
-<p>	
+	
 <example><title>iPad security code with greasy fingers</title>
 		<p>Reconsider your ipad's security. In this case, you like to eat
 		chocolate bars and have greasy fingers. When you type in your passcode
@@ -170,9 +163,9 @@ In order to "count without counting" we establish the following foundational pri
 		now tries to guess your passcode, how many possible attempts are necessary?</p>
 		<p>Since there are only four numbers to pick from with order important, the number of possible passcodes remaining is <m>4 \times 3 \times 2 \times 1 = 24</m></p>
 </example>
-</p>
 
-<p>	
+
+	
 <example><title>National Treasure</title>
 		<p>In the 2004 movie National Treasure, Ben and Riley are attempting 
 		to guess Abagail's password to enter the room with the Declaration. 
@@ -220,25 +213,24 @@ In order to "count without counting" we establish the following foundational pri
 		<p>With this large collection of possible outcomes, how are the movie
 		characters able to determine the correct "VALLEYFORGE" passphrase?</p>
 </example>
-</p>
+
 	
 </section>
 
 
 
-<section  xml:id="Permutations">
-<title>Permutations</title>
+<section  xml:id="Permutations"><title>Permutations</title>
+
 <p>
 When counting various outcomes the order of things sometimes matters. When the order of a set of elements changes we call the second a permutation (or an arrangement) of the first.
 </p>
 
-<p>
-	<theorem xml:id="PermuationsOfAll">
-	<title>Permutations of everything</title>
-	<statement>
+
+<theorem xml:id="PermuationsOfAll"><title>Permutations of everything</title>
+<statement>
 	<p>The number of permutations of n distinct items is n!</p>
-	</statement>
-		<proof>
+</statement>
+<proof>
 			<p>Notice that if n=1, then there is only 1 item to arrange and 
 			that there is only one possible arrangment.</p>
 			<p>
@@ -249,9 +241,9 @@ When counting various outcomes the order of things sometimes matters. When the o
 			</md>
 			Notice that there are n+1 ways to choose 1 element from A and that in doing so leaves a set with n elements. Combining the induction hypothesis with the multiplication principle this gives (n+1)n! = (n+1)! possible outcomes.
 			</p>
-		</proof>
-	</theorem>
-</p>
+</proof>
+</theorem>
+
 
 <p>
 One can interpret successive ordered selections as branching through a "tree" structure.  Indeed, starting with the set {A,B,C} one may pick any of the three but then a subsequent selection only has two possibilities for the next selection and so forth. The tree below illustrates that there are six ways to order two items from a group of size three.
@@ -268,20 +260,19 @@ Going one step further, what about ordering the letters in {A, B, C, D}? You can
 	<p>which is 24 different options or <m>4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24</m>.  This can be viewed using a tree structure where each decision creates a new branch.
 	
 <image source="images/PermutationAllTree.png" />
-
 </p>
 
-<p>
+
 <theorem xml:id="PermutationWithoutReplacementDistinguishable"><title>Permutations of a subset without replacement</title>
-		<statement>
+<statement>
 			<p> 
 			The number of ways to arrange r items from a set of n distinct items 
 			is 
 			<me> _nP_r = \frac{n!}{(n-r)!} </me>
 			This is sometimes denoted also as P(n,r) or <m>P_r^n</m>.
 			</p>
-		</statement>
-		<proof>
+</statement>
+<proof>
 			<p>
 			If <m>r \gt n</m> or <m>r \lt 0 </m> then this is not possible and so the result would be no permuatations. Otherwise, apply the multiplication principle r times noting that there are 
 			n choices for the first selection, n-1 choices for the second
@@ -293,9 +284,9 @@ Going one step further, what about ordering the letters in {A, B, C, D}? You can
 				<mrow>&amp; = \frac{n!}{(n-r)!}</mrow>
 			</md>
 			</p>
-		</proof>
-	</theorem>
-</p>
+</proof>
+</theorem>
+
 
 <p>
 Following the tree idea from above, continue for several steps but then stop once you have gone r steps in.  For example, it is easy to see that <m>_5P_2 = 20</m> using a tree.
@@ -307,13 +298,11 @@ Following the tree idea from above, continue for several steps but then stop onc
 
 
 <exercise><title>WebWork - Permutations</title>
-
 		<webwork source="Library/Rochester/setProbability1Combinations/ur_pb_1_9.pg">
 		</webwork>
 </exercise>	
 
 
-<p>	
 <theorem xml:id="PermutationWithReplacementDistinguishable"><title>Permutations of a subset with replacement</title>
 		<statement>
 		<p>The number of ways to obtain an arrangement of r choices from a group of size n is 
@@ -327,17 +316,16 @@ Following the tree idea from above, continue for several steps but then stop onc
 			</p>
 		</proof>
 </theorem>
-</p>	
 	
-<p><theorem xml:id="MultinomialCoefficients">
-	<title>Permutations when not all items are distinguishable (Multinomial Coefficients)</title>
-	<statement>
+	
+<theorem xml:id="MultinomialCoefficients"><title>Permutations when not all items are distinguishable (Multinomial Coefficients)</title>
+<statement>
 	<p>
 If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ... , <m>n_s</m> in the last, the number of ways to pick all is
 		<me>\frac{n!}{n_1! \cdot n_2! ... n_s!}</me>	
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>
 	Enumerate all of the n data items individually with the <m>n_1!</m> identical values first and the remaining groups in like manner to get the enumerated list 
 	<me>
@@ -345,24 +333,26 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 	</me>
 	In this order, there are <m>n_1!</m> ways to arrange the first group, <m>n_2!</m> ways to arrange the second, etc. There are <m>n_1! \times n_2! \times ... \times \n_s!</m> ways to arrange all of the categories together with groups in this order but none of those group reorders does anything since those data values are all the same. Dividing out those from the <m>n!</m> original permutations of all items leaves one with the multinomial coefficient. 
 	</p>
-	</proof>
+</proof>
 </theorem>
-</p>
+
 
 	
 <exercise><title>WebWork - More Permutations</title>
 		<webwork source="Library/NAU/setCounting/RepeatedCombination1.pg">
 		</webwork>
 </exercise>	
-	
-	
+		
 </section>
 
 
 
 <section  xml:id="Combinations"><title>Combinations</title>
-<p>When counting various outcomes sometimes the order of things does not matter.
-If so, each unique unordered outcome is called a combination. </p>
+
+<p>
+When counting various outcomes sometimes the order of things does not matter.
+If so, each unique unordered outcome is called a combination. 
+</p>
 <p>
 Once again, consider the permutations when selecting three letters from {A, B, C, D}.
 <ol>
@@ -410,21 +400,21 @@ Once again, consider the permutations when selecting three letters from {A, B, C
 
 Notice how these 24 permutations fall into only four distinct categories if the order does not matter. Therefore, from a group of size four you can pick an unordered subset of size three in only 4 ways rather than the original 24.
 </p>
+
 <p>
 In general, it would be nice to have a direct formula to determine the number of such combinations without having to explicitly list them all out.
 </p>
 
-<p>
 <theorem xml:id="CombinationWithoutReplacementDistinguishable"><title>Combinations of a subset without replacement</title>
-		<statement>
+<statement>
 			<p>
 			The number of ways to arrange r items from a set of n distinct items 
 			is 
 			<me> _nC_r = \frac{n!}{r!(n-r)!} </me>
 			This is sometimes denoted C(n,r) or <m>C_r^n</m> or <m>{n \choose r}</m>.
 			</p>
-		</statement>
-		<proof>
+</statement>
+<proof>
 			<p>
 			Consider creating a permutation of r objects from a set of size n
 			by first picking an unordered subset of size r and then counting 
@@ -435,31 +425,29 @@ In general, it would be nice to have a direct formula to determine the number of
 	
 			Dividing by <m>r!</m> gives the result.
 			</p>
-		</proof>
+</proof>
 </theorem>
-</p>
 
-<p>
+
+
 <theorem xml:id="CombinationWithReplacementDistinguishable"><title>Combinations of a subset with replacement</title>
-		<statement>
+<statement>
 			<p>
 			The number of ways to arrange r items from a set of n distinct items 
 			is 
 			<me> _{n+r-1}C_r = {{n+r-1} \choose r} = \frac{(r+n-1)!}{r!(n-1)!} </me>
 			</p>
-		</statement>
-		<proof>
+</statement>
+<proof>
 			<p>
 			Label each item in your group in some defined order. Since order doesn't matter, as you repeatedly sample r times with replacement you can always write down your outcomes sorted from low to high placement. Finally, separate like values by some symbol, say "|", and consider each of the n distinct objects as indistinct *'s. There will be n-1 of these separators since there will be n to choose from. For example, if choosing r=6 times from the set {a, b, c, d}, then the outcome b, b, a, d, a, b could be collected as a, a, b, b, b, d and written in our code as **|***||* .  Notice that shuffling around the identical *'s would not change the code (and similarly for the identical |'s) but swapping a * with a | would be a different outcome. Therefore, we can consider this to be a <xref ref="MultinomialCoefficients">multinomial coefficient</xref> and the number of ways to rearrange this code is
 			<me>\frac{(r + n-1)!}{r!(n-1)!}.</me>
 			</p>
-		</proof>
+</proof>
 </theorem>
-</p>
 
 
 <exercise><title>WebWork - Combinations</title>
-
 		<webwork source="Library/Mizzou/Finite_Math/Set_Theory_Permutations_Combinations/7cardPokerhand.pg">
 		</webwork>
 		<conclusion>
@@ -472,20 +460,19 @@ In general, it would be nice to have a direct formula to determine the number of
 
 
 <exercise><title>WebWork - More Combinations</title>
-
 		<webwork source="Library/Rochester/setAlgebra38Counting/sw10_2_60.pg">
 		</webwork>
-		<conclusion>
+	<conclusion>
 		<p>
 		Once again, you can see that using the formulas can be easy and also can be part of a bigger problem pasted together using the multiplication principle.
 		</p>
-		</conclusion>
+	</conclusion>
 </exercise>	
 
 
-<p>
 <example><title>Ipad Security</title>
-		<p>Revisiting your ipad's security, what happens if the order in which the digits are entered does not matter? If so, then you would be picking a combination of 4 digits without replacement from a group of 10 digits. Namely, 
+<p>
+Revisiting your ipad's security, what happens if the order in which the digits are entered does not matter? If so, then you would be picking a combination of 4 digits without replacement from a group of 10 digits. Namely, 
 		<md>
 			<mrow>\frac{10!}{4!6!} &amp; = \frac{10 \times 9 \times 8 \times 7 \times 6!}{4 \times 3 \times 2 \times 1 \times 6!}</mrow>
 			<mrow>&amp; = \frac{10 \times 9 \times 8 \times 7}{4 \times 3 \times 2 \times 1}</mrow>
@@ -501,24 +488,26 @@ In general, it would be nice to have a direct formula to determine the number of
 			<mrow> &amp; = 715</mrow>
 		</md>
 		which once again is more since numbers are allowed to repeat.
-		</p>
+</p>
 </example>
-</p>	
+
 	
-<p>		
+		
 <definition xml:id="BinomialCoefficients"><title>Binomial Coefficients</title>
-		<statement>
+<statement>
 		<p>
 		The value <m>_nC_r</m> is known as the binomial coefficient. It is
 		denoted by <m>{n \choose r}</m> and is read "n choose r".
 		</p>
-		</statement>
-	</definition>
-</p>	
+</statement>
+</definition>
 	
-<p>Binomial coefficients have a number of interesting properties.  Many of these are very useful as well in probability calculations.  Several of these properties are collected below. In particular, these relationships verify that the binomial coefficients are the values found in Pascal's Triangle.</p>
-
+	
 <p>
+Binomial coefficients have a number of interesting properties.  Many of these are very useful as well in probability calculations.  Several of these properties are collected below. In particular, these relationships verify that the binomial coefficients are the values found in Pascal's Triangle.
+</p>
+
+
 <sage>
 <title>Binomial Coefficients give Pascal's Triangle</title>
 <input>
@@ -532,11 +521,13 @@ def _(n = slider(1,15,1,5)):
         pretty_print('%s'%given_n)
 </input>
 </sage>
-</p>
 
-<p>
+
+
 <theorem xml:id="BinomialCoefficientFormulas"><title> Binomial Coefficient Formulas</title>
-	<statement><p> For <m> n \in \mathbb{N}</m>,
+<statement>
+<p> 
+For <m> n \in \mathbb{N}</m>,
 	<ol>
 		<li><m>\binom{n}{0} = 1</m></li>
 		<li><m>\binom{n}{n} = 1</m></li>
@@ -545,9 +536,9 @@ def _(n = slider(1,15,1,5)):
 		<li><m>\binom{n}{r} = \binom{n}{n-r}</m></li>
 		<li><m>\binom{n+1}{r+1} = \binom{n}{r} + \binom{n}{r+1}</m></li>
 	</ol>
-	</p>
-	</statement>
-	<proof>
+</p>
+</statement>
+<proof>
 	<p>
 	<ol>
 		<li><m>\binom{n}{0} = \frac{n!}{0!(n-0)!} = 1</m></li>
@@ -566,18 +557,20 @@ def _(n = slider(1,15,1,5)):
 		</li>
 	</ol>
 	</p>
-	</proof>
+</proof>
 </theorem>
-</p>	
+
 </section>
 
 
 <section  xml:id="CombinatoricsSummary"><title>Summary</title>
+
 <introduction>
 <p>
 Here are the important results from this chapter:
 </p>
 </introduction>
+
 <p>
 <xref ref="MultiplicationPrinciple">Multiplication Principle</xref>
 </p>
@@ -607,6 +600,7 @@ Here are the important results from this chapter:
 
 <section xml:id="CombinatoricsExercises"><title>Exercises</title>
 <p>Complete the online homework "Counting".</p>
+
 <p>
 A standard deck of playing cards consists of 52 cards broken up into four "suits" known as Hearts, Spades, Diamonds, and Clubs. Each suit is broken up additionally into unique cards with "face values" from {2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace} and generally in that order from low to high.</p>
 <p>

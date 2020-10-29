@@ -8,14 +8,15 @@
 <!-- See the file COPYING for copying conditions.             -->
 
 <chapter xml:id="Regression" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Regression</title>
+<title>Regression</title>
 
 <section xml:id="RegressionIntroduction"><title>Introduction</title>
+
 <p>
 Given two distinct points, there is one line which passes exactly through both.  Indeed, if the points are <m>(x_1,y_1), (x_2,y_2)</m> then presuming the x-values are different gives the equation
-<me> y = \frac{y_2 - y_1}{x_2 - x_1}(x - x_1) + y_1</me>
+	<me> y = \frac{y_2 - y_1}{x_2 - x_1}(x - x_1) + y_1</me>
 is the linear function which passes through both points.  If the x's are equal then 
-<me> x = x_1</me>
+	<me> x = x_1</me>
 is your linear equation. 
 However, once you collect three or more points it is likely that there is no line which exactly "interpolates" all of the points.
 </p>
@@ -25,44 +26,50 @@ In this chapter, you will investigate how to create polynomial functions which i
 </p>
 </section>
 
+
+
+
+
 <section xml:id="BestFitLine"><title>Best-fit Line</title>
+
 <p>
 In this section, we will presume only one independent variable x and one dependent variable y.
 </p>
+
 <p>
 Consider a collection of data points 
-<me>(x_1,y_1), (x_2,y_2), ... , (x_n,y_n)</me>
+	<me>(x_1,y_1), (x_2,y_2), ... , (x_n,y_n)</me>
 and a general linear function 
-<me>f(x) = mx + b.</me>
+	<me>f(x) = mx + b.</me>
 It is possible that each of the given data points are exactly "interpolated" by the linear function so that
-<me>f(x_k) = y_k</me>
+	<me>f(x_k) = y_k</me>
 for k = 1, 2, ... , n.  However, in general this is unlikely since even three points are not likely to be colinear. However, you may notice that the data points exhibit a linear tendency or that the underlying physics might suggest a linear model. If so, you may find it easier to predict values of y for given values of x using a linear approximation. Here you will investigate a method for doing so called "linear regression", "least-squares", or "best-fit line". 
 </p>
+
 <p>
 But why even bother creating a formula (a line here) to approximate data that does not satisfy that formula? Remember that you would expect collected data to vary slightly as one repeatedly collects that data in the same way that you would expect to make a slightly different score on repeated attempts at exams on the same material. Creating a forumla that is close to your data gives a well-defined way to predict a y value for a given x value. This predictive behavior is illustrated in the exercise below.
 </p>
 
-<exercise>
-		<title>
-		<p>
-		WeBWorK - best-fit line for approximation
-		</p>
-		</title>
+<exercise><title>WeBWorK - best-fit line for approximation</title>
 		<webwork source="Library/NAU/setStatistics/linear_regression1.pg">
 		</webwork>
 </exercise>
 
 <p>
 To determine the best-fit line, you need to determine what is meant by the word "best". Here, we will derive the standard approach which interprets this to mean that the total vertical error between the line and the provided data points is minimized in some fashion.  Indeed, this vertical error would be of the form
-<me>e_k = f(x_k) - y_k</me>
+	<me>e_k = f(x_k) - y_k</me>
 and would be zero if f(x) exactly interpolated at the given data point.  Note, some of these errors will be positive and some will be negative. To avoid any possible cancellation of errors, you can look at taking absolute values (which is tough to deal with algebraically) or by squaring the errors. This second option will be the approach taken here. This is similar to the approach taken earlier when developing formulas for the variance.
 </p>
+
 <p>The best-fit line therefore will be the line <m>f(x) = mx+b</m> so that the "total squared error" is minimized. This total squared error is given by
-<me>TSE(m,b) = \sum_{k=1}^n e_k^2 = \sum_{k=1}^n (f(x_k) - y_k)^2 = \sum_{k=1}^n (m x_k + b - y_k)^2.</me>
+	<me>TSE(m,b) = \sum_{k=1}^n e_k^2 = \sum_{k=1}^n (f(x_k) - y_k)^2 = \sum_{k=1}^n (m x_k + b - y_k)^2.</me>
 </p>
+
 <p>
 For the following interactive cell, consider for the given data points various values for the slope and y-intercept and see if you can make the total squared error as small as possible. In doing so, notice the vertical distances from the line to the given data points generally decreases as this error measure gets smaller. 
 </p>
+
+
 <sage>
 <input>
 var('x')
@@ -85,90 +92,102 @@ def _(Points = input_box([(-1,1),(3,1),(4,3),(6,4)]), m = slider(-4,4,0.05,1),b 
     G.show(title = T)
 </input>    
 </sage>
+
 <p>
 So that we don't have to guess the best values for slope and intercept, we can appeal to calculus. Indeed, to minimize this function of the two variables m and b take partial derivatives and set them equal to zero to get the critical values:
-<me>TSE_m = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot x_k</me>
+	<me>TSE_m = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot x_k</me>
 and
-<me>TSE_b = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot 1 .</me>
+	<me>TSE_b = \sum_{k=1}^n 2(m x_k + b - y_k) \cdot 1 .</me>
 Setting equal to zero and solving gives what is known as the "normal equations":
-<me>m \sum_{k=1}^n x_k^2 + b \sum_{k=1}^n x_k = \sum_{k=1}^n x_k y_k</me>
+	<me>m \sum_{k=1}^n x_k^2 + b \sum_{k=1}^n x_k = \sum_{k=1}^n x_k y_k</me>
 and
-<me>m \sum_{k=1}^n x_k + b \sum_{k=1}^n 1 = \sum_{k=1}^n y_k.</me>
+	<me>m \sum_{k=1}^n x_k + b \sum_{k=1}^n 1 = \sum_{k=1}^n y_k.</me>
 Solving these for m and b gives the best fit line.
 </p>
 
-<exercise>
-		<title>
-		<p>
-		WeBWorK - get a best fit line
-		</p>
-		</title>
+<exercise><title>WeBWorK - Best fit line</title>
 		<webwork source="Library/ASU-topics/setStat/dueck4_2_4.pg">
 		</webwork>
 </exercise>
 
 </section>
 
+
+
+
 <section xml:id="Correlation"><title>Correlation</title>
 <p>
 You can plot points and plot the resulting best-fit line determined in the previous section but the question remains whether the line is any good. In particular, the real use of the line often is to subsequently predict y-values for a given x-value. However, it is very likely that the best-fit line does not even pass through any of the provided data points.  So, how can something that misses every marker still be considered a good fit. To quantify this, we first need to discuss a way to measure how well two variables vary with each other.
 </p>
 
-<p>
+
 <definition xml:id="DefnSampleCovariance"><title>Sample Covariance</title>
 <p>Given paired data 
-<me>(x_1,y_1), (x_2,y_2), ... , (x_n,y_n)</me>
+	<me>(x_1,y_1), (x_2,y_2), ... , (x_n,y_n)</me>
 with corresponding means <m>\overline{x}</m> and <m>\overline{y}</m>, the sample covariance is given by
-<me> s_{xy} = \sum_{k=1}^n \frac{(x_k-\overline{x})(y_k-\overline{y})}{n-1}.</me>
+	<me> s_{xy} = \sum_{k=1}^n \frac{(x_k-\overline{x})(y_k-\overline{y})}{n-1}.</me>
 </p>
 </definition>
-</p>
 
-<p>This general definition provides a general measure which is a second order term (like variance) but also maintains "units". To provide a unit-less metric, consider the following measure.
 
 <p>
+This general definition provides a general measure which is a second order term (like variance) but also maintains "units". To provide a unit-less metric, consider the following measure.
+</p>
+
 <definition xml:id="DefnCorrelationCoefficient"><title>Spearman's Rho (Correlation Coefficient)</title>
-<p>Given a collection of data points, the Spearman's Rho correlation coefficient is given by
+<statement>
+<p>
+Given a collection of data points, the Spearman's Rho correlation coefficient is given by
 <me>r = \frac{s_{xy}}{s_x s_y}</me>
 where <m>s_x</m> is the standard deviation of the x-values only and <m>s_y</m> is the standard deviation of the y-values only.
 </p>
+</statement>
 </definition>
-</p>
 
-<p>
+
+
 <theorem><title>Interpretation of the Spearman's Rho Correlation Coefficient</title>
-<statement>If the points are co-linear with a positive slope then r = 1 and if the points are co-linear with a negative slope then r = -1.</statement>
+<statement>
+If the points are co-linear with a positive slope then r = 1 and if the points are co-linear with a negative slope then r = -1.
+</statement>
 <proof>
 <p>
 Assume the data points are co-linear with a positive slope. Then the 
-<m>TSE(m_0,b_0) = 0</m> for some <m>m_0</m> and <m>b_0</m>. For this line notice that <m>f(x_k) = y_k</m> exactly for all data points. It is easy to show then that <m>\overline{y} = m_0 \overline{x} + b_0</m> and <m>s_y = | m_0 | s_x</m>.
+	<me>TSE(m_0,b_0) = 0</me> 
+for some <m>m_0</m> and <m>b_0</m>. For this line notice that <m>f(x_k) = y_k</m> exactly for all data points. 
+It is easy to show then that 
+	<me>\overline{y} = m_0 \overline{x} + b_0</me> 
+and 
+	<me>s_y = | m_0 | s_x</me>.
 
 Therefore,
-<me>s_{xy} = \sum_{k=1}^n \frac{(x_k - \overline{x})(m_0 x_k + b_0 - (m_0 \overline{x} + b_0))}{n-1} = m_0 s_x^2</me>
+	<me>s_{xy} = \sum_{k=1}^n \frac{(x_k - \overline{x})(m_0 x_k + b_0 - (m_0 \overline{x} + b_0))}{n-1} = m_0 s_x^2</me>
 Putting these together gives correlation coefficient
-<me>r = \frac{m_0 s_x^2}{s_x m_0 s_x} = 1.</me> 
+	<me>r = \frac{m_0 s_x^2}{s_x m_0 s_x} = 1.</me> 
 A similar proof follows in the second case by noting that 
-<me>m_0 / | m_0 | = -1.</me>
+	<me>m_0 / | m_0 | = -1.</me>
 </p>
 </proof>
 </theorem>
-</p>
 
-<p>
+
+
 <theorem><title>Alternate formula for r</title>
 <statement>
 <p>
-<me>s_{xy} = \frac{n}{n-1} \left [ \frac{\sum_{k=1}^n x_k y_k}{n} - \overline{x} \overline{y} \right ].</me>
+	<me>s_{xy} = \frac{n}{n-1} \left [ \frac{\sum_{k=1}^n x_k y_k}{n} - \overline{x} \overline{y} \right ].</me>
 </p>
 </statement>
 <proof>
-<p>Expand <m>(x_k-\overline{x})(y_k-\overline{y})</m> and notice that the sample means are actually constants with respect to the summation.
+<p>
+Expand <m>(x_k-\overline{x})(y_k-\overline{y})</m> and notice that the sample means are actually constants with respect to the summation.
 </p>
 </proof>
 </theorem>
-</p>
 
-<p>To compute the best-fit line and correlation coefficient by hand, it is often easiest to construct a table in a manner similar to how you might have computed the mean, variance, skewness and kurtosis in the previous chapter.  Indeed, 
+
+<p>
+To compute the best-fit line and correlation coefficient by hand, it is often easiest to construct a table in a manner similar to how you might have computed the mean, variance, skewness and kurtosis in the previous chapter.  Indeed, 
 
 
 <table halign="left">
@@ -206,42 +225,31 @@ Therefore
 <me>s_y^2 = \frac{7}{6} \cdot \left [ \frac{14}{7} - \left ( \frac{4}{7} \right )^2 \right ] = \frac{41}{21}</me>
 <me>s_{xy} = \frac{7}{6} \cdot \left [ \frac{7}{7} - \frac{9}{7} \cdot \frac{4}{7} \right ] = \frac{13}{42} </me>
 <me>r = \frac{\frac{13}{42}}{\sqrt{\frac{32}{7}} \sqrt{\frac{41}{21}}}</me>
+
 and the normal equations to find the actual line are
+
 <me> 39m + 9 b = 7 \text{  and  } 9m + 7b = 4.</me>
 You should go ahead and simplify these values, solve the system of equations, plot the points and draw the line to complete the creation and evaluation of this best-fit line.
 </p>
 
 
-<exercise>
-		<title>
-		<p>
-		WeBWorK - Interpreting correlation coefficients.
-		</p>
-		</title>
+<exercise><title>WeBWorK - Interpreting correlation coefficients.</title>
 		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg">
 		</webwork>
 
 </exercise>
 
-<exercise>
-		<title>
-		<p>
-		WeBWorK - Interpreting correlation coefficients again.
-		</p>
-		</title>
+<exercise><title>WeBWorK - Interpreting correlation coefficients again.</title>
 		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg">
 		</webwork>
-
 </exercise>
-
-
-</p>
 
 
 <p>
 Once again, we can use R to determine and display the data points and best-fit line with one of the built-in data sets. To do this, that data set needs to have the opportunity to utilize paired data. Below, we use the 'cars' data set since that set has speed paired with a corresponding stopping distance from some experiment. See if you can use one of the other data sets to create a best-fit line and determine if the correlation coefficient is sufficiently 'good' or not.
 </p>
-<p>
+
+
 <sage language = 'r'>
 <input>
 data(cars)
@@ -255,20 +263,29 @@ lm(y ~ x)
 abline(lm(y ~ x))
 </input>
 </sage>
+
+
+<p>
+Repeat the above R code but instead use two of the columns from EuStockMarkets for the data. Consider why you might get a relatively high correlation coefficient with this data. 
 </p>
 
-<p>Repeat the above R code but instead use two of the columns from EuStockMarkets for the data. Consider why you might get a relatively high correlation coefficient with this data. 
-</p>
-<p>Again, repeat the above R code by instead use columns 2 and 4 from USJudgeRatings. Notice the relatively large correlation coefficient but ponder if there is really any connection between these two columns. Repeat for columns 1 and 4 and interpret the results.
+<p>
+Again, repeat the above R code by instead use columns 2 and 4 from USJudgeRatings. Notice the relatively large correlation coefficient but ponder if there is really any connection between these two columns. Repeat for columns 1 and 4 and interpret the results.
 </p>
 
 </section>
 
+
+
+
 <section xml:id="HigherDegreeRegression"><title>Higher Degree Regression</title>
+
 <p>
 Continuing in a similar fashion to the previous section, consider now an approximation using a quadratic function <m>f(x) = ax^2 + bx + c</m>.  In this case, the total squared error would be of the form
 <me>TSE(a,b,c) = \sum_{k=0}^n (a x_k^2 + b x_k + c - y_k)^2.</me>
+	
 Taking all three partials gives
+
 <me>TSE_a = \sum_{k=1}^n 2(a x_k^2 + b x_k + c - y_k) \cdot x_k^2</me>
 <me>TSE_b = \sum_{k=1}^n 2(a x_k^2 + b x_k + c - y_k) \cdot x_k</me>
 <me>TSE_c = \sum_{k=1}^n 2(a x_k^2 + b x_k + c - y_k) \cdot 1 .</me>
@@ -280,6 +297,8 @@ Once again, setting equal to zero and solving gives the normal equations for the
 
 <p>
 One can easily use software to perform these calculations of course. Further, you can extend the ideas from above and derivate formulas for a best-fit cubic. The interactive cell below determines the optimal quadratic polynomial for a given set of data points and by commenting and uncommenting as suggested will also determine the best fit cubic.
+</p>
+
 <sage>
 <input>
 var('x')
@@ -320,10 +339,11 @@ H = plot(f,x,min(xpts),max(xpts),title=banner)
 show(G+H)
 </input>
 </sage>
-</p>
+
 
 <!--
-<p>One can also approach least squares using a linear algebra approach.  For example, using the quadratic model from above and evaluating at each of the given data points <m>(x_0,y_0), (x_1, y_2), ... , (x_n, y_n)</m>
+<p>
+One can also approach least squares using a linear algebra approach.  For example, using the quadratic model from above and evaluating at each of the given data points <m>(x_0,y_0), (x_1, y_2), ... , (x_n, y_n)</m>
 </p>
 
 
@@ -337,10 +357,14 @@ show(G+H)
 <p>
 The regression models that we have looked at till now have always presumed a single independent variable and with "linear" coefficients. It is much more likely when investigating cause and effect relationships that there are perhaps many variables that contribute or perhaps using a non-linear relationship between the unknown coefficients.  To tease you to consider taking another course that covers multi-variate regression, in this section we briefly consider a two-variable model. We also consider an interesting example that illustrates the danger in using models to estimate values well beyond the range of the relevant data that has been used to create the model.
 </p>
+
 <p>
 Consider then a model of the form
-<me>z = \alpha_1 x + \alpha_2 y + \beta</me>
-and the data points <me>(x_1,y_1,z_1), (x_2,y_2,z_2), ... , (x_n,y_n,z_n). </me>  Evaluating at these data points gives, in matrix form
+	<me>z = \alpha_1 x + \alpha_2 y + \beta</me>
+and the data points 
+	<me>(x_1,y_1,z_1), (x_2,y_2,z_2), ... , (x_n,y_n,z_n). </me>  
+
+Evaluating at these data points gives, in matrix form
 
 <me>
 \begin{bmatrix}
@@ -393,11 +417,13 @@ in general.  Evaluating this with X and Z as above gives the matrix
 <p>
 A good example of the usefulness and limitations of multi-variate regression is the calculation of the "Heat Index". This measure determines a measure of discomfort relative to the ambient temperature and the relative humidity. Indeed, in warm climates a high temperature is more difficult to bear if the humidity is also high. One reason is that with high humidity the body is less effective in shedding heat through evaporation of body sweat.
 </p>
+
 <p>
 The National Weather Service in 1990 published the following multiple regression equation for Heat Index (HI) relative to the ambient temperature (T) and the relative humidity (RH)
-<me>H = -42.379 + 2.04901523 \cdot T + 10.14333127 \cdot R - 0.22475541 \cdot T \cdot R \\ - 6.83783 \cdot 10^{-3} \cdot T^2 - 5.481717 \cdot 10^{-2} \cdot R^2 + 1.22874 \cdot 10^{-3} \cdot T^2 \cdot R \\ + 8.5282 \cdot 10^{-4} \cdot T \cdot R^2-1.99 \cdot 10^{-6} \cdot T^2 \cdot R^2.</me>
+	<me>H = -42.379 + 2.04901523 \cdot T + 10.14333127 \cdot R - 0.22475541 \cdot T \cdot R \\ - 6.83783 \cdot 10^{-3} \cdot T^2 - 5.481717 \cdot 10^{-2} \cdot R^2 + 1.22874 \cdot 10^{-3} \cdot T^2 \cdot R \\ + 8.5282 \cdot 10^{-4} \cdot T \cdot R^2-1.99 \cdot 10^{-6} \cdot T^2 \cdot R^2.</me>
 Notice, their model utilizes quadratic terms and therefore uses a generalization of the linear result presented above. Details on how this equation was determined and other details are available at https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml .
 </p>
+
 
 <sage><title> Computing Heat Index Values</title>
 <input>
@@ -408,9 +434,13 @@ def _(T = (90),R = (95)):
     print("the Heat Index =%s"%str(H))
 </input>
 </sage>
+
+
 <p>
 Below one can compute a table for various ambient Temperature readings given one value for relative humidity.  Notice what happens for a relatively high humidity and relatively high temperature.
 </p>
+
+
 <sage><title> Computing Heat Index Table</title>
 <input>
 R = 95
@@ -420,10 +450,13 @@ for T in range(80,121):
 	
 </input>
 </sage>
+
+
 <p>
 Indeed, you cannot roast a turkey by simply turning the oven on 120 and pumping in a lot of humidity since the turkey is not trying to cool itself anymore. Any discomfort measured on the turkey's behalf would certainly be matched by the human since the bird would remain very much uncooked. The issue is that this model doesn't presume the possibility of 120F and 95% humidity. Often, in situations where the temperature is able to reach that level, such as a desert, then the relative humidity is correspondingly low. This idea of using a model to predict extreme values beyond the measured data is called extrapolation and should be utilized with care. Interpolation to estimate values within the confines of the measured data is however generally a safe bet.
-
 </p>
 </section>
+
+
 
 </chapter>

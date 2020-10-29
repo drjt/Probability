@@ -31,7 +31,7 @@ In this section, you will investigate distributions that begin with individual o
 </p>
 
 <p>
-<theorem><title>Discrete Uniform Distribution</title>
+<theorem xml:id="DiscreteUniformPF"><title>Discrete Uniform Distribution</title>
 <statement>
 <p>
 Assume outcomes in <m>R</m> = {1, 2, 3, ..., n} are equally likely.  Then, the probability function for the discrete uniform variable <m>X</m> is
@@ -452,7 +452,8 @@ to get
 <mrow>E[X(X-1)] &amp; = \sum_{x=0}^n x(x-1) \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
 <mrow> &amp; = \sum_{x=2}^n x(x-1) \frac{\frac{n_1!}{x(x-1)(x-2)!(n_1-x)! } \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
 <mrow> &amp; = \sum_{x=2}^n \frac{\frac{n_1!}{(x-2)!(n_1-x)! } \frac{n_2!}{(r-x)!(n_2-r+x)!}}{\binom{n}{r}}</mrow>
-<mrow> &amp; = n_1 \cdot (n_1-1) \sum_{x=2}^n \frac{\frac{(n_3)!}{(x-2)!(n_3 -(x-2))! } \frac{n_2!}{((r-2)-(x-2))!(n_2-(r-2)+(x-2))!}}{\binom{n}{r}}</mrow>
+<mrow> &amp; = n_1 \cdot (n_1-1) \cdot  
+                      \\ \sum_{x=2}^n \frac{\frac{(n_3)!}{(x-2)!(n_3 -(x-2))! } \frac{n_2!}{((r-2)-(x-2))!(n_2-(r-2)+(x-2))!}}{\binom{n}{r}}</mrow>
 <mrow> &amp; = n_1 \cdot (n_1-1) \sum_{y=0}^{m} \frac{\frac{(n_3)!}{y!(n_3 -y)! } \frac{n_2!}{(s-y)!(n_2-s+y)!}}{\binom{n}{r}}</mrow>
 <mrow> &amp; = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} \sum_{y=0}^{m} \frac{\binom{(n_3)}{y} \binom{n_2}{s-y}}{\binom{m}{s}}</mrow>
 <mrow> &amp; = \frac{n_1 \cdot (n_1-1) \cdot r \cdot (r-1)}{n (n-1)} </mrow>
@@ -558,7 +559,8 @@ def _(N1=input_box(10,width=5,label='$$ N_1 $$'),
 
 <theorem xml:id="MGFDiscrete"><title>Moment Generating Function for Discrete Uniform</title>
 <statement>
-<p><me>M(t) = \frac{1}{n} \cdot \left [ e^t + e^{2t} + ... e^{nt} \right ] </me>
+<p>For a discrete random variable X on the space <m>R</m> = {1, 2, ..., n},
+<me>M(t) = \frac{1}{n} \cdot \left [ e^t + e^{2t} + ... e^{nt} \right ] </me>
 </p>
 </statement>
 <proof>
@@ -570,7 +572,8 @@ def _(N1=input_box(10,width=5,label='$$ N_1 $$'),
 
 <theorem xml:id="MGFContinuous"><title>Moment Generating Function for Continuous Uniform</title>
 <statement>
-<p><me>M(t) = \frac{e^{bx} - e^{ax}}{b-a}</me>
+<p>For a continuous random variable X on the space <m>R = [a,b]</m>,
+<me>M(t) = \frac{e^{bx} - e^{ax}}{b-a}</me>
 </p>
 </statement>
 <proof>
@@ -583,14 +586,15 @@ def _(N1=input_box(10,width=5,label='$$ N_1 $$'),
 
 <theorem  xml:id="MGFHypergeometric"><title>Moment Generating Function for Hypergeometric</title>
 <statement>
-<p>TBA
+<p>For a hypergeometric random variable over the space <m>R</m> = {0, 1, ..., min(<m>r,n_</m>)}.
+<me>M(t) = \text{TBA}</me>
 </p>
 </statement>
 <proof>
 <p>
 <md>
-<mrow>M(t) &amp; = \sum_{x=0}^{n_1}\frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
-<mrow> &amp; = a mess...</mrow>
+<mrow>M(t) &amp; = \sum_{x=0}^{n_1} e^{tx} \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</mrow>
+<mrow> &amp; = \text{a mess...}</mrow>
 </md>
 </p>
 </proof>
@@ -608,7 +612,7 @@ Here is a summary of the major formulas from this chapter:
 
 </p>
 <p>
-<xref ref="DiscreteUniform">Discrete Uniform f(x)</xref>
+<xref ref="DiscreteUniformPF">Discrete Uniform f(x)</xref>
 </p>
 <p>
 <xref ref="DiscreteUniformProperties">Discrete Uniform statistics</xref>
@@ -631,7 +635,7 @@ Here is a summary of the major formulas from this chapter:
 
 <section xml:id="EquallyLikelyExercises"><title>Exercises</title>
 
-<p>
+
 <exercise><title> - The Proverbial Urn Problem</title>
 <statement>
 <p>
@@ -650,9 +654,9 @@ This is hypergeometric using
 </p>
 </hint>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Playing Cards</title>
 <statement>
 <p>
@@ -675,9 +679,9 @@ This exercise is actually two different hypergeometric distributions: the first 
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Starting Seniors</title>
 <statement>
 <p>
@@ -696,9 +700,9 @@ This is a hypergeometric distribution with <m>n_1 = 15, n_2 = 35, r = 11</m>.
 </p>
 </hint>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Old Faithful</title>
 <statement>
 <p>
@@ -711,9 +715,9 @@ This is the continuous uniform distribution over <m>R</m> = [0, 91].
 </p>
 </hint>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Uniform Scenarios</title>
 <statement>
 <p>
@@ -726,9 +730,9 @@ Explain how the following situations can be modeled using either a discrete or c
 </p>
 </statement>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Continous Uniform on a different space</title>
 <statement>
 <p>
@@ -764,9 +768,9 @@ For the variance,
 </p>
 </solution>
 </exercise>
-</p>
 
-<p>
+
+
 <exercise><title> - Louisiana Mega Millions Lottery</title>
 <statement>
 <p>
@@ -850,7 +854,6 @@ Therefore, the expect value of spending another dollar to get the multiplier eff
 
 </solution>
 </exercise>
-</p>
 
 
 </section>

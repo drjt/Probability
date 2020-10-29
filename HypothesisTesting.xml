@@ -213,6 +213,7 @@ Your decision for the hypothesis test therefore would be to not reject the null 
 <p>
 Consider One-tailed Hypothesis test for <m>\mu</m> using an interesting application:
 </p>
+
 <p>
 Suppose that a manufacturer bottling a delicious beverage and the label indicates that the bottle contains 16 fluid ounces. Since providing the customer too little product might cause a significant negative reaction relative to the modest additional cost of providing a little too much, consider the following hypothesis test:
 <me> H_0 : \mu = 16 \\ H_a: \mu \gt 200.</me>
