@@ -261,7 +261,7 @@ Once again, you can see that as one of the parameters is allowed to increase wit
 <theorem xml:id="LimitingBinomial"><title>Binomial Limiting Distribution</title>
 <statement>
 <p>
-As <m>m \rightarrow \infty</m>
+For the <xref ref="BinomialProbabilityFunction">binomial distribution</xref>, as <m>m \rightarrow \infty</m>
 <me> \gamma_1 \rightarrow 0</me>
 and
 <me> \gamma_2 \rightarrow 3.</me>
@@ -271,7 +271,7 @@ and
 <proof>
 <p>
 For skewness, take the limit of the skewness result above
-<me>\lim_{n \rightarrow \infty} \frac{n(2p-1)(p-1)p}{(-n(pi1)p)^{3/2}} = \lim_{n \rightarrow \infty} C \frac{n}{n^{3/2}} = 0.</me>
+<me>\lim_{n \rightarrow \infty} \frac{n(2p-1)(p-1)p}{(-n(p-1)p)^{3/2}} = \lim_{n \rightarrow \infty} C \frac{n}{n^{3/2}} = 0.</me>
 </p>
 <p>
 Similarly for kurtosis
@@ -496,21 +496,22 @@ def _(p=input_box(1/10,label='p = ',width=10),n=[25,50,75,100,200]):
 	</theorem> 
 </p>
 
-<p>	
-	<theorem>
-		<title>Statistics for Geometric Distribution</title>
-		<statement>
-		<p>Mean, Variance, <xref ref="TheoreticalSkewness">Skewness</xref>, <xref ref="TheoreticalKurtosis">Kurtosis</xref> computed by Sage.
-		</p>
-		</statement>
+<theorem><title>Statistics for Geometric Distribution</title>
+<statement>
+	<p>
+	Mean, Variance, <xref ref="TheoreticalSkewness">Skewness</xref>, <xref ref="TheoreticalKurtosis">Kurtosis</xref> computed by Sage.
+	</p>
+</statement>
 <proof>
 <p>
 See the interactive Sage cell below...
 </p>
 </proof>
 </theorem>
+
+
 <sage>
-	<input>
+<input>
 var('x,n,p')
 assume(x,'integer')
 f(x) = p*(1-p)^(x-1)
@@ -530,21 +531,18 @@ pretty_print('Skewness = ',sk)
 
 kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
 pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
-	</input>
+</input>
 </sage>
-</p>
 
 
-
-<p>
-	<theorem xml:id="TheoremGeometricMemoryless"><title>The Geometric Distribution yields a memoryless model.</title>
-	<statement>
+<theorem xml:id="TheoremGeometricMemoryless"><title>The Geometric Distribution yields a memoryless model.</title>
+<statement>
 	<p>
 	If X has a geometric distribution and a and b are nonnegative integers, then
 	<me>P( X &gt; a + b | X &gt; b ) = P( X &gt; a)</me>
 	</p>
-	</statement>
-	<proof>
+</statement>
+<proof>
 	<p>
 	Using the definition of conditional probability,
 	<md>
@@ -555,9 +553,8 @@ pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 		<mrow> &amp; = P(X &gt; a)</mrow>
 	</md>
 	</p>
-	</proof>
-	</theorem>
-</p>
+</proof>
+</theorem>
 
 </section>
 
@@ -734,7 +731,7 @@ Determine the probability that the second sale is made on the sixth interview: <
 </webwork>
 </exercise>
 
-<p>
+
 <theorem xml:id="NegativeBinomialStatistics"><title>Statistics for Negative Binomial Distribution</title>
 <statement>
 	<p>
@@ -749,8 +746,8 @@ Determine the probability that the second sale is made on the sixth interview: <
 See interactive cell below...
 </proof>
 </theorem>
-</p>
-<p>
+
+
 <sage>
 <input>
 # Negative Binomial
@@ -780,7 +777,31 @@ def _(r=[2,5,10,15,alpha]):
     pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
 </input>
 </sage>
+
+
+Once again, you can see that as one of the parameters is allowed to increase without bound this distribution must become symmetrical and bell-shaped.
+
+<theorem xml:id="LimitingNegativeBinomial"><title>Negative Binomial Limiting Distribution</title>
+<statement>
+<p>
+For the <xref ref="NegativeBinomialProbabilityFunction">negative binomial distribution</xref>, as <m>r \rightarrow \infty</m>
+<me> \gamma_1 \rightarrow 0</me>
+and
+<me> \gamma_2 \rightarrow 3.</me>
+
 </p>
+</statement>
+<proof>
+<p>
+For skewness, take the limit of the skewness result above
+<me>\lim_{r \rightarrow \infty} \frac{2-p}{\sqrt{r(1-p)}} =  lim_{r \rightarrow \infty} \frac{C}{r^{1/2}} = 0.</me>
+</p>
+<p>
+Similarly for kurtosis
+<me>\lim_{r \rightarrow \infty} \frac{p^2-6p+6}{r(1-p)} + 3 = lim_{r \rightarrow \infty} \frac{C}{r} + 3 = 3.</me>
+</p>
+</proof>
+</theorem>
 
 
 <p>

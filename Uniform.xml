@@ -170,7 +170,7 @@ Modeling the idea of "equally-likely" in a continuous world requires a slightly 
 </p>
 	
 <p>
-<theorem  xml:id="ContinuousUniformFunction"><title>Continuous Uniform Probability Function</title>
+<theorem  xml:id="ContinuousUniformPF"><title>Continuous Uniform Probability Function</title>
 <statement>
 <p>For <m>R</m> = [a,b], with a &lt; b, the continuous uniform probability function is given by
 	<me>f(x) = \frac{1}{b-a}.</me>
@@ -349,7 +349,7 @@ Indeed, consider a collection of n items from which you want to take a sample of
 </p>	
 	
 <p>
-<theorem xml:id="HypergeometricFunction"><title>Hypergeometric Probability Function</title>
+<theorem xml:id="HypergeometricPF"><title>Hypergeometric Probability Function</title>
 <statement>
 <p>For a Hypergeometric random variable with <m>R</m> = {0, 1, ..., r} and assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>,
 	<me>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</me>	
@@ -388,7 +388,7 @@ Therefore, you have about 1 chance out of 5 that the friend got 2 or more of you
 		<li><m>\mu = r \frac{n_1}{n}</m></li>
 		<li><m>\sigma^2 = r \frac{n_1}{n} \frac{n_2}{n} \frac{n-r}{n-1}</m></li>
 		<li><m>\gamma_1 = \frac{(n - 2 n_1)\sqrt{n-1}(n - 2r)}{r n_1 (n - n_1) \sqrt{n-r}(n-2)}</m></li>
-		<li><m>\gamma_2 = \frac{n(n+1)-6n(n-r)}{n_1(n-n_1)} + \frac{3r(n-r)(n+6)}{n^2} - 6</m></li>
+		<li><m>\gamma_2 = </m> very complicated!</li>
 	</ol>
 </p>
 </statement>
@@ -468,7 +468,7 @@ where we have used the summation formula above that showed that f(x) was a proba
 	</li>
 	<li>
 		<p>
-		The proof of kurtosis is even more messy and we won’t bother with proving it for this distribution!
+		The formula and resulting proof of kurtosis is even more messy and we won’t bother with proving it for this distribution! If you start searching on the web for the formula then you will find many places just ignore the kurtosis for the hypergeometric.  So we will as well here and just note that as the parameters increase the resulting graph sure looks bell-shaped.  That is, approaching a kurtosis of 3.
 		</p>
 	</li>
 	</ol>
@@ -477,10 +477,103 @@ where we have used the summation formula above that showed that f(x) was a proba
 </theorem>
 
 
-	<p>
-	Note, if r=1 then you are back at a regular discrete uniform model. Indeed, <me>P(\text{desired item}) = 1 \cdot \frac{n_1}{n} = \mu .</me>
-	which is indeed what you might expect when selecting once.
-	</p>
+<p>
+Occasionally in this text, we will use symbolic computational tools to create formulas. Indeed, many of the formulas presented in this text for some theorems and for many of the examples were created actually by using the open-source software Sage.  Sometimes Sage can figure things out for us and save you a lot of tedious computational time. Sometimes it can uncover things that you might not be able to manage the complicated derivations. And sometimes it works great. Below, Sage attempts to create the formulas presented above for the hypergeometric distribution and this time it can't figure things out.  Just for the fun of it we can still make the attempt...
+</p>
+
+<sage>
+<input>
+var('x,n,n1,r,m')
+
+assume(x,'integer')
+assume(n,'integer')
+assume(n1,'integer')
+assume(r,'integer')
+assume(r&lt;n1)
+
+f = factorial(n1)/(factorial(x)*factorial(n1-x))*factorial(n-n1)/(factorial(r-x)*factorial(n-n1-r+x))*(factorial(r)*factorial(n-r))/factorial(n)
+
+f(x=2)
+mu = sum(x*f,x,0,r)
+M2 = sum(x^2*f,x,0,r)
+M3 = sum(x^3*f,x,0,r)
+M4 = sum(x^4*f,x,0,r)
+
+pretty_print('Mean = ',mu)
+
+v = (M2-mu^2).factor()
+pretty_print('Variance = ',v)
+stand = sqrt(v)
+
+sk = ((M3 - 3*M2*mu + 2*mu^3)).factor()/stand^3
+pretty_print('Skewness = ',sk)
+
+kurt = (M4 - 4*M3*mu + 6*M2*mu^2 -3*mu^4).factor()/stand^4
+pretty_print('Kurtosis = ',(kurt-3).factor(),'+3')
+</input>
+</sage>
+
+<p>
+So, trying to prove the limiting result also doesn't work using the symbolic software.  To empirically demonstrate the conclusion then consider the following interactive cell where you can pick a starting point for <m>n_1, n_1,</m> and <m>r</m> and then by increasing k watch what happens.  You should notice that pretty soon the resulting hypergeometric distribution looks very much like a symmetric bell-shapped distribution.
+</p>
+
+<sage language='r'>
+<input>
+k = 30    # make this number larger and larger to see the limiting distribution with similar proportions
+N1 = k*10      # desirable items
+N2 = k*16      # the others
+n = N1+N2
+r = k*5        # sample size extracted without replacement from a random sample of all n
+
+X = 0:r        # the space R of the random variable 
+mu = r*N1/n      # the formula for mean of the Binomial Distributions
+sdev = sqrt(mu*(N2/n)*(n-r)/(n-1))  # the formula for the standard deviation
+sink("message")
+dhyper( X, N1, N2, r )   # let's print out a bunch of actual probs
+Phyper = dhyper(X, N1, N2, r )  # create the probability function over X
+Psample = rhyper(10^6, N1, N2, r)  # to create a histogram, sample a lot
+
+Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
+hist(Psample, prob=TRUE, br=(-1:Xtop)+0.5, col="skyblue2", xlab="X", 
+  main="Hypergeometric Probability Function vs Approximating 'Bell Curve'")
+points(X, Phyper, pch=19, col="darkgreen")  # to create actual (x,f(x))
+
+invisible(Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)})   # to overlap a bell curve
+invisible(curve(Pnormal, col="red", lwd=2, add=TRUE))
+</input>
+</sage>
+
+<p>
+Note, if r=1 then you are back at a regular discrete uniform model. Indeed, <me>P(\text{desired item}) = 1 \cdot \frac{n_1}{n} = \mu .</me>
+which is indeed what you might expect when selecting once.
+</p>
+
+<p>
+For many of the distributions to be discussed in this text, it appears that as parameters are allowed to increase the resulting distribution becomes more and more symmetrical and more and more bell-shaped. This is indeed the case for the hypergeometric distribution.  In general, you can check by seeing what happens to the skewness <m>\gamma_1</m> and the kurtosis <m>\gamma_2</m> and to see if <m>\gamma_1 \rightarrow 0</m> and <m>\gamma_2 \rightarrow 3</m>.  If so, that is the definition for what is meant when a distribution is bell-shaped. Eventually, we will see that the "Normal Distribution" is the eventual model of a distribution that is always bell-shaped.
+</p>
+
+<theorem xml:id="LimitingHypergeometric"><title>Hypergeometric Limiting Distribution</title>
+<statement>
+<p>
+For the <xref ref="HypergeometricPF">hypergeometric distribution</xref>, as <m>m \rightarrow \infty</m>
+<me> \gamma_1 \rightarrow 0</me>
+and
+<me> \gamma_2 \rightarrow 3.</me>
+
+</p>
+</statement>
+<proof>
+<p>
+For skewness, take the limit of the skewness result above as <m>n_1, n_2</m>, and <m>r</m> are uniformly increased together (i.e. all are doubled, tripled, etc.)
+To model this behavior one can simply scale each of those term by some variable <m>k</m> and then let <m>k</m> increase. Asymptotically, the result is
+<me>\lim_{k \rightarrow \infty} \frac{(nk-2n_1k)(nk-1)^{1/2}(nk-2rk)}{rkn_1k(nk-n_1k)(nk-rk)^{1/2}(nk-2)} ~ \lim_{k \rightarrow \infty} C \frac{k^{5/2}}{k^{9/2}}= 0.</me>
+</p>
+<p>
+Similarly for kurtosis.  However, since we can't find a nice formula for the kurtosis then taking the limit can be difficult.  So, we will have to appeal to general results proved in a course that would follow up this one that would prove this fact must be true. Sadly, not here.
+</p>
+</proof>
+</theorem>
+
 
 <p>
 <sage language='r'>
@@ -620,13 +713,13 @@ Here is a summary of the major formulas from this chapter:
 <xref ref="DiscreteUniformProperties">Discrete Uniform statistics</xref>
 </p>
 <p>
-<xref ref="ContinuousUniformFunction">Continuous Uniform f(x)</xref>
+<xref ref="ContinuousUniformPF">Continuous Uniform f(x)</xref>
 </p>
 <p>
 <xref ref="ContinuousUniformProperties">Continuous Uniform statistics</xref>
 </p>
 <p>
-<xref ref="HypergeometricFunction">Hypergeometric f(x)</xref>
+<xref ref="HypergeometricPF">Hypergeometric f(x)</xref>
 </p>
 <p>
 <xref ref="HypergeometricProperties">Hypergeometric statistics</xref>
