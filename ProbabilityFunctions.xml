@@ -184,9 +184,11 @@ Therefore, f(x) is a probability mass function over the space <m>R</m>.
 <input>
 # Combining all of the above into one interactive cell
 @interact
-def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"), 
-       Probs = input_box([1/20,1/20,1/20,3/20,1/20,4/20,4/20,1/20,1/20,3/20],label=" $$f(x)$$ (in brackets):"),
-       n_samples=slider(100,10000,100,100,label="# if samples:")):
+def _(D = input_box([1,2,3,5,6,8,9,11,12,14],
+                         label="[Domain] :",width=60), 
+       Probs = input_box([1/20,1/20,1/20,3/20,1/20,4/20,4/20,1/20,1/20,3/20],
+                         label=" $$[f(x)] :$$",width=60),
+       n_samples=slider(100,10000,100,100,label="$$ \\text{# of samples:}$$")):
     n = len(D)
     R = range(n)
     one_huh = sum(Probs)
@@ -215,9 +217,9 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
     
         #  perhaps to add mean and variance for pmf here
         else:
-            print("Domain D and Probabilities Probs must be lists of the same size")
+            print("Domain and Probabilities Probs must be lists of the same size")
     
-    #  Now, let's sample from the distribution given above and see how a random sampling matches up
+    #  sample from the distribution and see how a random sampling matches up
 
         counts = [0] * len(Probs)
         X = GeneralDiscreteDistribution(Probs)
@@ -235,8 +237,9 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],label="Domain (in brackets):"),
     
         E = points(zip(D,Empirical),color='orange',size=40)
         E += point((samplemean,0.005),color='brown',size=60,zorder=3)
-        E += line([(samplemean-sampdev,0.005),(samplemean+sampdev,0.005)],color='orange',thickness=5)    
-        (G+E).show(ymin=0,figsize=(8,5))	
+        E += line([(samplemean-sampdev,0.005),(samplemean+sampdev,0.005)],
+                  color='orange',thickness=5)    
+        (G+E).show(ymin=0,figsize=(5,4))	
 </input>
 </sage>
 </p>

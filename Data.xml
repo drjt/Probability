@@ -329,11 +329,11 @@ You can also compute these statistics automatically using the opensource statist
 
 <sage language = 'r'>
 <input>
-data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
+data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate into a list
 print(paste("Quartiles:"))
 print(quantile(data))
 print(paste("Specific Percentiles:"))
-print(quantile(data, c(.32, .57, .98)))   # find the 32nd, 57th and 98th percentiles
+print(quantile(data, c(.32, .57, .98)))   # 32nd, 57th and 98th percentiles
 print(paste("Box and Whisker Diagram:"))
 boxplot(data, horizontal=TRUE) 
 </input>
@@ -361,9 +361,9 @@ Of course, the data sets you can utilize by manually entering data will be relat
 data()
 # data(faithful)
 # head(faithful,10)
-# nrow(faithful)  # returns the number of observations (rows)
-# ncol(faithful)  # returns the number of variables per observation (columns)
-# print(? faithful)            # returns a more exhaustive description of the data 
+# nrow(faithful)  #  the number of observations (rows)
+# ncol(faithful)  #  the number of variables per observation (columns)
+# print(? faithful)      #  a more exhaustive description of the data 
 
 </input>
 </sage>
@@ -434,21 +434,22 @@ cat("\n\n")   #  a couple of blank lines in the displayed output
 <sage>
 <input>
 @interact
-def _(x = input_box(default=[2, 5, 8, 10, 11])):     # Put your data values in this list
+def _(x = input_box(default=[2, 5, 8, 10, 11],width = 40)):     
     x.sort()
     mu = mean(x)
     n = len(x)
     pts = [(x[0],0.05)]
-    M = 0.2
+    M = 0.5
     for k in range(1,n):
         if x[k]==x[k-1]:
             pts.append((x[k],pts[k-1][1]+0.1))
             M += 0.1
         else:
             pts.append((x[k],0.05))
-    G = points(pts,size=100,ymin=-0.5,ymax = M,xmin=min(x)-2,xmax=max(x)+2,ticks=[[], []],figsize=[12,2])
+    G = points(pts,size=100,ymin=-0.5,ymax = M,
+            xmin=min(x)-2,xmax=max(x)+2,ticks=[[], []],figsize=[5,4])
     G += polygon([(mu,0), (mu+0.2,-0.5), (mu-0.2,-0.5)],color='brown')
-    G.show()
+    G.show(figsize=[5,4])
 </input>
 </sage>
 </p>
@@ -464,8 +465,8 @@ def _(x = input_box(default=[2, 5, 8, 10, 11])):     # Put your data values in t
 <p>
 <sage>
 <input>
-x = [2, 5, 8, 10, 10]     # Put data values in this list
-w = [1, 2.5, 2.5, 4,2]  # Scale to be at most 10 and not tiny for good image
+x = [2, 5, 8, 10, 10]   #  x values 
+w = [1, 2.5, 2.5, 4,2]  # weights for each x
 wsum = sum(w)
 
 n = len(x)
@@ -483,8 +484,11 @@ mu = mu/wsum
 G = Graphics()
 for k in range(n):
     G += point(pts[k],size=100*w[k]) 
-P = polygon([(mu,0), (mu+0.2,-0.5), (mu-0.2,-0.5)],color='brown')
-(G+P).show(xmin=min(x)-0.5, xmax=max(x)+0.5, ymin=-2*M, ymax = 2*M, ticks=[[], []])</input>
+P = polygon([(mu,0), (mu+0.2,-0.5), 
+           (mu-0.2,-0.5)],color='brown')
+(G+P).show(xmin=min(x)-0.5, xmax=max(x)+0.5, 
+           ymin=-2*M, ymax = 2*M, ticks=[[], []],figsize=[5,3])
+</input>
 </sage>
 </p>
 
@@ -570,7 +574,7 @@ There are several advantages and disadvantages associated with each of these mea
 You can again compute many statistics automatically using R...
 <sage language = 'r'>
 <input>
-data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate the following items into a list
+data &lt;- c( 1, 2, 5, 7, 7, -1, 3, 2)   # concatenate 
 print(paste("Mean = ", mean(data)))
 paste("Median =", median(data))
 </input>
@@ -830,7 +834,7 @@ Once again, we can compute these descriptive statistics using R. We again displa
 
 <sage language = 'r'>
 <input>
-data &lt;- c( 1, -1, 0, 2, 2, 5)   # concatenate the following items into a list
+data &lt;- c( 1, -1, 0, 2, 2, 5)   # concatenate 
 print(paste("Variance = ", var(data)))
 print(paste("Standard Dev = ", sd(data)))
 print(paste("Inter Quantile Range =",IQR(data)))
@@ -1241,16 +1245,22 @@ A frequency histogram representing this data looks like
 <sage>
 <input>
 #  This function is used to convert an input string into separate entries
-def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+def g(s): 
+    S = str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+    return S
 
 @interact
-def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated by commas")):
+def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",
+                       label="Enter data separated by commas",
+                      width=60)):
     freq = g(freq)
     freq = [int(k) for k in freq]
     m = min(freq)
     M = max(freq)
     bn = M-m+1
-    histogram( freq, range=[m-1/2,M+1/2], bins = bn, align="mid", linewidth=2, edgecolor="blue", color="yellow").show()
+    histogram( freq, range=[m-1/2,M+1/2], bins = bn, align="mid", 
+              linewidth=2, edgecolor="blue", color="yellow").show()
+    
 </input>
 </sage>
 
@@ -1268,17 +1278,20 @@ Relative Frequency Histograms - In this case, area describes relative frequency.
 <sage>
 <input>
 #  This function is used to convert an input string into separate entries
-def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+def g(s): 
+    S = str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+    return S
 
 @interact
-def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Enter data separated by commas")):
+def _(freq = input_box("1,1,1,1,2,2,2,3,3,3,3,1,5",label="Data separated by commas")):
     freq = g(freq)
     freq = [int(k) for k in freq]
     top = len(freq)
     m = min(freq)
     M = max(freq)
     bn = M-m+1
-    histogram( freq, range=[m-1/2,M+1/2], cumulative = "true", bins = bn, align="mid", linewidth=2, edgecolor="blue", color="yellow").show(ymax=top)
+    histogram( freq, range=[m-1/2,M+1/2], cumulative = "true", bins = bn, 
+              align="mid", linewidth=2, edgecolor="blue", color="yellow").show(ymax=top)
 </input>
 </sage>		
 

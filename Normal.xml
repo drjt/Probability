@@ -14,17 +14,20 @@
 <p>
 You should have noticed by now that many distributions tend to have a bell-shaped graph as parameters are allowed to increase. Indeed, the formulas for skewness <m>\gamma_1</m> and kurtosis <m>\gamma_2</m> approach 0 and 3 respectively for the Hypergeometric, Binomial, Negative Binomial, Poisson, and Gamma Distributions. One might wonder if this is just a happy coincidence or is something more insidious at play. 
 </p>
+
 <p>
 The answer by appealing to mathematics reveals that nothing sinister is going on but that it is indeed true that the eventual destiny for distributions is one that is bell-shaped. It is therefore of interest to figure out if that distribution has a nice form that can be accessed directly. The focus of this chapter is to consider this bell-shaped goal known as the "normal distribution."
 </p>
+
 <p>
 We present the normal distribution by simply presenting it's probability function without derivation. In order to more carefully investigate the development of the normal distribution (and the Chi-Square Distribution) you will need to study "Moment Generating Functions" and some serious mathematics. Without supplying this rigor you can still utilize the results. 
 </p>
+
 </section>
 
 <section xml:id="NormalDistribution"><title>The Normal Distribution</title>
 	
-<p>
+
 <definition xml:id="NormalPF"><title>The Normal Distribution</title>
 	<statement>
 	<p>
@@ -35,19 +38,19 @@ We present the normal distribution by simply presenting it's probability functio
 	</p>	
 	</statement>
 </definition>
-</p>
+
 
 <p>
 The normal distribution is also sometimes referred to as the Gaussian Distribution (often by Physicists) or the Bell Curve (often by social scientists).
 </p>
 
-<p>
+
 <sage>
 	<input>
 var('x,mu,sigma')
 f(x) = e^(-((x-mu)/sigma)^2/2)/(sigma*sqrt(2*pi))
 @interact
-def _(m=slider(-10,10,1,0,label='$\mu$'),s=slider(1/5,5,1/10,1,label='$\sigma$')):
+def _(m=slider(-10,10,1,0,label='$$\\mu$$'),s=slider(1/5,5,1/10,1,label='$$\\sigma$$')):
     titletext = "Normal Curve with mean "+str(m)+" and standard deviation "+str(s)
     G = plot(f(mu=m,sigma=s),(x,m-5*s,m+5*s))
     G += point((0,1),size=1)+point((12,0),size=1)+point((-12,0),size=1)
@@ -57,9 +60,9 @@ def _(m=slider(-10,10,1,0,label='$\mu$'),s=slider(1/5,5,1/10,1,label='$\sigma$')
     show(G,figsize=(5,3),title=titletext,ymin=0,ymax=1,xmin=-15,xmax=15)
     </input>
 </sage>
-</p>
 
-<p>
+
+
 <theorem xml:id="StandardNormalDistribution"><title>Standard Normal Distribution</title>
 <statement>
 <p>
@@ -73,25 +76,52 @@ If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal dis
 		</p>
 </proof>
 </theorem>
-</p>
+
 
 <p>
-When in the standard normal distribution, you can use a graphing calculator's normalcdf(a,b) to approximate <m>P(a \le Z \le b)</m>.  Note that when no mean or standard deviation for normalcdf is provided, the calculator presumes standard normal.
+When in the standard normal distribution, you can use a graphing calculator's normalcdf(a,b) to approximate 
+<me>P(a \le Z \le b) = \Phi(b) - \Phi(a).</me>  
+Note that when no mean or standard deviation for normalcdf is provided, the calculator presumes standard normal.
 </p>
 
 
 	<p>
-	Note that you can use a graphing calculator's normalcdf(a,b) to compute probabilities.
+	Note that you can use a graphing calculator's 
+	normalcdf(a,b) = <m> \Phi(b) - \Phi(a)</m> to compute probabilities in the standard normal distrubution.  
+	If you have a normal distribution other than the standard and don't want to convert to standard, 
+	then the graphing calculator usage is normalcdf(a,b,<m>\mu,\sigma</m>).
 	</p>
-
-<exercise><title>WebWork - Computing Standard Normal Probabilities</title>
-
-		<webwork source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg">
-		</webwork>
-</exercise>
 
 
 <p>
+<sage>
+<input>
+pretty_print("Calculator for Normal Probabilities")
+@interact(layout=dict(top=[['a', 'b']],bottom=[['mu','sigma']]))
+def _(a=input_box(-2,width=10,label='a = '),
+      b=input_box(2,width=10,label='b = '),
+      mu=input_box(0,width=8,label='$$\\mu = $$'),
+      sigma=input_box(1,width=8,label='$$\\sigma = $$')):
+    f = e^(-((x-mu)/sigma)^2/2)/(sigma*sqrt(2*pi))
+    P = integral_numerical(f,a,b)[0]
+    pretty_print(html("$$ P("+str(a)+" &lt; X &lt; "+str(b)+") \\approx "+str(P)+"$$"))
+</input>
+</sage>
+</p>
+
+
+<exercise><title>WebWork - Computing Standard Normal Probabilities</title>
+
+		<webwork source="Library/Rochester/setProbability10NormalDist/ur_pb_10_1.pg">
+		</webwork>
+</exercise>
+
+<exercise><title>WeBWorK - Computing Normal Probabilities when non-Standard</title>
+	<webwork source="Library/UBC/STAT/Archive_old_questions/STAT203/hw03/hw03-q05.pg">
+	</webwork>
+</exercise>
+
+
 <theorem><title>Verifying the normal probability function</title>
 	<statement>
 		<p>
@@ -121,10 +151,10 @@ as desired.
 </p>
 </proof>
 </theorem>
-</p>	
 	
 	
-<p>
+	
+
 <theorem xml:id="NormalMean"><title>Verifying the normal probability mean</title>
 <statement>
 		<p>
@@ -133,10 +163,11 @@ as desired.
 </statement>
 <proof>
 	<p>
+	The definition of expected value for a continuous variable in this case gives an integral to evaluate since X is continuous. In that integral, it is useful to use a standard change of variables as in basic integral calculus to convert the integral to something easier to evaluate. In this case, you will want to convert the X variable to the standard units variable Z so that
 	<me>z = \frac{x-\mu}{\sigma}</me>
-	implies by solving that
-	<me> x = \mu + z \sigma</me>
-	and therefore
+	or by solving for x 
+	<me> x = \mu + z \sigma.</me>
+	So, it follows that
 <md>
 	<mrow>E[X] &amp;= \int_{-\infty}^{\infty} x \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx </mrow>
 	<mrow> &amp;= \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{\infty} (\mu + z\sigma) \cdot e^{ -z^2 / 2} dz</mrow>
@@ -144,17 +175,17 @@ as desired.
 	<mrow> &amp;= \mu \cdot 1 + \sigma \cdot 0</mrow>
 	<mrow> &amp; = \mu</mrow>
 </md>
-	and therefore the use of <m>\mu</m> is warranted.
+	and therefore the use of <m>\mu</m> as the parameter in the normal distribution probability function is warranted.
 	</p>
 </proof>
 </theorem>
-</p>	
 	
 	
-<p>
+	
+
 <theorem xml:id="NormalVariance"><title>Verifying the normal probability variance</title>
 	<statement>
-	<p>
+	<p>Using a similar change of variable as in the <xref ref="NormalMean">previous theorem</xref>,
 		<me>E[(X-\mu)^2] = \int_{-\infty}^{\infty} (x-\mu)^2 \cdot \frac{1}{\sigma \sqrt{2 \pi}} e^{ - \left ( \frac{x-\mu}{\sigma} \right ) ^2 / 2} dx = \sigma^2</me>
 	</p>
 	</statement>
@@ -169,11 +200,10 @@ as desired.
 		<mrow> &amp; = \frac{\sigma^2}{\sqrt{2 \pi}} \cdot \big [ 0 + \sqrt{2 \pi} \big ]</mrow>
 		<mrow> &amp; = \sigma^2 </mrow>
 	</md>
-	using integration by parts and using the integration in the proof of the mean above.  So, the use of <m>\sigma</m> is warranted.
+	using integration by parts.  So, the use of <m>\sigma</m> as the other parameter in the normal probability function is also warranted.
 	</p>
 	</proof>
 </theorem>
-</p>
 
 <p>
 Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compute general normal probabilities.  Pay attention to the the order of terms. For normal distributions, the calculator function always requires an interval. If you are looking for a one-sided probability, such as <m>P(X \gt 4)</m> for a problem with mean <m>\mu = 2</m> and <m>\sigma = 3</m>, you can replace the infinite upper limit with "large" finite endpoint. Providing something that is more than 10 standard deviations above the mean is for all practical purposes infinity with respect to calculations. So, in this case <m>P(X \gt 4)</m> can be approximated by normalcdf(4,32,2,3).  If you are brave, you can go even higher and use normalcdf(4,100000,2,3) if desired. 
@@ -183,6 +213,33 @@ Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compu
 <exercise><title>WebWork - Computing Regular Normal Probabilities</title>
 
 		<webwork source="Library/NAU/setStatistics/normal_dist2.pg">
+		</webwork>
+</exercise>
+
+<p>
+In the standard normal distribution, we have considered the case where you get the probability when given an interval.  However, what about the reverse problem of finding an interval that would result in a given probability?  That is, to solve for example the problem
+<me>\Phi(b) - \Phi(a) = P(a &lt; z &lt; b) = 0.6217.</me>
+To deal with this we need an "inverse function" <m>\Phi^{-1}</m>.  Toward that end, consider the simpler problem of solving
+<me>\Phi(z_0) = P(z &lt; z_0) = \text{some given probability value} = \alpha.</me>
+Then, technically the answer would be
+<me>z_0 = \Phi^{-1}(\alpha).</me>
+Since integrating the normal probability function is impossible you can expect that finding a nice formula for the inverse of that integration might also be challenging and that is certainly the case.  However, you have two options:
+<ul>
+<li>Guessing <m>z_0</m> until you get a probabilty that is close enough to <m>\alpha</m>.</li>
+<li>Use a calculator that has the inverse built in!</li>
+</ul>
+For most graphing calculators, there is a function called "invNorm" and that is a way to compute values involving <m>\Phi^{-1}</m>.  Indeed, for example if you wanted to solve 
+<me>\Phi(z_0) = P(z &lt; z_0) = 0.813</me>
+then just use invNorm(0.413) to get <m>z_0 \approx -0.2198</m>. 
+
+
+</p>
+
+
+
+<exercise><title>WebWork - Inverse Standard Normal Calculations</title>
+
+		<webwork source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg">
 		</webwork>
 </exercise>
 
@@ -200,20 +257,23 @@ Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compu
 
 
 
-<p>
 <theorem xml:id="NormalCurveMax"><title>Normal Distribution Maximum</title>
 <statement>
 	<p>The maximum of the normal distribution probability function occurs when <m>x = \mu</m>
 	</p>
 </statement>
 <proof>
-	<p>Take the derivative of the probability function to get 
-	<me>\frac{\sqrt{2} {\left(\mu - x\right)} e^{\left(-\frac{{\left(\mu - x\right)}^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{3}}</me>
-	which is zero only when <m>x = \mu</m>.  Easily by evaluating to the left and right of this value shows that this critical value yields a maximum.
+	<p>
+	Take the derivative of the probability function to get 
+	<me>f'(x) = \frac{\sqrt{2} {\left(\mu - x\right)} e^{\left(-\frac{{\left(\mu - x\right)}^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{3}}</me>
+	which is zero only when <m>x = \mu</m>.
+	</p>
+	<p>
+	It is easy to see by evaluating to the left and right of this value that this critical value yields a maximum.
 	</p>
 </proof>
 </theorem>
-</p>
+
 
 <p>
 <theorem xml:id="NormalPOI"><title>Normal Distribution Points of Inflection</title>
@@ -223,8 +283,11 @@ Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compu
 </statement>
 <proof>
 	<p>Take the second derivative of the probability function to get 
-	<me>\frac{\sqrt{2} {\left(\mu + \sigma - x\right)} {\left(\mu - \sigma - x\right)} e^{\left(-\frac{\mu^{2}}{2 \, \sigma^{2}} + \frac{\mu x}{\sigma^{2}} - \frac{x^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{5}}</me>
-	which is zero only when <m>x = \mu \pm \sigma</m>.  Easily by evaluating to the left and right of this value shows that these critical values yield points of inflection.
+	<me>f''(x) = \frac{\sqrt{2} {\left(\mu + \sigma - x\right)} {\left(\mu - \sigma - x\right)} e^{\left(-\frac{\mu^{2}}{2 \, \sigma^{2}} + \frac{\mu x}{\sigma^{2}} - \frac{x^{2}}{2 \, \sigma^{2}}\right)}}{2 \, \sqrt{\pi} \sigma^{5}}</me>
+	which is zero only when <m>x = \mu \pm \sigma</m>.  
+	</p>
+	<p>
+	It is easy to see by evaluating to the left and right of this value that these critical values yield points of inflection.
 	</p>
 </proof>
 </theorem>
@@ -237,17 +300,7 @@ Notice that the work needed to complete the integrals over the entire domain abo
 Or you can use the calculator below.
 </p>
 	
-<p>
-<sage>
-	<input>
-@interact(layout=dict(top=[['a', 'b']],bottom=[['mu','sigma']]))
-def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = '),mu=input_box(0,width=8,label='$\mu = $'),sigma=input_box(1,width=8,label='$\sigma = $')):
-    f = e^(-((x-mu)/sigma)^2/2)/(sigma*sqrt(2*pi))
-    P = integral_numerical(f,a,b)[0]
-    print "P("+str(a)+" &lt; X &lt; "+str(b)+") ~= "+str(P)
-	</input>
-</sage>
-</p>
+
 
 
 <exercise><title>WebWork - Applying Normal Probabilities</title>
@@ -262,13 +315,13 @@ def _(a=input_box(-2,width=10,label='a = '),b=input_box(2,width=10,label='b = ')
 
 
 <section xml:id="ChiSquareDistribution"><title>Chi-Square Distribution</title>
-<p>The following distribution is related to both the Normal Distribution and to the Gamma Distribution. Initially, consider a gamma distribution with probability function
+<p>The following distribution is related to both the Normal Distribution and to the Gamma Distribution. Initially, consider a gamma distribution with probability function given by the formula
 	
-	<me>\frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}.</me>
+	<me>y = \frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}.</me>
 
-Replacing <m>\mu = 2</m> and r with r/2 gives
+Replacing <m>\mu = 2</m> and r with r/2 gives the special case
 
-	<me>\frac{x^{r/2-1} \cdot e^{-x/2}}{\Gamma(r/2) \cdot 2^{r/2}}</me>
+	<me>y = \frac{x^{r/2-1} \cdot e^{-x/2}}{\Gamma(r/2) \cdot 2^{r/2}}</me>
 
 which is given a special name below.
 </p>
@@ -286,13 +339,13 @@ which is given a special name below.
 
 <p>
 <sage>
-	<input>
+<input>
 # Chi-Square Grapher
 @interact
 def _(r=slider(1,20,1,3,label='r =')):
     f = x^(r/2-1)*e^(-x/2)/(gamma(r/2)*2^(r/2))
-    plot(f,x,0,20).show()
-	</input>
+    plot(f,x,0,40).show(title="Chi-Square Graph",figsize=[5,3])
+</input>
 </sage>
 </p>
 
@@ -322,19 +375,20 @@ It also can be difficult to compute Chi-Square probabilities manually so you wil
 </p>
 
 <p>
-On your graphing calculator, you can use <m>P(a \le X \le b) \approx \Chi^2</m>cdf(a,b,r).
+On your graphing calculator, you can use <m>P(a \le X \le b) \approx \chi^2</m>cdf(a,b,r).
 </p>
 
 <p>
 <sage>
-	<input>
+<input>
 # Chi-Square Calculator
+pretty_print("Calculator for Chi Square Probabilities")
 @interact(layout=dict(top=[['a', 'b']],bottom=[['r']]))
 def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),r=input_box(2,width=8,label='r =')):
     f = x^(r/2-1)*e^(-x/2)/(gamma(r/2)*2^(r/2))
     P = numerical_integral(f,a,b)[0]
-    print "P("+str(a)+" &lt; X &lt; "+str(b)+") ~= "+str(P)
-    </input>
+    pretty_print(html("$$ P("+str(a)+" &lt; X &lt; "+str(b)+") \\approx "+str(P)+"$$"))
+</input>
 </sage>
 </p>
 
@@ -364,35 +418,15 @@ is a probability function on <m>(-\infty, \infty)</m>.
 </statement>
 <proof>
 Easily, note that 
-<me>\int_{-\infty}^{\infty} \frac{1}{1+x^2} dx = arctan(\infty) - arctan(-\infty) = \pi/2 - (-\pi/2) = \pi.</me>
+<me>\int_{-\infty}^{\infty} \frac{1}{1+x^2} dx = tan^{-1}(\infty) - tan{-1}(-\infty) = \pi/2 - (-\pi/2) = \pi.</me>
 Dividing by <m>\pi</m> gives the Cauchy probability function integrates to 1.
 </proof>
 </theorem>
 
-<sage language='r'>
-<input>
-n &amp;- 10
-p &amp;- 0.3
-
-paste('Probability Function')
-dcauchy(x, location = 0, scale = 1, log = FALSE)   # gives the probability function
-paste('Distribution function')
-pcauchy(q, location = 0, scale = 1, lower.tail = TRUE, log.p = FALSE)
-   # gives the distribution function
-paste('A random sample')
-rcauchy(n, location = 0, scale = 1)    # gives a random sample of 15 items from b(n,p)
-
-x=seq(-4,4,length=200)
-y=dcauchy(x,dcauchy(x, location = 0, scale = 1, log = FALSE))
-plot(x,y,type="l",lwd=2,col="red",ylab="p")
-
-</input>
-</sage>
-
 <p>
 Now that we have a probability function, it is important to determine its mean and variance. It should be obvious that when doing so using the Cauchy probability function, problems quickly arise.  Indeed,
 <me>\int_{-\infty}^{\infty} x \frac{1}{1+x^2} dx = (1/2) ( \ln( | \infty |) - \ln( | -\infty |)</me>
-which is problematic.  Further, for the variance
+which is problematic.  Further, even assuming that the distribution is symmetrical and therefore has a mean of 0, for the variance
 <me>\int_{-\infty}^{\infty} x^2 \frac{1}{1+x^2} dx </me>
 and note that the integrand does not converge to 0 at the endpoints and therefore the integral is automatically considered divergent.  Thus it is reasonable to note that the Cauchy distribution has no variance.
 </p>
@@ -404,9 +438,9 @@ and note that the integrand does not converge to 0 at the endpoints and therefor
 <statement>
 <p>
 Suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
-<me>T = \frac{Z}{\sqrt(Y/r)}.</me>
+<me>T = \frac{Z}{\sqrt{Y/r}}.</me>
 Then, T is said to have a (Student) t distribution with probability function given by 
-<me>\frac{\Gamma \left ( \frac{n+1}{2} \right ) }{\sqrt{n \pi} \Gamma \left ( \frac{n}{2} \right ) } \left ( 1 + \frac{x^2}{n}\right )^{ - \left ( \frac{n+1}{2} \right )}  </me>
+<me>\frac{\Gamma \left ( \frac{n+1}{2} \right ) }{\sqrt{n \pi} \; \Gamma \left ( \frac{n}{2} \right ) } \left ( 1 + \frac{x^2}{n}\right )^{ - \left ( \frac{n+1}{2} \right )}  </me>
 </p>  
 </statement>
 </definition>
@@ -624,7 +658,10 @@ from sage.finance.time_series import TimeSeries
 @interact(layout=dict(top=[['Range'],['Show_Mean', 'Smoothing']],  
 bottom=[['N'],['r']]))
 
-def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),r=slider(3,200,1,2,label="r = Sample Size"),Show_Mean=False,Smoothing=False):
+def _(Range=[100,200,300,500],
+      N=slider(5,200,2,2,label="N = Number of Samples"),
+      r=slider(3,200,1,2,label="r = Sample Size"),
+      Show_Mean=False,Smoothing=False):
     R=[1..N]     #  R ranges over the number of samples...will point to the list of averages
     rangemax = Range
 
@@ -645,7 +682,7 @@ def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),
             avg_string.append(str(round(temp/r)))
             
         averages += [(round(temp/r),n)]   #  make these averages integers for use in grouping later
-    SCAT = scatter_plot(datapoints,markersize=2,edgecolor='red',figsize=(10,4),axes_labels=['Sample Values','Sample Number'])
+    SCAT = scatter_plot(datapoints,markersize=2,edgecolor='red',figsize=(10,4))
     AVGS = scatter_plot(averages,markersize=50,edgecolor='blue',marker='o',figsize=(7,4))
     
     freqslist = frequency_distribution(avg_string,1).function().items()
@@ -666,10 +703,10 @@ def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),
         avg_text = Graphics()
             
 #  Plot a scatter plot exhibiting uniformly random data and the collection of averages 
-    print(html("The random data plot on the left with each row representing a sample with size determined by\n"+
-         "the slider above and each circle representing the average for that particular sample.\n"+
-         "First, keep sample size relatively low and increase the number of samples.  Then, \n"+
-         "watch what happens when you slowly increase the sample size."))
+    print("The random data plot below shows each row representing a sample with size determined by")
+    print("the slider above and each circle representing the average for that particular sample.")
+    print("First, keep sample size relatively low and increase the number of samples.  Then,")
+    print("watch what happens when you slowly increase the sample size.")
 
     
 #  Plot the relative frequencies of the grouped sample averages
@@ -686,98 +723,16 @@ def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),
     his_low = 2*rangemax/7
     his_high = 5*rangemax/7
     
-    T = histogram(avg_values,normed=False,bins=binRange,range=(his_low,his_high),axes_labels=['Sample Averages','Frequency']) 
-    #T = TimeSeries(avg_values).plot_histogram(axes_labels=['Sample Averages','Frequency'])   
+    T = histogram(avg_values,density=False,bins=binRange,range=(his_low,his_high),title='Sample Averages vs Frequency') 
     
-    pretty_print('Scatter Plot of random data.  Horizontal is number of samples.')
-    (SCAT+AVGS+avg_line+avg_text).show()
-    pretty_print('Histogram of Sample Averages')
+    (SCAT+AVGS+avg_line+avg_text).show(figsize=(5,4),title='Sample values vs Sample number')
+
     T.show(figsize=(5,2))
 </input>
 </sage>
 </p>
 
-<p>
-<sage>
-<input>
-var('n,k')
-from sage.finance.time_series import TimeSeries
 
-@interact(layout=dict(top=[['Range'],['Show_Mean', 'Smoothing']],  
-bottom=[['N'],['r']]))
-
-def _(Range=[100,200,300,500],N=slider(5,200,2,2,label="N = Number of Samples"),r=slider(3,200,1,2,label="r = Sample Size"),Show_Mean=False,Smoothing=False):
-    R=[1..N]     #  R ranges over the number of samples...will point to the list of averages
-    rangemax = Range
-
-    data = random_matrix(ZZ,N,r,x=rangemax)
-    datapoints = []
-    avg_values = []
-    avg_string = []
-    averages = []
-    for n in range(N):
-        temp = 0
-        for k in range(r):
-            datapoints += [(data[n][k],n)]
-            temp += data[n][k]
-        avg_values.append(round(temp/r))
-        if Smoothing:
-            avg_string.append(str(2*round((temp/r)/2)))    
-        else:
-            avg_string.append(str(round(temp/r)))
-            
-        averages += [(round(temp/r),n)]   #  make these averages integers for use in grouping later
-    SCAT = scatter_plot(datapoints,markersize=2,edgecolor='red',figsize=(10,4),axes_labels=['Sample Values','Sample Number'])
-    AVGS = scatter_plot(averages,markersize=50,edgecolor='blue',marker='o',figsize=(7,4))
-    
-    freqslist = frequency_distribution(avg_string,1).function().items()
-       
-       
-# compute sample statistics for the raw data as well as for the N averages
-    Mean_data = (sum(sum(data))/(N*r)).n()
-#    STD_data = sqrt(sum(sum( (data-Mean_data)^2 ))/(N*r)).n()
-    Mean_averages = mean(avg_values).n()
-#    STD_averages = sqrt(variance(avg_values).n())
-#    print "Data mean =",Mean_data," vs Mean of the averages =",Mean_averages
-#    print "Data STD = ",STD_data," vs Standard Dev of avgs =", STD_averages
-    if Show_Mean:
-        avg_line = line([(Mean_data,0),(Mean_data,N-1)],rgbcolor='green',thickness=10)
-        avg_text = text('xbar',(Mean_data,N),horizontal_alignment='right',rgbcolor='green')
-    else:
-        avg_line = Graphics()
-        avg_text = Graphics()
-            
-#  Plot a scatter plot exhibiting uniformly random data and the collection of averages 
-    print(html("The random data plot on the left with each row representing a sample with size determined by\n"+
-         "the slider above and each circle representing the average for that particular sample.\n"+
-         "First, keep sample size relatively low and increase the number of samples.  Then, \n"+
-         "watch what happens when you slowly increase the sample size."))
-
-    
-#  Plot the relative frequencies of the grouped sample averages
-    print(html("Now, the averages (ie. the circles) from above are collected and counted\n"+
-         "with the relative frequency of each average graphed below.  For a relatively large number of\n"+
-         "samples, notice what seems to happen to these averages as the sample size increases."))
-    if Smoothing:
-        binRange = Range//2
-    else:
-        binRange = Range
-    
-    # normed=True  # if you want to have relative frequencies below
-    
-    his_low = 2*rangemax/7
-    his_high = 5*rangemax/7
-    
-    T = histogram(avg_values,normed=False,bins=binRange,range=(his_low,his_high),axes_labels=['Sample Averages','Frequency']) 
-    #T = TimeSeries(avg_values).plot_histogram(axes_labels=['Sample Averages','Frequency'])   
-    
-    pretty_print('Scatter Plot of random data.  Horizontal is number of samples.')
-    (SCAT+AVGS+avg_line+avg_text).show()
-    pretty_print('Histogram of Sample Averages')
-    T.show(figsize=(5,2))
-</input>
-</sage>
-</p>
 
 <p>
 So, even with random data, if you are to consider the arrangement of the collected means rather than the arrangement of the actual data then the means appear to have a bell-shaped distribution as well.
@@ -844,7 +799,7 @@ that is, the standard normal distribution function.
 </p>
 <p>
 If instead you plan to sample from this distribution n=32 times, the Central Limit Theorem implies that you will get a random variable <m>\overline{X}</m> which has an approximate normal distribution with the same mean but with new variance <m>\sigma_{\overline{X}}^2 = \frac{4}{32} = \frac{1}{8}</m>.  Therefore
-<me>P( \overline{X} \lt 3.9 ) \approx normalcdf(0,3.9,4,sqrt(1/8)) = 0.3886 .</me>
+<me>P( \overline{X} \lt 3.9 ) \\ \approx \text{normalcdf}(0,3.9,4,sqrt(1/8)) = 0.3886 .</me>
 </p>
 </example>
 </p>

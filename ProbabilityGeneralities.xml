@@ -51,17 +51,18 @@ coin = ["Heads", "Tails"]
 @interact
 def _(num_rolls = slider([5..5000],label="Number of Flips")):
 	rolls = [choice(coin) for roll in range(num_rolls)]
-	show(rolls)   
+	pretty_print(rolls)   
 	freq = [0,0]
 	for outcome in rolls:
 		if (outcome=='Tails'):
 			freq[0] = freq[0]+1
 		else:
 			freq[1] = freq[1]+1
-	print("The frequency of tails = %s"%str(freq[0])+" and heads = %s"%str(freq[1]))
+	print("The frequency of tails = %s"%str(freq[0])
+           +" and heads = %s"%str(freq[1]))
 	rel = [freq[0]/num_rolls,freq[1]/num_rolls]
 	print("\nThe relative frequencies for Tails and Heads:"+str(rel))
-	show(bar_chart(freq,axes=False,ymin=0,xmin=-1/2))     #  A histogram of the results
+	show(bar_chart(freq,axes=False,ymin=0,xmin=-1/2),figsize=[5,4])   
 </input>
 </sage>
 
@@ -92,22 +93,23 @@ You should have noticed that as the number of flips increases, the relative freq
 <sage>
 <input>
 @interact
-def _(num_rolls = slider([20..5000],label='Number of rolls'),Number_of_Sides = [4,6,8,12,20]):
+def _(num_rolls = slider([20..5000],label='Number of rolls'),
+      Number_of_Sides = [4,6,8,12,20]):
 	die = list((1..Number_of_Sides))
 	rolls = [choice(die) for roll in range(num_rolls)]
-	show(rolls)   
+	pretty_print(rolls)   
 
-	freq = [rolls.count(outcome) for outcome in set(die)]  # count the numbers for each outcome
+	freq = [rolls.count(outcome) for outcome in set(die)] 
 	print('The frequencies of each outcome is %s'%str(freq))
 
 	print('The relative frequencies of each outcome:')
-	rel_freq = [freq[outcome-1]/num_rolls for outcome in set(die)]  # make frequencies relative
+	rel_freq = [freq[outcome-1]/num_rolls for outcome in set(die)] 
 	print(rel_freq)
 	fs = []
 	for f in rel_freq:
 		fs.append(f.n(digits=4))
 	print(fs)
-	show(bar_chart(freq,axes=False,ymin=0,xmin=-1/2))
+	show(bar_chart(freq,axes=False,ymin=0,xmin=-1/2),figsize=[5,4])
 </input>
 </sage>
 
@@ -128,22 +130,25 @@ In general, this suggests a rule: if there are n outcomes and each one has the s
 <sage><title>Rolling Two Dice and Measuring their Sum</title>
 <input>
 @interact
-def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
+def _(num_rolls = slider([10..5000],label='Number of rolls'),
+      num_sides = slider(4,20,1,6,label='Number of sides')):
     die = list((1..num_sides))
     dice = list((2..num_sides*2))
     rolls = [(choice(die),choice(die)) for roll in range(num_rolls)]
     sums = [sum(rolls[roll]) for roll in range(num_rolls)]
-    show(rolls)   
+    pretty_print(rolls)   
 
-    freq = [sums.count(outcome) for outcome in set(dice)]  # count the numbers for each outcome
+    freq = [sums.count(outcome) for outcome in set(dice)]  
     print('The frequencies of each outcome is %s'%str(freq))
     
     print('The relative frequencies of each outcome:')
-    rel_freq = [freq[outcome-2]/num_rolls for outcome in set(dice)]  # make frequencies relative
+    rel_freq = [freq[outcome-2]/num_rolls for outcome in set(dice)]  
     print(rel_freq)
-    show(bar_chart(freq,axes=False,ymin=0, xmin=-1))     #  A histogram of the results
-    print("Relative Frequence of %s"%str(dice[0])+" is about %s"%str(rel_freq[0].n(digits=4)))
-    print("Relative Frequence of %s"%str(dice[num_sides-1])+" is about %s"%str(rel_freq[num_sides-1].n(digits=4)))
+    show(bar_chart(freq,axes=False,ymin=0, xmin=-1),figsize=[5,4])     
+    print("Relative Frequence of %s"%str(dice[0])
+          +" is about %s"%str(rel_freq[0].n(digits=4)))
+    print("Relative Frequence of %s"%str(dice[num_sides-1])
+          +" is about %s"%str(rel_freq[num_sides-1].n(digits=4)))
 </input>
 </sage>
 
@@ -190,9 +195,9 @@ values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A]
 
 full_deck = [(value, suit) for suit in suits for value in values]
 @interact
-def _(num_hands=slider[50..5000]):                  # Set up the number of hands to create
+def _(num_hands=slider[50..5000]):  # Set up the number of hands to create
     hands= []                    # Start with a blank list. 
-    for i in range(num_hands):   # This loops the following operation num_hands times. 
+    for i in range(num_hands):  
         deck = copy(full_deck)   # start over
         shuffle(deck)
         hands.append([deck.pop() for card in range(5)])
@@ -219,11 +224,16 @@ def _(num_hands=slider[50..5000]):                  # Set up the number of hands
                 two_pair=two_pair+1
             if freq_values[1]==1:
                 one_pair=one_pair+1
-    print("       One Pair frequency = %s"%str(one_pair)+" with relative frequency %s"%str(one_pair/num_hands))
-    print("       Two Pair frequency = %s"%str(two_pair)+" with relative frequency %s"%str(two_pair/num_hands))
-    print("Three of a Kind frequency = %s"%str(three_kind)+" with relative frequency %s"%str(three_kind/num_hands))
-    print("     Full House frequency = %s"%str(full_house)+" with relative frequency %s"%str(full_house/num_hands))
-    print(" Four of a Kind frequency = %s"%str(four_kind)+" with relative frequency %s"%str(four_kind/num_hands))
+    print("       One Pair frequency = %s"%str(one_pair)
+          +" with relative frequency %s"%str(one_pair/num_hands))
+    print("       Two Pair frequency = %s"%str(two_pair)
+          +" with relative frequency %s"%str(two_pair/num_hands))
+    print("Three of a Kind frequency = %s"%str(three_kind)
+          +" with relative frequency %s"%str(three_kind/num_hands))
+    print("     Full House frequency = %s"%str(full_house)
+          +" with relative frequency %s"%str(full_house/num_hands))
+    print(" Four of a Kind frequency = %s"%str(four_kind)
+          +" with relative frequency %s"%str(four_kind/num_hands))
 </input>
 </sage>
 
@@ -251,25 +261,28 @@ Let's consider the cumulative relative frequency with the sum of dice example se
 <title>Two Dice Cumulative Relative Frequency</title>
 <input>
 @interact
-def _(num_rolls = slider([20..5000],label='Number of rolls'),num_sides = slider(4,20,1,6,label='Number of sides')):
+def _(num_rolls = slider([10..5000],label='Number of rolls'),
+      num_sides = slider(4,20,1,6,label='Number of sides')):
     die = list((1..num_sides))
     dice = list((2..num_sides*2))
     rolls = [(choice(die),choice(die)) for roll in range(num_rolls)]
     sums = [sum(rolls[roll]) for roll in range(num_rolls)]
-    show(rolls)   
+    pretty_print(rolls)   
 
-    freq = [sums.count(outcome) for outcome in set(dice)]  # count the numbers for each outcome
+    freq = [sums.count(outcome) for outcome in set(dice)]  
     n = len(freq)
     CF = freq
     for k in range(1,n):
         CF[k] = freq[k] + CF[k-1]
     
     print('The cumulative relative frequencies of each outcome:')
-    Crel_freq = [CF[outcome-2]/num_rolls for outcome in set(dice)]  # make frequencies relative
+    Crel_freq = [CF[outcome-2]/num_rolls for outcome in set(dice)] 
     print(Crel_freq)        
-    show(bar_chart(CF,axes=False,ymin=0, xmin= -1))     #  A histogram of the results
-    print("Cumulative Relative Frequence of %s"%str(dice[0])+" is about %s"%str(Crel_freq[0].n(digits=4)))
-    print("Cumulative Relative Frequence of %s"%str(dice[num_sides-1])+" is about %s"%str(Crel_freq[num_sides-1].n(digits=4)))
+    show(bar_chart(CF,axes=False,ymin=0, xmin= -1),figsize=[5,4])     
+    print("Cumulative Relative Frequence of %s"%str(dice[0])
+          +" is about %s"%str(Crel_freq[0].n(digits=4)))
+    print("Cumulative Relative Frequence of %s"%str(dice[num_sides-1])
+          +" is about %s"%str(Crel_freq[num_sides-1].n(digits=4)))
 </input>
 </sage>
 
@@ -353,7 +366,8 @@ def _(X='1,2,3', Y='2,a,3,4,apple', Z='a,b,10,apple'):
         Z = set(S[i])
         for j in range(1,len(S)):
             Z = Z.difference(S[(i+j)%3])
-        G += text(f(Z,braces=False), (1.5*centers[i][0],1.7*centers[i][1]), rgbcolor='black')
+        G += text(f(Z,braces=False), (1.5*centers[i][0],1.7*centers[i][1]), 
+                       rgbcolor='black')
 
 
     # Plot pairs of intersections
@@ -613,13 +627,13 @@ def L(str):
     if m == n/5:
         top = m
     for k in range(top):
-        print(str[5*k:5*k+5])
+        pretty_print(str[5*k:5*k+5])
         
 suits = [S, D, C, H] 
 values = [2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A] 
 
 deck = [(value, suit) for suit in suits for value in values]
-full_deck = copy(deck)  # to save a copy of the original deck for later use.
+full_deck = copy(deck)  # to save a copy
 
 # L(deck)
 shuffle(deck)
@@ -640,7 +654,8 @@ def _(auto_update=False):
         L(hand)
         pretty_print(" The remaining cards in the deck:")
         L(deck1)
-        pretty_print(html("\n The number of remaining cards in the deck = %s"%str(Set(deck1).cardinality())))
+        pretty_print(html("\n The number of remaining cards in the deck "
+                          +" = %s"%str(Set(deck1).cardinality())))
 </input>
 </sage>
 
@@ -767,42 +782,54 @@ Indeed, consider what happens when you keep on dealing a hand of five cards from
 
 <sage>
 <input>
-print("Conditional Events - successively deal 5 cards w/o replacement" )
+pretty_print("Conditional Events - successively deal 5 cards w/o replacement" )
 
-var('Ace Clubs Diamonds Hearts Jack King Queen Spades') 
+var('Ace Club Diamond Heart Jack King Queen Spade') 
 
-suits = [Spades, Diamonds, Clubs, Hearts] 
+def L(str):
+    n = len(str)
+    m = int(n/5)
+    top = m+1
+    if m == n/5:
+        top = m
+    for k in range(top):
+        print(str[5*k:5*k+5])
+        
+suits = [Spade, Diamond, Club, Heart] 
 values = [2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace] 
 
 deck = [(value, suit) for suit in suits for value in values]
-full_deck = copy(deck)  # to save a copy of the original deck for later use.
+full_deck = copy(deck)  # to save a copy 
 
 deck1 = copy(full_deck)
 history1=[]
 @interact
-def _(choice=['Hearts','Spades','Diamonds','Clubs','New Deck'],again=['Repeat Same Suit']):
+def _(choice=['Heart','Spade','Diamond','Club','New Deck'],
+      again=['Repeat Same Suit']):
     global deck1, history1
     shuffle(deck1)
-    if choice=='Hearts':
-        suit = Hearts
-    elif choice=='Spades':
-        suit = Spades
-    elif choice=='Diamonds':
-        suit = Diamonds
-    elif choice=='Clubs':
-        suit = Clubs
+    if choice=='Heart':
+        suit = Heart
+    elif choice=='Spade':
+        suit = Spade
+    elif choice=='Diamond':
+        suit = Diamond
+    elif choice=='Club':
+        suit = Club
     else:
         deck1 = copy(full_deck)
         shuffle(deck1)
         history1=[]
-    if (Set(deck1).cardinality()&lt;5):
+    if (Set(deck1).cardinality() &lt; 5):
         print("Deck is too small...get a new deck")
     elif choice!='New Deck':
         hand = [deck1.pop() for card in range(5)] 
-        print("Click on a desired suit above to deal out another 5 card hand.  The cards dealt:")
-        print(hand)
+        print("Click on a desired suit above to deal out"
+              +"another 5 card hand.")
+        print("The cards dealt:")
+        L(hand)
         print("The remaining cards in the deck:")
-        print(deck1)
+        L(deck1)
         num = Set(deck1).cardinality()
         print("\nThe number of remaining cards in the deck = %s"%str(num))
         looking = []
@@ -812,8 +839,10 @@ def _(choice=['Hearts','Spades','Diamonds','Clubs','New Deck'],again=['Repeat Sa
         prob = float(Set(looking).cardinality())/num
         history1.append(prob)
         
-        print('So, the remaining probability of getting a card from '+choice+' from the remaining cards is %s'%str(prob))
-    list_plot(history1).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))</input>
+        print('So, the remaining probability of getting a '+choice)
+        print(' from the remaining cards is %s'%str(prob))
+    list_plot(history1).show(xmin=0,xmax=9,ymin=0,ymax=1,figsize=(5,2))
+</input>
 </sage>
 
 	
@@ -822,27 +851,36 @@ def _(choice=['Hearts','Spades','Diamonds','Clubs','New Deck'],again=['Repeat Sa
 
 <sage>
 <input>
-print('Independent Events - Successively deal 5 cards but WITH replacement')
+pretty_print('Independent Events - Successively deal 5 cards WITH replacement')
 
-var('Ace Clubs Diamonds Hearts Jack King Queen Spades') 
+var('Ace Club Diamond Heart Jack King Queen Spade') 
 
-suits = [Spades, Diamonds, Clubs, Hearts] 
+def L(str):
+    n = len(str)
+    m = int(n/5)
+    top = m+1
+    if m == n/5:
+        top = m
+    for k in range(top):
+        print(str[5*k:5*k+5])
+        
+suits = [Spade, Diamond, Club, Heart] 
 values = [2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace] 
 
 deck = [(value, suit) for suit in suits for value in values]
-full_deck = copy(deck)  # to save a copy of the original deck for later use.
+full_deck = copy(deck)  # to save a copy 
 deck1 = copy(full_deck)
 
 h2=[]
 @interact
 def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 
-    if choice=='Hearts':
-        suit = Hearts
-    elif choice=='Spades':
-        suit = Spades
-    elif choice=='Diamonds':
-        suit = Diamonds
+    if choice=='Heart':
+        suit = Heart
+    elif choice=='Spade':
+        suit = Spade
+    elif choice=='Diamond':
+        suit = Diamond
     else:
         suit = Clubs
 
@@ -850,11 +888,11 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
     shuffle(deck1) 
     hand = [deck1.pop() for card in range(5)] 
     print("The cards dealt:")
-    print(hand)
-    print("Replacing this hand and reshuffling gives the remaining cards in the deck:")
+    L(hand)
+    print("Replacing this hand and reshuffling gives the remaining cards:")
     deck1 = copy(full_deck)
     shuffle(deck1)
-    print(deck1)
+    L(deck1)
     
     num = Set(deck1).cardinality()
     print("\nThe number of remaining cards in the deck = %s"%str(num))
@@ -865,10 +903,10 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
     prob = float(Set(looking).cardinality())/num
     h2.append(prob)
     
-    print('So, the remaining probability of getting a '+choice+' from the remaining cards is %s'%str(prob))
+    print('The probability of getting a '+choice
+        +' from the remaining cards is %s'%str(prob))
     list_plot(h2).show(xmin=0,xmax=15,ymin=0,ymax=1,figsize=(5,2))
-    
-    print('Independent Events - Successively deal 5 cards but WITH replacement')</input>
+</input>
 </sage>
 
 
@@ -1100,13 +1138,18 @@ So,
 
 <sage>
 <input>
-
 #  This function is used to convert an input string into separate entries
-def g(s): return str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+def g(s): 
+    S = str(s).replace(',',' ').replace('(',' ').replace(')',' ').split()
+    return S
 
 @interact
-def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$$ P(S_1),P(S_2),... $$"),
-        Conditional_Probabilities=input_box('0.02,0.01,0.03',label='$$ P(A|S_1),P(A|S_2),... $$'),
+def _(Partition_Probabilities
+         =input_box('0.35,0.25,0.40',
+                    label="$$ P(S_1),P(S_2),... $$",width=50),
+        Conditional_Probabilities
+         =input_box('0.02,0.01,0.03',
+                    label='$$ P(A|S_1),P(A|S_2),... $$',width=45),
         print_numbers=checkbox(True,label='Numerical Results on Graphs?'),
         auto_update=False):
             
@@ -1115,81 +1158,97 @@ def _(Partition_Probabilities=input_box('0.35,0.25,0.40',label="$$ P(S_1),P(S_2)
     n = len(Partition_Probabilities)
     n0 = len(Conditional_Probabilities)
     
-    # below needs to be n not equal to n0 but mathbook xml will not let me get the other
     if (n > n0):
-        pretty_print("You must have the same number of partition probabilities and conditional probabilities.")
+        pretty_print("Unmatched data input.")
         
-    else:                               # input data streams now are the same size!
+    else:                       # data streams now are the same size!
         colors = rainbow(n)
-        accum = float(0)                # to test whether partition probs sum to one
-        ends = [0]                      # where the graphed partition sectors change in pie chart 
-        mid = []                        # middle of each pie chart sector used for placement of text
-        p_Sk_given_A = []               # P( S_k | A )
-        pA = 0                          # P(A)
-        PP=[]                           # array to hold the numerical Partition Probabilities 
-        CP=[]                           # array to hold the numerical Conditional Probabilities     
+        accum = float(0)        #  whether partition probs sum to one
+        ends = [0]              # where  graphed partition sectors change
+        mid = []                # used for placement of text
+        p_Sk_given_A = []       # P( S_k | A )
+        pA = 0                  # P(A)
+        PP=[]                   # the numerical Partition Probabilities
+        CP=[]                   # numerical Conditional Probabilities   
         for k in range(n):
             PP.append(float(Partition_Probabilities[k]))
-            CP.append(float(Conditional_Probabilities[k]))    
+            CP.append(float(Conditional_Probabilities[k]))
             p_Sk_given_A.append(PP[k]*CP[k] )
             pA += p_Sk_given_A[k]
             accum = accum + PP[k]
             ends.append(accum)
             mid.append((ends[k]+accum)/2)
 #
-#  Marching along from 0 to 1, saving angles for each partition sector boundary.
-#  Later, we will multiple these by 2*pi to get actual sector boundary angles.
+#  From 0 to 1, saving angles for each partition sector boundary.
+#  Later, multiple these by 2*pi to get actual sector boundary angles.
 #
-        if abs(accum-float(1))>0.0000001:     #  Due to roundoff issues, this should be close enough.                     
+        if abs(accum-float(1))>0.0000001:     #  Due to roundoff issues
             pretty_print("Sum of probabilities should equal 1.")
         
         else:                           # probability data is sensible
  
 #        
-#  Draw the Venn diagram by drawing sectors from the angles determined above
-#  First, create a circle of radius 1 to illustrate the the sample space S
-#  Then draw each sector with varying colors and print out their names on the edge
+#  Venn diagram by drawing sectors from the angles determined above
+#  Create a circle of radius 1 to illustrate the the sample space S
+#  Sectors with varying colors and print out their names on the edge
 #
-            G = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0.4,aspect_ratio=True,axes=False,thickness=5)
+            G = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0.4,
+                       aspect_ratio=True,axes=False,thickness=5)
             for k in range(n):
-                G += disk((0,0), 1, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
-                G += text('$S_'+str(k+1)+'$',(1.1*cos(mid[k]*2*pi), 1.1*sin(mid[k]*2*pi)), rgbcolor='black')
+                G += disk((0,0), 1, (ends[k]*2*pi, ends[k+1]*2*pi),
+                          color=colors[mod(k,10)],alpha = 0.2)
+                G += text('$S_'+str(k+1)+'$',(1.1*cos(mid[k]*2*pi),
+                          1.1*sin(mid[k]*2*pi)), rgbcolor='black')
                 
-            G += circle((0,0), 0.6, facecolor='yellow', fill = True, alpha = 0.1, thickness=5,edgecolor='black') 
+            G += circle((0,0), 0.6, facecolor='yellow', fill = True,
+                        alpha = 0.1, thickness=5,edgecolor='black')
     
-#  Print the probabilities corresponding to each particular region as a list and on the graphs
-            if print_numbers:               
+#  probabilities corresponding to each particular region as a list
+            if print_numbers:
 
                 html("$P(A) = %s$"%(str(pA),))
                 for k in range(n):
-                    html("$P(S_{%s} | A)$"%(str(k+1))+"$ = %s$"%str(p_Sk_given_A[k]/pA))
+                    html("$P(S_{%s} | A)$"%(str(k+1))
+                           +"$ = %s$"%str(p_Sk_given_A[k]/pA))
                                         
-                    G += text(str(p_Sk_given_A[k]),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
-                    G += text(str(PP[k] - p_Sk_given_A[k]),(0.8*cos(mid[k]*2*pi), 0.8*sin(mid[k]*2*pi)), rgbcolor='black')
+                    G += text(str(p_Sk_given_A[k]),
+                              (0.4*cos(mid[k]*2*pi),
+                               0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    G += text(str(PP[k] - p_Sk_given_A[k]),
+                              (0.8*cos(mid[k]*2*pi), 
+                               0.8*sin(mid[k]*2*pi)), rgbcolor='black')
         
-#  This is essentially a repeat of some of the above code but focused only on creating the smaller inner circle dealing
-#  with the set A so that the sectors now correspond in area to the Bayes Theorem probabilities
-
+#  sectors now correspond in area to the Bayes Theorem probabilities
 
             accum = float(0)                        
-            ends = [0]                     # where the graphed partition sectors change in pie chart 
-            mid = []                       # middle of each pie chart sector used for placement of text
+            ends = [0]       # where the graphed partition sectors change
+            mid = []         # middle of each pie chart sector  
             for k in range(n): 
                 accum += float(p_Sk_given_A[k]/pA) 
                 ends.append(accum)
                 mid.append((ends[k]+accum)/2)
-            H = circle((0,0), 1, rgbcolor='black',fill=False, alpha=0,aspect_ratio=True,axes=False,thickness=0)
-            H += circle((0,0), 0.6, facecolor='yellow',fill=True, alpha=0.1,aspect_ratio=True,axes=False,thickness=5,edgecolor='black')
+            H = circle((0,0), 1, rgbcolor='black',fill=False, 
+                        alpha=0,aspect_ratio=True,axes=False,
+                       thickness=0)
+            H += circle((0,0), 0.6, facecolor='yellow',
+                        fill=True,alpha=0.1,
+                        aspect_ratio=True,axes=False,
+                        thickness=5,edgecolor='black')
             
             for k in range(n):
-                H += disk((0,0), 0.6, (ends[k]*2*pi, ends[k+1]*2*pi), color=colors[mod(k,10)],alpha = 0.2)
-                H += text('$S_'+str(k+1)+'|A$',(0.7*cos(mid[k]*2*pi), 0.7*sin(mid[k]*2*pi)), rgbcolor='black')
+                H += disk((0,0), 0.6, (ends[k]*2*pi, ends[k+1]*2*pi),
+                    color=colors[mod(k,10)],alpha = 0.2)
+                H += text('$S_'+str(k+1)+'|A$',
+                    (0.7*cos(mid[k]*2*pi), 0.7*sin(mid[k]*2*pi)), 
+                    rgbcolor='black')
                     
-        #  Now, print out the bayesian probabilities using the smaller set A only
+        #  bayesian probabilities using the smaller set A only
     
             if print_numbers:
                 for k in range(n):
-                    H += text(str( N(p_Sk_given_A[k]/pA,digits=4) ),(0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), rgbcolor='black')
+                    H += text(str( N(p_Sk_given_A[k]/pA,digits=4) ),
+                      (0.4*cos(mid[k]*2*pi), 0.4*sin(mid[k]*2*pi)), 
+                      rgbcolor='black')
                     
             G.show(title='Venn diagram of partition with A in middle')
             print

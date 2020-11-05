@@ -271,7 +271,7 @@ and
 <proof>
 <p>
 For skewness, take the limit of the skewness result above
-<me>\lim_{n \rightarrow \infty} \frac{n(2p-1)(p-1)p}{(-n(p-1)p)^{3/2}} = \lim_{n \rightarrow \infty} C \frac{n}{n^{3/2}} = 0.</me>
+<me>\lim_{n \rightarrow \infty} \frac{n(2p-1)(p-1)p}{(-n(p1)p)^{3/2}} = \lim_{n \rightarrow \infty} C \frac{n}{n^{3/2}} = 0.</me>
 </p>
 <p>
 Similarly for kurtosis

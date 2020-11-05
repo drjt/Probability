@@ -74,7 +74,8 @@ For the following interactive cell, consider for the given data points various v
 <input>
 var('x')
 @interact
-def _(Points = input_box([(-1,1),(3,1),(4,3),(6,4)]), m = slider(-4,4,0.05,1),b = slider(-2,2,0.05,1)):   
+def _(Points = input_box([(-1,1),(3,1),(4,3),(6,4)]), 
+             m = slider(-4,4,0.05,1),b = slider(-2,2,0.05,1)):   
     G = points(Points,size=20)
     xpt = []
     ypt = []
@@ -253,12 +254,12 @@ Once again, we can use R to determine and display the data points and best-fit l
 <sage language = 'r'>
 <input>
 data(cars)
-x &lt;- cars[,1]
+x &lt; cars[,1]
 y &lt;- cars[,2]
-head = paste("Scatter Plot and Best-Fit Line for \n Speed vs Stoping Distance \n Correlation Coefficient = ",cor(x,y))   
+head = paste("Scatter Plot and Best-Fit Line for
+       Speed vs Stoping Distance \n Correlation Coefficient = ",cor(x,y))   
 pts = data.frame(x, y)
 plot(pts,pch = 16, cex = 1.0, col = "blue", main = head, xlab = "x", ylab = "y")
-# pch = 16 creates solid dots, while cex = 1.5 creates dots that are 1.5 times bigger than the default.
 lm(y ~ x)
 abline(lm(y ~ x))
 </input>
@@ -429,8 +430,11 @@ Notice, their model utilizes quadratic terms and therefore uses a generalization
 <input>
 @interact
 def _(T = (90),R = (95)):
-    H = -42.379+2.04901523*T+10.14333127*R-0.22475541*T*R -6.83783*10^(-3)*T^2-5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R +8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2
-    pretty_print(html("At %s"% str(T)+"$ ^o $ with %s"%str(R)+" percent relative humidity,"))
+    H = (-42.379+2.04901523*T+10.14333127*R-0.22475541*T*R  
+         -6.83783*10^(-3)*T^2-5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R 
+         +8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2)
+    pretty_print(html("At %s"% str(T)+"$ ^o $ with %s"%str(R)
+                          +" percent relative humidity,"))
     pretty_print(html("Heat Index =%s"%str(H)))
 </input>
 </sage>
@@ -446,10 +450,12 @@ Below one can compute a table for various ambient Temperature readings given one
 @interact
 def _(R = input_box(default=95,width=10,label="Relative Humidity")):
     for T in range(80,121):
-        H = -42.379+2.04901523*T+10.14333127*R-0.22475541*T*R-6.83783*10^(-3)*T^2-5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R+8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2
+        H = (-42.379+2.04901523*T+10.14333127*R-0.22475541*T*R
+              -6.83783*10^(-3)*T^2-5.481717*10^(-2)*R^2+1.22874*10^(-3)*T^2*R
+              +8.5282*10^(-4)*T*R^2-1.99*10^(-6)*T^2*R^2)
         H = H.n(digits=4)
-        pretty_print(html("At %s"%str(T)+"$ ^o $ with  relative humidity %s "%str(R)+"the Heat Index = %s "%str(H)+" degrees."))
-	
+        pretty_print(html("At %s"%str(T)+"$ ^o $ with relative humidity"+ 
+              " %s "%str(R)+"the Heat Index = %s "%str(H)+" degrees."))
 </input>
 </sage>
 
