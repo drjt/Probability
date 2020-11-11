@@ -10,10 +10,11 @@
 <chapter xml:id="NormalRelatedDistributions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Normal Distributions</title>
 
-<section xml:id="NormalRelatedDistributionsIntroduction"><title>Introduction</title>
+<section xml:id="NormalRelatedDistributionsIntroduction"><title>What is Bell-shaped?</title>
 <p>
-You should have noticed by now that many distributions tend to have a bell-shaped graph as parameters are allowed to increase. Indeed, the formulas for skewness <m>\gamma_1</m> and kurtosis <m>\gamma_2</m> approach 0 and 3 respectively for the Hypergeometric, Binomial, Negative Binomial, Poisson, and Gamma Distributions. One might wonder if this is just a happy coincidence or is something more insidious at play. 
+You should have noticed by now that many distributions tend to have a bell-shaped graph as parameters are allowed to increase. Indeed, the formulas for skewness <m>\gamma_1</m> and kurtosis <m>\gamma_2</m> approach 0 and 3 respectively for the <xref ref="HypergeometricProperties">Hypergeometric</xref>, <xref ref="HypergeometricProperties">Hypergeometric</xref>, <xref ref="NegativeBinomialStatistics">Negative Binomial</xref>, <xref ref="PoissonStats">Poisson</xref>, and <xref ref="GammaPF">Gamma</xref> Distributions. One might wonder if this is just a happy coincidence or is something more insidious at play. 
 </p>
+
 
 <p>
 The answer by appealing to mathematics reveals that nothing sinister is going on but that it is indeed true that the eventual destiny for distributions is one that is bell-shaped. It is therefore of interest to figure out if that distribution has a nice form that can be accessed directly. The focus of this chapter is to consider this bell-shaped goal known as the "normal distribution."
@@ -50,8 +51,10 @@ The normal distribution is also sometimes referred to as the Gaussian Distributi
 var('x,mu,sigma')
 f(x) = e^(-((x-mu)/sigma)^2/2)/(sigma*sqrt(2*pi))
 @interact
-def _(m=slider(-10,10,1,0,label='$$\\mu$$'),s=slider(1/5,5,1/10,1,label='$$\\sigma$$')):
-    titletext = "Normal Curve with mean "+str(m)+" and standard deviation "+str(s)
+def _(m=slider(-10,10,1,0,label='$$\\mu$$'),
+      s=slider(1/5,5,1/10,1,label='$$\\sigma$$')):
+    titletext = ("Normal Curve with mean "+
+          str(m)+" and standard deviation "+str(s))
     G = plot(f(mu=m,sigma=s),(x,m-5*s,m+5*s))
     G += point((0,1),size=1)+point((12,0),size=1)+point((-12,0),size=1)
     G += point((m,f(x=m,mu=m,sigma=s)),color='red',size=20)
@@ -104,7 +107,8 @@ def _(a=input_box(-2,width=10,label='a = '),
       sigma=input_box(1,width=8,label='$$\\sigma = $$')):
     f = e^(-((x-mu)/sigma)^2/2)/(sigma*sqrt(2*pi))
     P = integral_numerical(f,a,b)[0]
-    pretty_print(html("$$ P("+str(a)+" &lt; X &lt; "+str(b)+") \\approx "+str(P)+"$$"))
+    pretty_print(html("$$ P("+str(a)+" &lt; X &lt; "+str(b)
+           +") \\approx "+str(P)+"$$"))
 </input>
 </sage>
 </p>
@@ -378,20 +382,67 @@ It also can be difficult to compute Chi-Square probabilities manually so you wil
 On your graphing calculator, you can use <m>P(a \le X \le b) \approx \chi^2</m>cdf(a,b,r).
 </p>
 
-<p>
+<exercise>
+<webwork>
+	<statement>
+	<p>Compute the following Chi-Square probabilities:</p>
+	<p>For <m>r = 15</m>, <m>P(X &lt; 20)</m><var name="'0.828'" width="5" /></p>
+	<p>For <m>r = 22</m>, <m>P(20 &lt; X)</m><var name="'0.583'" width="5" /></p>	
+	</statement>
+</webwork>
+</exercise>
+
 <sage>
 <input>
 # Chi-Square Calculator
 pretty_print("Calculator for Chi Square Probabilities")
 @interact(layout=dict(top=[['a', 'b']],bottom=[['r']]))
-def _(a=input_box(0,width=10,label='a = '),b=input_box(2,width=10,label='b = '),r=input_box(2,width=8,label='r =')):
+def _(a=input_box(0,width=10,label='a = '),
+		b=input_box(2,width=10,label='b = '),
+		r=input_box(2,width=8,label='r =')):
     f = x^(r/2-1)*e^(-x/2)/(gamma(r/2)*2^(r/2))
     P = numerical_integral(f,a,b)[0]
-    pretty_print(html("$$ P("+str(a)+" &lt; X &lt; "+str(b)+") \\approx "+str(P)+"$$"))
+#    T = RealDistribution('chisquared', r)   # use built-in 
+#    P = T.cum_distribution_function(b)-T.cum_distribution_function(a)
+
+    pretty_print(html("$$ P("+str(a)+" &lt; X &lt; "
+          +str(b)+") \\approx "+str(P)+"$$"))
 </input>
 </sage>
+
+<p>
+As with the normal distribution, there is also a way to compute the inverse Chi-Square function
+using Sage.
 </p>
 
+<sage>
+<input>
+# Inverse Chi-Square Calculator
+pretty_print("Calculator for Inverse Chi-Square")
+var("x")
+@interact(layout=dict(top=[['p0', 'r0']]))
+def _(p0=input_box(1/2,width=10,label='probability= '),
+      r0=input_box(5,width=8,label='$$r= $$')):
+    T = RealDistribution('chisquared', r0)   # use built-in
+    x0 = T.cum_distribution_function_inv(p0)  # rel tol 1e-14
+    pretty_print(html("$$ P(X &lt; x_0) = "+str(p0)+" \\; \\; " +
+                      "\\Rightarrow \\; \\; x_0 ="+str(x0)+"$$"))
+    f = x^(r0/2-1)*e^(-x/2)/(gamma(r0/2)*2^(r0/2))
+    G = (plot(f,(x,0,x0),fill=True, fillcolor='green') +
+          plot(f,(x,0,4*r0),thickness=3, color='black'))
+    G.show(figsize=[5,3])
+</input>
+</sage>
+
+<exercise>
+<webwork>
+	<statement>
+	<p>In the Chi-Square distribution, solve the following:</p>
+	<p>For <m>r = 15</m>, <m>P(X &lt; x_0) = 0.6</m><var name="'15.733'" width="5" /></p>
+	<p>For <m>r = 22</m>, <m>P(x_0 &lt; X) = 0.025</m><var name="'36.780'" width="5" /></p>	
+	</statement>
+</webwork>
+</exercise>
 	
 </section>
 
@@ -430,6 +481,27 @@ which is problematic.  Further, even assuming that the distribution is symmetric
 <me>\int_{-\infty}^{\infty} x^2 \frac{1}{1+x^2} dx </me>
 and note that the integrand does not converge to 0 at the endpoints and therefore the integral is automatically considered divergent.  Thus it is reasonable to note that the Cauchy distribution has no variance.
 </p>
+
+<p>
+The formula for this curve is so much easier to deal with versus the normal distribution. Perhaps it should be used more. You can see above that it is pretty much inadequate since its theoretical statistics are not well-defined.  In the interactive cell below, you might notice some issues right away by comparing the Cauchy probabilty function against a normal probability function (when <m>\mu = 0</m> but with varied standard deviations.  Notice especially that as you change the normal distribution's <m>\sigma_{\text{normal}}</m> the the area you see under the normal curve totally overwhelms the area in the stationary Cauchy distribution. That means that the two tails of the Cauchy distribution have a lot more area far away from zero than the nomal distribution. This is one of the issues why the Cauchy doesn't give good results.
+</p>
+
+
+<sage>
+<input>
+# A nice picture of Cauchy compared to normal
+f = 1/pi*(1/(1+x^2))
+@interact
+def _(sigma=slider(2/10,4,1/10,1,label="$$ \\sigma_{\\text{normal}}$$")):
+    g = 1/(sqrt(2*pi*sigma))*e^(-x^2/(2*sigma^2))
+    G = (plot(f,(x,-6,6),color='blue')
+            +plot(g,(x,-6,6),color='red'))
+    T = "Cauchy (blue) vs Normal (red)"
+    G.show(title=T,figsize=[5,3])
+</input>
+</sage>
+
+
 <p>On the other hand, there is another "bell-shaped" distribution that is useful and its random variable can be created by using a mixture of a normal variable and a <m>\Chi^2</m> variable. 
 </p>
 
@@ -437,7 +509,7 @@ and note that the integrand does not converge to 0 at the endpoints and therefor
 <definition xml:id="StudenttPF"><title>Student-t Distribution</title>
 <statement>
 <p>
-Suppose Z is a standard normal variable and Y is <m>\Chi^2(r)</m> with Y and Z independent.  Define a new random variable
+Suppose Z is a standard normal variable and Y is <m>\chi^2(r)</m> with Y and Z independent.  Define a new random variable
 <me>T = \frac{Z}{\sqrt{Y/r}}.</me>
 Then, T is said to have a (Student) t distribution with probability function given by 
 <me>\frac{\Gamma \left ( \frac{n+1}{2} \right ) }{\sqrt{n \pi} \; \Gamma \left ( \frac{n}{2} \right ) } \left ( 1 + \frac{x^2}{n}\right )^{ - \left ( \frac{n+1}{2} \right )}  </me>
@@ -476,6 +548,28 @@ while for t, <me>P(-2 \le T \le 2) = 0.9454.</me>
 </p>
 
 <p>
+Here is a calculator for obtaining probabilities for the t-distribution over an interval.
+</p>
+
+<sage>
+<input>
+pretty_print("Calculator for t-Distribution")
+var("x")
+@interact(layout=dict(top=[['a', 'b']]))
+def _(a=input_box(-1,width=10,label='$$ a =$$'),
+      b=input_box(1,width=10,label='$$ b =$$'),
+      r0=input_box(5,width=8,label='$$ df = $$')):
+    T = RealDistribution('t', r0)   # use built-in
+    P = T.cum_distribution_function(b)-T.cum_distribution_function(a)
+    pretty_print(html("$$ P("+str(a)+" &lt; X &lt; "
+          +str(b)+") \\approx "+str(P)+"$$"))
+</input>
+</sage>
+
+<p>
+As has been our pattern for some time, it is of interest to see what happens to the t-distribution's graph when (in this case) the number of degrees of freedom increase. The interactive cell below illustrates what happens up till 30 degrees of freedom. Notice at that point, the t-distribution and the normal distribution have almost the same probability function.
+</p>
+
 <sage language='r'>
 <input>
 # Display the Student's t distributions with various
@@ -500,7 +594,7 @@ legend("topright", inset=.05, title="Distributions",
   labels, lwd=2, lty=c(1, 1, 1, 1, 2), col=colors)
 </input>
 </sage>
-</p>
+
 
 </section>
 

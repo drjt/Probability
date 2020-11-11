@@ -48,16 +48,39 @@ In creating statistical measures, you might want to consider one of the followin
 <p>In the subsequent sections of this chapter, you will see that a number of different measures are available for most data sets. Determining which "correct" measure to use for describing any given data set will depend the actual situation surrounding the collection of the data.
 </p>
 <p>
-Below are a couple of active WeBWorK exercises that you can continue to attempt until you get the correct answer.  Try to avoid clicking on the provided solution unless you are hopelessly stuck on exercises like this throughout the text.
+Below are a couple of interactive exercises that you can continue to attempt until you get the correct answer. The first one is very simple and for you to get accustomed to entering and checking answers. The second relates to the material in this section. Interactive elements such as these will be scattered throughout the text so that you can test your knowledge right away and at no cost for trying as many times as you like. To get the best result from these, try to avoid clicking on the provided solution unless you are hopelessly stuck.
 </p>
-		
+	
+	
+<exercise>
+  <webwork>
+    <statement>
+      <p><m>1+2=</m><var name="'3'" width="5" /></p>
+    </statement>
+  </webwork>
+</exercise>	
 
 <exercise><title>WebWork - Types of Data</title>
-		<webwork source="Library/UVA-Stat/setStat212-Homework01/stat212-HW01-16.pg" />
-</exercise>
-
-<exercise><title>WebWork - Types of Data Again</title>
-		<webwork source="Library/UVA-Stat/setStat212-Homework01/stat212-HW01-13.pg" />
+<webwork>
+<pg-code>
+        Context()->strings->add(nominal => {caseSensitive => 0});
+        Context()->strings->add(ratio => {caseSensitive => 0});
+        Context()->strings->add(ordinal => {caseSensitive => 0});
+        Context()->strings->add(interval => {caseSensitive => 0});
+</pg-code>
+<statement>
+<p>
+  Determine whether each of the following responses should best be classified as ratio, interval, nominal, or ordinal data.  Type the correct word in each blank.
+</p>
+<p>The town where you have lived the longest.<var name="'nominal'" width="10" /></p>
+<p>The starting salaries of each graduate from your major.<var name="'ratio'" width="10" /></p>
+<p>The current temperature outside.<var name="'interval'" width="10" /></p>
+<p>Rating for a purchase on Amazon from 1 to 5 stars.<var name="'ordinal'" width="10" /></p>
+<p>Your political party affiliation.<var name="'nominal'" width="10" /></p>
+<p>The age of your classmates.<var name="'ratio'" width="10" /></p>
+<p>The number of cars in the parking lot.<var name="'interval'" width="10" /></p>
+</statement>
+</webwork>
 </exercise>
 
 

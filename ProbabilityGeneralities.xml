@@ -10,7 +10,7 @@
 <chapter xml:id="ProbabilityGeneralities" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Probability Theory</title>
 
-<section xml:id="ProbabilityGeneralitiesIntro"><title>Quantifying Uncertainty?</title>
+<section xml:id="ProbabilityGeneralitiesIntro"><title>Quantifying Uncertainty</title>
 
 <p>
 Mathematics generally focuses on providing precise answers with absolute certainty. For example, solving an equation generates specific (and non-varying) solutions. Statistics on the other hand deals with providing precise answers to questions when there is uncertainty. It might seem impossible to provide such precise answers but the focus of this text is to show how that can be done so long as the questions are properly posed and the answers properly interpreted.
@@ -584,7 +584,7 @@ When items are equally likely (sometimes also called "randomly selected") then e
 </p>
 
 
-<theorem><title>Probability of Equally Likely Events</title>
+<theorem xml:id="EquallyLikelyTheorem"><title>Probability of Equally Likely Events</title>
 <statement>
 	<p>
 	If outcomes in S are equally likely, then for <m>A \subset S,</m> 
@@ -715,7 +715,7 @@ Let's see if you understand the relationship between frequency and relative freq
 <exercise><title>Dice</title>
 <statement>
 	<p>
-	Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is equally likely. Determine the probabilities associated with each possible sum.
+	Determine the 36 possible outcomes related to the rolling a pair of fair dice. Justify why each of these outcomes is <xref ref="EquallyLikelyTheorem">equally likely</xref>. Determine the probabilities associated with each possible sum.
 	</p>
 </statement>
 <solution>
@@ -731,7 +731,7 @@ Continue in this manner to determine the other possibilities and then compare to
 <exercise><title>Skew Dice</title>
 	<statement>
 	<p>
-	Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve equally likely sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
+	Suppose you have one die which only has three possible sides labeled 1, 2, or 3. Suppose a second die has twelve <xref ref="EquallyLikelyTheorem">equally likely</xref> sides with labels 1,2,3,4,4,5,5,6,6,7,8,9.  Justify that the probabilities associate with each possible sum is the same as the probabilities when using two normal 6-sided dice.
 	</p>
 	</statement>
 	<solution>
@@ -913,7 +913,7 @@ def _(choice=['Heart','Spade','Diamond','Club'],again=['Repeat Same Suit']):
 
 <example><title>Changing Sample Space - Balls</title>
 <p>  
-Consider a box with three balls: one Red, one White, and one Blue.  Using an equally likely assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  
+Consider a box with three balls: one Red, one White, and one Blue.  Using an <xref ref="EquallyLikelyTheorem">equally likely</xref> assumption, the probability of randomly pulling out a Red ball should be 1/3.  That is P(Red) = 1/3.  
 </p>
 <p>However, suppose that for a first trial you pull out the White ball and set it aside. Attempting to pull out another ball leaves you with only two options and so the probability of randomly pulling out a Red ball is 1/2. Notice that the probability changed for the second trial dependent on the outcome of the first trial.
 </p>
@@ -1537,7 +1537,7 @@ TBA
 <exercise><title>Shared Birthdays</title>
 	<statement>
 	<p>
-	In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 equally likely days let r be the number of people in a sample and consider the following:
+	In this problem, you want to consider how many people are necessary in order to have an even chance of finding two or more who share a common birthday. Toward that end, assuming a year has exactly 365 <xref ref="EquallyLikelyTheorem">equally likely</xref> days let r be the number of people in a sample and consider the following:
 	<ol>
 		<li>Determine the number of different outcomes of birthdays when order matters and birthdays are allowed to be repeated.</li>
 		<li>Determine the number of different outcomes when birthdays are not allowed to be repeated.</li>

@@ -10,16 +10,16 @@
 <chapter xml:id="PoissonProcess" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Distributions based upon Poisson Processes</title>
 
-<section xml:id="PoissonProcessIntroduction"><title>Introduction</title>
+<section xml:id="PoissonProcessIntroduction"><title>Time vs Changes</title>
 <p>
-In this chapter, you will investigate the relationship between number of successes over some interval.  For each, one of these quantities will be fixed and the other one variable. First, consider the following:
+With Bernoulli-based distributions, you considered the number of successes in a fixed number of trials (Binomial) or the number of trials until obtaining a fixed number of successes (Negative Binomial/Geometric).  For each of these, everything was discrete--trials and successes. Another option is to investigate the relationship between number of successes (or "changes") relative to some interval of time.  That is, the number of trials for Bernoulli-based distributions is replace with an interval of time.  This approach involves the discrete number of changes with a continuous interval of time. 
 </p>
 
-<p>
+
 <definition xml:id="DefnPoissonProcess"><title>Poisson Process</title>
 <statement>
 <p>
-A Poisson process is a course of action in which:
+Consider an experiment that takes place over some interval of time. A Poisson process is a course of action in which:
 <ol>
 	<li>Successes in non-overlapping subintervals are independent of each other.</li>
 	<li>The probability of exactly one success in a sufficiently small interval of length h is proportional to h.  In notation, P(one success) = <m>\lambda h</m>.</li>
@@ -28,10 +28,9 @@ A Poisson process is a course of action in which:
 </p>
 </statement>
 </definition>
-</p>
 
 <p>
-You should presume these assumptions implicitly for the distributions discussed in this chapter.
+These assumptions lead to the following distributions discussed in this chapter.
 </p>
 <p>
 In this chapter, you will investigate the following distributions:
@@ -49,7 +48,7 @@ In this chapter, you will investigate the following distributions:
 Consider a Poisson Process where you start with an interval of fixed length T and where X measures the variable number of successes, or changes, within that interval. The resulting distribution of X will be called a Poisson distribution.
 </p>
 
-<p>
+
 <theorem xml:id="PoissonPF"><title>Poisson Probability Function</title>
 <statement>
 <p>Assume X measures the number of successes in an interval [0,T] within some Poisson process. Then, with <m>\mu</m> as a needed parameter
@@ -83,9 +82,9 @@ where L'Hopitals rule was utilized in the final step.
 </p>
 </proof>
 </theorem>
-</p>
 
-<p>
+
+
 <theorem xml:id="PoissonVerification"><title>Verify Poisson Probability Function</title>
 <statement>
 <p>
@@ -102,10 +101,10 @@ where L'Hopitals rule was utilized in the final step.
 </md>
 </p>
 </proof>
-</theorem>
-</p>
+</theorem>pr
 
-<p>
+
+
 <example><title>Router Requests</title>
 <p>
 Everyone using the internet utilizes a series of "routers" who spend their time waiting for someone to show up and ask for something to be done. Let's consider one such router which, over time, has been shown to receive on average 1000 such requests in any given 10 minute period during regular working hours. In general, a Poisson process with mean 1000 would seem to fit and therefore the Poisson distribution would be a good model. We will find out below that <m>\lambda T = \mu = 1000</m> and will use that here to get 
@@ -121,7 +120,7 @@ On the other hand, suppose the question is to ask whether 1020 or fewer requests
 <me> F(1020) = \text{poissoncdf(1000,1020)} \approx 0.74258.</me> 
 </p>
 </example>
-</p>
+
 
 
 <exercise><title>WebWork - Poisson</title>

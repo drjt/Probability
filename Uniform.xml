@@ -10,9 +10,13 @@
 <chapter xml:id="EquallyLikelyBasedDistributions" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Distributions based upon Equally likely Outcomes</title>
 
-<section xml:id="EquallyLikelyBasedDistributionsIntroduction"><title>Introduction</title>
+<section xml:id="EquallyLikelyBasedDistributionsIntroduction"><title>Selecting Randomly</title>
 <p>
-When motivating our definition of probability you may have noticed that we modeled our definition on the relative frequency of equally-likely outcomes. In this chapter you will develop the theoretical formulas which can be used to model equally-likely outcomes.
+When motivating our definition of probability you may have noticed that we modeled our definition on the relative frequency of <xref ref="EquallyLikelyTheorem">equally likely</xref> outcomes. You have seen that it is not necessarily true that all values of the random variable lead to equal probabilities.
+</p> 
+
+<p>
+You often will consider experiments that start with random selections from a known space where each remaining item at each time has the same chance as all the others of being selected.  Thus, theoretical counting from the previous chapter becomes extremely important.
 </p>
 	
 <p>
@@ -320,7 +324,8 @@ Further, the probability that the person arrived within the first 6 minutes woul
 <theorem><title>Distribution Function for Continuous Uniform</title>
 <statement>
 <p>
-For <m>x \in [a,b], F(x) = \frac{x-a}{b-a}</m>
+<me>F(x) = \frac{x-a}{b-a}</me>
+for <m>x \in [a,b]. </m>
 </p>
 </statement>
 <proof>
@@ -491,7 +496,9 @@ assume(n1,'integer')
 assume(r,'integer')
 assume(r&lt;n1)
 
-f = factorial(n1)/(factorial(x)*factorial(n1-x))*factorial(n-n1)/(factorial(r-x)*factorial(n-n1-r+x))*(factorial(r)*factorial(n-r))/factorial(n)
+f = (factorial(n1)/(factorial(x)*factorial(n1-x))
+     *factorial(n-n1)/(factorial(r-x)*factorial(n-n1-r+x))
+     *(factorial(r)*factorial(n-r))/factorial(n))
 
 f(x=2)
 mu = sum(x*f,x,0,r)
@@ -519,26 +526,26 @@ So, trying to prove the limiting result also doesn't work using the symbolic sof
 
 <sage language='r'>
 <input>
-k = 30    # make this number larger and larger to see the limiting distribution with similar proportions
+k = 30    # make this number larger for limiting distribution 
 N1 = k*10      # desirable items
 N2 = k*16      # the others
 n = N1+N2
-r = k*5        # sample size extracted without replacement from a random sample of all n
+r = k*5        # sample size extracted without replacement
 
 X = 0:r        # the space R of the random variable 
-mu = r*N1/n      # the formula for mean of the Binomial Distributions
-sdev = sqrt(mu*(N2/n)*(n-r)/(n-1))  # the formula for the standard deviation
+mu = r*N1/n      # the  mean of the Binomial Distributions
+sdev = sqrt(mu*(N2/n)*(n-r)/(n-1))  #  standard deviation
 sink("message")
-dhyper( X, N1, N2, r )   # let's print out a bunch of actual probs
-Phyper = dhyper(X, N1, N2, r )  # create the probability function over X
-Psample = rhyper(10^6, N1, N2, r)  # to create a histogram, sample a lot
+dhyper( X, N1, N2, r )   # print out a bunch of actual probs
+Phyper = dhyper(X, N1, N2, r )  # probability function over X
+Psample = rhyper(10^6, N1, N2, r)  # to create a histogram
 
-Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
+Xtop=max(Psample)          #  scaling the x-axis.Shift by 1/2
 hist(Psample, prob=TRUE, br=(-1:Xtop)+0.5, col="skyblue2", xlab="X", 
-  main="Hypergeometric Probability Function vs Approximating 'Bell Curve'")
-points(X, Phyper, pch=19, col="darkgreen")  # to create actual (x,f(x))
+  main="Hypergeometric pdf vs Approximating 'Bell Curve'")
+points(X, Phyper, pch=19, col="darkgreen")  #  actual (x,f(x))
 
-invisible(Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)})   # to overlap a bell curve
+invisible(Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)})   
 invisible(curve(Pnormal, col="red", lwd=2, add=TRUE))
 </input>
 </sage>
@@ -584,20 +591,20 @@ n = N1+N2
 r = 5
 
 X = 0:r        # the space R of the random variable 
-mu = r*N1/n      # the formula for mean of the Binomial Distributions
-sdev = sqrt(mu*(N2/n)*(n-r)/(n-1))  # the formula for the standard deviation
+mu = r*N1/n      #  mean of the Binomial Distributions
+sdev = sqrt(mu*(N2/n)*(n-r)/(n-1))  #  the standard deviation
 dhyper( X, N1, N2, r )   # let's print out a bunch of actual probs
 
-Phyper = dhyper(X, N1, N2, r )  # create the probability function over X
+Phyper = dhyper(X, N1, N2, r )  #  the probability function over X
 
-Psample = rhyper(10^6, N1, N2, r)  # to create a histogram, sample a lot
-Xtop=max(Psample)          # for scaling the x-axis. Shift by 1/2 below.
+Psample = rhyper(10^6, N1, N2, r)  # to create a histogram, sample 
+Xtop=max(Psample)          #  scaling the x-axis. Shift by 1/2 below.
 hist(Psample, prob=TRUE, br=(-1:Xtop)+0.5, col="skyblue2", xlab="X", 
-  main="Hypergeometric Probability Function vs Approximating 'Bell Curve'")
+ main="Hypergeometric Probability Function vs Approximating 'Bell Curve'")
 
 points(X, Phyper, pch=19, col="darkgreen")  # to create actual (x,f(x))
 
-Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)}   # to overlap a bell curve
+Pnormal &lt;- function(X){dnorm(X, mean=mu, sd=sdev)}   # overlap a bell 
 curve(Pnormal, col="red", lwd=2, add=TRUE) 
 </input>
 </sage>
@@ -616,8 +623,10 @@ curve(Pnormal, col="red", lwd=2, add=TRUE)
 <p>
 In the interactive cell below, notice how many items are in each portion of the "Venn Bucket" when you change the size of the number extracted--denoted by what is inside the circle.
 </p>
+
+
 <sage>
-	<input>
+<input>
 # Hypergeometric distribution over 0 .. N
 # Size of classes N1 and N2 must be given as well as subset size r
 var('x')
@@ -631,16 +640,24 @@ def _(N1=input_box(10,width=5,label='$$ N_1 $$'),
     def __(X = slider(0,min(r,N1),1)):
         Px = f(x=X)
         Pxapprox = Px.n(digits=8)
-        formula = "\\frac{\\binom{%s}"%str(N1)+"{%s}"%str(X)+" \\binom{%s}"%str(N2)+"{%s}}"%str(r-X)+"{ \\binom{%s}"%str(N)+"{%s}}"%str(r)
-        pretty_print(html("P(X = %s"%str(X)+") = $ %s $"%str(formula)+" = $ %s $"%str(latex(Px))+"$ \\approx %s $"%str(Pxapprox)))
+        formula = ("\\frac{\\binom{%s}"%str(N1)+"{%s}"%str(X)
+            +" \\binom{%s}"%str(N2)+"{%s}}"%str(r-X)
+            +"{ \\binom{%s}"%str(N)+"{%s}}"%str(r))
+        pretty_print(html("P(X = %s"%str(X)+") = $ %s $"%str(formula)
+                          +" = $ %s $"%str(latex(Px))
+                          +"$ \\approx %s $"%str(Pxapprox)))
         G = polygon([(0,0), (1,0), (1.2,1), (-.2,1)],color='lightblue')
         G += line([(0.5,0),(0.5,1)],thickness=2)
-        G += circle((0.5,0.3),0.25,fill=True,facecolor='yellow',alpha=0.5,zorder=2)
-        G += text("Things I want",(0.2,0.9))+text("Everything else",(0.8,0.9))
-        G += text("%s"%X,(0.4,0.3),fontsize=30) + text("%s"%(r-X),(0.6,0.3),fontsize=30)
-        G += text("%s"%(N1-X),(0.1,0.5),fontsize=30) + text("%s"%(N2-(r-X)),(0.9,0.5),fontsize=30)
+        G += circle((0.5,0.3),0.25,fill=True,
+                    facecolor='yellow',alpha=0.5,zorder=2)
+        G += text("Things I want",(0.2,0.9))
+        G += text("Everything else",(0.8,0.9))
+        G += text("%s"%X,(0.4,0.3),fontsize=30) 
+        G += text("%s"%(r-X),(0.6,0.3),fontsize=30)
+        G += text("%s"%(N1-X),(0.1,0.5),fontsize=30) 
+        G += text("%s"%(N2-(r-X)),(0.9,0.5),fontsize=30)
         show(G, axes=0, figsize=(4,4) )
-	</input>
+</input>
 </sage>
 	
 </section>

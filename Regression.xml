@@ -10,20 +10,26 @@
 <chapter xml:id="Regression" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Regression</title>
 
-<section xml:id="RegressionIntroduction"><title>Introduction</title>
+<section xml:id="RegressionIntroduction"><title>Creating Models</title>
 
 <p>
-Given two distinct points, there is one line which passes exactly through both.  Indeed, if the points are <m>(x_1,y_1), (x_2,y_2)</m> then presuming the x-values are different gives the equation
+When analyzing an issue mathematically, you might find it useful to have a formula of some sort that allows you to plug in some (independent) value and get out some (dependent) value.  Functions in your algebra and calculus classes served that purpose quite well.  Indeed, the formula for converting from temperature in degrees Fahrenheit (F) to degrees Celcius (C) is given by
+<me>C = \frac{5}{9}(F-32).</me>
+This way, the boiling point of water at <m>212^o</m>F maps to <m>100^o</m>C and the freezing point of water at <m>32^o</m>F maps to <m>0^o</m>C as everyone should know.  Since only two points are prescribed in this mapping then a line appears to be a good way to correlate values from Fahrenheit and Celcius at all points in between (interpolation) and beyond (extrapolation).
+</p>
+
+<p>
+In general, given two distinct points there is one line which passes exactly through both.  If the points are <m>(x_1,y_1), (x_2,y_2)</m> then presuming the x-values are different gives the equation
 	<me> y = \frac{y_2 - y_1}{x_2 - x_1}(x - x_1) + y_1</me>
 is the linear function which passes through both points.  If the x's are equal then 
 	<me> x = x_1</me>
 is your linear equation. 
-However, once you collect three or more points it is likely that there is no line which exactly "interpolates" all of the points.
+However, once you collect three or more points it is likely that there is no line which exactly "interpolates" all of the points. So, to accommodate this increased complexity, the complexity of the model also must increase.  For example, a quadratic might be a good model to fit three points or a 6th degree polynomial might be a good model to fit seven points.  However as the number of points increases significantly, the use of a model that exactly interpolates at each of the data points becomes problematic due to its complexity and the trouble expended in order to obtain the model.
 </p>
 
-<p>
-In this chapter, you will investigate how to create polynomial functions which in some manner approximate a collection of data point in some "best" manner.
+<p>Since lower complexity models are easier to implement, it becomes necessary to remove the restriction that data points are met exactly by only requiring that the model be "close" to the data points using some measure of closeness. This chapter provides a scheme using calculus extrema for creating an approximate model that "best" approximates any number of data points but with a relatively low complexity model. You will use the resulting model in this chapter as a descriptive measure for the data.  Other courses may use similar techniquest to make inferences but that is for one of those courses. 
 </p>
+
 </section>
 
 
