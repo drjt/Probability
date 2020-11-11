@@ -80,10 +80,12 @@ If <m>\mu = 0</m> and <m>\sigma = 1</m>, then we say X has a standard normal dis
 </proof>
 </theorem>
 
-
 <p>
-When in the standard normal distribution, you can use a graphing calculator's normalcdf(a,b) to approximate 
-<me>P(a \le Z \le b) = \Phi(b) - \Phi(a).</me>  
+Notice that the work needed to complete the integrals over the entire domain above was pretty serious. To determine probabilities for a given interval is however not possible in general and therefore approximations are needed. When using TI graphing calculators, you can use 
+<me>P( a \lt x \lt b ) = \text{normalcdf}(a,b,\mu, \sigma).</me>
+Or you can use the calculator below.
+</p>
+<p>
 Note that when no mean or standard deviation for normalcdf is provided, the calculator presumes standard normal.
 </p>
 
@@ -134,7 +136,7 @@ def _(a=input_box(-2,width=10,label='a = '),
 	</statement>
 <proof>
 <p>
-Note that you can convert the integral above to <xref ref="StandardUnits">standard units</xref> so that it is sufficient to show
+Note that you can convert the integral above to <xref ref="StandardUnitsConversion">standard units</xref> so that it is sufficient to show
 <me>I = \int_{-\infty}^{\infty} \frac{1}{\sqrt{2 \pi}} e^{ -\frac{z^2}{2} } dz = 1</me>
 Toward this end, consider <m>I^2</m> and change the variables to get
 <md>
@@ -210,56 +212,8 @@ as desired.
 </theorem>
 
 <p>
-Once again, you can use a graphing calculator's normalcdf(a,b,mu,sigma) to compute general normal probabilities.  Pay attention to the the order of terms. For normal distributions, the calculator function always requires an interval. If you are looking for a one-sided probability, such as <m>P(X \gt 4)</m> for a problem with mean <m>\mu = 2</m> and <m>\sigma = 3</m>, you can replace the infinite upper limit with "large" finite endpoint. Providing something that is more than 10 standard deviations above the mean is for all practical purposes infinity with respect to calculations. So, in this case <m>P(X \gt 4)</m> can be approximated by normalcdf(4,32,2,3).  If you are brave, you can go even higher and use normalcdf(4,100000,2,3) if desired. 
+Using simple calculus on the normal probability function provides a few tips regarding how to best sketch a nice graph.
 </p>
-
-
-<exercise><title>WebWork - Computing Regular Normal Probabilities</title>
-
-		<webwork source="Library/NAU/setStatistics/normal_dist2.pg">
-		</webwork>
-</exercise>
-
-<p>
-In the standard normal distribution, we have considered the case where you get the probability when given an interval.  However, what about the reverse problem of finding an interval that would result in a given probability?  That is, to solve for example the problem
-<me>\Phi(b) - \Phi(a) = P(a &lt; z &lt; b) = 0.6217.</me>
-To deal with this we need an "inverse function" <m>\Phi^{-1}</m>.  Toward that end, consider the simpler problem of solving
-<me>\Phi(z_0) = P(z &lt; z_0) = \text{some given probability value} = \alpha.</me>
-Then, technically the answer would be
-<me>z_0 = \Phi^{-1}(\alpha).</me>
-Since integrating the normal probability function is impossible you can expect that finding a nice formula for the inverse of that integration might also be challenging and that is certainly the case.  However, you have two options:
-<ul>
-<li>Guessing <m>z_0</m> until you get a probabilty that is close enough to <m>\alpha</m>.</li>
-<li>Use a calculator that has the inverse built in!</li>
-</ul>
-For most graphing calculators, there is a function called "invNorm" and that is a way to compute values involving <m>\Phi^{-1}</m>.  Indeed, for example if you wanted to solve 
-<me>\Phi(z_0) = P(z &lt; z_0) = 0.813</me>
-then just use invNorm(0.413) to get <m>z_0 \approx -0.2198</m>. 
-
-
-</p>
-
-
-
-<exercise><title>WebWork - Inverse Standard Normal Calculations</title>
-
-		<webwork source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg">
-		</webwork>
-</exercise>
-
-
-	<p>
-	While we are at it, can we "go backwards" and figure out the mean and variance if given some probabilities.
-	</p>
-	
-
-<exercise><title>WebWork - Computing Regular Normal Probabilities</title>
-
-		<webwork source="Library/NAU/setStatistics/normprob4.pg">
-		</webwork>
-</exercise>
-
-
 
 <theorem xml:id="NormalCurveMax"><title>Normal Distribution Maximum</title>
 <statement>
@@ -299,11 +253,56 @@ then just use invNorm(0.413) to get <m>z_0 \approx -0.2198</m>.
 
 
 <p>
-Notice that the work needed to complete the integrals over the entire domain above was pretty serious. To determine probabilities for a given interval is however not possible in general and therefore approximations are needed. When using TI graphing calculators, you can use 
-<me>P( a \lt x \lt b ) = \text{normalcdf}(a,b,\mu, \sigma).</me>
-Or you can use the calculator below.
+When using a graphing calculator's normalcdf(a,b,<m>\mu,\sigma</m>), pay attention to the the order of terms. For normal distributions, the calculator function always requires an interval. If you are looking for a one-sided probability, such as <m>P(X \gt 4)</m> for a problem with (say) mean <m>\mu = 2</m> and <m>\sigma = 3</m>, you can replace the infinite upper limit with "large" finite endpoint. Providing something that is more than 10 standard deviations above the mean is for all practical purposes infinity with respect to calculations. So, in this case <m>P(X \gt 4)</m> can be approximated by normalcdf(4,32,2,3).  If you are brave, you can go even higher and use normalcdf(4,100000,2,3) if desired. 
+</p>
+
+
+<exercise><title>WebWork - Computing Regular Normal Probabilities</title>
+
+		<webwork source="Library/NAU/setStatistics/normal_dist2.pg">
+		</webwork>
+</exercise>
+
+<p>
+In the standard normal distribution, we have considered the case where you get the probability when given an interval.  However, what about the reverse problem of finding an interval that would result in a given probability?  That is, to solve for example the problem
+<me>\Phi(b) - \Phi(a) = P(a &lt; z &lt; b) = 0.6217.</me>
+To deal with this we need an "inverse function" <m>\Phi^{-1}</m>.  Toward that end, consider the simpler problem of solving
+<me>\Phi(z_0) = P(z &lt; z_0) = \text{some given probability value} = \alpha.</me>
+Then, technically the answer would be
+<me>z_0 = \Phi^{-1}(\alpha).</me>
+Since integrating the normal probability function is impossible you can expect that finding a nice formula for the inverse of that integration might also be challenging and that is certainly the case.  However, you have two options:
+<ul>
+<li>Guessing <m>z_0</m> until you get a probabilty that is close enough to <m>\alpha</m>.</li>
+<li>Use a calculator that has the inverse built in!</li>
+</ul>
+For most graphing calculators, there is a function called "invNorm" and that is a way to compute values involving <m>\Phi^{-1}</m>.  Indeed, for example if you wanted to solve 
+<me>\Phi(z_0) = P(z &lt; z_0) = 0.813</me>
+then just use invNorm(<m>0.813</m>) to get <m>z_0 \approx -0.2198</m>. 
+
+
+</p>
+
+
+
+<exercise><title>WebWork - Inverse Standard Normal Calculations</title>
+
+		<webwork source="Library/Rochester/setProbability10NormalDist/ur_pb_10_3.pg">
+		</webwork>
+</exercise>
+
+
+<p>
+While we are at it, can we "go backwards" and figure out the mean and variance if given some probabilities. This requires some problem solving skills and enough provided information to figure things out.  For the exercise below, what does it mean to talk about the "middle" percentage of the area? That gives one the mean and also describes a probability of the sort 
+	<me>P(\mu - z_0 \sigma &lt; X &lt; \mu + z_0 \sigma),</me>
+where <m>z_0</m> is a z-value obtained by using the inverse normal distribution function.  It might help to draw a picture first of the area under the normal curve described in any such exercise.
 </p>
 	
+
+<exercise><title>WebWork - Computing Regular Normal Probabilities</title>
+
+		<webwork source="Library/NAU/setStatistics/normprob4.pg">
+		</webwork>
+</exercise>	
 
 
 
@@ -319,7 +318,7 @@ Or you can use the calculator below.
 
 
 <section xml:id="ChiSquareDistribution"><title>Chi-Square Distribution</title>
-<p>The following distribution is related to both the Normal Distribution and to the Gamma Distribution. Initially, consider a gamma distribution with probability function given by the formula
+<p>The following distribution is related to both the Normal Distribution and to the <xref ref="GammaPF">Gamma Distribution</xref>. Initially, consider a gamma distribution with probability function given by the formula
 	
 	<me>y = \frac{x^{r-1} \cdot e^{-x / \mu}}{\Gamma(r) \cdot \mu^r}.</me>
 
@@ -354,6 +353,10 @@ def _(r=slider(1,20,1,3,label='r =')):
 </p>
 
 <p>
+As with all distributions before, one can determine the mean, variance, skewness and kurtosis for a general <m>\chi^2</m> distribution directly.  However, one can also note that these should be special cases of the gamma distribution and indeed that is the case. 
+</p>
+
+<p>
 <theorem xml:id="ChiSquareStatistics"><title><m>\chi^2</m> statistics</title>
 <statement>
 		<me>\mu = r</me>
@@ -361,8 +364,29 @@ def _(r=slider(1,20,1,3,label='r =')):
 		<me>\gamma_1 = 2 \sqrt{2/r}</me>
 		<me>\gamma_2 = \frac{12}{r} + 3</me>
 </statement>
+<proof>
+Consider the <xref ref="GammaStatistics">formulas developed for the Gamma distribution</xref> with that <m>\mu=2</m> amd <m>r</m> replaced with <m>r/2</m>.  This gives
+<me>\mu = \frac{r}{2}2 = r</me>
+<me>\sigma^2 = \frac{r}{2}2^2 = 2r</me>
+<me>\gamma_1 = \frac{2}{\sqrt{\frac{r}{2}}} = \frac{2^{3/2}}{\sqrt{r}}</me>
+<me>\gamma_2 = \frac{6}{\frac{r}{2}} + 3 = \frac{12}{r} + 3</me>
+</proof>
 </theorem>
 </p>
+
+<p>
+So, if the <m>\chi^2</m> distribution is based upon the gamma distribution, why might one want to save it for this point in time?  The Gamma distribution has a specific setup for the random variable for solving a particular problem...finding the probability that it takes an amount of time in order to reach a defined number of successes.  <m>\chi^2</m> simply is created by using a redesign of the gamma formula but with no particular problem to solve in mind. However, <m>\chi^2</m> has a number of properties that are useful for making inferences from sample data as you will see later. The theorem below shows an important relationship between the <m>\chi^2</m> distribution and the standard normal distribution. 
+</p>
+<p>
+To express this relationship requires the use of multi-variate statistics.  This text is focused on single-variable statistics so what follows will be a little careless.  Take a followup course to rigorously develop what to do with various functions on random variables.  For now, just consider this:  Suppose that you plan on doing an experiment on some distribution with a given mean and given variance and that that experiment has random variable <m>X_1</m>.  Planning to do the experiment again results in a random variable <m>X_2</m>.  Continuing, you will get (say) n random experiments planned that will result in n different random variables 
+<me>X_1, X_2, X_3, ... , X_n</me>.
+You can then create a new random variable that might be a combination of those variables.  One such random variable that is often chosen is by taking the sum of these theoretical values such as
+<me>Y = \sum_{k=1}^n X_k = X_1 + X_2 + X_3 + ... + X_n</me>
+or the average of these variables to create the variable <m>\overline{X}</m> where
+<me>\overline{X} = \frac{\sum_{k=1}^n X_k}{n} = \frac{X_1 + X_2 + X_3 + ... + X_n}{n}.</me>
+Below, notice that the new variable created comes by taking the sum of the squares of standard normal variables. This is indeed yet another possible function on random variables that establishes a relationship between normal and <m>\chi^2</m>.
+</p>
+
 
 <p>	
 <theorem xml:id="NormalVsChiSquare"><title>Relationship between Normal and <m>\chi^2</m></title>
@@ -375,22 +399,8 @@ def _(r=slider(1,20,1,3,label='r =')):
 </p>
 
 <p>	
-It also can be difficult to compute Chi-Square probabilities manually so you will perhaps want to use a numerical approximation in this case as well. The TI graphing calculator can be used with <m>\chi ^2</m>cdf(a,b,r).  Or, you can use the calculator below.
+It also can be difficult to compute Chi-Square probabilities manually so you will perhaps want to use a numerical approximation in this case as well. The TI graphing calculator can be used with <m>P(a \le X \le b) \approx \chi^2</m>cdf(a,b,r). Or you can use the interactive cell below.
 </p>
-
-<p>
-On your graphing calculator, you can use <m>P(a \le X \le b) \approx \chi^2</m>cdf(a,b,r).
-</p>
-
-<exercise>
-<webwork>
-	<statement>
-	<p>Compute the following Chi-Square probabilities:</p>
-	<p>For <m>r = 15</m>, <m>P(X &lt; 20)</m><var name="'0.828'" width="5" /></p>
-	<p>For <m>r = 22</m>, <m>P(20 &lt; X)</m><var name="'0.583'" width="5" /></p>	
-	</statement>
-</webwork>
-</exercise>
 
 <sage>
 <input>
@@ -409,6 +419,18 @@ def _(a=input_box(0,width=10,label='a = '),
           +str(b)+") \\approx "+str(P)+"$$"))
 </input>
 </sage>
+
+<exercise>
+<webwork>
+	<statement>
+	<p>Compute the following Chi-Square probabilities:</p>
+	<p>For <m>r = 15</m>, <m> \; \; P(X &lt; 20) = </m><var name="'0.828'" width="5" /></p>
+	<p>For <m>r = 22</m>, <m> \; \; P(20 &lt; X) = </m><var name="'0.583'" width="5" /></p>	
+	</statement>
+</webwork>
+</exercise>
+
+
 
 <p>
 As with the normal distribution, there is also a way to compute the inverse Chi-Square function
@@ -979,15 +1001,15 @@ Again, these are very close.
 </example>
 
 	
-	
+<!--	
 <theorem xml:id="GammaApproximatelyNormal"><title>The Gamma is approximate Normal for <m>\mu</m> large.</title>
 <statement>
 <p>
-Given a Gamma variable X with mean <m>r \mu</m> and variance <m> r BLOB</m> given, then X is approximately also normal with the same mean and variance so long as CONDITION????.
+Given a Gamma variable X with mean <m>r \mu</m> and variance <m> r BLOB</m> given, then X is approximately also normal with the same mean and variance so long as r is large
 </p>
 </statement>
 </theorem>
-	
+-->	
 	
 
 <example><title>Gamma as Normal</title>

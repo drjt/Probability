@@ -10,7 +10,7 @@
 <chapter xml:id="HypothesisTesting" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Hypothesis Testing</title>
 
-<section xml:id="HypothesisTestingIntroduction"><title>Introduction</title>
+<section xml:id="HypothesisTestingIntroduction"><title>Making a guess</title>
 <p>
 When creating confidence intervals, you started with a sample and used the sample statistic (sample mean, relative frequency, sample variance, etc.) to anchor an interval which (with high possibility) contains the corresponding population statistic <m>\mu, p, \sigma^2</m>, etc. In this section, we instead start with an educated guess for one of the population statistics <m>\mu, p, \sigma^2</m> and then statistically compare that value with the subsequently collected sample statistic.
 </p>

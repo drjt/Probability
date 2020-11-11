@@ -58,12 +58,13 @@ var('x,n,k')
 f = 1/(1-x)
 @interact
 def _(n = slider(2,20,1,2)):
-	Sn = sum(x^k,k,0,n)
-	pretty_print(html('$S_n(x) = %s$'%str(latex(Sn))))
-	G = plot(f,x,-1,0.9,color='black')
-	G += plot(Sn,x,-1,0.9,color='blue')
-	G += plot(abs(f-Sn),x,-1,0.9,color='red')
-	G.show(title="Partial Sums (blue) vs Infinite Series (black) and Error (red)",figsize=(5,4))
+    Sn = sum(x^k,k,0,n)
+    pretty_print(html('$S_n(x) = %s$'%str(latex(Sn))))
+    G = plot(f,x,-1,0.9,color='black')
+    G += plot(Sn,x,-1,0.9,color='blue')
+    G += plot(abs(f-Sn),x,-1,0.9,color='red')
+    T = "Partial Sums (blue) vs Infinite Series (black) and Error (red)"
+    G.show(title=T,figsize=(5,4))
 </input>
 </sage>
 	</subsection>

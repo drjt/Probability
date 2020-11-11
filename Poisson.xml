@@ -675,12 +675,10 @@ print(n(1-prob_complement))
 </statement>
 <proof>
 <p>
-Evaluate the sage code below.
+This is kind of a tough integral to do.  Let's just evaluate the sage code below.
 </p>
 </proof>
 </theorem>
-
-
 
 <sage>
 <input>
@@ -691,11 +689,15 @@ assume(r,'integer')
 assume(r>1)
 f(x) = x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
 S = integral(f,x,0,oo).full_simplify()
-F = "$ \\int_0^{\\infty} \\frac{x^{r-1} e^{-x/ \\mu}}{\\Gamma(r) \\mu^r} dx = %s $"%str(S)
+F = ("$ \\int_0^{\\infty} \\frac{x^{r-1}"+
+    "e^{-x/ \\mu}}{\\Gamma(r) \\mu^r} dx = %s $"%str(S))
 show(html(F))
 </input>
 </sage>
 
+<p>
+You can graph the gamma distribution's probability function for various parameters below.  Notice as r increases the curve becomes increasingly bell-shaped whicle changing the mean only shifts the curve around.
+</p>
 
 <sage>
 <input>
@@ -704,15 +706,28 @@ var('x,mu,r')
 assume(mu>0)
 assume(r,'integer')
 @interact
-def _(r=[2,3,6,12,24],mu=slider(1,12,1,5,label='mu')):
+def _(r=[2,3,6,12,24],mu=slider(1,12,1,5,label='$$\\mu$$')):
     f(x) =x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
-    plot(f,x,0,r*10).show()
+    plot(f,x,0,r*15).show(figsize=[5,3])
     
 </input>
 </sage>
 
 
-
+<theorem xml:id="GammaStatistics"><title>Properties of the Gamma Distribution</title>
+<statement>
+<p>
+For the gamma distribution from an underlying Poisson process with mean <m>\lambda</m>,
+<me>\mu = r \lambda</me>
+<me>\sigma^2 = r \lambda^2</me>
+<me>\gamma_1 = \frac{2}{\sqrt{r}}</me>
+<me>\gamma_2 = \frac{6}{r} + 3</me>
+</p>
+</statement>
+<proof>
+Evaluate the interactive cell below to let Sage do the heavy lifting.
+</proof>
+</theorem>
 
 
 
@@ -756,16 +771,17 @@ def _(r=[2,3,6,9,alpha]):
 <input>
 # Gamma Distribution Calculator
 var('x,mu,r')
-pretty_print('Enter the number of successes desired,')
+pretty_print('Enter the number of successes r desired,')
 pretty_print('the given mean, and the value of X to get F(X)')
-@interact
+@interact(layout=dict(top=[['mu','b']],bottom=[['r']]))
 def _(r=slider(1,10,1,2, label="$$ r = $$"),
       mu = input_box(2,label="$$\\mu = $$",width=10),
       b=input_box(2,label="$$ X = $$",width=10)):
     f(x) =x^(r-1)*e^(-x/mu)/(gamma(r)*mu^r)
     p = integral(f,x,0,b)
     
-    pretty_print('Probability = ',p,' which is approximately \t',p.n(digits=5))
+    pretty_print(html('$$\\text{Probability} = %s'%str(latex(p))
+                      +' \\approx %s$$'%str(p.n(digits=5))))
 </input>
 </sage>
 

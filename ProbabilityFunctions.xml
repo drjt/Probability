@@ -922,11 +922,18 @@ Apply previous result and notice that both variables have the same probability f
 
 	
 <section xml:id="StandardUnits"><title>Standard Units</title>
-	<p>Any distribution variable can be converted to “standard units” using the linear translation 
+
+
+<definition xml:id="StandardUnitsConversion"><title>Conversion to Standard Units</title>
+<statement>
+<p>Any distribution variable can be converted to “standard units” using the linear translation 
 	<me>\displaystyle z = \frac{x-\mu}{\sigma}.</me> 
 	In doing so, values of z will always represent the number of
 	standard deviations x is from the mean and will provide “dimensionless” comparisons.
 	</p>
+</statement>
+</definition>
+
 	
 	<p>
 	<example>
