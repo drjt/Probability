@@ -56,9 +56,10 @@ for k = 1, 2, ... , n.  However, in general this is unlikely since even three po
 But why even bother creating a formula (a line here) to approximate data that does not satisfy that formula? Remember that you would expect collected data to vary slightly as one repeatedly collects that data in the same way that you would expect to make a slightly different score on repeated attempts at exams on the same material. Creating a forumla that is close to your data gives a well-defined way to predict a y value for a given x value. This predictive behavior is illustrated in the exercise below.
 </p>
 
-<exercise><title>WeBWorK - best-fit line for approximation</title>
-		<webwork source="Library/NAU/setStatistics/linear_regression1.pg">
-		</webwork>
+<exercise>
+<title>WeBWorK - best-fit line for approximation</title>
+<webwork source="Library/NAU/setStatistics/linear_regression1.pg">
+</webwork>
 </exercise>
 
 <p>
@@ -112,10 +113,23 @@ and
 Solving these for m and b gives the best fit line.
 </p>
 
-<exercise><title>WeBWorK - Best fit line</title>
-		<webwork source="Library/ASU-topics/setStat/dueck4_2_4.pg">
-		</webwork>
+<exercise>
+<title>WeBWorK - Best fit line</title>
+<webwork source="Library/ASU-topics/setStat/dueck4_2_4.pg">
+</webwork>
 </exercise>
+
+<p>
+Sometimes it is useful to organize these calculations in a spreadsheet such as 
+<url href="Data/Best_Fit_Line.xlsx">this Spreadsheet</url>.
+</p>
+
+<p>
+To summarize these ideas for best-fit line and to show how to create one using EXCEL, a TI graphing calculutor, and using the normal equations, consider watching this video.
+<video source = "https://math.mc.edu/MC_coach/BestFit.mp4">
+</video>
+
+</p>
 
 </section>
 
@@ -150,6 +164,58 @@ where <m>s_x</m> is the standard deviation of the x-values only and <m>s_y</m> i
 </p>
 </statement>
 </definition>
+
+
+<sage>
+<input>
+pretty_print("Here we create the best-fit line and correlation coefficient by first creating the normal equations and solving")
+var('u')
+
+# Enter the data points here with (x,y) values paired in like positions in the list
+x = [-1.0,3,4,6]
+y = [1.0,1,3,4]
+n = len(x)
+
+Points = [(x[k],y[k]) for k in range(n)]   # Create graph of data points
+G = point(Points)
+
+xsq = []
+ysq = []
+xy = []
+for k in range(n):
+    xsq.append(x[k]^2)
+    ysq.append(y[k]^2)
+    xy.append(x[k]*y[k])
+
+# Put everything in the right place for the normal equations    
+a11 = sum(xsq)
+a12 = sum(x)
+a21 = a12
+a22 = n
+rhs1 = sum(xy)
+rhs2 = sum(y)
+ysqsum = sum(ysq)
+A = matrix([[a11,a12],[a21,a22]])
+rhs = matrix([[rhs1],[rhs2]])
+show([A,rhs])
+
+# and then solve
+coefs = A.inverse()*rhs
+m = coefs[0][0]
+b = coefs[1][0]
+show(['m=',m,'  b=',b])
+
+# while at it, create the standard deviations, covariance, and correlation coefficient
+sx = sqrt((n/(n-1))*(a11/n-(a12/n)^2))
+sy = sqrt((n/(n-1))*(ysqsum/n-(rhs2/n)^2))
+sxy = sqrt((n/(n-1))*(rhs1/n-(a12/n)*(rhs2/n)))
+r = sxy/(sx*sy)
+show(['r=',r])
+
+G += plot(m*u+1,(u,min(x),max(x)),color='red')
+show(G,figsize=[5,4])
+</input>
+</sage>
 
 
 
@@ -240,15 +306,54 @@ You should go ahead and simplify these values, solve the system of equations, pl
 </p>
 
 
-<exercise><title>WeBWorK - Interpreting correlation coefficients.</title>
-		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_10_ScatterCorrelation.pg">
-		</webwork>
-
+<exercise>
+<title>WeBWorK - Calculating correlation coefficients.</title>
+<webwork source="Library/ASU-topics/setStat/gust24.pg">
+</webwork>
 </exercise>
 
-<exercise><title>WeBWorK - Interpreting correlation coefficients again.</title>
-		<webwork source="Library/CollegeOfIdaho/setStatistics_Ch04ScatterplotsAndCorrelation/04Stats_07_ScatterCorrelation.pg">
-		</webwork>
+
+<exercise>
+<title>WeBWorK - Interpreting correlation coefficients.</title>
+  <webwork>
+    <pg-code>
+      Context()-&gt;variables-&gt;add(a =&gt; 'Real');
+      Context()-&gt;variables-&gt;add(d =&gt; 'Real');
+    </pg-code>
+    <statement>
+    <p>A study found a correlation of r = -0.33 between the gender of a worker and that worker's net pay.  From the following statements, which is true?
+      <ol>
+        <li><p>Women earn less than men on average</p></li>
+        <li><p>Women earn more than men on average</p></li>
+        <li><p>Correlation can't be negative in this instance</p></li>
+        <li><p>r makes no sense in this context</p></li>
+        <li><p>None of the above</p></li>
+      </ol>
+      Enter the letter of the correct statement: <var name="'d'" width="5" />
+    </p>
+    
+    <p>A science project considered the possible relationship between the weight in grams to the length of the tail in a group of mice.  The correlation between these two measurements is r = 0.5. If the weights had instead been measured in kilograms instead of grams, what would be the resulting correlation?
+      <ol>
+        <li><p>0.5</p></li>
+        <li><p>0.5/1000</p></li>
+        <li><p>0.5(1000)</p></li>
+        <li><p>r makes no sense in this context</p></li>
+        <li><p>None of the above</p></li>
+      </ol>
+      Enter the letter of the correct statement: <var name="'a'" width="5" />
+    </p>
+    </statement>
+    <solution>
+    <p>
+    In the first case, r makes no sense since one can only create perform linear regression on numerical ordered paired data. As stated, the notion of gender is not a numerical quantity and thus cannot (for example) create a scatter plot.  One might however "randomly" assign a numerical value to gender (such as 1 = woman and 0 = man) but that is not part of this exercise.
+    </p>
+    <p>
+    For the second case, adjusting the scale of the data points will not affect the correlation coefficient.  Indeed, suppose all the x's are scaled larger by a factor of 1000.  Then, the mean and the standard deviation of x-values will also be 1000 times larger (convince yourself of this) and the covariance will be 1000 times larger.  Indeed, for covariance
+    <me>s_{xy} = \frac{n}{n-1} \left ( \sum \frac{1000x_k \cdot y_k}{n} - (1000 \overline{x})(\overline{y}) \right )</me>
+and one can easily see that the 1000 factors out.  So, 1000 will factor out of both numerator and denominator and hence cancel in the covariance formula.
+    </p>
+    </solution>
+  </webwork>
 </exercise>
 
 
@@ -260,7 +365,7 @@ Once again, we can use R to determine and display the data points and best-fit l
 <sage language = 'r'>
 <input>
 data(cars)
-x &lt; cars[,1]
+x &lt;- cars[,1]
 y &lt;- cars[,2]
 head = paste("Scatter Plot and Best-Fit Line for
        Speed vs Stoping Distance \n Correlation Coefficient = ",cor(x,y))   

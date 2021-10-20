@@ -12,11 +12,22 @@
 
 <section xml:id="IntervalEstimationIntroduction"><title>How Close is Close?</title>
 <p>
-You should have noticed by now that repeatedly sampling from a given distribution will yield a variety of sample statistics such as <m>\overline{x}</m> as an estimate perhaps for the population mean <m>\mu</m> or <m>\frac{Y}{n}</m> as an estimate for the population likelihood of success p. In this section, you will see how these sample "point estimators" are actually the best possible choices.
+You should have noticed by now that repeatedly sampling from a given distribution has yields a variety of sample statistics such as the sample mean, the sample variance and relative frequency. In each instance, these descriptive statistics obtained by performing a particular experiment over and over seemed to "stabilize" around some limiting value.  It might be sensible to presume that 
+<me>\overline{x} \approx \mu</me> 
+would be a good estimate for the population mean or 
+<me>\frac{Y}{n} \approx p</me> 
+would be a good estimate for the population likelihood of success or 
+<me>s^2 \approx \sigma^2</me>
+would be a good estimate for the population variance.  
+A rigorous investigation that is beyond the scope of this text would validate that these sample statistics are indeed good estimators when you don't know the theoretical measures. This will be addressed more directly in <xref ref="IntervalEstimationPointEstimates">the section on Point Estimates</xref>.
 </p>
 
 <p>
-In creating these point estimates repeatedly, you have noticed that the results will change somewhat over time. Indeed, flip a coin 20 times and you might expect 10 heads. However, in practice it is likely to 9 or 12 out of 20 and possible to get any of the other possible outcomes. This natural variation makes the point estimates noted above to almost certainly be in error. However one would expect that they should be close and the Central Limit Theorem does indicate that the distribution of sample means should be approximately normally distributed. Thus, instead of relying just on the value of the point estimate, you might want to investigate a way to determine a reasonable interval centered on the sample statistic in which you have some confidence the actual population statistic should belong. This leads to a discussion of interval estimates known as confidence intervals (using calculational tools) and statistical tolerance intervals (using order statistics).
+But you might wonder why one might want to estimate things like <m>\mu, p, \sigma</m> or any of the other theoretical statistics.  You should note that in each of the distributions noted in this text certain parameters were needed before one could proceed.  For example, with the binomial, one must know n and p.  For the exponential, one must know <m>\mu</m>. Where do you think these parameters come from?  Likely from past experience where a history of results leads to an <m>\overline{x}</m> that would be a reasonable value to presume for <m>\mu</m>.  Taking the observed value as the theoretical value allows you to subsequently use the formulas provided for each of the distributions.  But is this sensible and does the resulting probabilty function correspond to realistic probability calculation? 
+</p>
+
+<p>
+In creating these point estimates repeatedly, you also should have noticed that the results will change somewhat over time. Indeed, flip a coin 20 times and you might expect 10 heads. However, in practice it is likely to 9 or 12 out of 20 and possible to get any of the other possible outcomes. This natural variation makes these estimates almost certainly in error. If the number of experiments performed is large one would expect that the sample statistics should be close to the theoretical expected values.  The Central Limit Theorem does indicate that the distribution of sample means should be approximately normally distributed. Thus, instead of relying just on the value of the point estimate, you might want to investigate a way to determine a reasonable interval centered on the sample statistic in which you have some confidence the actual population statistic should belong.  The width of the resulting interval will be your way of determining how close your estimate would approximate the desired value.
 </p>
 
 <p>

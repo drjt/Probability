@@ -338,7 +338,7 @@ If n items belong to s categories, <m>n_1</m> in first, <m>n_2</m> in second, ..
 
 
 	
-<exercise><title>WebWork - More Permutations</title>
+<exercise><title>WebWork - Permutations with not all items distinguishable</title>
 		<webwork source="Library/NAU/setCounting/RepeatedCombination1.pg">
 		</webwork>
 </exercise>	
@@ -408,7 +408,7 @@ In general, it would be nice to have a direct formula to determine the number of
 <theorem xml:id="CombinationWithoutReplacementDistinguishable"><title>Combinations of a subset without replacement</title>
 <statement>
 			<p>
-			The number of ways to arrange r items from a set of n distinct items 
+			The number of ways to select an unordered group of r items from a set of n distinct items 
 			is 
 			<me> _nC_r = \frac{n!}{r!(n-r)!} </me>
 			This is sometimes denoted C(n,r) or <m>C_r^n</m> or <m>{n \choose r}</m>.
@@ -433,7 +433,7 @@ In general, it would be nice to have a direct formula to determine the number of
 <theorem xml:id="CombinationWithReplacementDistinguishable"><title>Combinations of a subset with replacement</title>
 <statement>
 			<p>
-			The number of ways to arrange r items from a set of n distinct items 
+			The number of ways to select an unordered group of r items from a set of n distinct items 
 			is 
 			<me> _{n+r-1}C_r = {{n+r-1} \choose r} = \frac{(r+n-1)!}{r!(n-1)!} </me>
 			</p>

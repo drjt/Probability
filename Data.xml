@@ -196,7 +196,9 @@ The definition presented below provides for a unique measure for each unique val
 
 
 <p>
-Compute the following <xref ref="DefnPercentilesAlt">percentile values using the alternate formula</xref>.
+Compute the following percentile values using formulas 
+<xref ref="DefnPercentiles">#1</xref> and <xref ref="DefnPercentilesAlt">#2</xref> 
+to determine which one the problem author picked..
 </p>
 
 
@@ -243,7 +245,7 @@ Some special percentiles are provided special names...
 
 
 <p>
-It should be noted that many graphing calculators often compute quartiles using a straight average of two adjacent entries rather than by using the formula above. This causes some difficulty and especially so when n mod 4 = 2. 
+It should be noted that many graphing calculators often compute quartiles using a straight average of two adjacent entries rather than by using the percentile-based formula above. This causes some difficulty and especially so when n mod 4 = 2. 
 </p>
 
 
@@ -309,9 +311,9 @@ In general, given a numerical value within the range of a given data set, one ca
 </p>
 
 <theorem>
-<statement>Given any value y with <m> y_1 &lt; y &lt; y_n</m>, then y is at the <m>P_s</m> percentile with 
+<statement>Given any value y with <m> y_1 &lt; y &lt; y_n</m>, then y is at the <m>P^s</m> percentile with 
 <me>s = \frac{r+m}{n+1}</me>
-where n = the number of data items, m = the positional subscript such that <m>y_m &lt; y &lt; y_{m+1}</m> and <m>r = \frac{y - y_m}{y_{m+1} - y</m>
+where n = the number of data items, m = the positional subscript such that <m>y_m &lt; y &lt; y_{m+1}</m> and <m>r = \frac{y - y_m}{y_{m+1}} - y</m>
 </statement>
 <proof>
 By the definition of percentile with <m>y = P^s</m>, 
@@ -675,7 +677,7 @@ Now, replace the explicit data in the above interactive cell and replace with on
       </tabular>
       </table>
 
-Determine the minimum, maximim, <xref ref="DefnMidrange">midrange</xref>, and <xref ref="DefnMean">mean</xref> for this data.
+Determine the minimum, maximum, <xref ref="DefnMidrange">midrange</xref>, and <xref ref="DefnMean">mean</xref> for this data.
 </p>
 </statement>	
 
@@ -726,7 +728,7 @@ It is trivial to note that the range is very easy to compute but it completely i
 <definition xml:id="DefnIQR"><title>Interquartile Range (IQR):</title>
 <statement>
 <p>
-<me>IQR = P^{0.75} - P^{0.25}.</me> 
+<me>IQR = P^{0.75} - P^{0.25} = Q_3 - Q_1.</me> 
 </p>
 </statement>
 </definition>
@@ -735,18 +737,22 @@ It is trivial to note that the range is very easy to compute but it completely i
 <p>
 For the data set {2, 5, 8, 10}, you have found that <m>Q_1 = 2.75</m> and <m>Q_3 = 9.5</m>. Therefore, <me>IQR = 9.5 - 2.75 = 6.75.</me>
 </p>
-
+<p>
+Let's now consider a measure of variation that is the counterpart to the mean in that it involves a computation that utilizes the actual values of all the data.
+</p>
+<p>
+</p>
 <p>
 Average Deviation from the Mean (Population):  Given a population data set <m>x_1, x_2, ... , x_n</m> with mean <m>\mu</m> each term deviates from the mean by the value <m>x_k - \mu</m>. So, averaging these gives
 <me> \frac{\sum_{k=1}^n (x_k-\mu)}{n} = \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \mu}{n} = \mu - \mu = 0.</me>
-This metric is therefore always zero for any provided set of data since cancellation makes this not useful. So, we need to determine ways to avoid cancellation.
+This metric is therefore always zero for any provided set of data since cancellation makes this not useful. You should have expected this to be true since the definition of the mean is indeed the place where the data is "balanced". So, we need to determine ways to avoid cancellation.
 </p>
 
 <p>Average Absolute Deviation from the Mean (Population):  
 <me> \frac{\sum_{k=1}^n \left | x_k-\mu \right |}{n} </me>
 which, although nicely stated, is difficult to deal with algebraically since the absolute values do not simplify well algebraically. Indeed, it is easy to see that, for example when n=3, the mean lies somewhere between <m>y_1</m> and <m>y_3</m> (using the ordered data) but could be on either side of <m>y_2</m> and so
-<me>|y_1-\mu| + |y_2 - \mu| + |y_3 - \mu| = -(x_1-\mu) + ?(x_2 - \mu) + |y_3 - \mu|.</me>
-To avoid this algebraic roadblock, we can look for another way to nearly accomplish the same goal by squaring and then square rooting. 
+<me>|y_1-\mu| + |y_2 - \mu| + |y_3 - \mu| = -(y_1-\mu) + ?(y_2 - \mu) + |y_3 - \mu|</me>
+where the ? is either a + or a - but it could be either in general.  To avoid this algebraic roadblock, we can look for another way to nearly accomplish the same goal by squaring and then square rooting. 
 </p>
 
 <p>Average Squared Deviation from the Mean (Population):
@@ -768,9 +774,15 @@ Using the average squared deviation from the mean, differences have been squared
 <me> \sigma = \sqrt{\frac{\sum_{k=1}^n ( x_k-\mu )^2}{n}}.</me>
 </p>
 <p>
-If data comes from a sample of the population then we call it a sample variance and denote this value by v. Since sample data tends to reflect certain "biases" then we increase this value slightly by <m>\frac{n}{n-1}</m> to give the sample variance
-<me>s^2 = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n-1}.</me>
-and the sample standard deviation similarly as the square root of the sample variance.
+If data comes from a sample of the population then we call it a sample variance and denote this value by 
+
+<me>v = \frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n}.</me> 
+Sample data tends to reflect certain "biases". For example, a small data set is unlikely to contain a member of the data set that is far away from the major portion of the data. However, data values that are far from the mean provide a much greater contribution to the calculation of v than do values that are close to the mean. Technically, bias is defined mathematically using something called "expected value" and would be discussed in a course that might follow this one.
+</p>
+<p>
+To account for this, we increase the value computed for v slightly by <m>\frac{n}{n-1}</m> to give the sample variance via
+<me>s^2 = \frac{n}{n-1} v = \frac{n}{n-1}\frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n} = \frac{\sum_{k=1}^n ( x_k-\overline{x} )^2}{n-1}.</me>
+and the sample standard deviation <m>s</m> similarly as the square root of the sample variance.
 </p>
 </statement>
 </definition>
@@ -837,7 +849,11 @@ In the data table below, notice that the <m>x_k</m> column would be the given da
 
       </tabular>
 </table>
-So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{x} = \frac{9}{6} = \frac{3}{2}</m> and <m>v = \frac{\Sigma x_k^2}{6} - (\overline{x})^2 = ( \frac{35}{6} - \frac{3}{2}^2 = \frac{70-18}{12} = \frac{26}{6}</m>.  Therefore, <m>s^2 = \frac{6}{5} \times v = \frac{26}{5}</m>.
+<p>
+</p>
+So, <m>\Sigma x_k = 9</m> and <m>\Sigma x_k^2 = 35</m>.  Therefore <m>\overline{x} = \frac{9}{6} = \frac{3}{2}</m> and 
+  <m>v = \frac{\Sigma x_k^2}{6} - (\overline{x})^2 =  \frac{35}{6} - (\frac{3}{2})^2 = \frac{70-18}{12} = \frac{26}{6}</m>. </p>
+<p>Therefore, <m>s^2 = \frac{6}{5} \times v = \frac{26}{5}</m>.
 </p>
 </example>
 
@@ -898,7 +914,7 @@ determine the range, quartiles, and variance for this sample data.
 	</p>
 
 	<p>
-	From the computation before, again note that n=51 since the District of Columbia is included. The mean of this data found before was found to be approximately 6.20 million residents. So, to determine the variance you may find it easier to compute using the the alternate variance formulas <xref ref="AlternateVariance"></xref>. 
+	From the computation before, again note that n=51 since the District of Columbia is included. The mean of this data found before was found to be approximately 6.20 million residents. So, to determine the variance you may find it easier to compute using the the  <xref ref="AlternateVariance">alternate variance formulas</xref>. 
 	<md>
 	<mrow> v &amp; = \left ( \frac{\sum_{k=1}^n y_k^2 }{n} \right ) - \mu^2
 	</mrow>
@@ -1099,10 +1115,10 @@ The total cummulative frequency is 25 and so <m>m = \frac{25}{2} = 12.5</m> whic
 <definition xml:id="DefnSkewness"><title>Skewness</title>
 <statement>
 <p>For population data, the Skewness of <m>x_1, x_2, ..., x_n</m> is given by
-<me> \frac{1}{\sigma^3} \frac{\sum_{k=1}^n ( x_k-\mu )^3}{n}.</me>
+<me> \gamma_1 = \frac{1}{\sigma^3} \frac{\sum_{k=1}^n ( x_k-\mu )^3}{n}.</me>
 </p>
 <p>For sample data, the Skewness of <m>x_1, x_2, ..., x_n</m> is given by
-<me> \frac{1}{s^3} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}.</me>
+<me> g_1 = \frac{1}{s^3} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n-1}.</me>
 </p>
 </statement>
 </definition>
@@ -1113,65 +1129,114 @@ A positive skewness indicates that the positive <m>(x_k - \mu)^3</m> terms (like
 </p>
 
 <p>
-Data might tend to be clustered around the mean. The "kurtosis" can be used to measure how closely data resembles a "bell-shaped" collection.
-</p>
-
-<p>
 <definition xml:id="DefnKurtosis"><title>Kurtosis</title>
 <statement>
 <p>For population data, the Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
-<me> \frac{1}{\sigma^4} \frac{\sum_{k=1}^n ( x_k-\mu )^4}{n}.</me>
+<me> \gamma_2 = \frac{1}{\sigma^4} \frac{\sum_{k=1}^n ( x_k-\mu )^4}{n}.</me>
 </p>
 <p>For sample data, the Kurtosis of <m>x_1, x_2, ..., x_n</m> is given by
-<me> \frac{1}{s^4} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}.</me>
+<me> g_2 = \frac{1}{s^4} \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n-1}.</me>
 </p>
 </statement>
 </definition>
 </p>
 
 <p>
-A kurtosis of 3 indicates that the data is perfectly bell shaped (a "normal" distribution) whereas data further away from 3 indicates data that is less bell shaped.
+Data might tend to be clustered around the mean. The "kurtosis" can be used to measure how closely data resembles a "bell-shaped" collection. However, note that data values that are far from the mean will generate relatively larger contributions when the difference in the formula is raised to the fourth power.  So, the kurtosis that is relatively large can indicate the presence of "outliers"...that is, a significant number of data values far from the mean.  In this case, notice that that would also preclude the clumping of data in the middle (since lots are far from the middle) and so a possibly flatter distribution would be indicated by a larger kurtosis.
+</p>
+
+
+<p>
+A kurtosis of 3 indicates that the data is perfectly bell shaped (a "normal" distribution).
 </p>
 
 <theorem xml:id="AlternateSkewnessAndKurtosis"><title>Alternate Formulas for Skewness and Kurtosis</title>
 <statement>
 Skewness = 
-<me>\text{skewness} = \frac{1}{s^3} 
-\left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}\sum_{k=1}^n \frac{x_k^2}{n} + 2 \overline{x}^3 \right ]
-\\ = \frac{1}{s^3} 
-\left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 v \overline{x} - \overline{x}^3 \right ]</me>
+<me>\gamma_1 =  \frac{1}{\sigma^3} 
+\left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 v \mu - \mu^3 \right ]
+\\ = \frac{1}{\sigma^3} 
+\left [ \frac{\sum_{k=1}^n x_k^3}{n} - 3 \mu \sum_{k=1}^n \frac{x_k^2}{n} + 2 \mu^3 \right ]</me>
 and Kurtosis =
 <me>
-\text{kurtosis}  = \frac{1}{s^4} 
-\left [ 
-\frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \frac{\sum_{k=1}^n x_k^2}{n} - 3 \overline{x}^4  \right ]
-\\ = \frac{1}{s^4} \left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v + 3 \overline{x}^4  
+\gamma_2  =  \frac{1}{\sigma^4} \left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \mu \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \mu^2 v + 3 \mu^4  
 \right ]
+\\ = \frac{1}{\sigma^4} 
+\left [ \frac{\sum_{k=1}^n x_k^4}{n} - 4 \mu \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \mu^2 \frac{\sum_{k=1}^n x_k^2}{n} - 3 \mu^4  \right ]
 </me>
+Similar formulas can be used for sample data with <m>\mu</m> replaced with <m>\overline{x}</m> and then by adjusting at the end with the factor <m>\frac{n}{n-1}</m> in the same way that was used when computing the sample variance.
 <proof>
 <p>
-For skewness, expand the cubic and break up the sum. Factoring out constants (such as <m>\overline{x}</m>) gives
+For skewness, expand the cubic and break up the sum. Factoring out constants (such as <m>\mu</m>) gives
 <md>
-	<mrow>&amp; \frac{\sum_{k=1}^n ( x_k-\overline{x} )^3}{n}</mrow>
-	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x} \frac{\sum_{k=1}^n x_k^2 }{n} + 3 \overline{x}^2 \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \overline{x}^3}{n}</mrow>
-	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}(v + \overline{x}^2) + 3 \overline{x}^3 - \overline{x}^3</mrow>
-	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \overline{x}v - \overline{x}^3</mrow>
+	<mrow>&amp; \frac{\sum_{k=1}^n ( x_k-\mu )^3}{n}</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \mu \frac{\sum_{k=1}^n x_k^2 }{n} + 3 \mu^2 \frac{\sum_{k=1}^n x_k}{n} - \frac{\sum_{k=1}^n \mu^3}{n}</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \mu (v + \mu^2) + 3 \mu^3 - \mu^3</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \mu v - \mu^3</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \mu \left ( \sum_{k=1}^n \frac{x_k^2}{n} - \mu^2 \right ) - \mu^3</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^3}{n} - 3 \mu \sum_{k=1}^n \frac{x_k^2}{n} + 2\mu^2.</mrow>
+
 </md>
 and divide by the cube of the standard deviation to finish. Note that the first expansion in the derivation above can be used quickly if the data is collected in a table and powers easily computed.
 </p>
 <p>
-For kurtosis, similarly expand the quartic and break up the sum as before. Note that you can extract the value of the cubic term by solving for that term in the skewness formula above. Then,
+For kurtosis, similarly expand the quartic and break up the sum as before. Then,
 <md>
-	<mrow>&amp; \frac{\sum_{k=1}^n ( x_k-\overline{x} )^4}{n}</mrow>
-	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 \frac{\sum_{k=1}^n x_k^2}{n} - 4 \overline{x}^3 \frac{\sum_{k=1}^n x_k}{n} + \frac{\sum_{k=1}^n \overline{x}^4}{n}</mrow>
-	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 (v+\overline{x}^2) - 4 \overline{x}^4 + \overline{x}^4</mrow>
-	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \overline{x} \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \overline{x}^2 v + 3 \overline{x}^4 </mrow>
+	<mrow>&amp; \frac{\sum_{k=1}^n ( x_k-\mu )^4}{n}</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \mu \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \mu^2 \frac{\sum_{k=1}^n x_k^2}{n} - 4 \mu^3 \frac{\sum_{k=1}^n x_k}{n} + \frac{\sum_{k=1}^n \mu^4}{n}</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \mu \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \mu^2 (v + \mu^2) - 4 \mu^4 + \mu^4</mrow>
+	<mrow>&amp; = \frac{\sum_{k=1}^n x_k^4}{n} - 4 \mu \frac{\sum_{k=1}^n x_k^3 }{n} + 6 \mu^2 v + 3 \mu^4 </mrow>
 </md>
 and then divide by the fourth power of the standard deviation.  Note again that the first expansion in the derivation above might also be a useful shortcut.
 </p>
 </proof>
 </statement>
 </theorem>
+
+
+<p>
+The interactive cell below creates the various sample measures using the original formulas and then recreates them using the <xml ref="AlternateSkewnessAndKurtosis">alternate formulas</xml>.
+</p>
+<sage language = 'r'>>
+<input>
+
+x &lt;- faithful$eruptions
+n &lt;- length(x)
+print(paste("n = ", n))
+## Compute the 3rd absolute centered moment
+m &lt;- sum(x)/n
+print(paste("mean = ", m))
+v &lt;- sum((x-m)^2)/n
+ssq &lt;- (n/(n-1))*v
+s &lt;- sqrt(ssq)
+print(paste("variance = ", ssq))
+skew &lt;- (sum((x-m)^3)/(n-1))/s^3
+print(paste("skewness = ", skew))
+kurt &lt;- (sum((x-m)^4)/(n-1))/s^4
+print(paste("kurtosis = ", kurt))
+print(paste('Now, using the alternate formulas for variance, skewness, and kurtosis'))
+# Compute the average of the moments
+m1 &lt;- sum(x)/n
+m2 &lt;- sum(x^2)/n
+m3 &lt;- sum(x^3)/n
+m4 &lt;- sum(x^4)/n
+print(paste("mean = ", m1))
+v &lt;- m2 - m1^2
+ssq &lt;- (n/(n-1))*v
+s &lt;- sqrt(ssq)
+print(paste("variance = ", ssq))
+skew &lt;- (n/(n-1))*(m3 - 3*m1*m2+2*m1^3)/s^3
+print(paste("skewness = ", skew))
+kurt &lt;- (n/(n-1))*(m4-4*m1*m3+6*m1^2*m2-3*m1^4)/s^4
+print(paste("kurtosis = ", kurt))
+
+hist(x)
+print(paste("Compare the shape of this grouped data with the metrics computed above."))
+
+
+
+</input>
+</sage>
 
 <p>
 It should be noted that there are other possible ways to come up with interesting alternate ways to compute the kurtosis, etc. based on previous values. The ones presented above relate back to the mean and variance whose values might be more readily obtained from calculators for example.
@@ -1207,16 +1272,19 @@ and
 <md> 
 <mrow>v = \frac{25}{6} - \left ( \frac{3}{2} \right )^2 = \frac{43}{12} \approx 3.58 ,</mrow> 
 <mrow>s^2 = \frac{6}{5} \times v = \frac{43}{10} = 4.3,</mrow>
-<mrow>\text{and so} s = \sqrt{4.3} \approx 2.07</mrow>
+<mrow>\text{and so } s = \sqrt{4.3} \approx 2.07</mrow>
 </md>.
 
-But also, <m>\Sigma x_k^3 = 141</m> and <m>\Sigma x_k^4 = 659</m>.  Use these in the formulas above to obtain skewness of
+But also, <m>\Sigma x_k^3 = 141</m> and <m>\Sigma x_k^4 = 659</m>.  Use these in the 
+<xref ref="AlternateSkewnessAndKurtosis">Alternate Skewness and Kurtosis formulas </xref> to obtain skewness of 
 
-<me>\left [ \frac{141}{6} - 3 \cdot \frac{26}{5} \cdot \frac{3}{2} - \left ( \frac{3}{2} \right )^2 \right ] / s^3 </me>
+<me>g_1 = \frac{6}{5} \left [ \frac{141}{6} - 3 \cdot \frac{26}{6} \cdot \frac{3}{2} + 2 \left ( \frac{3}{2} \right )^3 \right ] / s^3 </me>
 
 and kurtosis of 
 
-<me>\left [ \frac{659}{6} - 4 \cdot \frac{3}{2} \cdot \frac{141}{6} + 6 \left ( \frac{3}{2} \right )^2  \cdot \frac{26}{5}  - 3 \cdot \left ( \frac{3}{2} \right )^4 \right ] / s^4.</me>
+<me>g_2 = \frac{6}{5} \left [ \frac{659}{6} - 4 \cdot \frac{3}{2} \cdot \frac{141}{6} + 6 \left ( \frac{3}{2} \right )^2  \cdot \frac{26}{6}  - 3 \cdot \left ( \frac{3}{2} \right )^4 \right ] / s^4.</me>
+
+Of course, these expanded formulas are much more useful when the data set is significantly larger.
 </p>
 
 

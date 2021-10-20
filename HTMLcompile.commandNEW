@@ -1,2 +1,3 @@
-../pretext/pretext -c webwork -s https://webwork-ptx.aimath.org -d webwork-representations  ProbabilityMain.xml
+../pretext/pretext -c webwork -s https://math.mc.edu -d webwork-representations  ProbabilityMain.xml
+# ../pretext/pretext -c webwork -s https://webwork-ptx.aimath.org -d webwork-representations  ProbabilityMain.xml
 xsltproc --stringparam publisher ProbabilityPub.xml --stringparam html.knowl.exercise.inline no --stringparam html.knowl.example no --stringparam webwork.divisional.static no --xinclude ../xsl/pretext-html.xsl ProbabilityMain.xml
