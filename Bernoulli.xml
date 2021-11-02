@@ -48,7 +48,7 @@ In this chapter, you will investigate the following distributions:
 Now, let's determine the actual probability function for this distribution.
 </p>
 <p>
-<theorem xml:id="BinomialProbabilityFunction"><title>Derivation of Binomial Probability Function</title>
+<theorem xml:id="BinomialProbabilityFunction"><title>Derivation of Binomial Probability Function</title><idx>Binomial Distribution</idx>
 	<statement>
 	<p>
 	For R = {0, 1, ..., n},
@@ -363,7 +363,7 @@ barplot(x,names.arg=0:n, main=sprintf(paste('n=',n,' and p= ',p)))
 	Geometric Distribution.</p>
 
 	<p>
-	<theorem xml:id="GeometricProbabilityFunction">
+	<theorem xml:id="GeometricProbabilityFunction"><title>Geometric Probabilitiy Functions</title><idx>Geometric Distribution</idx>
 	<statement>
 	<p>For a Geometric variable <m>X</m> with <m>R = \{1, 2, 3, ... \}</m>,
 	<me>f(x) = (1-p)^{x-1} \cdot p</me>
@@ -610,7 +610,7 @@ To detemine the final coefficients notice that the number of time <m>m^k</m> wil
 			
 <p>For example, the coefficient of <m>x^3</m> will come from the n ways of multiplying the coefficients 
 <m>x^3, x^0, ..., x^0</m> and <m>x^2, x^1, x^0, ..., x^0</m>
-and <m>x^1, x^1, x^1, x^0,..., x^0</m>. This is equivalent to finding the number of ways to write the number k as a sum of nonnegative integers. The possible set of nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  For example, if k = 3 then *||** means 
+and <m>x^1, x^1, x^1, x^0,..., x^0</m>. This is equivalent to finding the number of ways to write the number k as a sum of nonnegative integers. The possible set of nonnegative integers is {0,1,2,...,k} and one way to count the combinations is to separate k *'s by n-1 |'s.  For example, if k = 3 then *|*|* means 
 <m>x^1 x^0 x^2 = x^3</m>. Similarly for k = 5 and |**|*|**| implies <m> x^0 x^2 x^1 x^2 x^0 = x^5</m>.  The number of ways to interchange the identical *'s among the idential |'s is <m>\binom{n+k-1}{k}</m>. </p>
 			 
 <p>Furthermore, to obtain an even power of x will require an even number of odd powers and an odd power of x will require an odd number of odd powers. So, the coefficient of the odd terms stays odd and the coefficient of the even terms remains even. Therefore,	
@@ -618,6 +618,27 @@ and <m>x^1, x^1, x^1, x^0,..., x^0</m>. This is equivalent to finding the number
 Similarly,
 <me> \left ( \frac{1}{1-x} \right )^n = \left ( \sum_{k=0}^{\infty} {x^k} \right )^n = \sum_{k=0}^{\infty} {\binom{n + k - 1}{k} x^k}</me>
 </p>
+<p>To validate the above proof using software, consider the interactive cell below that determines each side of the above formula and shows that they are equal.
+</p>
+
+<sage>
+<input>
+var('x,k')
+assume(x &gt; 0)
+assume(x &lt; 1)
+@interact
+def _(n = slider(1,12,1,2)):   # this is the power on the denominator
+    S = ((sum((-1)^k*x^k,k,0,oo))^n).expand()
+    pretty_print(html("$\\left [ \\sum_{k=0}^{\\infty} {(-1)^k x^k} \\right ]^n  = %s $"%str(latex(S))))
+    pretty_print(" ")
+    NegBinom = sum((-1)^k*x^k*binomial(n+k-1,k),k,0,oo)
+    pretty_print(html("$\\sum_{k=0}^{\\infty} {(-1)^k \\binom{n + k - 1}{k} x^k}  = %s $"%str(latex(NegBinom))) )
+    pretty_print(" ")
+# Take the difference to see if they are really the same
+    pretty_print(html("$\\left [ \\sum_{k=0}^{\\infty} {(-1)^k x^k} \\right ]^n - \\sum_{k=0}^{\\infty} {(-1)^k \\binom{n + k - 1}{k} x^k}  = %s$"%str(latex(S-NegBinom))))
+
+</input>
+</sage>
 
 </proof>	
 </theorem>	
@@ -628,7 +649,7 @@ Similarly,
 For a positive integer r, let the variable <m>X</m> measure the number of trials needed in order to obtain the rth success. Then the resulting distribution of probabilities is called a Negative Binomial Distribution.</p>
 
 
-<theorem xml:id="NegativeBinomialProbabilityFunction"><title>Negative Binomial Probability Function</title>
+<theorem xml:id="NegativeBinomialProbabilityFunction"><title>Negative Binomial Probability Function</title><idx>Negative Binomial Distribution</idx>
 <statement>
 	<p>
 	<me>f(x) = \binom{x - 1}{r-1}(1-p)^{x-r}p^r,</me>
@@ -645,8 +666,8 @@ For a positive integer r, let the variable <m>X</m> measure the number of trials
 
 <example><title>Flipping a die until getting a third success</title>
 <p>Once again, consider rolling our 24-sided die until you get a multiple of 9...that is, either a 9 or an 18...for the third time. Once again, the probability of getting a 9 or 18 on any given roll is <m>p = \frac{1}{12}</m> but since we will continue rolling until we get a success for the third time, this is modeled by a negative binomial distribution and you are looking for 
-<me>f(x) = \binom{x-1}{2}(\frac{11}{12})^{x-3} (\frac{1}{12})^3  \\
-= \frac{(x-1)(x-2)}{2}(\frac{11}{12})^{x-3} (\frac{1}{12})^3</me>  
+<me>f(x) = \binom{x-1}{2} \left ( \frac{11}{12} \right )^{x-3} \left ( \frac{1}{12} \right )^3  \\
+= \frac{(x-1)(x-2)}{2} \left ( \frac{11}{12} \right )^{x-3} \left (\frac{1}{12} \right )^3</me>  
 </p>
 <p>
 Computing f(x) for any given x is relatively painless but computing F(x) could take some effort. There is generally not a graphing calculator distribution option for negative binomial but the interactive cells below can be utilized to help with the tedious computations. For example, if you were interested in <m>P(X \lt 20) = P(X \le 19 ) = F(19)</m> then the interactive calculator below using r=3 and <m>p = \frac{1}{12}</m> gives <m>F(19) \approx 0.20737.</m> 

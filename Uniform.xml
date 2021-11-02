@@ -36,7 +36,7 @@ In this section, you will investigate distributions that begin with individual o
 
 <p>
 <theorem xml:id="DiscreteUniformPF"><title>Discrete Uniform Distribution</title>
-<statement>
+<statement><idx>Discrete Uniform Distribution</idx>
 <p>
 Assume outcomes in <m>R</m> = {1, 2, 3, ..., n} are equally likely.  Then, the probability function for the discrete uniform variable <m>X</m> is
 <me>f(x) = \frac{1}{n}</me>
@@ -174,7 +174,7 @@ Modeling the idea of "equally-likely" in a continuous world requires a slightly 
 </p>
 	
 <p>
-<theorem  xml:id="ContinuousUniformPF"><title>Continuous Uniform Probability Function</title>
+<theorem  xml:id="ContinuousUniformPF"><title>Continuous Uniform Probability Function</title><idx>Continuous Uniform Distribution</idx>
 <statement>
 <p>For <m>R</m> = [a,b], with a &lt; b, the continuous uniform probability function is given by
 	<me>f(x) = \frac{1}{b-a}.</me>
@@ -355,6 +355,7 @@ Indeed, consider a collection of n items from which you want to take a sample of
 	
 <p>
 <theorem xml:id="HypergeometricPF"><title>Hypergeometric Probability Function</title>
+<idx>Hypergeometric Distribution</idx>
 <statement>
 <p>For a Hypergeometric random variable with <m>R</m> = {0, 1, ..., r} and assuming <m>n_1 \ge r</m> and <m>n-n_1 \ge r</m>,
 	<me>f(x) = \frac{\binom{n_1}{x} \binom{n-n_1}{r-x}}{\binom{n}{r}}</me>	

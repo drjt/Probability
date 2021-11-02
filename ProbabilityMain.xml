@@ -29,6 +29,11 @@
 
   		<xi:include href="./PowerSeriesReview.xml" /> 
 
+                <backmatter>
+  		<index>
+  		<index-list></index-list>
+  		</index>
+  		</backmatter>
 
 	</book>
 

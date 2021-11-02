@@ -22,7 +22,7 @@ Mathematics generally focuses on providing precise answers with absolute certain
 </section>
 
 
-<section xml:id="RelativeFrequency"><title>Relative Frequency</title>
+<section xml:id="RelativeFrequency"><title>Relative Frequency</title><idx>Relative Frequency</idx>
 	<p>When attempting to precisely measure uncertainty one often resorts to examples or experiments that model the theoretical question of interest. Before we investigate statistical experiments, we need to create some notation that we will utilize throughout the rest of this text.</p>
 	<ul>
 		<li>S = Universal Set or Sample Space Experiment or Outcome Space. 
@@ -304,7 +304,7 @@ To generate a general definition for probability, we need to know what is is tha
 </p>
 
 
-<definition xml:id="DefnMutuallyExclusive"><title>Pairwise Disjoint Sets</title>
+<definition xml:id="DefnMutuallyExclusive"><title>Pairwise Disjoint Sets</title><idx>Mutually Exclusive Sets</idx><idx>Disjoint Sets</idx>
 <statement>
 	<p>
 	<m> \{ A_1, A_2, ... , A_n \}</m> are pairwise disjoint provided <m>A_k \cap A_j = \emptyset</m> so long as <m>k \ne j</m>.
@@ -414,7 +414,7 @@ Consider how we might create a definition for the expectation of a given outcome
 <p>which leads us to the following formal definition...</p>
 
 
-<definition xml:id="DefnProb"><title>Probability</title>
+<definition xml:id="DefnProb"><title>Probability</title><idx>Probability</idx>
 <statement>
 	<p>
 	The probability P(A) of a given outcome A is a set function that satisfies:
@@ -579,7 +579,7 @@ Many times, you will be dealing with making selections from a sample space where
 It is important to notice that not all outcomes are equally likely--even in times when there are only two of them. Indeed, it is generally not an equally likely situation when picking the winner of a football game which pits, say, the New Orleans Saints professional football team with the New Orleans Home School Saints. Even though there are only two options the probability of the professional team winning in most years ought to be much greater than the chances that the high school will prevail. 
 </p>
 
-<p>
+<p><idx>Equally Likely</idx>
 When items are equally likely (sometimes also called "randomly selected") then each individual event has the same chance of being selected as any other. In this instance, determining the probability of a collection of outcomes is relatively simple.
 </p>
 
@@ -770,6 +770,7 @@ So, a win can be obtained in two ways: 7 or 11 on first roll or getting the poin
 
 <section xml:id="ConditionalProbability"><title>Conditional Probability</title>
 
+
 <p>
 When finding the probability of an event, sometimes you may need to consider past history and how it might affect things. Indeed, you might think that when the local station forecasts rain then the probability of it actually raining should be greater than if they forecast fair skies. At least that is the hope. :)  In this section, you will develop a way to deal with the probability of some event that might change dependent upon the occurence or not of some other event.
 </p>
@@ -941,7 +942,7 @@ Let <m>H_1</m> be the outcome Heart on 1st draw and <m>H_2</m> be the outcome He
 
 	
 
-<definition xml:id="DefnConditionalProbability">
+<definition xml:id="DefnConditionalProbability"><idx>Conditional Probability</idx>
 		<title>Conditional Probability</title>
 		<statement>
 		<p>For sets A and B,
@@ -987,6 +988,7 @@ You can read <m>P(B|A)</m> as "the probability of B given A".
 
 	
 <theorem xml:id="MultiplicationRule"><title>Multiplication Rule</title>
+<idx>Multiplication Rule</idx>
 	<statement>
 	<p> For any sets A and B,
 		<me>P(A \cap B) = P(A) P(B | A) = P(B) P(A | B)</me>
@@ -1024,7 +1026,7 @@ You can read <m>P(B|A)</m> as "the probability of B given A".
 	</p>
 
 
-<theorem xml:id="BayesTheorem"><title>Bayes' Theorem</title>
+<theorem xml:id="BayesTheorem"><title>Bayes' Theorem</title><idx>Bayes' Theorem</idx>
 <statement>
 	<p>
 	Let <m>S = \{ S_1, S_2, ... , S_m \}</m> where the <m>S_k</m> are pairwise disjoint and <m>S_1 \cup S_2 \cup ... \cup S_m = S</m> (i.e. a partition of the space S).  Then for any <m>A \subseteq S</m>
@@ -1338,6 +1340,7 @@ as expected!
 
 	
 <definition xml:id="DefnIndependentEvents"><title>Independent Events</title>
+<idx>Independence</idx>
 		<statement>
 		<p>Events A and B are independent provided 
 		<me>P(A \cap B) = P(A) P(B)</me>
