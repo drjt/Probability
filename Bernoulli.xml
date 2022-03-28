@@ -48,7 +48,7 @@ In this chapter, you will investigate the following distributions:
 Now, let's determine the actual probability function for this distribution.
 </p>
 <p>
-<theorem xml:id="BinomialProbabilityFunction"><title>Derivation of Binomial Probability Function</title><idx>Binomial Distribution</idx>
+<theorem xml:id="BinomialProbabilityFunction"><title>Binomial Probability Function</title><idx>Binomial Distribution</idx>
 	<statement>
 	<p>
 	For R = {0, 1, ..., n},

@@ -42,7 +42,7 @@ In this chapter we first discuss how to determine appropriate methods for estima
 	of the actual data must lie.
 	</p>
 
-<theorem><title>Chebyshev's Theorem</title>
+<theorem><title>Chebyshev's Theorem</title><idx>Chebyshev's Theorem</idx>
 <statement><p>
 	Given a random variable X with given mean <m>\mu</m> and standard deviation <m>\sigma</m>, for <m> a \in \mathbb{R}^+</m> , 
 	
@@ -51,12 +51,16 @@ In this chapter we first discuss how to determine appropriate methods for estima
 </statement>
 <proof>
 	<p>
-	Notice that the variance of a continuous variable X is given by
+	First, notice that if <m>X &gt; \mu + a</m>, then <m>X - \mu \&gt; a</m> and so <m>(x-\mu)^2 &gt; a^2</m>.  
+	Similarly for <m>X &lt; \mu - a</m>, <m>(x-\mu)^2 &gt; a^2</m>.
+	</p>
+	<p>
+	Starting with the definition of variance for a continuous variable X,
 	<md>
 		<mrow>\sigma^2 &amp; = \int_{-\infty}^{\infty} (x - \mu)^2 f(x) dx</mrow>
 		<mrow> &amp; \ge \int_{-\infty}^{\mu-a} (x - \mu)^2 f(x) dx + \int_{\mu + a}^{\infty} (x - \mu)^2 f(x) dx</mrow>
 		<mrow> &amp; \ge \int_{-\infty}^{\mu-a} a^2 f(x) dx + \int_{\mu + a}^{\infty} a^2 f(x) dx</mrow>
-		<mrow> &amp; = a^2 \big ( \int_{-\infty}^{\mu-a} f(x) dx + \int_{\mu + a}^{\infty} f(x) dx \big )</mrow>
+		<mrow> &amp; = a^2 \left ( \int_{-\infty}^{\mu-a} f(x) dx + \int_{\mu + a}^{\infty} f(x) dx \right )</mrow>
 		<mrow> &amp; = a^2 P( X \le \mu - a \text{  or  } X \ge \mu + a )</mrow>
 		<mrow> &amp; = a^2 P( \big | X - \mu \big | \ge a)</mrow>
 	</md>
@@ -71,6 +75,11 @@ In this chapter we first discuss how to determine appropriate methods for estima
 	<me>P( \big | X - \mu \big | \lt k \sigma ) \gt 1 - \frac{1}{k^2}</me>
 	</p>
 </statement>
+<proof>
+<p>
+Set <m> a = k\sigma </m> and plug into Chebyshev's Theorem.
+</p>
+</proof>
 </corollary>
 
 <corollary><title>Special Cases for Chebyshev's Theorem</title>
@@ -90,7 +99,9 @@ In this chapter we first discuss how to determine appropriate methods for estima
 </corollary>
 	
 	
-
+<p>
+Chebyshev's Theorem requires you to know the mean and standard deviation of the variable if you are seeking the lower bound.   On the other hand, you can "go backward" and find the mean and standard deviation for a given interval if you presume that the unknown mean is actually the midpoint of the interval and that <m>a</m> is the (equal) distance from that midpoint to either endpoint. Use this when working the exercise below.
+</p>
 <exercise><title>WebWork - Chebyshev</title>
 <webwork source="Library/NAU/setStatistics/cheby2.pg">
 </webwork>
@@ -105,7 +116,14 @@ In this chapter we first discuss how to determine appropriate methods for estima
 
 
 <example><title> - Comparing known distribution to Chebyshev</title>
-	<p>TBA
+	<p>Suppose that you have an exponential random variable X with mean 7.  Using properties of exponential distributions, you also know that the standard deviation is 7.  Also, you should note that for an exponential distribution the random variable represents time and thus can never be smaller than 0. It follows then that 
+<me>P( \mu - 1.8 \sigma \le X \le \mu + 1.8 \sigma)  = P( 7 - 1.8 \cdot 7 \le X \le  7 + 1.8 \cdot 7) \\  = P( 0 \le X \le 19.6) = F(19.6) \approx 0.939.</me>
+	since the exponential distribution has a known distribution function.
+	</p>
+	<p>
+	However, using the Chebyshev's Theorem, 
+	<me>P( \mu - 1.8 \sigma \le X \le \mu + 1.8 \sigma) = P( \big | X - \mu \big | \lt 1.8 \cdot \sigma ) \gt 1 - \frac{1}{{1.8}^2}  \approx 0.691. </me>
+	The difference in these two results is not a problem since the first is designed to give you a precise answer with the knowledge that X itself has a known probability function whereas in the second case you only presume that X has the desired mean and standard deviation.  With less information, you get a less precise lower bound but since the lower bound <m> = 0.691 &lt; 0.939 = </m> exact value, then there is no conflict.
 	</p>
 </example>
 
@@ -113,7 +131,7 @@ In this chapter we first discuss how to determine appropriate methods for estima
 
 <section xml:id="IntervalEstimationPointEstimates"><title>Point Estimates</title>
 
-<p>
+<p><idx>Point Estimate</idx>
 For Binomial, Geometric, what is p? For exponential, what is the mean?  For normal, what are the mean and standard deviation? Each of these parameters are necessary before you can compute any probability values from their respective formulas. Since they might not be given in a particular instance, they will need to be estimated in some manner. 
 </p>
 
@@ -126,7 +144,7 @@ where the values <m>x_k</m> are the n individual sample values.
 </p>
 
 <p>
-For any continous variable and indeed for <m>\overline{X}</m>), <m>P(\overline{X} = \mu) = 0</m>. In general, you should expect a sample statistic to be close but not precisely equal to the population statistic. Indeed, if you were so lucky as to have the sample statistic to land on the population statistic, doing one more trial would mess things up anyway and the sample statistic would certainly change some.
+For any continous variable and indeed for <m>\overline{X}</m>, <m>P(\overline{X} = \mu) = 0</m>. In general, you should expect a sample statistic to be close but not precisely equal to the population statistic. Indeed, if you were so lucky as to have the sample statistic to land on the population statistic, doing one more trial would mess things up anyway and the sample statistic would certainly change some.
 </p>
 
 <p>In a similar manner with the Binomial, Geometric, and Negative Binomial distributions, you will remember that each required a known value for p before  proceeding with any calculations. From our experiments we saw that relative frequency appeared to stabilize around what you might expect for the true proportion of success and therefore estimating the unknown proportion of success p using relative frequency
@@ -155,7 +173,7 @@ In these later situations, we found in the previous section that relative freque
 </p>
 
 
-<definition xml:id="DefnConfidenceIntervalForP"><title>Confidence Intervals for p</title>
+<definition xml:id="DefnConfidenceIntervalForP"><title>Confidence Intervals for p</title><idx>Confidence Interval for proportions</idx>
 <statement>
 <p>Given a point estimate <m>\tilde{p}</m> for p, a confidence interval for p is a range of values which contains the actual value of p with high probability. In notation, a two-sided confidence interval for p is of the form
 <me>\tilde{p} - E_1 \lt p \lt \tilde{p} + E_2</me>
@@ -179,7 +197,7 @@ In this case, E is known as the margin of error.
 
 <p>
 To determine E carefully, note that from the central limit theorem
-<me>\frac{Y-np}{\sqrt{np(1-p}} = \frac{\tilde{p} - p}{\sqrt{p(1-p)/n}}</me>
+<me>\frac{Y-np}{\sqrt{np(1-p)}} = \frac{\tilde{p} - p}{\sqrt{p(1-p)/n}}</me>
 is approximately standard normal for large n.  Presuming that <m>\tilde{p} \approx p</m> and replacing the unknown p terms on the bottom with <m>\tilde{p}</m> gives 
 <me>z = \frac{\tilde{p} - p}{\sqrt{\tilde{p}(1-\tilde{p})/n}}</me>
 where z is a standard normal distribution variable. So, using the central limit theorem and the standard normal distribution, you can find the value <m> z_{ \alpha/2}</m> where
@@ -234,15 +252,16 @@ Another more elaborate mechanism when n is relatively large is given by the Wils
 
 
 
-<theorem xml:id="WilsonConfidenceInterval"><title>Wilson Score Confidence Interval for p</title>
+<definition xml:id="WilsonConfidenceInterval"><title>Wilson Score Confidence Interval for p</title><idx>Wilson Score Confidence Interval for Proportions</idx>
 <statement>
 <p>
 <me>\frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} - z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}} \lt p \lt \frac{\tilde{p} + \frac{z_{\alpha/2}^2}{2n} + z_{\alpha/2} \sqrt{\frac{\tilde{p}(1-\tilde{p}) + \frac{z_{\alpha/2}^2}{4n}}{n}}}{1 + \frac{z_{\alpha/2}^2}{n}}
 </me>
 </p>
 </statement>
-<proof>
-<p>Again, noting that <m>\tilde{p} = \frac{Y}{n}</m>, the expression above
+</definition>
+
+<p>To relate the Wilson Score with the standard approach for creating a confidence interval for p seen above, note that 
 <me> \big | p - \tilde{p} \big | = z_{\alpha /2} \sqrt{\frac{p(1-p)}{n}}</me>
 can be simplified by squaring both sides to get
 
@@ -252,12 +271,10 @@ Replacing <m>\tilde{p}</m> with the relative frequency gives
 <me> \big ( p - \frac{Y}{n} \big )^2 = z_{\alpha /2}^2 \frac{p(1-p)}{n}</me>
 
 or by simplifying
-<me>(n+z_{\alpha /2}^2 )p^2 - (2Y+z_{/alpha /2}^2) p + \frac{Y^2}{2} = 0.</me>
+<me>(n+z_{\alpha /2}^2 )p^2 - (2Y+z_{\alpha /2}^2) p + \frac{Y^2}{2} = 0.</me>
 
 Solving for p using the quadratic formula and simplifying ultimately results in the described interval.
 </p>
-</proof>
-</theorem>
 
 
 
@@ -370,7 +387,7 @@ As with the confidence intervals above for proportions, the Central Limit Theore
 </p>
 
 
-<definition xml:id="DefnConfidenctIntervalForMean"><title>Confidence Interval for One Mean</title>
+<definition xml:id="DefnConfidenctIntervalForMean"><title>Confidence Interval for One Mean</title><idx>Confidence Interval for One Mean</idx>
 <statement>
 <p>
 Given a sample mean <m>\overline{x}</m>, a two-sided confidence interval for the mean with confidence level <m>1-\alpha</m> is an interval 
@@ -458,7 +475,7 @@ or a sample size of at least 1537.
 </section>
 
 
-<section xml:id="ConfidenceIntervalsForSigma2"><title>Interval Estimates - Confidence Interval for <m>\sigma^2</m></title>
+<section xml:id="ConfidenceIntervalsForSigma2"><title>Interval Estimates - Confidence Interval for <m>\sigma^2</m></title><idx>Confidence Interval for one Variance</idx>
 
 <p>
 Once again, you may need to approximate the population variance or standard deviation but only have the sample values available. One difference from the previous sections is that you are not dealing with an average of values (such as <m>\overline{x}</m> or <m>\tilde{p}</m>) but with the average of the squares of values. The Central Limit Theorem does not directly help you in this case but the following result (presented without proof) provides a solution.

@@ -34,7 +34,7 @@ In general, there are four different outcomes that are possible when testing a h
 </ul>
 The first and last cases are "good" since you have accurately determined the truth of the hypothesis. The second and third are however bad since you either believe something that is not true or you don't believe something that is true. We would like to minimize the likelihood of allowing these last two possibilities.
 </p>
-<p>
+<p><idx>Type I vs Type II errors</idx>
 Toward that end, let's consider the case where the hypothesis is true but you determine (in error) that it is false. This is called a Type I error and we will designate the probability of this error by <m>\alpha</m>. To lower the risk of a Type I error, you will want to make <m>\alpha</m> smaller.  In general, <m>\alpha</m> is also called "the significance level" with <m>\alpha = 0.05</m> a common choice with 0.01 and 0.10 also sometimes used. In general, any value between 0 and 1 is ok but large values mean large likelihood for error so choosing a value closer to 0 is preferred.
 </p>
 <p>
@@ -64,7 +64,7 @@ So, our plan of attack is to find some way to determine, from a sample, the amou
 
 
 <section xml:id="HypothesisTestingOneP"><title>Hypothesis Test for one proportion</title>
-<p>
+<p><idx>Hypothesis Testing for one proportion</idx>
 In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value p:
 <me> H_0 : p = p_0 \\ H_a : p \neq p_0</me>
 or
@@ -127,7 +127,7 @@ Next is a one-tailed test for p. Notice, in this case you will only compute z-sc
 </section>
 
 <section xml:id="HypothesisTestingOneMean"><title>Hypothesis Test for one mean</title>
-<p>
+<p><idx>Hypothesis Testing for one mean</idx>
 In this section, you will consider the following options for null hypothesis and corresponding alternate hypothesis with respect to the unknown value <m>\mu</m>:
 <me> H_0 : \mu = \mu_0 \\ H_a: \mu \neq \mu_0</me>
 or
@@ -240,7 +240,7 @@ Since this p-value is less than our significance level <m>\alpha = 0.05</m> (by 
 
 
 <section xml:id="HypothesisTestingOneVariance"><title>Hypothesis Test for one variance</title>
-<p>
+<p><idx>Hypothesis Testing for one variance</idx>
 Proceeding in a similar manner, we can also perform hypothesis testing on variances using the <m>\chi^2</m>-distribution to determine probabilities.
 <me> H_0 : \sigma^2 = \sigma_0^2  \\ H_a: \sigma^2 \neq \sigma_0^2</me>
 or

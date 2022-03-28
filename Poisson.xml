@@ -314,7 +314,7 @@ You will also often find that exercises in other textbooks and in online WeBWorK
 	<p>
 	For the mean, use integration by parts with <m>u = x</m> and <m>dv = \lambda e^{-\lambda \cdot x}</m> to get (eventually)
 	<md>
-<mrow>\text{Mean} = \mu &amp; = \int_0^{\infty} x \cdot \lambda  e^{-\lambda \mu} dx</mrow>
+<mrow>\text{Mean} = \mu &amp; = \int_0^{\infty} x \cdot \lambda  e^{-\lambda x} dx</mrow>
 <mrow> &amp; = \left [ -(x+\frac{1}{\lambda}) e^{-\lambda \cdot x} \right ] \big |_0^{\infty} </mrow>
 <mrow> &amp; = \frac{1}{\lambda}.</mrow>
 	</md>

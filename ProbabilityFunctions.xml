@@ -137,7 +137,7 @@ Consider the random variable <m>X</m> representing the time until a light bulb f
 </p>
 
 <p>
-<definition xml:id="DefnPMF"><title>Probability "Mass" Function</title><idx>Probabilty Function - Discrete</idx>
+<definition xml:id="DefnPMF"><title>Probability "Mass" Function</title><idx>Probability Function - Discrete</idx>
 	<statement>
 		<p>Given a discrete <xref ref="DefnRandomVariable">random variable</xref> <m>X</m> on a space <m>R</m>, a probability mass function on <m>X</m> is given by a function <m>f:R \rightarrow \mathbb{R}</m> such that:
 		<md>
@@ -259,7 +259,7 @@ def _(D = input_box([1,2,3,5,6,8,9,11,12,14],
 
 <p>	
 <definition xml:id="DefnDistributionFunction"><title>Distribution Function</title>
-<idx>Distributin Function</idx>
+<idx>Distribution Function</idx>
 	<statement>
 		<p>Given a random variable <m>X</m> on a space <m>R</m>, a probability distribution function on <m>X</m> is given by a function 
 		<me>F:\mathbb{R} \rightarrow \mathbb{R} \ni \displaystyle F(x)=P(X \le x).</me>
